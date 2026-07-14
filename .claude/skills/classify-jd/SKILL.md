@@ -149,7 +149,7 @@ Produce a single JSON object and pipe it to `write_jd.py`. The script writes all
 **Important: When user provides pasted JD text**, store the FULL VERBATIM text in jd_archive.md — do NOT rewrite, summarize, or hallucinate. If JD text was pasted by user or appears in conversation (not fetched), copy it exactly as provided into jd_archive.md after the URL line, preserving original formatting and language. This is a historical record and must be faithful to source.
 
 ```bash
-python3 analysis/job_descriptions/write_jd.py <<'EOF'
+python3 scripts/write_jd.py <<'EOF'
 {
   "jd_id": "{base-name}",
   "jd_text": "{full verbatim JD text}",
@@ -236,21 +236,16 @@ EOF
 **Skip this step if processing a batch — run once after all JDs are written (see Step 6).**
 
 ```bash
-cd analysis/job_descriptions/state_of_analytics_engineering && python3 classify_jds.py
+cd analysis && python3 classify_jds.py
 ```
 
 The script is incremental — skips already-processed IDs. Writes:
 - `jd_traces/{base-name}.md` — 3-run LLM trace
 - `llm_classifications.csv` — appended row
 - `consistency_report.md` — regenerated
+- `data.json` — updated dataset
 
-Then rebuild the website dataset:
-
-```bash
-cd resume/analysis && python3 build.py
-```
-
-This merges the new JSON into `data.json` (loaded by `index.html`) and regenerates `applications_dataset.csv`. If either script fails, note it and continue — the three core files from Step 4 are already written.
+This regenerates the dashboard dataset loaded by `index.html`. If the script fails, note it and continue — the three core files from Step 4 are already written.
 
 ---
 
@@ -273,7 +268,7 @@ Layer B:
 
 Stack: {comma-separated true has_* fields}
 
-Files written to jd_data/{base-name}/
+Files written to data/{base-name}/
 ```
 
 If processing more than one URL, run Step 5 once after all JDs are written, then print a batch summary:
