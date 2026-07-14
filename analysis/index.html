@@ -207,6 +207,52 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 /* ── STACK/TOOL SECTION ── */
 #toolChart { max-height: 260px; cursor: pointer; }
 
+/* ── PERSONA TOGGLE (fixed, top-right of screen) ── */
+.persona-toggle {
+  position: fixed; top: 0.55rem; right: 1rem; z-index: 500;
+  display: flex; background: #fff; border: 1px solid var(--border);
+  border-radius: 20px; padding: 2px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+.persona-toggle button {
+  font-size: 0.72rem; font-weight: 600; border: none; background: transparent;
+  color: var(--muted); padding: 0.32rem 0.85rem; border-radius: 20px;
+  cursor: pointer; white-space: nowrap; font-family: inherit;
+}
+.persona-toggle button.active { background: var(--accent); color: #fff; }
+.sticky-nav { padding-right: 250px; }
+@media (max-width: 760px) {
+  .persona-toggle { top: auto; bottom: 1rem; box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
+  .sticky-nav { padding-right: 2rem; }
+}
+
+/* ── PERSONA CHOOSER OVERLAY ── */
+.persona-overlay {
+  position: fixed; inset: 0; background: rgba(17,17,17,0.5); backdrop-filter: blur(5px);
+  z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+}
+.persona-overlay.hidden { display: none; }
+.persona-modal {
+  background: #fff; border-radius: 16px; max-width: 660px; width: 100%;
+  padding: 2.5rem 2.25rem; box-shadow: 0 24px 64px rgba(0,0,0,0.25);
+}
+.persona-modal h2 { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+.persona-modal > p { font-size: 0.86rem; color: var(--muted); line-height: 1.7; }
+.persona-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+@media (max-width: 560px) { .persona-cards { grid-template-columns: 1fr; } }
+.persona-card {
+  border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem 1.3rem;
+  cursor: pointer; text-align: left; background: var(--surface); font-family: inherit;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+.persona-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+.persona-card h3 { font-size: 0.98rem; font-weight: 700; margin-bottom: 0.45rem; color: var(--text); }
+.persona-card p { font-size: 0.79rem; color: var(--muted); line-height: 1.65; }
+.persona-note { margin-top: 1.25rem; font-size: 0.72rem; color: var(--muted); text-align: center; }
+
+/* section dividers (replaces standalone <hr>, so sections can be reordered per persona) */
+#sectionsWrap > .section { border-top: 1px solid var(--border); }
+#sectionsWrap > .section:first-child { border-top: none; }
+
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
@@ -215,11 +261,36 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 <body>
 <a class="skip-link" href="#relationships">Skip to main content</a>
 
+<!-- PERSONA TOGGLE (always visible, top-right) -->
+<div class="persona-toggle" role="group" aria-label="Choose reading mode">
+  <button type="button" data-persona="seeker" onclick="setPersona('seeker')">Job seeker</button>
+  <button type="button" data-persona="manager" onclick="setPersona('manager')">Hiring manager</button>
+</div>
+
+<!-- PERSONA CHOOSER (first visit) -->
+<div class="persona-overlay" id="personaOverlay">
+  <div class="persona-modal" role="dialog" aria-modal="true" aria-labelledby="personaTitle">
+    <h2 id="personaTitle">Same data, two very different questions</h2>
+    <p>This page classifies analytics-engineering job descriptions on behavioural dimensions. A job seeker reads it to decide where to aim. A hiring manager reads it to see what their posting signals — intentionally or not. Pick your side and everything reorders around your questions.</p>
+    <div class="persona-cards">
+      <button class="persona-card" type="button" onclick="setPersona('seeker')">
+        <h3>I'm looking for a role</h3>
+        <p>Where the greenfield work actually is, what a "Senior" title does and doesn't promise, which JD language to trust, and how to position for each segment.</p>
+      </button>
+      <button class="persona-card" type="button" onclick="setPersona('manager')">
+        <h3>I'm hiring</h3>
+        <p>Which signals in your posting are saturated boilerplate, what candidates infer from your stage and title language, and the cheap ways to stand out in a market where every JD sounds the same.</p>
+      </button>
+    </div>
+    <p class="persona-note">The data, statistics, and caveats are identical in both views — only the framing, ordering, and advice change. Switch any time from the top-right corner.</p>
+  </div>
+</div>
+
 <!-- HERO -->
 <section class="hero" aria-label="Introduction">
   <div class="hero-eyebrow" id="heroEyebrow">JDs · classified on behavioural dimensions</div>
-  <h1>What actually predicts what, in analytics engineering job descriptions</h1>
-  <p class="hero-sub">Single percentages ("82% rigour-oriented") are cheap and mostly uninformative on their own — every JD in a rigour-dominant market says similar things. What's useful is where two dimensions move together: does seniority predict autonomy? Does team maturity predict what kind of work you'll do? This page leads with those relationships, shows the test statistic behind each one (recomputed live against whatever filter is active), and reports the relationships that <em>failed</em> — including one this page used to claim that dissolved when the corpus doubled.</p>
+  <h1 id="heroH1">What actually predicts what, in analytics engineering job descriptions</h1>
+  <p class="hero-sub" id="heroSub">Single percentages ("82% rigour-oriented") are cheap and mostly uninformative on their own — every JD in a rigour-dominant market says similar things. What's useful is where two dimensions move together: does seniority predict autonomy? Does team maturity predict what kind of work you'll do? This page leads with those relationships, shows the test statistic behind each one (recomputed live against whatever filter is active), and reports the relationships that <em>failed</em> — including one this page used to claim that dissolved when the corpus doubled.</p>
   <div class="hero-caveat">
     <strong>Read before trusting any number here:</strong> this is a pilot-scale, single-market dataset (Europe-heavy, collected opportunistically during one person's job search). Confidence intervals are wide — treat percentages as directional, not precise. Geography reflects what got scraped, not the market; see the callout in that section.
   </div>
@@ -250,35 +321,32 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
   <div class="count-pill" id="countBadge" aria-live="polite" aria-atomic="true"></div>
 </nav>
 
+<main id="sectionsWrap">
 <!-- SECTION: SINGLE-VARIABLE SUMMARY (compact, intentionally minimized) -->
 <section class="section tight" id="summary">
-  <div class="section-label">Single-variable summary</div>
-  <h2 class="section-headline">The headline numbers, for reference — not the point of this page</h2>
-  <p class="section-body">These are useful as background context, but a single percentage can't tell you which roles to target — most JDs cluster on the modal answer for every dimension individually. The relationships below are where the market actually splits into distinguishable segments.</p>
+  <div class="section-label" id="sumLabel">Single-variable summary</div>
+  <h2 class="section-headline" id="sumHead">The headline numbers, for reference — not the point of this page</h2>
+  <p class="section-body" id="sumBody">These are useful as background context, but a single percentage can't tell you which roles to target — most JDs cluster on the modal answer for every dimension individually. The relationships below are where the market actually splits into distinguishable segments.</p>
   <div class="stats-row" id="statsRow"></div>
 </section>
 
-<hr class="divider">
-
 <!-- SECTION: RELATIONSHIPS (primary content) -->
 <section class="section" id="relationships">
-  <div class="section-label">Two-variable findings</div>
-  <h2 class="section-headline">Where dimensions move together</h2>
-  <p class="section-body">Each panel below crosses two classifications to answer a question a single-dimension stat can't: not "how many roles are strategic" but "<strong>which</strong> roles are strategic." Panels are ordered by effect size (Cramér's V), strongest first, and each carries its χ² test — recomputed against the active role filter. Several tables have sparse cells (expected counts under 5), which makes the χ² approximation optimistic; those are flagged inline and should be read as directional. The last panel is a finding this page used to assert that no longer survives.</p>
+  <div class="section-label" id="relLabel">Two-variable findings</div>
+  <h2 class="section-headline" id="relHead">Where dimensions move together</h2>
+  <p class="section-body" id="relBody">Each panel below crosses two classifications to answer a question a single-dimension stat can't: not "how many roles are strategic" but "<strong>which</strong> roles are strategic." Panels are ordered by effect size (Cramér's V), strongest first, and each carries its χ² test — recomputed against the active role filter. Several tables have sparse cells (expected counts under 5), which makes the χ² approximation optimistic; those are flagged inline and should be read as directional. The last panel is a finding this page used to assert that no longer survives.</p>
   <div class="rel-grid" id="relGrid"></div>
 </section>
 
-<hr class="divider">
 
 <!-- SECTION: NULL RESULTS -->
 <section class="section" id="nulls">
-  <div class="section-label">Negative results</div>
-  <h2 class="section-headline">What we expected but the data didn't support</h2>
-  <p class="section-body">A page that only shows the cross-tabs that worked is survivorship bias with charts. These are relationships we specifically went looking for — because an earlier draft claimed them, or because the industry narrative predicts them — that failed to replicate, flattened as the corpus grew, or never showed up. Reported with the same statistics as the findings above, because a solid null is often just as actionable.</p>
+  <div class="section-label" id="nullLabel">Negative results</div>
+  <h2 class="section-headline" id="nullHead">What we expected but the data didn't support</h2>
+  <p class="section-body" id="nullBody">A page that only shows the cross-tabs that worked is survivorship bias with charts. These are relationships we specifically went looking for — because an earlier draft claimed them, or because the industry narrative predicts them — that failed to replicate, flattened as the corpus grew, or never showed up. Reported with the same statistics as the findings above, because a solid null is often just as actionable.</p>
   <div class="null-grid" id="nullGrid"></div>
 </section>
 
-<hr class="divider">
 
 <!-- SECTION: EXPLORER (scatter, user-driven relationship exploration) -->
 <section class="section" id="explorer">
@@ -317,7 +385,6 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
   </div>
 </section>
 
-<hr class="divider">
 
 <!-- SECTION: ORIENTATION (compact single-dim reference, tabs not full-screen chapters) -->
 <section class="section" id="orientation">
@@ -354,7 +421,6 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
   </div>
 </section>
 
-<hr class="divider">
 
 <!-- SECTION: GEOGRAPHY (demoted — honest about being a scraping artifact) -->
 <section class="section" id="geo-section">
@@ -369,7 +435,6 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
   <div class="geo-grid" id="geoBreakdown"></div>
 </section>
 
-<hr class="divider">
 
 <!-- SECTION: STACK -->
 <section class="section" id="stack">
@@ -389,12 +454,94 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
     </div>
   </div>
 </section>
+</main>
 
 <div id="tooltip"></div>
 
 <script>
 let ALL_DATA = [], activeData = [];
 let charts = {}, sortedTools = [];
+
+// ── Persona (job seeker vs hiring manager): same data, different questions ──
+let persona = null;
+try { persona = localStorage.getItem('aeProfile'); } catch (e) {}
+function P() { return persona === 'manager' ? 'manager' : 'seeker'; }
+const TIP_LABEL = { seeker: 'Apply this', manager: 'For your JD' };
+
+// Section order: seekers get targeting findings first, then the stack (what to learn).
+// Managers get the baseline, then the saturated signals (what NOT to rely on), then inference channels.
+const SECTION_ORDER = {
+  seeker:  ['summary','relationships','nulls','stack','explorer','orientation','geo-section'],
+  manager: ['summary','nulls','relationships','explorer','orientation','stack','geo-section'],
+};
+// Panel order: seeker = effect size (discriminating power is what targeting needs);
+// manager = consequence for writing a posting (title language first — it's the cheapest fix).
+const PANEL_ORDER = {
+  seeker:  ['rel-maturity-mission','rel-domain-stakeholder','rel-testing-rigour','rel-seniority-autonomy','rel-authorship-dbt','rel-maturity-autonomy','rel-fear-collab','rel-stakeholder-autonomy'],
+  manager: ['rel-seniority-autonomy','rel-testing-rigour','rel-authorship-dbt','rel-maturity-mission','rel-maturity-autonomy','rel-domain-stakeholder','rel-fear-collab','rel-stakeholder-autonomy'],
+};
+const NAV_LABELS = {
+  relationships: { seeker: 'Relationships', manager: 'What candidates infer' },
+  nulls:         { seeker: "Didn't hold",   manager: 'Saturated signals' },
+  explorer:      { seeker: 'Explorer',      manager: 'Explorer' },
+  orientation:   { seeker: 'Reference',     manager: 'Reference' },
+  'geo-section': { seeker: 'Coverage',      manager: 'Coverage' },
+  stack:         { seeker: 'Stack',         manager: 'Stack' },
+};
+const COPY = {
+  heroH1: {
+    seeker: 'What actually predicts what, in analytics engineering job descriptions',
+    manager: 'What your job description signals — benchmarked against a market of near-identical postings',
+  },
+  heroSub: {
+    seeker: `Single percentages ("82% rigour-oriented") are cheap and mostly uninformative on their own — every JD in a rigour-dominant market says similar things. What's useful is where two dimensions move together: does seniority predict autonomy? Does team maturity predict what kind of work you'll do? This page leads with those relationships, shows the test statistic behind each one (recomputed live against whatever filter is active), and reports the relationships that <em>failed</em> — including one this page used to claim that dissolved when the corpus doubled.`,
+    manager: `Nearly every posting in this market says the same things: rigour vocabulary, "cross-functional collaboration," a Senior title. Candidates can't tell your role apart from the modal posting — and the things they most want to know (real autonomy, real work type, real quality accountability) are exactly what standard JD language communicates worst. This page shows which signals are saturated, what candidates infer from the signals you may not know you're sending, and the cheap, specific ways a posting stands out.`,
+  },
+  sumLabel: { seeker: 'Single-variable summary', manager: 'Market baseline' },
+  sumHead: {
+    seeker: 'The headline numbers, for reference — not the point of this page',
+    manager: 'The modal posting — everything your JD says that every other JD also says',
+  },
+  sumBody: {
+    seeker: `These are useful as background context, but a single percentage can't tell you which roles to target — most JDs cluster on the modal answer for every dimension individually. The relationships below are where the market actually splits into distinguishable segments.`,
+    manager: `This is the baseline your posting is read against: rigour-first, mid-stage, serving internal data consumers, naming dbt. Matching this profile is fine — its absence would be noticed — but nothing in it differentiates you. The sections below cover what does.`,
+  },
+  relLabel: { seeker: 'Two-variable findings', manager: 'Inference channels' },
+  relHead: {
+    seeker: 'Where dimensions move together',
+    manager: 'What candidates read between your lines — whether you meant to write it or not',
+  },
+  relBody: {
+    seeker: `Each panel below crosses two classifications to answer a question a single-dimension stat can't: not "how many roles are strategic" but "<strong>which</strong> roles are strategic." Panels are ordered by effect size (Cramér's V), strongest first, and each carries its χ² test — recomputed against the active role filter. Several tables have sparse cells (expected counts under 5), which makes the χ² approximation optimistic; those are flagged inline and should be read as directional. The last panel is a finding this page used to assert that no longer survives.`,
+    manager: `Each panel below crosses two classifications, and each one is an inference channel: candidates — and increasingly their tools — read your company stage, your title, your authorship tells, and your framing as predictions about the actual role. Panels are ordered by how consequential each channel is to get right in a posting, and each carries its χ² test, recomputed against the active role filter. Sparse-cell caveats are flagged inline. The last panel is a finding this page used to assert that no longer survives.`,
+  },
+  nullLabel: { seeker: 'Negative results', manager: 'Saturated signals' },
+  nullHead: {
+    seeker: `What we expected but the data didn't support`,
+    manager: `Language that no longer differentiates a posting`,
+  },
+  nullBody: {
+    seeker: `A page that only shows the cross-tabs that worked is survivorship bias with charts. These are relationships we specifically went looking for — because an earlier draft claimed them, or because the industry narrative predicts them — that failed to replicate, flattened as the corpus grew, or never showed up. Reported with the same statistics as the findings above, because a solid null is often just as actionable.`,
+    manager: `Every flat relationship here is a signal that has fully diffused: the whole market writes it, so no candidate can use it to tell employers apart. None of this language is wrong to include — its absence would be noticed — but relying on it to communicate is writing into noise. Reported with the same statistics as the positive findings, because knowing what's noise is half of writing a posting that isn't.`,
+  },
+};
+
+function setPersona(p) {
+  persona = p;
+  try { localStorage.setItem('aeProfile', p); } catch (e) {}
+  document.getElementById('personaOverlay').classList.add('hidden');
+  applyPersona();
+}
+function applyPersona() {
+  const p = P();
+  document.querySelectorAll('.persona-toggle button').forEach(b => b.classList.toggle('active', b.dataset.persona === p));
+  Object.entries(COPY).forEach(([id, t]) => { const el = document.getElementById(id); if (el) el.innerHTML = t[p]; });
+  const wrap = document.getElementById('sectionsWrap');
+  SECTION_ORDER[p].forEach(id => { const s = document.getElementById(id); if (s) wrap.appendChild(s); });
+  document.querySelector('.nav-links').innerHTML = SECTION_ORDER[p].filter(id => id !== 'summary')
+    .map(id => `<a href="#${id}" role="listitem" data-section="${id}">${NAV_LABELS[id][p]}</a>`).join('');
+  if (ALL_DATA.length) { buildRelationships(activeData); buildNulls(activeData); }
+}
 
 const COLOURS = {
   domain_risk:            { high: '#c0392b', moderate: '#d97706', low: '#16a34a' },
@@ -673,74 +820,118 @@ function buildRelationships(data) {
   const panels = [
     {
       id: 'rel-maturity-mission', rowKey: 'data_team_maturity', colKey: 'greenfield_vs_fix',
-      tag: 'Team maturity × Greenfield vs fix · Strongest relationship in the dataset', q: 'Where is the "build from scratch" work, really?',
+      tag: 'Team maturity × Greenfield vs fix · Strongest relationship in the dataset',
+      q: { seeker: 'Where is the "build from scratch" work, really?',
+           manager: 'Candidates infer the day-to-day work from your company stage — is your posting honest about which it is?' },
       statFn: () => `Greenfield work concentrates at ${grpPct(data,'data_team_maturity','early','greenfield_vs_fix','greenfield')}% of early-stage roles, vs. nearly absent at mature teams (${grpPct(data,'data_team_maturity','mature','greenfield_vs_fix','greenfield')}%). Mature teams' modal mission is fix/scale (${grpPct(data,'data_team_maturity','mature','greenfield_vs_fix','fix_scale')}%) — repairing and replacing, not starting over.`,
-      read: `The common advice ("go early-stage for greenfield work") holds structurally, and has held harder as the corpus grew — this is the one cross-tab in the dataset that behaves almost deterministically. What's less obvious: mature teams are now majority fix/scale — they're the segment most likely to be hiring explicitly to replace or repair an underperforming system, not just extend a stable stack. Mid-stage is dominated by "mixed" — the messiest, least clearly-scoped category, which also happens to be most of the market.
-        <div class="resume-tip"><b>Apply this:</b> If you want a portfolio-defining greenfield build, target early-stage specifically — don't assume a "modernise our stack" mid-stage JD will give you that. If you like fixing broken systems, mature teams with fix/scale framing are a better match than their seniority-heavy titles might suggest.</div>`,
+      read: `The common advice ("go early-stage for greenfield work") holds structurally, and has held harder as the corpus grew — this is the one cross-tab in the dataset that behaves almost deterministically. What's less obvious: mature teams are now majority fix/scale — they're the segment most likely to be hiring explicitly to replace or repair an underperforming system, not just extend a stable stack. Mid-stage is dominated by "mixed" — the messiest, least clearly-scoped category, which also happens to be most of the market.`,
+      tip: {
+        seeker: `If you want a portfolio-defining greenfield build, target early-stage specifically — don't assume a "modernise our stack" mid-stage JD will give you that. If you like fixing broken systems, mature teams with fix/scale framing are a better match than their seniority-heavy titles might suggest.`,
+        manager: `Your stage sets expectations before the candidate reads a word: early reads as greenfield, mature as fix/scale. If your mid-stage "modernise our stack" role is mostly maintenance, say so plainly — the mismatch surfaces by day 90, and it costs you exactly the candidate you screened hardest to get.`,
+      },
     },
     {
       id: 'rel-domain-stakeholder', rowKey: 'domain_risk', colKey: 'stakeholder_orientation',
-      tag: 'Domain risk × Stakeholder audience', q: 'Where does "high stakes" actually concentrate?',
+      tag: 'Domain risk × Stakeholder audience',
+      q: { seeker: 'Where does "high stakes" actually concentrate?',
+           manager: '"High stakes" reads as "finance" — if your risk is real but unregulated, the label won\'t carry it' },
       statFn: () => `High-risk roles are ${grpPct(data,'domain_risk','high','stakeholder_orientation','finance')}% finance-facing — vs. ${grpPct(data,'domain_risk','moderate','stakeholder_orientation','finance')}% for moderate-risk roles. The current corpus contains exactly ${data.filter(d=>d.domain_risk==='high'&&d.stakeholder_orientation==='product').length} high-risk product-analytics role${data.filter(d=>d.domain_risk==='high'&&d.stakeholder_orientation==='product').length===1?'':'s'}.`,
-      read: `Domain risk isn't spread evenly across audiences — it concentrates heavily in finance, where regulation externally defines what "high stakes" means (IFRS, audit standards, SOX-adjacent controls). Product analytics is essentially never coded high-risk in JD language, even though experimentation errors can carry real revenue consequences — there's no external regulator setting a "risk bar" for A/B tests the way there is for financial reporting, so employers default to moderate. The association has weakened somewhat as the corpus grew (more high-risk internal-platform roles at fintechs), but remains one of the most robust in the data.
-        <div class="resume-tip"><b>Apply this:</b> "High-stakes" framing on your resume is credible mainly if you're pointing at finance/compliance work — using it for product-analytics experience will read as inflated against how this market actually classifies risk.</div>`,
+      read: `Domain risk isn't spread evenly across audiences — it concentrates heavily in finance, where regulation externally defines what "high stakes" means (IFRS, audit standards, SOX-adjacent controls). Product analytics is essentially never coded high-risk in JD language, even though experimentation errors can carry real revenue consequences — there's no external regulator setting a "risk bar" for A/B tests the way there is for financial reporting, so employers default to moderate. The association has weakened somewhat as the corpus grew (more high-risk internal-platform roles at fintechs), but remains one of the most robust in the data.`,
+      tip: {
+        seeker: `"High-stakes" framing on your resume is credible mainly if you're pointing at finance/compliance work — using it for product-analytics experience will read as inflated against how this market actually classifies risk.`,
+        manager: `The market has taught candidates that "high stakes" means finance. If errors in your domain carry real cost — safety, medical, marketplace trust, experimentation revenue — spell out the failure mode and what it costs in the JD itself; the sector label alone won't communicate it.`,
+      },
     },
     {
       id: 'rel-testing-rigour', rowKey: 'testing_framing', colKey: 'velocity_vs_rigour',
-      tag: 'Testing framing × Rigour orientation · Coded on a subset', q: 'Is "quality" a team value, or your personal job?',
+      tag: 'Testing framing × Rigour orientation · Coded on a subset',
+      q: { seeker: 'Is "quality" a team value, or your personal job?',
+           manager: 'If quality is genuinely the hire\'s job, does your JD name it — or just say "quality"?' },
       statFn: () => `${grpPct(data,'testing_framing','responsibility','velocity_vs_rigour','rigour')}% of "owns quality" JDs are rigour-coded, vs. ${grpPct(data,'testing_framing','absent','velocity_vs_rigour','rigour')}% of JDs that don't mention testing at all. This dimension was added late to the codebook and covers ${data.filter(d=>d.testing_framing).length} of ${data.length} roles.`,
-      read: `Rigour orientation (correctness over speed) is necessary but not sufficient to tell you whether <em>you personally</em> will be accountable for data quality, or whether it's just team culture. "Testing framing = responsibility" identifies the roles where governance has been written into the job as a named, individual accountability — not delegated to "the team" or a tool in the stack. That's the more actionable signal for how your first 90 days will actually go. Two caveats: the "tool listed" middle category is only a handful of records, so the real finding is the responsibility-vs-absent contrast; and the test clears p=0.05 without much room to spare on this subset.
-        <div class="resume-tip"><b>Apply this:</b> For "owns quality" roles, lead with concrete accountability — "owned the data contract framework," "reduced production incidents by X%." For roles where testing is absent from the JD, don't over-index on quality bullets; lead with delivery and impact instead.</div>`,
+      read: `Rigour orientation (correctness over speed) is necessary but not sufficient to tell you whether <em>you personally</em> will be accountable for data quality, or whether it's just team culture. "Testing framing = responsibility" identifies the roles where governance has been written into the job as a named, individual accountability — not delegated to "the team" or a tool in the stack. That's the more actionable signal for how your first 90 days will actually go. Two caveats: the "tool listed" middle category is only a handful of records, so the real finding is the responsibility-vs-absent contrast; and the test clears p=0.05 without much room to spare on this subset.`,
+      tip: {
+        seeker: `For "owns quality" roles, lead with concrete accountability — "owned the data contract framework," "reduced production incidents by X%." For roles where testing is absent from the JD, don't over-index on quality bullets; lead with delivery and impact instead.`,
+        manager: `"Data quality mindset" appears in nearly every posting and selects for nobody. A named, individual accountability — "you own the data contract framework," "you define the testing standards" — is rare in this corpus, and it's precisely what quality-motivated candidates filter for. If it's team culture rather than this hire's job, don't dress it up as ownership; that reads as scope inflation in the interview.`,
+      },
     },
     {
       id: 'rel-seniority-autonomy', rowKey: 'seniority', colKey: 'autonomy_level',
-      tag: 'Seniority × Autonomy · Revised as the corpus grew', q: '"Senior" titles — do they actually predict who sets direction?',
+      tag: 'Seniority × Autonomy · Revised as the corpus grew',
+      q: { seeker: '"Senior" titles — do they actually predict who sets direction?',
+           manager: 'Your "Senior" title tells candidates almost nothing about the scope you\'re offering' },
       statFn: () => `"Senior" (n=${cnt('seniority','senior')}) is ${grpPct(data,'seniority','senior','autonomy_level','strategic')}% strategic vs. ${grpPct(data,'seniority','mid','autonomy_level','strategic')}% for mid-level titles (n=${cnt('seniority','mid')}). Staff titles are ${grpPct(data,'seniority','staff','autonomy_level','strategic')}% strategic — but on ${cnt('seniority','staff')} records.`,
-      read: `<strong>Partly — and more than an earlier cut of this data suggested.</strong> At n≈120, "Senior" looked spread almost evenly across all three autonomy levels and this page said the title told you nothing. With the corpus substantially larger, that's no longer fair: a Senior title roughly doubles the odds of strategic scope versus a mid-level title. But it's still not much better than a coin flip <em>within</em> the title, and the impressive-looking tail — staff and lead titles going overwhelmingly strategic — sits on single-digit counts, so the test's significance is partly carried by cells too sparse to trust individually. The senior-vs-mid boundary is the durable part of this finding.
-        <div class="resume-tip"><b>Apply this:</b> The senior-vs-mid distinction is worth filtering on. Within "Senior," keep reading the verbs — "define/own/shape" vs. "support/assist/deliver" — and ask directly in the interview what decisions the role makes autonomously in year one. Don't pay a premium for a Staff title on the strength of this dataset; the sample is too thin.</div>`,
+      read: `<strong>Partly — and more than an earlier cut of this data suggested.</strong> At n≈120, "Senior" looked spread almost evenly across all three autonomy levels and this page said the title told you nothing. With the corpus substantially larger, that's no longer fair: a Senior title roughly doubles the odds of strategic scope versus a mid-level title. But it's still not much better than a coin flip <em>within</em> the title, and the impressive-looking tail — staff and lead titles going overwhelmingly strategic — sits on single-digit counts, so the test's significance is partly carried by cells too sparse to trust individually. The senior-vs-mid boundary is the durable part of this finding.`,
+      tip: {
+        seeker: `The senior-vs-mid distinction is worth filtering on. Within "Senior," keep reading the verbs — "define/own/shape" vs. "support/assist/deliver" — and ask directly in the interview what decisions the role makes autonomously in year one. Don't pay a premium for a Staff title on the strength of this dataset; the sample is too thin.`,
+        manager: `Within "Senior," candidates can't tell a direction-setting role from a ticket-executing one — the title splits close to the market base rate. Name the decisions the role owns in year one ("you choose the modelling architecture," "you set the testing roadmap") — it's the single cheapest differentiation available in this market, and its absence is why strong candidates ask pointed autonomy questions in your first screen.`,
+      },
     },
     {
       id: 'rel-authorship-dbt', rowKey: 'jd_authorship', colKey: 'dbt_named',
-      tag: 'JD authorship × dbt requirement', q: 'A JD doesn\'t mention dbt — does that mean the team doesn\'t use it?',
+      tag: 'JD authorship × dbt requirement',
+      q: { seeker: 'A JD doesn\'t mention dbt — does that mean the team doesn\'t use it?',
+           manager: 'If a recruiter drafts your posting, your actual stack probably won\'t survive the template' },
       statFn: () => `${grpPct(data,'jd_authorship','hiring_manager','dbt_named','named')}% of hiring-manager-authored JDs name dbt, vs. ${grpPct(data,'jd_authorship','recruiter','dbt_named','named')}% of recruiter-authored ones.`,
-      read: `Revealed-preference logic: a hiring manager writes the tools they actually screen with into the JD; a recruiter often works from a template. So a missing dbt requirement means different things depending on who wrote the posting — in an engineer-written JD it's moderately informative about the stack; in a recruiter-written one it's close to noise. One honesty caveat: authorship is the least reliable dimension in the codebook (lowest classifier self-consistency across repeated runs), though "recruiter" is the cleanest of its three labels — conveniently, the one this finding leans on most.
-        <div class="resume-tip"><b>Apply this:</b> Don't self-select out of a recruiter-authored posting because your core tool isn't listed — and don't skip dbt or tooling prep for it either. Conversely, treat every named tool in a clearly engineer-written JD as a real screening criterion, because for that author it probably is.</div>`,
+      read: `Revealed-preference logic: a hiring manager writes the tools they actually screen with into the JD; a recruiter often works from a template. So a missing dbt requirement means different things depending on who wrote the posting — in an engineer-written JD it's moderately informative about the stack; in a recruiter-written one it's close to noise. One honesty caveat: authorship is the least reliable dimension in the codebook (lowest classifier self-consistency across repeated runs), though "recruiter" is the cleanest of its three labels — conveniently, the one this finding leans on most.`,
+      tip: {
+        seeker: `Don't self-select out of a recruiter-authored posting because your core tool isn't listed — and don't skip dbt or tooling prep for it either. Conversely, treat every named tool in a clearly engineer-written JD as a real screening criterion, because for that author it probably is.`,
+        manager: `Recruiter-templated postings name the real stack at a third the rate of engineer-written ones, and candidates discount generic postings accordingly — the strongest ones self-select out before you ever see them. Write the tools-and-responsibilities section yourself, or at minimum review it: every named tool is read as a genuine screening criterion, and every missing one as a coin flip about your team.`,
+      },
     },
     {
       id: 'rel-maturity-autonomy', rowKey: 'data_team_maturity', colKey: 'autonomy_level',
-      tag: 'Team maturity × Autonomy', q: 'Where does "own the data model" actually mean something?',
+      tag: 'Team maturity × Autonomy',
+      q: { seeker: 'Where does "own the data model" actually mean something?',
+           manager: '"Own the roadmap" is credible from early-stage teams — and discounted from everyone else' },
       statFn: () => `Early-stage teams offer strategic autonomy ${grpPct(data,'data_team_maturity','early','autonomy_level','strategic')}% of the time, vs. ${grpPct(data,'data_team_maturity','mid','autonomy_level','strategic')}% at mid-stage teams — despite mid-stage being ${Math.round(data.filter(d=>d.data_team_maturity==='mid').length/(data.filter(d=>d.data_team_maturity).length||1)*100)}% of the market.`,
-      read: `Early-stage companies are the clearest source of genuine strategic autonomy — the greenfield career-advice claim holds up in the data, though this effect is real-but-modest (about half the strength of maturity's grip on mission type, above). Most of the market is mid-stage, where the roadmap is already set and the role skews toward extending it, not defining it. Mature teams lean execution harder than any other tier — sophisticated platforms come with established direction-setters already in the building.
-        <div class="resume-tip"><b>Apply this:</b> If strategic ownership is what you want, filter for early-stage teams first — don't rely on title language at mid-stage companies to signal it. If you want structure and mentorship over direction-setting, mid-stage is the honest default, not a consolation prize.</div>`,
+      read: `Early-stage companies are the clearest source of genuine strategic autonomy — the greenfield career-advice claim holds up in the data, though this effect is real-but-modest (about half the strength of maturity's grip on mission type, above). Most of the market is mid-stage, where the roadmap is already set and the role skews toward extending it, not defining it. Mature teams lean execution harder than any other tier — sophisticated platforms come with established direction-setters already in the building.`,
+      tip: {
+        seeker: `If strategic ownership is what you want, filter for early-stage teams first — don't rely on title language at mid-stage companies to signal it. If you want structure and mentorship over direction-setting, mid-stage is the honest default, not a consolation prize.`,
+        manager: `Candidates have learned that mid-stage roadmaps are already set, so ownership language from a mid-stage team gets discounted. If your role genuinely carries direction-setting scope, evidence it — name a decision the last person in the seat actually made. If it doesn't, sell the structure, mentorship, and scale instead; that's what your stage credibly offers, and the candidates it attracts will stay.`,
+      },
     },
     {
       id: 'rel-fear-collab', rowKey: 'loss_aversion_framing', colKey: 'collaboration_width', numeric: true,
-      tag: 'Loss-aversion framing × Collaboration width · Fragile but monotonic', q: 'Do fearful employers ask you to talk to more people?',
+      tag: 'Loss-aversion framing × Collaboration width · Fragile but monotonic',
+      q: { seeker: 'Do fearful employers ask you to talk to more people?',
+           manager: 'Compliance framing sets expectations about stakeholder load — name the real number' },
       statFn: () => `Median named-stakeholder count: ${medianBy(data,'loss_aversion_framing','high','collaboration_width').toFixed(1)} for high-fear JDs vs. ${medianBy(data,'loss_aversion_framing','moderate','collaboration_width').toFixed(1)} for moderate and ${medianBy(data,'loss_aversion_framing','none','collaboration_width').toFixed(1)} for no-fear JDs — a monotonic gradient, on the shakiest foundations of any panel here.`,
-      read: `Employers who write compliance- or trust-failure language into the JD ("regulatory exposure," "auditability," "data reaching decision-makers") also name more stakeholder teams in the responsibilities section — roughly double the collaboration width of JDs with no fear signal. One reading: when an employer fears a specific failure mode, they scope the role to touch more of the organisation, so more surface area catches failures before they propagate. Now the caveats, which are substantial: both dimensions are coded on under half the corpus, the high-fear group is about a dozen records, collaboration width has the lowest evidence-quote pass rate of any dimension (JDs say "cross-functional" without naming teams), and the test clears p=0.05 only barely. A related earlier claim — that mature teams name the most partner teams — flattened out entirely at larger n (see the negative results below).
-        <div class="resume-tip"><b>Apply this:</b> If a JD reads as fearful (compliance, trust, "single source of truth" framing), treat wide stakeholder scope as a hypothesis worth probing in the interview — "how many teams does this role interface with in a normal month?" — rather than an established fact. Cross-functional communication experience is still worth foregrounding for these postings.</div>`,
+      read: `Employers who write compliance- or trust-failure language into the JD ("regulatory exposure," "auditability," "data reaching decision-makers") also name more stakeholder teams in the responsibilities section — roughly double the collaboration width of JDs with no fear signal. One reading: when an employer fears a specific failure mode, they scope the role to touch more of the organisation, so more surface area catches failures before they propagate. Now the caveats, which are substantial: both dimensions are coded on under half the corpus, the high-fear group is about a dozen records, collaboration width has the lowest evidence-quote pass rate of any dimension (JDs say "cross-functional" without naming teams), and the test clears p=0.05 only barely. A related earlier claim — that mature teams name the most partner teams — flattened out entirely at larger n (see the negative-results section).`,
+      tip: {
+        seeker: `If a JD reads as fearful (compliance, trust, "single source of truth" framing), treat wide stakeholder scope as a hypothesis worth probing in the interview — "how many teams does this role interface with in a normal month?" — rather than an established fact. Cross-functional communication experience is still worth foregrounding for these postings.`,
+        manager: `If your posting leans on trust/compliance framing, candidates will reasonably expect a wide stakeholder surface — so tell them the real one. Name the actual partner teams and the honest interface load: "cross-functional" is unread boilerplate, a number is signal, and a mismatch between fearful framing and actual scope is the kind of thing that surfaces awkwardly in the first month.`,
+      },
     },
     {
       id: 'rel-stakeholder-autonomy', rowKey: 'stakeholder_orientation', colKey: 'autonomy_level',
-      tag: 'Stakeholder audience × Autonomy · A finding that dissolved', q: 'Does who you serve determine how much say you get? We used to claim yes.',
+      tag: 'Stakeholder audience × Autonomy · A finding that dissolved',
+      q: { seeker: 'Does who you serve determine how much say you get? We used to claim yes.',
+           manager: 'Audience labels don\'t predict autonomy — don\'t let a template write your role\'s decision rights' },
       statFn: () => `Finance-facing roles are ${grpPct(data,'stakeholder_orientation','finance','autonomy_level','execution')}% execution — still the highest share of any audience — and product-facing roles the most strategic at ${grpPct(data,'stakeholder_orientation','product','autonomy_level','strategic')}%. But at n=123 this association tested significant (p=0.007, V=0.29); on the current corpus it no longer does.`,
-      read: `An earlier version of this page ran a confident structural story here: finance roles are execution-shaped because audit cycles and reporting standards define the deliverable externally, before anyone discusses direction. The percentages still point the same way — finance most execution-leaning, product most strategic — but roughly doubling the corpus dissolved the statistical support: the differences are now well within what chance produces across five audience groups this size. The tidy causal explanation had been written to fit a fragile number, which is exactly the failure mode this page exists to protect you from. The direction may yet be real; this dataset currently can't tell.
-        <div class="resume-tip"><b>Apply this:</b> Don't infer autonomy from the audience label. Precision and auditability remain safe things to foreground in a finance-facing pitch — but the earlier advice to suppress strategic framing for finance roles was overfit to a small sample. Read each JD's actual verbs; the stakeholder category won't do it for you.</div>`,
+      read: `An earlier version of this page ran a confident structural story here: finance roles are execution-shaped because audit cycles and reporting standards define the deliverable externally, before anyone discusses direction. The percentages still point the same way — finance most execution-leaning, product most strategic — but roughly doubling the corpus dissolved the statistical support: the differences are now well within what chance produces across five audience groups this size. The tidy causal explanation had been written to fit a fragile number, which is exactly the failure mode this page exists to protect you from. The direction may yet be real; this dataset currently can't tell.`,
+      tip: {
+        seeker: `Don't infer autonomy from the audience label. Precision and auditability remain safe things to foreground in a finance-facing pitch — but the earlier advice to suppress strategic framing for finance roles was overfit to a small sample. Read each JD's actual verbs; the stakeholder category won't do it for you.`,
+        manager: `An earlier version of this page told finance hiring managers their roles would read as execution-shaped no matter what they wrote. That claim dissolved with more data — which cuts in your favour: the audience label doesn't lock in how candidates read the role. Write the actual decision rights explicitly, and don't let a template's assumptions about "finance roles" or "product roles" write them for you.`,
+      },
     },
   ];
+
+  const view = P();
+  const order = PANEL_ORDER[view];
+  panels.sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
 
   const grid = document.getElementById('relGrid');
   grid.innerHTML = panels.map((p, i) => `
     <div class="rel-panel">
       <div class="rel-head">
         <div class="rel-tag">${p.tag}</div>
-        <div class="rel-question">${p.q}</div>
+        <div class="rel-question">${typeof p.q === 'object' ? p.q[view] : p.q}</div>
         <div class="rel-stat" id="${p.id}-stat"></div>
         <div class="rel-test" id="${p.id}-test"></div>
       </div>
       <div class="rel-body">
         <div class="rel-viz" id="${p.id}-viz"></div>
-        <div class="rel-read">${p.read}</div>
+        <div class="rel-read">${p.read}<div class="resume-tip"><b>${TIP_LABEL[view]}:</b> ${p.tip[view]}</div></div>
       </div>
     </div>
   `).join('');
@@ -778,7 +969,10 @@ function buildNulls(data) {
         return `If rigour language were a response to real stakes, finance and compliance roles should carry much more of it. They carry slightly more — <strong>${hi}% rigour-coded vs. ${mod}% in moderate-risk and ${lo}% in low-risk domains</strong> — but the association doesn't reach significance, and rigour is dominant in every tier. A signal this flat across every partition tested looks like an institutionalised norm, not a reaction to variable underlying risk.`;
       },
       testFn: () => chiBadge(data, 'domain_risk', 'velocity_vs_rigour'),
-      apply: 'Rigour framing is table stakes everywhere — don\'t tailor it by sector. What differentiates roles is whether quality is <em>your named job</em> (see the testing-framing panel above), not whether the JD says "data quality."',
+      apply: {
+        seeker: 'Rigour framing is table stakes everywhere — don\'t tailor it by sector. What differentiates roles is whether quality is <em>your named job</em> (see the testing-framing panel), not whether the JD says "data quality."',
+        manager: '"Data quality," "single source of truth," "reliability" — every posting says it, so it no longer selects. Keep it (its absence would be noticed), but don\'t expect it to attract anyone. Differentiation lives in named accountabilities and explicit decision rights, not virtue vocabulary.',
+      },
     },
     {
       expect: 'Expected — engineers should write like engineers',
@@ -790,7 +984,10 @@ function buildNulls(data) {
         return `Flat: <strong>${hm}% / ${mx}% / ${rc}%</strong> rigour-coded for hiring-manager / mixed / recruiter authorship. Rigour vocabulary has diffused so thoroughly that recruiters working from templates produce it at the same rate as the engineers who mean it.`;
       },
       testFn: () => chiBadge(data, 'jd_authorship', 'velocity_vs_rigour'),
-      apply: 'Rigour language in a JD tells you nothing about who wrote it or how the team actually works. Tool specificity is where authorship shows (see the dbt panel above) — read the nouns, not the virtues.',
+      apply: {
+        seeker: 'Rigour language in a JD tells you nothing about who wrote it or how the team actually works. Tool specificity is where authorship shows (see the dbt panel) — read the nouns, not the virtues.',
+        manager: 'You can\'t sound your way to credibility — recruiters working from templates produce rigour vocabulary at the same rate as the engineers who mean it. What candidates actually read as "an engineer wrote this" is specificity: named tools, real scale numbers, concrete systems. Nouns, not virtues.',
+      },
     },
     {
       expect: 'Claimed in an earlier draft — retracted',
@@ -808,7 +1005,10 @@ function buildNulls(data) {
         const kw = kruskalWallis(groups);
         return sigBadge(kw, kw ? `Kruskal–Wallis H=${kw.H.toFixed(1)}, df=${kw.df}, ${fmtP(kw.p)}` : '');
       },
-      apply: 'Don\'t infer stakeholder load from team maturity. If meeting surface area matters to you, count the named teams in the JD itself — that number is in the data, the shortcut isn\'t.',
+      apply: {
+        seeker: 'Don\'t infer stakeholder load from team maturity. If meeting surface area matters to you, count the named teams in the JD itself — that number is in the data, the shortcut isn\'t.',
+        manager: 'Whatever your stage, "cross-functional collaboration" is unread boilerplate. Name the actual partner teams — candidates count them, and the count is one of the few honest workload signals a posting can carry.',
+      },
     },
     {
       expect: 'Suggestive, not established',
@@ -819,16 +1019,20 @@ function buildNulls(data) {
         return `Roles asking the hire to <em>build</em> AI infrastructure (rather than use AI tools) skew toward internal-platform audiences — <strong>${inPlatform} of ${enablers.length} ai-enabler roles serve internal data consumers</strong>. The test hovers just above p=0.05 with a medium effect size, but the enabler group is about a dozen records and several cells are near-empty. Directionally consistent with AI demand showing up as platform work first; not yet a fact.`;
       },
       testFn: () => chiBadge(data, 'ai_role', 'stakeholder_orientation'),
-      apply: 'If you\'re positioning as an AI-enablement AE, internal-platform roles are where that demand is visible so far — treat this as a scouting report to verify against live postings, not a market fact.',
+      apply: {
+        seeker: 'If you\'re positioning as an AI-enablement AE, internal-platform roles are where that demand is visible so far — treat this as a scouting report to verify against live postings, not a market fact.',
+        manager: 'Barely any postings state an AI expectation, against a survey world claiming 72% daily AI use. If AI fluency genuinely matters for your role, writing it as an explicit criterion is nearly uncontested signal space right now — and if it doesn\'t, leaving it out keeps you with 83% of the market.',
+      },
     },
   ];
+  const view = P();
   document.getElementById('nullGrid').innerHTML = cards.map(c => `
     <div class="null-card">
       <div class="null-expect">${c.expect}</div>
       <div class="null-title">${c.title}</div>
       <div class="null-result">${c.resultFn()}</div>
       <div class="null-test">${c.testFn()}</div>
-      <div class="null-apply"><b>Apply this:</b> ${c.apply}</div>
+      <div class="null-apply"><b>${TIP_LABEL[view]}:</b> ${c.apply[view]}</div>
     </div>`).join('');
 }
 
@@ -1028,19 +1232,23 @@ fetch('./data.json')
       `<div style="text-align:center;padding:4rem;color:#c0392b">Failed to load data.json: ${err.message}<br><small>Run <code>python3 -m http.server 8765</code> from the state_of_analytics_engineering/ folder or navigate to http://localhost:8765/analysis/job_descriptions/state_of_analytics_engineering/index.html</small></div>`);
   });
 
-// ── Active nav on scroll ──
+// ── Active nav on scroll (links are regenerated per persona, so query them live) ──
 (function() {
-  const navLinks = document.querySelectorAll('.nav-links a[data-section]');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) navLinks.forEach(a => a.classList.toggle('active', a.dataset.section === entry.target.id));
+      if (entry.isIntersecting) document.querySelectorAll('.nav-links a[data-section]')
+        .forEach(a => a.classList.toggle('active', a.dataset.section === entry.target.id));
     });
   }, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
-  navLinks.forEach(a => {
-    const el = document.getElementById(a.dataset.section);
+  ['relationships','nulls','explorer','orientation','geo-section','stack'].forEach(id => {
+    const el = document.getElementById(id);
     if (el) observer.observe(el);
   });
 })();
+
+// ── Persona init: returning visitors skip the chooser; first-timers pick a side ──
+if (persona) document.getElementById('personaOverlay').classList.add('hidden');
+applyPersona();
 </script>
 </body>
 </html>
