@@ -1,0 +1,3 @@
+**URL:** https://join.com/companies/whow/16391734-senior-analytics-engineer-monetization-m-w-d?pid=e65242534431eadcb0c9
+
+Senior Analytics Engineer - Monetization at Whow Games. Responsibilities: own the data infrastructure and measurement intelligence driving monetization decisions; build scalable data models and dashboards; develop predictive LTV and conversion models; analyze in-game economies; design A/B tests for pricing and offers; communicate insights to senior stakeholders; manage full data collection layer; collaborate with game balancing and engineering teams.

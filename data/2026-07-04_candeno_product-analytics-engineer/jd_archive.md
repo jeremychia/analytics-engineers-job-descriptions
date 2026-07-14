@@ -1,0 +1,3 @@
+**URL:** https://candenokarriere.careers.haileyhr.app/en-GB/job/a3fefebd-e616-46d1-aa74-499195c7d08d/42991656-c3a7-4ce5-826c-b0fbb690f71a/e3accbf3-7fbd-458d-8d7b-6add3061951b
+
+Turn our data into customer decisions. Product Analytics Engineer role at Candeno. Key responsibilities: building or significantly improving a data warehouse, BI setup, or set of dashboards; balancing competing priorities in a fast-moving product company; building a data layer that serves internal decisions, customer-facing dashboards, and increasingly AI features while maintaining data trustworthiness.

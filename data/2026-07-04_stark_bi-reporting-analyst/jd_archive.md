@@ -1,0 +1,3 @@
+**URL:** https://stark.jobs.personio.com/job/2698168
+
+BI / Reporting Analyst at STARK (defence sector). Responsibilities: establish operational reporting infrastructure; audit existing data systems across ERP, MES, PLM; design structured data storage and pipeline architecture for reliable BI; replace manual exports with automated pipelines; establish data quality standards and documentation; partner with operational leadership. Requirement: eligible for security clearance.

@@ -1,0 +1,3 @@
+**URL:** https://web103.reachmee.com/ext/I003/475/job?site=2&lang=SE&validator=be182e4eb75429bedb0ddaafd3755823&job_id=11267
+
+Analytics Engineer at Bravida. Responsibilities: design and own the semantic layer that makes data trustworthy, consistent, and accessible; architect data models using dbt on Snowflake; establish modeling standards and data contracts across business domains; develop pipelines with Dagster; leverage AI tools to enhance output; drive generative analytics capabilities; collaborate with operations, procurement, and finance teams; improve data quality and reliability.

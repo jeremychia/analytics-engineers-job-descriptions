@@ -1,0 +1,3 @@
+**URL:** https://gerolsteiner.softgarden.io/job/65116258/Data-Analytics-Engineer-m-w-d-?l=de
+
+Data & Analytics Engineer (m/w/d) at Gerolsteiner. Responsibilities: develop and maintain data models, queries, and views within SAP environments; optimize reports and planning content in SAP Analytics Cloud; advance BW implementations; integrate new data sources; work on modern analytics projects using Azure Databricks; process IoT and market data; create Power BI reports; support AI-driven analytics expansion.

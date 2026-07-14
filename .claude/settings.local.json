@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --print-to-pdf=/Users/jeremychia/Documents/Github/jeremychia/resume/2026-04-08_lego_senior-analytics-engineer.pdf --print-to-pdf-no-header-footer --no-margins --disable-gpu /Users/jeremychia/Documents/Github/jeremychia/resume/2026-04-08_lego_senior-analytics-engineer.html)",
+      "Bash(echo \"exit:$?\")",
+      "Bash(/Applications/Arc.app/Contents/MacOS/Arc --headless=new --print-to-pdf=/Users/jeremychia/Documents/Github/jeremychia/resume/2026-04-08_lego_senior-analytics-engineer.pdf --print-to-pdf-no-header-footer --no-margins --disable-gpu /Users/jeremychia/Documents/Github/jeremychia/resume/2026-04-08_lego_senior-analytics-engineer.html)",
+      "Bash(ls /Users/jeremychia/Documents/Github/jeremychia/resume/*.pdf)",
+      "Bash(ls *.pdf)",
+      "Bash(brew --version)",
+      "Bash(brew install:*)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --print-to-pdf=/Users/jeremychia/Documents/Github/jeremychia/resume/applications/2026-04-08_lego_senior-analytics-engineer/2026-04-08_lego_senior-analytics-engineer.pdf --print-to-pdf-no-header-footer --no-margins --disable-gpu /Users/jeremychia/Documents/Github/jeremychia/resume/applications/2026-04-08_lego_senior-analytics-engineer/2026-04-08_lego_senior-analytics-engineer.html)",
+      "Bash(pdfinfo \"/Users/jeremychia/Documents/Github/jeremychia/resume/applications/2026-04-08_lego_senior-analytics-engineer/2026-04-08_lego_senior-analytics-engineer.pdf\")",
+      "Bash(python3 -c ':*)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --print-to-pdf=/Users/jeremychia/Documents/Github/jeremychia/resume/applications/2026-04-08_lego_senior-analytics-engineer/2026-04-08_lego_senior-analytics-engineer.pdf --print-to-pdf-no-header-footer --no-margins --disable-gpu --paper-width=8.27 --paper-height=11.69 /Users/jeremychia/Documents/Github/jeremychia/resume/applications/2026-04-08_lego_senior-analytics-engineer/2026-04-08_lego_senior-analytics-engineer.html)",
+      "WebFetch(domain:www.lego.com)",
+      "WebFetch(domain:jobs.ashbyhq.com)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --print-to-pdf=/Users/jeremychia/Documents/Github/jeremychia/resume/applications/2026-04-08_tem_staff-analytics-engineer/2026-04-08_tem_staff-analytics-engineer.pdf --print-to-pdf-no-header-footer --no-margins --disable-gpu --paper-width=8.27 --paper-height=11.69 /Users/jeremychia/Documents/Github/jeremychia/resume/applications/2026-04-08_tem_staff-analytics-engineer/2026-04-08_tem_staff-analytics-engineer.html)",
+      "Bash(python3)",
+      "Skill(adapt-resume)",
+      "Skill(adapt-resume:*)",
+      "Bash(python3 .claude/tools/render_resume.py applications/2026-04-08_riverty_data-engineering-lead/2026-04-08_riverty_data-engineering-lead.json applications/2026-04-08_riverty_data-engineering-lead/2026-04-08_riverty_data-engineering-lead.html)",
+      "WebFetch(domain:nkg.wd103.myworkdayjobs.com)",
+      "Bash(python3 .claude/tools/render_resume.py \"applications/2026-04-09_nkg_sustainability-data-analyst/2026-04-09_nkg_sustainability-data-analyst.json\" \"applications/2026-04-09_nkg_sustainability-data-analyst/2026-04-09_nkg_sustainability-data-analyst.html\")",
+      "WebFetch(domain:www.linkedin.com)",
+      "Bash(python3 .claude/tools/render_resume.py \"applications/2026-04-09_ai-futures_data-team-lead/2026-04-09_ai-futures_data-team-lead.json\" \"applications/2026-04-09_ai-futures_data-team-lead/2026-04-09_ai-futures_data-team-lead.html\")",
+      "Bash(python3 .claude/tools/render_resume.py \"applications/2026-04-09_lovable_analytics-engineer-finance/2026-04-09_lovable_analytics-engineer-finance.json\" \"applications/2026-04-09_lovable_analytics-engineer-finance/2026-04-09_lovable_analytics-engineer-finance.html\")",
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "WebFetch(domain:job-boards.eu.greenhouse.io)",
+      "Skill(prep-recruiter-call)",
+      "Skill(prep-recruiter-call:*)",
+      "WebSearch",
+      "WebFetch(domain:lovable.dev)",
+      "WebFetch(domain:markets.financialcontent.com)",
+      "Bash(open \"/Users/jeremychia/Documents/Github/jeremychia/resume/applications/2026-04-22_mentimeter_analytics-engineer/2026-04-22_mentimeter_analytics-engineer.html\")",
+      "WebFetch(domain:careers.qasa.se)",
+      "Bash(open -a \"Google Chrome\" \"/Users/jeremychia/Documents/Github/jeremychia/resume/applications/2026-04-22_qasa_analytics-engineer/2026-04-22_qasa_analytics-engineer.html\")",
+      "WebFetch(domain:jobs.smartrecruiters.com)"
+    ]
+  }
+}

@@ -1,0 +1,3 @@
+**URL:** https://emeria.teamtailor.com/jobs/8017252-analytics-engineer-h-f
+
+Analytics Engineer at Emeria Technologies. Responsibilities: transform raw data into actionable insights; collaborate with teams across real estate, finance, marketing, accounting; build and maintain data pipelines and models using dbt on Snowflake; create accessible visualizations and analytics for 10,000+ employees; ensure data integrity through governance and control; resolve incidents; optimize pipelines. Requirements: 1-2 years as Analytics Engineer or Data Analyst. Tools: dbt, Snowflake, Tableau, Git, Python (preferred), AWS (preferred).

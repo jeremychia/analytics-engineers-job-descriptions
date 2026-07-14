@@ -1,0 +1,3 @@
+**URL:** https://job-boards.eu.greenhouse.io/ebury/jobs/4918790101?gh_src=f6fe6062teu
+
+Senior Analytics Engineer at Ebury. Responsibilities: own a domain's data warehouse; establish standards, patterns, and practices governing data modeling, structure, and consumption; partner with business stakeholders; lead data projects; monitor data quality; build models using modern engineering practices; orchestrate pipelines with Airflow. Finance domain knowledge required: P&L, FX exposure, reconciliation. English fluency required; Spanish beneficial.

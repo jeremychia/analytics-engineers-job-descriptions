@@ -1,0 +1,39 @@
+**URL:** https://jobs.ashbyhq.com/block-labs/06e721f0-df84-4eab-a4f3-be0c1614d458/application
+
+Business Intelligence Analyst
+
+Block Labs is a premier technology studio operating at the bleeding edge of Web3, Artificial Intelligence, and iGaming. We don't just ship features; we engineer high-scale, production-grade platforms that power the next generation of digital products.
+
+About The Role
+We're looking for a data-obsessed BI Analyst to turn blockchain and product data into crisp insights that drive growth, retention, and risk controls across our crypto-enabled iGaming products. You'll own the end-to-end analytics stack for wallet funnels, wagering behavior, lifecycle marketing, and compliance—using SQL, DBT, Python, Amplitude and Tableau as your primary tools.
+
+Key Responsibilities
+• Drive the business forward through proactive analytics - spot anomalies, frame the right question yourself, and bring actionable recommendations to Product / CRM / Risk before they have to ask.
+• Build, maintain, and iterate dashboards surfacing KPIs (GGR/NGR, ARPU, LTV, churn, deposit→wager conversion, fraud loss rate).
+• Write production-grade SQL (CTEs, window functions, incremental models) to model clean datasets from Clickhouse and on-chain tables.
+• Build and maintain AI-agent workflows that automate recurring analytics - anomaly investigation, root-cause loops etc.
+• Use Python (pandas, seaborn, sklearn, scipy) for analysis, data quality checks, lightweight ETL/backfills, API pulls (e.g., blockchain providers), and automation.
+• Work with on-chain data: parse EVM logs, token transfers (ERC-20/721), join labeled address datasets, analyze exchange/bridge flows, gas/fee dynamics, and wallet clustering.
+• Partner with Product, Marketing/CRM, Risk/Compliance, and Engineering to define event schemas and tracking plans; ensure data quality, lineage, and documentation.
+• Design and analyze experiments, cohort analyses, and attribution within iGaming and regional compliance constraints.
+• Investigate anomalies (bonus abuse, botting, arbitrage, suspicious wallet rings) and recommend mitigations.
+• Automate recurring reporting and alerting for KPI movements.
+
+Must-haves
+• 2+ years in BI or Data Analytics; crypto or iGaming exposure preferred.
+• Ambitions about building great analytics infrastructure.
+• Good SQL: complex joins, window functions, query optimization, and dimensional modeling.
+• Solid AI-collaboration craft — prompt & context engineering, spec-driven task framing, and eval-driven iteration.
+• BI Versatility: Expert knowledge of Tableau (LODs, parameters, performance tuning) combined with strong interest or experience in modern, open-source BI tools like Metabase or Apache Superset.
+• Proficient Python for analytics & data engineering: pandas, modular scripts/notebooks, API integrations, scheduling small jobs, and writing maintainable code.
+• Solid statistics and probability fundamentals for experimentation - hypothesis testing, sample size and power, confidence intervals, and the discipline to distinguish real signal from noise.
+• Practical understanding of crypto wallets and transaction flows.
+
+Nice-to-haves
+• dbt, Great Expectations/Monte Carlo for data quality; orchestration with Airflow/Prefect.
+• Built or contributed to production AI agents for analytics — ReAct loops, RAG over a knowledge base , MCP servers for data sources, multi-agent orchestration.
+• Ability to produce on-chain analytics (Dune/Flipside/Goldsky/Nansen tables or self-indexed data; contract ABIs; entity labeling).
+• Warehouse ecosystems knowledge Clickhouse, AWS, S3 buckets.
+• Data governance & privacy (GDPR, data minimization, retention policies).
+• Understanding of iGaming economics & KPIs: deposits, wagers, hold, GGR/NGR, RTP, bonus efficiency, RG metrics, and common fraud/AML patterns.
+• Experience with product analytics services like Amplitude, Mixpanel, Google Analytics.

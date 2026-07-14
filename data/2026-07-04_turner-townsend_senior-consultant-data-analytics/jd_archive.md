@@ -1,0 +1,3 @@
+**URL:** https://jobs.smartrecruiters.com/TurnerTownsend/744000127468860-senior-consultant-data-analytics
+
+Senior Consultant - Data & Analytics at Turner & Townsend. Role: leading a project team of analysts and consultants on data and analytics solutions across Infrastructure and Real Estate. Responsibilities: develop execution plans; deliver end-to-end projects; design data solutions; build dashboards; conduct client engagements; manage model scenarios; prepare reports and presentations. Skills: DAX, Python, VBA, SQL, Power BI, Tableau, Azure, data warehousing, data modeling, BI architecture.

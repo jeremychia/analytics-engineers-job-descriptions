@@ -1,0 +1,3 @@
+**URL:** https://careers.vestas.com/job/Copenhagen-S-Analytics-Engineer-Regi-2300/1401227733/?feedId=null
+
+Analytics Engineer role at Vestas in Reporting & Analytics Centre of Excellence. Responsibilities: design analytical solutions including dashboards and data models; translate business requirements into analytics products; develop core analytical data architecture layers; optimize and maintain existing analytics solutions; support solution rollouts through testing and training.

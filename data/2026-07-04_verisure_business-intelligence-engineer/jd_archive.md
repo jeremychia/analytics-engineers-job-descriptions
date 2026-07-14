@@ -1,0 +1,3 @@
+**URL:** https://www.linkedin.com/jobs/view/4433705027/
+
+Business Intelligence Engineer at Verisure. Responsibilities: develop and enhance end-to-end BI pipelines using ELT and Kimball modeling; create scalable data models; write complex SQL queries; produce user-friendly dashboards; engage with stakeholders across data lifecycle; apply Git-based collaboration and engineering best practices. Requirements: 4+ years data warehousing; mid to senior-level expertise; strong SQL; Scrum/Agile experience. Tech stack: Snowflake, Matillion, dbt, Power BI, Git.

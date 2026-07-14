@@ -1,0 +1,3 @@
+**URL:** https://job-boards.eu.greenhouse.io/super/jobs/4812248101
+
+Senior Analytics Engineer at Super Technologies. Team: 40+ data professionals. Responsibilities: develop curated analytical datasets and semantic models for self-serve analytics; design scalable data warehouse structures; build and maintain production dashboards; enhance data quality, observability, and documentation; promote reuse of analytics components; apply engineering best practices including version control and testing; collaborate with Data Engineering squads.

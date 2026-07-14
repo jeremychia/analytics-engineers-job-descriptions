@@ -1,0 +1,3 @@
+**URL:** https://www.agriholland.nl/vacaturebank/vacature.php?id=47336
+
+Analytics Engineer at Enza Zaden. Requirements: Master's degree, 6-8 years analytics/reporting/data engineering; Azure (DP203), Databricks, SQL, dbt, Power BI, DAX, Git; DevOps experience; CI/CD practices. Responsibilities: design and maintain scalable data models and analytics products using Databricks, dbt, Power BI; translate complex business questions into reliable solutions on global data platform; collaborate with product owners, IT specialists, business stakeholders; improve data quality; ensure compliance with architecture and security standards; coach colleagues on data solution adoption.

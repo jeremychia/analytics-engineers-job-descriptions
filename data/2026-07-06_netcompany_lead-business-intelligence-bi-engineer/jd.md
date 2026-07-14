@@ -1,0 +1,116 @@
+# Lead Business Intelligence (BI) Engineer — Netcompany
+
+**URL:** https://jobs.smartrecruiters.com/Netcompany1/744000100089125-lead-business-intelligence-bi-engineer-?trid=2d92f286-613b-4daf-9dfa-6340ffbecf73
+**Location:** Athens, Greece
+**Date Posted:** 2026-07-06
+
+---
+
+Netcompany SEE & BELUX logo
+Lead Business Intelligence (BI) Engineer
+Athens, Greece
+Employees work in a hybrid mode
+Full-time
+Company Description
+Are you ready to shape the future technological landscape in Europe?
+
+We are dedicated to responsible digitalisation, building innovative, inclusive solutions that drive meaningful impact. With over 8,900 professionals across Europe, we help EU institutions, public and private organisations thrive in a rapidly evolving digital world. Are you ready to shape the future through technology? Your journey starts here. Take a look at some of our impactful projects here: https://netcompany.com/cases/
+
+Job Description
+So, what are the main responsibilities of a Lead Business Intelligence (BI) Engineer in Netcompany?
+
+As a Lead Business Intelligence (BI) Engineer you will:
+
+Lead the BI workstream within large-scale, cross-functional projects.
+Own the design and delivery of end-to-end BI solutions: from data modeling and architecture to BI dashboards and executive-level reporting.
+Guide the data strategy, ensuring alignment between client objectives and technical implementation.
+Mentor and support BI engineers across projects; perform code reviews, enforce best practices in DAX, data modeling, and Power BI.
+Collaborate with clients and stakeholders to define KPIs, gather requirements, and deliver interactive, scalable dashboards.
+Focus on delivering analytics for sales performance, customer behavior, and forecasting.
+Work on projects involving advanced KPI tracking, including user churn, app engagement, and load performance metrics.
+ 
+Qualifications
+What would make you a fit for the role:
+
+Proven experience leading BI teams and owning full BI project lifecycles.
+Expert knowledge of Power BI, including DAX, Power Query, data modeling, and report optimization.
+Solid experience with Tableau, QlikSense, QlikView, or similar BI tools (proficiency level may vary).
+Strong understanding of SQL Server Analysis Services (SSAS) and dashboard performance tuning.
+Experience in integrating data from multiple systems (e.g., SAP, call centers, marketing platforms, input/output metering systems).
+Ability to manage stakeholder relationships and translate business needs into data-driven solutions.
+Excellent communication and documentation skills.
+Familiarity with Agile or Lean project methodologies.
+It would also be a plus if you match some of the following:
+
+MSc in  IT or related field.
+Microsoft Certified: Power BI Data Analyst Associate (PL-300) or similar BI certification.
+Experience in sectors such as energy, banking, telecom, or public sector is a strong plus.
+Additional Information
+Being a part of the Netcompany team, you will be provided with: 
+
+The opportunity to work in a modern environment & in a hybrid working model
+A seamless onboarding experience and a buddy to support you on your first steps
+A competitive compensation & benefits package
+Health and life insurance program
+Meal and commuting allowance
+Well-being activities (on premises)
+Continuous learning opportunities using the most modern methods (unlimited access to Udemy for Business, ad-hoc trainings)
+A personalized development plan for targeted career growth
+If you are looking forward to be part of a diverse environment, and have the opportunity to work alongside well-experienced professionals, on challenging, large-scale projects that directly impact millions of citizens around the globe, then this is the place to be!
+
+By joining Netcompany in Athens, you will be part of a vivid team of 2,300+ tech professionals. When at the office, you'll have the flexibility to work from our three modern, sustainable, and state-of-the-art offices!
+
+Please upload your CV in English via the Apply button. All applications will be treated as strictly confidential.
+
+We ensure equal opportunities, treatment, and consideration to all candidates. Discrimination based on sex, racial or ethnic origin, religion or belief, disability, age, sexual orientation or marital status, physical or mental disability, or any other factor protected by applicable laws and regulations is prohibited. As part of the Netcompany culture, we respect human rights and focus on creating a positive workplace, where all employees are valued, and where diversity and inclusion are a vital part of our everyday working experience.
+
+In the following link you may find our CV Submission privacy notice: https://netcompany.com/cv-submission-privacy-notice/
+
+---
+
+## Layer B — Behavioural Analysis
+
+*3-run LLM consistency check: `../state_of_analytics_engineering/jd_traces/2026-07-06_netcompany_lead-business-intelligence-bi-engineer.md` (generated by `classify_jds.py`, may not exist yet)*
+
+**velocity_vs_rigour:** rigour — The only signals present are quality/practice-enforcement related (code reviews, best practices, dashboard performance tuning) with no velocity language anywhere, so it defaults to rigour.
+
+**domain_risk:** moderate — Preferred sector exposure includes regulated industries but this is a consultancy role without explicit financial-reporting, audit, or compliance responsibilities stated, so it is moderate.
+
+**collaboration_width:** 0 — named teams: 
+
+**data_team_maturity:** mature — The role sits within a 2,300+ person tech organisation delivering large-scale cross-functional projects with a mentoring layer for BI engineers, indicating a mature, established practice.
+
+**jd_authorship:** hiring_manager — The JD names precise tools (DAX, Power Query, SSAS) and specific KPI types (user churn, app engagement, load performance), giving a concrete picture of the work, so it is hiring_manager.
+
+**stakeholder_orientation:** commercial — The primary analytics focus named is sales performance and forecasting, placing the orientation as commercial.
+
+**autonomy_level:** strategic — Verbs like 'lead', 'own', and 'guide' throughout the responsibilities section indicate the role sets direction rather than executing scoped tasks, so it is strategic.
+
+**greenfield_vs_fix:** mixed — The role spans full end-to-end solution design across varied client projects with no consistent greenfield or fix-only signal, so it is mixed.
+
+**urgency:** standard — No urgency signals present.
+
+**language_gate:** none — Not stated in JD.
+
+**interview_stages:** Not stated in JD
+
+**ats_platform:** smartrecruiters
+
+**ats_job_id:** 744000100089125
+
+**loss_aversion:** No loss aversion framing detected.
+
+**ATS keywords:**
+- Power BI
+- DAX
+- Power Query
+- SSAS
+- dashboard performance tuning
+- data modeling
+- executive-level reporting
+- KPIs
+- user churn
+- app engagement
+- Agile
+- Lean
+- PL-300
