@@ -66,14 +66,14 @@ Working in an agile, cross-functional data product model, this role is accountab
 |-----------|--------|-------|-------|-------|-----------|--------|
 | velocity_vs_rigour | rigour | rigour | rigour | rigour | 100% | ✓ |
 | domain_risk | high | high | high | high | 100% | ✓ |
-| collaboration_width | 9 | 9 | 9 | 10 | 33% | ✓ |
+| collaboration_width | 9 | 10 | 9 | 8 | 0% | ✗ |
 | data_team_maturity | mature | mid | mid | mid | 100% | ✗ |
-| jd_authorship | hiring_manager | hiring_manager | mixed | hiring_manager | 33% | ✓ |
+| jd_authorship | hiring_manager | mixed | hiring_manager | mixed | 33% | ✗ |
 | stakeholder_orientation | internal_data | internal_data | internal_data | internal_data | 100% | ✓ |
 | autonomy_level | strategic | strategic | strategic | strategic | 100% | ✓ |
-| ai_role |  | ai_enabler | none | none | 33% | ✗ |
+| ai_role |  | none | none | none | 100% | ✗ |
 | testing_framing |  | responsibility | responsibility | responsibility | 100% | ✗ |
-| loss_aversion_framing |  | high | moderate | high | 33% | ✗ |
+| loss_aversion_framing |  | high | high | high | 100% | ✗ |
 
 ---
 
@@ -83,115 +83,119 @@ Working in an agile, cross-functional data product model, this role is accountab
 **Manual:** `rigour`
 
 **Run 1:** `rigour` ✓
-> Quote: "ensuring that the data engineers deliver trusted, timely, and high-quality data to enable business and analytical outcomes"
+> Quote: "Implement data quality frameworks and automation across pipelines owned by agile teams."
 > Verified: ✓ found in JD
-> Reasoning: The JD emphasizes data quality, reliability, SLAs/SLOs, governance, and documentation throughout, with no velocity signals such as 'fast-paced' or 'rapid delivery'.
+> Reasoning: The JD emphasizes data quality, reliability, compliance, and governance as core accountability throughout, with no velocity or fast-paced language present.
 
 **Run 2:** `rigour` ✓
-> Quote: "ensuring that the data engineers deliver trusted, timely, and high-quality data to enable business and analytical outcomes"
+> Quote: "Define and monitor data SLAs and SLOs, ensuring that product teams deliver data that meets business needs in terms of timeliness, accuracy, and availability"
 > Verified: ✓ found in JD
-> Reasoning: The role emphasizes trusted, high-quality data delivery with explicit references to SLAs, SLOs, data quality frameworks, observability, and compliance as core accountability dimensions throughout.
+> Reasoning: The JD emphasizes data quality, reliability, governance, and correctness throughout with multiple rigour signals (SLAs, SLOs, quality frameworks, data modeling excellence) and zero velocity signals.
 
 **Run 3:** `rigour` ✓
 > Quote: "Define and monitor data SLAs and SLOs, ensuring that product teams deliver data that meets business needs in terms of timeliness, accuracy, and availability."
 > Verified: ✓ found in JD
-> Reasoning: The JD emphasizes quality frameworks, SLAs/SLOs, data reliability engineering, and accuracy as core responsibilities, with no velocity-oriented language about speed or rapid delivery.
+> Reasoning: The responsibilities emphasize quality, reliability, compliance, and data SLOs as core expectations rather than speed or iteration pace.
 
 ### domain_risk
 **Manual:** `high`
 
 **Run 1:** `high` ✓
-> Quote: "fintech ecosystem in payments, dunning, invoicing, and collections"
-> Verified: ✓ found in JD
-> Reasoning: Fintech operations inherently carry high financial and regulatory risk, compounded by explicit mention of 'regulatory reporting' as a core data modeling requirement.
-
-**Run 2:** `high` ✓
-> Quote: "Ensure that agile data product teams deliver fit-for-purpose data models that meet the needs of analytics, AI, and regulatory reporting"
-> Verified: ✓ found in JD
-> Reasoning: Riverty operates in fintech payments/collections with explicit mention of regulatory reporting, indicating that data errors directly affect financial compliance and regulatory exposure.
-
-**Run 3:** `high` ✓
 > Quote: "Ensure that agile data product teams deliver fit-for-purpose data models that meet the needs of analytics, AI, and regulatory reporting."
 > Verified: ✓ found in JD
-> Reasoning: This is fintech operating in payments and financial services with explicit mention of regulatory reporting; data errors directly affect financial compliance and audit requirements.
+> Reasoning: FinTech sector with explicit regulatory reporting requirement and compliance embedded as core accountability signal high-risk consequences for data errors.
+
+**Run 2:** `high` ✓
+> Quote: "Riverty is a FinTech company...Operates in payments, dunning, invoicing, and collections"
+> Verified: ⚠ NOT found verbatim
+> Reasoning: The role operates in fintech with explicit regulatory reporting responsibilities, placing data errors in the category of financial and compliance risk.
+
+**Run 3:** `high` ✓
+> Quote: "ensuring clear accountability for delivery outcomes (timeliness, quality, completeness, compliance)"
+> Verified: ✓ found in JD
+> Reasoning: Fintech sector combined with explicit compliance language in a regulated payments, dunning, and collections context signals high cost of data errors for regulatory and financial reporting.
 
 ### collaboration_width
 **Manual:** `9`
 
-**Run 1:** `9` ✓
-> Quote: "product owners, BI, data analysis, data science, data platform, and tech teams; Platform Engineering teams; Business IT teams; Data Governance and Data Architecture"
+**Run 1:** `10` ✗
+> Quote: "product owners; BI; data analysis; data science; data platform; tech teams; Platform Engineering teams; Business IT teams; Data Governance; Data Architecture"
 > Verified: ✓ found in JD
-> Reasoning: Nine distinct collaborating functions are named: product owners, BI, data analysis, data science, data platform, tech teams, Business IT, Data Governance, and Data Architecture.
+> Reasoning: The JD names six initial collaboration partners (product owners, BI, data analysis, data science, data platform, tech teams) plus four additional partners (Platform Engineering teams, Business IT teams, Data Governance, Data Architecture) across strategy and collaboration sections.
 
 **Run 2:** `9` ✓
-> Quote: "product owners; BI; data analysis; data science; data platform; tech teams; Platform Engineering teams; Business IT teams; Data Governance; Data Architecture"
+> Quote: "product owners; BI; data analysis; data science; data platform; Platform Engineering teams; Business IT teams; Data Governance; Data Architecture"
 > Verified: ✓ found in JD
-> Reasoning: Nine distinct named partner functions explicitly listed across product, analytics, engineering, infrastructure, and governance domains in the responsibilities section.
+> Reasoning: Nine distinct named teams and functions are explicitly listed across the strategic leadership and collaboration sections.
 
-**Run 3:** `10` ✗
-> Quote: "product owners; BI; data analysis; data science; data platform; tech teams; Platform Engineering teams; Business IT teams; Data Governance; Data Architecture"
+**Run 3:** `8` ✗
+> Quote: "product owners; BI; data analysis; data science; data platform; Business IT teams; Data Governance; Data Architecture"
 > Verified: ✓ found in JD
-> Reasoning: The JD names ten distinct collaboration partners across multiple named functions including product, BI, analytics, data science, data platform, engineering, business IT, data governance, and data architecture.
+> Reasoning: The JD explicitly names eight distinct partner functions: product owners, BI, data analysts, data scientists, data platform/Platform Engineering, Business IT, Data Governance, and Data Architecture.
 
-⚠ **LLM inconsistency**: runs gave ['9', '9', '10']
+⚠ **Disagreement**: manual=`9` vs LLM majority=`10`
+
+⚠ **LLM inconsistency**: runs gave ['10', '9', '8']
 
 ### data_team_maturity
 **Manual:** `mature`
 
 **Run 1:** `mid` ✗
-> Quote: "shared core data platform"
+> Quote: "Establish and continuously improve the operating model for data engineers within agile data product teams, ensuring clear accountability for delivery outcomes"
 > Verified: ✓ found in JD
-> Reasoning: The JD describes an established data platform with named tools (dbt, Airflow, Spark, Databricks) and multiple specialized teams, but is focused on scaling and improving rather than building from zero.
+> Reasoning: The JD describes existing infrastructure, named technologies (dbt, Airflow, Databricks, Medallion architecture), and multiple teams being scaled and improved, indicating mid-stage maturation rather than greenfield or fully mature.
 
 **Run 2:** `mid` ✗
-> Quote: "This leader will build and scale a high-performing data engineering team focused on transforming raw data into trusted, accessible, and reusable assets"
+> Quote: "build and scale a high-performing data engineering team focused on transforming raw data into trusted, accessible, and reusable assets"
 > Verified: ✓ found in JD
-> Reasoning: The role involves scaling an existing multi-team data function with named modern tools (dbt, Airflow, Spark, Databricks), multiple product teams, and an established platform, indicating mid-stage maturity with growth focus.
+> Reasoning: The team is scaling and maturing with specific tools (dbt, Airflow, Databricks) and data-as-product thinking already in place, but not yet at the scale of a highly mature, multi-specialized operation.
 
 **Run 3:** `mid` ✗
 > Quote: "lead, mentor, and grow a high-performing team of data engineers working across multiple agile data product teams"
 > Verified: ✓ found in JD
-> Reasoning: Multiple data sub-teams already exist (BI, data analysis, data science, platform), but the role is about growing and scaling the data engineering discipline rather than building from scratch.
+> Reasoning: Multiple existing teams, named tools with specific context (dbt, Airflow, Spark, Databricks), and the need to scale and improve operating model suggest an established function in growth phase, not building from scratch.
 
 ⚠ **Disagreement**: manual=`mature` vs LLM majority=`mid`
 
 ### jd_authorship
 **Manual:** `hiring_manager`
 
-**Run 1:** `hiring_manager` ✓
-> Quote: "Ensure that agile data product teams deliver fit-for-purpose data models that meet the needs of analytics, AI, and regulatory reporting"
+**Run 1:** `mixed` ✗
+> Quote: "Define and monitor data SLAs and SLOs, ensuring that product teams deliver data that meets business needs in terms of timeliness, accuracy, and availability"
 > Verified: ✓ found in JD
-> Reasoning: The responsibilities contain technical specificity (Medallion architecture, SLAs/SLOs, regulatory reporting, data lineage) and operational context that reflects hands-on domain knowledge rather than recruiter boilerplate.
+> Reasoning: The JD contains specific technical practices (SLAs, SLOs, data quality frameworks, CI/CD for data) suggesting hiring manager input, but most responsibilities use generic action verbs without deep company-specific architectural context.
 
-**Run 2:** `mixed` ✗
+**Run 2:** `hiring_manager` ✓
 > Quote: "Deep experience with cloud-based data lakehouses (Azure cloud, Databricks Medallion architecture)"
 > Verified: ✓ found in JD
-> Reasoning: Requirements show hiring manager specificity (Medallion architecture, precise tool stacks), but responsibilities rely on generic leadership verbs ('drive', 'champion', 'promote') without concrete execution context.
+> Reasoning: Technical specificity including named architecture patterns (Medallion), specific tools in context (dbt, Airflow, Spark), and data SLAs/SLOs indicate someone who has practiced this discipline.
 
-**Run 3:** `hiring_manager` ✓
-> Quote: "Oversee the development of robust ETL/ELT pipelines to ingest and transform data from multiple internal and external sources"
-> Verified: ✓ found in JD
-> Reasoning: The responsibilities contain specific technical practices (ETL/ELT, data quality frameworks, SLAs/SLOs, data modeling) and methodological detail that reflects hands-on understanding of the work rather than generic recruitment language.
+**Run 3:** `mixed` ✗
+> Quote: "Implement data quality frameworks and automation across pipelines owned by agile teams. Define and monitor data SLAs and SLOs."
+> Verified: ⚠ NOT found verbatim
+> Reasoning: Technical specificity around SLAs, SLOs, ETL/ELT pipelines, and data reliability engineering is balanced by generic leadership language like 'Cultivate a culture of ownership' and 'Champion the adoption.'
 
-⚠ **LLM inconsistency**: runs gave ['hiring_manager', 'mixed', 'hiring_manager']
+⚠ **Disagreement**: manual=`hiring_manager` vs LLM majority=`mixed`
+
+⚠ **LLM inconsistency**: runs gave ['mixed', 'hiring_manager', 'mixed']
 
 ### stakeholder_orientation
 **Manual:** `internal_data`
 
 **Run 1:** `internal_data` ✓
-> Quote: "transforming raw data into trusted, accessible, and reusable assets"
+> Quote: "Contribute to the evolution of our data-as-a-product approach, ensuring data products are discoverable, well-documented, and reusable"
 > Verified: ✓ found in JD
-> Reasoning: The role's primary accountability is building infrastructure and standards for the data function itself—BI, analytics, and data science teams—not serving commercial or product stakeholders directly.
+> Reasoning: The role is framed around building and scaling internal data infrastructure and products for consumption by other data functions (analytics, BI, data science teams) rather than serving commercial, product, or finance stakeholders.
 
 **Run 2:** `internal_data` ✓
-> Quote: "Working in an agile, cross-functional data product model, this role is accountable for the results and contributions of the data engineering discipline"
+> Quote: "data pipelines and data products that power analytics, BI, and AI across the fintech ecosystem"
 > Verified: ✓ found in JD
-> Reasoning: Primary accountability is to the data engineering discipline and internal data consumers (BI, data science, analytics), not to commercial, product, or finance end-users.
+> Reasoning: The primary framing emphasizes building a data platform (data-as-product) that internal teams (analytics, BI, data science) consume, with regulatory reporting as a use case of that platform.
 
 **Run 3:** `internal_data` ✓
-> Quote: "Contribute to the evolution of our data-as-a-product approach, ensuring data products are discoverable, well-documented, and reusable."
+> Quote: "power analytics, BI, and AI across the fintech ecosystem"
 > Verified: ✓ found in JD
-> Reasoning: The role primarily serves internal data functions (BI, data science, analytics teams) by building trusted, reusable data products and platforms rather than directly supporting commercial, product, or finance stakeholders.
+> Reasoning: The role is oriented toward building data infrastructure and platforms (data quality frameworks, SLAs, data models, metadata management) that serve analytics, BI, and data science teams—fundamentally internal data function work.
 
 ### autonomy_level
 **Manual:** `strategic`
@@ -199,57 +203,55 @@ Working in an agile, cross-functional data product model, this role is accountab
 **Run 1:** `strategic` ✓
 > Quote: "Define and execute the data engineering vision and roadmap aligned with the overall Data, AI & Analytics strategy"
 > Verified: ✓ found in JD
-> Reasoning: The role is explicitly expected to define strategy, establish operating models, champion practices, and drive standards, not execute work scoped by others.
+> Reasoning: The role is structured around setting direction (define, establish, shape) and leading teams rather than executing priorities set by others, with accountability for outcomes and team development.
 
 **Run 2:** `strategic` ✓
 > Quote: "Define and execute the data engineering vision and roadmap aligned with the overall Data, AI & Analytics strategy"
 > Verified: ✓ found in JD
-> Reasoning: 'Define and execute the vision' places direction-setting and strategic ownership at the core of the role rather than execution of others' priorities.
+> Reasoning: The role is expected to set direction, define vision, establish operating models, and shape the evolution of the data platform rather than execute direction set by others.
 
 **Run 3:** `strategic` ✓
 > Quote: "Define and execute the data engineering vision and roadmap aligned with the overall Data, AI & Analytics strategy."
 > Verified: ✓ found in JD
-> Reasoning: The role is expected to define vision, establish operating models, champion practices, and set technical standards—shaping the discipline rather than executing direction set by others.
+> Reasoning: The role explicitly sets direction through defining vision, roadmap, and operating model, rather than executing priorities set by others.
 
 ### ai_role
 **Manual:** ``
 
-**Run 1:** `ai_enabler` ✗
-> Quote: "power analytics, BI, and AI across the fintech ecosystem"
+**Run 1:** `none` ✗
+> Quote: "No AI skill signal."
 > Verified: ✓ found in JD
-> Reasoning: The candidate must architect data infrastructure that AI systems consume, not demonstrate personal AI tool usage for coding or productivity.
+> Reasoning: Although AI is mentioned as a data consumer and one vague reference to 'AI-based productivity increases' appears, the JD does not explicitly require the candidate to demonstrate any AI coding skill, build AI infrastructure, or use AI tools.
 
 **Run 2:** `none` ✗
 > Quote: "No AI skill signal."
 > Verified: ✓ found in JD
-> Reasoning: While the company works with AI systems and mentions 'AI-based productivity increases', there is no explicit requirement for the candidate to demonstrate AI coding tool usage, AI-assisted workflows, or AI data infrastructure skills.
+> Reasoning: While AI is mentioned as a use case for data pipelines, there is no expectation that the candidate demonstrate AI coding tool usage or AI infrastructure skills.
 
 **Run 3:** `none` ✗
-> Quote: "No AI skill signal."
+> Quote: "Ensure that agile data product teams deliver fit-for-purpose data models that meet the needs of analytics, AI, and regulatory reporting"
 > Verified: ✓ found in JD
-> Reasoning: While the company operates in fintech and mentions AI products, the JD contains no expectation that the candidate use AI tools for personal productivity or build AI-specific data infrastructure.
+> Reasoning: While AI is mentioned as a stakeholder for data models, there is no expectation for AI-focused candidate skills, AI coding tools, or building AI-specific data infrastructure.
 
 ⚠ **Disagreement**: manual=`` vs LLM majority=`none`
-
-⚠ **LLM inconsistency**: runs gave ['ai_enabler', 'none', 'none']
 
 ### testing_framing
 **Manual:** ``
 
 **Run 1:** `responsibility` ✗
-> Quote: "Implement data quality frameworks and automation across pipelines owned by agile teams"
+> Quote: "Implement data quality frameworks and automation across pipelines owned by agile teams."
 > Verified: ✓ found in JD
-> Reasoning: Data quality and reliability are framed as owned responsibilities with action verbs ('implement', 'define', 'monitor', 'promote'), not as tools or skills to apply.
+> Reasoning: Data quality and testing are framed as something the candidate owns and defines through implementation verbs, not just listed as tools in requirements.
 
 **Run 2:** `responsibility` ✗
 > Quote: "Implement data quality frameworks and automation across pipelines owned by agile teams"
 > Verified: ✓ found in JD
-> Reasoning: Data quality, observability, SLAs/SLOs, and reliability engineering are framed as practices the candidate owns, defines, and implements rather than skills to possess.
+> Reasoning: Data quality frameworks and SLOs are framed as responsibilities the lead owns and defines, not as existing tools to use.
 
 **Run 3:** `responsibility` ✗
 > Quote: "Implement data quality frameworks and automation across pipelines owned by agile teams."
 > Verified: ✓ found in JD
-> Reasoning: Data quality and testing are framed as responsibilities the candidate owns and defines through active verbs (implement, define, promote), not merely as tools listed in a skill set.
+> Reasoning: Data quality and reliability frameworks are owned as core responsibilities to implement and define, not listed as tools to learn.
 
 ⚠ **Disagreement**: manual=`` vs LLM majority=`responsibility`
 
@@ -257,20 +259,18 @@ Working in an agile, cross-functional data product model, this role is accountab
 **Manual:** ``
 
 **Run 1:** `high` ✗
-> Quote: "ensuring that the data engineers deliver trusted, timely, and high-quality data to enable business and analytical outcomes"
-> Verified: ✓ found in JD
-> Reasoning: The JD repeatedly emphasizes trust, quality, and regulatory compliance in a fintech context where data errors directly impact financial decisions and regulatory standing.
-
-**Run 2:** `moderate` ✗
 > Quote: "ensuring clear accountability for delivery outcomes (timeliness, quality, completeness, compliance)"
 > Verified: ✓ found in JD
-> Reasoning: Compliance appears as one delivery accountability alongside timeliness and quality; operational reliability is central, but the role frames around building quality systems rather than preventing regulatory violations or trust damage.
+> Reasoning: Compliance is named as a core accountability alongside quality and timeliness, reflecting the fintech regulatory context and framing risk to stakeholder trust and regulatory exposure as central to the role.
+
+**Run 2:** `high` ✗
+> Quote: "transforming raw data into trusted, accessible, and reusable assets — ensuring that the broader organization can make faster and smarter decisions"
+> Verified: ✓ found in JD
+> Reasoning: The role is framed around trust and regulatory compliance in a fintech/payments context where data errors carry financial and regulatory consequences, reflecting strong loss aversion.
 
 **Run 3:** `high` ✗
-> Quote: "ensuring that the data engineers deliver trusted, timely, and high-quality data to enable business and analytical outcomes"
+> Quote: "ensuring clear accountability for delivery outcomes (timeliness, quality, completeness, compliance)"
 > Verified: ✓ found in JD
-> Reasoning: The JD emphasizes preventing bad outcomes through repeated focus on trust, quality, reliability engineering, regulatory compliance, and SLOs—reflecting fintech's inherent regulatory and financial risk.
+> Reasoning: The FinTech sector combined with explicit compliance language, dedicated Data Quality & Reliability section, and repeated emphasis on SLAs, SLOs, and proactive reliability engineering signal strong loss-aversion framing around regulatory exposure and data accuracy.
 
 ⚠ **Disagreement**: manual=`` vs LLM majority=`high`
-
-⚠ **LLM inconsistency**: runs gave ['high', 'moderate', 'high']
