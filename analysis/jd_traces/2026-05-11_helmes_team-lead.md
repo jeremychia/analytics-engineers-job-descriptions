@@ -62,13 +62,13 @@ None listed.
 
 | Dimension | Manual | Run 1 | Run 2 | Run 3 | Agreement | Match? |
 |-----------|--------|-------|-------|-------|-----------|--------|
-| velocity_vs_rigour | rigour | velocity | velocity | rigour | 33% | ✗ |
-| domain_risk | low | moderate | moderate | low | 33% | ✗ |
+| velocity_vs_rigour | rigour | rigour | rigour | rigour | 100% | ✓ |
+| domain_risk | low | moderate | moderate | moderate | 100% | ✗ |
 | collaboration_width | 2 | 2 | 2 | 2 | 100% | ✓ |
-| data_team_maturity | early | mid | mature | mid | 33% | ✗ |
+| data_team_maturity | early | mid | early | early | 33% | ✓ |
 | jd_authorship | recruiter | recruiter | recruiter | recruiter | 100% | ✓ |
-| stakeholder_orientation | commercial | mixed | commercial | commercial | 33% | ✓ |
-| autonomy_level | mixed | mixed | strategic | strategic | 33% | ✗ |
+| stakeholder_orientation | commercial | commercial | commercial | commercial | 100% | ✓ |
+| autonomy_level | mixed | mixed | strategic | execution | 0% | ✓ |
 | ai_role |  | none | none | none | 100% | ✗ |
 | testing_framing |  | absent | absent | absent | 100% | ✗ |
 | loss_aversion_framing |  | none | none | none | 100% | ✗ |
@@ -80,24 +80,20 @@ None listed.
 ### velocity_vs_rigour
 **Manual:** `rigour`
 
-**Run 1:** `velocity` ✗
-> Quote: "Develop client relationships and seek new opportunities; Support sales and client acquisition"
+**Run 1:** `rigour` ✓
+> Quote: "Monitor performance and continuously improve work methods"
 > Verified: ✓ found in JD
-> Reasoning: The JD emphasizes business development, client acquisition, and sales support as core responsibilities, signaling a commercially-driven, opportunity-capture orientation rather than governance or quality emphasis.
+> Reasoning: The JD emphasizes continuous improvement and monitoring as core management responsibilities with no explicit velocity signals like "fast-paced" or rapid delivery.
 
-**Run 2:** `velocity` ✗
-> Quote: "Develop client relationships and seek new opportunities"
+**Run 2:** `rigour` ✓
+> Quote: "Monitor performance and continuously improve work methods"
 > Verified: ✓ found in JD
-> Reasoning: The responsibilities emphasize client acquisition, business growth, and sales support over data quality, testing, or governance frameworks.
+> Reasoning: The emphasis on continuous improvement and performance monitoring reflects an operational quality and reliability focus rather than delivery speed.
 
 **Run 3:** `rigour` ✓
 > Quote: "Monitor performance and continuously improve work methods"
 > Verified: ✓ found in JD
-> Reasoning: The JD contains no velocity signals but emphasizes continuous improvement and accurate financial management, suggesting a quality/correctness orientation.
-
-⚠ **Disagreement**: manual=`rigour` vs LLM majority=`velocity`
-
-⚠ **LLM inconsistency**: runs gave ['velocity', 'velocity', 'rigour']
+> Reasoning: The emphasis on continuous improvement of work methods signals a quality/process-oriented approach rather than speed-focused delivery.
 
 ### domain_risk
 **Manual:** `low`
@@ -105,121 +101,113 @@ None listed.
 **Run 1:** `moderate` ✗
 > Quote: "Manage finances (billing, reporting)"
 > Verified: ✓ found in JD
-> Reasoning: The role involves financial management and client relationships but does not reference regulatory compliance, financial reporting, or mission-critical systems that would elevate risk to high.
+> Reasoning: The role involves financial responsibility and client-facing software development work, indicating moderate business impact without explicit regulatory or high-risk sector signals.
 
 **Run 2:** `moderate` ✗
-> Quote: "Serve as primary contact for both clients and team"
+> Quote: "Manage finances (billing, reporting)"
 > Verified: ✓ found in JD
-> Reasoning: Client deliverables and team management affect business outcomes but lack explicit financial reporting, regulatory, or compliance risk language.
+> Reasoning: Unit-level financial responsibility creates moderate business risk, but this is not a regulated, financial, or high-consequence domain.
 
-**Run 3:** `low` ✓
-> Quote: "Lead software development teams and projects"
+**Run 3:** `moderate` ✗
+> Quote: "Develop client relationships and seek new opportunities; Support sales and client acquisition"
 > Verified: ✓ found in JD
-> Reasoning: This role is general software development team management with no signals of financial reporting impact, regulatory compliance, or mission-critical data consequences.
+> Reasoning: Bad decisions affect client satisfaction and revenue outcomes, but without explicit regulatory or compliance concerns, this reflects moderate business risk rather than high-stakes financial or regulatory exposure.
 
 ⚠ **Disagreement**: manual=`low` vs LLM majority=`moderate`
-
-⚠ **LLM inconsistency**: runs gave ['moderate', 'moderate', 'low']
 
 ### collaboration_width
 **Manual:** `2`
 
 **Run 1:** `2` ✓
-> Quote: "Serve as primary contact for both clients and team; Support sales and client acquisition"
+> Quote: "clients; sales"
 > Verified: ✓ found in JD
-> Reasoning: Clients are explicitly named as an external collaboration partner, and sales is referenced as a distinct function the role supports.
+> Reasoning: The JD explicitly names two distinct collaboration partners: clients (primary contact and relationship development) and sales (client acquisition support).
 
 **Run 2:** `2` ✓
 > Quote: "Serve as primary contact for both clients and team; Support sales and client acquisition"
 > Verified: ✓ found in JD
-> Reasoning: Named collaborators are clients (external parties) and sales (internal function).
+> Reasoning: Two distinct named collaborators are explicitly identified: clients (external party) and sales (named function).
 
 **Run 3:** `2` ✓
-> Quote: "clients; sales"
+> Quote: "Serve as primary contact for both clients and team; Support sales and client acquisition"
 > Verified: ✓ found in JD
-> Reasoning: Two named collaboration partners explicitly identified: clients and sales.
+> Reasoning: Two named partner functions: Clients (external parties explicitly named as collaboration partners) and Sales (named organizational function).
 
 ### data_team_maturity
 **Manual:** `early`
 
 **Run 1:** `mid` ✗
-> Quote: "Lead software development teams and projects"
-> Verified: ✓ found in JD
-> Reasoning: The role assumes an existing team structure and process framework rather than building from zero or operating at massive scale, suggesting a mid-stage organization.
-
-**Run 2:** `mature` ✗
-> Quote: "Modern offices in Tallinn and Tartu"
-> Verified: ✓ found in JD
-> Reasoning: Multiple established operational sites indicate a mature, scaled organization, though this is a software development team rather than a data team.
-
-**Run 3:** `mid` ✗
 > Quote: "Contribute to process and tool development"
 > Verified: ✓ found in JD
-> Reasoning: The mention of contributing to process and tool development signals existing infrastructure being actively enhanced, characteristic of mid-stage organizations.
+> Reasoning: The organization has established teams and operations across multiple offices but actively develops processes and tools, indicating ongoing infrastructure work typical of mid-stage teams.
 
-⚠ **Disagreement**: manual=`early` vs LLM majority=`mid`
+**Run 2:** `early` ✓
+> Quote: "Contribute to process and tool development"
+> Verified: ✓ found in JD
+> Reasoning: No established data infrastructure or team is mentioned; this is a general software development leadership role with no data-specific signals.
 
-⚠ **LLM inconsistency**: runs gave ['mid', 'mature', 'mid']
+**Run 3:** `early` ✓
+> Quote: "Contribute to process and tool development"
+> Verified: ✓ found in JD
+> Reasoning: The minimal infrastructure and process language combined with no data-specific mention suggests a small software company in early organizational maturity stages.
+
+⚠ **LLM inconsistency**: runs gave ['mid', 'early', 'early']
 
 ### jd_authorship
 **Manual:** `recruiter`
 
 **Run 1:** `recruiter` ✓
-> Quote: "Inspire and develop team members; Provide resources (technology, skills, capacity) for success"
+> Quote: "Lead software development teams and projects; Inspire and develop team members; Provide resources (technology, skills, capacity) for success"
 > Verified: ✓ found in JD
-> Reasoning: Responsibilities contain generic action verbs and boilerplate language with no named tools, specific context, or domain-specific methodology beyond generic team leadership.
+> Reasoning: The responsibilities use generic, boilerplate action verbs with no technical specificity, tool names with context, or scale details that would indicate someone with direct experience writing this role.
 
 **Run 2:** `recruiter` ✓
-> Quote: "Lead software development teams and projects; Inspire and develop team members; Monitor performance and continuously improve work methods"
+> Quote: "Lead software development teams and projects; Inspire and develop team members"
 > Verified: ✓ found in JD
-> Reasoning: Responsibilities consist of generic leadership action verbs without technical specificity about the domain, tools, methodologies, or unique challenges of the role.
+> Reasoning: Generic boilerplate action verbs with no technical specificity, tool context, scale, or domain-specific detail indicate recruiter authorship.
 
 **Run 3:** `recruiter` ✓
-> Quote: "Lead software development teams and projects"
+> Quote: "Lead software development teams and projects; Inspire and develop team members; Provide resources (technology, skills, capacity) for success"
 > Verified: ✓ found in JD
-> Reasoning: Responsibilities rely almost entirely on generic action verbs with minimal technical context, scope specificity, or methodology detail.
+> Reasoning: Responsibilities rely entirely on generic boilerplate action verbs and lack the technical specificity (named tools, scale metrics, or precise methodologies) that would indicate a hiring manager wrote this.
 
 ### stakeholder_orientation
 **Manual:** `commercial`
 
-**Run 1:** `mixed` ✗
-> Quote: "Serve as primary contact for both clients and team; Develop client relationships and seek new opportunities; Support sales and client acquisition"
+**Run 1:** `commercial` ✓
+> Quote: "Develop client relationships and seek new opportunities; Support sales and client acquisition"
 > Verified: ✓ found in JD
-> Reasoning: The role genuinely balances commercial stakeholders (clients, sales support) with internal product/engineering team development with roughly equal emphasis.
+> Reasoning: The primary orientation is toward clients and sales support, which are clearly commercial/GTM-focused audiences.
 
 **Run 2:** `commercial` ✓
 > Quote: "Develop client relationships and seek new opportunities; Support sales and client acquisition"
 > Verified: ✓ found in JD
-> Reasoning: The role's primary emphasis is on client relationships, business development, and sales support aligned with commercial and GTM functions.
+> Reasoning: The role's primary responsibilities focus on client relationships, business development, and supporting sales/commercial functions.
 
 **Run 3:** `commercial` ✓
 > Quote: "Develop client relationships and seek new opportunities; Support sales and client acquisition"
 > Verified: ✓ found in JD
-> Reasoning: Primary emphasis is on external client relationships, sales support, and business development, indicating a commercial GTM orientation.
-
-⚠ **LLM inconsistency**: runs gave ['mixed', 'commercial', 'commercial']
+> Reasoning: The role is positioned as a bridge to clients and sales, with explicit emphasis on client relationship development and sales support, reflecting commercial stakeholder orientation.
 
 ### autonomy_level
 **Manual:** `mixed`
 
 **Run 1:** `mixed` ✓
-> Quote: "Lead software development teams and projects; Monitor performance and continuously improve work methods; Develop client relationships and seek new opportunities"
+> Quote: "Lead software development teams and projects; Support sales and client acquisition"
 > Verified: ✓ found in JD
-> Reasoning: The role combines strategic elements (leading teams, developing client relationships, improving methods) with execution elements (managing finances, serving as contact, supporting sales).
+> Reasoning: The role genuinely combines strategic leadership verbs (lead, develop relationships, seek opportunities) with execution verbs (support, manage, serve), indicating both direction-setting and execution responsibilities.
 
 **Run 2:** `strategic` ✗
-> Quote: "Lead software development teams and projects"
+> Quote: "Develop client relationships and seek new opportunities; Monitor performance and continuously improve work methods"
 > Verified: ✓ found in JD
-> Reasoning: The role is expected to lead teams, inspire members, define improvements, and shape processes, indicating strategic autonomy rather than execution.
+> Reasoning: The role expects the person to set direction (define improvements, identify opportunities) rather than execute predetermined work.
 
-**Run 3:** `strategic` ✗
-> Quote: "Lead software development teams and projects"
+**Run 3:** `execution` ✗
+> Quote: "Support sales and client acquisition; Serve as primary contact for both clients and team"
 > Verified: ✓ found in JD
-> Reasoning: Core verbs are strategic (lead, manage, develop) with only peripheral execution elements, and the role title indicates strategic team leadership autonomy.
+> Reasoning: Support and service-oriented language frames this as execution of a defined role within organizational structures rather than strategic direction-setting.
 
-⚠ **Disagreement**: manual=`mixed` vs LLM majority=`strategic`
-
-⚠ **LLM inconsistency**: runs gave ['mixed', 'strategic', 'strategic']
+⚠ **LLM inconsistency**: runs gave ['mixed', 'strategic', 'execution']
 
 ### ai_role
 **Manual:** ``
@@ -232,12 +220,12 @@ None listed.
 **Run 2:** `none` ✗
 > Quote: "No AI skill signal."
 > Verified: ✓ found in JD
-> Reasoning: The JD contains no mention of AI tools, GenAI products, or AI-assisted development expected of the candidate.
+> Reasoning: There is no mention of AI tools, coding assistance frameworks, or AI-powered data infrastructure anywhere in the job description.
 
 **Run 3:** `none` ✗
 > Quote: "No AI skill signal."
 > Verified: ✓ found in JD
-> Reasoning: No mention of AI tools, coding assistance, AI-enabled data infrastructure, or any AI capability expectation appears in the JD.
+> Reasoning: The JD contains no mention of AI coding tools, AI-assisted workflows, or AI infrastructure expectations for the candidate.
 
 ⚠ **Disagreement**: manual=`` vs LLM majority=`none`
 
@@ -245,19 +233,19 @@ None listed.
 **Manual:** ``
 
 **Run 1:** `absent` ✗
-> Quote: "No testing, data quality, or observability signal."
+> Quote: "No testing or quality framework is mentioned."
 > Verified: ⚠ NOT found verbatim
-> Reasoning: The JD does not reference testing practices, data quality frameworks, or observability tools anywhere in the responsibilities or requirements.
+> Reasoning: The JD contains no reference to testing, data quality, observability, or quality frameworks in either responsibilities or requirements.
 
 **Run 2:** `absent` ✗
-> Quote: "No testing signal."
+> Quote: "No testing or data quality signal mentioned."
 > Verified: ⚠ NOT found verbatim
-> Reasoning: There is no mention of testing frameworks, data quality practices, observability, or quality assurance approaches.
+> Reasoning: This management role contains no mention of testing, data quality, observability, or quality assurance frameworks.
 
 **Run 3:** `absent` ✗
-> Quote: "No testing responsibility signal."
+> Quote: "No testing, data quality, or observability signal appears in the JD."
 > Verified: ⚠ NOT found verbatim
-> Reasoning: No mention of testing practices, data quality frameworks, observability, or quality assurance responsibilities appears in the JD.
+> Reasoning: Testing, data quality frameworks, and reliability practices are completely absent from both responsibilities and requirements sections.
 
 ⚠ **Disagreement**: manual=`` vs LLM majority=`absent`
 
@@ -267,16 +255,16 @@ None listed.
 **Run 1:** `none` ✗
 > Quote: "No loss aversion framing."
 > Verified: ✓ found in JD
-> Reasoning: The JD frames the role in delivery and team development terms with no mention of risk, compliance, reliability, or prevention of adverse outcomes.
+> Reasoning: The JD is framed around delivery, team management, and client relationships with no language around risk, compliance, or preventing bad outcomes.
 
 **Run 2:** `none` ✗
 > Quote: "No loss aversion framing."
 > Verified: ✓ found in JD
-> Reasoning: The JD frames the role around leadership, client relationships, and business growth rather than risk prevention, compliance, or trustworthiness.
+> Reasoning: The JD frames the role in leadership and capability terms without explicit emphasis on preventing bad outcomes, compliance, risk, or stakeholder trust.
 
 **Run 3:** `none` ✗
-> Quote: "Inspire and develop team members; Provide resources (technology, skills, capacity) for success"
+> Quote: "Caring work environment, where you can grow, take responsibility and have real impact"
 > Verified: ✓ found in JD
-> Reasoning: JD is framed entirely in positive delivery and capability terms with no risk, compliance, reliability, or loss-prevention language.
+> Reasoning: The JD is framed entirely in capability and growth terms with no risk register, compliance concerns, or stakeholder-trust-oriented language.
 
 ⚠ **Disagreement**: manual=`` vs LLM majority=`none`

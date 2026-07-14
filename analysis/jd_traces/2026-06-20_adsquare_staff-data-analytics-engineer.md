@@ -66,7 +66,7 @@
 | domain_risk | high | moderate | moderate | moderate | 100% | ✗ |
 | collaboration_width | 3 | 0 | 0 | 0 | 100% | ✗ |
 | data_team_maturity | mature | mid | mid | mid | 100% | ✗ |
-| jd_authorship | hiring_manager | hiring_manager | mixed | hiring_manager | 33% | ✓ |
+| jd_authorship | hiring_manager | hiring_manager | hiring_manager | hiring_manager | 100% | ✓ |
 | stakeholder_orientation | internal_data | internal_data | internal_data | internal_data | 100% | ✓ |
 | autonomy_level | strategic | strategic | strategic | strategic | 100% | ✓ |
 | ai_role |  | none | none | none | 100% | ✗ |
@@ -83,17 +83,17 @@
 **Run 1:** `rigour` ✓
 > Quote: "Champion software engineering principles including TDD and CI/CD workflows"
 > Verified: ✓ found in JD
-> Reasoning: The responsibilities emphasize test-driven development, continuous integration/deployment, code reviews, and production-grade quality over speed or iteration velocity.
+> Reasoning: The responsibilities section emphasizes TDD, CI/CD, production-grade solutions, and monitoring frameworks with no velocity language present.
 
 **Run 2:** `rigour` ✓
 > Quote: "Champion software engineering principles including TDD and CI/CD workflows"
 > Verified: ✓ found in JD
-> Reasoning: The JD emphasizes production-grade solutions, testing practices, and monitoring frameworks as core responsibilities with no velocity or speed-oriented language present.
+> Reasoning: Multiple emphases on TDD, CI/CD, monitoring, production-grade quality, and code mentoring throughout the JD with no velocity or speed language signal rigour orientation.
 
 **Run 3:** `rigour` ✓
 > Quote: "Champion software engineering principles including TDD and CI/CD workflows"
 > Verified: ✓ found in JD
-> Reasoning: The responsibilities emphasize TDD, CI/CD, and production-grade quality as core expectations with zero velocity language like 'fast-paced' or 'ship quickly'.
+> Reasoning: The responsibilities emphasize software engineering practices, testing, and production-grade solutions without any velocity-oriented language like speed or rapid delivery.
 
 ### domain_risk
 **Manual:** `high`
@@ -101,17 +101,17 @@
 **Run 1:** `moderate` ✗
 > Quote: "Build data products leveraging location signals and audience attributes"
 > Verified: ✓ found in JD
-> Reasoning: The role involves adtech/location intelligence where data accuracy affects business operations and product effectiveness, but lacks explicit financial reporting, regulatory, or compliance framing.
+> Reasoning: Ad tech data products affect marketing and business decisions but lack explicit financial reporting, compliance, or regulatory language that would signal high risk.
 
 **Run 2:** `moderate` ✗
 > Quote: "Build data products leveraging location signals and audience attributes"
 > Verified: ✓ found in JD
-> Reasoning: The ad-tech domain is data-driven but lacks explicit financial reporting, compliance, or regulatory language that would signal high risk.
+> Reasoning: Adtech data products for business/marketing decisions without regulatory, compliance, or financial reporting language indicate moderate rather than high risk.
 
 **Run 3:** `moderate` ✗
-> Quote: "Design horizontally scalable, cost-efficient, production-grade data solutions for handling massive datasets"
+> Quote: "Build data products leveraging location signals and audience attributes"
 > Verified: ✓ found in JD
-> Reasoning: Production-scale data infrastructure affects business decisions but lacks explicit financial reporting, compliance, or regulatory framing that would elevate to high risk.
+> Reasoning: The role builds data products for audience attribution without explicit financial, regulatory, or compliance language, indicating moderate business impact rather than high-risk governance.
 
 ⚠ **Disagreement**: manual=`high` vs LLM majority=`moderate`
 
@@ -119,19 +119,19 @@
 **Manual:** `3`
 
 **Run 1:** `0` ✗
-> Quote: "Drive technical alignment across multiple teams"
+> Quote: "cross-squad collaboration; Drive technical alignment across multiple teams"
 > Verified: ✓ found in JD
-> Reasoning: The JD references collaboration with squads and multiple teams but does not explicitly name distinct partner functions like Finance, Product, Marketing, or Sales.
+> Reasoning: References to teams are generic ('squad', 'multiple teams', 'engineers') without naming specific functions like Finance, Product, Marketing, or Data Science.
 
 **Run 2:** `0` ✗
-> Quote: "No named partner teams or functions identified"
-> Verified: ⚠ NOT found verbatim
-> Reasoning: The JD mentions cross-squad and cross-team collaboration but does not name specific functions like Finance, Product, or other explicit partner teams.
+> Quote: "driving cross-squad collaboration; Drive technical alignment across multiple teams"
+> Verified: ✓ found in JD
+> Reasoning: Cross-team collaboration is mentioned but no specific named business functions (Finance, Product, Marketing, etc.) or named data teams are explicitly identified.
 
 **Run 3:** `0` ✗
 > Quote: "Drive technical alignment across multiple teams"
 > Verified: ✓ found in JD
-> Reasoning: Multiple teams are referenced but no specific named functions or teams are identified as collaboration partners.
+> Reasoning: While the role collaborates across teams, no distinct named partner functions (Finance, Product, Marketing, etc.) are explicitly listed as required collaborators.
 
 ⚠ **Disagreement**: manual=`3` vs LLM majority=`0`
 
@@ -141,17 +141,17 @@
 **Run 1:** `mid` ✗
 > Quote: "Establish monitoring frameworks for multi-terabyte data streams"
 > Verified: ✓ found in JD
-> Reasoning: The explicit mention of large-scale infrastructure (multi-terabyte streams) and established squad structure indicates a growing data function with existing complexity beyond early-stage greenfield work.
+> Reasoning: Multi-terabyte scale infrastructure already exists, multiple engineers require mentoring, and specific deployment of tools like dbt, Spark, and Snowflake indicate an established but growing data function.
 
 **Run 2:** `mid` ✗
-> Quote: "Design horizontally scalable, cost-efficient, production-grade data solutions for handling massive datasets"
+> Quote: "Act as technical lead for a squad, making architectural decisions and driving cross-squad collaboration; Mentor engineers through code reviews and pair programming"
 > Verified: ✓ found in JD
-> Reasoning: Existing infrastructure and scale (massive datasets) are implied, with multiple named tools and team structures in place, but the scope is a single squad with cross-team alignment responsibility.
+> Reasoning: Existing team structure with multiple engineers and established data infrastructure (Snowflake, Redshift, Spark, dbt) implies developing organization rather than early-stage greenfield.
 
 **Run 3:** `mid` ✗
 > Quote: "Act as technical lead for a squad, making architectural decisions and driving cross-squad collaboration"
 > Verified: ✓ found in JD
-> Reasoning: Leadership of an existing squad with cross-squad collaboration implies an established, growing data function beyond early-stage greenfield work.
+> Reasoning: The role leads an existing squad within a multi-team structure with established tooling, indicating a maturing data function with multiple sub-teams rather than early-stage or mature scale.
 
 ⚠ **Disagreement**: manual=`mature` vs LLM majority=`mid`
 
@@ -159,21 +159,19 @@
 **Manual:** `hiring_manager`
 
 **Run 1:** `hiring_manager` ✓
-> Quote: "Establish monitoring frameworks for multi-terabyte data streams"
+> Quote: "Hands-on experience with geo-spatial data, audience attributes, and time-series datasets"
 > Verified: ✓ found in JD
-> Reasoning: The combination of specific scale metrics (multi-terabyte), precise technical practices (monitoring frameworks), and contextual tool listings throughout indicates someone with deep domain knowledge wrote the JD.
+> Reasoning: Domain-specific data types (geo-spatial, audience attributes, time-series), named tool stack (Snowflake, Redshift, Athena, StarRocks, Iceberg, Spark, dbt), and multi-terabyte scale metrics reveal technical specificity only a hiring manager would include.
 
-**Run 2:** `mixed` ✗
-> Quote: "Act as technical lead for a squad, making architectural decisions and driving cross-squad collaboration"
+**Run 2:** `hiring_manager` ✓
+> Quote: "Hands-on experience with geo-spatial data, audience attributes, and time-series datasets; Deep knowledge of scalable data architectures (Snowflake, Redshift, Athena, StarRocks, Iceberg); Extensive experience with Apache Spark, PySpark, and AWS EMR"
 > Verified: ✓ found in JD
-> Reasoning: The responsibilities combine domain-specific technical concerns (architectural decisions, production-grade systems) with generic leadership boilerplate (drive collaboration), indicating mixed authorship.
+> Reasoning: Multiple named tools with specific architectural choices and domain-specific data types (geo-spatial, audience attributes) show technical depth only someone with hands-on experience could specify.
 
 **Run 3:** `hiring_manager` ✓
-> Quote: "Build data products leveraging location signals and audience attributes"
+> Quote: "Design horizontally scalable, cost-efficient, production-grade data solutions for handling massive datasets"
 > Verified: ✓ found in JD
-> Reasoning: Specific domain knowledge (location signals, audience attributes) tied to the unique technical context indicates hiring manager rather than generic recruiter language.
-
-⚠ **LLM inconsistency**: runs gave ['hiring_manager', 'mixed', 'hiring_manager']
+> Reasoning: The responsibilities contain specific architectural requirements (horizontal scalability, cost-efficiency), technology context (Snowflake, Spark, dbt), and scale metrics (massive datasets, multi-terabyte) that only someone doing this work would articulate.
 
 ### stakeholder_orientation
 **Manual:** `internal_data`
@@ -181,35 +179,35 @@
 **Run 1:** `internal_data` ✓
 > Quote: "Act as technical lead for a squad, making architectural decisions and driving cross-squad collaboration"
 > Verified: ✓ found in JD
-> Reasoning: The role's primary responsibilities emphasize technical leadership within the data function, mentoring engineers, and architectural decisions for infrastructure rather than serving commercial, product, or finance teams.
+> Reasoning: The role's primary framing emphasizes technical leadership, mentoring engineers, and establishing internal infrastructure rather than serving commercial or business teams directly.
 
 **Run 2:** `internal_data` ✓
-> Quote: "Mentor engineers through code reviews and pair programming"
+> Quote: "Act as technical lead for a squad, making architectural decisions and driving cross-squad collaboration"
 > Verified: ✓ found in JD
-> Reasoning: The role focuses on mentoring and leading the internal data team rather than serving commercial, product, or finance functions.
+> Reasoning: Primary emphasis on technical leadership, mentoring engineers, and establishing data infrastructure indicates the role serves the data/engineering organization itself rather than external commercial or product stakeholders.
 
 **Run 3:** `internal_data` ✓
 > Quote: "Act as technical lead for a squad, making architectural decisions and driving cross-squad collaboration"
 > Verified: ✓ found in JD
-> Reasoning: The role is framed around technical leadership, engineering mentorship, and platform architecture rather than serving commercial, product, or finance teams explicitly.
+> Reasoning: The role is framed as technical leadership building data infrastructure and mentoring engineers within the data function, not serving commercial, product, or finance stakeholders directly.
 
 ### autonomy_level
 **Manual:** `strategic`
 
 **Run 1:** `strategic` ✓
-> Quote: "Act as technical lead for a squad, making architectural decisions"
+> Quote: "making architectural decisions and driving cross-squad collaboration"
 > Verified: ✓ found in JD
-> Reasoning: The explicit framing around making architectural decisions and acting as technical lead indicates strategic autonomy to define technical direction rather than execute predefined work.
+> Reasoning: The role is framed as a technical lead setting direction through architectural decisions, technical alignment, and establishing monitoring frameworks rather than executing against defined priorities.
 
 **Run 2:** `strategic` ✓
-> Quote: "Act as technical lead for a squad, making architectural decisions and driving cross-squad collaboration"
+> Quote: "Act as technical lead for a squad, making architectural decisions"
 > Verified: ✓ found in JD
-> Reasoning: The role expects the candidate to define architecture and drive technical alignment across teams, not execute pre-scoped work.
+> Reasoning: The role is expected to make architectural decisions and drive technical direction across multiple teams rather than execute work scoped by others.
 
 **Run 3:** `strategic` ✓
 > Quote: "making architectural decisions and driving cross-squad collaboration"
 > Verified: ✓ found in JD
-> Reasoning: Architectural decision-making and cross-squad alignment authority indicates the role sets technical direction rather than executing direction set by others.
+> Reasoning: The role is expected to make architectural decisions and establish practices, indicating strategic autonomy in shaping the data platform rather than executing direction set by others.
 
 ### ai_role
 **Manual:** ``
@@ -217,17 +215,17 @@
 **Run 1:** `none` ✗
 > Quote: "No AI skill signal."
 > Verified: ✓ found in JD
-> Reasoning: The JD contains no mention of AI tools, GenAI applications, or AI skill expectations for the candidate.
+> Reasoning: The JD contains no mention of AI coding tools, AI-ready data infrastructure, or AI application development as a candidate expectation.
 
 **Run 2:** `none` ✗
 > Quote: "No AI skill signal."
 > Verified: ✓ found in JD
-> Reasoning: There is no mention of AI coding tools, AI-assisted workflows, or AI data infrastructure anywhere in the job description.
+> Reasoning: The JD contains no expectations for candidate AI tool usage, AI-assisted development, or building AI-ready data infrastructure.
 
 **Run 3:** `none` ✗
 > Quote: "No AI skill signal."
 > Verified: ✓ found in JD
-> Reasoning: No expectation that the candidate demonstrate AI coding tools, AI infrastructure, or any AI-related skills in their own work.
+> Reasoning: The JD contains no mention of AI coding tools, AI-enabled analytics, machine learning infrastructure, or GenAI applications; it focuses on traditional data engineering and software engineering practices.
 
 ⚠ **Disagreement**: manual=`` vs LLM majority=`none`
 
@@ -237,17 +235,17 @@
 **Run 1:** `responsibility` ✗
 > Quote: "Champion software engineering principles including TDD and CI/CD workflows"
 > Verified: ✓ found in JD
-> Reasoning: TDD is framed as a principle to champion in the responsibilities section using an ownership verb, indicating the role includes establishing and promoting testing practices.
+> Reasoning: TDD is framed as a principle to 'champion', indicating the candidate owns establishing and driving testing practices rather than just using existing tools.
 
 **Run 2:** `responsibility` ✗
-> Quote: "Champion software engineering principles including TDD and CI/CD workflows"
+> Quote: "Establish monitoring frameworks for multi-terabyte data streams"
 > Verified: ✓ found in JD
-> Reasoning: TDD and CI/CD are framed as something to champion (implement/advocate for) as a responsibility, rather than listed as a skill requirement.
+> Reasoning: The candidate owns establishing monitoring frameworks as an explicit responsibility with action verb ownership, indicating accountability for observability practice.
 
 **Run 3:** `responsibility` ✗
 > Quote: "Champion software engineering principles including TDD and CI/CD workflows"
 > Verified: ✓ found in JD
-> Reasoning: The action verb 'champion' indicates active ownership and advocacy for testing practices across the squad, not merely using tools defined by others.
+> Reasoning: Testing (TDD) is framed as a principle to champion, indicating the candidate owns establishing and driving testing practices rather than just using testing tools.
 
 ⚠ **Disagreement**: manual=`` vs LLM majority=`responsibility`
 
@@ -257,16 +255,16 @@
 **Run 1:** `moderate` ✗
 > Quote: "Establish monitoring frameworks for multi-terabyte data streams"
 > Verified: ✓ found in JD
-> Reasoning: Monitoring for large-scale operations indicates operational reliability and prevention of pipeline failures are concerns, though secondary to the primary framing of technical excellence and capability.
+> Reasoning: Monitoring frameworks and production-grade systems signal operational reliability concerns but lack compliance, regulatory, or stakeholder-trust framing that would indicate high loss aversion.
 
 **Run 2:** `moderate` ✗
 > Quote: "Establish monitoring frameworks for multi-terabyte data streams"
 > Verified: ✓ found in JD
-> Reasoning: Operational reliability (monitoring, production-grade systems) is a concern but the JD lacks explicit compliance, regulatory, or stakeholder-trust language that would indicate high loss aversion.
+> Reasoning: The JD emphasizes operational reliability through monitoring rather than regulatory compliance or stakeholder trust, indicating moderate but not high loss aversion.
 
 **Run 3:** `moderate` ✗
 > Quote: "Establish monitoring frameworks for multi-terabyte data streams"
 > Verified: ✓ found in JD
-> Reasoning: Focus on monitoring and operational reliability for large-scale data suggests concern for pipeline stability, but lacks compliance or stakeholder-trust language of high loss aversion.
+> Reasoning: Monitoring and production-grade solutions indicate operational reliability concerns without explicit risk, compliance, or prevention-of-bad-outcomes framing.
 
 ⚠ **Disagreement**: manual=`` vs LLM majority=`moderate`

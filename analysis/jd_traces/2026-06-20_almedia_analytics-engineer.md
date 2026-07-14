@@ -72,9 +72,9 @@ Join our team as an Analytics Engineer, where you'll ensure our data is clean, a
 | domain_risk | moderate | moderate | moderate | moderate | 100% | ✓ |
 | collaboration_width | 4 | 2 | 2 | 2 | 100% | ✗ |
 | data_team_maturity | mid | mid | mid | mid | 100% | ✓ |
-| jd_authorship | mixed | hiring_manager | mixed | mixed | 33% | ✓ |
+| jd_authorship | mixed | mixed | hiring_manager | mixed | 33% | ✓ |
 | stakeholder_orientation | internal_data | internal_data | internal_data | internal_data | 100% | ✓ |
-| autonomy_level | execution | execution | strategic | execution | 33% | ✓ |
+| autonomy_level | execution | execution | execution | strategic | 33% | ✓ |
 | ai_role |  | none | none | none | 100% | ✗ |
 | testing_framing |  | responsibility | responsibility | responsibility | 100% | ✗ |
 | loss_aversion_framing |  | moderate | moderate | moderate | 100% | ✗ |
@@ -87,19 +87,19 @@ Join our team as an Analytics Engineer, where you'll ensure our data is clean, a
 **Manual:** `mixed`
 
 **Run 1:** `rigour` ✗
-> Quote: "Apply software engineering practices to analytics code, including version control, testing, and continuous integration."
+> Quote: "Apply software engineering practices to analytics code, including version control, testing, and continuous integration"
 > Verified: ✓ found in JD
-> Reasoning: Multiple rigour signals (testing, CI/CD, data validation, data integrity monitoring) throughout with no velocity language.
+> Reasoning: The responsibilities section emphasizes testing, version control, CI, data integrity monitoring, and documentation, with no velocity signals like 'ship quickly' or 'fast-paced' present.
 
 **Run 2:** `rigour` ✗
 > Quote: "Apply software engineering practices to analytics code, including version control, testing, and continuous integration."
 > Verified: ✓ found in JD
-> Reasoning: Multiple explicit testing, quality, documentation, and integrity signals throughout responsibilities with no velocity language.
+> Reasoning: The responsibilities section emphasizes testing, version control, data validation, and continuous integration as core expectations, with no velocity language present.
 
 **Run 3:** `rigour` ✗
 > Quote: "Apply software engineering practices to analytics code, including version control, testing, and continuous integration."
 > Verified: ✓ found in JD
-> Reasoning: Responsibilities emphasize testing, continuous integration, and data integrity monitoring as core expectations, with no velocity-oriented language like 'fast-paced' or 'iteration speed'.
+> Reasoning: The responsibilities section emphasizes testing, data quality, software practices, and documentation as core expectations with no velocity or speed-focused language.
 
 ⚠ **Disagreement**: manual=`mixed` vs LLM majority=`rigour`
 
@@ -107,19 +107,19 @@ Join our team as an Analytics Engineer, where you'll ensure our data is clean, a
 **Manual:** `moderate`
 
 **Run 1:** `moderate` ✓
-> Quote: "ensure our data infrastructure effectively supports self-serve analytics, insightful reporting, and business intelligence across the organisation"
-> Verified: ⚠ NOT found verbatim
-> Reasoning: Marketing analytics supporting business intelligence and self-serve analytics without financial reporting, regulatory, or compliance language.
+> Quote: "building the future of marketing by rewarding our community of over 70 million users for engaging with our advertisers' products"
+> Verified: ✓ found in JD
+> Reasoning: This is a marketing/user engagement platform with no mention of financial reporting, compliance, regulatory requirements, or audit obligations, indicating data errors affect business decisions but not regulatory or financial consequences.
 
 **Run 2:** `moderate` ✓
-> Quote: "ensure our data infrastructure effectively supports self-serve analytics, insightful reporting, and business intelligence across the organisation"
-> Verified: ⚠ NOT found verbatim
-> Reasoning: Marketing analytics role affects business decisions but contains no regulatory, compliance, or financial reporting language.
+> Quote: "ensure our data infrastructure effectively supports self-service analytics, insightful reporting, and business intelligence across the organisation"
+> Verified: ✓ found in JD
+> Reasoning: The role supports business intelligence and marketing analytics decisions without explicit financial reporting, regulatory, or compliance language that would elevate risk to high.
 
 **Run 3:** `moderate` ✓
-> Quote: "ensure our data is clean, accessible, and ready for analysis"
-> Verified: ✓ found in JD
-> Reasoning: Data errors affect business intelligence and marketing operations decisions without explicit regulatory or financial reporting consequences.
+> Quote: "ensure our data infrastructure effectively supports self-serve analytics, insightful reporting, and business intelligence across the organisation"
+> Verified: ⚠ NOT found verbatim
+> Reasoning: The role serves business intelligence and marketing analytics without explicit financial reporting, compliance, or regulatory language, placing it in the moderate category typical of SaaS and marketing roles.
 
 ### collaboration_width
 **Manual:** `4`
@@ -127,17 +127,17 @@ Join our team as an Analytics Engineer, where you'll ensure our data is clean, a
 **Run 1:** `2` ✗
 > Quote: "Product Analysts; Data Scientists"
 > Verified: ✓ found in JD
-> Reasoning: Product Analysts and Data Scientists are the only explicitly named role cohorts; Business Stakeholders is generic.
+> Reasoning: Only two named role cohorts are explicitly mentioned as collaboration partners; 'Business Stakeholders' is generic and does not count.
 
 **Run 2:** `2` ✗
-> Quote: "Product Analysts; Data Scientists"
+> Quote: "Product Analysts, Data Scientists"
 > Verified: ✓ found in JD
-> Reasoning: Product Analysts and Data Scientists are explicitly named role cohorts; Business Stakeholders is too vague per classification rules.
+> Reasoning: Two distinct named role cohorts are identified in the collaboration responsibilities; generic terms like 'Business Stakeholders' do not count.
 
 **Run 3:** `2` ✗
-> Quote: "Product Analysts; Data Scientists"
+> Quote: "Product Analysts, Data Scientists, and Business Stakeholders"
 > Verified: ✓ found in JD
-> Reasoning: Product Analysts and Data Scientists are explicitly named partner teams; 'Business Stakeholders' is too generic to count as a named team.
+> Reasoning: Only Product Analysts and Data Scientists are named as distinct partner functions; Business Stakeholders is a generic term that does not count as a named team.
 
 ⚠ **Disagreement**: manual=`4` vs LLM majority=`2`
 
@@ -145,57 +145,57 @@ Join our team as an Analytics Engineer, where you'll ensure our data is clean, a
 **Manual:** `mid`
 
 **Run 1:** `mid` ✓
-> Quote: "Design, build, and maintain clean, scalable, and performance-optimised data models using SQL and dbt."
-> Verified: ✓ found in JD
-> Reasoning: Named tools in responsibilities (dbt) and maintenance/scale language indicate an established function beyond early-stage.
+> Quote: "ensure our data infrastructure effectively supports self-serve analytics, insightful reporting, and business intelligence across the organisation"
+> Verified: ⚠ NOT found verbatim
+> Reasoning: Named tools appear in responsibilities (dbt, Snowflake, BigQuery, Dagster, Airflow) and the role assumes existing infrastructure to maintain and extend, consistent with a growing mid-stage team.
 
 **Run 2:** `mid` ✓
-> Quote: "ensure our data infrastructure effectively supports self-serve analytics, insightful reporting, and business intelligence across the organisation"
-> Verified: ⚠ NOT found verbatim
-> Reasoning: Describes maintaining and scaling existing infrastructure with named tools (dbt, Snowflake, Dagster/Airflow) in responsibilities section.
+> Quote: "As a core member of our analytics team, you'll ensure our data infrastructure effectively supports self-service analytics"
+> Verified: ✓ found in JD
+> Reasoning: Named tools (dbt, SQL) appear in operational responsibilities, multiple data roles are implied, and infrastructure exists to be maintained and improved, suggesting a growing data function past early stage.
 
 **Run 3:** `mid` ✓
-> Quote: "ensure our data infrastructure effectively supports self-serve analytics, insightful reporting, and business intelligence across the organisation"
-> Verified: ⚠ NOT found verbatim
-> Reasoning: Named tools (dbt, Snowflake, Dagster/Airflow) in requirements and existing platform supporting multiple analytical use cases indicate a functioning but growing data function.
+> Quote: "collaborating closely with Product Analysts, Data Scientists, and Business Stakeholders to meet their analytical and reporting needs"
+> Verified: ✓ found in JD
+> Reasoning: The presence of specialized roles (Product Analysts, Data Scientists) and references to existing self-serve analytics infrastructure indicate a data function that is established and scaling, not in early stage.
 
 ### jd_authorship
 **Manual:** `mixed`
 
-**Run 1:** `hiring_manager` ✗
-> Quote: "Take ownership of data analysis for a designated domain, collaborating closely with Product Analysts, Data Scientists, and Business Stakeholders to meet their analytical and reporting needs."
+**Run 1:** `mixed` ✓
+> Quote: "Design, build, and maintain clean, scalable, and performance-optimised data models using SQL and dbt"
 > Verified: ✓ found in JD
-> Reasoning: Technical specificity about dbt, domain ownership, RCA methodology, and testing practices indicates hands-on experience.
+> Reasoning: Technical specificity about dbt and performance optimization indicates hiring manager input, but generic stakeholder collaboration language suggests recruiter additions.
 
-**Run 2:** `mixed` ✓
-> Quote: "Apply software engineering practices to analytics code, including version control, testing, and continuous integration."
-> Verified: ✓ found in JD
-> Reasoning: Specific technical practices (dbt, testing, version control) and methodologies suggest hiring manager input, mixed with generic collaboration language indicating recruiter additions.
+**Run 2:** `hiring_manager` ✗
+> Quote: "Design, build, and maintain clean, scalable, and performance-optimised data models using SQL and dbt. Apply software engineering practices to analytics code, including version control, testing, and continuous integration."
+> Verified: ⚠ NOT found verbatim
+> Reasoning: The technical specificity of named tools (dbt, SQL, CI/CD, data validation frameworks) and clear understanding of daily work (monitor integrity, root cause analysis) indicate someone who has done this role wrote the responsibilities.
 
 **Run 3:** `mixed` ✓
-> Quote: "Design, build, and maintain clean, scalable, and performance-optimised data models using SQL and dbt."
-> Verified: ✓ found in JD
-> Reasoning: Specific technical responsibilities (dbt, SQL, software engineering practices, root cause analysis) are combined with generic action verbs like 'collaborating with stakeholders' and 'training business users'.
+> Quote: "Design, build, and maintain clean, scalable, and performance-optimised data models using SQL and dbt. Apply software engineering practices to analytics code, including version control, testing, and continuous integration."
+> Verified: ⚠ NOT found verbatim
+> Reasoning: The first responsibility shows technical specificity by naming dbt and engineering practices, but most other responsibilities rely on generic action verbs like maintain, ensure, and collaborate without context suggesting hands-on authorship.
 
-⚠ **LLM inconsistency**: runs gave ['hiring_manager', 'mixed', 'mixed']
+⚠ **LLM inconsistency**: runs gave ['mixed', 'hiring_manager', 'mixed']
 
 ### stakeholder_orientation
 **Manual:** `internal_data`
 
 **Run 1:** `internal_data` ✓
-> Quote: "ensure our data infrastructure effectively supports self-serve analytics"
-> Verified: ⚠ NOT found verbatim
-> Reasoning: Role serves the data infrastructure and self-serve analytics platform for internal data consumers, not a specific business function.
-
-**Run 2:** `internal_data` ✓
 > Quote: "ensure our data infrastructure effectively supports self-serve analytics, insightful reporting, and business intelligence across the organisation"
 > Verified: ⚠ NOT found verbatim
-> Reasoning: Primary mission is supporting data platform and analytics infrastructure for internal consumers—analysts, data scientists, and business users.
+> Reasoning: The primary mission is building and maintaining the data platform and infrastructure that internal analytics consumers (analysts, data scientists, business users) rely on.
+
+**Run 2:** `internal_data` ✓
+> Quote: "ensure our data infrastructure effectively supports self-service analytics, insightful reporting, and business intelligence across the organisation"
+> Verified: ✓ found in JD
+> Reasoning: The primary focus is building and maintaining a self-serve data platform infrastructure for analytics consumers rather than serving a specific business function like product, finance, or commercial.
 
 **Run 3:** `internal_data` ✓
 > Quote: "ensure our data infrastructure effectively supports self-serve analytics, insightful reporting, and business intelligence across the organisation"
 > Verified: ⚠ NOT found verbatim
-> Reasoning: The role's primary purpose is building and maintaining the data platform for internal consumption by Product Analysts, Data Scientists, and business users.
+> Reasoning: The primary focus is on building and maintaining data infrastructure and enabling data consumers through self-serve analytics, not on serving commercial, product, or finance stakeholders.
 
 ### autonomy_level
 **Manual:** `execution`
@@ -203,19 +203,19 @@ Join our team as an Analytics Engineer, where you'll ensure our data is clean, a
 **Run 1:** `execution` ✓
 > Quote: "Take ownership of data analysis for a designated domain"
 > Verified: ✓ found in JD
-> Reasoning: Ownership is scoped to 'a designated domain'—the domain is set by others, making this execution within defined bounds.
+> Reasoning: While ownership is stated, the scope is 'designated' by others, and the role executes responsibilities within that assigned domain rather than setting analytical direction.
 
-**Run 2:** `strategic` ✗
+**Run 2:** `execution` ✓
 > Quote: "Take ownership of data analysis for a designated domain"
 > Verified: ✓ found in JD
-> Reasoning: Explicit 'Take ownership' of a defined domain shows strategic ownership and accountability for direction-setting within that scope.
+> Reasoning: While the role owns technical delivery within a scoped domain, most responsibilities are execution-oriented (apply practices, automate, maintain, train) rather than defining broader analytics strategy.
 
-**Run 3:** `execution` ✓
-> Quote: "Take ownership of data analysis for a designated domain, collaborating closely with Product Analysts, Data Scientists, and Business Stakeholders to meet their analytical and reporting needs."
+**Run 3:** `strategic` ✗
+> Quote: "Take ownership of data analysis for a designated domain"
 > Verified: ✓ found in JD
-> Reasoning: Ownership is scoped to a designated domain and framed in terms of meeting others' defined needs rather than setting strategic direction for the analytics function.
+> Reasoning: The responsibility to take ownership and design/build data models indicates strategic direction-setting within a domain, rather than pure execution of direction set by others.
 
-⚠ **LLM inconsistency**: runs gave ['execution', 'strategic', 'execution']
+⚠ **LLM inconsistency**: runs gave ['execution', 'execution', 'strategic']
 
 ### ai_role
 **Manual:** ``
@@ -223,17 +223,17 @@ Join our team as an Analytics Engineer, where you'll ensure our data is clean, a
 **Run 1:** `none` ✗
 > Quote: "No AI skill signal."
 > Verified: ✓ found in JD
-> Reasoning: No mention of AI coding tools, AI-ready data infrastructure, or expectation for the candidate to work with AI systems.
+> Reasoning: No mention of AI tools, coding assistants, agentic workflows, or AI-related skill expectations anywhere in the JD.
 
 **Run 2:** `none` ✗
 > Quote: "No AI skill signal."
 > Verified: ✓ found in JD
-> Reasoning: JD contains no mention of AI tools, AI-ready data infrastructure, or AI workflows the candidate would engage with.
+> Reasoning: The JD contains no mention of AI tools, AI-assisted coding, or data infrastructure for AI systems; no AI skill is expected of the candidate.
 
 **Run 3:** `none` ✗
 > Quote: "No AI skill signal."
 > Verified: ✓ found in JD
-> Reasoning: The JD contains no reference to AI-assisted coding tools, AI-ready data foundations, or AI/ML pipeline considerations.
+> Reasoning: No mention of AI coding tools, GenAI applications, or AI-ready data infrastructure in the responsibilities or requirements.
 
 ⚠ **Disagreement**: manual=`` vs LLM majority=`none`
 
@@ -241,19 +241,19 @@ Join our team as an Analytics Engineer, where you'll ensure our data is clean, a
 **Manual:** ``
 
 **Run 1:** `responsibility` ✗
-> Quote: "Automate and streamline data validation, testing, and reporting processes."
+> Quote: "Apply software engineering practices to analytics code, including version control, testing, and continuous integration"
 > Verified: ✓ found in JD
-> Reasoning: Candidate is expected to own and automate testing processes as a core responsibility, not merely use testing tools.
+> Reasoning: Testing and data validation are framed as core responsibilities the candidate actively applies, not merely listed as tools in a requirements section.
 
 **Run 2:** `responsibility` ✗
-> Quote: "Apply software engineering practices to analytics code, including version control, testing, and continuous integration."
-> Verified: ✓ found in JD
-> Reasoning: Testing appears in responsibilities section with action verb 'Apply', indicating the candidate actively performs and owns testing practices.
+> Quote: "Apply software engineering practices to analytics code, including version control, testing, and continuous integration. Automate and streamline data validation, testing, and reporting processes."
+> Verified: ⚠ NOT found verbatim
+> Reasoning: Testing and data validation are framed as owned practices the candidate actively applies and automates, not as a tool or requirement they should possess.
 
 **Run 3:** `responsibility` ✗
-> Quote: "Automate and streamline data validation, testing, and reporting processes."
+> Quote: "Apply software engineering practices to analytics code, including version control, testing, and continuous integration."
 > Verified: ✓ found in JD
-> Reasoning: Testing and data validation are framed as owned responsibilities with action verbs 'automate and streamline', not merely listed as required skills.
+> Reasoning: Testing is framed as a practice the candidate applies and owns as part of their responsibilities, not as a tool they use.
 
 ⚠ **Disagreement**: manual=`` vs LLM majority=`responsibility`
 
@@ -261,18 +261,18 @@ Join our team as an Analytics Engineer, where you'll ensure our data is clean, a
 **Manual:** ``
 
 **Run 1:** `moderate` ✗
-> Quote: "Proactively monitor data integrity, identify issues, and perform root cause analysis."
+> Quote: "Proactively monitor data integrity, identify issues, and perform root cause analysis"
 > Verified: ✓ found in JD
-> Reasoning: Risk language focuses on operational reliability and preventing data quality failures, not regulatory compliance or stakeholder trust.
+> Reasoning: Operational reliability and issue response are concerns, but the role is primarily delivery-focused (design, build, maintain) rather than compliance or risk-driven.
 
 **Run 2:** `moderate` ✗
 > Quote: "Proactively monitor data integrity, identify issues, and perform root cause analysis."
 > Verified: ✓ found in JD
-> Reasoning: Operational reliability and data quality are clearly important but secondary to delivery mission; framing emphasizes incident response and integrity rather than regulatory risk or stakeholder trust prevention.
+> Reasoning: Operational reliability and data quality are concerns but framed in terms of integrity monitoring and root cause analysis rather than compliance, regulatory, or stakeholder trust language.
 
 **Run 3:** `moderate` ✗
 > Quote: "Proactively monitor data integrity, identify issues, and perform root cause analysis."
 > Verified: ✓ found in JD
-> Reasoning: Operational reliability and data quality are emphasized through monitoring and root cause analysis, but without explicit risk/compliance/stakeholder trust language that would indicate high loss aversion.
+> Reasoning: Operational reliability and preventing data issues are present concerns, but there is no compliance, regulatory, or stakeholder-trust framing that would indicate high loss aversion.
 
 ⚠ **Disagreement**: manual=`` vs LLM majority=`moderate`

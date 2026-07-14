@@ -75,13 +75,13 @@
 |-----------|--------|-------|-------|-------|-----------|--------|
 | velocity_vs_rigour | mixed | rigour | rigour | rigour | 100% | ✗ |
 | domain_risk | moderate | moderate | moderate | moderate | 100% | ✓ |
-| collaboration_width | 5 | 4 | 2 | 4 | 33% | ✗ |
+| collaboration_width | 5 | 4 | 3 | 4 | 33% | ✗ |
 | data_team_maturity | mid | mid | mid | mid | 100% | ✓ |
-| jd_authorship | hiring_manager | hiring_manager | mixed | mixed | 33% | ✗ |
+| jd_authorship | hiring_manager | mixed | hiring_manager | mixed | 33% | ✗ |
 | stakeholder_orientation | commercial | commercial | commercial | commercial | 100% | ✓ |
 | autonomy_level | strategic | strategic | strategic | strategic | 100% | ✓ |
 | ai_role |  | none | none | none | 100% | ✗ |
-| testing_framing |  | tool_listed | absent | tool_listed | 33% | ✗ |
+| testing_framing |  | tool_listed | tool_listed | tool_listed | 100% | ✗ |
 | loss_aversion_framing |  | moderate | moderate | moderate | 100% | ✗ |
 
 ---
@@ -94,17 +94,17 @@
 **Run 1:** `rigour` ✗
 > Quote: "Take full ownership of the stability of our marketing data pipelines — be the first to respond to incidents and drive resolution"
 > Verified: ✓ found in JD
-> Reasoning: The responsibilities emphasize operational stability, incident response, and expertise maintenance over speed or iteration delivery.
+> Reasoning: The core responsibilities emphasize stability, expertise maintenance, and incident response rather than speed or iteration pace.
 
 **Run 2:** `rigour` ✗
 > Quote: "Take full ownership of the stability of our marketing data pipelines — be the first to respond to incidents and drive resolution"
 > Verified: ✓ found in JD
-> Reasoning: The responsibilities emphasize stability, ownership, incident response, and reliability as core expectations, with no velocity-oriented language like 'fast-paced' or 'ship quickly'.
+> Reasoning: The responsibilities emphasize stability, ownership, expertise, mentoring, and documentation rather than speed or iteration pace, signaling a rigour-first orientation.
 
 **Run 3:** `rigour` ✗
 > Quote: "Take full ownership of the stability of our marketing data pipelines — be the first to respond to incidents and drive resolution"
 > Verified: ✓ found in JD
-> Reasoning: Responsibilities emphasize stability, expertise, incident response, and maintaining core infrastructure as core expectations, with only one mention of 'ship' in a cross-functional delivery context.
+> Reasoning: The responsibilities emphasize operational reliability, incident response, and pipeline stability as core expectations rather than speed of delivery.
 
 ⚠ **Disagreement**: manual=`mixed` vs LLM majority=`rigour`
 
@@ -114,39 +114,39 @@
 **Run 1:** `moderate` ✓
 > Quote: "Expert-level understanding of growth marketing unit economics: CPL, CAC, blended CPL, ROAS, LTV, and marketing attribution models"
 > Verified: ✓ found in JD
-> Reasoning: Marketing analytics directly inform business decisions but do not carry regulatory or financial reporting compliance consequences.
+> Reasoning: Marketing data errors affect business decisions and GTM efficiency without regulatory or financial reporting consequences.
 
 **Run 2:** `moderate` ✓
 > Quote: "Expert-level understanding of growth marketing unit economics: CPL, CAC, blended CPL, ROAS, LTV, and marketing attribution models"
 > Verified: ✓ found in JD
-> Reasoning: Data errors affect marketing ROI decisions and business outcomes, but not regulatory compliance or financial reporting, placing this in moderate risk domain.
+> Reasoning: Data errors affect marketing effectiveness and spend optimization but not regulatory compliance or financial reporting, placing this at moderate business impact.
 
 **Run 3:** `moderate` ✓
 > Quote: "Expert-level understanding of growth marketing unit economics: CPL, CAC, blended CPL, ROAS, LTV, and marketing attribution models"
 > Verified: ✓ found in JD
-> Reasoning: Data errors affect marketing spend allocation and business decisions but not regulatory compliance or financial reporting.
+> Reasoning: The role serves marketing performance optimization and GTM decision-making, which carries business decision risk but not regulatory or financial reporting consequences.
 
 ### collaboration_width
 **Manual:** `5`
 
 **Run 1:** `4` ✗
-> Quote: "Work with data analysts, engineers, software engineers, and marketing teams"
+> Quote: "data analysts; engineers; software engineers; marketing teams"
 > Verified: ✓ found in JD
-> Reasoning: The JD explicitly names four distinct functions: data analysts, engineers (data engineers), software engineers, and marketing teams.
+> Reasoning: The responsibilities explicitly name four distinct partner functions in the collaboration section.
 
-**Run 2:** `2` ✗
-> Quote: "software engineers; marketing teams"
+**Run 2:** `3` ✗
+> Quote: "data analysts; software engineers; marketing teams"
 > Verified: ✓ found in JD
-> Reasoning: Two named external partner functions are identified: software engineers and marketing teams; data analysts and engineers are part of the role holder's own data function.
+> Reasoning: The role explicitly names three distinct partner functions: data analysts, engineers, and marketing teams across multiple responsibilities.
 
 **Run 3:** `4` ✗
 > Quote: "Work with data analysts, engineers, software engineers, and marketing teams"
 > Verified: ✓ found in JD
-> Reasoning: Four distinct named functions identified: data analysts, data engineers (implied), software engineers, and marketing teams.
+> Reasoning: Four distinct named partner teams are identified: data analysts, engineers, software engineers, and marketing teams.
 
 ⚠ **Disagreement**: manual=`5` vs LLM majority=`4`
 
-⚠ **LLM inconsistency**: runs gave ['4', '2', '4']
+⚠ **LLM inconsistency**: runs gave ['4', '3', '4']
 
 ### data_team_maturity
 **Manual:** `mid`
@@ -154,39 +154,39 @@
 **Run 1:** `mid` ✓
 > Quote: "Maintain expertise across marketing tech stack including ad platforms, Airbyte, Zoho CRM, GTM, and web analytics"
 > Verified: ✓ found in JD
-> Reasoning: Multiple specific named tools in responsibilities indicate established infrastructure with multiple data team members to mentor, suggesting a scaling but not yet mature operation.
+> Reasoning: The team maintains a deployed tech stack with multiple named tools and roles, implying an established function with multiple data positions growing at scale.
 
 **Run 2:** `mid` ✓
-> Quote: "Maintain expertise across marketing tech stack including ad platforms, Airbyte, Zoho CRM, GTM, and web analytics"
+> Quote: "Mentor junior data analysts and engineers"
 > Verified: ✓ found in JD
-> Reasoning: Named tools deployed in responsibilities and multiple data roles implied (mentoring junior analysts and engineers) indicate an established function growing and evolving, not early-stage or fully mature.
+> Reasoning: The existence of a mentorship structure with junior team members indicates a data function at growth/scaling stage, not early-stage or mature at 20+ scale.
 
 **Run 3:** `mid` ✓
-> Quote: "Define a forward-looking vision for the marketing data stack and drive its development"
+> Quote: "Maintain expertise across marketing tech stack including ad platforms, Airbyte, Zoho CRM, GTM, and web analytics"
 > Verified: ✓ found in JD
-> Reasoning: Named tools (Airbyte, Zoho CRM, GTM, BigQuery, dbt) and multiple data roles are present; the work is about extending an established stack rather than building from zero.
+> Reasoning: Named tools appear in responsibilities with specific application context, and the role involves mentoring junior team members within an existing infrastructure.
 
 ### jd_authorship
 **Manual:** `hiring_manager`
 
-**Run 1:** `hiring_manager` ✓
-> Quote: "Maintain expertise across marketing tech stack including ad platforms, Airbyte, Zoho CRM, GTM, and web analytics"
+**Run 1:** `mixed` ✗
+> Quote: "Design, build, and maintain our core marketing data models — you know them by heart and can answer any question with data within minutes"
 > Verified: ✓ found in JD
-> Reasoning: The specific naming of tools (Airbyte, Zoho CRM, GTM) with context, combined with marketing domain expertise requirements (CPL, CAC, ROAS, attribution models), demonstrates technical knowledge only from someone who has done this job.
+> Reasoning: Technical responsibilities contain specific tool context and domain expertise only a hiring manager would write, while other sections like 'Lead and ship large cross-functional projects with clarity and alignment' use generic collaboration boilerplate.
 
-**Run 2:** `mixed` ✗
+**Run 2:** `hiring_manager` ✓
 > Quote: "Maintain expertise across marketing tech stack including ad platforms, Airbyte, Zoho CRM, GTM, and web analytics"
 > Verified: ✓ found in JD
-> Reasoning: Core responsibilities contain specific technical context (named tools, domain metrics like CPL/CAC/ROAS) from a hiring manager, but secondary sections use generic boilerplate verbs like 'lead', 'collaborate', and 'mentor'.
+> Reasoning: The specific naming of tools, marketing metrics (CPL, CAC, ROAS, LTV), and technical infrastructure details reveals hands-on domain expertise only found in hiring managers who have done this work.
 
 **Run 3:** `mixed` ✗
 > Quote: "Maintain expertise across marketing tech stack including ad platforms, Airbyte, Zoho CRM, GTM, and web analytics"
 > Verified: ✓ found in JD
-> Reasoning: The JD contains specific marketing tech context (Airbyte, GTM, GA4, web analytics) and growth metrics (CPL/CAC/ROAS) alongside generic collaboration and mentoring verbs.
+> Reasoning: Technical specificity about exact tools and marketing metrics indicates hiring manager input, but generic action verbs and collaboration language throughout suggest recruiter involvement.
 
 ⚠ **Disagreement**: manual=`hiring_manager` vs LLM majority=`mixed`
 
-⚠ **LLM inconsistency**: runs gave ['hiring_manager', 'mixed', 'mixed']
+⚠ **LLM inconsistency**: runs gave ['mixed', 'hiring_manager', 'mixed']
 
 ### stakeholder_orientation
 **Manual:** `commercial`
@@ -194,17 +194,17 @@
 **Run 1:** `commercial` ✓
 > Quote: "Partner with marketers to automate and improve marketing processes using data"
 > Verified: ✓ found in JD
-> Reasoning: The role explicitly centers on partnership with marketing teams and growth optimization, serving revenue and GTM functions.
+> Reasoning: The role primarily serves the marketing and growth function to improve GTM efficiency and marketing performance.
 
 **Run 2:** `commercial` ✓
 > Quote: "Partner with marketers to automate and improve marketing processes using data"
 > Verified: ✓ found in JD
-> Reasoning: The role's primary audience is marketing teams and commercial stakeholders, focused on marketing metrics (CPL, CAC, ROAS, LTV) and process automation for GTM teams.
+> Reasoning: The primary responsibility is serving marketing teams for GTM operations, automating processes, and optimizing marketing unit economics, which is classic commercial/revenue operations work.
 
 **Run 3:** `commercial` ✓
 > Quote: "Partner with marketers to automate and improve marketing processes using data"
 > Verified: ✓ found in JD
-> Reasoning: The role primarily serves marketing and growth functions, with emphasis on marketing unit economics, marketing tech platforms, and process automation for marketing teams.
+> Reasoning: The role's primary purpose is supporting marketing and GTM teams in optimizing marketing spend and process efficiency.
 
 ### autonomy_level
 **Manual:** `strategic`
@@ -212,17 +212,17 @@
 **Run 1:** `strategic` ✓
 > Quote: "Define a forward-looking vision for the marketing data stack and drive its development"
 > Verified: ✓ found in JD
-> Reasoning: The JD frames the role as setting direction through vision definition and ownership of the data platform, not executing defined priorities.
+> Reasoning: The role explicitly expects the candidate to set direction and strategy for the marketing analytics function rather than execute direction set by others.
 
 **Run 2:** `strategic` ✓
 > Quote: "Define a forward-looking vision for the marketing data stack and drive its development"
 > Verified: ✓ found in JD
-> Reasoning: The role is expected to set direction and define strategy for the marketing data function, with clear ownership and vision-setting verbs throughout core responsibilities.
+> Reasoning: The role explicitly expects the candidate to set direction, define vision, and drive priorities for the marketing data stack rather than execute against a predefined roadmap.
 
 **Run 3:** `strategic` ✓
 > Quote: "Define a forward-looking vision for the marketing data stack and drive its development"
 > Verified: ✓ found in JD
-> Reasoning: The role is expected to define the direction for marketing data infrastructure and lead cross-functional projects, indicating strategic ownership beyond execution.
+> Reasoning: This explicitly frames the role as setting strategic direction and shaping the data practice rather than executing plans defined by others.
 
 ### ai_role
 **Manual:** ``
@@ -230,17 +230,17 @@
 **Run 1:** `none` ✗
 > Quote: "No AI skill signal."
 > Verified: ✓ found in JD
-> Reasoning: The JD contains no mention of AI tools, AI-assisted coding, GenAI applications, or AI data infrastructure that candidates are expected to use or build.
+> Reasoning: The JD contains no mention of AI tools, AI-assisted coding, or AI infrastructure; Python skills are mentioned for pipeline automation but not in an AI-specific context.
 
 **Run 2:** `none` ✗
 > Quote: "No AI skill signal."
 > Verified: ✓ found in JD
-> Reasoning: No mention of AI coding tools, AI-assisted development, or AI infrastructure; Python appears as a bonus skill for pipeline automation, not AI.
+> Reasoning: The JD contains no expectations for AI coding tools, GenAI applications, or AI infrastructure work from the candidate.
 
 **Run 3:** `none` ✗
 > Quote: "No AI skill signal."
 > Verified: ✓ found in JD
-> Reasoning: No mention of AI coding tools, AI-enabled data infrastructure, or other AI-related expectations for the candidate.
+> Reasoning: The JD contains no mention of AI skills, tools, or infrastructure expectations for the candidate.
 
 ⚠ **Disagreement**: manual=`` vs LLM majority=`none`
 
@@ -250,21 +250,19 @@
 **Run 1:** `tool_listed` ✗
 > Quote: "Python skills for pipeline automation and data quality checks"
 > Verified: ✓ found in JD
-> Reasoning: Data quality checks appear in the Preferred Skills section as a tool or capability without ownership or responsibility framing.
+> Reasoning: Data quality checks appear in the bonus skills list as a tool requirement without ownership framing like 'own' or 'establish' testing practices.
 
-**Run 2:** `absent` ✗
-> Quote: "Take full ownership of the stability of our marketing data pipelines — be the first to respond to incidents and drive resolution"
+**Run 2:** `tool_listed` ✗
+> Quote: "Python skills for pipeline automation and data quality checks"
 > Verified: ✓ found in JD
-> Reasoning: The JD emphasizes operational stability and incident response but does not explicitly name testing, data quality frameworks, data contracts, or observability as candidate responsibilities.
+> Reasoning: Data quality checks appear as a required skill in preferred qualifications without ownership responsibility framing like 'own', 'define', or 'implement'.
 
 **Run 3:** `tool_listed` ✗
 > Quote: "Python skills for pipeline automation and data quality checks"
 > Verified: ✓ found in JD
-> Reasoning: Data quality checks are listed as a bonus skill without responsibility framing, indicating the capability is valued but not a core accountability.
+> Reasoning: Data quality appears as a technical skill in the preferred skills section rather than as an ownership responsibility framed in the role's core responsibilities.
 
 ⚠ **Disagreement**: manual=`` vs LLM majority=`tool_listed`
-
-⚠ **LLM inconsistency**: runs gave ['tool_listed', 'absent', 'tool_listed']
 
 ### loss_aversion_framing
 **Manual:** ``
@@ -272,16 +270,16 @@
 **Run 1:** `moderate` ✗
 > Quote: "Take full ownership of the stability of our marketing data pipelines — be the first to respond to incidents and drive resolution"
 > Verified: ✓ found in JD
-> Reasoning: Operational reliability (stability, incident response) is a concern, but the fear register is pipeline outages and data failures, not compliance or stakeholder trust.
+> Reasoning: The JD emphasizes operational reliability and incident response but frames the fear as pipeline failures and instability rather than regulatory or compliance consequences.
 
 **Run 2:** `moderate` ✗
 > Quote: "Take full ownership of the stability of our marketing data pipelines — be the first to respond to incidents and drive resolution"
 > Verified: ✓ found in JD
-> Reasoning: The role is framed around preventing operational failures and pipeline instability (incident response, bus factor reduction) rather than preventing regulatory or compliance risk.
+> Reasoning: The framing emphasizes operational reliability and incident response (SLO-level concerns) rather than regulatory compliance or stakeholder trust in data accuracy.
 
 **Run 3:** `moderate` ✗
 > Quote: "Take full ownership of the stability of our marketing data pipelines — be the first to respond to incidents and drive resolution"
 > Verified: ✓ found in JD
-> Reasoning: Operational reliability and incident response are material concerns, but there is no regulatory, compliance, or stakeholder-trust framing typical of high loss-aversion roles.
+> Reasoning: The role frames around operational reliability and incident response as a key responsibility, but stops short of regulatory or compliance risk framing.
 
 ⚠ **Disagreement**: manual=`` vs LLM majority=`moderate`

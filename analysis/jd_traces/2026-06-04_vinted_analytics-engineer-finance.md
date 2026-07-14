@@ -49,11 +49,11 @@
 |-----------|--------|-------|-------|-------|-----------|--------|
 | velocity_vs_rigour | rigour | rigour | rigour | rigour | 100% | ✓ |
 | domain_risk | high | moderate | moderate | moderate | 100% | ✗ |
-| collaboration_width | 3 | 2 | 2 | 2 | 100% | ✗ |
+| collaboration_width | 3 | 3 | 2 | 2 | 33% | ✗ |
 | data_team_maturity | mid | mid | mid | mid | 100% | ✓ |
-| jd_authorship | mixed | mixed | hiring_manager | recruiter | 0% | ✓ |
+| jd_authorship | mixed | recruiter | recruiter | mixed | 33% | ✗ |
 | stakeholder_orientation | finance | finance | finance | finance | 100% | ✓ |
-| autonomy_level | execution | execution | execution | mixed | 33% | ✓ |
+| autonomy_level | execution | execution | execution | execution | 100% | ✓ |
 | ai_role |  | none | none | none | 100% | ✗ |
 | testing_framing |  | responsibility | responsibility | responsibility | 100% | ✗ |
 | loss_aversion_framing |  | moderate | moderate | moderate | 100% | ✗ |
@@ -66,59 +66,61 @@
 **Manual:** `rigour`
 
 **Run 1:** `rigour` ✓
-> Quote: "Managing production reliability through issue investigation and root cause analysis"
+> Quote: "Implementing quality assurance checks to enhance reporting consistency"
 > Verified: ✓ found in JD
-> Reasoning: The responsibilities emphasize reliability, quality assurance, and production stability throughout, with no counterbalancing velocity language.
+> Reasoning: The responsibilities emphasize quality assurance, reliability, and consistency over speed, with no velocity signals present.
 
 **Run 2:** `rigour` ✓
-> Quote: "Managing production reliability through issue investigation and root cause analysis"
+> Quote: "Implementing quality assurance checks to enhance reporting consistency"
 > Verified: ✓ found in JD
-> Reasoning: The JD emphasizes reliability, quality assurance, monitoring, and investigation methodology with no velocity or fast-paced language present.
+> Reasoning: The responsibilities emphasize quality assurance, production reliability, and attention to detail as core expectations, with no velocity signals present.
 
 **Run 3:** `rigour` ✓
 > Quote: "Implementing quality assurance checks to enhance reporting consistency"
 > Verified: ✓ found in JD
-> Reasoning: The responsibilities emphasize quality assurance, production reliability, and consistent reporting with no velocity signals; multiple rigour signals dominate the stated responsibilities.
+> Reasoning: The responsibilities emphasize quality assurance, reliable infrastructure, consistency, monitoring, and production reliability throughout, with no velocity or speed language.
 
 ### domain_risk
 **Manual:** `high`
 
 **Run 1:** `moderate` ✗
-> Quote: "Converting Finance requirements into technical solutions through requirements gathering"
-> Verified: ✓ found in JD
-> Reasoning: The role supports Finance stakeholders but lacks explicit financial reporting, compliance, or regulatory language that would signal high risk.
-
-**Run 2:** `moderate` ✗
-> Quote: "Converting Finance requirements into technical solutions through requirements gathering"
-> Verified: ✓ found in JD
-> Reasoning: The role serves Finance but lacks explicit regulatory, compliance, or audit language that would signal high risk; data errors affect business decisions rather than regulatory exposure.
-
-**Run 3:** `moderate` ✗
 > Quote: "Converting Finance requirements into technical solutions"
 > Verified: ✓ found in JD
-> Reasoning: Finance role affects business decisions but lacks explicit signals of regulatory, compliance, or financial reporting risk that would elevate to high.
+> Reasoning: While supporting Finance, the role is at an e-commerce company without regulatory or compliance language, making it moderate risk rather than high.
+
+**Run 2:** `moderate` ✗
+> Quote: "Converting Finance requirements into technical solutions"
+> Verified: ✓ found in JD
+> Reasoning: The Finance domain carries business decision risk, but the JD lacks explicit compliance, regulatory, or financial reporting language that would indicate high domain risk.
+
+**Run 3:** `moderate` ✗
+> Quote: "Converting Finance requirements into technical solutions through requirements gathering"
+> Verified: ✓ found in JD
+> Reasoning: While Finance is named, the JD lacks regulatory, compliance, audit, or financial reporting language typical of high-risk financial roles, and Vinted's e-commerce context suggests business intelligence rather than regulated financial reporting.
 
 ⚠ **Disagreement**: manual=`high` vs LLM majority=`moderate`
 
 ### collaboration_width
 **Manual:** `3`
 
-**Run 1:** `2` ✗
-> Quote: "Finance; Data Science"
+**Run 1:** `3` ✓
+> Quote: "Finance; Data Science; Analytics"
 > Verified: ✓ found in JD
-> Reasoning: Finance and Data Science are explicitly named as distinct functions the role collaborates with.
+> Reasoning: Finance is explicitly named as the primary requirements source, and Data Science and Analytics are named as distinct areas for impact amplification.
 
 **Run 2:** `2` ✗
 > Quote: "Finance; Data Science"
 > Verified: ✓ found in JD
-> Reasoning: Finance and Data Science are explicitly named as distinct partner teams in responsibilities.
+> Reasoning: Finance and Data Science are the only explicitly named partner teams in the responsibilities section.
 
 **Run 3:** `2` ✗
-> Quote: "Finance requirements; Data Science and Analytics impact"
+> Quote: "Converting Finance requirements into technical solutions;Identifying opportunities to amplify Data Science and Analytics impact"
 > Verified: ✓ found in JD
-> Reasoning: Finance and Data Science are explicitly named as distinct teams the role collaborates with; Analytics is the role holder's own function and does not count.
+> Reasoning: Two named distinct teams are explicitly referenced: Finance (source of requirements) and Data Science (internal collaboration partner).
 
 ⚠ **Disagreement**: manual=`3` vs LLM majority=`2`
+
+⚠ **LLM inconsistency**: runs gave ['3', '2', '2']
 
 ### data_team_maturity
 **Manual:** `mid`
@@ -126,75 +128,75 @@
 **Run 1:** `mid` ✓
 > Quote: "Architect, build, and maintain efficient and reliable data models and pipelines"
 > Verified: ✓ found in JD
-> Reasoning: The emphasis on maintaining production systems and managing existing reliability indicates a function that exists and is operating, not early-stage greenfield.
+> Reasoning: The responsibility to maintain existing data infrastructure and pipelines indicates an established data function beyond early stage, but without signals of multiple specialized sub-teams characteristic of mature organizations.
 
 **Run 2:** `mid` ✓
-> Quote: "Architect, build, and maintain efficient and reliable data models and pipelines"
+> Quote: "Managing production reliability through issue investigation and root cause analysis"
 > Verified: ✓ found in JD
-> Reasoning: The presence of named tools (dbt, BigQuery, Airflow) and focus on maintaining and optimizing existing infrastructure indicates an established team rather than early-stage greenfield work.
+> Reasoning: The emphasis on maintaining production systems and managing reliability suggests an established data function with existing infrastructure, rather than building from zero.
 
 **Run 3:** `mid` ✓
-> Quote: "Architect, build, and maintain efficient and reliable data models and pipelines"
+> Quote: "Implementing quality assurance checks to enhance reporting consistency"
 > Verified: ✓ found in JD
-> Reasoning: The JD assumes existing dbt infrastructure, pipelines, and tooling already deployed, indicating an established data function scaling rather than greenfield startup.
+> Reasoning: The data function exists with established infrastructure (dbt, pipelines, monitoring) but is in an enhancement and scaling phase rather than greenfield or fully mature.
 
 ### jd_authorship
 **Manual:** `mixed`
 
-**Run 1:** `mixed` ✓
-> Quote: "Converting Finance requirements into technical solutions through requirements gathering; Managing production reliability through issue investigation and root cause analysis"
+**Run 1:** `recruiter` ✗
+> Quote: "Architect, build, and maintain efficient and reliable data models and pipelines"
 > Verified: ✓ found in JD
-> Reasoning: The responsibilities contain some process specificity (requirements gathering, root cause analysis) but lack the scale/volume/precision that would indicate a hiring manager wrote it.
+> Reasoning: Responsibilities use generic action verbs with no specific tool context, technical depth, or day-to-day workflow detail that would indicate a hiring manager wrote from direct experience.
 
-**Run 2:** `hiring_manager` ✗
-> Quote: "Managing production reliability through issue investigation and root cause analysis"
+**Run 2:** `recruiter` ✗
+> Quote: "Implementing quality assurance checks to enhance reporting consistency"
 > Verified: ✓ found in JD
-> Reasoning: The specific mention of RCA methodology and technical requirements like 'tested and performant model development' show someone with hands-on experience; a recruiter could not write this level of technical specificity.
+> Reasoning: Responsibilities use generic action verbs and boilerplate language without specific technical context, scale numbers, or methodological precision that would indicate hands-on domain expertise.
 
-**Run 3:** `recruiter` ✗
-> Quote: "Converting Finance requirements into technical solutions through requirements gathering"
+**Run 3:** `mixed` ✓
+> Quote: "dbt proficiency, including tested and performant model development; Converting Finance requirements into technical solutions"
 > Verified: ✓ found in JD
-> Reasoning: Responsibilities use generic boilerplate action verbs without technical specificity, scale numbers, or precise tool context that would signal hiring manager authorship.
+> Reasoning: Specific technical requirements (dbt testing, Finance domain translation) are mixed with generic boilerplate responsibilities (cross-functional collaboration, communication skills).
 
-⚠ **LLM inconsistency**: runs gave ['mixed', 'hiring_manager', 'recruiter']
+⚠ **Disagreement**: manual=`mixed` vs LLM majority=`recruiter`
+
+⚠ **LLM inconsistency**: runs gave ['recruiter', 'recruiter', 'mixed']
 
 ### stakeholder_orientation
 **Manual:** `finance`
 
 **Run 1:** `finance` ✓
-> Quote: "Converting Finance requirements into technical solutions through requirements gathering"
-> Verified: ✓ found in JD
-> Reasoning: Finance requirements are explicitly framed as the driver of technical solutions, making Finance the primary stakeholder.
-
-**Run 2:** `finance` ✓
-> Quote: "Converting Finance requirements into technical solutions through requirements gathering"
-> Verified: ✓ found in JD
-> Reasoning: Finance is the explicit primary audience for whom the analytics engineer converts requirements into technical solutions.
-
-**Run 3:** `finance` ✓
 > Quote: "Converting Finance requirements into technical solutions"
 > Verified: ✓ found in JD
-> Reasoning: The role is explicitly scoped to Finance domain with primary responsibility centered on implementing Finance-driven requirements and reporting consistency.
+> Reasoning: The role is explicitly positioned to serve Finance stakeholders by converting their requirements into technical solutions.
+
+**Run 2:** `finance` ✓
+> Quote: "Converting Finance requirements into technical solutions"
+> Verified: ✓ found in JD
+> Reasoning: The role is explicitly titled Analytics Engineer, Finance and the primary responsibility is converting Finance team requirements into technical solutions, establishing Finance as the primary stakeholder.
+
+**Run 3:** `finance` ✓
+> Quote: "Converting Finance requirements into technical solutions through requirements gathering"
+> Verified: ✓ found in JD
+> Reasoning: Finance is explicitly named as the primary source of requirements and stakeholder for the role's output.
 
 ### autonomy_level
 **Manual:** `execution`
 
 **Run 1:** `execution` ✓
-> Quote: "Converting Finance requirements into technical solutions through requirements gathering"
+> Quote: "Converting Finance requirements into technical solutions"
 > Verified: ✓ found in JD
-> Reasoning: The core framing positions the role as responding to requirements set by others (Finance), rather than defining strategy or direction.
+> Reasoning: The role receives requirements from Finance and executes solutions, rather than defining the data strategy or shaping how analytics is delivered.
 
 **Run 2:** `execution` ✓
 > Quote: "Converting Finance requirements into technical solutions"
 > Verified: ✓ found in JD
-> Reasoning: The role receives Finance requirements and executes technical solutions to meet them rather than defining the strategy or direction of analytics delivery.
+> Reasoning: The role is framed around receiving Finance requirements and delivering solutions, rather than defining strategy or setting analytics direction.
 
-**Run 3:** `mixed` ✗
-> Quote: "Architect, build, and maintain efficient and reliable data models and pipelines"
+**Run 3:** `execution` ✓
+> Quote: "Converting Finance requirements into technical solutions"
 > Verified: ✓ found in JD
-> Reasoning: The role combines strategic technical ownership (architect, identify opportunities) with execution of priorities set by Finance (converting Finance requirements).
-
-⚠ **LLM inconsistency**: runs gave ['execution', 'execution', 'mixed']
+> Reasoning: The role receives scoped requirements from Finance stakeholders and executes against them, rather than setting strategic direction for the analytics function.
 
 ### ai_role
 **Manual:** ``
@@ -202,17 +204,17 @@
 **Run 1:** `none` ✗
 > Quote: "No AI skill signal."
 > Verified: ✓ found in JD
-> Reasoning: The JD contains no mention of AI tools, GenAI, or agentic workflows that the candidate would use or enable.
+> Reasoning: The JD contains no mention of AI coding tools, AI-assisted workflows, or AI infrastructure requirements.
 
 **Run 2:** `none` ✗
 > Quote: "No AI skill signal."
 > Verified: ✓ found in JD
-> Reasoning: The JD contains no mention of AI tools, GenAI applications, or AI-assisted coding; no AI skill is expected of the candidate.
+> Reasoning: The JD contains no mention of AI-assisted coding, AI tools, or AI/ML infrastructure responsibilities expected of the candidate.
 
 **Run 3:** `none` ✗
 > Quote: "No AI skill signal."
 > Verified: ✓ found in JD
-> Reasoning: The JD contains no expectations for AI-assisted coding, AI tool usage, or AI infrastructure building in the candidate's responsibilities or qualifications.
+> Reasoning: No mention of AI tools, AI-assisted coding, AI-ready data infrastructure, or any AI capability expectation for the candidate.
 
 ⚠ **Disagreement**: manual=`` vs LLM majority=`none`
 
@@ -222,17 +224,17 @@
 **Run 1:** `responsibility` ✗
 > Quote: "Implementing quality assurance checks to enhance reporting consistency"
 > Verified: ✓ found in JD
-> Reasoning: Quality assurance checks are framed as a core responsibility using an action verb (implementing) that suggests ownership of the practice, not just tool usage.
+> Reasoning: The verb 'implementing' frames quality assurance as something the candidate owns and is accountable for.
 
 **Run 2:** `responsibility` ✗
 > Quote: "Implementing quality assurance checks to enhance reporting consistency"
 > Verified: ✓ found in JD
-> Reasoning: Quality assurance is framed as a responsibility the candidate owns and implements, not merely as a tool to list or a secondary concern.
+> Reasoning: Quality assurance is framed as a responsibility the candidate implements (action verb in the responsibilities section), not merely listed as a tool in requirements.
 
 **Run 3:** `responsibility` ✗
 > Quote: "Implementing quality assurance checks to enhance reporting consistency"
 > Verified: ✓ found in JD
-> Reasoning: Quality assurance is framed as an explicit responsibility the candidate owns and implements, not merely a tool they should know.
+> Reasoning: The candidate owns the responsibility for implementing and defining QA checks, reinforced by dbt testing requirements in the skills section.
 
 ⚠ **Disagreement**: manual=`` vs LLM majority=`responsibility`
 
@@ -242,16 +244,16 @@
 **Run 1:** `moderate` ✗
 > Quote: "Managing production reliability through issue investigation and root cause analysis"
 > Verified: ✓ found in JD
-> Reasoning: The focus is on operational reliability and preventing pipeline failures, not on regulatory compliance or stakeholder trust, signaling moderate rather than high loss aversion.
+> Reasoning: The JD emphasizes operational reliability and incident response, reflecting concern about pipeline outages and data failures rather than regulatory compliance or stakeholder trust issues.
 
 **Run 2:** `moderate` ✗
 > Quote: "Managing production reliability through issue investigation and root cause analysis"
 > Verified: ✓ found in JD
-> Reasoning: Operational reliability and data quality are concerns with focus on managing production issues and preventing failures, but absent regulatory or compliance risk language.
+> Reasoning: The role emphasizes operational reliability and preventing data failures, but this is secondary to delivery responsibilities and lacks high-risk compliance or stakeholder-trust language.
 
 **Run 3:** `moderate` ✗
 > Quote: "Managing production reliability through issue investigation and root cause analysis"
 > Verified: ✓ found in JD
-> Reasoning: Operational reliability and data quality are concerns present in multiple responsibilities but secondary to primary deliverables, with no compliance or regulatory language.
+> Reasoning: Operational reliability and data quality are core concerns, but the framing emphasizes pipeline stability and consistency rather than compliance or preventing regulatory/stakeholder trust failures.
 
 ⚠ **Disagreement**: manual=`` vs LLM majority=`moderate`
