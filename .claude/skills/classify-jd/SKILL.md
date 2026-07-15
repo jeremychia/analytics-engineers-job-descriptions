@@ -144,7 +144,7 @@ Also extract:
 
 ## Step 4 — Write output files
 
-Produce a single JSON object and pipe it to `write_jd.py`. The script writes all three output files (`jd_archive.md`, `jd.md`, `{base-name}.json`) in one shot. `jd_archive.md` is prefixed with a `**URL:** {source_url}` line for traceability back to the original posting. `jd.md` includes a pointer to the corresponding `jd_traces/{base-name}.md` file (written later by `classify_jds.py` in Step 5) so the 3-run LLM consistency check is discoverable from the JD record itself.
+Produce a single JSON object and pipe it to `write_jd.py`. The script writes all three output files (`jd_archive.md`, `jd.md`, `{base-name}.json`) in one shot. `jd_archive.md` is prefixed with a `**URL:** {source_url}` line for traceability back to the original posting.
 
 **Important: When user provides pasted JD text**, store the FULL VERBATIM text in jd_archive.md — do NOT rewrite, summarize, or hallucinate. If JD text was pasted by user or appears in conversation (not fetched), copy it exactly as provided into jd_archive.md after the URL line, preserving original formatting and language. This is a historical record and must be faithful to source.
 
@@ -231,27 +231,9 @@ EOF
 
 ---
 
-## Step 5 — Run classifier and rebuild data
+## Step 5 — Output summary
 
-**Skip this step if processing a batch — run once after all JDs are written (see Step 6).**
-
-```bash
-cd analysis && python3 classify_jds.py
-```
-
-The script is incremental — skips already-processed IDs. Writes:
-- `jd_traces/{base-name}.md` — 3-run LLM trace
-- `llm_classifications.csv` — appended row
-- `consistency_report.md` — regenerated
-- `data.json` — updated dataset
-
-This regenerates the dashboard dataset loaded by `index.html`. If the script fails, note it and continue — the three core files from Step 4 are already written.
-
----
-
-## Step 6 — Output summary
-
-For each JD (printed immediately after Steps 1–5 complete for that URL):
+For each JD (printed immediately after Steps 1–4 complete for that URL):
 
 ```
 **{Company} — {Job Title}**
@@ -271,7 +253,7 @@ Stack: {comma-separated true has_* fields}
 Files written to data/{base-name}/
 ```
 
-If processing more than one URL, run Step 5 once after all JDs are written, then print a batch summary:
+If processing more than one URL, print a batch summary after all are complete:
 
 ```
 Batch complete: {n} processed, {n} skipped
