@@ -44,8 +44,24 @@ Interactive browser dashboard ✨
 **After regeneration:**
 
 1. Reload `analysis/index.html` in browser — it auto-fetches the new `data.json`
-2. Copy statistics tables from script output into `analysis/report.md` where needed
-3. Commit both files with message like `feat(analysis): regenerate with 12 new JDs from 2026-07-15`
+2. **Update `analysis/report.md`** with statistics from the script output:
+   - **Preamble** (§0): update corpus size, date, and count of JDs added in this batch
+   - **§3 (The dataset)**: update role-type breakdown table and analytical cohort size
+   - **§3 (Corpus vintages)**: add a line describing the new JDs added and their distribution (maturity, risk, seniority)
+   - **§4.1–4.8**: update all percentage tables and key statistics with new n's; flag where % changed >2pp
+   - **§4.10–4.12** (AI role, testing, loss aversion): check if new JDs were coded on these dimensions; update sample sizes
+   - **§5 (Survey comparison)**: update n's and re-check claimed gaps against new data
+   - **§9.4 (What n supports)**: update confidence intervals and cite the new corpus size
+3. Test the interactive dashboard at `analysis/index.html` — spot-check a few filters and crosstabs
+4. Commit all files with message like:
+   ```
+   feat(analysis): regenerate with 12 new JDs (Doodle, Orange, MoonPay, etc.)
+   
+   - 260 total JDs (240 in analytical cohort, +12 from 2026-07-16)
+   - Rigour: 75% (stable), dbt: 65%, mid-stage: 64%
+   - Updated all statistics tables in report.md
+   - No pattern breaks; early confidence-interval tightening on core dimensions
+   ```
 
 **Example output:**
 
