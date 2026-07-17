@@ -480,8 +480,8 @@ const SECTION_ORDER = {
 // Panel order: seeker = effect size (discriminating power is what targeting needs);
 // manager = consequence for writing a posting (title language first — it's the cheapest fix).
 const PANEL_ORDER = {
-  seeker:  ['rel-maturity-mission','rel-domain-stakeholder','rel-testing-rigour','rel-seniority-autonomy','rel-authorship-dbt','rel-maturity-autonomy','rel-maturity-workarr','rel-fear-collab','rel-stakeholder-autonomy'],
-  manager: ['rel-seniority-autonomy','rel-testing-rigour','rel-authorship-dbt','rel-maturity-mission','rel-maturity-autonomy','rel-maturity-workarr','rel-domain-stakeholder','rel-fear-collab','rel-stakeholder-autonomy'],
+  seeker:  ['rel-maturity-mission','rel-mission-autonomy','rel-domain-stakeholder','rel-testing-rigour','rel-seniority-autonomy','rel-authorship-autonomy','rel-authorship-dbt','rel-maturity-autonomy','rel-maturity-workarr','rel-fear-collab','rel-stakeholder-autonomy'],
+  manager: ['rel-seniority-autonomy','rel-authorship-autonomy','rel-testing-rigour','rel-authorship-dbt','rel-maturity-mission','rel-mission-autonomy','rel-maturity-autonomy','rel-maturity-workarr','rel-domain-stakeholder','rel-fear-collab','rel-stakeholder-autonomy'],
 };
 const NAV_LABELS = {
   relationships: { seeker: 'Relationships', manager: 'What candidates infer' },
@@ -875,6 +875,30 @@ function buildRelationships(data) {
       tip: {
         seeker: `The senior-vs-mid distinction is worth filtering on. Within "Senior," keep reading the verbs — "define/own/shape" vs. "support/assist/deliver" — and ask directly in the interview what decisions the role makes autonomously in year one. Don't pay a premium for a Staff title on the strength of this dataset; the sample is too thin.`,
         manager: `Within "Senior," candidates can't tell a direction-setting role from a ticket-executing one — the title splits close to the market base rate. Name the decisions the role owns in year one ("you choose the modelling architecture," "you set the testing roadmap") — it's the single cheapest differentiation available in this market, and its absence is why strong candidates ask pointed autonomy questions in your first screen.`,
+      },
+    },
+    {
+      id: 'rel-mission-autonomy', rowKey: 'greenfield_vs_fix', colKey: 'autonomy_level',
+      tag: 'Mission × Autonomy · Tighter than company stage alone',
+      q: { seeker: 'What predicts strategic scope better — company stage, or what you\'d actually be doing?',
+           manager: 'If you want to advertise real ownership, "greenfield" carries more than a maturity label does' },
+      statFn: () => `Greenfield roles are ${grpPct(data,'greenfield_vs_fix','greenfield','autonomy_level','strategic')}% strategic — vs. ${grpPct(data,'greenfield_vs_fix','fix_scale','autonomy_level','strategic')}% for fix/scale roles, which lean execution (${grpPct(data,'greenfield_vs_fix','fix_scale','autonomy_level','execution')}%). The association (V≈0.28) is stronger than team maturity's own grip on autonomy (V≈0.20, see below).`,
+      read: `Company stage predicts autonomy indirectly, through mission: early-stage companies tend to hand out greenfield work, and greenfield work is what actually carries strategic scope. Tested directly, mission is the tighter of the two predictors — a mature company running a genuine greenfield initiative (a new platform, a first ML pipeline) looks more like the greenfield column here than the mature column of the maturity panel. The "mixed" mission category sits almost exactly between the two poles, which is what you'd expect if it's a real blend rather than a hedge.`,
+      tip: {
+        seeker: `If a mature or mid-stage company's JD reads as genuinely greenfield for a specific initiative — not "modernise everything," but "build the first X" — treat that as a stronger autonomy signal than the company's stage alone would suggest. Read the mission language, not just the "About us" section.`,
+        manager: `"Greenfield" is a more specific and more credible ownership signal than your company stage implies on its own — if part of your team's remit is genuinely a from-scratch build, name that project directly rather than leaning on "early-stage energy" or similar stage-based framing. It reads as a stronger promise, and this data backs that instinct.`,
+      },
+    },
+    {
+      id: 'rel-authorship-autonomy', rowKey: 'jd_authorship', colKey: 'autonomy_level',
+      tag: 'JD authorship × Autonomy · Authorship\'s strongest tell',
+      q: { seeker: 'Does who wrote the JD predict the actual shape of the job, not just the tool list?',
+           manager: 'A templated posting doesn\'t just under-name your stack — it under-sells your role\'s scope' },
+      statFn: () => `${grpPct(data,'jd_authorship','hiring_manager','autonomy_level','strategic')}% of hiring-manager-authored JDs are strategic, vs. ${grpPct(data,'jd_authorship','recruiter','autonomy_level','strategic')}% of recruiter-authored ones — which run ${grpPct(data,'jd_authorship','recruiter','autonomy_level','execution')}% execution instead. This is a larger gap than authorship's effect on whether dbt gets named.`,
+      read: `The same revealed-preference logic from the authorship/dbt panel applies here, and applies harder: an engineer writing their own JD tends to describe the actual decision rights of the role, while a template optimised for reach and searchability defaults to safe, listable duties — "deliver," "support," "assist" — regardless of what the role really is. The effect size here (V≈0.25) edges out the authorship/dbt relationship, which makes this the more consequential of the two authorship tells if you're trying to read scope rather than stack.`,
+      tip: {
+        seeker: `Weight authorship signals when judging a JD's autonomy claims: an engineer-written posting that says "you'll own X" is more likely to mean it. A recruiter-templated posting that says the same thing is worth confirming directly in screening — the base rate for that phrasing turning into real strategic scope is much lower coming from that source.`,
+        manager: `If your posting goes out recruiter-first or template-first, it's statistically more likely to undersell the role's real scope, not just its stack — candidates who care about ownership read exactly this signal and self-select out. If the role does carry real decision rights, have the hiring manager write or review that section directly; it's the cheapest fix available for a role that's better than its JD makes it sound.`,
       },
     },
     {
