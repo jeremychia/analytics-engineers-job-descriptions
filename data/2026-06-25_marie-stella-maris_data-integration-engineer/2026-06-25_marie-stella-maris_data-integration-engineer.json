@@ -17,6 +17,7 @@
   "collaboration_width": 3,
   "data_team_maturity": "mid",
   "urgency": "standard",
+  "work_arrangement": "not_stated",
   "language_gate_type": "soft",
   "language_gate_languages": [
     "Dutch"
@@ -53,7 +54,8 @@
     "autonomy_level": "Establish standards and best practices",
     "greenfield_vs_fix": "Build integrations using APIs; Enhance performance and maintainability",
     "language_gate": "No urgency signals present",
-    "urgency": "No urgency signals present"
+    "urgency": "No urgency signals present",
+    "work_arrangement": "Not stated in JD."
   },
   "velocity_vs_rigour_quote": "Ensure data quality, consistency, and availability",
   "velocity_vs_rigour_reasoning": "Multiple rigour signals (data quality, consistency, robustness, standards, monitoring) with no velocity language present.",

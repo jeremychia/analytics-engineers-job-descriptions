@@ -17,6 +17,7 @@
   "collaboration_width": 3,
   "data_team_maturity": "mid",
   "urgency": "standard",
+  "work_arrangement": "hybrid",
   "language_gate_type": "none",
   "language_gate_languages": [],
   "interview_stages": null,
@@ -51,7 +52,8 @@
     "autonomy_level": "set data strategy and own Data team OKRs",
     "greenfield_vs_fix": "Put in place pragmatic governance and monitoring for AI features that touch learner responses and scoring; keep our warehouse/dbt/Lightdash stack reliable and scalable",
     "language_gate": "No urgency signals present",
-    "urgency": "No urgency signals present"
+    "urgency": "No urgency signals present",
+    "work_arrangement": "Hybrid working: minimum two days in office per week"
   },
   "velocity_vs_rigour_quote": "help us move faster, make better decisions, and maintain trust with schools and learners; ship meaningful improvements every month",
   "velocity_vs_rigour_reasoning": "Multiple velocity signals ('move faster', 'ship meaningful improvements every month', 'ships quickly') paired with substantial rigour signals ('data governance', 'privacy-by-design', 'DPIAs', 'robust', 'responsible AI').",

@@ -115,6 +115,17 @@ Quote the single phrase that most clearly placed the classification.
 - **absent**: no testing or data quality signal anywhere in the JD.
 - Tie-breaker: "experience with dbt testing" in a requirements list → `tool_listed`. "Own data quality through testing" in responsibilities → `responsibility`.
 
+### work_arrangement
+`remote` | `hybrid` | `onsite` | `not_stated`
+
+- **remote**: JD states the role is fully/100% remote, remote-first, or "work from anywhere/home" with no required office days. Signal phrases: "fully remote", "100% remote", "remote-first", "work from home", "telecommute".
+- **hybrid**: JD specifies a mix of office and remote days, or uses the word "hybrid" (with or without a day count), or offers remote as an option alongside an office base. Signal phrases: "hybrid", "X days in the office", "X days onsite / Y days remote", "remote option available" when paired with an office location.
+- **onsite**: JD states the role requires full-time office presence with no remote allowance. Signal phrases: "on-site", "onsite required", explicit absence of remote/hybrid language paired with a single physical office location and no flexibility mentioned.
+- **not_stated**: no work-location-model language anywhere in the JD (location may still be given as a city/country with no hybrid/remote/onsite qualifier).
+- Tie-breaker: "hybrid" and a specific remote day count both present → `hybrid` (day count is evidence, not a separate class). A location string like "Berlin, Germany" alone with no qualifier → `not_stated`, not `onsite`.
+
+Quote the verbatim phrase (from the location line or benefits/work-model section) that drove the classification. If `not_stated`, use the literal string `"Not stated in JD."`.
+
 ### loss_aversion_framing
 `none` | `moderate` | `high`
 
@@ -174,6 +185,7 @@ python3 scripts/write_jd.py <<'EOF'
   "collaboration_width": {int},
   "data_team_maturity": "{value}",
   "urgency": "{value}",
+  "work_arrangement": "{remote|hybrid|onsite|not_stated}",
   "language_gate_type": "{value}",
   "language_gate_languages": [],
   "interview_stages": {int or null},
@@ -222,6 +234,7 @@ python3 scripts/write_jd.py <<'EOF'
     "greenfield_vs_fix_explanation": "{one sentence}",
     "language_gate": "{verbatim language requirement or 'Not stated in JD'}",
     "urgency": "{verbatim urgency signal — use exact string 'No urgency signals present.' if none}",
+    "work_arrangement": "{verbatim phrase driving the classification — use exact string 'Not stated in JD.' if none}",
     "loss_aversion": "{risk-reduction framing quote with context sentence, or 'No loss aversion framing detected.'}",
     "ats_keywords": ["{8–12 distinctive verbatim phrases likely used as ATS filters}"]
   }
@@ -247,6 +260,7 @@ Layer B:
 - jd_authorship: {value} ("{decisive quote}")
 - stakeholder_orientation: {value} ("{decisive quote}")
 - autonomy_level: {value} ("{decisive quote}")
+- work_arrangement: {value} ("{decisive quote}")
 
 Stack: {comma-separated true has_* fields}
 

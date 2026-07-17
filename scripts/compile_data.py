@@ -15,6 +15,8 @@ Output:
 import json
 from pathlib import Path
 
+from geo_classify import classify_geo_region
+
 DATA_DIR = Path(__file__).parent.parent / "data"
 OUT_FILE = Path(__file__).parent.parent / "analysis" / "data.json"
 
@@ -36,6 +38,7 @@ def main():
                 # Ensure application_id field exists for backwards compat
                 if "jd_id" in record and "application_id" not in record:
                     record["application_id"] = record["jd_id"]
+                record["geo_region"] = classify_geo_region(record.get("job_location", ""))
                 records.append(record)
                 print(f"✓ {jd_id}")
             except json.JSONDecodeError as e:

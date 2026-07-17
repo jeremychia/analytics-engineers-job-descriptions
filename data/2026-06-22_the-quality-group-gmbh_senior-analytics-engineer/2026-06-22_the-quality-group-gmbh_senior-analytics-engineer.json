@@ -18,6 +18,7 @@
   "collaboration_width": 2,
   "data_team_maturity": "mid",
   "urgency": "standard",
+  "work_arrangement": "hybrid",
   "language_gate_type": "hard",
   "language_gate_languages": [
     "German"
@@ -54,7 +55,8 @@
     "autonomy_level": "Support ad-hoc analytical requests requiring data modeling",
     "greenfield_vs_fix": "Build and evolve data models and marts using tools like dbt for scalable analytics",
     "language_gate": "No urgency signals present",
-    "urgency": "No urgency signals present"
+    "urgency": "No urgency signals present",
+    "work_arrangement": "Hamburg (hybrid)"
   },
   "velocity_vs_rigour_quote": "Ensure data quality through testing, validation, and monitoring",
   "velocity_vs_rigour_reasoning": "Multiple rigour signals including quality focus, testing, validation, and standards enforcement with no velocity language.",

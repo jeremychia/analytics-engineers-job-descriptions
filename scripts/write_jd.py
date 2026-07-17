@@ -33,8 +33,8 @@ BOOL_FIELDS = [
 LAYER_B_FIELDS = [
     "velocity_vs_rigour", "domain_risk", "collaboration_width", "data_team_maturity",
     "jd_authorship", "stakeholder_orientation", "autonomy_level",
-    "greenfield_vs_fix", "urgency", "language_gate_type", "interview_stages",
-    "ats_platform", "ats_job_id",
+    "greenfield_vs_fix", "urgency", "work_arrangement", "language_gate_type",
+    "interview_stages", "ats_platform", "ats_job_id",
 ]
 
 JSON_FIELD_ORDER = [
@@ -42,7 +42,7 @@ JSON_FIELD_ORDER = [
     "salary_min", "salary_max", "salary_currency",
     "jd_authorship", "stakeholder_orientation", "autonomy_level",
     "greenfield_vs_fix", "velocity_vs_rigour", "domain_risk",
-    "collaboration_width", "data_team_maturity", "urgency",
+    "collaboration_width", "data_team_maturity", "urgency", "work_arrangement",
     "language_gate_type", "language_gate_languages",
     "interview_stages", "ats_platform", "ats_job_id",
 ] + BOOL_FIELDS + ["source_url", "evidence"]
@@ -129,6 +129,8 @@ def write_files(data: dict):
 **greenfield_vs_fix:** {data.get('greenfield_vs_fix')} — {prose(evidence, 'greenfield_vs_fix')}
 
 **urgency:** {data.get('urgency')} — {prose(evidence, 'urgency', 'No urgency signals present.')}
+
+**work_arrangement:** {data.get('work_arrangement')} — {prose(evidence, 'work_arrangement', 'Not stated in JD.')}
 
 **language_gate:** {lang_gate}
 

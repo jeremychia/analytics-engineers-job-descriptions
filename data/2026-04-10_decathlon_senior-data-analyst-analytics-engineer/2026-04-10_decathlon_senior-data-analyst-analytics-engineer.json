@@ -18,6 +18,7 @@
   "collaboration_width": 1,
   "data_team_maturity": "mid",
   "urgency": "standard",
+  "work_arrangement": "not_stated",
   "language_gate_type": "soft",
   "language_gate_languages": [
     "French"
@@ -54,7 +55,8 @@
     "autonomy_level": "Support franchise partners' decisions regarding stock, supply chain, and pricing",
     "greenfield_vs_fix": "Build data marts and business layers using dbt on Databricks; Design and maintain dashboards; Adapt existing dashboards from other business domains",
     "language_gate": "No urgency signals present",
-    "urgency": "No urgency signals present"
+    "urgency": "No urgency signals present",
+    "work_arrangement": "Not stated in JD."
   },
   "velocity_vs_rigour_quote": "Implement row-level security",
   "velocity_vs_rigour_reasoning": "The JD emphasizes governance and control (row-level security, documentation of KPIs and business rules) with no corresponding velocity signals like 'fast-paced' or 'rapid delivery' in the responsibilities section.",

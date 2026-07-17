@@ -21,6 +21,8 @@ from pathlib import Path
 from collections import Counter, defaultdict
 from typing import Dict, List, Any
 
+from geo_classify import classify_geo_region
+
 # Paths
 PROJECT_ROOT = Path(__file__).parent.parent
 DATA_DIR = PROJECT_ROOT / "data"
@@ -53,6 +55,7 @@ def compile_data_json() -> int:
                 # Ensure application_id field exists for backwards compat
                 if "jd_id" in record and "application_id" not in record:
                     record["application_id"] = record["jd_id"]
+                record["geo_region"] = classify_geo_region(record.get("job_location", ""))
                 records.append(record)
                 print(f"  ✓ {jd_id}")
             except json.JSONDecodeError as e:
@@ -137,6 +140,29 @@ def analyze_dimensions(data: List[Dict]) -> Dict[str, Any]:
     ja = Counter(d.get("jd_authorship") for d in data if d.get("jd_authorship"))
     stats["jd_authorship"] = {k: v for k, v in sorted(ja.items(), key=lambda x: -x[1])}
     print(f"\n  jd_authorship: {stats['jd_authorship']}")
+
+    # work_arrangement (stated only, excludes not_stated)
+    wa = Counter(d.get("work_arrangement") for d in analytical if d.get("work_arrangement"))
+    stats["work_arrangement"] = {k: v for k, v in sorted(wa.items(), key=lambda x: -x[1])}
+    n_wa_stated = sum(v for k, v in wa.items() if k != "not_stated")
+    stats["n_wa_stated"] = n_wa_stated
+    print(f"\n  work_arrangement: {stats['work_arrangement']}")
+    if n_wa_stated:
+        print(f"    — of stated (n={n_wa_stated}): hybrid {100*wa.get('hybrid',0)/n_wa_stated:.0f}%, "
+              f"remote {100*wa.get('remote',0)/n_wa_stated:.0f}%, onsite {100*wa.get('onsite',0)/n_wa_stated:.0f}%")
+
+    # work_arrangement by month posted (RTO trend signal)
+    wa_by_month = defaultdict(Counter)
+    for d in analytical:
+        jd_id = d.get("jd_id", "")
+        wa_val = d.get("work_arrangement")
+        if wa_val and wa_val != "not_stated" and len(jd_id) >= 7:
+            month = jd_id[:7]  # YYYY-MM
+            wa_by_month[month][wa_val] += 1
+    stats["work_arrangement_by_month"] = {
+        m: dict(c) for m, c in sorted(wa_by_month.items())
+    }
+    print(f"\n  work_arrangement by month: {stats['work_arrangement_by_month']}")
 
     # has_dbt
     ae_bi_dbt = sum(1 for d in ae_bi if d.get("has_dbt") is True)

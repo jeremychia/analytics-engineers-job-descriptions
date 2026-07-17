@@ -377,6 +377,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
           <option value="testing_framing">Testing framing</option>
           <option value="loss_aversion_framing">Loss aversion</option>
           <option value="seniority">Seniority title</option>
+          <option value="work_arrangement">Work arrangement</option>
         </select>
       </div>
     </div>
@@ -405,6 +406,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
           <option value="ai_role">AI skill expected</option>
           <option value="testing_framing">Testing framing</option>
           <option value="loss_aversion_framing">Loss aversion</option>
+          <option value="work_arrangement">Work arrangement</option>
         </select>
       </div>
     </div>
@@ -556,6 +558,7 @@ const COLOURS = {
   loss_aversion_framing:  { none: '#16a34a', moderate: '#d97706', high: '#c0392b' },
   seniority:              { junior: '#16a34a', mid: '#0891b2', senior: '#1d4ed8', lead: '#7c3aed', staff: '#c0392b', manager: '#d97706' },
   dbt_named:              { named: '#1d4ed8', not_named: '#9ca3af' },
+  work_arrangement:       { hybrid: '#1d4ed8', remote: '#16a34a', onsite: '#c0392b', not_stated: '#9ca3af' },
 };
 const LABELS = {
   domain_risk:            { high: 'High risk', moderate: 'Moderate', low: 'Low risk' },
@@ -570,6 +573,7 @@ const LABELS = {
   loss_aversion_framing:  { none: 'No fear signal', moderate: 'Operational fear', high: 'Compliance / trust fear' },
   seniority:              { junior: 'Junior', mid: 'Mid', senior: 'Senior', lead: 'Lead', staff: 'Staff', manager: 'Manager' },
   dbt_named:              { named: 'dbt named', not_named: 'dbt not named' },
+  work_arrangement:       { hybrid: 'Hybrid', remote: 'Remote', onsite: 'Onsite', not_stated: 'Not stated' },
 };
 const KEYWORDS = {
   velocity_vs_rigour: { rigour: ['TDD','CI/CD','production-grade','mocking','performance profiling','compliance','audit','meticulous','controlled','test coverage','regression','quality gate'], velocity: ['move fast','bias for action','agile','iterate','pragmatic','ship','fast-paced','rapid'] },
@@ -792,6 +796,7 @@ const REL_ORDER = {
   greenfield_vs_fix: ['greenfield','mixed','fix_scale'],
   jd_authorship: ['hiring_manager','mixed','recruiter'],
   dbt_named: ['named','not_named'],
+  work_arrangement: ['remote','hybrid','onsite'],
 };
 
 function pct(data, key, filterFn) {
@@ -801,6 +806,11 @@ function pct(data, key, filterFn) {
 }
 function grpPct(data, rowKey, rowVal, colKey, colVal) {
   const sub = data.filter(d => d[rowKey] === rowVal && d[colKey]);
+  if (!sub.length) return 0;
+  return Math.round(sub.filter(d => d[colKey] === colVal).length / sub.length * 100);
+}
+function grpPctExcl(data, rowKey, rowVal, colKey, colVal, exclVal) {
+  const sub = data.filter(d => d[rowKey] === rowVal && d[colKey] && d[colKey] !== exclVal);
   if (!sub.length) return 0;
   return Math.round(sub.filter(d => d[colKey] === colVal).length / sub.length * 100);
 }
@@ -891,6 +901,18 @@ function buildRelationships(data) {
       },
     },
     {
+      id: 'rel-maturity-workarr', rowKey: 'data_team_maturity', colKey: 'work_arrangement', excl: 'not_stated',
+      tag: 'Team maturity × Work arrangement · Coded on JDs that state a policy',
+      q: { seeker: 'Is remote work actually still available — or only at unstable-sounding companies?',
+           manager: 'Your maturity stage predicts what work-arrangement claim candidates will believe' },
+      statFn: () => `Mature teams post hybrid ${grpPctExcl(data,'data_team_maturity','mature','work_arrangement','hybrid','not_stated')}% of the time they state a policy at all, vs. ${grpPctExcl(data,'data_team_maturity','early','work_arrangement','hybrid','not_stated')}% for early-stage teams — where remote (${grpPctExcl(data,'data_team_maturity','early','work_arrangement','remote','not_stated')}%) and even onsite-only (${grpPctExcl(data,'data_team_maturity','early','work_arrangement','onsite','not_stated')}%) are both far more common. Policy is stated at all in ${Math.round(data.filter(d=>d.work_arrangement&&d.work_arrangement!=='not_stated').length/(data.filter(d=>d.data_team_maturity).length||1)*100)}% of maturity-coded roles.`,
+      read: `Mature data teams have almost entirely converged on hybrid (92% of the ones that state a policy) — full remote is rare there, at well under a tenth of stated policies. Early-stage teams are the opposite: work arrangement is far more contested, split roughly hybrid-majority/remote/onsite (53% / 32% / 16%), which likely reflects small teams still deciding their own default rather than inheriting a corporate real-estate policy. This reads less as an active "return to office" push mid-flight and more as a settled state: once a data org reaches scale, hybrid — not remote — is the default it lands on, and few mature postings in this corpus advertise unrestricted remote work. The corpus spans roughly three months (April–July 2026), too short a window to claim a trend; this is a snapshot of where policy sits today, not evidence of movement toward it.`,
+      tip: {
+        seeker: `If fully remote is a hard requirement, early-stage and smaller companies are structurally your better search target in this market — mature-team postings that still offer it are the exception, not a fallback you can count on. For mature-team roles, budget for a 2–3 day/week office commute by default and treat any remote claim there as worth confirming directly, since the JD language is thin on specifics.`,
+        manager: `If you're a mature team offering genuine remote flexibility, say so explicitly and early — it currently reads as a rare enough claim that candidates may discount it as boilerplate unless you're specific about the actual policy (days, geography, exceptions). If you're early-stage and want the hybrid credibility of a "grown-up" team, be aware that's not yet the market's default at your stage — a stated, concrete policy will do more work than the label alone.`,
+      },
+    },
+    {
       id: 'rel-fear-collab', rowKey: 'loss_aversion_framing', colKey: 'collaboration_width', numeric: true,
       tag: 'Loss-aversion framing × Collaboration width · Fragile but monotonic',
       q: { seeker: 'Do fearful employers ask you to talk to more people?',
@@ -940,18 +962,19 @@ function buildRelationships(data) {
     const statEl = document.getElementById(`${p.id}-stat`);
     if (statEl) statEl.innerHTML = p.statFn();
     const testEl = document.getElementById(`${p.id}-test`);
+    const pdata = p.excl ? data.filter(d => d[p.colKey] !== p.excl) : data;
     if (p.numeric) {
-      renderNumBar(`${p.id}-viz`, data, p.rowKey, p.colKey, REL_ORDER[p.rowKey]);
+      renderNumBar(`${p.id}-viz`, pdata, p.rowKey, p.colKey, REL_ORDER[p.rowKey]);
       if (testEl) {
         const groups = (REL_ORDER[p.rowKey] || []).map(g =>
-          data.filter(d => d[p.rowKey] === g && d[p.colKey] != null && d[p.colKey] !== '')
+          pdata.filter(d => d[p.rowKey] === g && d[p.colKey] != null && d[p.colKey] !== '')
               .map(d => parseFloat(d[p.colKey])).filter(v => !isNaN(v)));
         const kw = kruskalWallis(groups);
         testEl.innerHTML = sigBadge(kw, kw ? `Kruskal–Wallis H=${kw.H.toFixed(1)}, df=${kw.df}, ${fmtP(kw.p)}` : '');
       }
     } else {
-      renderXtab(`${p.id}-viz`, data, p.rowKey, p.colKey, REL_ORDER[p.rowKey], REL_ORDER[p.colKey]);
-      if (testEl) testEl.innerHTML = chiBadge(data, p.rowKey, p.colKey);
+      renderXtab(`${p.id}-viz`, pdata, p.rowKey, p.colKey, REL_ORDER[p.rowKey], REL_ORDER[p.colKey]);
+      if (testEl) testEl.innerHTML = chiBadge(pdata, p.rowKey, p.colKey);
     }
   });
 }
@@ -1147,8 +1170,8 @@ function selectOrientation(dataKey, key) {
 
 // ── Geography (demoted, honest) ──
 function buildGeo(data) {
-  const GEO_LABELS = { berlin:'Berlin', hamburg:'Hamburg', nordics:'Nordics', uk_remote:'UK / Remote', other_europe:'Other Europe', global_remote:'Global Remote', other:'Unclassified / other' };
-  const GEO_ORDER = ['berlin','other_europe','other','global_remote','nordics','uk_remote','hamburg'];
+  const GEO_LABELS = { berlin:'Berlin', hamburg:'Hamburg', nordics:'Nordics', uk_remote:'UK / Remote', france:'France', benelux:'Benelux', iberia:'Iberia', ireland:'Ireland', dach_other:'DACH (other)', baltics:'Baltics', other_europe:'Other Europe', global_remote:'Global Remote', other:'Unclassified / other' };
+  const GEO_ORDER = ['berlin','benelux','iberia','nordics','uk_remote','global_remote','france','other_europe','other','dach_other','baltics','hamburg','ireland'];
   const counts = {};
   data.forEach(d => { const r = d.geo_region || 'other'; counts[r] = (counts[r]||0)+1; });
   const n = data.length || 1;
