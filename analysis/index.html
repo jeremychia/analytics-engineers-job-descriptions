@@ -479,8 +479,8 @@ const SECTION_ORDER = {
 // Panel order: seeker = effect size (discriminating power is what targeting needs);
 // manager = consequence for writing a posting (title language first — it's the cheapest fix).
 const PANEL_ORDER = {
-  seeker:  ['rel-maturity-mission','rel-domain-stakeholder','rel-testing-rigour','rel-seniority-autonomy','rel-authorship-dbt','rel-maturity-autonomy','rel-fear-collab','rel-stakeholder-autonomy'],
-  manager: ['rel-seniority-autonomy','rel-testing-rigour','rel-authorship-dbt','rel-maturity-mission','rel-maturity-autonomy','rel-domain-stakeholder','rel-fear-collab','rel-stakeholder-autonomy'],
+  seeker:  ['rel-maturity-mission','rel-domain-stakeholder','rel-testing-rigour','rel-seniority-autonomy','rel-authorship-dbt','rel-maturity-autonomy','rel-maturity-workarr','rel-fear-collab','rel-stakeholder-autonomy'],
+  manager: ['rel-seniority-autonomy','rel-testing-rigour','rel-authorship-dbt','rel-maturity-mission','rel-maturity-autonomy','rel-maturity-workarr','rel-domain-stakeholder','rel-fear-collab','rel-stakeholder-autonomy'],
 };
 const NAV_LABELS = {
   relationships: { seeker: 'Relationships', manager: 'What candidates infer' },
@@ -796,7 +796,7 @@ const REL_ORDER = {
   greenfield_vs_fix: ['greenfield','mixed','fix_scale'],
   jd_authorship: ['hiring_manager','mixed','recruiter'],
   dbt_named: ['named','not_named'],
-  work_arrangement: ['remote','hybrid','onsite'],
+  work_arrangement: ['remote','hybrid','onsite','not_stated'],
 };
 
 function pct(data, key, filterFn) {
@@ -901,15 +901,15 @@ function buildRelationships(data) {
       },
     },
     {
-      id: 'rel-maturity-workarr', rowKey: 'data_team_maturity', colKey: 'work_arrangement', excl: 'not_stated',
-      tag: 'Team maturity × Work arrangement · Coded on JDs that state a policy',
-      q: { seeker: 'Is remote work actually still available — or only at unstable-sounding companies?',
+      id: 'rel-maturity-workarr', rowKey: 'data_team_maturity', colKey: 'work_arrangement',
+      tag: 'Team maturity × Work arrangement · Including JDs that state no policy at all',
+      q: { seeker: 'Is remote work actually still available — or only at unstable-sounding companies? And who\'s just not saying?',
            manager: 'Your maturity stage predicts what work-arrangement claim candidates will believe' },
-      statFn: () => `Mature teams post hybrid ${grpPctExcl(data,'data_team_maturity','mature','work_arrangement','hybrid','not_stated')}% of the time they state a policy at all, vs. ${grpPctExcl(data,'data_team_maturity','early','work_arrangement','hybrid','not_stated')}% for early-stage teams — where remote (${grpPctExcl(data,'data_team_maturity','early','work_arrangement','remote','not_stated')}%) and even onsite-only (${grpPctExcl(data,'data_team_maturity','early','work_arrangement','onsite','not_stated')}%) are both far more common. Policy is stated at all in ${Math.round(data.filter(d=>d.work_arrangement&&d.work_arrangement!=='not_stated').length/(data.filter(d=>d.data_team_maturity).length||1)*100)}% of maturity-coded roles.`,
-      read: `Mature data teams have almost entirely converged on hybrid (92% of the ones that state a policy) — full remote is rare there, at well under a tenth of stated policies. Early-stage teams are the opposite: work arrangement is far more contested, split roughly hybrid-majority/remote/onsite (53% / 32% / 16%), which likely reflects small teams still deciding their own default rather than inheriting a corporate real-estate policy. This reads less as an active "return to office" push mid-flight and more as a settled state: once a data org reaches scale, hybrid — not remote — is the default it lands on, and few mature postings in this corpus advertise unrestricted remote work. The corpus spans roughly three months (April–July 2026), too short a window to claim a trend; this is a snapshot of where policy sits today, not evidence of movement toward it.`,
+      statFn: () => `${grpPct(data,'data_team_maturity','mature','work_arrangement','not_stated')}% of mature-team postings state no arrangement at all, vs. ${grpPct(data,'data_team_maturity','early','work_arrangement','not_stated')}% at early-stage — a gap, but silence is common at every stage (roughly a third of postings overall). Among the ones that do state a policy, mature teams post hybrid ${grpPctExcl(data,'data_team_maturity','mature','work_arrangement','hybrid','not_stated')}% of the time vs. ${grpPctExcl(data,'data_team_maturity','early','work_arrangement','hybrid','not_stated')}% for early-stage.`,
+      read: `Adding the "not stated" cases back in changes the picture from the stated-policy-only view: roughly a third of postings at every maturity tier say nothing about work arrangement, so any hybrid/remote/onsite split describes only the two-thirds of the market that bothered to specify. Among <em>those</em>, mature data teams have almost entirely converged on hybrid (89%) — full remote is rare, under a tenth of stated policies. Early-stage teams are the opposite: work arrangement is far more contested, split roughly hybrid-majority/remote/onsite (55% / 30% / 15%), which likely reflects small teams still deciding their own default rather than inheriting a corporate real-estate policy. Mid-stage sits between the two (75% / 21% / 4%) but closer to mature's hybrid convergence than to early-stage's split. The "not stated" share itself doesn't vary sharply by maturity (33–39% at every tier) — so silence isn't concentrated at one stage, it's a constant background rate at roughly a third of the market everywhere, and it's exactly why the test below reads differently from an earlier cut of this panel: with "not stated" folded in as its own category, the maturity/arrangement association is no longer significant (four categories dilute a pattern that was real among the three <em>stated</em> options). Restricting to postings that name a policy at all, the same test comes back significant (χ²=9.8, p≈0.04) but with a small effect (Cramér's V≈0.17) and a borderline cell count (mature/onsite) — so read the stated-policy direction with some confidence, but not the combined test below, which is answering a different, harder question ("does maturity predict silence as well as choice of arrangement") and currently says no. The corpus spans roughly three months (April–July 2026), too short a window to claim a trend either way.`,
       tip: {
-        seeker: `If fully remote is a hard requirement, early-stage and smaller companies are structurally your better search target in this market — mature-team postings that still offer it are the exception, not a fallback you can count on. For mature-team roles, budget for a 2–3 day/week office commute by default and treat any remote claim there as worth confirming directly, since the JD language is thin on specifics.`,
-        manager: `If you're a mature team offering genuine remote flexibility, say so explicitly and early — it currently reads as a rare enough claim that candidates may discount it as boilerplate unless you're specific about the actual policy (days, geography, exceptions). If you're early-stage and want the hybrid credibility of a "grown-up" team, be aware that's not yet the market's default at your stage — a stated, concrete policy will do more work than the label alone.`,
+        seeker: `If fully remote is a hard requirement, early-stage and smaller companies are structurally your better search target in this market — mature-team postings that still offer it are the exception, not a fallback you can count on. But a third of postings at every stage say nothing at all — don't read silence as "onsite by default"; it's worth a direct question in screening regardless of company stage. For mature-team roles that do state a policy, budget for a 2–3 day/week office commute by default.`,
+        manager: `If you're a mature team offering genuine remote flexibility, say so explicitly and early — it currently reads as a rare enough claim that candidates may discount it as boilerplate unless you're specific (days, geography, exceptions). If your posting states no policy at all, you're in the roughly one-third majority at every stage, but that's not neutral — ambiguity here is exactly the kind of gap a strong candidate probes for and a weak one avoids. Stating it, even a firm in-office default, out-converts stating nothing.`,
       },
     },
     {

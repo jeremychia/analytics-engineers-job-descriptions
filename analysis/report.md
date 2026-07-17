@@ -60,6 +60,8 @@ These constraints don't make the findings false. They mean the reports should be
 
 **2026-07-16 expansion:** Twelve new JDs added (Doodle, Adaptive HVM, Top Doctors Group, Qargo, Orange, Fortnox, Amaris Consulting, bTV Media Group, TDA, Oscar, MoonPay, TRIA) representing moderate-risk (7), high-risk (3), low-risk (2) roles. Mid-stage (8) and mature (3) organisations represented alongside early-stage (1). Seniority mix: mid (9), senior (3). All classified using the same Layer B codebook; no statistical re-weighting applied — new entries are simply added to the analytical cohort at their face distribution. Corpus now at 260 total records, 240 in analytical cohort.
 
+**2026-07-17 expansion:** Thirteen new JDs added (Booking Holdings Romania, Electra, Fruition Group Ireland, Jobster, Lendable ×2, Mollie, Monzo, Niji, Paddle, Rebtel, Reeeliance, Skiils). Corpus now at 273 total records, 251 in analytical cohort. This batch also completed the `work_arrangement` field across the corpus, enabling the chi-square sweep in Finding H (§4.9) — work arrangement is driven almost entirely by geography, with a weak, secondary maturity effect (mature teams skew more hybrid than early-stage teams).
+
 **Classification method:** A subset of records were hand-coded by the author during the job search. The remainder were classified using LLM majority vote — three independent runs of claude-haiku-4-5 against the same Layer B codebook, with a fixed evidence-quote verifier (§9.1). Where manual and LLM classifications exist for the same JD, manual takes precedence.
 
 **LLM classification quality:** Self-consistency across three runs is high for structured dimensions (`velocity_vs_rigour`: 0.94, `domain_risk`: 0.95, `data_team_maturity`: 0.94) and lower for dimensions with more subjective decision boundaries (`jd_authorship`: 0.58, `autonomy_level`: 0.72). Manual–LLM match rates sit at 25–35% across dimensions on the subset with both — a codebook-validity signal, not a model failure; see §9.2. Full detail in `consistency_report.md`.
@@ -345,6 +347,20 @@ Full cross-tab in §4.6. Hiring-manager-authored JDs name dbt at 79% vs. 28% for
 
 ---
 
+### Finding H: Work arrangement — driven almost entirely by geography, with a weak maturity effect (added 2026-07-17, n=273 total / 251 analytical cohort)
+
+A chi-square sweep of `work_arrangement` (hybrid / remote / onsite; `not_stated` excluded, 34% of the analytical cohort) against all other categorical and boolean dimensions found essentially one real driver: **where the job is**. `geo_region` is by far the strongest association (χ²=78.7, dof=24, p<0.0001, V=0.49, n=163) — remote roles concentrate almost entirely in `global_remote` and `uk_remote`, hybrid dominates every other region (Berlin, Iberia, Benelux, Nordics, France). This is close to tautological (a posting tagged "global remote" is remote by construction of the label) and the test itself is statistically unreliable — 24 degrees of freedom against n=163 means most cells hold 0–3 observations, well below the ≥5 threshold the χ² approximation assumes. Treat the direction as real, the p-value as decorative.
+
+The one dimension that clears both significance *and* a passably reliable cell-count floor is `data_team_maturity` (χ²=9.84, dof=4, p=0.043, V=0.17, n=163 — smallest expected cell 0.93). Mature teams post hybrid at 89% of the arrangements they state, vs. 55% for early-stage teams, who split more evenly across hybrid/remote/onsite (55% / 30% / 15%); mid-stage sits between the two (75% / 21% / 4%), closer to mature's hybrid convergence. This matches the §4.3 maturity story — mature teams have converged on an operating default, early-stage teams are still deciding theirs — but the effect size is small (V=0.17) and shouldn't be oversold as a strong relationship; it's directional, not deterministic. Interactive cross-tab and full write-up live in the dashboard (`index.html`, "Team maturity × Work arrangement" panel).
+
+**On the missing 34% itself:** rather than just excluding `not_stated`, it's worth showing it as its own category, because it's an interesting result in its own right. It does *not* concentrate at any one maturity tier — mature (39%), mid (33%), and early-stage (37%) all withhold a policy at roughly the same rate. That's the more useful finding than it first appears: the arrangement-silence rate is a flat, corpus-wide background level, not a signal that varies with company stage. Practically, this means the hybrid/remote/onsite splits above describe only the ~66% of the market that specifies at all — and folding `not_stated` back in as a fourth category (rather than excluding it) drops the maturity × arrangement test below significance (χ²=10.16, dof=6, p=0.118, V=0.14, n=251): four categories dilute a pattern that was real among the three *stated* options. Both readings are legitimate and answer different questions — "does maturity predict which arrangement is chosen, given one is stated" (yes, weakly) vs. "does maturity predict whether an arrangement is stated at all" (no) — and the dashboard panel now shows both.
+
+**Everything else tested null.** No tool-stack flag (`has_dbt`, `has_python`, `has_airflow`, `has_snowflake`, etc.) shows any association with work arrangement — remote/hybrid/onsite roles run the same stack in the same proportions. Same null result for `seniority`, `autonomy_level`, `velocity_vs_rigour`, `domain_risk`, `urgency`, `jd_authorship`, `greenfield_vs_fix`, `ai_role`, `testing_framing`, `loss_aversion_framing`, and `stakeholder_orientation` (all p>0.20). `ats_platform` came close (p=0.056) but has the worst sparse-cell problem of any test run (min expected cell = 0.04, 13 platform categories against 3 arrangement categories) and isn't interpretable without collapsing platforms into broader buckets first.
+
+**Caveat on missingness:** 34% of the analytical cohort states no work arrangement at all. That non-response wasn't itself tested against other dimensions in this pass — whether "not stated" clusters by region or platform (rather than being random) is an open question worth a follow-up test before treating the stated-policy subset as representative of the whole corpus.
+
+---
+
 ### Summary of relationships tested
 
 | Relationship | Test | p | V | Interpretation |
@@ -359,6 +375,9 @@ Full cross-tab in §4.6. Hiring-manager-authored JDs name dbt at 79% vs. 28% for
 | seniority × autonomy_level | χ² | <0.001 | 0.35 | Significant overall, but "Senior" (the modal title) predicts weakly |
 | stakeholder_orientation × autonomy_level | χ² | 0.007 | 0.29 | Finance = execution; product/mixed = strategic |
 | collaboration_width × data_team_maturity | — | — | — | No longer supports a claim at n=123 (§4.7) |
+| work_arrangement × geo_region | χ² | <0.0001 | 0.49 | Strongest association found, but unreliable — most cells <5 (Finding H) |
+| work_arrangement × data_team_maturity | χ² | 0.043 | 0.17 | Significant, small effect — mature teams skew hybrid over remote (Finding H) |
+| work_arrangement × everything else (28 dims tested) | χ² | >0.20 | ≤0.13 | Null — tool stack, seniority, autonomy, rigour, domain risk unrelated to arrangement |
 
 ---
 
