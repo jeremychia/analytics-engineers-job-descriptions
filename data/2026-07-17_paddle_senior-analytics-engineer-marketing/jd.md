@@ -1,0 +1,139 @@
+# Senior Analytics Engineer - Marketing — Paddle
+
+**URL:** https://jobs.ashbyhq.com/paddle/e0aaf687-4dd6-44b5-ad05-891df9a51e4b
+**Location:** UK; Ireland; Portugal
+**Date Posted:** 2026-07-17
+
+---
+
+Senior Analytics Engineer - Marketing
+Location
+UK; Ireland; Portugal
+
+Employment Type
+Full time
+
+Location Type
+Remote
+
+Department
+Product & Engineering
+Engineering
+
+Overview
+Application
+What do we do?
+
+Paddle offers digital product companies a completely different approach to their payment infrastructure. Instead of assembling and maintaining a complex stack of payments-related apps and services, we're a Merchant of Record for our customers. That means we take away 100% of the pain of payment fragmentation. It's faster, safer, cheaper, and, above all, way better.
+
+We're backed by investors including KKR, FTV Capital, Kindred, Notion, and 83North and serve over 6000 software sellers in 245 territories globally.
+
+The Role:
+
+We are seeking a Senior Analytics Engineer to drive significant business impact by shaping our data infrastructure, developing robust data models, and promoting best practices in analytics engineering (e.g., data quality, documentation, and scalable data architectures). You will collaborate closely with the Marketing team in order to ensure that funnels are being tracked and surfaced in our data models and that Marketing campaigns can be evaluated using accurate data.
+
+What you'll do:
+
+Create trusted, self-serve datasets and reporting layers in Omni that power Marketing performance reviews, campaign reporting, attribution analysis, funnel health monitoring, and investment decision-making.
+
+Proactively identify and resolve data quality issues across Marketing and GTM systems, including source tracking, campaign metadata, funnel stage completeness, attribution coverage, and spend data.
+
+Add comprehensive metadata to datasets, including documentation, lineage, ownership, definitions, data quality checks, and sensitive data masking.
+
+Partner with Marketing stakeholders to translate business questions into robust data products, dashboards, analyses, and decision-ready insights.
+
+Enable Marketing teams to confidently use Omni and core GTM datasets through documentation, training, office hours, and self-serve resources.
+
+Activate data from Snowflake into operational tools where needed, supporting audience segmentation, lifecycle programmes, campaign optimisation, or GTM workflows.
+
+We'd love to hear from you:
+
+Extensive experience in analytics engineering or related data roles, with demonstrated expertise in advanced SQL, dbt, and Snowflake.
+
+Proficient in using BI tools (e.g. Tableau, Looker, PowerBI, Snowsight) to deliver clear, actionable insights for business stakeholders.
+
+Skilled in performing data ingestion and activation using no-code tools (e.g. Fivetran, Stitch), ensuring efficient data integration into operational systems.
+
+Knowledgeable in managing metadata, documentation, data quality checks, and sensitive data masking effectively.
+
+Effective at collaborating closely with diverse stakeholders, understanding their data needs, and delivering impactful solutions.
+
+Experienced in conducting training sessions and providing informal mentorship to junior analytics team members, fostering a collaborative and knowledge-sharing environment.
+
+Familiar with Marketing and GTM data concepts such as campaign tracking, attribution, funnel stages, lead/account lifecycle, pipeline generation, paid media, web analytics, CRM data, and marketing automation data.
+
+Experienced with common GTM tools such as Salesforce, HubSpot, Marketo, Google Analytics, ad platforms, enrichment tools, or similar. The exact stack is less important than the ability to understand how GTM data is created, transformed, and used.
+
+Comfortable working across Marketing, RevOps, Sales, Finance, and Data to align definitions, reporting logic, and ownership.
+
+Everyone is welcome at Paddle
+
+At Paddle, we're committed to removing invisible barriers, both for our customers and within our own teams. We recognise and celebrate that every Paddler is unique and we welcome every individual perspective. As an inclusive employer we don't care if, or where, you studied, what you look like or where you're from. We're more interested in your craft, curiosity, passion for learning and what you'll add to our culture. We encourage you to apply even if you don't match every part of the job ad, especially if you're part of an underrepresented group.
+
+Please let us know if there's anything we can do to better support you through the application process and in the workplace. We will do everything we can to support any accommodations needed. We're committed to building a diverse team where everyone feels safe to be their authentic self. Let's grow together.
+
+Our Values
+
+Paddle Together - "None of us, is as smart as all of us"
+
+Paddle Simply - "Simple can be harder than complex: you have to get your thinking clean to make it simple"
+
+Paddle for others - "We can realise our wildest dreams, so long as we help enough other people to realise theirs"
+
+Why you'll love working at Paddle
+
+We are a diverse, growing group of Paddlers across the globe who pride ourselves on our transparent, collaborative and respectful culture.
+
+We are a 'digital-first' company, which means you can work remotely, from one of our stylish hubs, or even a bit of both! We offer all team members unlimited holidays and 4 months paid family leave regardless of gender. We invest in learning and will help you with your personal development via constant exposure to new challenges, an annual learning fund, and regular internal and external training.
+
+---
+
+## Layer B — Behavioural Analysis
+
+*3-run LLM consistency check: `../../analysis/jd_traces/2026-07-17_paddle_senior-analytics-engineer-marketing.md` (generated by `classify_jds.py`, may not exist yet)*
+
+**velocity_vs_rigour:** rigour — Rigour signals dominate throughout (data quality, metadata, documentation, lineage, ownership, sensitive data masking, scalable data architectures) with no velocity/shipping-speed language present.
+
+**domain_risk:** moderate — Errors would affect marketing investment decisions and campaign evaluation, which is a business-decision consequence without regulatory or public-facing financial-reporting exposure, despite Paddle being a payments company (the role itself is marketing-analytics, not payments-core).
+
+**collaboration_width:** 5 — named teams: Marketing; RevOps; Sales; Finance; Data
+
+**data_team_maturity:** mid — Named tools (Snowflake, dbt, Omni) appear directly in responsibilities with an existing self-serve reporting layer to extend and junior analytics team members to mentor, indicating a mid-stage, growing data function.
+
+**jd_authorship:** hiring_manager — Responsibilities name specific tools, systems, and precise application context (Omni reporting layers, Snowflake activation, campaign metadata, funnel stage completeness), letting the reader understand the actual day-to-day work.
+
+**stakeholder_orientation:** commercial — The explicit primary audience and role title itself center on Marketing performance, campaign reporting, and GTM data, matching commercial orientation.
+
+**autonomy_level:** mixed — The role combines strategic shaping of data infrastructure and best practices with execution-oriented partnership work translating specific Marketing stakeholder requests, giving a mixed autonomy profile.
+
+**greenfield_vs_fix:** mixed — The role both creates new self-serve reporting layers and fixes/resolves data quality issues across existing Marketing and GTM systems, giving a mixed greenfield/fix signal.
+
+**urgency:** standard — No urgency signals present.
+
+**work_arrangement:** remote — Location Type: Remote
+
+**language_gate:** none — Not stated in JD.
+
+**interview_stages:** Not stated in JD
+
+**ats_platform:** ashby
+
+**ats_job_id:** e0aaf687-4dd6-44b5-ad05-891df9a51e4b
+
+**loss_aversion:** "Proactively identify and resolve data quality issues across Marketing and GTM systems" — reliability and trust concerns are present and repeated but secondary to marketing delivery outcomes, with no compliance/regulatory register.
+
+**ATS keywords:**
+- Senior Analytics Engineer
+- Marketing
+- GTM
+- dbt
+- Snowflake
+- Omni
+- attribution analysis
+- campaign reporting
+- data quality
+- metadata
+- Tableau
+- Looker
+- PowerBI
+- Fivetran
