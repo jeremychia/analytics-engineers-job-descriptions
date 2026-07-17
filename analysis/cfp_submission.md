@@ -16,7 +16,7 @@
 
 During a job search across the European analytics engineering market earlier this year, I classified a set of job postings using a structured behavioural framework. Rather than reading each JD as a list of requirements, I read it for what it signals about the organisation: how it frames accountability, whether it prioritises speed or correctness, how mature its data team is, who the role actually serves.
 
-A few things stood out. Rigour dominates as the primary orientation across roles, and pure velocity is essentially absent. High-risk companies — fintech and financial services — are not the most rigour-oriented; mid-risk roles are. A significant share of analytics engineering postings make no mention of dbt.
+A few things stood out. Rigour dominates as the primary orientation across roles, and pure velocity is essentially absent — including at low-risk companies, where you'd expect rigour language to be optional. High-risk domains carry only slightly more of it than moderate- or low-risk ones, and the gap isn't statistically significant: rigour framing reads as an institutional norm the whole market has adopted, not a response to variable underlying risk. A significant share of analytics engineering postings make no mention of dbt.
 
 This talk describes the method, walks through the findings, and discusses what job postings, read carefully, reveal about the profession that other sources do not.
 
@@ -35,7 +35,7 @@ This talk describes the method, walks through the findings, and discusses what j
 | Segment | Duration |
 |---|---|
 | The method: reading JDs behaviourally | 2 min |
-| The findings: what 46 European postings show | 5 min |
+| The findings: what 270+ European postings show | 5 min |
 | What the gaps imply | 3 min |
 
 ---
