@@ -14,19 +14,22 @@
 
 ## Abstract
 
-During a job search across the European analytics engineering market earlier this year, I classified a set of job postings using a structured behavioural framework. Rather than reading each JD as a list of requirements, I read it for what it signals about the organisation: how it frames accountability, whether it prioritises speed or correctness, how mature its data team is, who the role actually serves.
+While reading job postings, I often think about how much they vary from one other. "Do they actually mean this, or is this something everyone writes?" I wanted to quantify these traits, and that's what the talk will share. I've classified hundreds* of European postings for Analytics Engineers, reading between the lines for what they reveal beneath what is written, and checking, statistically, which of these signals move together.
 
-A few things stood out. Rigour dominates as the primary orientation across roles, and pure velocity is essentially absent — including at low-risk companies, where you'd expect rigour language to be optional. High-risk domains carry only slightly more of it than moderate- or low-risk ones, and the gap isn't statistically significant: rigour framing reads as an institutional norm the whole market has adopted, not a response to variable underlying risk. A significant share of analytics engineering postings make no mention of dbt.
+The strongest pairing in the dataset is also the least disputable: company stage and mission type move together almost deterministically — early-stage teams hand out greenfield builds, mature teams hire almost entirely to fix and scale what already exists. "We're an early-stage startup" is, in practice, a reliable proxy for "you'll be building from scratch." Other pairings are murkier and more interesting: "we care about data quality" shows up almost everywhere — at cautious fintechs and scrappy low-risk startups alike, with no statistically significant difference between them. It's become boilerplate: language every posting reaches for regardless of whether the underlying risk justifies it. And one relationship I was confident about early on, between who a role serves and how much autonomy it carries, held at 120 postings and fell apart at 270 — a reminder that a pattern in a small sample can look real right up until it isn't.
 
-This talk describes the method, walks through the findings, and discusses what job postings, read carefully, reveal about the profession that other sources do not.
+For anyone writing a job description or reading one, I intend for this to be a field guide to which lines are worth trusting, which ones every posting says, and how to discern which roles might have a good fit for you based on associated characteristics.
+
+**See more**:
+[GitHub Repository](https://jeremychia.github.io/analytics-engineers-job-descriptions/)
 
 ---
 
 ## Takeaways
 
-1. A method for reading a job description as a behavioural document rather than a requirements list
-2. What the European AE job market signals about professional priorities in 2026
-3. Where the market's revealed preferences diverge from the profession's self-reported ones
+1. A framework for decoding job descriptions' signals
+2. Which traits (e.g. autonomy, company stage) move together in this corpus, and what shows up everywhere regardless of the nature of the company
+3. What job seekers and hiring managers can infer or react to with this quantified information
 
 ---
 
@@ -34,9 +37,12 @@ This talk describes the method, walks through the findings, and discusses what j
 
 | Segment | Duration |
 |---|---|
+| The findings: what hundreds* of European postings show | 5 min |
+| What the gaps imply — for job seekers and hiring managers | 3 min |
 | The method: reading JDs behaviourally | 2 min |
-| The findings: what 270+ European postings show | 5 min |
-| What the gaps imply | 3 min |
+
+_Note 1: more job descriptions will be scraped between now and the conference._
+_Note 2: the dataset and classification framework are open on GitHub._
 
 ---
 
