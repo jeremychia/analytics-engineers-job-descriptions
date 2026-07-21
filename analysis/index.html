@@ -480,8 +480,8 @@ const SECTION_ORDER = {
 // Panel order: seeker = effect size (discriminating power is what targeting needs);
 // manager = consequence for writing a posting (title language first — it's the cheapest fix).
 const PANEL_ORDER = {
-  seeker:  ['rel-maturity-mission','rel-mission-autonomy','rel-domain-stakeholder','rel-testing-rigour','rel-seniority-autonomy','rel-authorship-autonomy','rel-authorship-dbt','rel-maturity-autonomy','rel-maturity-workarr','rel-fear-collab','rel-stakeholder-autonomy'],
-  manager: ['rel-seniority-autonomy','rel-authorship-autonomy','rel-testing-rigour','rel-authorship-dbt','rel-maturity-mission','rel-mission-autonomy','rel-maturity-autonomy','rel-maturity-workarr','rel-domain-stakeholder','rel-fear-collab','rel-stakeholder-autonomy'],
+  seeker:  ['rel-maturity-mission','rel-mission-autonomy','rel-domain-stakeholder','rel-testing-rigour','rel-fear-domainrisk','rel-testing-fear','rel-seniority-autonomy','rel-ai-autonomy','rel-authorship-autonomy','rel-authorship-dbt','rel-maturity-autonomy','rel-maturity-workarr','rel-fear-collab','rel-stakeholder-autonomy'],
+  manager: ['rel-seniority-autonomy','rel-authorship-autonomy','rel-testing-rigour','rel-authorship-dbt','rel-fear-domainrisk','rel-testing-fear','rel-ai-autonomy','rel-maturity-mission','rel-mission-autonomy','rel-maturity-autonomy','rel-maturity-workarr','rel-domain-stakeholder','rel-fear-collab','rel-stakeholder-autonomy'],
 };
 const NAV_LABELS = {
   relationships: { seeker: 'Relationships', manager: 'What candidates infer' },
@@ -855,11 +855,11 @@ function buildRelationships(data) {
     },
     {
       id: 'rel-testing-rigour', rowKey: 'testing_framing', colKey: 'velocity_vs_rigour',
-      tag: 'Testing framing × Rigour orientation · Coded on a subset',
+      tag: 'Testing framing × Rigour orientation · Now coded on the full corpus',
       q: { seeker: 'Is "quality" a team value, or your personal job?',
            manager: 'If quality is genuinely the hire\'s job, does your JD name it — or just say "quality"?' },
-      statFn: () => `${grpPct(data,'testing_framing','responsibility','velocity_vs_rigour','rigour')}% of "owns quality" JDs are rigour-coded, vs. ${grpPct(data,'testing_framing','absent','velocity_vs_rigour','rigour')}% of JDs that don't mention testing at all. This dimension was added late to the codebook and covers ${data.filter(d=>d.testing_framing).length} of ${data.length} roles.`,
-      read: `Rigour orientation (correctness over speed) is necessary but not sufficient to tell you whether <em>you personally</em> will be accountable for data quality, or whether it's just team culture. "Testing framing = responsibility" identifies the roles where governance has been written into the job as a named, individual accountability — not delegated to "the team" or a tool in the stack. That's the more actionable signal for how your first 90 days will actually go. Two caveats: the "tool listed" middle category is only a handful of records, so the real finding is the responsibility-vs-absent contrast; and the test clears p=0.05 without much room to spare on this subset.`,
+      statFn: () => `${grpPct(data,'testing_framing','responsibility','velocity_vs_rigour','rigour')}% of "owns quality" JDs are rigour-coded, vs. ${grpPct(data,'testing_framing','absent','velocity_vs_rigour','rigour')}% of JDs that don't mention testing at all. This dimension was coded on a small subset for a long stretch of the corpus (a write-pipeline bug silently dropped it from many records) but is now coded on the full analytical cohort (${data.filter(d=>d.testing_framing).length} of ${data.length} roles).`,
+      read: `Rigour orientation (correctness over speed) is necessary but not sufficient to tell you whether <em>you personally</em> will be accountable for data quality, or whether it's just team culture. "Testing framing = responsibility" identifies the roles where governance has been written into the job as a named, individual accountability — not delegated to "the team" or a tool in the stack. That's the more actionable signal for how your first 90 days will actually go. Now that this dimension is fully coded, the association is one of the cleanest in the dataset (Cramér's V≈0.22, well clear of p=0.05) — the earlier "barely clears significance" caveat no longer applies. The "tool listed" middle category remains the smallest of the three groups but is no longer a handful of records.`,
       tip: {
         seeker: `For "owns quality" roles, lead with concrete accountability — "owned the data contract framework," "reduced production incidents by X%." For roles where testing is absent from the JD, don't over-index on quality bullets; lead with delivery and impact instead.`,
         manager: `"Data quality mindset" appears in nearly every posting and selects for nobody. A named, individual accountability — "you own the data contract framework," "you define the testing standards" — is rare in this corpus, and it's precisely what quality-motivated candidates filter for. If it's team culture rather than this hire's job, don't dress it up as ownership; that reads as scope inflation in the interview.`,
@@ -950,6 +950,42 @@ function buildRelationships(data) {
       },
     },
     {
+      id: 'rel-fear-domainrisk', rowKey: 'loss_aversion_framing', colKey: 'domain_risk',
+      tag: 'Loss-aversion framing × Domain risk · New, now fully coded',
+      q: { seeker: 'Does the JD\'s fear register actually track real stakes?',
+           manager: 'Does your posting\'s risk framing match your actual domain risk — or is it borrowed language?' },
+      statFn: () => `${grpPct(data,'loss_aversion_framing','high','domain_risk','high')}% of high-fear JDs are in genuinely high-risk domains, vs. ${grpPct(data,'loss_aversion_framing','none','domain_risk','high')}% of no-fear JDs. This is the tightest link either dimension has to anything else in the dataset.`,
+      read: `Now that <code>loss_aversion_framing</code> is coded on the full corpus (a write-pipeline bug previously limited it to a small subset — see the methodology note), it shows the strongest relationship of any pairing involving it: JDs that name compliance, audit, or stakeholder-trust risk overwhelmingly sit in domains independently coded as high-stakes (finance, regulated sectors). This is reassuring as a construct-validity check — two dimensions coded from different evidence quotes land in the same place — and it means the fear register is a genuine, not decorative, signal: it's tracking something real about the role, not free-floating anxiety language.`,
+      tip: {
+        seeker: `A JD's fear register is one of the more trustworthy signals in this dataset — if it names compliance/audit/trust risk explicitly, take that seriously as evidence of genuinely high stakes, not just corporate risk-aversion boilerplate.`,
+        manager: `This is good news if your risk framing is honest: candidates (and their tools) can reasonably infer real stakes from your fear language, because in this market that language does correlate with genuine risk. The flip side: borrowing "audit-proof," "compliance-first" language for a role that isn't actually high-stakes will read as inflated against how consistently this pairing holds elsewhere.`,
+      },
+    },
+    {
+      id: 'rel-testing-fear', rowKey: 'testing_framing', colKey: 'loss_aversion_framing',
+      tag: 'Testing framing × Loss-aversion framing · New, now fully coded',
+      q: { seeker: 'Does "you own quality" travel with "we\'re afraid of something"?',
+           manager: 'If you\'re asking for quality ownership, does your JD also name what you\'re afraid of?' },
+      statFn: () => `Only ${grpPct(data,'testing_framing','responsibility','loss_aversion_framing','none')}% of "owns quality" JDs carry no fear signal at all, vs. ${grpPct(data,'testing_framing','absent','loss_aversion_framing','none')}% of JDs that never mention testing.`,
+      read: `Two independently-coded dimensions move together tightly: JDs that hand the candidate explicit quality ownership almost always also name a fear (usually operational reliability, sometimes compliance/trust) — the "pure delivery, no risk register, but you personally own quality" combination is rare. This is a coherence check more than a surprise: an employer who cares enough to write quality ownership into the role usually cares enough to say what they're protecting against. The interesting minority is the reverse gap — JDs with fear language but no ownership framing, where the risk is named but nobody is explicitly on the hook for it.`,
+      tip: {
+        seeker: `If a JD names quality ownership without naming a specific fear (incidents, compliance, trust), ask directly what "quality" is protecting against — it's an atypical combination, and worth clarifying before you take the role.`,
+        manager: `If your posting asks the hire to own data quality, naming the specific fear you're protecting against (incident history, compliance exposure, stakeholder trust) is the more typical, more credible pairing in this market. Ownership language without a stated risk reads as vaguer than most postings that use it.`,
+      },
+    },
+    {
+      id: 'rel-ai-autonomy', rowKey: 'ai_role', colKey: 'autonomy_level',
+      tag: 'AI role × Autonomy · New, now fully coded — a counter-intuitive direction',
+      q: { seeker: 'Is "use AI coding tools" a junior ask, or a senior one?',
+           manager: 'Does naming an AI-tool expectation read as raising or lowering the bar on scope?' },
+      statFn: () => `Roles asking the candidate to use AI coding tools are ${grpPct(data,'ai_role','ai_user','autonomy_level','strategic')}% strategic — higher than AI-infrastructure-building roles (${grpPct(data,'ai_role','ai_enabler','autonomy_level','strategic')}%) and far higher than roles with no AI expectation at all (${grpPct(data,'ai_role','none','autonomy_level','strategic')}%).`,
+      read: `The naive guess is that "use Copilot/Claude Code" is a junior, execution-heavy ask — accelerate scoped work faster — while "build AI-consuming infrastructure" is the senior mandate. The data runs the other way: JDs that name an AI-tool-fluency expectation are the <em>most</em> strategic-leaning group in the corpus, not the least. A plausible read: naming a specific AI-workflow expectation ("use Claude Code as part of your daily workflow") is itself a marker of an employer confident enough in its engineering culture to be specific — it reads more like "operate at a higher level of leverage" than a junior competency checkbox. This finding is exploratory (not one of this page's two pre-registered predictions) and correlated with a related pattern: AI-tool roles also skew more greenfield, and greenfield work independently carries more strategic scope — so some of this may be downstream of company stage rather than a direct effect of the AI expectation itself.`,
+      tip: {
+        seeker: `Don't read "must be comfortable with AI coding tools" as a signal of a junior or narrowly-scoped role — in this market it correlates with more strategic scope, not less. Treat it as one more data point that the employer is being specific about their actual workflow, which is itself a positive signal.`,
+        manager: `Naming an AI-tool-fluency expectation doesn't read as lowering your role's bar — if anything, it correlates with the more strategic-scoped postings in this market. If part of your role's substance is genuinely "work faster and with more leverage using AI tools," naming that explicitly doesn't undersell the role's seniority the way you might assume.`,
+      },
+    },
+    {
       id: 'rel-stakeholder-autonomy', rowKey: 'stakeholder_orientation', colKey: 'autonomy_level',
       tag: 'Stakeholder audience × Autonomy · A finding that dissolved',
       q: { seeker: 'Does who you serve determine how much say you get? We used to claim yes.',
@@ -1008,18 +1044,18 @@ function buildRelationships(data) {
 function buildNulls(data) {
   const cards = [
     {
-      expect: 'Expected — the industry narrative predicts it',
+      expect: 'Retracted — reversed as the corpus grew',
       title: 'High-stakes domains should write more rigour-heavy JDs',
       resultFn: () => {
         const hi = grpPct(data,'domain_risk','high','velocity_vs_rigour','rigour');
         const mod = grpPct(data,'domain_risk','moderate','velocity_vs_rigour','rigour');
         const lo = grpPct(data,'domain_risk','low','velocity_vs_rigour','rigour');
-        return `If rigour language were a response to real stakes, finance and compliance roles should carry much more of it. They carry slightly more — <strong>${hi}% rigour-coded vs. ${mod}% in moderate-risk and ${lo}% in low-risk domains</strong> — but the association doesn't reach significance, and rigour is dominant in every tier. A signal this flat across every partition tested looks like an institutionalised norm, not a reaction to variable underlying risk.`;
+        return `An earlier cut of this corpus reported this association as flat and non-significant, and framed rigour language as a pure institutionalised norm. At the current, larger corpus that's no longer the honest read: high-risk roles are <strong>${hi}% rigour-coded vs. ${mod}% in moderate-risk and ${lo}% in low-risk domains</strong> — a real, small, statistically detectable gap (Cramér's V≈0.16). Rigour is still close to universal everywhere (63%+ in every tier), so the earlier "flat institutionalised norm" framing wasn't wrong about the dominant pattern — it just couldn't yet detect the small gradient underneath it.`;
       },
       testFn: () => chiBadge(data, 'domain_risk', 'velocity_vs_rigour'),
       apply: {
-        seeker: 'Rigour framing is table stakes everywhere — don\'t tailor it by sector. What differentiates roles is whether quality is <em>your named job</em> (see the testing-framing panel), not whether the JD says "data quality."',
-        manager: '"Data quality," "single source of truth," "reliability" — every posting says it, so it no longer selects. Keep it (its absence would be noticed), but don\'t expect it to attract anyone. Differentiation lives in named accountabilities and explicit decision rights, not virtue vocabulary.',
+        seeker: 'Rigour framing is close to table stakes everywhere, but high-stakes domains do write it slightly more consistently — worth a small weight in how you read a JD\'s seriousness about quality, not a strong signal on its own. What differentiates roles more is whether quality is <em>your named job</em> (see the testing-framing panel), not whether the JD says "data quality."',
+        manager: '"Data quality," "single source of truth," "reliability" — nearly every posting says it, so it barely selects. It does track real stakes slightly more than chance now that the sample is larger, so keep it honest to your actual risk profile — but differentiation still lives mainly in named accountabilities and explicit decision rights, not in how much quality vocabulary you pile on.',
       },
     },
     {
@@ -1059,17 +1095,17 @@ function buildNulls(data) {
       },
     },
     {
-      expect: 'Suggestive, not established',
+      expect: 'Claimed at a small, biased sample — dissolved at full coverage',
       title: 'AI-infrastructure roles cluster in platform teams',
       resultFn: () => {
         const enablers = data.filter(d => d.ai_role === 'ai_enabler');
         const inPlatform = enablers.filter(d => d.stakeholder_orientation === 'internal_data').length;
-        return `Roles asking the hire to <em>build</em> AI infrastructure (rather than use AI tools) skew toward internal-platform audiences — <strong>${inPlatform} of ${enablers.length} ai-enabler roles serve internal data consumers</strong>. The test hovers just above p=0.05 with a medium effect size, but the enabler group is about a dozen records and several cells are near-empty. Directionally consistent with AI demand showing up as platform work first; not yet a fact.`;
+        return `A data-pipeline bug left this dimension coded on only a small, non-random subset of the corpus for a long stretch (now fixed and fully backfilled — see the methodology note). At that subset, roles asking the hire to <em>build</em> AI infrastructure looked concentrated in internal-platform audiences, with the test sitting marginally below the conventional significance threshold. Now coded on the full corpus, the same test — <strong>${inPlatform} of ${enablers.length} ai-enabler roles currently serve internal data consumers</strong> — no longer clears even that marginal bar. The direction is still visible but the earlier "almost significant" framing overstated what a biased small sample could support.`;
       },
       testFn: () => chiBadge(data, 'ai_role', 'stakeholder_orientation'),
       apply: {
-        seeker: 'If you\'re positioning as an AI-enablement AE, internal-platform roles are where that demand is visible so far — treat this as a scouting report to verify against live postings, not a market fact.',
-        manager: 'Barely any postings state an AI expectation, against a survey world claiming 72% daily AI use. If AI fluency genuinely matters for your role, writing it as an explicit criterion is nearly uncontested signal space right now — and if it doesn\'t, leaving it out keeps you with 83% of the market.',
+        seeker: 'Internal-platform roles still look like a reasonable place to position AI-enablement experience, but treat it as a hypothesis to check against live postings, not a market fact backed by this dataset — the earlier version of this card overstated its own confidence.',
+        manager: `${data.filter(d=>d.ai_role).length ? Math.round(data.filter(d=>d.ai_role==='none').length/data.filter(d=>d.ai_role).length*100) : 68}% of postings still state no AI expectation at all, against a survey world claiming 72% daily AI use. If AI fluency genuinely matters for your role, naming it explicitly remains uncrowded signal space — just don't expect a specific stakeholder audience to be the differentiator; this data no longer supports that narrower claim.`,
       },
     },
   ];
