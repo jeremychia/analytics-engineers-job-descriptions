@@ -44,6 +44,30 @@
   "has_soda": false,
   "source_url": "https://www.wave.com/en/careers/job/5762854004/index.html?gh_jid=5762854004&gh_src=6e8bec3e4us",
   "evidence": {
-    "work_arrangement": "This is a fully remote role."
-  }
+    "work_arrangement": "This is a fully remote role.",
+    "velocity_vs_rigour": "you will work to make Wave's data easy, safe, and reliable to use, enabling better products for our customers... CI/CD checks that catch possibly exploding joins",
+    "velocity_vs_rigour_explanation": "The JD names reliability, safety, and CI/CD quality checks alongside iteration/optimization and product-velocity language in roughly equal measure, landing on mixed.",
+    "domain_risk": "Wave is now the largest financial institution in Senegal, with over 7 million users",
+    "domain_risk_explanation": "Wave is a fintech/mobile money provider, but the JD frames the AE role around internal data modeling and platform work rather than explicit regulatory/compliance duties for the role itself, so moderate applies.",
+    "collaboration_width": "domain partners; operations teams",
+    "jd_authorship": "Building out facts, dimensions and One Big Tables (OBTs) as appropriate for a focus area at Wave... Creating helpful dbt macros. CI/CD checks that catch possibly exploding joins.",
+    "jd_authorship_explanation": "The JD gives highly specific, technical detail (OBTs, dbt macros, exploding-join CI checks, Snowflake estate management) that only someone who knows the actual day-to-day work would write.",
+    "stakeholder_orientation": "working closely with domain partners to understand what's useful to them... collaborating closely with operations teams to drive growth through data",
+    "stakeholder_orientation_explanation": "The JD references domain partners and operations teams generically across focus areas without naming a single dominant commercial, product, or finance function, so mixed applies.",
+    "autonomy_level": "Be a key partner in the road map of the data platform team... Champion best practice across data.",
+    "autonomy_level_explanation": "The role builds specific pipelines, models, and tooling to a largely self-directed but delivery-scoped remit (on-duty rotations, ETL health) rather than setting company-wide data strategy, an execution orientation.",
+    "greenfield_vs_fix": "Be responsible for the design, build and health of all of our ETL pipelines... Managing our extensive snowflake estate with a strong analytical mindset.",
+    "greenfield_vs_fix_explanation": "The role manages and optimizes an already \"extensive\" existing Snowflake estate and ETL pipelines rather than building new infrastructure from scratch, an extend/fix framing.",
+    "data_team_maturity": "Managing our extensive snowflake estate with a strong analytical mindset... Building tools to identify and turn off stale/unused models.",
+    "data_team_maturity_explanation": "The JD describes an extensive, established Snowflake estate with accumulated technical debt (stale/unused models) to clean up and optimize, indicating a mid-maturity, actively growing function rather than a first build.",
+    "ai_role": "Building out ways to make it easy to add context for LLMs to data models.",
+    "ai_role_explanation": "Candidate is responsible for building data structures/context specifically to serve downstream AI/LLM consumption.",
+    "testing_framing": "CI/CD checks that catch possibly exploding joins.",
+    "testing_framing_explanation": "Candidate builds and owns testing/CI checks as part of the analytics development experience, not just a listed skill.",
+    "loss_aversion_framing": "Be responsible for the design, build and health of all of our ETL pipelines. Part of the role includes being 'on-duty'.",
+    "loss_aversion_framing_explanation": "On-duty responsibility for pipeline health signals operational reliability concern, but there is no compliance/regulatory/stakeholder-trust framing."
+  },
+  "ai_role": "ai_enabler",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "moderate"
 }

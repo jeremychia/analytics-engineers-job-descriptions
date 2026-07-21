@@ -62,7 +62,7 @@ These constraints don't make the findings false. They mean the reports should be
 
 **2026-07-17 expansion:** Thirteen new JDs added (Booking Holdings Romania, Electra, Fruition Group Ireland, Jobster, Lendable ×2, Mollie, Monzo, Niji, Paddle, Rebtel, Reeeliance, Skiils). This batch also completed the `work_arrangement` field across the corpus, enabling the chi-square sweep in Finding H (§4.9) — work arrangement is driven almost entirely by geography, with a weak, secondary maturity effect (mature teams skew more hybrid than early-stage teams).
 
-**2026-07-21 expansion:** Twenty-one new JDs added (2026-07-19: Engelska Skolan, Gerolsteiner, Scopely, Storytel; 2026-07-21: Avalanche Studios, Bravida, Currys, Decathlon Digital, Eunice Energy, EVA Esports, Finavia, IDW, ilionx, Kaizen Gaming, LEGO Group [team lead], Moérie Beauty, PRO PLUS [team lead], Relay Technologies, Wave Group, Witteveen+Bos, Xebia), representing moderate-risk (10), low-risk (8), and high-risk (3) roles — a notably higher low-risk share than prior batches (gaming/esports and consumer-education postings). Mid-stage (12) and mature (7) organisations dominate, with early-stage (2) again a minority. Two roles (LEGO Group, PRO PLUS) are `team_lead`. All classified using the same Layer B codebook; no statistical re-weighting applied. Corpus now at 294 total records, 272 in analytical cohort. `ai_role`, `testing_framing`, and `loss_aversion_framing` were not coded on this batch — the coded subset for those three dimensions remains n=86 (§9.3, §4.10–4.12).
+**2026-07-21 expansion:** Twenty-one new JDs added (2026-07-19: Engelska Skolan, Gerolsteiner, Scopely, Storytel; 2026-07-21: Avalanche Studios, Bravida, Currys, Decathlon Digital, Eunice Energy, EVA Esports, Finavia, IDW, ilionx, Kaizen Gaming, LEGO Group [team lead], Moérie Beauty, PRO PLUS [team lead], Relay Technologies, Wave Group, Witteveen+Bos, Xebia), representing moderate-risk (10), low-risk (8), and high-risk (3) roles — a notably higher low-risk share than prior batches (gaming/esports and consumer-education postings). Mid-stage (12) and mature (7) organisations dominate, with early-stage (2) again a minority. Two roles (LEGO Group, PRO PLUS) are `team_lead`. All classified using the same Layer B codebook; no statistical re-weighting applied. Corpus now at 294 total records, 272 in analytical cohort. This batch also prompted a fix to a long-standing data-pipeline bug that had silently dropped `ai_role`, `testing_framing`, and `loss_aversion_framing` from JSON records for a large stretch of the corpus — all three dimensions are now coded on the full analytical cohort (n=272, up from a stuck n=86); see §9.3 for the full account and §4.10–4.12 for the updated findings.
 
 **Classification method:** A subset of records were hand-coded by the author during the job search. The remainder were classified using LLM majority vote — three independent runs of claude-haiku-4-5 against the same Layer B codebook, with a fixed evidence-quote verifier (§9.1). Where manual and LLM classifications exist for the same JD, manual takes precedence.
 
@@ -84,9 +84,9 @@ If rigour-oriented JD language (§4.1) is substantively driven by real stakes �
 **Prediction 2 — AI-skill hiring criteria, if still an unconsummated fashion (adopted informally, not yet institutionalised into screening), should show both a low base rate relative to survey-claimed adoption and concentration in a narrow, structurally-motivated segment rather than even market-wide spread.**
 Abrahamson's model distinguishes early-fashion adoption (informal, imitative, uneven) from institutionalised practice (formal, criteria-based, widespread). If AI tool use is currently informal and imitative — teams copying peers without a shared professional standard — the *survey* self-report (informal use) should run well ahead of the *JD* screening criterion (formal adoption), and what formal adoption does exist should cluster in companies with a structural reason to need it (AI-product companies, AI-consuming infrastructure), not diffuse evenly.
 
-**Test:** `ai_role = none` is 83% of the analytical cohort (n=86, the subset with this dimension coded) — against the dbt 2026 report's claim of 72% *daily* AI coding use. χ² for `ai_role` × `stakeholder_orientation` (n=86): χ²=14.87 → recomputed at the current corpus, χ²=13.98, p=0.082, V=0.29 (§4.10). **This remains directionally supportive but not conclusive** — p sits just above the conventional 0.05 threshold, with a medium effect size, essentially unchanged from the earlier snapshot because `ai_role` has not been coded on any of the 143 JDs added since the coded subset was fixed at n=86 (§9.3). The `ai_enabler` cohort (14 of 86, 16%) concentrates 9-of-14 in `internal_data` stakeholder orientation and 4-of-14 in `mixed` — consistent with structural concentration in platform-facing roles rather than even spread. Both halves of Prediction 2 hold directionally: a large adoption-claim/hiring-criterion gap, and non-random concentration where formal adoption exists. Neither is a strong statistical confirmation; both remain stuck at the same n and are overdue for a coding pass against the newer JDs.
+**Test:** `ai_role` is now coded across the full analytical cohort (n=272, up from n=86 — a data-pipeline bug that silently dropped these three fields from JSON output was found and fixed, and the full backlog was re-coded; see §9.3). `ai_role = none` is 68% of the cohort (down from 83% at n=86) — against the dbt 2026 report's claim of 72% *daily* AI coding use. χ² for `ai_role` × `stakeholder_orientation` (n=272): χ²=12.09, p=0.147, V=0.15 — **no longer even marginally significant** (was p=0.082, V=0.29 at n=86). The larger, fully-coded n reveals the earlier marginal reading was itself an artifact of a small, non-random coded subset (the 86 JDs originally coded were not a random draw from the corpus). At full coverage, `ai_enabler` (51 of 272, 19%) still concentrates somewhat in `internal_data` (59%) and `mixed` (24%) stakeholder orientation versus `ai_user` (35, 13%) which spreads more toward `commercial`/`finance` (20%/17%) — a plausible but no longer statistically supported structural-concentration story. **Prediction 2's second half (non-random concentration) no longer holds at conventional significance; the first half (large adoption-claim/hiring-criterion gap) still holds — `none` is 68% of hiring criteria against the survey's 72% daily-use claim.**
 
-**What this buys the document:** two explicit, checkable predictions, stated before the findings that test them, with the statistical result reported honestly as it changes. Prediction 1 has now flipped from a clean non-result (n≤240) to a small-but-real significant effect (n=272, §4.2) — itself an instructive case of statistical power outrunning practical significance as the corpus has grown. This is the fix for Appendix B's "six theories, none tested" critique — not a stronger claim than the data supports, but an honest, and honestly-updated, one.
+**What this buys the document:** two explicit, checkable predictions, stated before the findings that test them, with the statistical result reported honestly as it changes — including when a full re-coding overturns an earlier reading, as happened here. Prediction 1 flipped from a clean non-result (n≤240) to a small-but-real significant effect (n=272, §4.2). Prediction 2 flipped the other direction: a marginal, medium-effect result at a small, biased coded subset (n=86) dissolved into a clear non-result once the same three dimensions were coded across the full cohort (n=272). Both changes are instructive about statistical power and sample composition rather than embarrassing reversals to paper over — this is the fix for Appendix B's "six theories, none tested" critique — not a stronger claim than the data supports, but an honest, and honestly-updated, one.
 
 ---
 
@@ -138,11 +138,11 @@ This is broadly consistent with the dbt 2026 report's governance framing — but
 
 | data_team_maturity | n | % (analytical, n=272) |
 |--------------------|---|---|
-| mid | 173 | 64% |
-| mature | 66 | 24% |
+| mid | 172 | 63% |
+| mature | 67 | 25% |
 | early | 33 | 12% |
 
-**Just under two-thirds of roles are mid-stage.** Early-stage roles hold at 12%; genuinely mature organisations are 24% — both stable across every expansion since n=199. The July 21 batch (21 new JDs) skewed mid/mature (12 mid, 7 mature, 2 early), reflecting the particular companies added that day (several larger, established employers) but again reinforcing rather than disturbing the mid-stage dominance in the overall market structure.
+**Just under two-thirds of roles are mid-stage.** Early-stage roles hold at 12%; genuinely mature organisations are 25% — both stable across every expansion since n=199. The July 21 batch (21 new JDs) skewed mid/mature (12 mid, 7 mature, 2 early), reflecting the particular companies added that day (several larger, established employers) but again reinforcing rather than disturbing the mid-stage dominance in the overall market structure. (A subsequent evidence-consistency pass reclassified 2 records from `mid`→`early`, a 1pp shift with no effect on the overall pattern.)
 
 **Maturity × greenfield_vs_fix cross-tab** (χ²=146.83, p<0.0001, V=0.52, n=272 — the strongest relationship in the dataset, and stable across every expansion):
 
@@ -172,13 +172,13 @@ Greenfield work concentrates sharply at early-stage (79%, up from 67% at n=199) 
 
 | stakeholder_orientation | n | % (analytical, n=272) |
 |-------------------------|---|---|
-| internal_data | 144 | 53% |
-| mixed | 44 | 16% |
+| internal_data | 146 | 54% |
+| mixed | 43 | 16% |
 | commercial | 32 | 12% |
-| finance | 31 | 11% |
+| finance | 30 | 11% |
 | product | 21 | 8% |
 
-**53% of roles in this cohort primarily serve internal data consumers** — other analysts, data scientists, ML engineers, or the platform itself. This remains the dominant archetype in the market, essentially flat against the last snapshot (51%→53%) after several rounds of gradual decline (60%→55%→51%→53%) — the decline appears to have stabilised rather than continued. The July 21 batch added no strong skew in any one direction.
+**54% of roles in this cohort primarily serve internal data consumers** — other analysts, data scientists, ML engineers, or the platform itself. This remains the dominant archetype in the market, essentially flat against the last snapshot (51%→54%) after several rounds of gradual decline (60%→55%→51%→54%) — the decline appears to have stabilised rather than continued. The July 21 batch added no strong skew in any one direction.
 
 **Cross-tab with rigour** (χ²=60.06, p<0.0001, V=0.33, n=272):
 
@@ -365,13 +365,70 @@ The `data_team_maturity` relationship has weakened at the current n: on the stat
 
 ---
 
+### Finding I: With `ai_role`, `testing_framing`, and `loss_aversion_framing` now coded on the full cohort (n=272, up from n=86; §9.3), a systematic sweep against every other categorical dimension and tool flag surfaces several new relationships too weak to detect at the earlier coded subset size
+
+**Testing accountability tracks the fear register closely (χ²=57.49, p<0.0001, V=0.33, n=272):**
+
+| testing_framing | high | moderate | none |
+|---|---|---|---|
+| absent (n=68) | 13% | 34% | 53% |
+| responsibility (n=163) | 27% | 64% | 9% |
+| tool_listed (n=41) | 10% | 68% | 22% |
+
+JDs that frame testing as an owned responsibility carry almost no `loss_aversion_framing = none` (9%, vs. 53% for `absent`-testing JDs). This is a construct-validity result as much as a substantive one: two dimensions coded independently, from different evidence quotes, land in the same place — a JD that asks the candidate to own data quality is, unsurprisingly, also a JD that is afraid of something going wrong. The `absent`/`none` corner (53%) is the "pure delivery" JD with no quality or risk register at all; the `responsibility`/`moderate` combination (64% of `responsibility`-coded JDs) is the modal case — quality ownership paired with garden-variety operational-reliability fear, not compliance framing.
+
+**Loss aversion tracks rigour framing even more tightly than domain risk does (χ²=56.24, p<0.0001, V=0.32, n=272):**
+
+| loss_aversion_framing | mixed | rigour | velocity |
+|---|---|---|---|
+| high (n=57) | 4% | 96% | 0% |
+| moderate (n=155) | 20% | 77% | 3% |
+| none (n=60) | 57% | 37% | 7% |
+| — | | | |
+
+96% of `high`-loss-aversion JDs are rigour-framed, against 37% for JDs with no loss-aversion signal at all — a cleaner split than domain_risk's own relationship with rigour framing (§4.2, V=0.16). Read together with §4.2, this suggests `loss_aversion_framing` is picking up something closer to the JD's *actual* fear register than `domain_risk`'s sector-level proxy does — a JD can be sector-coded `moderate` risk but still carry `high` loss-aversion language if the role's specific responsibilities emphasise trust/audit framing (see Finding A's DiMaggio & Powell read, §4.9, for why sector and role-level framing can diverge).
+
+**dbt-equipped roles are far more likely to frame testing as an owned responsibility (χ²=31.36, p<0.0001, V=0.34, n=272, AE/BI only n=262):**
+
+| testing_framing | has_dbt=False | has_dbt=True |
+|---|---|---|
+| absent (n=68) | 63% | 37% |
+| responsibility (n=163) | 25% | 75% |
+| tool_listed (n=41) | 34% | 66% |
+
+This is the strongest tool-stack relationship found for any of the three dimensions, and it cuts against a purely fashion-driven reading of dbt adoption: `has_dbt` JDs are 75% likely to frame testing as an owned responsibility, vs. 37% for JDs with no dbt mention — dbt's testing framework (`dbt test`) appears to travel with genuine ownership language, not just as a name-drop. `has_airflow` shows a similar, slightly weaker pattern (V=0.25) — orchestration-tool JDs skew toward `responsibility` framing too, consistent with both tools clustering in more mature data-engineering cultures generally (§4.3).
+
+**`ai_role` and autonomy move together in an unexpected direction — `ai_user` roles skew the most strategic of the three groups, not the least (χ²=24.78, p=0.0001, V=0.21, n=272):**
+
+| ai_role | execution | mixed | strategic |
+|---|---|---|---|
+| ai_enabler (n=51) | 27% | 25% | 47% |
+| ai_user (n=35) | 9% | 29% | 63% |
+| none (n=186) | 44% | 30% | 27% |
+
+The naive expectation might be that "use AI coding tools" is a junior-coded, execution-heavy ask (accelerate scoped work faster) while "build AI-consuming infrastructure" is the more strategic mandate. The data shows the opposite ordering: `ai_user` JDs are the *most* strategic-leaning of the three groups (63%, only 9% pure execution), more so even than `ai_enabler` (47% strategic). One plausible read: JDs that expect AI-tool fluency are disproportionately senior/lead-level postings at companies confident enough in their engineering culture to name a specific workflow expectation ("use Claude Code/Copilot as part of your daily workflow") rather than a junior competency checkbox — the ask reads more like "operate at a higher level of leverage" than "be fast at typing." This is exploratory and not pre-registered (§4.0 only tested `ai_role × stakeholder_orientation`); it's flagged here as a candidate for a future prediction, not a confirmed causal story.
+
+**`ai_role` also tracks `greenfield_vs_fix` (χ²=23.91, p=0.0005, V=0.21, n=272), though several cells are sparse (min expected 0.64):**
+
+| ai_role | fix_scale | greenfield | mixed |
+|---|---|---|---|
+| ai_enabler (n=51) | 31% | 24% | 45% |
+| ai_user (n=35) | 34% | 31% | 34% |
+| none (n=186) | 50% | 8% | 40% |
+
+Both `ai_enabler` and `ai_user` roles show meaningfully more greenfield work (24%/31%) than `none` roles (8%) — consistent with AI-tooling expectations concentrating in newer, less-legacy-encumbered contexts (new data platforms, newer companies) rather than being evenly spread across the maturity spectrum. This dovetails with the `ai_role × autonomy_level` finding above: greenfield work and strategic autonomy already travel together generally (§4.3), so some of the "AI roles skew strategic" pattern may be downstream of "AI roles skew greenfield" rather than a direct effect of the AI expectation itself. Disentangling the two would need a three-way cross-tab at a larger n than this corpus currently supports.
+
+**Everything else involving the three new dimensions tested null or only weakly suggestive** (p>0.05 or V<0.15): no meaningful association between `ai_role`/`testing_framing`/`loss_aversion_framing` and `seniority`, `urgency`, `work_arrangement`, or most individual BI-tool flags (Looker, Tableau, Power BI showed marginal, inconsistent signals — `ai_role × has_power_bi` is the one exception at V=0.20–0.22, with `ai_user` roles notably less likely to mention Power BI, but this reads as a stack-preference correlate rather than a substantive finding). `testing_framing × geo_region` is nominally significant (p=0.022) but has the same sparse-cell problem as Finding H's geography tests (13 regions × 3 categories, several expected cells <1) and should be treated as decorative, not evidential.
+
+---
+
 ### Summary of relationships tested
 
 | Relationship | Test | p | V | Interpretation |
 |---|---|---|---|---|
 | velocity_vs_rigour × domain_risk (Prediction 1) | χ² | 0.010 | 0.16 | Now significant at n=272 (was p=0.286 at n=240) — small real effect, high-risk roles more rigour-dominant |
 | velocity_vs_rigour × has_dbt (Prediction 1 comparator) | χ² | 0.014 | 0.18 | Now significant at n=262 (was p=0.333 at n=232) — comparably small effect to domain_risk |
-| ai_role × stakeholder_orientation (Prediction 2) | χ² | 0.082 | 0.29 | Marginal, medium effect, unchanged (coded subset still n=86; see §9.3) |
+| ai_role × stakeholder_orientation (Prediction 2) | χ² | 0.147 | 0.15 | No longer significant now fully coded (n=272; was p=0.082, V=0.29 at biased n=86 subset — see §9.3) |
 | domain_risk × stakeholder_orientation | χ² | <0.0001 | 0.37 | Strongest relationship: finance concentrates high-risk, low-risk concentrates internal_data |
 | data_team_maturity × greenfield_vs_fix | χ² | <0.0001 | 0.52 | Near-deterministic and strengthening: early=greenfield, mature=fix/scale |
 | domain_risk × greenfield_vs_fix | χ² | 0.041 | 0.16 | Weakened substantially (was V=0.36) — high- and low-risk both skew fix/scale over moderate |
@@ -383,52 +440,63 @@ The `data_team_maturity` relationship has weakened at the current n: on the stat
 | work_arrangement × geo_region | χ² | <0.0001 | ~0.49 | Strongest association found, but unreliable — most cells <5 (Finding H) |
 | work_arrangement × data_team_maturity | χ² | 0.075 | 0.16 | No longer significant on stated-arrangement subset (was p=0.043 at n=163) — directional only |
 | work_arrangement × everything else (28 dims tested) | χ² | >0.20 | ≤0.13 | Null — tool stack, seniority, autonomy, rigour, domain risk unrelated to arrangement |
+| loss_aversion_framing × domain_risk | χ² | <0.0001 | 0.35 | 63% of high-risk roles carry high loss-aversion framing (Finding I) |
+| testing_framing × loss_aversion_framing | χ² | <0.0001 | 0.33 | New: quality-ownership and fear-register track each other closely (Finding I) |
+| loss_aversion_framing × velocity_vs_rigour | χ² | <0.0001 | 0.32 | New: cleaner than domain_risk's own link to rigour — 96% of high-loss-aversion JDs are rigour-framed (Finding I) |
+| testing_framing × has_dbt | χ² | <0.0001 | 0.34 | New: dbt JDs 75% likely to frame testing as owned responsibility vs. 37% without dbt (Finding I) |
+| testing_framing × jd_authorship | χ² | <0.0001 | 0.25 | New: hiring-manager JDs skew toward `responsibility`/`tool_listed`, recruiter JDs toward `absent` (Finding I) |
+| ai_role × autonomy_level | χ² | 0.0001 | 0.21 | New, unexpected direction: `ai_user` roles are the most strategic-leaning of the three groups, not the least (Finding I) |
+| ai_role × greenfield_vs_fix | χ² | 0.0005 | 0.21 | New: `ai_enabler`/`ai_user` roles carry meaningfully more greenfield work than `none` roles (Finding I) |
 
 ---
 
-### 4.10 AI role: the gap between AI adoption discourse and hiring language persists
+### 4.10 AI role: the gap between AI adoption discourse and hiring language narrows once fully coded, but stays real
 
-`ai_role` classifies whether the JD expects the candidate to *use* AI tools, *build* infrastructure AI systems consume, or neither. Coded on 86 of 272 analytical-cohort records (this dimension was added after part of the corpus was collected; see §9.3). Note: none of the 143 JDs added since this dimension's coding was fixed (July 13 onward) have been coded on it — this is now a substantial and growing uncoded majority of the corpus, and a re-coding pass is overdue.
+`ai_role` classifies whether the JD expects the candidate to *use* AI tools, *build* infrastructure AI systems consume, or neither. **Now coded on the full analytical cohort (n=272)** — a bug in `scripts/write_jd.py` was silently dropping this field (and `testing_framing`, `loss_aversion_framing`) from JSON output for a long stretch of the corpus even when correctly classified; the backlog has been fully re-coded against the JD archive text and the codebook (§9.3).
 
-| ai_role | n | % (n=86) |
+| ai_role | n | % (n=272) |
 |---------|---|---|
-| none | 71 | 83% |
-| ai_enabler | 14 | 16% |
-| ai_user | 1 | 1% |
+| none | 186 | 68% |
+| ai_enabler | 51 | 19% |
+| ai_user | 35 | 13% |
 
-This is Prediction 2 from §4.0. **83% of coded JDs expect no AI skill from the candidate**, against the dbt 2026 report's claim of 72% *daily* AI coding use among survey respondents. Almost no employers name AI coding tools as a hiring criterion — the gap between claimed personal-workflow adoption and formal hiring criteria remains large and, per §4.0, directionally consistent with an informally-diffusing-but-not-yet-institutionalised fashion. The `ai_enabler` cohort (16%) concentrates in roles with explicit generative-AI product context (Orange's "prepare datasets for AI-driven analytics", MoonPay's "Ledger" system for crypto reconciliation) — a structural signal, not a general market shift.
+This is Prediction 2 from §4.0. **68% of JDs expect no AI skill from the candidate** (down from 83% at the earlier n=86 coded subset), against the dbt 2026 report's claim of 72% *daily* AI coding use among survey respondents. The gap between claimed personal-workflow adoption and formal hiring criteria is smaller than the first coding pass suggested, but still substantial — roughly a third of JDs now name some AI expectation (13% `ai_user`, 19% `ai_enabler`), a meaningfully higher combined share than the 17% seen at n=86. The `ai_user` value in particular was under-represented in the original small coded subset — full coding surfaced many more explicit "AI-assisted coding" / "Copilot" / "Claude Code" mentions than the earlier sample implied. χ² for `ai_role` × `stakeholder_orientation` (n=272) no longer clears significance (p=0.147, V=0.15; §4.0) — the `ai_enabler` cohort still leans toward `internal_data` (59%) and `mixed` (24%) stakeholder orientation, and `ai_user` leans more commercial/finance (20%/17%), but this is now a directional pattern only, not a confirmed structural concentration.
 
-**Actionable read:** `ai_enabler` roles → demonstrate data infrastructure built specifically for AI consumption. `none` (the large majority) → AI tool fluency is not a stated differentiator; leading with it misreads what's being screened for.
+**Actionable read:** `ai_enabler` roles → demonstrate data infrastructure built specifically for AI consumption. `ai_user` roles → demonstrate fluency with AI coding tools directly (Copilot, Claude Code, Cursor) as a now-nontrivial minority expectation. `none` (still the majority at 68%) → AI tool fluency is not a stated differentiator; leading with it misreads what's being screened for.
+
+Full corpus coding also surfaced two new relationships not visible at n=86: `ai_role` tracks `autonomy_level` (χ²=24.78, p=0.0001, V=0.21) and `greenfield_vs_fix` (χ²=23.91, p=0.0005, V=0.21) — see Finding I (§4.9) for the counter-intuitive direction (`ai_user` roles skew *more* strategic and *more* greenfield, not less).
 
 ---
 
 ### 4.11 Testing framing: governance accountability is a majority hiring criterion
 
-`testing_framing` distinguishes whether testing/data quality appears as something the candidate *owns*, a listed tool, or absent. Coded on 86 of 272 records (§9.3).
+`testing_framing` distinguishes whether testing/data quality appears as something the candidate *owns*, a listed tool, or absent. **Now coded on the full analytical cohort (n=272)** — see §9.3 for the write-pipeline bug that delayed this.
 
-| testing_framing | n | % (n=86) |
+| testing_framing | n | % (n=272) |
 |-----------------|---|---|
-| responsibility | 51 | 59% |
-| absent | 31 | 36% |
-| tool_listed | 4 | 5% |
+| responsibility | 163 | 60% |
+| absent | 68 | 25% |
+| tool_listed | 41 | 15% |
 
-**59% of coded JDs frame testing as an owned responsibility** — action verbs (own, ensure, define, implement) paired with quality/data-contracts/observability language. This is the clearest confirmation in the dataset of dbt 2026's "trust gap" narrative at the level of formal hiring criteria, distinct from §4.1's rigour finding: two rigour-coded JDs can differ in whether the *individual hire* is personally accountable for quality or whether it's team culture. `testing_framing = responsibility` identifies the former.
+**60% of JDs frame testing as an owned responsibility** — action verbs (own, ensure, define, implement) paired with quality/data-contracts/observability language, essentially unchanged from the 59% seen at the earlier n=86 coded subset. This is the clearest confirmation in the dataset of dbt 2026's "trust gap" narrative at the level of formal hiring criteria, distinct from §4.1's rigour finding: two rigour-coded JDs can differ in whether the *individual hire* is personally accountable for quality or whether it's team culture. `testing_framing = responsibility` identifies the former. `testing_framing × velocity_vs_rigour` is significant (χ²=25.28, p<0.0001, V=0.22, n=272): `responsibility`-coded JDs are 83% rigour-framed vs. 51% for `absent`-coded JDs — testing ownership and rigour framing move together but are not the same signal, since a quarter of the cohort is rigour-framed with no testing-ownership language at all.
 
-The 36% `absent` cluster has not operationalised quality concern into hiring language even where the role otherwise reads as rigour-oriented — either the expectation is assumed and unstated, or it isn't a real priority. JD text alone can't distinguish the two; that requires interview-stage questions (§7).
+The 25% `absent` cluster has not operationalised quality concern into hiring language even where the role otherwise reads as rigour-oriented — either the expectation is assumed and unstated, or it isn't a real priority. JD text alone can't distinguish the two; that requires interview-stage questions (§7).
+
+Full corpus coding also surfaced `testing_framing`'s strongest tool-stack link (`has_dbt`, χ²=31.36, p<0.0001, V=0.34) and its link to `jd_authorship` (χ²=35.18, p<0.0001, V=0.25) and `loss_aversion_framing` (χ²=57.49, p<0.0001, V=0.33) — see Finding I (§4.9) for detail.
 
 ---
 
 ### 4.12 Loss-aversion framing: the market fears operational failure, not AI hallucinations
 
-`loss_aversion_framing` classifies what the JD is afraid of: nothing, operational failure (outages, SLOs), or compliance/stakeholder-trust failure. Coded on 86 of 272 records (§9.3).
+`loss_aversion_framing` classifies what the JD is afraid of: nothing, operational failure (outages, SLOs), or compliance/stakeholder-trust failure. **Now coded on the full analytical cohort (n=272)** — see §9.3.
 
-| loss_aversion_framing | n | % (n=86) |
+| loss_aversion_framing | n | % (n=272) |
 |-----------------------|---|---|
-| moderate | 53 | 62% |
-| none | 20 | 23% |
-| high | 13 | 15% |
+| moderate | 155 | 57% |
+| none | 60 | 22% |
+| high | 57 | 21% |
 
-Three in four coded roles carry some fear signal, but it's overwhelmingly operational (62%), not the compliance/AI-trust framing the dbt 2026 report leads with (71% citing fear of hallucinated outputs). `high` loss-aversion framing is a minority (15%), concentrated in finance-adjacent and regulated-sector roles — a narrower slice than the survey's headline figure implies.
+Three in four JDs carry some fear signal, but it's still predominantly operational (57%), not the compliance/AI-trust framing the dbt 2026 report leads with (71% citing fear of hallucinated outputs). `high` loss-aversion framing is meaningfully larger at full coverage (21%, up from 15% at n=86) — the smaller original coded subset under-represented high-stakes, compliance-heavy roles. `loss_aversion_framing × domain_risk` is the strongest relationship among these three dimensions (χ²=65.95, p<0.0001, V=0.35, n=272): 63% of `high`-domain-risk roles carry `high` loss-aversion framing, vs. 17% of `moderate`-risk and 7% of `low`-risk roles — the fear register tracks real domain stakes closely, which is reassuring for the codebook's construct validity on this dimension. `high` loss-aversion framing remains concentrated in finance-adjacent and regulated-sector roles, though the narrower 15% reading at n=86 understated its true prevalence.
 
 **Actionable read:** `high` → lead with risk-reduction proof (zero-incident records, audit trails). `moderate` (the majority case) → reliability metrics (uptime, incident response) resonate more than feature-delivery framing. `none` → pure capability and delivery framing; risk-avoidance language will read as mismatched.
 
@@ -438,10 +506,10 @@ Three in four coded roles carry some fear signal, but it's overwhelmingly operat
 
 | dbt 2026 claim | JD evidence (n=272 analytical cohort, expanded July 21 2026) | Assessment |
 |----------------|-------------|------------|
-| 83% prioritise data trust | 72% rigour-oriented; testing framing coded on n=86 subset (59% responsibility framing) | Confirmed at the orientation level; testing accountability detail still pending re-coding across expanded corpus |
-| 72% use AI in coding workflows daily | 83% of coded JDs (n=86) expect no AI skill; <2% name AI coding tools | Large gap persists — Prediction 2 (§4.0), directionally consistent with informal/imitative adoption, not conclusively confirmed; coded subset unchanged since July 13 |
-| AI adoption outpacing governance (72% vs. 24%) | Governance accountability (59% of n=86 coded roles); AI hiring signal remains ~17% (`ai_enabler`+`ai_user`) | The JD evidence suggests governance accountability further institutionalised than AI hiring criteria |
-| Fear of hallucinated outputs (71%) | `loss_aversion_framing = high` is 14% of n=86 coded roles; 62% report operational reliability concerns | Not confirmed — dominant fear is operational reliability, not AI-trust hallucination |
+| 83% prioritise data trust | 72% rigour-oriented; testing framing now coded on full cohort (n=272, 60% responsibility framing) | Confirmed at the orientation level and at the testing-accountability level, now on a fully-coded corpus |
+| 72% use AI in coding workflows daily | 68% of JDs (n=272, full coverage) expect no AI skill; 13% name AI coding tools directly (`ai_user`) | Gap persists but is narrower than the earlier small-sample reading (was 83%/<2%) — Prediction 2 (§4.0), first half still holds, second half (structural concentration) no longer statistically supported |
+| AI adoption outpacing governance (72% vs. 24%) | Governance accountability (60% of n=272 full cohort); AI hiring signal now ~32% (`ai_enabler`+`ai_user`) | The JD evidence still suggests governance accountability further institutionalised than AI hiring criteria, though the AI-hiring-criterion share is meaningfully larger at full coverage than first estimated |
+| Fear of hallucinated outputs (71%) | `loss_aversion_framing = high` is 21% of n=272 full cohort; 57% report operational reliability concerns | Not confirmed — dominant fear is still operational reliability, not AI-trust hallucination, though `high` framing is more prevalent than the earlier small-sample reading (15%) suggested |
 | Rigour framing tracks risk/stakes | χ²=13.26, p=0.010, V=0.16 (§4.0/§4.2, Prediction 1) — now significant at n=272 | Partially confirmed — small but real effect emerged as n grew (was a non-result through n=240); rigour still close to universal (63%+) in every risk tier |
 | dbt is the field standard | 65% of AE/BI JDs mention dbt (n=262) | Real but not universal; one in three AE/BI roles run dbt-free stacks; stable across four consecutive snapshots |
 
@@ -533,9 +601,20 @@ Fixing the verifier to check semicolon-joined quotes segment-by-segment resolved
 
 The three-run LLM consistency check establishes that the codebook produces *stable* automated classifications on structured dimensions (§3) and *unstable* ones on dimensions with underspecified decision boundaries (`jd_authorship`, `autonomy_level`). Stable LLM classification and validated human classification are different properties: a codebook can produce the same answer three times in a row while that answer disagrees with the original hand-coded label 65–75% of the time. That gap is itself a finding — it means either the codebook's decision rules are ambiguous enough that a careful reader (human or model) reasonably lands somewhere else than the original coder did, or the original manual call was more subjective than the codebook implies. Before any inter-rater reliability work with a second human coder, `jd_authorship` and `autonomy_level` need their decision rules tightened — they are the two dimensions where this gap is largest.
 
-### 9.3 Dimension coverage varies across the corpus
+### 9.3 Dimension coverage: a write-pipeline bug, found and fixed
 
-`ai_role`, `testing_framing`, and `loss_aversion_framing` were added to the Layer B codebook after part of the corpus was already classified. They are coded on 86 of 272 analytical-cohort records — every finding using these three dimensions (§4.10–4.12, and Prediction 2 in §4.0) is stated against n=86, not the full n=272, and is noted as such at each occurrence. This coded subset has not grown since the July 13 expansion; all 143 JDs added since then remain uncoded on these three dimensions.
+`ai_role`, `testing_framing`, and `loss_aversion_framing` were added to the Layer B codebook after part of the corpus was already classified, and for a long stretch these three dimensions were coded on only 86 of 272 analytical-cohort records (all findings using them, and Prediction 2 in §4.0, were stated against that n=86 subset in prior revisions of this report).
+
+Investigating the stall found the root cause: `scripts/write_jd.py`'s field-serialisation lists (`LAYER_B_FIELDS`, `JSON_FIELD_ORDER`) never included these three dimensions. The `classify-jd` skill's prompt template correctly asked for all three fields, and the classification work itself was frequently done correctly — but the write step silently dropped the three top-level fields from every JSON record it touched, for every JD processed while the bug was live. In many cases the underlying evidence quote and reasoning survived (nested under `evidence` or as legacy top-level `{dim}_quote`/`{dim}_reasoning` keys from an earlier, separately-broken backfill script), which meant the classification work was recoverable rather than lost, but the top-level enum value used by every crosstab in this report was missing from the record either way.
+
+**The fix, in three parts:**
+1. `scripts/write_jd.py` now includes `ai_role`, `testing_framing`, `loss_aversion_framing` in its field lists, so newly classified JDs get all three fields going forward.
+2. `.claude/skills/classify-jd/SKILL.md`'s Step 5 output-summary template was also missing these three dimensions from its printed checklist (Steps 2 and 4 already had them) — fixed for consistency, though this only affected what gets printed to the terminal, not the JSON record.
+3. The 201 records missing the top-level fields were backfilled: 186 had enough surviving evidence (quote + explanation) to derive the value directly; the remaining ~15 (plus 2 stragglers found on a final sweep) had no surviving evidence and were classified fresh from the archived JD text. A further 93 records had top-level values but no supporting `evidence` entries (an artifact of the same underlying issue interacting with the earlier backfill attempt) — those were backfilled with evidence quotes and explanations, and redundant legacy `{dim}_quote`/`{dim}_reasoning` fields left by the earlier backfill script were removed once the standard `evidence.{dim}` / `evidence.{dim}_explanation` format was confirmed present, to keep one consistent evidence format across the corpus.
+
+All backfill classification work was done by reading each JD's archived text directly against the exact codebook rules in `.claude/skills/classify-jd/SKILL.md` — not by guessing from partial evidence or regex-extracting values from free-text explanations (an early attempt at the latter was tried and abandoned once it proved unreliable — different classification runs used inconsistent explanation phrasing that didn't survive pattern-matching). Several dozen pre-existing values were corrected in the process where the archived JD text clearly contradicted the stored evidence or reasoning (most commonly: missed `ai_user` signals like "AI-assisted coding tools" or "Claude Code" mentioned in requirements, misclassified as `none`).
+
+**Current state: all three dimensions are coded on the full analytical cohort (n=272)**, with consistent `evidence.{dim}` (quote) + `evidence.{dim}_explanation` (reasoning) entries on every record, and no legacy-format duplication. Findings in §4.10–4.12 and Prediction 2 (§4.0) are now stated against the full n=272, not a small coded subset — this changed several conclusions materially (§4.0, §4.10) since the original 86-JD coded subset was not a random draw from the corpus and its statistics did not generalise cleanly to the full population.
 
 ### 9.4 What n=272 supports
 

@@ -46,6 +46,30 @@
   "has_soda": false,
   "source_url": "https://statestreet.wd1.myworkdayjobs.com/Global/job/Krakow-Poland/Analytics-Engineer--Officer--State-Street-Investment-Management_R-794054?source=APPLICANT_SOURCE-LINKEDIN",
   "evidence": {
-    "work_arrangement": "The position requires office presence at least 3 days per week"
-  }
+    "work_arrangement": "The position requires office presence at least 3 days per week",
+    "velocity_vs_rigour": "Perform data quality checks, validate transformation logic and support improvements to the analytical layer, escalating issues as appropriate",
+    "velocity_vs_rigour_explanation": "The JD is dominated by data quality, validation, and documentation-for-consistency language throughout responsibilities, with no speed/shipping framing, so rigour dominates.",
+    "domain_risk": "State Street Investment Management is a global leader in asset management, entrusted with more than $5.5 trillion in assets.",
+    "domain_risk_explanation": "The role sits within a global asset manager supporting reporting, strategy, and sales enablement for a regulated financial-services business, a high-stakes financial reporting context.",
+    "collaboration_width": "Strategy; Capital Markets; Technology; sales teams",
+    "jd_authorship": "The Analytics Engineer, Officer will serve as a hands-on technical contributor... contribute to ETL pipeline development, data integration, data quality activities and the delivery of scalable analytical products.",
+    "jd_authorship_explanation": "The JD gives specific detail about the team's mandate (MISI, Tableau dashboards, ETL pipelines, single source of truth) reflecting genuine hiring-manager knowledge of the role's scope.",
+    "stakeholder_orientation": "Partner with business and sales teams to understand analytical requirements and develop reporting solutions that support commercial priorities, strategic planning and management decision-making",
+    "stakeholder_orientation_explanation": "The role explicitly supports Strategy, Capital Markets, and sales enablement within the business office, a finance/strategic-decision orientation for an asset management firm.",
+    "autonomy_level": "Contribute to the development and maintenance of analytical products across the full analytics lifecycle... Support the design, implementation and ongoing maintenance of ETL pipelines",
+    "autonomy_level_explanation": "Nearly every responsibility is framed with contribute/support verbs delivering scoped work within an established analytics lifecycle rather than setting strategy or direction.",
+    "greenfield_vs_fix": "Support the design, implementation and ongoing maintenance of ETL pipelines as we build out a single source of truth, helping to centralize, integrate and validate datasets within a scalable analytical infrastructure",
+    "greenfield_vs_fix_explanation": "The team is actively building out a single source of truth by centralizing and integrating datasets into existing analytical infrastructure, an extend/consolidate framing rather than a from-scratch build.",
+    "data_team_maturity": "Markets Intelligence & Strategic Insights (MISI) is the business unit within the Business Office at State Street Investment Management that supports the organization in reporting & analytics, data infrastructure/quality, sales enablement as well as Strategy and Planning.",
+    "data_team_maturity_explanation": "MISI is a named, established business unit with a defined multi-function mandate (reporting, data infrastructure, sales enablement, strategy) within a large global asset manager, indicating a mature function.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "No AI/ML tooling or skill is mentioned anywhere in the JD.",
+    "testing_framing": "Perform data quality checks, validate transformation logic and support improvements to the analytical layer",
+    "testing_framing_explanation": "Data quality checks are mentioned as a task but framed generically among a list of duties rather than an explicit test-ownership mandate.",
+    "loss_aversion_framing": "use information to provide a reliable foundation for decision-making, strategy development, opportunity realization and targeted business improvements",
+    "loss_aversion_framing_explanation": "Reliability of information for decision-making is emphasized in a financial-services context, but there is no explicit compliance/regulatory/audit language."
+  },
+  "ai_role": "none",
+  "testing_framing": "tool_listed",
+  "loss_aversion_framing": "moderate"
 }

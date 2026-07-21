@@ -78,15 +78,15 @@
       "analytics requirements",
       "data engineering"
     ],
-    "work_arrangement": "Not stated in JD."
+    "work_arrangement": "Not stated in JD.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "The JD contains no reference to AI coding tools, GenAI, or AI-consuming data infrastructure anywhere in responsibilities or requirements.",
+    "testing_framing": "Du stellst Datenqualität, Performance und Governance (inkl. Berechtigungen) sicher",
+    "testing_framing_explanation": "The candidate personally 'ensures' data quality, performance, and governance, an ownership action verb consistent with the responsibility framing.",
+    "loss_aversion_framing": "Du stellst Datenqualität, Performance und Governance (inkl. Berechtigungen) sicher",
+    "loss_aversion_framing_explanation": "Ensuring data quality and governance in a foodservice supply chain reflects operational reliability concerns secondary to the JD's overall delivery and dashboard-building focus, without compliance or regulatory language."
   },
   "ai_role": "none",
-  "ai_role_quote": "developing high-performance dashboards and reports with Power BI; ETL/ELT processes",
-  "ai_role_reasoning": "No mention of AI coding tools (Copilot, Claude Code) or AI infrastructure responsibilities (semantic models, GenAI).",
   "testing_framing": "responsibility",
-  "testing_framing_quote": "ensuring data quality and governance",
-  "testing_framing_reasoning": "Candidate owns quality practice through the verb 'ensuring' paired with data quality and governance.",
-  "loss_aversion_framing": "moderate",
-  "loss_aversion_framing_quote": "supplier to hospitality and catering sectors; ensuring data quality and governance",
-  "loss_aversion_framing_reasoning": "Role impacts business decisions in a supply chain context but lacks compliance or regulatory language, indicating operational reliability concern rather than high-compliance framing."
+  "loss_aversion_framing": "moderate"
 }

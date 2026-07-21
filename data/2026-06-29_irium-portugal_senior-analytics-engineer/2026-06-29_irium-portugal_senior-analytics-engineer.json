@@ -76,15 +76,15 @@
       "analytics engineering",
       "data modeling transformation"
     ],
-    "work_arrangement": "Lisbon, Portugal (hybrid)"
+    "work_arrangement": "Lisbon, Portugal (hybrid)",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "The JD lists only traditional data engineering and BI tools (Azure Data Factory, Airflow, Databricks, Power BI) with no mention of AI coding tools or GenAI-consuming infrastructure.",
+    "testing_framing": "CI/CD implementation for data workflows; data quality frameworks; quality tests; SLA management",
+    "testing_framing_explanation": "The candidate directly builds and owns quality tests, CI/CD, and SLA management for data workflows, an ownership framing consistent with the responsibility classification.",
+    "loss_aversion_framing": "reliable data infrastructure; SLA management; CI/CD implementation for data workflows",
+    "loss_aversion_framing_explanation": "SLA management and reliable infrastructure signal operational reliability concern rather than compliance or regulatory risk, consistent with moderate loss aversion."
   },
   "ai_role": "none",
-  "ai_role_quote": "Build and optimize ELT pipelines; Support for Data Science/BI/ML teams with reliable data infrastructure",
-  "ai_role_reasoning": "No AI coding tools or GenAI infrastructure responsibilities mentioned; standard data engineering/analytics work",
   "testing_framing": "responsibility",
-  "testing_framing_quote": "CI/CD implementation for data workflows; data quality frameworks; quality tests; SLA management",
-  "testing_framing_reasoning": "Candidate implements CI/CD and owns quality testing infrastructure with explicit SLA management accountability",
-  "loss_aversion_framing": "moderate",
-  "loss_aversion_framing_quote": "reliable data infrastructure; SLA management; CI/CD implementation for data workflows",
-  "loss_aversion_framing_reasoning": "Operational reliability and SLOs emphasized but no regulatory/compliance language dominates the framing"
+  "loss_aversion_framing": "moderate"
 }

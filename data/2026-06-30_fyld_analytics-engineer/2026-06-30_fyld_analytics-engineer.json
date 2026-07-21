@@ -76,15 +76,15 @@
       "query optimization",
       "dbt"
     ],
-    "work_arrangement": "Not stated in JD."
+    "work_arrangement": "Not stated in JD.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "The JD's requirements-only skills checklist (Spark, Fabric, Power BI, dbt) contains no mention of AI coding tools or GenAI-consuming infrastructure.",
+    "testing_framing": "Data quality, validation, monitoring, and observability skills",
+    "testing_framing_explanation": "Data quality and observability appear as a requirements-list skill rather than a responsibility framed with an explicit ownership verb, matching the tool_listed pattern.",
+    "loss_aversion_framing": "Advanced SQL proficiency including CTEs, window functions, and query optimization",
+    "loss_aversion_framing_explanation": "The JD is a technical skills checklist with no compliance, regulatory, or incident-risk language anywhere, consistent with no loss aversion framing."
   },
   "ai_role": "none",
-  "ai_role_quote": "Lakehouse and Warehouse optimization; Power BI semantic model knowledge",
-  "ai_role_reasoning": "Technical platform skills without explicit AI-ready infrastructure or GenAI responsibility signals.",
   "testing_framing": "tool_listed",
-  "testing_framing_quote": "Data quality, validation, monitoring, and observability skills",
-  "testing_framing_reasoning": "Quality and monitoring skills listed as requirements without ownership verbs (own/ensure/define).",
-  "loss_aversion_framing": "none",
-  "loss_aversion_framing_quote": "Advanced SQL proficiency including CTEs, window functions, and query optimization",
-  "loss_aversion_framing_reasoning": "Technical proficiency framing without compliance, regulatory, or stakeholder-risk language; no operational fear signals."
+  "loss_aversion_framing": "none"
 }

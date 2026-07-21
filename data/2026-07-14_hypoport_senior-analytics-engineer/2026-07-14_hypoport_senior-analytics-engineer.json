@@ -44,6 +44,30 @@
   "has_soda": false,
   "source_url": "https://hypoport.softgarden.io/job/64995996/-Senior-Analytics-Engineer-%E2%80%93-Snowflake-Power-BI-Deutschlandweit-remote-w-m-d-?jobDbPVId=277383111&l=de",
   "evidence": {
-    "work_arrangement": "Deutschlandweit remote (w/m/d)"
-  }
+    "work_arrangement": "Deutschlandweit remote (w/m/d)",
+    "velocity_vs_rigour": "Du implementierst Qualitätsprüfungen, Tests und Monitoring entlang der gesamten Pipeline – proaktiv, nicht reaktiv.",
+    "velocity_vs_rigour_explanation": "The JD balances quality/testing/governance language (Qualitätsprüfungen, Tests, Datenqualität) with delivery/ownership framing (eigenverantwortlich, kreative Lösungen), landing on mixed.",
+    "domain_risk": "Bei sicherheitsrelevanten Themen entscheidest du eigenständig, weil du den größeren Sachverstand mitbringst.",
+    "domain_risk_explanation": "The employer operates in real estate valuation for FinTech/PropTech/InsurTech, a business-decision context with security-relevant topics mentioned but no explicit regulatory/audit framing for the AE role itself, so moderate applies.",
+    "collaboration_width": "Teamlead; Fachbereiche",
+    "data_team_maturity": "Du betreibst und stabilisierst unsere bestehenden ELT-Pipelines auf Basis von Snowflake, dbt und Airflow",
+    "data_team_maturity_explanation": "The JD describes an existing, named tool stack (Snowflake, dbt, Airflow, Power BI) that the candidate operates and extends, indicating an established stack actively growing rather than a first build.",
+    "jd_authorship": "Du betreibst und stabilisierst unsere bestehenden ELT-Pipelines auf Basis von Snowflake, dbt und Airflow",
+    "jd_authorship_explanation": "The JD names specific tools and technical scope (Snowflake, dbt, Airflow, SharePoint integration) a hiring manager would know, mixed with generic culture copy at the end.",
+    "stakeholder_orientation": "Du nimmst Anforderungen von Stakeholdern auf, übersetzt sie technisch sauber und erklärst komplexe Zusammenhänge verständlich.",
+    "stakeholder_orientation_explanation": "Stakeholders are referenced generically as \"Fachbereiche\" (business departments) without naming a specific commercial, product, or finance function, so mixed applies.",
+    "autonomy_level": "Du betreibst und stabilisierst unsere bestehenden ELT-Pipelines... Du nimmst Anforderungen von Stakeholdern auf, übersetzt sie technisch sauber.",
+    "autonomy_level_explanation": "The bulk of responsibilities are delivery-scoped (operating pipelines, building dashboards to stakeholder requirements); the escalation-level authority on security topics is a secondary, narrower carve-out rather than the role's primary orientation, so execution dominates.",
+    "greenfield_vs_fix": "Du betreibst und stabilisierst unsere bestehenden ELT-Pipelines auf Basis von Snowflake, dbt und Airflow",
+    "greenfield_vs_fix_explanation": "The candidate operates and stabilizes existing pipelines and integrates new data sources into an established platform, an extend/fix framing rather than building from scratch.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "No AI/ML tooling or skill is mentioned anywhere in the JD.",
+    "testing_framing": "Du implementierst Qualitätsprüfungen, Tests und Monitoring entlang der gesamten Pipeline – proaktiv, nicht reaktiv.",
+    "testing_framing_explanation": "Candidate directly implements and owns quality checks and testing across the pipeline, described with an ownership verb.",
+    "loss_aversion_framing": "Datenqualität ist für dich kein Randthema, sondern zentraler Bestandteil guter Analytics.",
+    "loss_aversion_framing_explanation": "Reliability and proactive anomaly detection are emphasized but framed as pipeline/operational concerns, not compliance or stakeholder-trust risk."
+  },
+  "ai_role": "none",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "moderate"
 }

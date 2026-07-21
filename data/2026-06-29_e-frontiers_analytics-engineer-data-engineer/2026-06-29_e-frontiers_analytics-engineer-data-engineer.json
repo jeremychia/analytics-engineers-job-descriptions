@@ -78,15 +78,15 @@
       "pipeline orchestration",
       "financial services data"
     ],
-    "work_arrangement": "Hybrid model in Madrid offices"
+    "work_arrangement": "Hybrid model in Madrid offices",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "The JD makes no reference to AI coding tools, GenAI, or AI-consuming data infrastructure anywhere in the responsibilities or requirements.",
+    "testing_framing": "Desarrollar modelos de datos siguiendo buenas prácticas de ingeniería (control de versiones, testing y CI/CD); Promover buenas prácticas en desarrollo de queries, revisiones de código, documentación y testing",
+    "testing_framing_explanation": "Testing appears listed alongside version control and CI/CD as part of good engineering practice and the broader tool stack rather than being singled out with an explicit ownership verb, matching the tool_listed pattern.",
+    "loss_aversion_framing": "diseñando sistemas de alertas que permitan detectar anomalías antes de impactar al negocio; financial services company (P&L, FX, reconciliation concepts)",
+    "loss_aversion_framing_explanation": "The financial services domain combined with anomaly-detection framing centered on protecting the business from data errors reflects compliance/trust-driven risk concerns dominating the JD, consistent with high loss aversion."
   },
   "ai_role": "none",
-  "ai_role_quote": "No AI tool or platform references in JD",
-  "ai_role_reasoning": "No mention of AI coding tools, AI-ready infrastructure, or GenAI responsibilities.",
   "testing_framing": "tool_listed",
-  "testing_framing_quote": "Monitorizar de forma proactiva los productos de datos, diseñando sistemas de alertas; Colaborar con otros miembros del equipo para reforzar estándares de calidad",
-  "testing_framing_reasoning": "Quality and testing positioned as owned responsibilities; proactive monitoring and alert design indicate candidate ownership of data quality practices.",
-  "loss_aversion_framing": "high",
-  "loss_aversion_framing_quote": "diseñando sistemas de alertas que permitan detectar anomalías antes de impactar al negocio; financial services company where data errors could affect reporting",
-  "loss_aversion_framing_reasoning": "Financial services context with compliance-focused framing: preventing data errors from reaching stakeholders; regulatory risk and trustworthiness as primary concerns."
+  "loss_aversion_framing": "high"
 }

@@ -33,6 +33,7 @@ BOOL_FIELDS = [
 LAYER_B_FIELDS = [
     "velocity_vs_rigour", "domain_risk", "collaboration_width", "data_team_maturity",
     "jd_authorship", "stakeholder_orientation", "autonomy_level",
+    "ai_role", "testing_framing", "loss_aversion_framing",
     "greenfield_vs_fix", "urgency", "work_arrangement", "language_gate_type",
     "interview_stages", "ats_platform", "ats_job_id",
 ]
@@ -41,6 +42,7 @@ JSON_FIELD_ORDER = [
     "jd_id", "company", "role", "job_location", "seniority", "role_type",
     "salary_min", "salary_max", "salary_currency",
     "jd_authorship", "stakeholder_orientation", "autonomy_level",
+    "ai_role", "testing_framing", "loss_aversion_framing",
     "greenfield_vs_fix", "velocity_vs_rigour", "domain_risk",
     "collaboration_width", "data_team_maturity", "urgency", "work_arrangement",
     "language_gate_type", "language_gate_languages",
@@ -125,6 +127,12 @@ def write_files(data: dict):
 **stakeholder_orientation:** {data.get('stakeholder_orientation')} — {prose(evidence, 'stakeholder_orientation')}
 
 **autonomy_level:** {data.get('autonomy_level')} — {prose(evidence, 'autonomy_level')}
+
+**ai_role:** {data.get('ai_role')} — {prose(evidence, 'ai_role', 'No AI skill signal.')}
+
+**testing_framing:** {data.get('testing_framing')} — {prose(evidence, 'testing_framing')}
+
+**loss_aversion_framing:** {data.get('loss_aversion_framing')} — {prose(evidence, 'loss_aversion_framing', 'No loss aversion framing.')}
 
 **greenfield_vs_fix:** {data.get('greenfield_vs_fix')} — {prose(evidence, 'greenfield_vs_fix')}
 

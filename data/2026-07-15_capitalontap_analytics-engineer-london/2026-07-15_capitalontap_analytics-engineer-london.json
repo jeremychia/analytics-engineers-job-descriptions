@@ -61,8 +61,8 @@
     "ai_role_explanation": "No mention of AI tools or infrastructure expected from the candidate.",
     "testing_framing": "CI/CD and automation",
     "testing_framing_explanation": "Tool_listed: testing/CI/CD appear in tools context without ownership verb.",
-    "loss_aversion_framing": "Risk collaboration; fintech sector with SMB credit exposure",
-    "loss_aversion_framing_explanation": "High loss aversion: explicit Risk team collaboration and fintech sector imply regulatory/financial exposure as primary concern.",
+    "loss_aversion_framing": "Collaborating with Executive, Risk, Commercial, and Engineering teams",
+    "loss_aversion_framing_explanation": "Moderate loss aversion: Risk team collaboration is named once among several stakeholder groups, but the JD text itself has no compliance, audit, or regulatory language and is otherwise delivery-focused.",
     "greenfield_vs_fix": "Implementing process improvements via CI/CD and automation",
     "greenfield_vs_fix_explanation": "Fix/scale: task is to improve existing processes and infrastructure, not build greenfield.",
     "language_gate": "Not stated in JD",
@@ -83,5 +83,8 @@
       "data modeling"
     ],
     "work_arrangement": "Location: London (Hybrid: 1-2 days per week in office)"
-  }
+  },
+  "ai_role": "none",
+  "testing_framing": "tool_listed",
+  "loss_aversion_framing": "moderate"
 }

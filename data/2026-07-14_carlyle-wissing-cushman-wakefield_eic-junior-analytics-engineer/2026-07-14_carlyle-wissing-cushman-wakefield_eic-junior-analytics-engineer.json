@@ -11,6 +11,9 @@
   "jd_authorship": "hiring_manager",
   "stakeholder_orientation": "finance",
   "autonomy_level": "execution",
+  "ai_role": "ai_enabler",
+  "testing_framing": "tool_listed",
+  "loss_aversion_framing": "moderate",
   "greenfield_vs_fix": "fix_scale",
   "velocity_vs_rigour": "rigour",
   "domain_risk": "high",
@@ -46,6 +49,27 @@
   "has_soda": false,
   "source_url": "https://cw.wd1.myworkdayjobs.com/External/job/Amsterdam-Netherlands/EIC-Junior-Analytics-Engineer_R324271?source=LinkedIn",
   "evidence": {
-    "work_arrangement": "Apply remote type Hybrid locations Amsterdam, Netherlands"
+    "work_arrangement": "Apply remote type Hybrid locations Amsterdam, Netherlands",
+    "velocity_vs_rigour": "Follow established best practices for data modelling, naming conventions, and platform governance",
+    "velocity_vs_rigour_explanation": "The JD is dominated by governance, standardisation, quality checks, and peer review language with no speed/shipping framing, so rigour dominates.",
+    "domain_risk": "Knowledge of the real estate sector is a plus but not required.",
+    "domain_risk_explanation": "The employer is a commercial real estate services firm (Cushman & Wakefield) where BI outputs inform investment/valuation decisions, a business-decision-with-financial-stakes context treated as high domain risk.",
+    "collaboration_width": "BI Development team; Data Science & Engineering",
+    "data_team_maturity": "you will be an integral part of the Analytics Engineering pillar, contributing to the development and maintenance of the data foundation that powers BI delivery across EMEA",
+    "data_team_maturity_explanation": "The JD describes an established, multi-pillar EMEA BI function with senior Analytics Engineers, standards, bootcamps, and governance already in place, indicating a mature data team.",
+    "jd_authorship": "Contribute to the design, build, and maintenance of semantic models and curated datasets on our central data platform, working under the guidance of senior Analytics Engineers.",
+    "jd_authorship_explanation": "The JD names specific platform concepts (semantic models, central data platform, enterprise tools like Databricks/Snowflake/Power BI) that a hiring manager would know, indicating direct hiring-manager authorship.",
+    "stakeholder_orientation": "You will work in close collaboration with the BI and Data Science & Engineering teams",
+    "stakeholder_orientation_explanation": "The role is oriented around the internal BI/data platform function itself rather than a specific external commercial, product, or finance stakeholder group.",
+    "autonomy_level": "Contribute to the design, build, and maintenance of semantic models and curated datasets on our central data platform, working under the guidance of senior Analytics Engineers.",
+    "autonomy_level_explanation": "As a junior role, nearly every responsibility is framed with supportive verbs (contribute, support, assist) under senior guidance rather than independent direction-setting.",
+    "greenfield_vs_fix": "Contribute to the design, build, and maintenance of semantic models and curated datasets on our central data platform",
+    "greenfield_vs_fix_explanation": "The candidate joins an existing central data platform and BI pillar, extending and standardising it rather than building new infrastructure from scratch.",
+    "ai_role": "Support early-stage work on building data foundations that can be used for AI and agentic use cases, such as preparing clean, well-structured datasets ready for future AI applications",
+    "ai_role_explanation": "The candidate helps build data foundations and clean datasets intended for downstream AI and agentic use cases, a clear ai_enabler signal even though the role is junior/supportive.",
+    "testing_framing": "Contribute to data quality checks and basic performance monitoring; Support testing and quality assurance activities across project delivery",
+    "testing_framing_explanation": "Testing and quality assurance are mentioned but framed with supportive verbs (contribute, support, assist) under senior guidance rather than full candidate ownership, closer to tool_listed than a true owned responsibility.",
+    "loss_aversion_framing": "Contribute to data quality checks and basic performance monitoring of data models and semantic layers; ensure data assets and platform changes are reliable before release",
+    "loss_aversion_framing_explanation": "Reliability and quality checks are present but framed as junior/supportive contributions secondary to delivery and learning, not a dominant compliance or trust narrative."
   }
 }

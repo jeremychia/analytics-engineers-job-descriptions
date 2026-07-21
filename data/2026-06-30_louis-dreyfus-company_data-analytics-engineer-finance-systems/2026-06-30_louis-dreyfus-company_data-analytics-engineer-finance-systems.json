@@ -76,15 +76,15 @@
       "data quality governance",
       "ERP Systems"
     ],
-    "work_arrangement": "Not stated in JD."
+    "work_arrangement": "Not stated in JD.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "The JD's technologies (OneStream, SAP, Power BI, Python) reflect traditional EPM/finance systems work; AI/machine learning appears only as a vague nice-to-have interest, not a required skill.",
+    "testing_framing": "Participate in testing, releases, and deployments across development and production environments.",
+    "testing_framing_explanation": "Testing is described as something the candidate participates in alongside troubleshooting rather than an owned quality practice with a defining/ensuring verb, matching the absent classification.",
+    "loss_aversion_framing": "contributing to the delivery of accurate, reliable, and scalable financial planning, reporting, and performance management processes",
+    "loss_aversion_framing_explanation": "The JD centers on accuracy, reliability, and governance of enterprise financial reporting in a global commodities firm, positioning compliance and stakeholder-trust concerns as dominant, consistent with high loss aversion."
   },
   "ai_role": "none",
-  "ai_role_quote": "Support LDC's OneStream-based Enterprise Performance Management platform; Daily P&L, Actuals, Forecasting, Group Reporting",
-  "ai_role_reasoning": "No AI tools, methodologies, or infrastructure mentioned; work centers entirely on traditional EPM platform support and financial reporting",
   "testing_framing": "absent",
-  "testing_framing_quote": "Troubleshoot platform issues; Participate in testing",
-  "testing_framing_reasoning": "Testing is mentioned as a participation activity but without ownership responsibility or specific quality tools named",
-  "loss_aversion_framing": "high",
-  "loss_aversion_framing_quote": "accurate, reliable, and scalable financial planning, reporting, and performance management processes",
-  "loss_aversion_framing_reasoning": "Financial reporting in a regulated context creates high compliance and stakeholder trust requirements; accuracy and governance dominate the framing"
+  "loss_aversion_framing": "high"
 }

@@ -76,15 +76,15 @@
       "data-driven culture",
       "SQL and data modeling"
     ],
-    "work_arrangement": "operates as a hybrid/remote-first organization headquartered in Neuchatel, Switzerland"
+    "work_arrangement": "operates as a hybrid/remote-first organization headquartered in Neuchatel, Switzerland",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "The JD's tool stack (Metabase, Power BI, Tableau, Snowflake) is traditional BI with no mention of AI coding tools or GenAI-consuming infrastructure.",
+    "testing_framing": "Maintain high standards for data quality and consistency; Establish governance frameworks and best practices",
+    "testing_framing_explanation": "The candidate personally maintains quality standards and establishes governance frameworks, an ownership framing consistent with the responsibility classification.",
+    "loss_aversion_framing": "Hilo by Aktiia addresses high blood pressure, which causes 18M deaths each year; Act as analytics partner to Finance, Product, Commercial, Clinical, and Leadership teams",
+    "loss_aversion_framing_explanation": "The regulated healthcare/clinical context combined with cross-functional trust in accurate reporting positions compliance and stakeholder-trust concerns as dominant, consistent with high loss aversion."
   },
   "ai_role": "none",
-  "ai_role_quote": "Own and evolve Hilo's Metabase platform as the central reporting source; Partner with Data Engineering on data architecture",
-  "ai_role_reasoning": "Responsibilities center on BI platform management and data architecture partnership rather than AI tool usage or infrastructure building.",
   "testing_framing": "responsibility",
-  "testing_framing_quote": "Maintain high standards for data quality and consistency; Establish governance frameworks and best practices; Trusted, accurate, consistent reporting",
-  "testing_framing_reasoning": "Candidate owns quality standards, governance frameworks, and reporting accuracy with explicit responsibility verbs.",
-  "loss_aversion_framing": "high",
-  "loss_aversion_framing_quote": "Hilo by Aktiia addresses high blood pressure, which causes 18M deaths each year; Act as analytics partner to Finance, Product, Commercial, Clinical, and Leadership teams",
-  "loss_aversion_framing_reasoning": "Regulated healthcare context with clinical partnership positions data accuracy and trustworthiness as mission-critical to outcomes."
+  "loss_aversion_framing": "high"
 }

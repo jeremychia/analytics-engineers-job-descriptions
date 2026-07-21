@@ -58,11 +58,11 @@
     "autonomy_level": "deliver against priorities",
     "autonomy_level_explanation": "Execution-focused responsibilities.",
     "ai_role": "No AI skill signal.",
-    "ai_role_explanation": "No explicit AI/ML skill requirements.",
-    "testing_framing": "data quality",
-    "testing_framing_explanation": "Testing mentioned as responsibility.",
-    "loss_aversion_framing": "reliability",
-    "loss_aversion_framing_explanation": "Moderate emphasis on operational reliability.",
+    "ai_role_explanation": "No AI/ML tooling or skill is mentioned anywhere in the JD.",
+    "testing_framing": "No testing or data quality signal.",
+    "testing_framing_explanation": "No testing, data contract, or quality framework language appears in the JD.",
+    "loss_aversion_framing": "No loss aversion framing.",
+    "loss_aversion_framing_explanation": "JD is framed around migration/delivery work with no risk or compliance register.",
     "greenfield_vs_fix": "improve existing systems",
     "greenfield_vs_fix_explanation": "Focus on scaling and improving.",
     "language_gate": "Not stated in JD",
@@ -80,5 +80,8 @@
       "stakeholder management"
     ],
     "work_arrangement": "Not stated in JD."
-  }
+  },
+  "ai_role": "none",
+  "testing_framing": "absent",
+  "loss_aversion_framing": "none"
 }

@@ -76,15 +76,15 @@
       "CI/CD pipelines",
       "Microsoft Fabric"
     ],
-    "work_arrangement": "Europe, 100% remote"
+    "work_arrangement": "Europe, 100% remote",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "The JD's stack (Databricks, Microsoft Fabric, Power BI, Great Expectations) is traditional data engineering/BI infrastructure with no mention of AI coding tools or GenAI-consuming pipelines.",
+    "testing_framing": "Build CI/CD, testing, and versioning for pipelines; Implement validation scripts, unit tests, data quality checks",
+    "testing_framing_explanation": "The candidate directly builds and owns testing, CI/CD, and validation infrastructure, an explicit ownership framing consistent with the responsibility classification.",
+    "loss_aversion_framing": "Ensure data quality, reliability, observability, and performance",
+    "loss_aversion_framing_explanation": "Reliability and observability language signals operational risk concern secondary to the JD's platform-ownership and migration focus, without compliance or regulatory framing, consistent with moderate loss aversion."
   },
   "ai_role": "none",
-  "ai_role_quote": "Own end-to-end data platform using Databricks and Microsoft Fabric",
-  "ai_role_reasoning": "Data platform infrastructure role with named tools but no AI capabilities (coding assistants, GenAI, semantic models) in scope.",
   "testing_framing": "responsibility",
-  "testing_framing_quote": "Build CI/CD, testing, and versioning for pipelines",
-  "testing_framing_reasoning": "Candidate owns testing implementation with explicit ownership verb ('Build') for CI/CD and testing practices.",
-  "loss_aversion_framing": "moderate",
-  "loss_aversion_framing_quote": "Ensure data quality, reliability, observability, and performance",
-  "loss_aversion_framing_reasoning": "Operational reliability concerns (reliability, observability, performance) dominate without regulatory or compliance framing."
+  "loss_aversion_framing": "moderate"
 }

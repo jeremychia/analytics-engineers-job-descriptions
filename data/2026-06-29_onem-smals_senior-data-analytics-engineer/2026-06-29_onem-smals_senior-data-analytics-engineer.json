@@ -78,15 +78,15 @@
       "data validation",
       "transformation logic"
     ],
-    "work_arrangement": "Not stated in JD."
+    "work_arrangement": "Not stated in JD.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "The stack described (dbt, Dagster, Power BI, Databricks) is standard data engineering tooling with no mention of AI coding assistants or GenAI-consuming infrastructure.",
+    "testing_framing": "Managing code through Git and CI/CD pipelines",
+    "testing_framing_explanation": "CI/CD and code management are named as part of the required tool stack without an explicit ownership verb elevating the candidate to defining or owning the quality practice, matching tool_listed.",
+    "loss_aversion_framing": "public social security institution managing unemployment, career interruption, and time credit services in Belgium",
+    "loss_aversion_framing_explanation": "As a public institution administering statutory social security benefits, data errors carry regulatory and stakeholder-trust consequences, so compliance-driven risk framing dominates, consistent with high loss aversion."
   },
   "ai_role": "none",
-  "ai_role_quote": "dbt, Dagster, Power BI",
-  "ai_role_reasoning": "Traditional data engineering stack with no AI coding tools, AI infrastructure, or generative AI mentioned.",
   "testing_framing": "tool_listed",
-  "testing_framing_quote": "maintaining code through CI/CD pipelines",
-  "testing_framing_reasoning": "CI/CD named in responsibilities but framed as maintenance execution, not ownership of quality practice.",
-  "loss_aversion_framing": "none",
-  "loss_aversion_framing_quote": "data errors affect statutory benefit payments and regulatory compliance",
-  "loss_aversion_framing_reasoning": "Regulatory and compliance impact on statutory social security benefits dominates risk framing."
+  "loss_aversion_framing": "high"
 }

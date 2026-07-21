@@ -78,15 +78,15 @@
       "Tableau",
       "junior analyst coordination"
     ],
-    "work_arrangement": "Not stated in JD."
+    "work_arrangement": "Not stated in JD.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "The one AI reference — 'Esperienza in progetti che utilizzano modelli di AI (Gemini, OpenAI, altro)' — is listed as an optional Plus rather than an expected skill, so no AI usage or enablement is required of the candidate.",
+    "testing_framing": "garantendone l'accuratezza e la pertinenza",
+    "testing_framing_explanation": "Accuracy and relevance of requirements are emphasized as a personal quality/precision trait rather than an owned testing or data-quality process, so the signal is absent rather than a responsibility.",
+    "loss_aversion_framing": "No loss aversion framing detected",
+    "loss_aversion_framing_explanation": "The JD focuses on delivery of BI solutions and client relationships with no compliance, regulatory, audit, or incident-risk language present."
   },
   "ai_role": "none",
-  "ai_role_quote": "Looker, Google GCP, BigQuery, stored procedures",
-  "ai_role_reasoning": "No AI coding tools or GenAI infrastructure mentioned; traditional BI and analytics stack only.",
   "testing_framing": "absent",
-  "testing_framing_quote": "garantendone l'accuratezza e la pertinenza",
-  "testing_framing_reasoning": "Individual precision and accuracy emphasized, but no ownership of testing practices, quality frameworks, or data contracts.",
-  "loss_aversion_framing": "none",
-  "loss_aversion_framing_quote": "No loss aversion framing detected",
-  "loss_aversion_framing_reasoning": "Delivery and project outcome focus with no compliance, regulatory, or operational reliability risk language."
+  "loss_aversion_framing": "none"
 }

@@ -44,6 +44,30 @@
   "has_soda": false,
   "source_url": "https://www.linkedin.com/jobs/view/4437274948/",
   "evidence": {
-    "work_arrangement": "Location: Milan/Remote"
-  }
+    "work_arrangement": "Location: Milan/Remote",
+    "velocity_vs_rigour": "Implement automated data quality tests to ensure trust and reliability.",
+    "velocity_vs_rigour_explanation": "The JD balances quality/reliability/testing language with delivery-focused responsibilities (build dashboards, translate business needs) roughly equally, landing on mixed.",
+    "domain_risk": "LUCA FALONI is dedicated to delivering high-quality, timeless luxury fashion",
+    "domain_risk_explanation": "A luxury fashion retailer's analytics work supports commercial/business decisions (Retail, Finance) without regulatory stakes, a moderate business-decision context.",
+    "collaboration_width": "Retail; Finance",
+    "data_team_maturity": "We are seeking a talented Analytics Engineer to design, build, and maintain scalable data solutions that empower our business teams.",
+    "data_team_maturity_explanation": "No existing data team is named and the JD implies the candidate will build core data models/dashboards for the business largely independently, consistent with an early-stage data function at a small luxury retailer, though the JD does not use explicit first-hire language, so mid is used as a moderate reading of a newly forming function.",
+    "jd_authorship": "Proficiency with dbt (data build tool) and modern cloud data warehouses (e.g., BigQuery). Experience defining and maintaining semantic layers.",
+    "jd_authorship_explanation": "The JD names specific tools and technical concepts (dbt, BigQuery, semantic layers, Fivetran/Census) a hiring manager would specify, mixed with generic \"why join us\" boilerplate.",
+    "stakeholder_orientation": "Translate business needs from non-technical stakeholders (e.g., Retail, Finance) into robust technical requirements.",
+    "stakeholder_orientation_explanation": "Retail and Finance are named as roughly co-equal stakeholder groups with no single one dominant, so mixed applies.",
+    "autonomy_level": "Design, build, and maintain scalable data models.",
+    "autonomy_level_explanation": "Responsibilities are framed as delivering and maintaining defined data products (models, dashboards, tests) rather than setting overall data strategy or direction.",
+    "greenfield_vs_fix": "Design, build, and maintain scalable data models. Transform raw data into clean, reliable datasets for business stakeholders.",
+    "greenfield_vs_fix_explanation": "The JD describes both building new data models/dashboards and maintaining/ensuring quality of existing datasets, a mixed greenfield-and-maintenance scope.",
+    "ai_role": "Basic understanding of machine learning concepts.",
+    "ai_role_explanation": "ML/AI appears only as a vague preferred qualification, not a core candidate skill or infrastructure responsibility.",
+    "testing_framing": "Implement automated data quality tests to ensure trust and reliability.",
+    "testing_framing_explanation": "Candidate is directly responsible for implementing automated data quality tests, an ownership verb.",
+    "loss_aversion_framing": "Implement automated data quality tests to ensure trust and reliability.",
+    "loss_aversion_framing_explanation": "Reliability and trust language recurs but centers on dashboard/data accuracy rather than compliance or regulatory exposure."
+  },
+  "ai_role": "none",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "moderate"
 }

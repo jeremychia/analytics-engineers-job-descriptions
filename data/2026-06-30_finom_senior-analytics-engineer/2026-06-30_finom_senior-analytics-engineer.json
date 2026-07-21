@@ -76,15 +76,15 @@
       "well-documented data products",
       "fintech"
     ],
-    "work_arrangement": "Spain / Poland / Serbia / Slovenia (Remote)"
+    "work_arrangement": "Spain / Poland / Serbia / Slovenia (Remote)",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "The JD's stack (Kafka, Databricks, dbt, PySpark, OpenMetadata) is traditional data engineering with no mention of AI coding tools or GenAI-consuming infrastructure.",
+    "testing_framing": "Implementing data quality and governance processes",
+    "testing_framing_explanation": "The candidate directly implements data quality and governance as an owned responsibility, an ownership framing consistent with the responsibility classification.",
+    "loss_aversion_framing": "No loss aversion framing detected.",
+    "loss_aversion_framing_explanation": "Despite the fintech domain, the JD frames the role entirely around building the data platform from inception rather than compliance, regulatory, or incident-risk concerns."
   },
   "ai_role": "none",
-  "ai_role_quote": "transform Kafka topics into documented, easy-to-use data products; Contributing to OpenMetadata data catalog features and maintenance",
-  "ai_role_reasoning": "No AI tools, AI-first mindset, or GenAI infrastructure signals detected; stack is traditional data engineering (Kafka, Databricks, dbt).",
   "testing_framing": "responsibility",
-  "testing_framing_quote": "implementing data quality and governance processes; reliable, well-documented data products",
-  "testing_framing_reasoning": "JD explicitly assigns responsibility for implementing data quality and governance, using ownership verbs indicating candidate owns quality practice.",
-  "loss_aversion_framing": "none",
-  "loss_aversion_framing_quote": "building a Data Delivery Platform on Databricks; data products from scratch; addressing platform-building challenges from inception",
-  "loss_aversion_framing_reasoning": "JD is framed around delivery and platform-building with no mention of compliance, regulatory requirements, incidents, or trust concerns."
+  "loss_aversion_framing": "none"
 }

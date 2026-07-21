@@ -76,15 +76,15 @@
       "GA4",
       "self-serve analytics"
     ],
-    "work_arrangement": "Doodle | Berlin, London | Hybrid"
+    "work_arrangement": "Doodle | Berlin, London | Hybrid",
+    "ai_role": "Evaluate AI effectiveness",
+    "ai_role_explanation": "The JD asks the candidate to assess how well AI features perform within growth experiments, an evaluative/analytical task rather than a requirement to build AI-consuming data infrastructure or use AI coding tools personally.",
+    "testing_framing": "Define KPIs and design dashboards; Establish trusted business metrics with cross-functional leaders",
+    "testing_framing_explanation": "The candidate is explicitly tasked with establishing and owning trusted metrics, an ownership framing consistent with the responsibility classification.",
+    "loss_aversion_framing": "Establish trusted business metrics with cross-functional leaders; build datasets and reporting models to eliminate manual processes",
+    "loss_aversion_framing_explanation": "Establishing 'trusted' metrics and eliminating manual/error-prone processes reflects a secondary operational reliability concern behind the JD's dominant growth and experimentation framing, consistent with moderate loss aversion."
   },
   "ai_role": "none",
-  "ai_role_quote": "evaluate AI effectiveness",
-  "ai_role_reasoning": "Candidate expected to assess AI tool capabilities and performance, indicating use rather than infrastructure building.",
   "testing_framing": "responsibility",
-  "testing_framing_quote": "establish trusted business metrics; own analytics",
-  "testing_framing_reasoning": "Ownership verbs 'establish' and 'own' applied to metrics and analytics practice signal candidate owns the quality discipline.",
-  "loss_aversion_framing": "moderate",
-  "loss_aversion_framing_quote": "No loss aversion framing detected",
-  "loss_aversion_framing_reasoning": "Role emphasizes growth, experimentation, and PLG velocity without regulatory, audit, or compliance-driven framing."
+  "loss_aversion_framing": "moderate"
 }

@@ -76,15 +76,15 @@
       "incoming company",
       "tourism industry"
     ],
-    "work_arrangement": "Work Mode: Hybrid (2 days remote/week)"
+    "work_arrangement": "Work Mode: Hybrid (2 days remote/week)",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "The JD contains no mention of AI coding tools or AI-consuming infrastructure anywhere in responsibilities or requirements.",
+    "testing_framing": "Develop and maintain high quality reporting solutions to complex problems within the company.",
+    "testing_framing_explanation": "The candidate personally develops and maintains report quality, an ownership framing consistent with the responsibility classification even though no formal testing tools are named.",
+    "loss_aversion_framing": "No loss aversion framing detected.",
+    "loss_aversion_framing_explanation": "Despite a finance-adjacent context, the JD emphasizes reporting support and business collaboration rather than compliance, audit, or regulatory risk language."
   },
   "ai_role": "none",
-  "ai_role_quote": "",
-  "ai_role_reasoning": "No AI-related responsibilities, tools, or capabilities mentioned in the JD",
   "testing_framing": "absent",
-  "testing_framing_quote": "Develop and maintain high quality reporting solutions to complex problems within the company",
-  "testing_framing_reasoning": "Candidate owns responsibility for quality and correctness in reporting solutions",
-  "loss_aversion_framing": "none",
-  "loss_aversion_framing_quote": "Collaborating closely with financial teams to support them in their reporting processes and daily operations",
-  "loss_aversion_framing_reasoning": "Framing emphasizes operational support and delivery rather than compliance, regulatory, or trust concerns"
+  "loss_aversion_framing": "none"
 }

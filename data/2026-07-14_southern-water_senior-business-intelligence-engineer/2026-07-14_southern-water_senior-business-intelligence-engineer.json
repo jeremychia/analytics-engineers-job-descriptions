@@ -9,7 +9,7 @@
   "salary_max": null,
   "salary_currency": "GBP",
   "jd_authorship": "hiring_manager",
-  "stakeholder_orientation": "finance",
+  "stakeholder_orientation": "internal_data",
   "autonomy_level": "mixed",
   "greenfield_vs_fix": "fix_scale",
   "velocity_vs_rigour": "rigour",
@@ -44,6 +44,30 @@
   "has_soda": false,
   "source_url": "https://wd3.myworkdaysite.com/recruiting/southernwater/SouthernWater/job/Worthing/Senior-Business-Intelligence--BI--Engineer_JR8281?source=LinkedIn",
   "evidence": {
-    "work_arrangement": "Location: Hybrid – Durrington"
-  }
+    "work_arrangement": "Location: Hybrid – Durrington",
+    "velocity_vs_rigour": "Supporting data quality, governance and compliance requirements within BI solutions... Applying good practice in Power BI performance, usability, security and access control",
+    "velocity_vs_rigour_explanation": "The JD is dominated by governance, compliance, data quality, and \"single version of the truth\" language throughout, with no speed/shipping framing, so rigour dominates.",
+    "domain_risk": "Southern Water is building a modern, trusted data platform to support better decision-making, regulatory performance and customer outcomes.",
+    "domain_risk_explanation": "Southern Water is a regulated UK water utility and the JD explicitly names regulatory performance and compliance among the BI function's core purposes, indicating high domain risk.",
+    "collaboration_width": "Product Owners; Data Modellers; Data Engineers; Platform teams; BI Engineers",
+    "data_team_maturity": "This is an exciting opportunity to join a newly formed BI Engineering team and help shape how business intelligence is delivered, governed and improved across Southern Water.",
+    "data_team_maturity_explanation": "The BI Engineering team itself is newly formed, but it sits alongside established Data Modeller, Data Engineer, and Platform teams within a larger, already-governed data organisation, indicating a mid-maturity function rather than a from-zero build.",
+    "jd_authorship": "You will act as a key link between business stakeholders, Product Owners, Data Modellers, Data Engineers and Platform teams — helping translate business needs into practical, scalable and well-governed BI solutions.",
+    "jd_authorship_explanation": "The JD names specific adjacent roles, squad structure (domain-aligned agile squad), and concrete tools (Power BI, DAX, Power Query, Databricks) reflecting genuine hiring-manager detail about how the team operates.",
+    "stakeholder_orientation": "Southern Water is building a modern, trusted data platform to support better decision-making, regulatory performance and customer outcomes.",
+    "stakeholder_orientation_explanation": "The role serves the BI/data platform function and its regulatory/governance mandate itself rather than a single external commercial, product, or finance stakeholder group, an internal_data orientation.",
+    "autonomy_level": "help lead the day-to-day delivery of BI solutions within a domain-aligned agile squad... Helping establish reusable BI standards, patterns and delivery processes",
+    "autonomy_level_explanation": "The role combines hands-on delivery and mentoring/coordination (execution) with helping establish standards and patterns across the BI community (a direction-setting element), landing on mixed.",
+    "greenfield_vs_fix": "Join a newly formed BI Engineering team with the opportunity to help shape how it works... Reviewing and improving existing BI assets, models and reporting processes",
+    "greenfield_vs_fix_explanation": "The team itself is newly formed, but the candidate reviews and improves existing BI assets and reporting processes rather than building entirely new infrastructure, a mixed greenfield/fix framing.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "No AI/ML tooling or skill is mentioned anywhere in the JD.",
+    "testing_framing": "Supporting data quality, governance and compliance requirements within BI solutions",
+    "testing_framing_explanation": "Data quality/governance is an explicit, owned responsibility area for the role.",
+    "loss_aversion_framing": "Southern Water is building a modern, trusted data platform to support better decision-making, regulatory performance and customer outcomes.",
+    "loss_aversion_framing_explanation": "Regulatory performance and governance/compliance are named in the role summary itself, and recur throughout responsibilities (utility sector, regulated industry)."
+  },
+  "ai_role": "none",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "high"
 }

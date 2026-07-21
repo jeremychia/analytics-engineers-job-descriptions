@@ -76,15 +76,15 @@
       "stakeholder engagement",
       "robust, repeatable analytics solutions"
     ],
-    "work_arrangement": "Hybrid: 2 days per week in the office (London)"
+    "work_arrangement": "Hybrid: 2 days per week in the office (London)",
+    "ai_role": "Experience using AI coding tools (Copilot, Claude, etc.) is highly desirable",
+    "ai_role_explanation": "The candidate is expected to use AI coding assistants like Copilot and Claude to accelerate their own work, directly matching the ai_user pattern.",
+    "testing_framing": "Apply validation and quality checks to ensure accuracy",
+    "testing_framing_explanation": "The candidate personally applies validation and quality checks with the ownership verb 'ensure', consistent with the responsibility framing.",
+    "loss_aversion_framing": "No loss aversion framing detected.",
+    "loss_aversion_framing_explanation": "The JD frames the role entirely around delivery, scalability, and stakeholder support with no compliance, regulatory, or incident-risk language."
   },
-  "ai_role": "none",
-  "ai_role_quote": "The responsibilities section is generic boilerplate with no named tools in context, no scale numbers, and no specific methodology",
-  "ai_role_reasoning": "No AI tools, infrastructure responsibilities, or AI-first language present.",
+  "ai_role": "ai_user",
   "testing_framing": "responsibility",
-  "testing_framing_quote": "validation and quality checks to ensure accuracy",
-  "testing_framing_reasoning": "Ownership verb 'ensure' paired with quality and accuracy responsibilities.",
-  "loss_aversion_framing": "none",
-  "loss_aversion_framing_quote": "The framing is delivery-oriented with verbs like 'support', 'partner', and 'deliver'",
-  "loss_aversion_framing_reasoning": "No compliance, regulatory, or loss-aversion language; framed around delivery and scalability."
+  "loss_aversion_framing": "none"
 }

@@ -24,7 +24,7 @@ from pathlib import Path
 
 from dimensions import DIM_NAMES, KEY_MAP, VALID_VALUES
 
-JD_DATA_DIR = Path(__file__).parent.parent / "jd_data"
+JD_DATA_DIR = Path(__file__).parent.parent / "data"
 TRACES_DIR = Path(__file__).parent / "jd_traces"
 
 CODEBOOK = """\

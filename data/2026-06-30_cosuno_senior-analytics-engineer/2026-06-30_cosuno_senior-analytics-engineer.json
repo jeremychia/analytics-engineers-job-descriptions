@@ -76,15 +76,15 @@
       "pipeline reliability",
       "infrastructure-as-code"
     ],
-    "work_arrangement": "Choose to work 100% remotely or from our modern office in Berlin"
+    "work_arrangement": "Choose to work 100% remotely or from our modern office in Berlin",
+    "ai_role": "AI-Native by Default: We work heavily with Claude Code and other AI tools, and they're a core part of how we build—from writing models and scripts to debugging pipelines and exploring data.",
+    "ai_role_explanation": "The candidate is expected to use Claude Code and other AI coding tools fluently as a core, daily part of their own workflow, matching the ai_user pattern.",
+    "testing_framing": "Take ownership of our dbt pipeline, improving our data models so they're reliable, well-tested, and easy to build on.",
+    "testing_framing_explanation": "The candidate personally owns testing and reliability of the data models, an explicit ownership framing consistent with the responsibility classification.",
+    "loss_aversion_framing": "so the numbers we serve are ones we can stand behind; dashboards and reports that customers and other stakeholders depend on.",
+    "loss_aversion_framing_explanation": "Data trustworthiness and stakeholder dependence reflect an operational reliability concern secondary to the JD's delivery focus, without regulatory or compliance framing, consistent with moderate loss aversion."
   },
-  "ai_role": "none",
-  "ai_role_quote": "No AI tools mentioned; stack is dbt, Looker, Python, Postgres, BigQuery",
-  "ai_role_reasoning": "No AI tools, AI-first mindset, or AI infrastructure signals present; purely traditional data engineering stack.",
+  "ai_role": "ai_user",
   "testing_framing": "responsibility",
-  "testing_framing_quote": "Take ownership of our dbt pipeline, improving our data models so they're reliable, well-tested, and easy to build on.",
-  "testing_framing_reasoning": "Role owns data quality and testing as core practices, treating models as production code requiring rigorous testing.",
-  "loss_aversion_framing": "moderate",
-  "loss_aversion_framing_quote": "so the numbers we serve are ones we can stand behind; dashboards and reports that customers and other stakeholders depend on.",
-  "loss_aversion_framing_reasoning": "Data reliability framed around trustworthiness and stakeholder dependence, but no regulatory/compliance language; operational reliability dominates."
+  "loss_aversion_framing": "moderate"
 }

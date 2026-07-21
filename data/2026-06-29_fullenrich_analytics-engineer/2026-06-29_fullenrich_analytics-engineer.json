@@ -78,15 +78,15 @@
       "waterfall enrichment",
       "SaaS metrics"
     ],
-    "work_arrangement": "Votre rôle sera hybride"
+    "work_arrangement": "Votre rôle sera hybride",
+    "ai_role": "Vous utilisez déjà au quotidien des outils comme Cursor ou Claude pour démultiplier votre vitesse d'exécution.",
+    "ai_role_explanation": "The candidate is explicitly expected to already use AI coding tools like Cursor and Claude daily to accelerate their own execution speed, matching the ai_user pattern.",
+    "testing_framing": "rigoureux(se) sur la qualité des données, les fondations sont ultra-propres, documentées et testées",
+    "testing_framing_explanation": "The candidate must personally uphold rigorous data quality standards, an ownership framing consistent with the responsibility classification.",
+    "loss_aversion_framing": "calcul de l'économie unitaire/marges par fournisseur de données; générer du chiffre d'affaires, ARR, churn",
+    "loss_aversion_framing_explanation": "Unit economics and revenue-driving analysis reflect a secondary operational/business concern rather than dominant compliance or regulatory risk, consistent with moderate loss aversion."
   },
   "ai_role": "ai_user",
-  "ai_role_quote": "Cursor/Claude Code listed among responsibilities and tools (dbt Cloud, BigQuery, Basedash)",
-  "ai_role_reasoning": "JD explicitly names Claude Code and Cursor as tools for analytics automation.",
   "testing_framing": "responsibility",
-  "testing_framing_quote": "rigoureux(se) sur la qualité des données, les fondations sont ultra-propres, documentées et testées",
-  "testing_framing_reasoning": "Candidate must maintain rigorous data quality standards and clean, documented, tested foundations.",
-  "loss_aversion_framing": "moderate",
-  "loss_aversion_framing_quote": "calcul de l'économie unitaire/marges par fournisseur de données; générer du chiffre d'affaires, ARR, churn",
-  "loss_aversion_framing_reasoning": "Revenue and unit economics analysis drive business decisions without compliance/regulatory dominance."
+  "loss_aversion_framing": "moderate"
 }

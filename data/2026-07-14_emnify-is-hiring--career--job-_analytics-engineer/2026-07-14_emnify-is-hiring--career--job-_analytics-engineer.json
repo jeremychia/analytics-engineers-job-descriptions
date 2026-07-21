@@ -59,10 +59,10 @@
     "autonomy_level_explanation": "Execution-focused responsibilities.",
     "ai_role": "No AI skill signal.",
     "ai_role_explanation": "No explicit AI/ML skill requirements.",
-    "testing_framing": "data quality",
-    "testing_framing_explanation": "Testing mentioned as responsibility.",
-    "loss_aversion_framing": "reliability",
-    "loss_aversion_framing_explanation": "Moderate emphasis on operational reliability.",
+    "testing_framing": "No testing or data quality signal.",
+    "testing_framing_explanation": "The captured JD text is mostly site navigation and benefits copy with no responsibilities or testing/quality language visible.",
+    "loss_aversion_framing": "No loss aversion framing.",
+    "loss_aversion_framing_explanation": "No risk, compliance, or reliability framing appears in the captured JD text.",
     "greenfield_vs_fix": "improve existing systems",
     "greenfield_vs_fix_explanation": "Focus on scaling and improving.",
     "language_gate": "Not stated in JD",
@@ -80,5 +80,8 @@
       "stakeholder management"
     ],
     "work_arrangement": "Our roles are designed as hybrid, remote, or include relocation opportunities."
-  }
+  },
+  "ai_role": "none",
+  "testing_framing": "absent",
+  "loss_aversion_framing": "none"
 }

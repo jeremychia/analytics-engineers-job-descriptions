@@ -1184,7 +1184,7 @@ function selectOrientation(dataKey, key) {
   if (!data.length) { container.innerHTML = '<div class="empty-state">No roles in this segment.</div>'; return; }
   container.innerHTML = data.map(d => {
     const ev = d.evidence || {};
-    const rawQuote = ev[dataKey] || d[dataKey+'_quote'] || '';
+    const rawQuote = ev[dataKey] || '';
     const quote = rawQuote ? highlightKeywords(rawQuote, dataKey, key) : '';
     return `<div class="company-card">
       <div class="cc-header"><span class="cc-company">${d.company}</span><span class="cc-role">${d.role}</span></div>

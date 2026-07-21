@@ -76,15 +76,15 @@
       "data modeling",
       "data warehousing"
     ],
-    "work_arrangement": "Portugal (remote/hybrid not specified)"
+    "work_arrangement": "Portugal (remote/hybrid not specified)",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "The JD lists standard BI tools (Power BI, Tableau, Looker) and ETL/ELT skills with no mention of AI coding tools or GenAI-consuming infrastructure.",
+    "testing_framing": "Collaborate with Data Engineers on quality and performance",
+    "testing_framing_explanation": "Quality is framed as a shared collaborative activity with Data Engineers rather than an owned responsibility with an explicit ownership verb, matching the absent classification.",
+    "loss_aversion_framing": "metrics depend on well-modeled, reliable data; data governance and documentation",
+    "loss_aversion_framing_explanation": "Reliability and governance concerns are secondary to the JD's overall BI delivery focus and carry no compliance or regulatory language, consistent with moderate loss aversion."
   },
   "ai_role": "none",
-  "ai_role_quote": "Build and optimize ETL/ELT processes for data availability",
-  "ai_role_reasoning": "Standard data engineering and BI work with no AI tool usage or GenAI-enabling infrastructure responsibilities.",
   "testing_framing": "absent",
-  "testing_framing_quote": "Collaborate with Data Engineers on quality and performance",
-  "testing_framing_reasoning": "Quality mentioned in collaborative context only; no ownership verb (own/ensure/define/implement) paired with testing or quality responsibility.",
-  "loss_aversion_framing": "moderate",
-  "loss_aversion_framing_quote": "metrics depend on well-modeled, reliable data; data governance and documentation",
-  "loss_aversion_framing_reasoning": "Hiring driven by operational reliability concerns (governance, quality, data stability) but no compliance or regulatory framing; moderate loss aversion rather than high trust/audit-driven."
+  "loss_aversion_framing": "moderate"
 }

@@ -293,6 +293,9 @@ Layer B:
 - jd_authorship: {value} ("{decisive quote}")
 - stakeholder_orientation: {value} ("{decisive quote}")
 - autonomy_level: {value} ("{decisive quote}")
+- ai_role: {value} ("{decisive quote}")
+- testing_framing: {value} ("{decisive quote}")
+- loss_aversion_framing: {value} ("{decisive quote}")
 - work_arrangement: {value} ("{decisive quote}")
 
 Stack: {comma-separated true has_* fields}

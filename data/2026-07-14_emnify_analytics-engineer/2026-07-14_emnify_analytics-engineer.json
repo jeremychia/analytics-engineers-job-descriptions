@@ -44,6 +44,30 @@
   "has_soda": false,
   "source_url": "https://www.emnify.com/careers/openings/job-detail?gh_jid=4926654101&gh_src=i8mw0rg2teu&jobtitle=Staff+Analytics+Engineer+%E2%80%93+AI-Powered+Analytics&hsDebug=true",
   "evidence": {
-    "work_arrangement": "Our roles are designed as hybrid, remote, or include relocation opportunities."
-  }
+    "work_arrangement": "Our roles are designed as hybrid, remote, or include relocation opportunities.",
+    "velocity_vs_rigour": "Sparse JD text — no signal.",
+    "velocity_vs_rigour_explanation": "The captured page is almost entirely site navigation and generic department blurbs (Engineering, Finance, GTM, Legal, People Ops, Product) with no analytics-engineer-specific responsibilities, so mixed is used as the conservative default.",
+    "domain_risk": "Finance sits at the centre of decision-making—providing the insights that guide how we invest, grow, and scale.",
+    "domain_risk_explanation": "The only substantive content is a generic Finance-team blurb describing FP&A/commercial finance work, a business-decision context without explicit regulatory framing, so moderate is used as the conservative default.",
+    "collaboration_width": "Finance; Go-to-market; Legal; People Ops; Product management",
+    "data_team_maturity": "Sparse JD text — no signal.",
+    "data_team_maturity_explanation": "No analytics-engineer-specific team or infrastructure detail is present in the captured text, so mid is used as the conservative default.",
+    "jd_authorship": "Sparse JD text — no signal.",
+    "jd_authorship_explanation": "The captured content is generic company/department marketing copy rather than role-specific responsibilities, so mixed is used as the conservative default absent any hiring-manager-specific detail.",
+    "stakeholder_orientation": "Sparse JD text — no signal.",
+    "stakeholder_orientation_explanation": "No analytics-engineer-specific responsibilities are present in the captured text, so mixed is used as the conservative default.",
+    "autonomy_level": "Sparse JD text — no signal.",
+    "autonomy_level_explanation": "No responsibilities section for the role is present in the captured text, so execution is used as the conservative default.",
+    "greenfield_vs_fix": "Sparse JD text — no signal.",
+    "greenfield_vs_fix_explanation": "No responsibilities section for the role is present in the captured text, so fix_scale is used as the conservative default.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "Page content is mostly site navigation/benefits; no AI skill requirement appears in visible responsibilities.",
+    "testing_framing": "No testing or data quality signal.",
+    "testing_framing_explanation": "The captured JD text is mostly site navigation and benefits copy with no responsibilities or testing/quality language visible.",
+    "loss_aversion_framing": "No loss aversion framing.",
+    "loss_aversion_framing_explanation": "No risk, compliance, or reliability framing appears in the captured JD text."
+  },
+  "ai_role": "none",
+  "testing_framing": "absent",
+  "loss_aversion_framing": "none"
 }

@@ -78,15 +78,15 @@
       "data infrastructuur",
       "hybride werken"
     ],
-    "work_arrangement": "Hybrid — Wommelgem / Den Bosch"
+    "work_arrangement": "Hybrid — Wommelgem / Den Bosch",
+    "ai_role": "Je volgt trends in data, AI en analytics en denkt mee over toepassingen",
+    "ai_role_explanation": "The JD only asks the candidate to follow AI trends and think along about applications, a passive awareness expectation rather than a requirement to use AI coding tools or build AI-consuming infrastructure, consistent with no AI skill signal.",
+    "testing_framing": "Datakwaliteit, governance en betrouwbaarheid mee bewaakt",
+    "testing_framing_explanation": "Data quality and governance are described as something the candidate helps monitor collaboratively ('mee bewaakt') rather than solely owns with a defining/ensuring verb, matching the absent classification.",
+    "loss_aversion_framing": "maatschappelijke impact; K12 European learning company",
+    "loss_aversion_framing_explanation": "The JD frames the role around societal impact and internal decision support in education with no compliance, regulatory, or incident-risk language, consistent with no loss aversion framing."
   },
   "ai_role": "none",
-  "ai_role_quote": "End-to-end oplossingen bouwt met SQL en Snowflake, Power BI en DBT",
-  "ai_role_reasoning": "Stack lists traditional BI and SQL tools; no AI tooling, Copilot, Claude Code, or GenAI infrastructure mentioned.",
   "testing_framing": "absent",
-  "testing_framing_quote": "Datakwaliteit, governance en betrouwbaarheid mee bewakt",
-  "testing_framing_reasoning": "Quality governance emphasized but no explicit testing ownership verbs (own, ensure, define, implement, establish).",
-  "loss_aversion_framing": "none",
-  "loss_aversion_framing_quote": "maatschappelijke impact; K12 European learning company",
-  "loss_aversion_framing_reasoning": "Education sector with societal impact framing; no regulatory/compliance language and errors affect internal decisions not regulated outputs."
+  "loss_aversion_framing": "none"
 }

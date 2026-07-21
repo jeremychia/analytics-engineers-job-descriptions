@@ -76,15 +76,15 @@
       "high availability",
       "SQL proficiency"
     ],
-    "work_arrangement": "hybrid model requires office presence Mondays, Tuesdays, and Thursdays"
+    "work_arrangement": "hybrid model requires office presence Mondays, Tuesdays, and Thursdays",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "The JD lists standard data engineering tools (dbt, GCP, Infrastructure as Code) with no mention of AI coding tools or GenAI-consuming infrastructure.",
+    "testing_framing": "collaborate with data scientists to provide reliable datasets",
+    "testing_framing_explanation": "Reliability is described as a collaborative outcome rather than an explicitly owned testing or quality practice, matching the absent classification despite the accuracy/compliance language elsewhere.",
+    "loss_aversion_framing": "ensuring accuracy, compliance, scalability, and long-term usability; monitoring pipelines for high availability and performance",
+    "loss_aversion_framing_explanation": "Monitoring, high availability, and reliability language reflect operational risk concern secondary to the JD's overall delivery focus, consistent with moderate loss aversion."
   },
   "ai_role": "none",
-  "ai_role_quote": "extract, clean, and transform data from various sources; collaborate with data scientists",
-  "ai_role_reasoning": "Standard data engineering responsibilities with no AI tool usage signals or AI infrastructure-building responsibilities.",
   "testing_framing": "absent",
-  "testing_framing_quote": "collaborate with data scientists to provide reliable datasets",
-  "testing_framing_reasoning": "Quality and reliability are outcomes but no explicit testing ownership or quality practice responsibility language.",
-  "loss_aversion_framing": "moderate",
-  "loss_aversion_framing_quote": "Rigour signals dominate — accuracy, compliance, scalability, high availability, monitoring",
-  "loss_aversion_framing_reasoning": "Operational reliability concerns (monitoring, high availability, SLOs) dominate; compliance framed around data usability, not regulatory/audit."
+  "loss_aversion_framing": "moderate"
 }

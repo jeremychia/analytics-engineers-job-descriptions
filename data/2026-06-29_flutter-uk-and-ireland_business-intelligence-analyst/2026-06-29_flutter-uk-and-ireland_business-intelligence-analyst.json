@@ -76,15 +76,15 @@
       "Performance and Business Intelligence",
       "R programming"
     ],
-    "work_arrangement": "Not stated in JD."
+    "work_arrangement": "Not stated in JD.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "The JD makes no mention of AI coding tools or AI-consuming data infrastructure; the toolset described (SQL, Excel, Looker, R) is purely traditional BI.",
+    "testing_framing": "No testing signal.",
+    "testing_framing_explanation": "Responsibilities describe ad-hoc analysis, dashboard building, and stakeholder support with no mention of testing, data quality ownership, or quality frameworks.",
+    "loss_aversion_framing": "No loss aversion framing detected.",
+    "loss_aversion_framing_explanation": "Despite the regulated gambling context, the JD's dominant framing is delivery and commercial performance support rather than compliance, audit, or risk mitigation."
   },
   "ai_role": "none",
-  "ai_role_quote": "identifying key trends and helping form actionable insight on issues, opportunities and performance drivers using large datasets",
-  "ai_role_reasoning": "Standard analytics work with no AI tools, infrastructure, or text-to-SQL mentioned; purely traditional BI approach.",
   "testing_framing": "absent",
-  "testing_framing_quote": "Responsibilities are generic boilerplate ('collaborate with business stakeholders', 'identify performance trends', 'present findings') with no scale numbers, named models, or tool-specific context",
-  "testing_framing_reasoning": "No ownership verbs for quality/testing; role is ad-hoc support without defined testing responsibilities or framework.",
-  "loss_aversion_framing": "none",
-  "loss_aversion_framing_quote": "The dominant verbs are 'support', 'contribute to', and 'collaborate', placing the role in a delivery/execution orientation with no strategic ownership language.",
-  "loss_aversion_framing_reasoning": "Framing is pure delivery/execution despite regulated gambling context; no compliance, audit, or trustworthiness language dominates the JD."
+  "loss_aversion_framing": "none"
 }

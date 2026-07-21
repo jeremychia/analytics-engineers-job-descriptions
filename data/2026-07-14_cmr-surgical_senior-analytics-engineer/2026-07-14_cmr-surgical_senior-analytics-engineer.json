@@ -11,6 +11,9 @@
   "jd_authorship": "mixed",
   "stakeholder_orientation": "mixed",
   "autonomy_level": "execution",
+  "ai_role": "ai_user",
+  "testing_framing": "absent",
+  "loss_aversion_framing": "none",
   "greenfield_vs_fix": "fix_scale",
   "velocity_vs_rigour": "mixed",
   "domain_risk": "moderate",
@@ -44,6 +47,27 @@
   "has_soda": false,
   "source_url": "https://cmrsurgical.com/job-search?jobname=SeniorAnalyticsEngineer",
   "evidence": {
-    "work_arrangement": "This is a hybrid role with a minimum of 1 day per week in our Cambridge office."
+    "work_arrangement": "This is a hybrid role with a minimum of 1 day per week in our Cambridge office.",
+    "velocity_vs_rigour": "Is genuinely comfortable with ambiguity, you'd rather ask \"what decision is this for?\" than start writing SQL immediately.",
+    "velocity_vs_rigour_explanation": "The JD balances a speed/pragmatism register (fast, ad hoc answers to business questions) with rigour signals (sanity-check your own findings, be honest about uncertainty), landing on mixed rather than either pole.",
+    "domain_risk": "whether it feeds into product, commercial, or engineering decisions",
+    "domain_risk_explanation": "CMR Surgical is a medical device company, but the analytics role itself is framed around general business-decision support (usage tracking, commercial/product questions) without regulatory/compliance stakes for the role, hence moderate rather than high.",
+    "collaboration_width": "product; commercial; engineering",
+    "data_team_maturity": "You'll work in a highly supportive, cross-functional team of subject matter experts",
+    "data_team_maturity_explanation": "The JD describes an existing, established data team with subject matter experts and a defined remit, actively growing rather than being built from scratch, indicating mid maturity.",
+    "jd_authorship": "This isn't a build-the-perfect-pipeline role, it's a figure-out-what's-actually-going-on role.",
+    "jd_authorship_explanation": "The JD mixes vivid, specific hiring-manager framing of the actual day-to-day work (concrete example scenarios) with more generic boilerplate about values and inclusivity, landing on mixed.",
+    "stakeholder_orientation": "working directly with stakeholders across the business who come to you with real, unresolved questions",
+    "stakeholder_orientation_explanation": "Stakeholders are described generically as \"across the business\" spanning product, commercial, and engineering with no single group dominant, so mixed applies.",
+    "autonomy_level": "Take ambiguous, open-ended business questions from stakeholders across the business, and turn them into clear, well-evidenced answers.",
+    "autonomy_level_explanation": "The candidate responds to questions stakeholders bring rather than setting the data team's own direction or priorities, an execution-oriented framing despite high analytical judgment.",
+    "greenfield_vs_fix": "You'll work in a highly supportive, cross-functional team of subject matter experts",
+    "greenfield_vs_fix_explanation": "The role joins an existing data team and works with existing (if messy) datasets rather than building new infrastructure from scratch.",
+    "ai_role": "Is comfortable using AI-assisted analysis tools to work faster",
+    "ai_role_explanation": "The candidate is expected to use AI-assisted tools to accelerate their own analysis work, a clear ai_user signal.",
+    "testing_framing": "No testing or data quality signal.",
+    "testing_framing_explanation": "The role is analysis- and insight-focused (ambiguous business questions, exploratory analysis) with no mention of testing, data contracts, or data quality ownership.",
+    "loss_aversion_framing": "No loss aversion framing.",
+    "loss_aversion_framing_explanation": "The JD is framed entirely in terms of exploration, ambiguity, and decision-enablement with no risk, compliance, or operational-reliability register."
   }
 }

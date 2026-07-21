@@ -44,6 +44,30 @@
   "has_soda": false,
   "source_url": "https://jtl-software-gmbh.jobs.personio.com/job/2684130?language=en&display=en",
   "evidence": {
-    "work_arrangement": "Remote-first innerhalb Deutschlands, mit der Möglichkeit, bis zu 180 Tage pro Jahr aus berechtigten Ländern remote zu arbeiten"
-  }
+    "work_arrangement": "Remote-first innerhalb Deutschlands, mit der Möglichkeit, bis zu 180 Tage pro Jahr aus berechtigten Ländern remote zu arbeiten",
+    "velocity_vs_rigour": "Du verbindest sorgfältige Arbeit mit der Fähigkeit, pragmatisch und effizient Ergebnisse zu liefern.",
+    "velocity_vs_rigour_explanation": "The JD explicitly names both careful/quality-focused work and pragmatic/efficient delivery as required, a roughly balanced mixed framing.",
+    "domain_risk": "JTL ist einer der führenden Anbieter von E-Commerce-Software im deutschsprachigen Raum",
+    "domain_risk_explanation": "JTL is an e-commerce software provider; the analytics engineering work supports commercial decision-making without regulatory/compliance stakes, a moderate business-decision context.",
+    "collaboration_width": "Entwicklung; Produkt; Pilotkunden",
+    "data_team_maturity": "Als engagiertes und flexibles Team versorgen wir die JTL-Gruppe mit Daten und schaffen die Grundlage für datengetriebene Entscheidungen.",
+    "data_team_maturity_explanation": "The JD describes an existing internal data team and cloud data platform that is expanding into new customer-facing products, indicating an established function actively growing rather than a first build.",
+    "jd_authorship": "Du strukturierst Rohdaten aus der JTL-Warenwirtschaft zu sauberen, dokumentierten Datenmodellen, auf denen Produkte und Analysen verlässlich aufsetzen",
+    "jd_authorship_explanation": "The JD describes specific, concrete responsibilities (structuring ERP raw data, building the data core for a new AI-powered BI product) that reflect real hiring-manager knowledge of the work, mixed with generic requirement-list boilerplate.",
+    "stakeholder_orientation": "Du arbeitest eng mit Entwicklung, Produkt und Pilotkunden zusammen",
+    "stakeholder_orientation_explanation": "The role partners with Engineering, Product, and pilot customers roughly equally, with no single stakeholder group dominant.",
+    "autonomy_level": "Genau hier übernimmst du die Verantwortung für Strategie und Umsetzung des Daten-Kerns.",
+    "autonomy_level_explanation": "The candidate owns both the strategy and execution of the core data layer, indicating direction-setting responsibility alongside delivery.",
+    "greenfield_vs_fix": "Zusätzlich zu unserer internen Cloud Data Platform wollen wir auch für unsere Kunden dedizierte Produkte entwickeln",
+    "greenfield_vs_fix_explanation": "The role extends an existing internal cloud data platform while also building new customer-facing data products, combining fix/scale work with new build, landing on mixed-leaning fix_scale as the dominant existing-platform framing.",
+    "ai_role": "Du verantwortest die Datengrundlage für unser neues KI-gestütztes BI-Produkt und weitere Datenprojekte im Team",
+    "ai_role_explanation": "Candidate owns the data foundation underlying an AI-powered BI product, i.e. builds infrastructure AI consumes.",
+    "testing_framing": "hohen Anforderungen an Daten-Qualität und -Verfügbarkeit gebaut",
+    "testing_framing_explanation": "Data quality is referenced as a requirement/experience area rather than an explicitly owned testing responsibility.",
+    "loss_aversion_framing": "hohen Anforderungen an Daten-Qualität und -Verfügbarkeit",
+    "loss_aversion_framing_explanation": "Reliability and data quality are emphasized but there is no compliance, audit, or regulatory framing."
+  },
+  "ai_role": "ai_enabler",
+  "testing_framing": "tool_listed",
+  "loss_aversion_framing": "moderate"
 }

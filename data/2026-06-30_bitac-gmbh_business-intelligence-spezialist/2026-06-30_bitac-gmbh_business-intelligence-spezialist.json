@@ -78,15 +78,15 @@
       "Data Vault",
       "Microsoft BI-Stack"
     ],
-    "work_arrangement": "Location: Remote (Deutschland)"
+    "work_arrangement": "Location: Remote (Deutschland)",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "The JD lists only the Microsoft BI stack (SQL Server, Power BI, Fabric, Snowflake) with no mention of AI coding tools or GenAI-consuming infrastructure.",
+    "testing_framing": "No testing signal.",
+    "testing_framing_explanation": "Responsibilities describe data preparation, connecting sources, and visualization with no mention of testing, data quality ownership, or quality governance anywhere in the JD.",
+    "loss_aversion_framing": "No loss aversion framing detected",
+    "loss_aversion_framing_explanation": "The JD emphasizes client satisfaction and delivery of BI solutions with no compliance, regulatory, or operational-risk language present."
   },
   "ai_role": "none",
-  "ai_role_quote": "Business Intelligence Lösungen im Microsoft Umfeld spezialisiert",
-  "ai_role_reasoning": "Standard BI specialist role with traditional data prep and visualization; no AI tools, GenAI responsibilities, or AI-ready infrastructure mentioned.",
   "testing_framing": "absent",
-  "testing_framing_quote": "The single-paragraph responsibilities section is entirely generic boilerplate — 'data preparation', 'connect data sources', 'create visualisations'",
-  "testing_framing_reasoning": "No testing ownership, quality governance, or data contract language; execution-oriented responsibilities without methodology specifics.",
-  "loss_aversion_framing": "none",
-  "loss_aversion_framing_quote": "No loss aversion framing detected",
-  "loss_aversion_framing_reasoning": "JD emphasizes delivery for internal departments; no compliance, regulatory, SLO, incident prevention, or stakeholder risk language."
+  "loss_aversion_framing": "none"
 }

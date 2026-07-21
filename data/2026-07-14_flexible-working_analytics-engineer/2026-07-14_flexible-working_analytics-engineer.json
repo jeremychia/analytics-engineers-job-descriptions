@@ -57,12 +57,12 @@
     "stakeholder_orientation_explanation": "Focus on business outcomes.",
     "autonomy_level": "deliver against priorities",
     "autonomy_level_explanation": "Execution-focused responsibilities.",
-    "ai_role": "No AI skill signal.",
-    "ai_role_explanation": "No explicit AI/ML skill requirements.",
-    "testing_framing": "data quality",
-    "testing_framing_explanation": "Testing mentioned as responsibility.",
-    "loss_aversion_framing": "reliability",
-    "loss_aversion_framing_explanation": "Moderate emphasis on operational reliability.",
+    "ai_role": "Become the go-to expert for new tooling like dbt & AI applications, leading its adoption and successful rollout across the organization.",
+    "ai_role_explanation": "Candidate champions org-wide adoption of AI tooling/infrastructure rather than personally using AI to code faster.",
+    "testing_framing": "spending significant time mentoring them directly to establish best practices around infrastructure, monitoring, testing, and data modelling",
+    "testing_framing_explanation": "Testing is named among practices the candidate owns and drives as a lead, not just a listed tool.",
+    "loss_aversion_framing": "No loss aversion framing.",
+    "loss_aversion_framing_explanation": "JD is framed around mission, velocity, and mentoring with no risk or compliance register.",
     "greenfield_vs_fix": "improve existing systems",
     "greenfield_vs_fix_explanation": "Focus on scaling and improving.",
     "language_gate": "Not stated in JD",
@@ -80,5 +80,8 @@
       "stakeholder management"
     ],
     "work_arrangement": "Not stated in JD."
-  }
+  },
+  "ai_role": "ai_enabler",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "none"
 }

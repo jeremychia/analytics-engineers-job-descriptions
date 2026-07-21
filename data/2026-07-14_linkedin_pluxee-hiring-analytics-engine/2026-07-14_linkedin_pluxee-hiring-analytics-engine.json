@@ -44,6 +44,30 @@
   "has_soda": false,
   "source_url": "https://www.linkedin.com/jobs/view/4426413245/",
   "evidence": {
-    "work_arrangement": "Hybrid: on site and work from home."
-  }
+    "work_arrangement": "Hybrid: on site and work from home.",
+    "velocity_vs_rigour": "Validate data quality and consistency against the provided business information by testing and auditing data... Ensure compliance with data protection law (PII encryption)",
+    "velocity_vs_rigour_explanation": "The JD is dominated by data quality, testing, auditing, compliance, and governance-heavy language throughout multiple sections, with little speed/shipping framing.",
+    "domain_risk": "Ensure compliance with data protection law (PII encryption)",
+    "domain_risk_explanation": "Pluxee is an employee-benefits/fintech-adjacent B2B2C platform, and the JD explicitly names regulatory compliance (data protection law, PII) as an owned responsibility, indicating high domain risk.",
+    "collaboration_width": "Hub Lead Data Engineer; Analytics Engineers; Data Engineers; Business teams",
+    "data_team_maturity": "Reporting to the Hub Lead Data Engineer, the Hub Analytics Engineer is a member of the Hub Data Analytics team.",
+    "data_team_maturity_explanation": "The JD describes an established Hub Data Analytics team with a named lead, existing platform (Azure resources), guidelines, and standards, indicating a mid-to-mature function; mid reflects that it is actively growing across multiple markets rather than a single small, highly specialized mature org.",
+    "jd_authorship": "Develop and maintain robust, cost efficient, high-performance data pipelines, end-to-end, mixing several technologies like Azure Data Factory pipelines, Pyspark, Python, Rest API, SQL & NoSQL databases",
+    "jd_authorship_explanation": "The JD names extensive specific technologies, patterns, and processes (Azure Data Factory, PySpark, SCD, Data Vault, DevOps/CI-CD) reflecting genuine hiring-manager knowledge of the day-to-day work, mixed with some generic \"why join us\" copy.",
+    "stakeholder_orientation": "Actively participate in discussions with business teams to understand their specific data needs and decision-making processes",
+    "stakeholder_orientation_explanation": "Business teams are referenced generically across multiple domains without naming a single dominant commercial, product, or finance function, so mixed applies.",
+    "autonomy_level": "Facilitator in the iterative process of developing data flows to ensure that business expectations are clearly understood",
+    "autonomy_level_explanation": "The role executes pipelines, models, and dashboards against business-defined requirements and follows guidelines set by the Hub team rather than setting overall strategy.",
+    "greenfield_vs_fix": "Collaborate with other Analytics Engineers and Data Engineers and follow the guidelines set by the Hub team, ensuring alignment with our highest standards and best practices",
+    "greenfield_vs_fix_explanation": "The role joins an established Hub Data Analytics team with existing standards and platform (Azure resources) to extend and maintain, an extend/scale framing rather than building from scratch.",
+    "ai_role": "responsible for discovering, modeling, and delivering high-quality, reusable data assets that enable dashboards, self-service analytics, and AI applications across the organization",
+    "ai_role_explanation": "Candidate's core responsibility is building data assets that downstream AI applications consume.",
+    "testing_framing": "Validate data quality and consistency against the provided business information by testing and auditing data to ensure it meets business rules and expectations for reliability",
+    "testing_framing_explanation": "Testing and auditing data is an explicit, owned responsibility with action verbs, not just a listed tool.",
+    "loss_aversion_framing": "Ensure compliance with data protection law (PII encryption)",
+    "loss_aversion_framing_explanation": "Compliance and regulatory (PII/data protection law) framing appears explicitly among core responsibilities, alongside repeated data quality/reliability emphasis."
+  },
+  "ai_role": "ai_enabler",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "high"
 }
