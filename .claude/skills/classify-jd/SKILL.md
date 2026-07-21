@@ -17,6 +17,39 @@ Work through the steps **in order** for each URL.
 
 Fetch `$ARGUMENTS` with WebFetch. Extract:
 
+**Ashby postings (jobs.ashbyhq.com) render client-side — WebFetch alone typically returns only the title.** If WebFetch returns suspiciously short content for an Ashby URL, fall back to curl + embedded JSON extraction before asking the user to paste text:
+
+```bash
+curl -s -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36" "$URL" -o /tmp/ashby.html
+python3 -c "
+import re, json
+html = open('/tmp/ashby.html').read()
+m = re.search(r'window\.__appData\s*=\s*(\{.*?\});', html, re.DOTALL)
+data = json.loads(m.group(1))
+def find_desc(obj):
+    if isinstance(obj, dict):
+        if 'descriptionHtml' in obj:
+            return obj
+        for v in obj.values():
+            r = find_desc(v)
+            if r: return r
+    elif isinstance(obj, list):
+        for v in obj:
+            r = find_desc(v)
+            if r: return r
+    return None
+posting = find_desc(data)
+text = re.sub(r'<[^>]+>', '\n', posting['descriptionHtml'])
+text = re.sub(r'\n\s*\n+', '\n\n', text).strip()
+print('TITLE:', posting.get('title'))
+print('LOCATION:', posting.get('locationName') or posting.get('location'))
+print('---BODY---')
+print(text)
+"
+```
+
+The `window.__appData` payload contains a `.posting` object (or nested under it) with `descriptionHtml`, `title`, `locationName`/`location`, `employmentType`, and `compensationTierSummary` fields — strip HTML tags from `descriptionHtml` to get the plain JD text. Only fall back to asking the user for pasted text if this extraction also fails (e.g. `window.__appData` not present, or JSON parse fails).
+
 - **Company name** (slug: lowercase, hyphens, no punctuation)
 - **Job title** (slug form)
 - **Location** (as stated in JD header)
