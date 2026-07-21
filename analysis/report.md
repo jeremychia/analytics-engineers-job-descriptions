@@ -144,15 +144,15 @@ This is broadly consistent with the dbt 2026 report's governance framing — but
 
 **Just under two-thirds of roles are mid-stage.** Early-stage roles hold at 12%; genuinely mature organisations are 25% — both stable across every expansion since n=199. The July 21 batch (21 new JDs) skewed mid/mature (12 mid, 7 mature, 2 early), reflecting the particular companies added that day (several larger, established employers) but again reinforcing rather than disturbing the mid-stage dominance in the overall market structure. (A subsequent evidence-consistency pass reclassified 2 records from `mid`→`early`, a 1pp shift with no effect on the overall pattern.)
 
-**Maturity × greenfield_vs_fix cross-tab** (χ²=146.83, p<0.0001, V=0.52, n=272 — the strongest relationship in the dataset, and stable across every expansion):
+**Maturity × greenfield_vs_fix cross-tab** (χ²=146.37, p<0.0001, V=0.52, n=272 — the strongest relationship in the dataset, and stable across every expansion):
 
 | data_team_maturity | fix_scale | greenfield | mixed | n |
 |--------------------|-----------|-----------|-------|---|
 | early | 9% | 79% | 12% | 33 |
-| mid | 43% | 5% | 50% | 173 |
-| mature | 65% | 3% | 29% | 66 |
+| mid | 43% | 5% | 52% | 172 |
+| mature | 66% | 3% | 31% | 67 |
 
-Greenfield work concentrates sharply at early-stage (79%, up from 67% at n=199) and is nearly absent at mature (3%). Mature teams have shifted further toward fix/scale (65%, up from 40%) at the expense of "mixed" — they are replacing or extending, essentially never building from nothing. This is the structural basis for the common career-advice claim "go early-stage for greenfield work," and it continues to hold cleanly — the strongest and most reliable relationship in the entire dataset, and the effect size has grown (V=0.46→0.52) rather than diluted as n has increased.
+Greenfield work concentrates sharply at early-stage (79%, up from 67% at n=199) and is nearly absent at mature (3%). Mature teams have shifted further toward fix/scale (66%, up from 40%) at the expense of "mixed" — they are replacing or extending, essentially never building from nothing. This is the structural basis for the common career-advice claim "go early-stage for greenfield work," and it continues to hold cleanly — the strongest and most reliable relationship in the entire dataset, and the effect size has grown (V=0.46→0.52) rather than diluted as n has increased.
 
 **Autonomy by maturity:**
 
@@ -299,15 +299,15 @@ High-risk roles concentrate even more heavily in finance now (39%, vs. 0% of low
 
 ---
 
-### Finding B: High-risk roles skew away from incremental "mixed" mission work (χ², p=0.041, V=0.16, n=272)
+### Finding B: High-risk roles skew away from incremental "mixed" mission work (χ², p=0.018, V=0.15, n=272)
 
-| domain_risk | fix_scale | greenfield | mid | mixed |
-|-------------|-----------|-----------|-----|-------|
-| high (n=66) | 53% | 20% | 2% | 26% |
-| low (n=27) | 56% | 15% | 4% | 26% |
-| moderate (n=179) | 40% | 11% | 2% | 47% |
+| domain_risk | fix_scale | greenfield | mixed |
+|-------------|-----------|-----------|-------|
+| high (n=66) | 53% | 20% | 27% |
+| low (n=27) | 56% | 15% | 30% |
+| moderate (n=179) | 40% | 11% | 49% |
 
-Moderate-risk roles remain the most "mixed" (incremental extension of an existing stack, 47%). High-risk roles split more sharply toward fix_scale (53%), and — newly visible with the `low` tier broken out — low-risk roles show the same fix_scale skew (56%), suggesting the moderate/mixed pattern is the outlier rather than high-risk/fix_scale being distinctively high-risk behaviour. The effect size has weakened substantially (V=0.36→0.16) now that `low` risk is included and n has grown; still significant, but this relationship is markedly less clean than it looked at n=119.
+Moderate-risk roles remain the most "mixed" (incremental extension of an existing stack, 49%). High-risk roles split more sharply toward fix_scale (53%), and — newly visible with the `low` tier broken out — low-risk roles show the same fix_scale skew (56%), suggesting the moderate/mixed pattern is the outlier rather than high-risk/fix_scale being distinctively high-risk behaviour. The effect size has weakened substantially (V=0.36→0.15) now that `low` risk is included and n has grown; still significant, but this relationship is markedly less clean than it looked at n=119.
 
 **Theoretical read — Collingridge (1980), the control dilemma:** technology is easiest to correct early and hardest once dependencies lock in. The high-risk/fix_scale concentration is consistent with organisations in regulated domains having already hit the locked-in phase — the existing stack can't be safely patched incrementally under compliance pressure, forcing more explicit replacement work.
 
@@ -408,13 +408,13 @@ This is the strongest tool-stack relationship found for any of the three dimensi
 
 The naive expectation might be that "use AI coding tools" is a junior-coded, execution-heavy ask (accelerate scoped work faster) while "build AI-consuming infrastructure" is the more strategic mandate. The data shows the opposite ordering: `ai_user` JDs are the *most* strategic-leaning of the three groups (63%, only 9% pure execution), more so even than `ai_enabler` (47% strategic). One plausible read: JDs that expect AI-tool fluency are disproportionately senior/lead-level postings at companies confident enough in their engineering culture to name a specific workflow expectation ("use Claude Code/Copilot as part of your daily workflow") rather than a junior competency checkbox — the ask reads more like "operate at a higher level of leverage" than "be fast at typing." This is exploratory and not pre-registered (§4.0 only tested `ai_role × stakeholder_orientation`); it's flagged here as a candidate for a future prediction, not a confirmed causal story.
 
-**`ai_role` also tracks `greenfield_vs_fix` (χ²=23.91, p=0.0005, V=0.21, n=272), though several cells are sparse (min expected 0.64):**
+**`ai_role` also tracks `greenfield_vs_fix` (χ²=21.60, p=0.0002, V=0.20, n=272, cells no longer sparse — min expected 4.76):**
 
 | ai_role | fix_scale | greenfield | mixed |
 |---|---|---|---|
 | ai_enabler (n=51) | 31% | 24% | 45% |
 | ai_user (n=35) | 34% | 31% | 34% |
-| none (n=186) | 50% | 8% | 40% |
+| none (n=186) | 50% | 8% | 42% |
 
 Both `ai_enabler` and `ai_user` roles show meaningfully more greenfield work (24%/31%) than `none` roles (8%) — consistent with AI-tooling expectations concentrating in newer, less-legacy-encumbered contexts (new data platforms, newer companies) rather than being evenly spread across the maturity spectrum. This dovetails with the `ai_role × autonomy_level` finding above: greenfield work and strategic autonomy already travel together generally (§4.3), so some of the "AI roles skew strategic" pattern may be downstream of "AI roles skew greenfield" rather than a direct effect of the AI expectation itself. Disentangling the two would need a three-way cross-tab at a larger n than this corpus currently supports.
 
@@ -431,7 +431,7 @@ Both `ai_enabler` and `ai_user` roles show meaningfully more greenfield work (24
 | ai_role × stakeholder_orientation (Prediction 2) | χ² | 0.147 | 0.15 | No longer significant now fully coded (n=272; was p=0.082, V=0.29 at biased n=86 subset — see §9.3) |
 | domain_risk × stakeholder_orientation | χ² | <0.0001 | 0.37 | Strongest relationship: finance concentrates high-risk, low-risk concentrates internal_data |
 | data_team_maturity × greenfield_vs_fix | χ² | <0.0001 | 0.52 | Near-deterministic and strengthening: early=greenfield, mature=fix/scale |
-| domain_risk × greenfield_vs_fix | χ² | 0.041 | 0.16 | Weakened substantially (was V=0.36) — high- and low-risk both skew fix/scale over moderate |
+| domain_risk × greenfield_vs_fix | χ² | 0.018 | 0.15 | Weakened substantially (was V=0.36) — high- and low-risk both skew fix/scale over moderate |
 | jd_authorship × has_dbt | χ² | <0.0001 | 0.28 | Hiring-manager JDs name dbt ~1.8× more than recruiter JDs (gap narrowed from ~3×) |
 | seniority × autonomy_level | χ² | <0.0001 | 0.32 | Significant overall; "Senior" (now modal title, n=118) predicts more strongly than before (49% strategic) |
 | stakeholder_orientation × autonomy_level | χ² | 0.107 | 0.16 | No longer significant (was p=0.007) — finance/execution link now directional only |
@@ -446,7 +446,7 @@ Both `ai_enabler` and `ai_user` roles show meaningfully more greenfield work (24
 | testing_framing × has_dbt | χ² | <0.0001 | 0.34 | New: dbt JDs 75% likely to frame testing as owned responsibility vs. 37% without dbt (Finding I) |
 | testing_framing × jd_authorship | χ² | <0.0001 | 0.25 | New: hiring-manager JDs skew toward `responsibility`/`tool_listed`, recruiter JDs toward `absent` (Finding I) |
 | ai_role × autonomy_level | χ² | 0.0001 | 0.21 | New, unexpected direction: `ai_user` roles are the most strategic-leaning of the three groups, not the least (Finding I) |
-| ai_role × greenfield_vs_fix | χ² | 0.0005 | 0.21 | New: `ai_enabler`/`ai_user` roles carry meaningfully more greenfield work than `none` roles (Finding I) |
+| ai_role × greenfield_vs_fix | χ² | 0.0002 | 0.20 | New: `ai_enabler`/`ai_user` roles carry meaningfully more greenfield work than `none` roles (Finding I) |
 
 ---
 

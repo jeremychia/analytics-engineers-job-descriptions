@@ -181,7 +181,7 @@ Also extract:
 - **language_gate_type**: `none` | `soft` | `hard` (`hard` = "required"/"fluent"/"C1/C2"/"must speak"; `soft` = "plus"/"nice to have"/"advantage")
 - **language_gate_languages**: list of non-English languages named (empty list if none)
 - **interview_stages**: integer if stated, null if not
-- **ats_platform**: match URL in order — `greenhouse` (greenhouse.io), `lever` (lever.co), `workday` (myworkdayjobs.com), `ashby` (ashbyhq.com), `smartrecruiters` (smartrecruiters.com), `icims` (icims.com), `jobvite` (jobvite.com), `linkedin` (linkedin.com/jobs), `welcometothejungle` (welcometothejungle.com), else `unknown`
+- **ats_platform**: match URL in order — `greenhouse` (greenhouse.io), `lever` (lever.co), `workday` (myworkdayjobs.com), `ashby` (ashbyhq.com), `smartrecruiters` (smartrecruiters.com), `icims` (icims.com), `jobvite` (jobvite.com), `linkedin` (linkedin.com/jobs), `welcometothejungle` (welcometothejungle.com), `workable` (workable.com), `personio` (personio.de / personio.com), `teamtailor` (teamtailor.com), `jobleads` (jobleads.com), `recruiterflow` (recruiterflow.com), else `unknown`
 - **ats_job_id**: platform-specific job ID from URL (greenhouse: trailing numeric; lever/ashby: UUID; workday: requisition ref after `/job/`; linkedin: numeric; others: most specific path segment or null)
 
 ---
