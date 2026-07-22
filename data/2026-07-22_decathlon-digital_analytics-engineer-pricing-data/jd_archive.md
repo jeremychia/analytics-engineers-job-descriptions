@@ -1,0 +1,60 @@
+**URL:** https://www.linkedin.com/jobs/view/4442683681/
+
+Analytics Engineer - Pricing data (f/m/d)
+
+Notre Team Pricing recherche un e Analytics Engineer (f/m/d) basé e à Paris ou Lille.
+
+Chez Decathlon, nous croyons au pouvoir du sport pour unir. Notre équipe Pricing est le moteur de cette mission : nous visons la "Pricing Excellence" via une approche globale de Revenue Growth Management. L'équipe, composée d'experts Data & IA et du Centre d'Excellence, développe des solutions industrielles pour optimiser proactivement la tarification mondiale.
+
+TA FUTURE CONTRIBUTION
+
+Modélisation et Semantic Layer : Concevoir et industrialiser des modèles complexes pour la couche sémantique (ventes, stocks, concurrents…).
+
+Analyse du Besoin : Traduire proactivement les enjeux métiers des stakeholders (Sports, RGM) en solutions data robustes.
+
+Support Expert : Guider les équipes analytiques dans l'utilisation optimale de la couche insights.
+
+Excellence Opérationnelle : Déployer des solutions de monitoring pour garantir la qualité et l'efficience de l'infrastructure.
+
+STACK TECHNIQUE
+
+AWS, Databricks, SQL, dbt, Airflow, GitHub, Python
+
+CE QUE TU APPORTES
+
+Maîtrise experte de SQL et dbt.
+
+Expérience sur plateforme Cloud (Databricks, Snowflake ou BigQuery).
+
+Solides bases en Python et modélisation dimensionnelle (Kimball, OBT…).
+
+Culture logicielle (Git/GitHub, CI/CD).
+
+Mindset Agile et collaboratif (pair programming, code reviews).
+
+Anglais courant indispensable.
+
+CE QUE NOUS T'OFFRONS
+
+2 jours de télétravail par semaine ;
+
+Possibilité de travailler dans l'un des bureaux de Decathlon Digital à Lille ou Paris;
+
+Matériel fourni en accord avec tes missions et nos engagements sociétaux (Mac ou Windows) ;
+
+Une équipe de projet locale au sein d'un réseau mondial (possibilité de carrière internationale) ;
+
+Développement des compétences et accompagnement (diversité des projets, certifications techniques dès la première année, formations internes et externes, etc.) ;
+
+Package de rémunération (participation des employés aux actions de l'entreprise, bonus mensuels/trimestriels).
+
+DECATHLON DIGITAL
+
+Imaginez si la technologie nous permettait de repousser les frontières et d'offrir des expériences sportives inédites. C'est précisément notre ambition chez Decathlon Digital ! Nous sommes une équipe de plus de 5 000 experts en ingénierie logicielle, gestion de produits, données, cloud et cybersécurité, répartis à Paris, Lille et Amsterdam. Ensemble, nous créons la plus vaste plateforme sportive numérique, en exploitant les innovations technologiques pour optimiser la chaîne de valeur, concevoir des expériences connectées et donner une seconde vie à nos produits.
+
+Changeons la donne pour de bon. Notre passion du sport nous guide et nous voulons qu'elle perdure. C'est pourquoi nous nous engageons à bâtir un modèle technologique plus durable, en réduisant notre impact direct sur l'environnement, et en créant un espace sûr et inclusif pour apprendre et nous épanouir ensemble. Rejoins l'équipe et façonnons le futur du sport.
+
+Seniority level: Mid-Senior level
+Employment type: Full-time
+Job function: Information Technology
+Industries: Software Development
