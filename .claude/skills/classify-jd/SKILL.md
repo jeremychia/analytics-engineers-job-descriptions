@@ -205,7 +205,7 @@ python3 scripts/write_jd.py <<'EOF'
   "role_type": "{value}",
   "salary_min": {int or null},
   "salary_max": {int or null},
-  "salary_currency": "{EUR|GBP|USD|null}",
+  "salary_currency": "{EUR|GBP|USD|SGD|AUD|JPY|HKD|INR|VND|null}",
   "jd_authorship": "{value}",
   "stakeholder_orientation": "{value}",
   "autonomy_level": "{value}",

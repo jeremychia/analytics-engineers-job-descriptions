@@ -1232,8 +1232,8 @@ function selectOrientation(dataKey, key) {
 
 // ── Geography (demoted, honest) ──
 function buildGeo(data) {
-  const GEO_LABELS = { berlin:'Berlin', hamburg:'Hamburg', nordics:'Nordics', uk_remote:'UK / Remote', france:'France', benelux:'Benelux', iberia:'Iberia', ireland:'Ireland', dach_other:'DACH (other)', baltics:'Baltics', other_europe:'Other Europe', global_remote:'Global Remote', other:'Unclassified / other' };
-  const GEO_ORDER = ['berlin','benelux','iberia','nordics','uk_remote','global_remote','france','other_europe','other','dach_other','baltics','hamburg','ireland'];
+  const GEO_LABELS = { berlin:'Berlin', hamburg:'Hamburg', nordics:'Nordics', uk_remote:'UK / Remote', france:'France', benelux:'Benelux', iberia:'Iberia', ireland:'Ireland', dach_other:'DACH (other)', baltics:'Baltics', other_europe:'Other Europe', global_remote:'Global Remote', apac:'APAC', other:'Unclassified / other' };
+  const GEO_ORDER = ['berlin','benelux','iberia','nordics','uk_remote','global_remote','france','other_europe','apac','other','dach_other','baltics','hamburg','ireland'];
   const counts = {};
   data.forEach(d => { const r = d.geo_region || 'other'; counts[r] = (counts[r]||0)+1; });
   const n = data.length || 1;

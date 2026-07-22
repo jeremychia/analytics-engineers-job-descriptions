@@ -3,7 +3,10 @@ Derive a coarse geo_region bucket from a JD's free-text job_location string.
 
 Buckets match analysis/index.html's GEO_LABELS:
   berlin, hamburg, nordics, uk_remote, france, benelux, iberia, ireland,
-  dach_other, baltics, other_europe, global_remote, other
+  dach_other, baltics, other_europe, global_remote, apac, other
+
+APAC is a single catch-all bucket for now (SG, AU, JP, HK, IN, VN, etc.) —
+volume is too low to split further. Revisit once the APAC sample grows.
 """
 
 import re
@@ -67,6 +70,18 @@ OTHER_EUROPE_MARKERS = [
     "gibraltar",
 ]
 
+# Single catch-all for the APAC region until sample size justifies splitting
+# into sub-buckets (e.g. anz, sea, japan_korea, india).
+APAC_MARKERS = [
+    "singapore", "australia", "sydney", "melbourne", "brisbane", "perth",
+    "japan", "tokyo", "osaka", "hong kong", "india", "bangalore",
+    "bengaluru", "mumbai", "delhi", "hyderabad", "pune", "chennai",
+    "vietnam", "hanoi", "ho chi minh", "saigon", "malaysia", "kuala lumpur",
+    "indonesia", "jakarta", "philippines", "manila", "thailand", "bangkok",
+    "south korea", "seoul", "taiwan", "taipei", "china", "shanghai",
+    "beijing", "shenzhen", "new zealand", "auckland",
+]
+
 
 def classify_geo_region(job_location: str) -> str:
     """Classify a job_location string into a coarse geo bucket."""
@@ -115,5 +130,7 @@ def classify_geo_region(job_location: str) -> str:
         return "baltics"
     if any(m in loc for m in OTHER_EUROPE_MARKERS):
         return "other_europe"
+    if any(m in loc for m in APAC_MARKERS):
+        return "apac"
 
     return "other"
