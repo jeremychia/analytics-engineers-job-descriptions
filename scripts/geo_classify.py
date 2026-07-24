@@ -18,9 +18,12 @@ NORDICS_CITIES = [
 ]
 
 UK_MARKERS = [
-    "united kingdom", "uk", "london", "manchester", "liverpool", "bath",
+    "united kingdom", "uk", "london", "manchester", "liverpool",
     "worthing", "luton", "holborn", "old street", "england", "scotland",
 ]
+# Checked separately with a word boundary — "bath" as a bare substring false-positives
+# on "Bathurst" (NSW, Australia), "Bathinda" (India), etc.
+UK_WORD_MARKERS = ["bath"]
 
 BERLIN_MARKERS = ["berlin"]
 HAMBURG_MARKERS = ["hamburg"]
@@ -78,9 +81,13 @@ APAC_MARKERS = [
     "bengaluru", "mumbai", "delhi", "hyderabad", "pune", "chennai",
     "vietnam", "hanoi", "ho chi minh", "saigon", "malaysia", "kuala lumpur",
     "indonesia", "jakarta", "philippines", "manila", "thailand", "bangkok",
-    "south korea", "seoul", "taiwan", "taipei", "china", "shanghai",
-    "beijing", "shenzhen", "new zealand", "auckland",
+    "south korea", "seoul", "taiwan", "taipei", "shanghai",
+    "beijing", "shenzhen", "new zealand", "auckland", "nsw", "victoria,",
+    "queensland", "docklands",
 ]
+# Checked separately with a word boundary — "china" as a bare substring false-positives
+# on US places like "China Grove, NC" or "Chinatown, San Francisco".
+APAC_WORD_MARKERS = ["china"]
 
 
 def classify_geo_region(job_location: str) -> str:
@@ -110,6 +117,8 @@ def classify_geo_region(job_location: str) -> str:
         return "nordics"
     if any(m in loc for m in UK_MARKERS):
         return "uk_remote"
+    if any(re.search(rf"\b{re.escape(m)}\b", loc) for m in UK_WORD_MARKERS):
+        return "uk_remote"
 
     if is_remote:
         # "Remote" with no specific country/region anchor, or explicit global/Europe-wide remote.
@@ -131,6 +140,8 @@ def classify_geo_region(job_location: str) -> str:
     if any(m in loc for m in OTHER_EUROPE_MARKERS):
         return "other_europe"
     if any(m in loc for m in APAC_MARKERS):
+        return "apac"
+    if any(re.search(rf"\b{re.escape(m)}\b", loc) for m in APAC_WORD_MARKERS):
         return "apac"
 
     return "other"
