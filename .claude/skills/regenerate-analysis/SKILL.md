@@ -52,8 +52,15 @@ Interactive browser dashboard ✨
    - **§4.10–4.12** (AI role, testing, loss aversion): check if new JDs were coded on these dimensions; update sample sizes
    - **§5 (Survey comparison)**: update n's and re-check claimed gaps against new data
    - **§9.4 (What n supports)**: update confidence intervals and cite the new corpus size
-3. Test the interactive dashboard at `analysis/index.html` — spot-check a few filters and crosstabs
-4. Commit all files with message like:
+3. **Re-test every relationship panel and null-result entry against the new n — significance is not permanent:**
+   - Recompute χ² / Cramér's V (or the relevant test) for every panel in `relGrid` and `nullGrid`, and for every claim in `report.md` §4.9's "Summary of relationships tested", against the current corpus.
+   - **If a panel that was previously significant drops below p<0.05 (or its effect size falls below the floor already used elsewhere on the page, e.g. Cramér's V≈0.1), remove it — don't keep it on the page reframed as "retracted," "revised," or "a finding that dissolved."** The dashboard and report describe the current state of the evidence, not the page's own edit history. A reader has no access to — and no reason to care about — an earlier draft they never saw.
+   - If the relationship is still worth documenting as a considered-and-rejected hypothesis, it can live in the null-results section (`nullGrid` / report.md negative-results), but written as a plain "we tested X, here's what we found" — not as a callback to a prior claim. Strip phrasing like "an earlier draft claimed," "this page used to assert," "no longer survives," "dissolved," etc. wherever it appears.
+   - Conversely, if a null result crosses into significance with more data, promote it out of the null section into a findings panel, written fresh (not as "now confirmed").
+   - This check runs every regeneration, not just when something visibly breaks — corpus growth silently erodes marginal findings between runs.
+4. **Check whether any claim citing the dbt Labs "State of Analytics Engineering" survey (in `index.html` or `report.md`) needs a live hyperlink to the source report** (currently `https://www.getdbt.com/resources/state-of-analytics-engineering-2026` for the 2026 edition — update to whichever year's report a claim is citing). Every inline stat pulled from that survey (e.g. "72% daily AI coding use") should link to the report it came from, not just name it. If dbt publishes a newer annual edition, update the cited numbers and the link together.
+5. Test the interactive dashboard at `analysis/index.html` — spot-check a few filters and crosstabs
+6. Commit all files with message like:
    ```
    feat(analysis): regenerate with 12 new JDs (Doodle, Orange, MoonPay, etc.)
    

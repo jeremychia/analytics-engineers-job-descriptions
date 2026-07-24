@@ -113,6 +113,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
   border-left: 3px solid var(--accent); font-size: 0.82rem; color: var(--text);
 }
 .rel-read .resume-tip b { color: var(--accent); }
+.rel-read a, .resume-tip a, .null-apply a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
 .rel-test { margin-top: 0.65rem; font-size: 0.73rem; color: var(--muted); line-height: 1.6; }
 .rel-test .sig {
   display: inline-block; font-weight: 700; font-size: 0.6rem; text-transform: uppercase;
@@ -291,7 +292,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 <section class="hero" aria-label="Introduction">
   <div class="hero-eyebrow" id="heroEyebrow">JDs · classified on behavioural dimensions</div>
   <h1 id="heroH1">What actually predicts what, in analytics engineering job descriptions</h1>
-  <p class="hero-sub" id="heroSub">Single percentages ("82% rigour-oriented") are cheap and mostly uninformative on their own — every JD in a rigour-dominant market says similar things. What's useful is where two dimensions move together: does seniority predict autonomy? Does team maturity predict what kind of work you'll do? This page leads with those relationships, shows the test statistic behind each one (recomputed live against whatever filter is active), and reports the relationships that <em>failed</em> — including one this page used to claim that dissolved when the corpus doubled.</p>
+  <p class="hero-sub" id="heroSub">Single percentages ("82% rigour-oriented") are cheap and mostly uninformative on their own — every JD in a rigour-dominant market says similar things. What's useful is where two dimensions move together: does seniority predict autonomy? Does team maturity predict what kind of work you'll do? This page leads with those relationships, shows the test statistic behind each one (recomputed live against whatever filter is active), and reports the relationships that <em>failed</em> just as plainly as the ones that held. It started as a personal question — is an analytics-engineering skillset portable across a market that defines the role differently everywhere — answered by scraping JD text, coding it against a behavioural codebook, and classifying it (zero-shot, LLM-driven for now; human review and cross-model consensus are the next step toward making that more robust).</p>
   <div class="hero-caveat">
     <strong>Read before trusting any number here:</strong> this is a pilot-scale, single-market dataset (Europe-heavy, collected opportunistically during one person's job search). Confidence intervals are wide — treat percentages as directional, not precise. Geography reflects what got scraped, not the market; see the callout in that section.
   </div>
@@ -335,7 +336,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 <section class="section" id="relationships">
   <div class="section-label" id="relLabel">Two-variable findings</div>
   <h2 class="section-headline" id="relHead">Where dimensions move together</h2>
-  <p class="section-body" id="relBody">Each panel below crosses two classifications to answer a question a single-dimension stat can't: not "how many roles are strategic" but "<strong>which</strong> roles are strategic." Panels are ordered by effect size (Cramér's V), strongest first, and each carries its χ² test — recomputed against the active role filter. Several tables have sparse cells (expected counts under 5), which makes the χ² approximation optimistic; those are flagged inline and should be read as directional. The last panel is a finding this page used to assert that no longer survives.</p>
+  <p class="section-body" id="relBody">Each panel below crosses two classifications to answer a question a single-dimension stat can't: not "how many roles are strategic" but "<strong>which</strong> roles are strategic." Panels are ordered by effect size (Cramér's V), strongest first, and each carries its χ² test — recomputed against the active role filter. Several tables have sparse cells (expected counts under 5), which makes the χ² approximation optimistic; those are flagged inline and should be read as directional.</p>
   <div class="rel-grid" id="relGrid"></div>
 </section>
 
@@ -344,7 +345,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 <section class="section" id="nulls">
   <div class="section-label" id="nullLabel">Negative results</div>
   <h2 class="section-headline" id="nullHead">What we expected but the data didn't support</h2>
-  <p class="section-body" id="nullBody">A page that only shows the cross-tabs that worked is survivorship bias with charts. These are relationships we specifically went looking for — because an earlier draft claimed them, or because the industry narrative predicts them — that failed to replicate, flattened as the corpus grew, or never showed up. Reported with the same statistics as the findings above, because a solid null is often just as actionable.</p>
+  <p class="section-body" id="nullBody">A page that only shows the cross-tabs that worked is survivorship bias with charts. These are relationships we specifically went looking for — because the industry narrative predicts them, or because they seemed like a reasonable hypothesis — that failed to replicate, flattened as the corpus grew, or never showed up. Reported with the same statistics as the findings above, because a solid null is often just as actionable.</p>
   <div class="null-grid" id="nullGrid"></div>
 </section>
 
@@ -480,8 +481,8 @@ const SECTION_ORDER = {
 // Panel order: seeker = effect size (discriminating power is what targeting needs);
 // manager = consequence for writing a posting (title language first — it's the cheapest fix).
 const PANEL_ORDER = {
-  seeker:  ['rel-maturity-mission','rel-mission-autonomy','rel-domain-stakeholder','rel-testing-rigour','rel-fear-domainrisk','rel-testing-fear','rel-seniority-autonomy','rel-ai-autonomy','rel-authorship-autonomy','rel-authorship-dbt','rel-maturity-autonomy','rel-maturity-workarr','rel-fear-collab','rel-stakeholder-autonomy'],
-  manager: ['rel-seniority-autonomy','rel-authorship-autonomy','rel-testing-rigour','rel-authorship-dbt','rel-fear-domainrisk','rel-testing-fear','rel-ai-autonomy','rel-maturity-mission','rel-mission-autonomy','rel-maturity-autonomy','rel-maturity-workarr','rel-domain-stakeholder','rel-fear-collab','rel-stakeholder-autonomy'],
+  seeker:  ['rel-maturity-mission','rel-mission-autonomy','rel-domain-stakeholder','rel-testing-rigour','rel-fear-domainrisk','rel-testing-fear','rel-seniority-autonomy','rel-ai-autonomy','rel-authorship-autonomy','rel-authorship-dbt','rel-maturity-autonomy','rel-maturity-workarr','rel-domainrisk-rigour','rel-fear-collab','rel-stakeholder-autonomy'],
+  manager: ['rel-seniority-autonomy','rel-authorship-autonomy','rel-testing-rigour','rel-authorship-dbt','rel-fear-domainrisk','rel-testing-fear','rel-ai-autonomy','rel-maturity-mission','rel-mission-autonomy','rel-maturity-autonomy','rel-maturity-workarr','rel-domain-stakeholder','rel-domainrisk-rigour','rel-fear-collab','rel-stakeholder-autonomy'],
 };
 const NAV_LABELS = {
   relationships: { seeker: 'Relationships', manager: 'What candidates infer' },
@@ -497,7 +498,7 @@ const COPY = {
     manager: 'What your job description signals — benchmarked against a market of near-identical postings',
   },
   heroSub: {
-    seeker: `Single percentages ("82% rigour-oriented") are cheap and mostly uninformative on their own — every JD in a rigour-dominant market says similar things. What's useful is where two dimensions move together: does seniority predict autonomy? Does team maturity predict what kind of work you'll do? This page leads with those relationships, shows the test statistic behind each one (recomputed live against whatever filter is active), and reports the relationships that <em>failed</em> — including one this page used to claim that dissolved when the corpus doubled.`,
+    seeker: `Single percentages ("82% rigour-oriented") are cheap and mostly uninformative on their own — every JD in a rigour-dominant market says similar things. What's useful is where two dimensions move together: does seniority predict autonomy? Does team maturity predict what kind of work you'll do? This page leads with those relationships, shows the test statistic behind each one (recomputed live against whatever filter is active), and reports the relationships that <em>failed</em> just as plainly as the ones that held. It started as a personal question — is an analytics-engineering skillset portable across a market that defines the role differently everywhere — answered by scraping JD text, coding it against a behavioural codebook, and classifying it (zero-shot, LLM-driven for now; human review and cross-model consensus are the next step toward making that more robust).`,
     manager: `Nearly every posting in this market says the same things: rigour vocabulary, "cross-functional collaboration," a Senior title. Candidates can't tell your role apart from the modal posting — and the things they most want to know (real autonomy, real work type, real quality accountability) are exactly what standard JD language communicates worst. This page shows which signals are saturated, what candidates infer from the signals you may not know you're sending, and the cheap, specific ways a posting stands out.`,
   },
   sumLabel: { seeker: 'Single-variable summary', manager: 'Market baseline' },
@@ -515,8 +516,8 @@ const COPY = {
     manager: 'What candidates read between your lines — whether you meant to write it or not',
   },
   relBody: {
-    seeker: `Each panel below crosses two classifications to answer a question a single-dimension stat can't: not "how many roles are strategic" but "<strong>which</strong> roles are strategic." Panels are ordered by effect size (Cramér's V), strongest first, and each carries its χ² test — recomputed against the active role filter. Several tables have sparse cells (expected counts under 5), which makes the χ² approximation optimistic; those are flagged inline and should be read as directional. The last panel is a finding this page used to assert that no longer survives.`,
-    manager: `Each panel below crosses two classifications, and each one is an inference channel: candidates — and increasingly their tools — read your company stage, your title, your authorship tells, and your framing as predictions about the actual role. Panels are ordered by how consequential each channel is to get right in a posting, and each carries its χ² test, recomputed against the active role filter. Sparse-cell caveats are flagged inline. The last panel is a finding this page used to assert that no longer survives.`,
+    seeker: `Each panel below crosses two classifications to answer a question a single-dimension stat can't: not "how many roles are strategic" but "<strong>which</strong> roles are strategic." Panels are ordered by effect size (Cramér's V), strongest first, and each carries its χ² test — recomputed against the active role filter. Several tables have sparse cells (expected counts under 5), which makes the χ² approximation optimistic; those are flagged inline and should be read as directional.`,
+    manager: `Each panel below crosses two classifications, and each one is an inference channel: candidates — and increasingly their tools — read your company stage, your title, your authorship tells, and your framing as predictions about the actual role. Panels are ordered by how consequential each channel is to get right in a posting, and each carries its χ² test, recomputed against the active role filter. Sparse-cell caveats are flagged inline.`,
   },
   nullLabel: { seeker: 'Negative results', manager: 'Saturated signals' },
   nullHead: {
@@ -524,7 +525,7 @@ const COPY = {
     manager: `Language that no longer differentiates a posting`,
   },
   nullBody: {
-    seeker: `A page that only shows the cross-tabs that worked is survivorship bias with charts. These are relationships we specifically went looking for — because an earlier draft claimed them, or because the industry narrative predicts them — that failed to replicate, flattened as the corpus grew, or never showed up. Reported with the same statistics as the findings above, because a solid null is often just as actionable.`,
+    seeker: `A page that only shows the cross-tabs that worked is survivorship bias with charts. These are relationships we specifically went looking for — because the industry narrative predicts them, or because they seemed like a reasonable hypothesis — that failed to replicate, flattened as the corpus grew, or never showed up. Reported with the same statistics as the findings above, because a solid null is often just as actionable.`,
     manager: `Every flat relationship here is a signal that has fully diffused: the whole market writes it, so no candidate can use it to tell employers apart. None of this language is wrong to include — its absence would be noticed — but relying on it to communicate is writing into noise. Reported with the same statistics as the positive findings, because knowing what's noise is half of writing a posting that isn't.`,
   },
 };
@@ -868,11 +869,11 @@ function buildRelationships(data) {
     },
     {
       id: 'rel-seniority-autonomy', rowKey: 'seniority', colKey: 'autonomy_level',
-      tag: 'Seniority × Autonomy · Revised as the corpus grew',
+      tag: 'Seniority × Autonomy',
       q: { seeker: '"Senior" titles — do they actually predict who sets direction?',
            manager: 'Your "Senior" title tells candidates almost nothing about the scope you\'re offering' },
       statFn: () => `"Senior" (n=${cnt('seniority','senior')}) is ${grpPct(data,'seniority','senior','autonomy_level','strategic')}% strategic vs. ${grpPct(data,'seniority','mid','autonomy_level','strategic')}% for mid-level titles (n=${cnt('seniority','mid')}). Staff titles are ${grpPct(data,'seniority','staff','autonomy_level','strategic')}% strategic — but on ${cnt('seniority','staff')} records.`,
-      read: `<strong>Partly — and more than an earlier cut of this data suggested.</strong> At n≈120, "Senior" looked spread almost evenly across all three autonomy levels and this page said the title told you nothing. With the corpus substantially larger, that's no longer fair: a Senior title roughly doubles the odds of strategic scope versus a mid-level title. But it's still not much better than a coin flip <em>within</em> the title, and the impressive-looking tail — staff and lead titles going overwhelmingly strategic — sits on single-digit counts, so the test's significance is partly carried by cells too sparse to trust individually. The senior-vs-mid boundary is the durable part of this finding.`,
+      read: `<strong>Partly.</strong> A Senior title roughly doubles the odds of strategic scope versus a mid-level title. But it's still not much better than a coin flip <em>within</em> the title, and the impressive-looking tail — staff and lead titles going overwhelmingly strategic — sits on single-digit counts, so the test's significance is partly carried by cells too sparse to trust individually. The senior-vs-mid boundary is the durable part of this finding.`,
       tip: {
         seeker: `The senior-vs-mid distinction is worth filtering on. Within "Senior," keep reading the verbs — "define/own/shape" vs. "support/assist/deliver" — and ask directly in the interview what decisions the role makes autonomously in year one. Don't pay a premium for a Staff title on the strength of this dataset; the sample is too thin.`,
         manager: `Within "Senior," candidates can't tell a direction-setting role from a ticket-executing one — the title splits close to the market base rate. Name the decisions the role owns in year one ("you choose the modelling architecture," "you set the testing roadmap") — it's the single cheapest differentiation available in this market, and its absence is why strong candidates ask pointed autonomy questions in your first screen.`,
@@ -932,7 +933,7 @@ function buildRelationships(data) {
       q: { seeker: 'Is remote work actually still available — or only at unstable-sounding companies? And who\'s just not saying?',
            manager: 'Your maturity stage predicts what work-arrangement claim candidates will believe' },
       statFn: () => `${grpPct(data,'data_team_maturity','mature','work_arrangement','not_stated')}% of mature-team postings state no arrangement at all, vs. ${grpPct(data,'data_team_maturity','early','work_arrangement','not_stated')}% at early-stage — a gap, but silence is common at every stage (roughly a third of postings overall). Among the ones that do state a policy, mature teams post hybrid ${grpPctExcl(data,'data_team_maturity','mature','work_arrangement','hybrid','not_stated')}% of the time vs. ${grpPctExcl(data,'data_team_maturity','early','work_arrangement','hybrid','not_stated')}% for early-stage.`,
-      read: `Adding the "not stated" cases back in changes the picture from the stated-policy-only view: roughly a third of postings at every maturity tier say nothing about work arrangement, so any hybrid/remote/onsite split describes only the two-thirds of the market that bothered to specify. Among <em>those</em>, mature data teams have almost entirely converged on hybrid (89%) — full remote is rare, under a tenth of stated policies. Early-stage teams are the opposite: work arrangement is far more contested, split roughly hybrid-majority/remote/onsite (55% / 30% / 15%), which likely reflects small teams still deciding their own default rather than inheriting a corporate real-estate policy. Mid-stage sits between the two (75% / 21% / 4%) but closer to mature's hybrid convergence than to early-stage's split. The "not stated" share itself doesn't vary sharply by maturity (33–39% at every tier) — so silence isn't concentrated at one stage, it's a constant background rate at roughly a third of the market everywhere, and it's exactly why the test below reads differently from an earlier cut of this panel: with "not stated" folded in as its own category, the maturity/arrangement association is no longer significant (four categories dilute a pattern that was real among the three <em>stated</em> options). Restricting to postings that name a policy at all, the same test comes back significant (χ²=9.8, p≈0.04) but with a small effect (Cramér's V≈0.17) and a borderline cell count (mature/onsite) — so read the stated-policy direction with some confidence, but not the combined test below, which is answering a different, harder question ("does maturity predict silence as well as choice of arrangement") and currently says no. The corpus spans roughly three months (April–July 2026), too short a window to claim a trend either way.`,
+      read: `Adding the "not stated" cases back in changes the picture from the stated-policy-only view: roughly a third of postings at every maturity tier say nothing about work arrangement, so any hybrid/remote/onsite split describes only the two-thirds of the market that bothered to specify. Among <em>those</em>, mature data teams have almost entirely converged on hybrid (89%) — full remote is rare, under a tenth of stated policies. Early-stage teams are the opposite: work arrangement is far more contested, split roughly hybrid-majority/remote/onsite (55% / 30% / 15%), which likely reflects small teams still deciding their own default rather than inheriting a corporate real-estate policy. Mid-stage sits between the two (75% / 21% / 4%) but closer to mature's hybrid convergence than to early-stage's split. The "not stated" share itself doesn't vary sharply by maturity (33–39% at every tier) — so silence isn't concentrated at one stage, it's a constant background rate at roughly a third of the market everywhere. With "not stated" folded in as its own category, the maturity/arrangement association is not significant (four categories dilute a pattern that's real among the three <em>stated</em> options). Restricting to postings that name a policy at all, the same test comes back significant (χ²=9.8, p≈0.04) but with a small effect (Cramér's V≈0.17) and a borderline cell count (mature/onsite) — so read the stated-policy direction with some confidence, but not the combined test below, which is answering a different, harder question ("does maturity predict silence as well as choice of arrangement") and currently says no. The corpus spans roughly three months (April–July 2026), too short a window to claim a trend either way.`,
       tip: {
         seeker: `If fully remote is a hard requirement, early-stage and smaller companies are structurally your better search target in this market — mature-team postings that still offer it are the exception, not a fallback you can count on. But a third of postings at every stage say nothing at all — don't read silence as "onsite by default"; it's worth a direct question in screening regardless of company stage. For mature-team roles that do state a policy, budget for a 2–3 day/week office commute by default.`,
         manager: `If you're a mature team offering genuine remote flexibility, say so explicitly and early — it currently reads as a rare enough claim that candidates may discount it as boilerplate unless you're specific (days, geography, exceptions). If your posting states no policy at all, you're in the roughly one-third majority at every stage, but that's not neutral — ambiguity here is exactly the kind of gap a strong candidate probes for and a weak one avoids. Stating it, even a firm in-office default, out-converts stating nothing.`,
@@ -988,14 +989,26 @@ function buildRelationships(data) {
     },
     {
       id: 'rel-stakeholder-autonomy', rowKey: 'stakeholder_orientation', colKey: 'autonomy_level',
-      tag: 'Stakeholder audience × Autonomy · A finding that dissolved',
-      q: { seeker: 'Does who you serve determine how much say you get? We used to claim yes.',
+      tag: 'Stakeholder audience × Autonomy',
+      q: { seeker: 'Does who you serve determine how much say you get?',
            manager: 'Audience labels don\'t predict autonomy — don\'t let a template write your role\'s decision rights' },
-      statFn: () => `Finance-facing roles are ${grpPct(data,'stakeholder_orientation','finance','autonomy_level','execution')}% execution — still the highest share of any audience — and product-facing roles the most strategic at ${grpPct(data,'stakeholder_orientation','product','autonomy_level','strategic')}%. But at n=123 this association tested significant (p=0.007, V=0.29); on the current corpus it no longer does.`,
-      read: `An earlier version of this page ran a confident structural story here: finance roles are execution-shaped because audit cycles and reporting standards define the deliverable externally, before anyone discusses direction. The percentages still point the same way — finance most execution-leaning, product most strategic — but roughly doubling the corpus dissolved the statistical support: the differences are now well within what chance produces across five audience groups this size. The tidy causal explanation had been written to fit a fragile number, which is exactly the failure mode this page exists to protect you from. The direction may yet be real; this dataset currently can't tell.`,
+      statFn: () => `Finance-facing roles are ${grpPct(data,'stakeholder_orientation','finance','autonomy_level','execution')}% execution — still the highest share of any audience — and product-facing roles the most strategic at ${grpPct(data,'stakeholder_orientation','product','autonomy_level','strategic')}%. The association doesn't clear significance at the current corpus size (n=327).`,
+      read: `A plausible structural story sits here: finance roles could be execution-shaped because audit cycles and reporting standards define the deliverable externally, before anyone discusses direction. The percentages point that way — finance most execution-leaning, product most strategic — but the differences are well within what chance produces across five audience groups this size, so the test doesn't clear significance. The direction may yet be real; this dataset currently can't tell.`,
       tip: {
-        seeker: `Don't infer autonomy from the audience label. Precision and auditability remain safe things to foreground in a finance-facing pitch — but the earlier advice to suppress strategic framing for finance roles was overfit to a small sample. Read each JD's actual verbs; the stakeholder category won't do it for you.`,
-        manager: `An earlier version of this page told finance hiring managers their roles would read as execution-shaped no matter what they wrote. That claim dissolved with more data — which cuts in your favour: the audience label doesn't lock in how candidates read the role. Write the actual decision rights explicitly, and don't let a template's assumptions about "finance roles" or "product roles" write them for you.`,
+        seeker: `Don't infer autonomy from the audience label — this dataset can't back that inference at a level of confidence worth acting on. Precision and auditability remain safe things to foreground in a finance-facing pitch, but read each JD's actual verbs; the stakeholder category won't do it for you.`,
+        manager: `The audience label doesn't reliably predict how candidates should expect to be treated, and it doesn't lock in how they'll read the role either. Write the actual decision rights explicitly, and don't let a template's assumptions about "finance roles" or "product roles" write them for you.`,
+      },
+    },
+    {
+      id: 'rel-domainrisk-rigour', rowKey: 'domain_risk', colKey: 'velocity_vs_rigour',
+      tag: 'Domain risk × Rigour orientation · Small but real',
+      q: { seeker: 'Do high-stakes domains actually write more rigour-heavy JDs?',
+           manager: 'Rigour vocabulary is close to universal — high-risk domains use it only slightly more' },
+      statFn: () => `High-risk roles are ${grpPct(data,'domain_risk','high','velocity_vs_rigour','rigour')}% rigour-coded vs. ${grpPct(data,'domain_risk','moderate','velocity_vs_rigour','rigour')}% in moderate-risk and ${grpPct(data,'domain_risk','low','velocity_vs_rigour','rigour')}% in low-risk domains.`,
+      read: `Rigour is close to universal everywhere (63%+ in every risk tier), so this was never going to be a strong differentiator — but high-risk roles do write it slightly more consistently than moderate- or low-risk ones, a real, small, statistically detectable gap (Cramér's V≈0.16). Read it as a weak tilt on top of an already-saturated signal, not a reliable classifier on its own.`,
+      tip: {
+        seeker: `Rigour framing is close to table stakes everywhere, but high-stakes domains do write it slightly more consistently — worth a small weight in how you read a JD's seriousness about quality, not a strong signal on its own. What differentiates roles more is whether quality is <em>your named job</em> (see the testing-framing panel), not whether the JD says "data quality."`,
+        manager: `"Data quality," "single source of truth," "reliability" — nearly every posting says it, so it barely selects. It does track real stakes slightly more than chance, so keep it honest to your actual risk profile — but differentiation still lives mainly in named accountabilities and explicit decision rights, not in how much quality vocabulary you pile on.`,
       },
     },
   ];
@@ -1045,21 +1058,6 @@ function buildRelationships(data) {
 function buildNulls(data) {
   const cards = [
     {
-      expect: 'Retracted — reversed as the corpus grew',
-      title: 'High-stakes domains should write more rigour-heavy JDs',
-      resultFn: () => {
-        const hi = grpPct(data,'domain_risk','high','velocity_vs_rigour','rigour');
-        const mod = grpPct(data,'domain_risk','moderate','velocity_vs_rigour','rigour');
-        const lo = grpPct(data,'domain_risk','low','velocity_vs_rigour','rigour');
-        return `An earlier cut of this corpus reported this association as flat and non-significant, and framed rigour language as a pure institutionalised norm. At the current, larger corpus that's no longer the honest read: high-risk roles are <strong>${hi}% rigour-coded vs. ${mod}% in moderate-risk and ${lo}% in low-risk domains</strong> — a real, small, statistically detectable gap (Cramér's V≈0.16). Rigour is still close to universal everywhere (63%+ in every tier), so the earlier "flat institutionalised norm" framing wasn't wrong about the dominant pattern — it just couldn't yet detect the small gradient underneath it.`;
-      },
-      testFn: () => chiBadge(data, 'domain_risk', 'velocity_vs_rigour'),
-      apply: {
-        seeker: 'Rigour framing is close to table stakes everywhere, but high-stakes domains do write it slightly more consistently — worth a small weight in how you read a JD\'s seriousness about quality, not a strong signal on its own. What differentiates roles more is whether quality is <em>your named job</em> (see the testing-framing panel), not whether the JD says "data quality."',
-        manager: '"Data quality," "single source of truth," "reliability" — nearly every posting says it, so it barely selects. It does track real stakes slightly more than chance now that the sample is larger, so keep it honest to your actual risk profile — but differentiation still lives mainly in named accountabilities and explicit decision rights, not in how much quality vocabulary you pile on.',
-      },
-    },
-    {
       expect: 'Expected — engineers should write like engineers',
       title: 'Engineer-authored JDs should be more rigour-heavy than recruiter ones',
       resultFn: () => {
@@ -1075,13 +1073,13 @@ function buildNulls(data) {
       },
     },
     {
-      expect: 'Claimed in an earlier draft — retracted',
+      expect: 'Expected — federated platforms should need more coordination',
       title: 'Mature teams name the most partner teams',
       resultFn: () => {
         const e = medianBy(data,'data_team_maturity','early','collaboration_width');
         const m = medianBy(data,'data_team_maturity','mid','collaboration_width');
         const ma = medianBy(data,'data_team_maturity','mature','collaboration_width');
-        return `An earlier draft of this analysis reported that mature organisations had the widest named-stakeholder counts, with a story about federated platforms attached. At the current corpus the medians are <strong>${e.toFixed(1)} / ${m.toFixed(1)} / ${ma.toFixed(1)}</strong> for early / mid / mature — no meaningful separation. Corpus growth flattened it; the claim is withdrawn.`;
+        return `A federated-platform story would predict mature organisations naming the widest set of stakeholder teams. The medians are <strong>${e.toFixed(1)} / ${m.toFixed(1)} / ${ma.toFixed(1)}</strong> for early / mid / mature — no meaningful separation.`;
       },
       testFn: () => {
         const groups = ['early','mid','mature'].map(g =>
@@ -1096,17 +1094,17 @@ function buildNulls(data) {
       },
     },
     {
-      expect: 'Claimed in an earlier draft — retracted',
+      expect: 'Expected — AI-infrastructure builders should sit closest to platform teams',
       title: 'AI-infrastructure roles cluster in platform teams',
       resultFn: () => {
         const enablers = data.filter(d => d.ai_role === 'ai_enabler');
         const inPlatform = enablers.filter(d => d.stakeholder_orientation === 'internal_data').length;
-        return `Roles asking the hire to <em>build</em> AI infrastructure (rather than use AI tools) don't concentrate in internal-platform audiences as cleanly as an earlier draft claimed — <strong>${inPlatform} of ${enablers.length} ai-enabler roles currently serve internal data consumers</strong>, and the test doesn't clear significance.`;
+        return `Roles asking the hire to <em>build</em> AI infrastructure (rather than use AI tools) don't concentrate in internal-platform audiences as cleanly as expected — <strong>${inPlatform} of ${enablers.length} ai-enabler roles currently serve internal data consumers</strong>, and the test doesn't clear significance.`;
       },
       testFn: () => chiBadge(data, 'ai_role', 'stakeholder_orientation'),
       apply: {
-        seeker: 'Internal-platform roles are still a reasonable place to position AI-enablement experience, but treat it as a hypothesis to check against live postings, not a market fact — this dataset doesn\'t back a specific stakeholder audience as the differentiator.',
-        manager: `${data.filter(d=>d.ai_role).length ? Math.round(data.filter(d=>d.ai_role==='none').length/data.filter(d=>d.ai_role).length*100) : 68}% of postings still state no AI expectation at all, against a survey world claiming 72% daily AI use. If AI fluency genuinely matters for your role, naming it explicitly remains uncrowded signal space — just don't expect a specific stakeholder audience to be the differentiator.`,
+        seeker: `Internal-platform roles are still a reasonable place to position AI-enablement experience, but treat it as a hypothesis to check against live postings, not a market fact — this dataset doesn't back a specific stakeholder audience as the differentiator. Worth noting: ${data.filter(d=>d.ai_role).length ? Math.round(data.filter(d=>d.ai_role==='none').length/data.filter(d=>d.ai_role).length*100) : 68}% of postings here state no AI expectation at all, against <a href="https://www.getdbt.com/resources/state-of-analytics-engineering-2026" target="_blank" rel="noopener">dbt Labs' 2026 State of Analytics Engineering report</a> claiming 72% daily AI coding use among survey respondents — hiring criteria and self-reported workflow habits are measuring different things.`,
+        manager: `${data.filter(d=>d.ai_role).length ? Math.round(data.filter(d=>d.ai_role==='none').length/data.filter(d=>d.ai_role).length*100) : 68}% of postings still state no AI expectation at all, against <a href="https://www.getdbt.com/resources/state-of-analytics-engineering-2026" target="_blank" rel="noopener">dbt Labs' 2026 State of Analytics Engineering report</a> claiming 72% daily AI coding use among survey respondents. If AI fluency genuinely matters for your role, naming it explicitly remains uncrowded signal space — just don't expect a specific stakeholder audience to be the differentiator.`,
       },
     },
   ];

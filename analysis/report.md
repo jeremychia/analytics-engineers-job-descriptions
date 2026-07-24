@@ -3,7 +3,7 @@
 **Prepared:** June 2026; revised July 2026 against the full corpus, expanded July 13 2026 with 9 new roles, July 16 2026 with 12 new roles, July 17 2026 with 13 new roles, July 21 2026 with 21 further new roles, and now July 22–24 2026 with 55 further new roles including the corpus's first substantial APAC batch; all tables and test statistics reconciled to the July 24 2026 corpus snapshot in this revision (see §3, corpus vintages)
 **Dataset:** 327 analytics-engineering/BI/team-lead job descriptions from `data/` (April–July 2026; primarily European, Berlin-heavy, with UK, DACH, Nordics, and — as of this revision — a 38-role APAC stratum large enough to compare directly against the European majority; see §3, §9.5). 362 records total in the corpus including 22 data-engineering and 13 other roles excluded from the analytical cohort; see §3.
 **Classification:** Layer B codebook applied by one analyst (manual) or by LLM majority vote (3 independent claude-haiku-4-5 runs per JD); full consistency study in `consistency_report.md`.
-**Context source:** dbt Labs "State of Analytics Engineering" reports, 2023–2026 — used as a foil, not as the primary data.
+**Context source:** dbt Labs "[State of Analytics Engineering](https://www.getdbt.com/resources/state-of-analytics-engineering-2026)" reports, 2023–2026 (2026 edition linked) — used as a foil, not as the primary data.
 **Theoretical frame:** Abrahamson (1996), management fashion theory — used to derive two falsifiable predictions before presenting findings (§4.0). Other theoretical lenses (§6) are applied afterward as secondary, exploratory reads, not as pre-registered tests.
 
 ---
@@ -22,7 +22,7 @@ The dbt Labs annual reports (2023–2026) are used as a reference point througho
 
 ## 2. The dbt Labs survey — claims and constraints
 
-The dbt Labs "State of Analytics Engineering" reports (2023–2026) are the most influential annual survey of the analytics engineering profession. Key stated findings by year:
+The dbt Labs "[State of Analytics Engineering](https://www.getdbt.com/resources/state-of-analytics-engineering-2026)" reports (2023–2026) are the most influential annual survey of the analytics engineering profession. Key stated findings by year:
 
 | Year | n | Central claim |
 |------|---|---------------|
