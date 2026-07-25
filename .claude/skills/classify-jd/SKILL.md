@@ -62,6 +62,21 @@ Base name: `YYYY-MM-DD_company-slug_job-title-slug`
 
 ---
 
+## Step 1.5 — Duplicate check (mandatory, before writing anything)
+
+The corpus has been re-scraped the same live posting under different dates, different tracking query strings, different job-board mirrors, and even different company labels (agency vs. hiring company) — a company+role-slug check misses most of that. Run:
+
+```bash
+python3 scripts/check_duplicate_jd.py "{source_url}"
+```
+
+- **Exit 0, "NO MATCH"** — proceed to Step 2.
+- **Exit 1, "DUPLICATE OF: {jd_id}"** — do not write a new record. Skip this URL, note it in the batch summary as `{url} — duplicate of {jd_id}`, and move to the next URL. If the existing record's archive looks thinner than what you just fetched (e.g. a truncated/condensed scrape vs. a full one), say so in the summary and let the user decide whether to replace it manually — don't overwrite automatically.
+
+This check is URL-based, not perfect — it won't catch a genuinely re-posted listing with a brand-new URL for what is otherwise the same role. If something about the JD text feels like a near-duplicate of one you *just* classified in this batch (same company, same responsibilities, different URL), flag it in the summary rather than silently proceeding — the classification will just come out as another near-identical record.
+
+---
+
 ## Step 2 — Layer B classification
 
 Assign values to all seven dimensions from JD language alone — not sector assumptions.
