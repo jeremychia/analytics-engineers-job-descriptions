@@ -337,8 +337,37 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
   <div class="section-label" id="relLabel">Two-variable findings</div>
   <h2 class="section-headline" id="relHead">Where dimensions move together</h2>
   <p class="section-body" id="relBody">Each panel below crosses two classifications to answer a question a single-dimension stat can't: not "how many roles are strategic" but "<strong>which</strong> roles are strategic." Panels are ordered by effect size (Cramér's V), strongest first, and each carries its χ² test — recomputed against the active role filter. Several tables have sparse cells (expected counts under 5), which makes the χ² approximation optimistic; those are flagged inline and should be read as directional.</p>
+  <p class="section-body" id="relOverlapNote" style="font-size:0.92rem;opacity:0.9;border-left:3px solid var(--border);padding-left:1rem;margin-top:-0.5rem;"></p>
   <div class="rel-grid" id="relGrid"></div>
 </section>
+
+
+<!-- SECTION: RESPONSIBILITY TAXONOMY (separate regex-classified pass over responsibility bullets) -->
+<section class="section" id="responsibility-taxonomy">
+  <div class="section-label" id="rtLabel">A second, independent read of the same corpus</div>
+  <h2 class="section-headline" id="rtHead">What the responsibilities actually say, bullet by bullet</h2>
+  <p class="section-body" id="rtBody">The dimensions above classify each JD as a whole. This section instead parses just the responsibilities section of each posting into individual bullets and classifies <em>those</em> against a fixed 15-theme taxonomy (regex-based, not LLM — see <code>analysis/responsibility_taxonomy.py</code>). A JD can carry several themes at once, so the bars sum to well over 100%. n=<span id="rtN">—</span> of the active filter's JDs have a theme reading (a few have no archived JD text or no extractable responsibilities section).</p>
+  <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:1.5rem;align-items:start" class="rt-grid-wrap">
+    <div class="card">
+      <div class="card-title">Theme prevalence</div>
+      <p class="card-sub">% of JDs (with a theme reading) whose responsibilities include each theme · recomputed against the active role filter</p>
+      <canvas id="rtChart"></canvas>
+    </div>
+    <div class="card">
+      <div class="card-title">Which responsibilities travel together</div>
+      <p class="card-sub" id="rtCoocSub">Co-occurrence beyond what each theme's own prevalence would predict (lift = joint rate ÷ expected-if-independent rate). Lift &gt; 1 means the pair shows up together more than chance; sorted by lift, ties broken by support (n).</p>
+      <div class="company-list" id="rtCoocList" style="max-height:420px"></div>
+    </div>
+  </div>
+</section>
+<style>
+  @media (max-width: 900px) { .rt-grid-wrap { grid-template-columns: 1fr !important; } }
+  .rt-cooc-row { display: flex; justify-content: space-between; align-items: baseline; gap: 0.75rem; padding: 0.55rem 0; border-bottom: 1px solid var(--border); font-size: 0.82rem; }
+  .rt-cooc-row:last-child { border-bottom: none; }
+  .rt-cooc-pair { flex: 1; line-height: 1.4; }
+  .rt-cooc-stat { white-space: nowrap; color: var(--muted); font-size: 0.76rem; text-align: right; }
+  .rt-cooc-lift { font-weight: 700; color: var(--text); }
+</style>
 
 
 <!-- SECTION: NULL RESULTS -->
@@ -475,17 +504,18 @@ const TIP_LABEL = { seeker: 'Apply this', manager: 'For your JD' };
 // Section order: seekers get targeting findings first, then the stack (what to learn).
 // Managers get the baseline, then the saturated signals (what NOT to rely on), then inference channels.
 const SECTION_ORDER = {
-  seeker:  ['summary','relationships','nulls','stack','explorer','orientation','geo-section'],
-  manager: ['summary','nulls','relationships','explorer','orientation','stack','geo-section'],
+  seeker:  ['summary','relationships','responsibility-taxonomy','nulls','stack','explorer','orientation','geo-section'],
+  manager: ['summary','nulls','relationships','responsibility-taxonomy','explorer','orientation','stack','geo-section'],
 };
 // Panel order: seeker = effect size (discriminating power is what targeting needs);
 // manager = consequence for writing a posting (title language first — it's the cheapest fix).
 const PANEL_ORDER = {
-  seeker:  ['rel-maturity-mission','rel-mission-autonomy','rel-domain-stakeholder','rel-testing-rigour','rel-fear-domainrisk','rel-testing-fear','rel-seniority-autonomy','rel-ai-autonomy','rel-authorship-autonomy','rel-authorship-dbt','rel-maturity-autonomy','rel-maturity-workarr','rel-domainrisk-rigour','rel-fear-collab','rel-stakeholder-autonomy'],
-  manager: ['rel-seniority-autonomy','rel-authorship-autonomy','rel-testing-rigour','rel-authorship-dbt','rel-fear-domainrisk','rel-testing-fear','rel-ai-autonomy','rel-maturity-mission','rel-mission-autonomy','rel-maturity-autonomy','rel-maturity-workarr','rel-domain-stakeholder','rel-domainrisk-rigour','rel-fear-collab','rel-stakeholder-autonomy'],
+  seeker:  ['rel-maturity-mission','rel-mission-autonomy','rel-domain-stakeholder','rel-testing-rigour','rel-fear-domainrisk','rel-testing-fear','rel-seniority-autonomy','rel-ai-autonomy','rel-authorship-autonomy','rel-authorship-dbt','rel-maturity-autonomy','rel-maturity-workarr','rel-domainrisk-rigour','rel-fear-collab','rel-stakeholder-autonomy','rel-mentorship-autonomy','rel-infra-authorship','rel-selfservice-maturity'],
+  manager: ['rel-seniority-autonomy','rel-authorship-autonomy','rel-testing-rigour','rel-authorship-dbt','rel-fear-domainrisk','rel-testing-fear','rel-ai-autonomy','rel-maturity-mission','rel-mission-autonomy','rel-maturity-autonomy','rel-maturity-workarr','rel-domain-stakeholder','rel-domainrisk-rigour','rel-fear-collab','rel-stakeholder-autonomy','rel-mentorship-autonomy','rel-infra-authorship','rel-selfservice-maturity'],
 };
 const NAV_LABELS = {
   relationships: { seeker: 'Relationships', manager: 'What candidates infer' },
+  'responsibility-taxonomy': { seeker: 'Responsibility mix', manager: 'Responsibility mix' },
   nulls:         { seeker: "Didn't hold",   manager: 'Saturated signals' },
   explorer:      { seeker: 'Explorer',      manager: 'Explorer' },
   orientation:   { seeker: 'Reference',     manager: 'Reference' },
@@ -516,8 +546,12 @@ const COPY = {
     manager: 'What candidates read between your lines — whether you meant to write it or not',
   },
   relBody: {
-    seeker: `Each panel below crosses two classifications to answer a question a single-dimension stat can't: not "how many roles are strategic" but "<strong>which</strong> roles are strategic." Panels are ordered by effect size (Cramér's V), strongest first, and each carries its χ² test — recomputed against the active role filter. Several tables have sparse cells (expected counts under 5), which makes the χ² approximation optimistic; those are flagged inline and should be read as directional.`,
-    manager: `Each panel below crosses two classifications, and each one is an inference channel: candidates — and increasingly their tools — read your company stage, your title, your authorship tells, and your framing as predictions about the actual role. Panels are ordered by how consequential each channel is to get right in a posting, and each carries its χ² test, recomputed against the active role filter. Sparse-cell caveats are flagged inline.`,
+    seeker: `Each panel below crosses two classifications to answer a question a single-dimension stat can't: not "how many roles are strategic" but "<strong>which</strong> roles are strategic." Panels are ordered by effect size (Cramér's V), strongest first, and each carries its χ² test — recomputed against the active role filter. Several tables have sparse cells (expected counts under 5), which makes the χ² approximation optimistic; those are flagged inline and should be read as directional. The "Responsibility language" panels (Mentorship, Infrastructure, Self-Service) pair a separate, regex-classified reading of each JD's responsibility bullets (<code>analysis/responsibility_taxonomy.py</code>) against the Layer B codebook — see the note below for why some pairings between the two are excluded as circular rather than reported as findings.`,
+    manager: `Each panel below crosses two classifications, and each one is an inference channel: candidates — and increasingly their tools — read your company stage, your title, your authorship tells, and your framing as predictions about the actual role. Panels are ordered by how consequential each channel is to get right in a posting, and each carries its χ² test, recomputed against the active role filter. Sparse-cell caveats are flagged inline. The "Responsibility language" panels read a separate, regex-classified pass over each posting's responsibility bullets against the same behavioural codebook — see the note below for what's excluded and why.`,
+  },
+  relOverlapNote: {
+    seeker: `<strong>A methodology note on the "Responsibility language" panels:</strong> some pairings between the 15 regex-classified responsibility themes and the Layer B codebook are excluded from this page entirely, not because they're weak, but because they're circular — the theme's trigger keywords and the dimension's own coding rubric detect the same textual signal. The clearest case: the "Data Quality & Testing" theme (Cramér's V=0.52 against <code>testing_framing</code>, the single strongest pairing found) is excluded, because <code>testing_framing</code> is itself coded by looking for testing/quality language in the JD — crossing the two mostly measures whether two different classification methods agree with each other, not a substantive relationship. Same logic excludes "Security, Privacy & Risk" vs. <code>domain_risk</code>/<code>loss_aversion_framing</code>, "Data Ownership" vs. <code>autonomy_level</code> (whose own rubric lists "own" as a strategic-verb signal), and any BI/Infrastructure theme against a tech-stack flag whose tool name is literally one of the theme's regex keywords (Looker, Tableau, Power BI, Snowflake, Databricks, dbt). The three panels shown here survived that filter <em>and</em> a follow-up stratification check (does the relationship hold within a plausible confounding subgroup, not just across the whole corpus) — the null-results section below includes a worked example of a pairing that looked real unstratified and didn't survive that check, kept specifically as a demonstration of why the check matters.`,
+    manager: `<strong>A methodology note on the "Responsibility language" panels:</strong> several theme/dimension pairings are deliberately excluded from this page because the theme's keywords and the dimension's own coding rubric detect the same underlying text — reporting them as "relationships" would just be two measurement methods agreeing with themselves. (The strongest excluded pairing, Cramér's V=0.52, is exactly this case.) The three panels shown here are the ones that use genuinely independent signal sources <em>and</em> held up under a stratification check — see the null-results section for a pairing that looked real before that check and didn't survive it.`,
   },
   nullLabel: { seeker: 'Negative results', manager: 'Saturated signals' },
   nullHead: {
@@ -800,6 +834,13 @@ const REL_ORDER = {
   ai_role: ['ai_enabler','ai_user','none'],
   dbt_named: ['named','not_named'],
   work_arrangement: ['remote','hybrid','onsite','not_stated'],
+  rt_mentorship: ['yes','no'],
+  rt_infra: ['yes','no'],
+  rt_selfservice: ['yes','no'],
+  rt_perfcost: ['yes','no'],
+  rt_governance: ['yes','no'],
+  rt_ownership: ['yes','no'],
+  rt_architecture: ['yes','no'],
 };
 
 function pct(data, key, filterFn) {
@@ -1000,6 +1041,42 @@ function buildRelationships(data) {
       },
     },
     {
+      id: 'rel-mentorship-autonomy', rowKey: 'autonomy_level', colKey: 'rt_mentorship',
+      tag: 'Responsibility language: Mentorship & Leadership × Autonomy · Survives a seniority control',
+      q: { seeker: 'Does the autonomy label predict actual people-management work, beyond what the title already tells you?',
+           manager: 'If you want mentorship framed as part of the role, the autonomy language you write matters independently of the title' },
+      statFn: () => `${grpPct(data,'autonomy_level','strategic','rt_mentorship','yes')}% of strategic-coded JDs carry mentorship/leadership language in their responsibilities, vs. ${grpPct(data,'autonomy_level','execution','rt_mentorship','yes')}% of execution-coded ones — and this isn't just seniority in disguise: within "Mid" titles alone the gap is 8%→19%→31% (execution→mixed→strategic), and within "Senior" titles alone it's 14%→30%→35%. Autonomy adds real signal on top of the job title.`,
+      read: `This pairing is drawn from two independent signal sources by design: <code>autonomy_level</code> is an LLM-coded whole-JD judgment (verbs like "define," "own," "shape"), while the mentorship theme is a regex match on specific responsibility-bullet phrasing ("mentor," "coach," "grow the team," "line manage"). Because the two don't share trigger vocabulary, this is a genuine relationship, not two measurements of the same text — and it holds up under a stratification check most panels on this page don't get: split by seniority title first, the gradient is still there in both the "Mid" and "Senior" strata, meaning a strategic-coded mid-level posting talks about mentorship roughly 4× as often as an execution-coded mid-level posting with the identical title. The title alone underdetermines whether you'll be asked to develop other people; the autonomy framing is the better predictor.`,
+      tip: {
+        seeker: `Don't assume a "Mid" or "Senior" title tells you whether you'll mentor anyone — look for autonomy language ("own," "define," "shape," "drive") in the responsibilities instead. It predicts people-development scope better than the title band does, confirmed within title bands, not just across them.`,
+        manager: `If part of the role is genuinely developing junior teammates, autonomy language ("own this domain," "define the approach") correlates with candidates reading that expectation correctly — more so than the seniority title alone. A "Mid, execution-scoped" posting reads as individually-scoped work even if you expect some informal mentoring; say so explicitly if you want it read that way.`,
+      },
+    },
+    {
+      id: 'rel-infra-authorship', rowKey: 'jd_authorship', colKey: 'rt_infra',
+      tag: 'Responsibility language: Data Infrastructure & Warehouse Ops × JD authorship',
+      q: { seeker: 'Does who wrote the JD predict how much real infrastructure detail you\'ll get?',
+           manager: 'Naming your actual warehouse platform in the responsibilities, not just the tech-stack list, reads as hiring-manager authorship' },
+      statFn: () => `Hiring-manager-authored JDs name warehouse/infrastructure responsibilities (Snowflake, BigQuery, Databricks, Terraform, CI/CD) at ${grpPct(data,'jd_authorship','hiring_manager','rt_infra','yes')}%, vs. ${grpPct(data,'jd_authorship','recruiter','rt_infra','yes')}% for recruiter-authored JDs — a considerably wider gap than authorship's already-known link to whether dbt is named at all.`,
+      read: `Consistent with the revealed-preference logic elsewhere on this page (§6, Deming & Kahn): a recruiter working from a template can drop a tool name into a skills list, but naming platform-level responsibilities in the day-to-day bullets ("own Unity Catalog governance," "manage the Snowflake warehouse cost profile") requires knowing what the team's infrastructure problem actually is. This pairing is a genuinely independent check on the authorship signal — it doesn't reuse any of the same trigger words the <code>jd_authorship</code> codebook rubric looks for.`,
+      tip: {
+        seeker: `Infrastructure specificity in the responsibilities (not just a tool-name list under "requirements") is a stronger tell of hiring-manager authorship than the tool name alone — worth weighting when you're guessing how much the posting reflects what the team actually needs.`,
+        manager: `If you want your posting to read as written by someone who knows the stack, put the actual infrastructure work in the responsibilities section, not just tool names in a bullet list under requirements — that's the distinction candidates (and this analysis) can detect.`,
+      },
+    },
+    {
+      id: 'rel-selfservice-maturity', rowKey: 'data_team_maturity', colKey: 'rt_selfservice',
+      tag: 'Responsibility language: Self-Service Enablement × Team maturity',
+      q: { seeker: 'What kind of work does a mature team actually ask for, beyond "less strategic"?',
+           manager: 'Maturity changes the type of responsibility you should be writing, not just its scope' },
+      statFn: () => `Self-service/data-literacy responsibilities ("enable self-serve analytics," "run training," "drop-in office hours") show up in ${grpPct(data,'data_team_maturity','mature','rt_selfservice','yes')}% of mature-team JDs vs. ${grpPct(data,'data_team_maturity','early','rt_selfservice','yes')}% of early-stage ones — roughly a 3× gap, on top of the maturity → autonomy relationship already documented elsewhere on this page.`,
+      read: `§4.3-style maturity findings on this page are mostly about <em>how much direction-setting</em> a role carries. This one is different in kind: it's evidence for <em>what the work actually is</em> at each stage, not just how much say you get over it. An early-stage team building its data function from zero has no established base to enable self-service on top of; a mature team's marginal responsibility increasingly looks like teaching other people to use what already exists, not building it. Read together with the (already-known) Performance & Cost Optimization gradient by maturity, mature-team JDs are asking for a qualitatively different job, not a smaller one.`,
+      tip: {
+        seeker: `If "self-service enablement," "training," or "data literacy" language is missing from a JD at a company you know to be data-mature, that's worth a direct question — it's the modal responsibility at that stage, so its absence is more informative than its presence.`,
+        manager: `At a mature stage, "enable self-service" and "run training/office hours" language sets more accurate expectations than repeating build-from-scratch framing your team has already moved past — candidates who want greenfield work will self-select out faster if you're specific about this.`,
+      },
+    },
+    {
       id: 'rel-domainrisk-rigour', rowKey: 'domain_risk', colKey: 'velocity_vs_rigour',
       tag: 'Domain risk × Rigour orientation · Small but real',
       q: { seeker: 'Do high-stakes domains actually write more rigour-heavy JDs?',
@@ -1057,6 +1134,21 @@ function buildRelationships(data) {
 // ── Null results (expectations the data didn't support) ──
 function buildNulls(data) {
   const cards = [
+    {
+      expect: 'Looked real on the surface — a worked example of why every panel here needs a stratification check',
+      title: 'Remote-work postings don\'t actually carry less Architecture & Platform Strategy language',
+      resultFn: () => {
+        const hy = grpPct(data,'work_arrangement','hybrid','rt_architecture','yes');
+        const rm = grpPct(data,'work_arrangement','remote','rt_architecture','yes');
+        const ns = grpPct(data,'work_arrangement','not_stated','rt_architecture','yes');
+        return `The raw, unstratified numbers look like a story: <strong>${hy}%</strong> of hybrid JDs carry architecture/platform-strategy language vs. only <strong>${rm}%</strong> of remote ones (p&lt;0.01 unstratified) — "remote roles get less architectural scope" would be an easy headline. It doesn't survive the obvious confound check: <code>work_arrangement</code> and <code>data_team_maturity</code> are themselves correlated (mature teams skew hybrid), and once you split by maturity tier, remote stops being consistently the lowest — <em>not_stated</em> is the consistently-lowest group in every tier (mid-stage: hybrid 69%, remote 58%, not-stated 43%), and small cells (as few as 1-4 remote JDs per maturity tier) make the remote-specific comparison mostly noise.`;
+      },
+      testFn: () => chiBadge(data, 'work_arrangement', 'rt_architecture'),
+      apply: {
+        seeker: `Don't read "remote" as a signal you'll get less architectural scope — the pattern that looked like that was actually a maturity and small-sample artifact, not a real difference in the work. If architecture-level ownership matters to you, look at company stage, not work arrangement.`,
+        manager: `Nothing to write here — the underlying "remote means less strategic work" story this panel started as isn't supported once tested properly. Included specifically as a caution against reading any single unstratified crosstab on this page (or anywhere) as causal without checking whether an obvious third variable explains it.`,
+      },
+    },
     {
       expect: 'Expected — engineers should write like engineers',
       title: 'Engineer-authored JDs should be more rigour-heavy than recruiter ones',
@@ -1285,6 +1377,73 @@ function buildToolChart(data) {
   });
 }
 
+// ── Responsibility taxonomy: theme prevalence + co-occurrence (lift) ──
+// Lift(A,B) = P(A and B) / (P(A) * P(B)) — how much more (or less) often two themes
+// co-occur than you'd expect if a JD's responsibilities were assembled from each theme
+// independently. Lift alone rewards rare-pair coincidences with tiny support, so pairs
+// are also required to clear a minimum joint count (RT_COOC_MIN_N) before ranking.
+const RT_COOC_MIN_N = 8;
+
+function buildResponsibilityTaxonomy(data) {
+  const withTheme = data.filter(d => RT_THEME_ORDER.some(t => d[RT_THEME_FIELDS[t]] !== undefined));
+  const n = withTheme.length || 1;
+  document.getElementById('rtN').textContent = withTheme.length;
+
+  const prevalence = RT_THEME_ORDER.map(theme => {
+    const field = RT_THEME_FIELDS[theme];
+    const withField = withTheme.filter(d => d[field] !== undefined);
+    const cnt = withField.filter(d => d[field] === 'yes').length;
+    return { theme, field, pct: withField.length ? Math.round(100 * cnt / withField.length) : 0, cnt };
+  }).sort((a, b) => b.pct - a.pct);
+
+  destroyChart('rt');
+  charts.rt = new Chart(document.getElementById('rtChart').getContext('2d'), {
+    type: 'bar',
+    data: { labels: prevalence.map(p => p.theme), datasets: [{
+      data: prevalence.map(p => p.pct),
+      backgroundColor: 'rgba(29,78,216,0.55)', borderColor: '#1d4ed8', borderWidth: 1, borderRadius: 4,
+    }] },
+    options: {
+      indexAxis: 'y', responsive: true, animation: { duration: 250 },
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ` ${ctx.raw}% of JDs (n=${prevalence[ctx.dataIndex].cnt})` } } },
+      scales: { x: { max: 100, ticks: { callback: v => v + '%', font: { size: 10 } }, grid: { color: '#f0f0ed' } }, y: { ticks: { font: { size: 9.5 } }, grid: { display: false } } },
+    },
+  });
+
+  // Co-occurrence: for every theme pair, P(A), P(B), P(A&B), lift.
+  const pairs = [];
+  for (let i = 0; i < RT_THEME_ORDER.length; i++) {
+    for (let j = i + 1; j < RT_THEME_ORDER.length; j++) {
+      const [tA, tB] = [RT_THEME_ORDER[i], RT_THEME_ORDER[j]];
+      const [fA, fB] = [RT_THEME_FIELDS[tA], RT_THEME_FIELDS[tB]];
+      const both = withTheme.filter(d => d[fA] !== undefined && d[fB] !== undefined);
+      const nb = both.length;
+      if (nb < 20) continue; // too few JDs coded on both themes' underlying dims to trust a rate
+      const pA = both.filter(d => d[fA] === 'yes').length / nb;
+      const pB = both.filter(d => d[fB] === 'yes').length / nb;
+      const nAB = both.filter(d => d[fA] === 'yes' && d[fB] === 'yes').length;
+      const pAB = nAB / nb;
+      if (nAB < RT_COOC_MIN_N || pA === 0 || pB === 0) continue;
+      const lift = pAB / (pA * pB);
+      pairs.push({ tA, tB, lift, nAB, nb, pAB: Math.round(pAB * 100) });
+    }
+  }
+  pairs.sort((a, b) => b.lift - a.lift || b.nAB - a.nAB);
+
+  const list = document.getElementById('rtCoocList');
+  if (!pairs.length) {
+    list.innerHTML = `<p style="font-size:0.8rem;color:var(--muted)">Not enough co-coded pairs under this filter to compute co-occurrence.</p>`;
+    return;
+  }
+  const top = pairs.slice(0, 12);
+  list.innerHTML = top.map(p => `
+    <div class="rt-cooc-row">
+      <div class="rt-cooc-pair">${p.tA}<br><span style="color:var(--muted)">+ ${p.tB}</span></div>
+      <div class="rt-cooc-stat"><span class="rt-cooc-lift">${p.lift.toFixed(2)}×</span> lift<br>${p.pAB}% together (n=${p.nAB})</div>
+    </div>
+  `).join('');
+}
+
 // ── Main render ──
 function render() {
   const roleFilter = document.getElementById('filterRoleType').value;
@@ -1293,6 +1452,7 @@ function render() {
 
   buildStats(activeData);
   buildRelationships(activeData);
+  buildResponsibilityTaxonomy(activeData);
   buildNulls(activeData);
   buildScatter(activeData);
   buildOrientation();
@@ -1300,10 +1460,59 @@ function render() {
   buildToolChart(activeData);
 }
 
-fetch('./data.json')
-  .then(r=>r.json())
-  .then(data=>{
+// Responsibility-theme tags (from analysis/responsibility_taxonomy.py) are a separate
+// derived artifact, not part of the Layer B codebook — fetched and merged in client-side
+// rather than baked into data.json, so the two pipelines stay independently regenerable.
+// Maps each of the 15 regex-classified themes to a short field name (rt_*) attached to
+// every record as 'yes'/'no' (never boolean — grpPct/chiSqStats treat `false` as falsy
+// and would silently drop every non-matching record from a crosstab).
+const RT_THEME_FIELDS = {
+  'Stakeholder Collaboration & Requirements': 'rt_stakeholder',
+  'Data Quality & Testing': 'rt_quality',
+  'BI & Reporting/Dashboards': 'rt_bi',
+  'Data Modeling & Transformation': 'rt_modeling',
+  'Governance & Documentation': 'rt_governance',
+  'Architecture & Platform Strategy': 'rt_architecture',
+  'Pipeline Engineering & Orchestration': 'rt_pipeline',
+  'Data Infrastructure & Warehouse Ops': 'rt_infra',
+  'Business Analysis & Insight Generation': 'rt_bizanalysis',
+  'Performance & Cost Optimization': 'rt_perfcost',
+  'Data Ownership (end-to-end)': 'rt_ownership',
+  'Self-Service Enablement & Data Literacy': 'rt_selfservice',
+  'Mentorship & Leadership': 'rt_mentorship',
+  'Security, Privacy & Risk': 'rt_security',
+  'Vendor & Tooling Evaluation': 'rt_vendor',
+};
+// Display order for the taxonomy section — ranked by corpus-wide prevalence
+// (analysis/responsibility_taxonomy.md), recomputed live per active filter below.
+const RT_THEME_ORDER = [
+  'Stakeholder Collaboration & Requirements','Data Quality & Testing','BI & Reporting/Dashboards',
+  'Data Modeling & Transformation','Governance & Documentation','Architecture & Platform Strategy',
+  'Pipeline Engineering & Orchestration','Data Infrastructure & Warehouse Ops',
+  'Business Analysis & Insight Generation','Performance & Cost Optimization',
+  'Data Ownership (end-to-end)','Self-Service Enablement & Data Literacy','Mentorship & Leadership',
+  'Security, Privacy & Risk','Vendor & Tooling Evaluation',
+];
+
+Promise.all([
+  fetch('./data.json').then(r=>r.json()),
+  fetch('./responsibility_classification.json').then(r=>r.json()).catch(()=>null),
+])
+  .then(([data, rtClassification])=>{
     data.forEach(d => { d.dbt_named = String(d.has_dbt).toLowerCase() === 'true' ? 'named' : 'not_named'; });
+    if (rtClassification && rtClassification.jd_theme_sets) {
+      const themeSets = rtClassification.jd_theme_sets;
+      data.forEach(d => {
+        const themes = themeSets[d.jd_id];
+        // undefined (jd_id not in the responsibility corpus, e.g. no archived JD text) is
+        // left unset rather than 'no' — chiSqStats/grpPct skip falsy fields, so these records
+        // are correctly excluded from responsibility-theme crosstabs rather than counted as "no".
+        if (themes === undefined) return;
+        Object.entries(RT_THEME_FIELDS).forEach(([themeName, field]) => {
+          d[field] = themes.includes(themeName) ? 'yes' : 'no';
+        });
+      });
+    }
     ALL_DATA=data; render();
     document.getElementById('filterRoleType').addEventListener('change',render);
     document.getElementById('xAxis').addEventListener('change',()=>buildScatter(activeData));
@@ -1323,7 +1532,7 @@ fetch('./data.json')
         .forEach(a => a.classList.toggle('active', a.dataset.section === entry.target.id));
     });
   }, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
-  ['relationships','nulls','explorer','orientation','geo-section','stack'].forEach(id => {
+  ['relationships','responsibility-taxonomy','nulls','explorer','orientation','geo-section','stack'].forEach(id => {
     const el = document.getElementById(id);
     if (el) observer.observe(el);
   });
