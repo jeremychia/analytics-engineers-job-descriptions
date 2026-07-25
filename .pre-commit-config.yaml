@@ -1,0 +1,8 @@
+repos:
+  - repo: local
+    hooks:
+      - id: html-inline-js-syntax
+        name: Check inline <script> syntax in HTML files
+        entry: python3 scripts/check-html-js-syntax.py
+        language: system
+        files: \.html$
