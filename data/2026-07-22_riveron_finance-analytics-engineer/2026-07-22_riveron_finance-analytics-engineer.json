@@ -86,5 +86,12 @@
       "client relationships",
       "consulting"
     ]
-  }
+  },
+  "has_dbt_cloud": false,
+  "has_fabric_synapse": true,
+  "has_fivetran": false,
+  "has_metabase": false,
+  "has_postgres": false,
+  "has_airbyte": false,
+  "has_glue": false
 }

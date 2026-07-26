@@ -69,5 +69,12 @@
     "testing_framing_explanation": "No source JD text is available (jd_archive.md and jd.md are both empty/missing), so the conservative default of absent is applied.",
     "loss_aversion_framing": "Not stated in JD.",
     "loss_aversion_framing_explanation": "No source JD text is available (jd_archive.md and jd.md are both empty/missing), so the conservative default of none is applied."
-  }
+  },
+  "has_dbt_cloud": false,
+  "has_fabric_synapse": false,
+  "has_fivetran": false,
+  "has_metabase": false,
+  "has_postgres": false,
+  "has_airbyte": false,
+  "has_glue": false
 }

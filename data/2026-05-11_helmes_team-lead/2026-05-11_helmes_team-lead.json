@@ -74,5 +74,12 @@
   },
   "ai_role": "none",
   "testing_framing": "absent",
-  "loss_aversion_framing": "none"
+  "loss_aversion_framing": "none",
+  "has_dbt_cloud": false,
+  "has_fabric_synapse": false,
+  "has_fivetran": false,
+  "has_metabase": false,
+  "has_postgres": false,
+  "has_airbyte": false,
+  "has_glue": false
 }

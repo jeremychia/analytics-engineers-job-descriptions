@@ -73,6 +73,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "high",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-04-08_lego_senior-analytics-engineer",
     "geo_region": "nordics"
   },
@@ -150,6 +157,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-04-08_riverty_data-engineering-lead",
     "geo_region": "berlin"
   },
@@ -227,6 +241,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-04-08_tem_staff-analytics-engineer",
     "geo_region": "uk_remote"
   },
@@ -306,6 +327,13 @@
     "ai_role": "ai_enabler",
     "testing_framing": "absent",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-04-09_ai-futures_data-team-lead",
     "geo_region": "dach_other"
   },
@@ -381,6 +409,13 @@
       "loss_aversion_framing": "Not stated in JD.",
       "loss_aversion_framing_explanation": "No source JD text is available (jd_archive.md and jd.md are both empty/missing), so the conservative default of none is applied."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-04-09_finn_data-engineer",
     "geo_region": "other"
   },
@@ -458,6 +493,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": true,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-04-09_lovable_analytics-engineer-finance",
     "geo_region": "nordics"
   },
@@ -539,6 +581,13 @@
     "ai_role": "none",
     "testing_framing": "absent",
     "loss_aversion_framing": "none",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-04-09_nkg_sustainability-data-analyst",
     "geo_region": "hamburg"
   },
@@ -618,6 +667,13 @@
     "ai_role": "none",
     "testing_framing": "absent",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-04-10_decathlon_senior-data-analyst-analytics-engineer",
     "geo_region": "france"
   },
@@ -695,6 +751,13 @@
     "ai_role": "none",
     "testing_framing": "absent",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-04-22_about-you_senior-data-engineer",
     "geo_region": "berlin"
   },
@@ -772,6 +835,13 @@
     "ai_role": "none",
     "testing_framing": "absent",
     "loss_aversion_framing": "none",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-04-22_distribusion_analytics-engineer",
     "geo_region": "berlin"
   },
@@ -849,6 +919,13 @@
     "ai_role": "ai_enabler",
     "testing_framing": "absent",
     "loss_aversion_framing": "high",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": true,
     "application_id": "2026-04-22_leasingmarkt_principal-analytics-engineer",
     "geo_region": "berlin"
   },
@@ -926,6 +1003,13 @@
     "ai_role": "ai_user",
     "testing_framing": "absent",
     "loss_aversion_framing": "high",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-04-22_mentimeter_analytics-engineer",
     "geo_region": "nordics"
   },
@@ -1003,6 +1087,13 @@
     "ai_role": "none",
     "testing_framing": "absent",
     "loss_aversion_framing": "high",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": true,
+    "has_glue": false,
     "application_id": "2026-04-22_pergolux_senior-analytics-engineer-finance-operations",
     "geo_region": "berlin"
   },
@@ -1082,6 +1173,13 @@
     "ai_role": "none",
     "testing_framing": "absent",
     "loss_aversion_framing": "none",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-04-22_polyteia_analytics-engineering-lead",
     "geo_region": "berlin"
   },
@@ -1159,6 +1257,13 @@
     "ai_role": "ai_user",
     "testing_framing": "absent",
     "loss_aversion_framing": "high",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": true,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-04-22_qasa_analytics-engineer",
     "geo_region": "nordics"
   },
@@ -1236,6 +1341,13 @@
     "ai_role": "ai_user",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-04-22_shine_senior-analytics-engineer",
     "geo_region": "berlin"
   },
@@ -1315,6 +1427,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-04-22_statista_analytics-engineer-reporting-platform",
     "geo_region": "berlin"
   },
@@ -1392,6 +1511,13 @@
     "ai_role": "ai_enabler",
     "testing_framing": "absent",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": true,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-04-24_getsafe_analytics-engineer",
     "geo_region": "berlin"
   },
@@ -1469,6 +1595,13 @@
     "ai_role": "none",
     "testing_framing": "tool_listed",
     "loss_aversion_framing": "none",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-04-28_seven-senders_senior-bi-analyst",
     "geo_region": "berlin"
   },
@@ -1546,6 +1679,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-05-01_aviv-group_senior-analytics-engineer",
     "geo_region": "berlin"
   },
@@ -1623,6 +1763,13 @@
     "ai_role": "ai_user",
     "testing_framing": "absent",
     "loss_aversion_framing": "high",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-05-01_wolt_senior-revenue-data-analyst",
     "geo_region": "berlin"
   },
@@ -1700,6 +1847,13 @@
     "ai_role": "none",
     "testing_framing": "absent",
     "loss_aversion_framing": "none",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-05-09_forward-college_lecturer-business-analytics-statistics",
     "geo_region": "berlin"
   },
@@ -1777,6 +1931,13 @@
     "ai_role": "ai_user",
     "testing_framing": "absent",
     "loss_aversion_framing": "none",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-05-09_lightdash_analytics-engineering-advocate",
     "geo_region": "global_remote"
   },
@@ -1854,6 +2015,13 @@
     "ai_role": "ai_user",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": true,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-05-11_getyourguide_data-engineer",
     "geo_region": "berlin"
   },
@@ -1934,6 +2102,13 @@
     "ai_role": "none",
     "testing_framing": "absent",
     "loss_aversion_framing": "none",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-05-11_helmes_team-lead",
     "geo_region": "baltics"
   },
@@ -2011,6 +2186,13 @@
     "ai_role": "none",
     "testing_framing": "absent",
     "loss_aversion_framing": "high",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": true,
+    "has_glue": false,
     "application_id": "2026-05-13_smoobu_senior-analytics-engineer",
     "geo_region": "berlin"
   },
@@ -2088,6 +2270,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-04_vinted_analytics-engineer-finance",
     "geo_region": "berlin"
   },
@@ -2167,6 +2356,13 @@
     "ai_role": "none",
     "testing_framing": "absent",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": true,
+    "has_glue": false,
     "application_id": "2026-06-20_1komma5grad_senior-analytics-engineer-growth",
     "geo_region": "berlin"
   },
@@ -2244,6 +2440,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "none",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-20_adsquare_staff-data-analytics-engineer",
     "geo_region": "berlin"
   },
@@ -2321,6 +2524,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "none",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-20_almedia_analytics-engineer",
     "geo_region": "berlin"
   },
@@ -2398,6 +2608,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "none",
+    "has_dbt_cloud": true,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-20_just-dice_analytics-engineer",
     "geo_region": "hamburg"
   },
@@ -2475,6 +2692,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "none",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-20_wolt_senior-analytics-engineer-merchant",
     "geo_region": "berlin"
   },
@@ -2552,6 +2776,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-22_freenow_analytics-engineer",
     "geo_region": "berlin"
   },
@@ -2629,6 +2860,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "none",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-22_scoot_senior-analyst-business-intelligence",
     "geo_region": "apac"
   },
@@ -2706,6 +2944,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-22_sumup_senior-analytics-engineer",
     "geo_region": "berlin"
   },
@@ -2785,6 +3030,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-22_the-quality-group-gmbh_senior-analytics-engineer",
     "geo_region": "hamburg"
   },
@@ -2862,6 +3114,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-23_lovehoney-group_senior-analytics-engineer",
     "geo_region": "berlin"
   },
@@ -2942,6 +3201,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-23_octopus-energy-germany_analytics-engineer",
     "geo_region": "dach_other"
   },
@@ -3019,6 +3285,13 @@
     "ai_role": "none",
     "testing_framing": "absent",
     "loss_aversion_framing": "none",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-23_trade-republic_analytics-engineer",
     "geo_region": "berlin"
   },
@@ -3096,6 +3369,13 @@
     "ai_role": "ai_enabler",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "high",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-25_egnyte_analytics-engineer",
     "geo_region": "global_remote"
   },
@@ -3175,6 +3455,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": true,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-25_marie-stella-maris_data-integration-engineer",
     "geo_region": "benelux"
   },
@@ -3254,6 +3541,13 @@
     "ai_role": "ai_enabler",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": true,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-25_telavox_analytics-engineer",
     "geo_region": "nordics"
   },
@@ -3331,6 +3625,13 @@
     "ai_role": "ai_enabler",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "high",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-25_uplearn_head-of-data",
     "geo_region": "uk_remote"
   },
@@ -3408,6 +3709,13 @@
     "ai_role": "ai_enabler",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-27_ascenda-loyalty_senior-analytics-engineer",
     "geo_region": "apac"
   },
@@ -3485,6 +3793,13 @@
     "ai_role": "ai_enabler",
     "testing_framing": "absent",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-27_blue-orange-digital_analytics-engineer-power-bi-specialist",
     "geo_region": "berlin"
   },
@@ -3562,6 +3877,13 @@
     "ai_role": "ai_user",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-27_bolt_senior-analytics-engineer",
     "geo_region": "baltics"
   },
@@ -3639,6 +3961,13 @@
     "ai_role": "ai_enabler",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "none",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": true,
     "application_id": "2026-06-27_dashlane_analytics-engineer",
     "geo_region": "iberia"
   },
@@ -3719,6 +4048,13 @@
     "ai_role": "ai_enabler",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-27_decathlon-digital_senior-analytics-engineer",
     "geo_region": "france"
   },
@@ -3796,6 +4132,13 @@
     "ai_role": "none",
     "testing_framing": "absent",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-27_doodle_growth-analytics-engineer",
     "geo_region": "berlin"
   },
@@ -3873,6 +4216,13 @@
     "ai_role": "ai_enabler",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": true,
+    "has_fabric_synapse": false,
+    "has_fivetran": true,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-27_dynatrace_senior-analytics-engineer",
     "geo_region": "iberia"
   },
@@ -3952,6 +4302,13 @@
     "ai_role": "none",
     "testing_framing": "absent",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-27_eraneos_analytics-engineer",
     "geo_region": "hamburg"
   },
@@ -4029,6 +4386,13 @@
     "ai_role": "none",
     "testing_framing": "absent",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-27_lansweeper_revenue-analytics-engineer",
     "geo_region": "uk_remote"
   },
@@ -4106,6 +4470,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-27_lego-group_analytics-engineer",
     "geo_region": "nordics"
   },
@@ -4185,6 +4556,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": true,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": true,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-27_lexroom_analytics-engineer",
     "geo_region": "other_europe"
   },
@@ -4264,6 +4642,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-27_m13h_lead-analytics-engineer",
     "geo_region": "france"
   },
@@ -4341,6 +4726,13 @@
     "ai_role": "none",
     "testing_framing": "absent",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-27_mollie_analytics-engineer-revenue-operations",
     "geo_region": "benelux"
   },
@@ -4418,6 +4810,13 @@
     "ai_role": "ai_enabler",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-27_mr-marvis_senior-analytics-engineer",
     "geo_region": "benelux"
   },
@@ -4495,6 +4894,13 @@
     "ai_role": "none",
     "testing_framing": "absent",
     "loss_aversion_framing": "high",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-27_n26_senior-risk-data-and-analytics-engineer",
     "geo_region": "berlin"
   },
@@ -4572,6 +4978,13 @@
     "ai_role": "none",
     "testing_framing": "absent",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-27_netflix_analytics-engineer-l5-localization",
     "geo_region": "benelux"
   },
@@ -4649,6 +5062,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-27_perk_analytics-engineer",
     "geo_region": "uk_remote"
   },
@@ -4726,6 +5146,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-27_preply_senior-analytics-engineer",
     "geo_region": "iberia"
   },
@@ -4803,6 +5230,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-27_protolabs_senior-analytics-engineer",
     "geo_region": "benelux"
   },
@@ -4880,6 +5314,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-27_sisu-group_senior-analytics-engineer",
     "geo_region": "baltics"
   },
@@ -4957,6 +5398,13 @@
     "ai_role": "ai_enabler",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-27_sosafe_senior-analytics-engineer",
     "geo_region": "uk_remote"
   },
@@ -5034,6 +5482,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-27_spotify_analytics-engineer-ii",
     "geo_region": "nordics"
   },
@@ -5111,6 +5566,13 @@
     "ai_role": "none",
     "testing_framing": "absent",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-27_vestas_analytics-engineer",
     "geo_region": "nordics"
   },
@@ -5188,6 +5650,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-27_vinted_area-lead-analytics-engineer",
     "geo_region": "berlin"
   },
@@ -5265,6 +5734,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": true,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-27_welcome-to-the-jungle_senior-analytics-engineer",
     "geo_region": "france"
   },
@@ -5344,6 +5820,13 @@
     "ai_role": "ai_enabler",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-27_yuri-neil_analytics-engineer",
     "geo_region": "france"
   },
@@ -5438,6 +5921,13 @@
     "ai_role": "none",
     "testing_framing": "absent",
     "loss_aversion_framing": "none",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-29_bip_business-intelligence-specialist",
     "geo_region": "other_europe"
   },
@@ -5532,6 +6022,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-29_chefs-culinar-west_business-intelligence-specialist",
     "geo_region": "dach_other"
   },
@@ -5626,6 +6123,13 @@
     "ai_role": "none",
     "testing_framing": "tool_listed",
     "loss_aversion_framing": "high",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-29_e-frontiers_analytics-engineer-data-engineer",
     "geo_region": "iberia"
   },
@@ -5718,6 +6222,13 @@
     "ai_role": "ai_user",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "none",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-29_experis-uk_analytics-engineer-data-analyst",
     "geo_region": "uk_remote"
   },
@@ -5810,6 +6321,13 @@
     "ai_role": "none",
     "testing_framing": "absent",
     "loss_aversion_framing": "none",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-29_flutter-uk-and-ireland_business-intelligence-analyst",
     "geo_region": "other_europe"
   },
@@ -5904,6 +6422,13 @@
     "ai_role": "ai_user",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": true,
+    "has_fabric_synapse": false,
+    "has_fivetran": true,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": true,
+    "has_glue": false,
     "application_id": "2026-06-29_fullenrich_analytics-engineer",
     "geo_region": "france"
   },
@@ -5996,6 +6521,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-29_irium-portugal_senior-analytics-engineer",
     "geo_region": "iberia"
   },
@@ -6088,6 +6620,13 @@
     "ai_role": "none",
     "testing_framing": "absent",
     "loss_aversion_framing": "none",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-29_mts-globe_finance-bi-analyst",
     "geo_region": "iberia"
   },
@@ -6182,6 +6721,13 @@
     "ai_role": "none",
     "testing_framing": "tool_listed",
     "loss_aversion_framing": "high",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-29_onem-smals_senior-data-analytics-engineer",
     "geo_region": "benelux"
   },
@@ -6274,6 +6820,13 @@
     "ai_role": "none",
     "testing_framing": "absent",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-30_avalanche-studios_senior-analytics-engineer",
     "geo_region": "nordics"
   },
@@ -6368,6 +6921,13 @@
     "ai_role": "none",
     "testing_framing": "absent",
     "loss_aversion_framing": "none",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-30_bitac-gmbh_business-intelligence-spezialist",
     "geo_region": "global_remote"
   },
@@ -6460,6 +7020,13 @@
     "ai_role": "ai_user",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": true,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-30_cosuno_senior-analytics-engineer",
     "geo_region": "berlin"
   },
@@ -6552,6 +7119,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "none",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-30_finom_senior-analytics-engineer",
     "geo_region": "global_remote"
   },
@@ -6644,6 +7218,13 @@
     "ai_role": "none",
     "testing_framing": "tool_listed",
     "loss_aversion_framing": "none",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-30_fyld_analytics-engineer",
     "geo_region": "iberia"
   },
@@ -6736,6 +7317,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "high",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": true,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-30_hilo-by-aktiia_bi-strategic-analytics-lead",
     "geo_region": "berlin"
   },
@@ -6828,6 +7416,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-30_limeflight_senior-data-analytics-engineer",
     "geo_region": "global_remote"
   },
@@ -6920,6 +7515,13 @@
     "ai_role": "none",
     "testing_framing": "absent",
     "loss_aversion_framing": "high",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-30_louis-dreyfus-company_data-analytics-engineer-finance-systems",
     "geo_region": "other_europe"
   },
@@ -7012,6 +7614,13 @@
     "ai_role": "none",
     "testing_framing": "absent",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-30_plain-concepts_bi-specialist",
     "geo_region": "global_remote"
   },
@@ -7106,6 +7715,13 @@
     "ai_role": "none",
     "testing_framing": "absent",
     "loss_aversion_framing": "none",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-06-30_van-in-sanoma_business-intelligence-analyst",
     "geo_region": "benelux"
   },
@@ -7200,6 +7816,13 @@
       ],
       "work_arrangement": "Spain / United Kingdom (Remote-first)"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": true,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-01_airalo_analytics-engineering-manager",
     "geo_region": "uk_remote"
   },
@@ -7292,6 +7915,13 @@
       ],
       "work_arrangement": "Work Model: Hybrid (3 days onsite per week)"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-01_aptrack_senior-bi-architect",
     "geo_region": "ireland"
   },
@@ -7384,6 +8014,13 @@
       ],
       "work_arrangement": "Hybrid work options"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-01_awin_analytical-engineer",
     "geo_region": "other_europe"
   },
@@ -7476,6 +8113,13 @@
       ],
       "work_arrangement": "Hybrid flexibility with 25 additional work-from-abroad days"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": true,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-01_bitpanda_analytics-engineer-dbt-business-intelligence",
     "geo_region": "dach_other"
   },
@@ -7570,6 +8214,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-01_booking-com_data-analytics-engineer-ii",
     "geo_region": "benelux"
   },
@@ -7662,6 +8313,13 @@
       ],
       "work_arrangement": "Amsterdam, Netherlands (Hybrid)"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-01_darwin_senior-analytics-engineer",
     "geo_region": "benelux"
   },
@@ -7756,6 +8414,13 @@
       ],
       "work_arrangement": "Madrid, Spain (Hybrid)"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-01_deloitte_analytics-engineer",
     "geo_region": "iberia"
   },
@@ -7848,6 +8513,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-01_emagine_senior-bi-analyst",
     "geo_region": "other"
   },
@@ -7940,6 +8612,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-01_entain_analytics-engineer-bi",
     "geo_region": "other"
   },
@@ -8032,6 +8711,13 @@
       ],
       "work_arrangement": "remote work options"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-01_finanz-informatik_bi-engineer",
     "geo_region": "dach_other"
   },
@@ -8126,6 +8812,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-01_gemma-analytics_ai-analytics-engineer",
     "geo_region": "berlin"
   },
@@ -8218,6 +8911,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-01_goodgame-studios_senior-ai-data-analytics-engineer",
     "geo_region": "other"
   },
@@ -8310,6 +9010,13 @@
       ],
       "work_arrangement": "hybrid work model and up to 30 days per year for remote work abroad"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-01_henkel_business-intelligence-developer",
     "geo_region": "other_europe"
   },
@@ -8406,6 +9113,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-01_hovione_data-analytics-engineer",
     "geo_region": "iberia"
   },
@@ -8501,6 +9215,13 @@
       ],
       "work_arrangement": "Munich, Germany (Hybrid, 2 days on-site)"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-01_hse24_junior-expert-bi-analytics",
     "geo_region": "dach_other"
   },
@@ -8595,6 +9316,13 @@
       ],
       "work_arrangement": "Remote-first within Germany with up to 180 days annual remote work eligibility"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-01_jtl-software_senior-analytics-engineer",
     "geo_region": "global_remote"
   },
@@ -8687,6 +9415,13 @@
       ],
       "work_arrangement": "Dublin, County Dublin, Ireland (Hybrid)"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-01_pfh-technology-group_senior-business-intelligence-analyst",
     "geo_region": "ireland"
   },
@@ -8779,6 +9514,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": true,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-01_retail-consult_data-analytics-engineer",
     "geo_region": "iberia"
   },
@@ -8874,6 +9616,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-01_size-up-consulting_senior-analytics-engineer",
     "geo_region": "france"
   },
@@ -8966,6 +9715,13 @@
       ],
       "work_arrangement": "Flexible hybrid work"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-01_too-good-to-go_bi-developer",
     "geo_region": "nordics"
   },
@@ -9058,6 +9814,13 @@
       ],
       "work_arrangement": "Spain (fully remote)"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": true,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-01_top-doctors-group_analytics-engineer-dbt-expert",
     "geo_region": "global_remote"
   },
@@ -9152,6 +9915,13 @@
       ],
       "work_arrangement": "Bulgaria, Serbia, Romania, Italy - Remote, Poland - Remote, Greece - Remote"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-02_acronis_senior-business-intelligence-analyst",
     "geo_region": "global_remote"
   },
@@ -9244,6 +10014,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-02_amazon_business-intelligence-engineer-whs-data",
     "geo_region": "benelux"
   },
@@ -9335,6 +10112,13 @@
       ],
       "work_arrangement": "Dublin, County Dublin, Ireland (Hybrid - 1 day per week)"
     },
+    "has_dbt_cloud": true,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-02_archer-recruitment_senior-analytics-engineer-dbt-snowflake",
     "geo_region": "ireland"
   },
@@ -9425,6 +10209,13 @@
       ],
       "work_arrangement": "hybrid work flexibility"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-02_asics_senior-business-intelligence-engineer",
     "geo_region": "benelux"
   },
@@ -9518,6 +10309,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-02_bose_data-analytics-engineer",
     "geo_region": "iberia"
   },
@@ -9610,6 +10408,13 @@
       ],
       "work_arrangement": "Limassol, Cyprus (Full-time, Onsite)"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-02_bridgerpay_senior-analytics-engineer",
     "geo_region": "other_europe"
   },
@@ -9702,6 +10507,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": true,
+    "has_fabric_synapse": false,
+    "has_fivetran": true,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": true,
+    "has_glue": false,
     "application_id": "2026-07-02_fullenrich_analytics-engineer",
     "geo_region": "france"
   },
@@ -9794,6 +10606,13 @@
       ],
       "work_arrangement": "Hybrides Arbeitsmodell fur Work-Life-Balance"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-02_funke-medien_analytics-engineer",
     "geo_region": "berlin"
   },
@@ -9886,6 +10705,13 @@
       ],
       "work_arrangement": "Hybrid working model with 3 days in the office"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-02_ig-group_analytics-engineer",
     "geo_region": "other_europe"
   },
@@ -9976,6 +10802,13 @@
       ],
       "work_arrangement": "remote work options (minimum 3 office days)"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-02_ijsvogel-retail_analytics-engineer",
     "geo_region": "benelux"
   },
@@ -10068,6 +10901,13 @@
       ],
       "work_arrangement": "Stockholm, Hybrid (3 days office, 2 days remote)"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-02_photowall_analytics-engineer",
     "geo_region": "nordics"
   },
@@ -10162,6 +11002,13 @@
       ],
       "work_arrangement": "Multiple locations in Poland (Remote, Hybrid, or Office options available)"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-02_sii-poland_data-analytics-engineer",
     "geo_region": "global_remote"
   },
@@ -10255,6 +11102,13 @@
       ],
       "work_arrangement": "Amsterdam, Noord-Holland, Netherlands (Hybrid)"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-02_xomnia_data-analytics-engineer",
     "geo_region": "benelux"
   },
@@ -10349,6 +11203,13 @@
       ],
       "work_arrangement": "Remote"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": true,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-03_block-labs_business-intelligence-analyst",
     "geo_region": "global_remote"
   },
@@ -10442,6 +11303,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": true,
+    "has_postgres": true,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-03_fp-markets_senior-analytics-engineer",
     "geo_region": "other_europe"
   },
@@ -10536,6 +11404,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-03_ilionx_data-analytics-engineer",
     "geo_region": "benelux"
   },
@@ -10629,6 +11504,13 @@
       ],
       "work_arrangement": "Remote"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-03_keyrock_senior-data-engineer",
     "geo_region": "global_remote"
   },
@@ -10722,6 +11604,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": true,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-03_lovable_analytics-engineer-marketing",
     "geo_region": "nordics"
   },
@@ -10813,6 +11702,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-03_novibet_analytics-engineer",
     "geo_region": "other_europe"
   },
@@ -10904,6 +11800,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-03_planet_analytics-engineer-ii",
     "geo_region": "iberia"
   },
@@ -10999,6 +11902,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": true,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-03_relyzit_analytics-engineer-freelance",
     "geo_region": "benelux"
   },
@@ -11094,6 +12004,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": true,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-03_riskpoint-group_business-intelligence-bi-developer",
     "geo_region": "nordics"
   },
@@ -11188,6 +12105,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-03_telenet_analytics-engineer",
     "geo_region": "benelux"
   },
@@ -11280,6 +12204,13 @@
       ],
       "work_arrangement": "flexible schedules with remote options (two office days weekly)"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-03_whow-games_senior-analytics-engineer-monetization",
     "geo_region": "hamburg"
   },
@@ -11370,6 +12301,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-04_candeno_product-analytics-engineer",
     "geo_region": "nordics"
   },
@@ -11462,6 +12400,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-04_ebury_senior-analytics-engineer",
     "geo_region": "iberia"
   },
@@ -11552,6 +12497,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-04_emeria_analytics-engineer",
     "geo_region": "france"
   },
@@ -11642,6 +12594,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-04_enza-zaden_analytics-engineer",
     "geo_region": "benelux"
   },
@@ -11732,6 +12691,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-04_gerolsteiner_data-analytics-engineer",
     "geo_region": "dach_other"
   },
@@ -11823,6 +12789,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-04_jacobs_analytics-engineer",
     "geo_region": "ireland"
   },
@@ -11915,6 +12888,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-04_skiils_analytics-engineer",
     "geo_region": "france"
   },
@@ -12005,6 +12985,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-04_stark_bi-reporting-analyst",
     "geo_region": "dach_other"
   },
@@ -12095,6 +13082,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-04_super-technologies_senior-analytics-engineer",
     "geo_region": "iberia"
   },
@@ -12185,6 +13179,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-04_turner-townsend_senior-consultant-data-analytics",
     "geo_region": "iberia"
   },
@@ -12275,6 +13276,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-04_verisure_business-intelligence-engineer",
     "geo_region": "iberia"
   },
@@ -12371,6 +13379,13 @@
       ],
       "work_arrangement": "Work arrangement: \"2 days per week in the office and 3 days at home\""
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-06_act-digital_senior-analytics-engineer",
     "geo_region": "iberia"
   },
@@ -12466,6 +13481,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-06_cargolux_analyst-business-intelligence",
     "geo_region": "benelux"
   },
@@ -12563,6 +13585,13 @@
       ],
       "work_arrangement": "Remote work flexibility"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-06_chalmers-university-of-technology_data-och-analytics-engineer",
     "geo_region": "nordics"
   },
@@ -12657,6 +13686,13 @@
       ],
       "work_arrangement": "Work Arrangement: Hybrid - 4 days office / 1 day remote"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-06_e-frontiers_senior-analytics-engineer",
     "geo_region": "iberia"
   },
@@ -12750,6 +13786,13 @@
       ],
       "work_arrangement": "Digital – Product & Engineering /Permanent /Hybrid"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-06_efficio_senior-business-intelligence-specialist",
     "geo_region": "iberia"
   },
@@ -12842,6 +13885,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-06_enhesa_analytics-engineer",
     "geo_region": "iberia"
   },
@@ -12933,6 +13983,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-06_enza-zaden_senior-analytics-engineer",
     "geo_region": "benelux"
   },
@@ -13025,6 +14082,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": true,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-06_flibco_data-and-analytics-engineer",
     "geo_region": "benelux"
   },
@@ -13119,6 +14183,13 @@
       ],
       "work_arrangement": "Votre rôle sera hybride"
     },
+    "has_dbt_cloud": true,
+    "has_fabric_synapse": false,
+    "has_fivetran": true,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": true,
+    "has_glue": false,
     "application_id": "2026-07-06_fullenrich_analytics-engineer",
     "geo_region": "france"
   },
@@ -13211,6 +14282,13 @@
       ],
       "work_arrangement": "This is a hybrid role that sits between analytics engineering and data analysis."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-06_intelligent-lending_analytics-engineer-ocean-squad",
     "geo_region": "uk_remote"
   },
@@ -13306,6 +14384,13 @@
       ],
       "work_arrangement": "Düsseldorf / Hybrid"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-06_just-experts_data-intelligence-consultant",
     "geo_region": "dach_other"
   },
@@ -13399,6 +14484,13 @@
       ],
       "work_arrangement": "Employees work in a hybrid mode"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-06_netcompany_lead-business-intelligence-bi-engineer",
     "geo_region": "other_europe"
   },
@@ -13493,6 +14585,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-06_nexer-group_power-bi-konsult",
     "geo_region": "nordics"
   },
@@ -13586,6 +14685,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-06_pawatech_senior-bi-data-analyst-product",
     "geo_region": "baltics"
   },
@@ -13678,6 +14784,13 @@
       ],
       "work_arrangement": "Limassol, Cyprus (employment contract) or Remote from Europe (service contract)"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-06_payabl_analytics-engineer",
     "geo_region": "global_remote"
   },
@@ -13773,6 +14886,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-06_postnord_analytics-engineer",
     "geo_region": "nordics"
   },
@@ -13866,6 +14986,13 @@
       ],
       "work_arrangement": "Hybrid model with Madrid center office (minimum 2 days/week)"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-06_revel_analytics-engineer",
     "geo_region": "iberia"
   },
@@ -13958,6 +15085,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-06_sandvik_senior-business-intelligence-developer",
     "geo_region": "benelux"
   },
@@ -14050,6 +15184,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-06_stellantis_ontology-engineer",
     "geo_region": "other"
   },
@@ -14142,6 +15283,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-06_voyado_analytics-engineer",
     "geo_region": "nordics"
   },
@@ -14230,6 +15378,13 @@
       ],
       "work_arrangement": "Spain (fully remote within Spain, with optional Bilbao office access)"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-11_appfire_senior-data-analytics-engineer",
     "geo_region": "iberia"
   },
@@ -14321,6 +15476,13 @@
       ],
       "work_arrangement": "WORKPLACE: Hybrid"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-11_bolt_senior-analytics-engineer-people-analytics",
     "geo_region": "baltics"
   },
@@ -14412,6 +15574,13 @@
       ],
       "work_arrangement": "flexible hybrid work"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-11_bosch-service-solutions_senior-analytics-engineer",
     "geo_region": "iberia"
   },
@@ -14504,6 +15673,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-11_cartiere_analytics-engineer",
     "geo_region": "benelux"
   },
@@ -14597,6 +15773,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-11_datashift_analytics-engineer",
     "geo_region": "benelux"
   },
@@ -14688,6 +15871,13 @@
       ],
       "work_arrangement": "Hybrid work"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-11_decathlon-technology_senior-bi-analytics-engineer",
     "geo_region": "france"
   },
@@ -14779,6 +15969,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-11_finavia-oy_analytics-engineer",
     "geo_region": "nordics"
   },
@@ -14868,6 +16065,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": true,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-11_ge-vernova_sr-analytics-engineer",
     "geo_region": "other_europe"
   },
@@ -14957,6 +16161,13 @@
       ],
       "work_arrangement": "Amsterdam, Tech, Full-time, On-site"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-11_insify_data-analyst-analytics-engineer",
     "geo_region": "benelux"
   },
@@ -15048,6 +16259,13 @@
       ],
       "work_arrangement": "Vilnius, Lithuania (4 days onsite, 1 flexible remote day)"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-11_kilo-kiloverse_analytics-engineer",
     "geo_region": "baltics"
   },
@@ -15137,6 +16355,13 @@
       ],
       "work_arrangement": "Klimaatroute Amsterdam On-site"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-11_klimaatroute_data-analytics-engineer",
     "geo_region": "benelux"
   },
@@ -15226,6 +16451,13 @@
       ],
       "work_arrangement": "Location: Remote (Europe) or Hybrid (The Netherlands)"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-11_moods-ai_lead-analytics-engineer-bi-architect",
     "geo_region": "global_remote"
   },
@@ -15318,6 +16550,13 @@
       ],
       "work_arrangement": "Paris (FR), Octopus Energy France, Finance, Full-time, Hybrid"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-11_octopus-energy_senior-analytics-engineer-finance-risk",
     "geo_region": "france"
   },
@@ -15407,6 +16646,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-11_super-technologies_senior-analytics-engineer",
     "geo_region": "other_europe"
   },
@@ -15498,6 +16744,13 @@
       ],
       "work_arrangement": "Hybrid, Product & Technology, Full time"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": true,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-11_up-hellas_analytics-engineer",
     "geo_region": "other_europe"
   },
@@ -15589,6 +16842,13 @@
       ],
       "work_arrangement": "Permanent contract, Paris, Data, Hybrid"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": true,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-11_welcome-to-jungle_senior-analytics-engineer",
     "geo_region": "france"
   },
@@ -15687,6 +16947,13 @@
       ],
       "work_arrangement": "Wroclaw / Poland Marketing Engine – Marketing Engine Core /Full-time /Remote"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-13_airslate_senior-analytics-engineer",
     "geo_region": "global_remote"
   },
@@ -15780,6 +17047,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-13_bose_data-analytics-engineer",
     "geo_region": "iberia"
   },
@@ -15874,6 +17148,13 @@
       ],
       "work_arrangement": "Hybrid in Latvia"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-13_epam_senior-data-analytics-visualization-engineer",
     "geo_region": "baltics"
   },
@@ -15969,6 +17250,13 @@
       ],
       "work_arrangement": "London (Hybrid) | 2 days in the office"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": true,
     "application_id": "2026-07-13_fundingcircle_analytics-engineer",
     "geo_region": "uk_remote"
   },
@@ -16063,6 +17351,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-13_ktm_data-analytics-engineer",
     "geo_region": "dach_other"
   },
@@ -16155,6 +17450,13 @@
       ],
       "work_arrangement": "This hybrid role focuses on transforming the way the business uses data"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-13_resourcery-group_senior-finance-bi-analyst",
     "geo_region": "uk_remote"
   },
@@ -16247,6 +17549,13 @@
       ],
       "work_arrangement": "Location Type On-site"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-13_taptapsend_analytics-engineer",
     "geo_region": "uk_remote"
   },
@@ -16341,6 +17650,13 @@
       ],
       "work_arrangement": "Remote Status: Hybrid"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-13_teamviewer_senior-analytics-engineer",
     "geo_region": "iberia"
   },
@@ -16434,6 +17750,13 @@
       ],
       "work_arrangement": "Vienna, Vienna (Hybrid)"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-13_woom_senior-bi-data-analyst",
     "geo_region": "dach_other"
   },
@@ -16525,6 +17848,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-14_borgo_analytics-engineer",
     "geo_region": "nordics"
   },
@@ -16614,6 +17944,13 @@
       ],
       "work_arrangement": "This is a hybrid role with a minimum of 1 day per week in our Cambridge office."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-14_careers-and-job-search-i-cmr-s_analytics-engineer",
     "geo_region": "other"
   },
@@ -16691,6 +18028,13 @@
       "loss_aversion_framing": "Contribute to data quality checks and basic performance monitoring of data models and semantic layers; ensure data assets and platform changes are reliable before release",
       "loss_aversion_framing_explanation": "Reliability and quality checks are present but framed as junior/supportive contributions secondary to delivery and learning, not a dominant compliance or trust narrative."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-14_carlyle-wissing-cushman-wakefield_eic-junior-analytics-engineer",
     "geo_region": "benelux"
   },
@@ -16766,6 +18110,13 @@
       "loss_aversion_framing": "ensure data quality and governance while optimizing performance; Implement data quality checks and governance practices",
       "loss_aversion_framing_explanation": "Data quality and governance are named concerns but are secondary to delivery (building pipelines, optimizing performance) with no explicit compliance/regulatory framing for the AE role itself, so this reads as moderate rather than high."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-14_datenna_datenna-bv--senior-analytics-e",
     "geo_region": "other"
   },
@@ -16855,6 +18206,13 @@
     "ai_role": "none",
     "testing_framing": "absent",
     "loss_aversion_framing": "none",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-14_emnify-is-hiring--career--job-_analytics-engineer",
     "geo_region": "other"
   },
@@ -16944,6 +18302,13 @@
     "ai_role": "ai_enabler",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "none",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-14_flexible-working_analytics-engineer",
     "geo_region": "other"
   },
@@ -17019,6 +18384,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-14_hypoport_senior-analytics-engineer",
     "geo_region": "global_remote"
   },
@@ -17094,6 +18466,13 @@
     "ai_role": "ai_enabler",
     "testing_framing": "tool_listed",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-14_jtl-software_analytics-engineer",
     "geo_region": "dach_other"
   },
@@ -17187,6 +18566,13 @@
     "ai_role": "ai_user",
     "testing_framing": "tool_listed",
     "loss_aversion_framing": "none",
+    "has_dbt_cloud": true,
+    "has_fabric_synapse": false,
+    "has_fivetran": true,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": true,
+    "has_glue": false,
     "application_id": "2026-07-14_licorne-society_analytics-engineer",
     "geo_region": "france"
   },
@@ -17276,6 +18662,13 @@
     "ai_role": "none",
     "testing_framing": "absent",
     "loss_aversion_framing": "none",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-14_linkedin-respects-your-privacy_analytics-engineer",
     "geo_region": "other"
   },
@@ -17351,6 +18744,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": true,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-14_linkedin_luca-faloni-hiring-analytics-e",
     "geo_region": "berlin"
   },
@@ -17426,6 +18826,13 @@
     "ai_role": "ai_enabler",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "high",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-14_linkedin_pluxee-hiring-analytics-engine",
     "geo_region": "berlin"
   },
@@ -17501,6 +18908,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": true,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-14_linkedin_terras-hiring-bi-&-data-engine",
     "geo_region": "berlin"
   },
@@ -17576,6 +18990,13 @@
       "loss_aversion_framing": "Track usage and feedback on reports; double down on what matters, retire what doesn't",
       "loss_aversion_framing_explanation": "The JD is framed entirely in product/delivery terms (craft, usage tracking, iteration) with no compliance, audit, or operational-incident language."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": true,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-14_linkedin_vimachem--iiot-pharma-4.0-ai-p",
     "geo_region": "berlin"
   },
@@ -17651,6 +19072,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "high",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-14_southern-water_senior-business-intelligence-engineer",
     "geo_region": "uk_remote"
   },
@@ -17728,6 +19156,13 @@
     "ai_role": "none",
     "testing_framing": "tool_listed",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-14_state-street-investment-management_analytics-engineer,-officer",
     "geo_region": "other_europe"
   },
@@ -17803,6 +19238,13 @@
     "ai_role": "ai_enabler",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-14_wave_senior-analytics-engineer--wav",
     "geo_region": "global_remote"
   },
@@ -17895,6 +19337,13 @@
     "ai_role": "none",
     "testing_framing": "tool_listed",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": true,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-15_capitalontap_analytics-engineer-london",
     "geo_region": "uk_remote"
   },
@@ -17987,6 +19436,13 @@
     "ai_role": "ai_enabler",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "high",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": true,
     "application_id": "2026-07-15_easyjet_data-analytics-engineer",
     "geo_region": "uk_remote"
   },
@@ -18076,6 +19532,13 @@
     "ai_role": "ai_user",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-15_fin_senior-analytics-engineer-london",
     "geo_region": "uk_remote"
   },
@@ -18166,6 +19629,13 @@
     "ai_role": "ai_user",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "none",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": true,
+    "has_metabase": true,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-15_fresha_analytics-engineer-london",
     "geo_region": "uk_remote"
   },
@@ -18258,6 +19728,13 @@
     "ai_role": "ai_enabler",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-15_immediate-media_analytics-engineer",
     "geo_region": "uk_remote"
   },
@@ -18348,6 +19825,13 @@
     "ai_role": "ai_user",
     "testing_framing": "tool_listed",
     "loss_aversion_framing": "none",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": true,
+    "has_glue": false,
     "application_id": "2026-07-15_impress_analytics-engineer-barcelona",
     "geo_region": "iberia"
   },
@@ -18439,6 +19923,13 @@
     "ai_role": "none",
     "testing_framing": "responsibility",
     "loss_aversion_framing": "moderate",
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-15_pggm_bi-engineer",
     "geo_region": "benelux"
   },
@@ -18528,6 +20019,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-15_resmed_senior-bi-analytics-engineer-strategic-accounts",
     "geo_region": "uk_remote"
   },
@@ -18621,6 +20119,13 @@
       ],
       "work_arrangement": "Hybrid working policy (3 days/week in-office)"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-15_satispay_data-analyst-analytics-engineering",
     "geo_region": "other_europe"
   },
@@ -18712,6 +20217,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-15_swissre_analytics-engineer-bratislava",
     "geo_region": "other_europe"
   },
@@ -18805,6 +20317,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-15_thisisglobal_analytics-engineer-london",
     "geo_region": "uk_remote"
   },
@@ -18895,6 +20414,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": true,
     "application_id": "2026-07-16_adaptive-hvm_business-intelligence-engineer",
     "geo_region": "ireland"
   },
@@ -18985,6 +20511,13 @@
       ],
       "work_arrangement": "flexible remote work with hybrid Barcelona options"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-16_amaris-consulting_business-intelligence-engineer",
     "geo_region": "iberia"
   },
@@ -19075,6 +20608,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-16_btv-media-group_lead-analytics-engineer",
     "geo_region": "other_europe"
   },
@@ -19165,6 +20705,13 @@
       ],
       "work_arrangement": "Berlin, London (Hybrid)"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-16_doodle_data-analytics-engineer",
     "geo_region": "berlin"
   },
@@ -19256,6 +20803,13 @@
       ],
       "work_arrangement": "Växjö, Malmö (Hybrid work)"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-16_fortnox_analytics-engineer",
     "geo_region": "nordics"
   },
@@ -19345,6 +20899,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-16_moonpay_senior-analytics-engineer-crypto-and-payments",
     "geo_region": "uk_remote"
   },
@@ -19438,6 +20999,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-16_orange_analytics-engineer",
     "geo_region": "benelux"
   },
@@ -19528,6 +21096,13 @@
       ],
       "work_arrangement": "Manchester, England, United Kingdom (Hybrid, 2-3 days per week in office)"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-16_oscar_analytics-engineer",
     "geo_region": "uk_remote"
   },
@@ -19618,6 +21193,13 @@
       ],
       "work_arrangement": "Ghent (Belgium) - Hybrid"
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-16_qargo_analytics-engineer",
     "geo_region": "benelux"
   },
@@ -19708,6 +21290,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-16_tda_senior-analytics-engineer",
     "geo_region": "uk_remote"
   },
@@ -19798,6 +21387,13 @@
       ],
       "work_arrangement": "Not stated in JD."
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-16_tria_analytics-engineer",
     "geo_region": "uk_remote"
   },
@@ -19891,6 +21487,13 @@
         "CI/CD"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": true,
     "application_id": "2026-07-17_booking-holdings-romania_data-analytics-engineer",
     "geo_region": "other_europe"
   },
@@ -19983,6 +21586,13 @@
         "data observability"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-17_electra_analytics-engineer",
     "geo_region": "france"
   },
@@ -20075,6 +21685,13 @@
         "capacity management"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-17_fruition-group-ireland_bi-engineer",
     "geo_region": "ireland"
   },
@@ -20168,6 +21785,13 @@
         "reporting"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-17_jobster_analytics-engineer",
     "geo_region": "benelux"
   },
@@ -20260,6 +21884,13 @@
         "fintech"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": true,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-17_lendable_graduate-analytics-engineer",
     "geo_region": "uk_remote"
   },
@@ -20353,6 +21984,13 @@
         "stakeholder management"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": true,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-17_lendable_senior-analytics-engineer",
     "geo_region": "uk_remote"
   },
@@ -20444,6 +22082,13 @@
         "pipelines"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-17_monzo_analytics-engineer",
     "geo_region": "uk_remote"
   },
@@ -20538,6 +22183,13 @@
         "dashboards"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-17_niji_data-analytics-engineer",
     "geo_region": "france"
   },
@@ -20632,6 +22284,13 @@
         "Fivetran"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": true,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-17_paddle_senior-analytics-engineer-marketing",
     "geo_region": "uk_remote"
   },
@@ -20724,6 +22383,13 @@
         "data documentation"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-17_rebtel_senior-analytics-engineer",
     "geo_region": "nordics"
   },
@@ -20818,6 +22484,13 @@
         "AI transformation"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-17_reeeliance_senior-analytics-engineer",
     "geo_region": "hamburg"
   },
@@ -20912,6 +22585,13 @@
         "dashboards"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-17_skiils_analytics-engineer",
     "geo_region": "france"
   },
@@ -21007,6 +22687,13 @@
         "dashboards"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-19_engelska-skolan_business-intelligence-engineer",
     "geo_region": "nordics"
   },
@@ -21102,6 +22789,13 @@
         "KI und Machine Learning"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-19_gerolsteiner_data-analytics-engineer",
     "geo_region": "dach_other"
   },
@@ -21195,6 +22889,13 @@
         "BQML"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-19_scopely_analytics-engineer",
     "geo_region": "iberia"
   },
@@ -21287,6 +22988,13 @@
         "Python"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-19_storytel_analytics-engineer",
     "geo_region": "nordics"
   },
@@ -21377,6 +23085,13 @@
         "data modeling standards"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-21_bravida_analytics-engineer",
     "geo_region": "nordics"
   },
@@ -21467,6 +23182,13 @@
         "trusted datasets"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-21_currys-plc_senior-analytics-engineer",
     "geo_region": "uk_remote"
   },
@@ -21559,6 +23281,13 @@
         "monitoring"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-21_decathlon-digital_analytics-engineer-pricing-data",
     "geo_region": "france"
   },
@@ -21649,6 +23378,13 @@
         "KPI standardization"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": true,
+    "has_airbyte": false,
+    "has_glue": true,
     "application_id": "2026-07-21_eunice-energy-group_senior-data-analytics-engineer",
     "geo_region": "other_europe"
   },
@@ -21739,6 +23475,13 @@
         "ROI"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": true,
+    "has_glue": false,
     "application_id": "2026-07-21_eva-esports-virtual-arenas_data-analytics-engineer",
     "geo_region": "france"
   },
@@ -21831,6 +23574,13 @@
         "datanhallinta"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-21_finavia_analytics-engineer",
     "geo_region": "nordics"
   },
@@ -21923,6 +23673,13 @@
         "automated data quality checks"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-21_idw_data-analytics-engineer",
     "geo_region": "iberia"
   },
@@ -22015,6 +23772,13 @@
         "generative AI"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-21_ilionx_data-analytics-engineer",
     "geo_region": "benelux"
   },
@@ -22106,6 +23870,13 @@
         "Azure"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-21_kaizen-gaming_analytics-engineer",
     "geo_region": "other_europe"
   },
@@ -22198,6 +23969,13 @@
         "data literacy"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-21_lego-group_lead-analytics-engineer",
     "geo_region": "nordics"
   },
@@ -22291,6 +24069,13 @@
         "Git"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-21_moerie-beauty_analytics-engineer",
     "geo_region": "baltics"
   },
@@ -22381,6 +24166,13 @@
         "orchestration workflows"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-21_pro-plus_lead-analytics-engineer",
     "geo_region": "other_europe"
   },
@@ -22472,6 +24264,13 @@
         "Airflow"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": true,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-21_relay-technologies_senior-analytics-engineer",
     "geo_region": "uk_remote"
   },
@@ -22562,6 +24361,13 @@
         "feature engineering"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": true,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-21_wave-group_senior-analytics-engineer",
     "geo_region": "uk_remote"
   },
@@ -22654,6 +24460,13 @@
         "projectmonitoring"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-21_witteveenbos_bi-specialist",
     "geo_region": "benelux"
   },
@@ -22744,6 +24557,13 @@
         "Azure"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-21_xebia_analytics-engineer",
     "geo_region": "benelux"
   },
@@ -22836,6 +24656,13 @@
         "privacy governance"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_canva_senior-analytics-engineer-security-insights",
     "geo_region": "apac"
   },
@@ -22929,6 +24756,13 @@
         "eCommerce retail"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_casetify_data-analytics-engineer",
     "geo_region": "apac"
   },
@@ -23019,6 +24853,13 @@
         "SaaS metrics ARR churn"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_celigo_analytics-engineer",
     "geo_region": "apac"
   },
@@ -23111,6 +24952,13 @@
         "Looker Power BI Tableau"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_cj-more_analytic-engineer",
     "geo_region": "apac"
   },
@@ -23203,6 +25051,13 @@
         "datamart"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_creatoriq_analytics-engineer",
     "geo_region": "apac"
   },
@@ -23296,6 +25151,13 @@
         "Revenue Growth Management"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_decathlon-digital_analytics-engineer-pricing-data",
     "geo_region": "france"
   },
@@ -23388,6 +25250,13 @@
         "CI/CD"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": true,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_dmcg-global_lead-analytics-engineer",
     "geo_region": "uk_remote"
   },
@@ -23478,6 +25347,13 @@
         "DoorDash"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_doordash-india_analytics-engineer",
     "geo_region": "apac"
   },
@@ -23570,6 +25446,13 @@
         "governance"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": true,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_eftsure_sr-analytics-engineer",
     "geo_region": "apac"
   },
@@ -23664,6 +25547,13 @@
         "data governance"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_emagine_data-analytics-engineering-quicksight",
     "geo_region": "iberia"
   },
@@ -23756,6 +25646,13 @@
         "financial reporting"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_eucalyptus_senior-analytics-engineer",
     "geo_region": "apac"
   },
@@ -23850,6 +25747,13 @@
         "startup environment"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_frekuent_analytics-engineer",
     "geo_region": "iberia"
   },
@@ -23938,6 +25842,13 @@
         "data platform operations"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_fuku_analytics-engineer",
     "geo_region": "apac"
   },
@@ -24030,6 +25941,13 @@
         "PySpark"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_ghd_analytics-engineer",
     "geo_region": "apac"
   },
@@ -24122,6 +26040,13 @@
         "documentation and lineage"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": true,
     "application_id": "2026-07-22_halter_analytics-engineer",
     "geo_region": "apac"
   },
@@ -24216,6 +26141,13 @@
         "backlog"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_heineken-vietnam_senior-data-analytics-engineer",
     "geo_region": "apac"
   },
@@ -24308,6 +26240,13 @@
         "demo warehouses"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_holistics_analytics-engineer-data-presales",
     "geo_region": "apac"
   },
@@ -24399,6 +26338,13 @@
         "fully remote"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_insight-timer_senior-lead-analytics-engineer",
     "geo_region": "apac"
   },
@@ -24491,6 +26437,13 @@
         "data governance"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_intuitive_senior-analytics-engineer-data-applications",
     "geo_region": "apac"
   },
@@ -24582,6 +26535,13 @@
         "Data Engineering"
       ]
     },
+    "has_dbt_cloud": true,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": true,
+    "has_postgres": false,
+    "has_airbyte": true,
+    "has_glue": false,
     "application_id": "2026-07-22_jd2m_data-analytics-engineer",
     "geo_region": "france"
   },
@@ -24674,6 +26634,13 @@
         "mentoring"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": true,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_jetstar-qantas-group_senior-analyst-data-analytics",
     "geo_region": "apac"
   },
@@ -24767,6 +26734,13 @@
         "BIE team"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_lalamove_senior-bi-engineer",
     "geo_region": "apac"
   },
@@ -24858,6 +26832,13 @@
         "change control"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_lenovo_senior-finance-data-analysis-engineer",
     "geo_region": "apac"
   },
@@ -24949,6 +26930,13 @@
         "TikTok Shop Shopify"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_lever-sphere_analytics-engineer-middle-senior",
     "geo_region": "apac"
   },
@@ -25038,6 +27026,13 @@
         "trustworthy source of truth"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_linktree_senior-data-analytics-engineer-strategic-finance",
     "geo_region": "apac"
   },
@@ -25130,6 +27125,13 @@
         "Power BI"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_loreal_senior-analytics-engineer",
     "geo_region": "apac"
   },
@@ -25222,6 +27224,13 @@
         "AI tooling"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_lyst_analytics-engineer",
     "geo_region": "uk_remote"
   },
@@ -25314,6 +27323,13 @@
         "client projects"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_mantel-group_senior-analytics-engineer",
     "geo_region": "apac"
   },
@@ -25406,6 +27422,13 @@
         "query optimization"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": true,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_marqvision_data-analytics-engineer",
     "geo_region": "apac"
   },
@@ -25497,6 +27520,13 @@
         "Python SQL"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_micron-technology_data-analytics-engineer",
     "geo_region": "apac"
   },
@@ -25589,6 +27619,13 @@
         "startup"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_nabla-mobility_analytics-engineer",
     "geo_region": "apac"
   },
@@ -25681,6 +27718,13 @@
         "star schemas"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_numan_senior-analytics-engineer",
     "geo_region": "uk_remote"
   },
@@ -25774,6 +27818,13 @@
         "geautomatiseerde tests"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_pggm_junior-bi-engineering",
     "geo_region": "benelux"
   },
@@ -25867,6 +27918,13 @@
         "data architecture"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": true,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_revtech_analytics-engineer",
     "geo_region": "uk_remote"
   },
@@ -25959,6 +28017,13 @@
         "consulting"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": true,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_riveron_finance-analytics-engineer",
     "geo_region": "apac"
   },
@@ -26051,6 +28116,13 @@
         "data standards"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_rotate_analytics-engineer",
     "geo_region": "apac"
   },
@@ -26143,6 +28215,13 @@
         "Kafka"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": true,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_sei-investments_sr-analytics-engineer",
     "geo_region": "apac"
   },
@@ -26234,6 +28313,13 @@
         "business insights"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_singapore-airlines_data-analytics-engineer",
     "geo_region": "apac"
   },
@@ -26325,6 +28411,13 @@
         "police clearance"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_smartgroup_analytics-engineer",
     "geo_region": "apac"
   },
@@ -26417,6 +28510,13 @@
         "AI data initiatives"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": true,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_the-living-company_analytics-engineer",
     "geo_region": "apac"
   },
@@ -26509,6 +28609,13 @@
         "OTT streaming"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_the-one-enterprise_analytics-engineer-data-modeling",
     "geo_region": "apac"
   },
@@ -26599,6 +28706,13 @@
         "reporting"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_time-dotcom-berhad_data-analytics-engineer",
     "geo_region": "apac"
   },
@@ -26691,6 +28805,13 @@
         "insurance domain"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_toss-insurance_data-analytics-engineer",
     "geo_region": "apac"
   },
@@ -26783,6 +28904,13 @@
         "mentorship"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-22_wework-india_lead-analytics-engineer-bi",
     "geo_region": "apac"
   },
@@ -26876,6 +29004,13 @@
         "orchestration"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": true,
     "application_id": "2026-07-22_zoopla_senior-analytics-engineer",
     "geo_region": "uk_remote"
   },
@@ -26968,6 +29103,13 @@
         "tracking implementation"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-24_aubay-portugal_digital-analytics-engineer",
     "geo_region": "iberia"
   },
@@ -27060,6 +29202,13 @@
         "AI tools"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-24_borhera-ddbm_analytics-engineer",
     "geo_region": "benelux"
   },
@@ -27154,6 +29303,13 @@
         "DMP"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-24_cj-olive-young_data-analytics-engineer",
     "geo_region": "apac"
   },
@@ -27244,6 +29400,13 @@
         "data models"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-24_colliers-international_analytics-engineer",
     "geo_region": "apac"
   },
@@ -27334,6 +29497,13 @@
         "data architecture"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-24_deel_analytics-engineer",
     "geo_region": "uk_remote"
   },
@@ -27425,6 +29595,13 @@
         "AI/ML data readiness"
       ]
     },
+    "has_dbt_cloud": true,
+    "has_fabric_synapse": false,
+    "has_fivetran": true,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-24_dynatrace_senior-analytics-engineer",
     "geo_region": "dach_other"
   },
@@ -27519,6 +29696,13 @@
         "fintech"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-24_ebury_analytics-engineer",
     "geo_region": "iberia"
   },
@@ -27609,6 +29793,13 @@
         "prompt design"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-24_ecam_analytics-engineer",
     "geo_region": "apac"
   },
@@ -27698,6 +29889,13 @@
         "Product Development"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-24_four-hands-vietnam_bi-analyst-international",
     "geo_region": "apac"
   },
@@ -27787,6 +29985,13 @@
         "deployment"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-24_inchcape_digital-analytics-engineer",
     "geo_region": "apac"
   },
@@ -27879,6 +30084,13 @@
         "analytics consulting"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-24_kion-dematic_analytics-engineer",
     "geo_region": "dach_other"
   },
@@ -27969,6 +30181,13 @@
         "investor reporting"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": true,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-24_lendable_analytics-engineer",
     "geo_region": "uk_remote"
   },
@@ -28061,6 +30280,13 @@
         "tracking plan"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": true,
+    "has_glue": false,
     "application_id": "2026-07-24_mym_analytics-engineer",
     "geo_region": "france"
   },
@@ -28150,6 +30376,13 @@
         "data quality"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-24_nets_business-intelligence-data-analytics",
     "geo_region": "apac"
   },
@@ -28240,6 +30473,13 @@
         "single-source-of-truth"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-24_occu_business-intelligence-analyst",
     "geo_region": "ireland"
   },
@@ -28330,6 +30570,13 @@
         "data modeling"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-24_randstad-mnc_bi-and-analytics-engineer",
     "geo_region": "apac"
   },
@@ -28420,6 +30667,13 @@
         "data quality"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-24_siemens-healthineers_analytics-engineer",
     "geo_region": "uk_remote"
   },
@@ -28511,6 +30765,13 @@
         "Data Enablement"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-24_similarweb_analytics-engineer",
     "geo_region": "other_europe"
   },
@@ -28603,6 +30864,13 @@
         "Power BI"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-24_sony-interactive-entertainment_senior-analytics-engineer",
     "geo_region": "uk_remote"
   },
@@ -28694,6 +30962,13 @@
         "AI-enabled analytics"
       ]
     },
+    "has_dbt_cloud": false,
+    "has_fabric_synapse": false,
+    "has_fivetran": false,
+    "has_metabase": false,
+    "has_postgres": false,
+    "has_airbyte": false,
+    "has_glue": false,
     "application_id": "2026-07-24_suvoda_senior-analytics-engineer",
     "geo_region": "global_remote"
   }

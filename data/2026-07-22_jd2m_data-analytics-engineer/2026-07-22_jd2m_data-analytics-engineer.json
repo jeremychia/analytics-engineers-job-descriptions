@@ -85,5 +85,12 @@
       "modélisation de données",
       "Data Engineering"
     ]
-  }
+  },
+  "has_dbt_cloud": true,
+  "has_fabric_synapse": false,
+  "has_fivetran": false,
+  "has_metabase": true,
+  "has_postgres": false,
+  "has_airbyte": true,
+  "has_glue": false
 }

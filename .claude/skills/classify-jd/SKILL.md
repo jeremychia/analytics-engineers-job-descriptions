@@ -188,7 +188,9 @@ Quote the verbatim phrase (from the location line or benefits/work-model section
 
 Set `true` if mentioned anywhere in JD (required or preferred), `false` if not.
 
-`has_dbt`, `has_spark`, `has_python`, `has_sql`, `has_airflow`, `has_dagster`, `has_prefect`, `has_snowflake`, `has_databricks`, `has_bigquery`, `has_redshift`, `has_duckdb`, `has_kafka`, `has_terraform`, `has_looker`, `has_tableau`, `has_power_bi`, `has_great_expectations`, `has_soda`
+`has_dbt`, `has_dbt_cloud`, `has_spark`, `has_python`, `has_sql`, `has_airflow`, `has_dagster`, `has_prefect`, `has_snowflake`, `has_databricks`, `has_bigquery`, `has_redshift`, `has_duckdb`, `has_fabric_synapse`, `has_postgres`, `has_fivetran`, `has_airbyte`, `has_glue`, `has_kafka`, `has_terraform`, `has_looker`, `has_tableau`, `has_power_bi`, `has_metabase`, `has_great_expectations`, `has_soda`
+
+`has_dbt_cloud` is distinct from `has_dbt` — set `true` only if "dbt Cloud" is named specifically (not just "dbt"). `has_fabric_synapse` covers Microsoft Fabric or Azure Synapse. `has_postgres` covers Postgres/PostgreSQL. `has_glue` covers AWS Glue.
 
 Also extract:
 - **urgency**: `urgent` if JD validity ≤30 days, "immediately", "ASAP", "critical hire", or re-post signal. Otherwise `standard`.
@@ -240,6 +242,7 @@ python3 scripts/write_jd.py <<'EOF'
   "ats_platform": "{value}",
   "ats_job_id": "{string or null}",
   "has_dbt": true,
+  "has_dbt_cloud": false,
   "has_spark": false,
   "has_python": true,
   "has_sql": true,
@@ -251,11 +254,17 @@ python3 scripts/write_jd.py <<'EOF'
   "has_bigquery": false,
   "has_redshift": false,
   "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
   "has_kafka": false,
   "has_terraform": false,
   "has_looker": false,
   "has_tableau": false,
   "has_power_bi": false,
+  "has_metabase": false,
   "has_great_expectations": false,
   "has_soda": false,
   "evidence": {

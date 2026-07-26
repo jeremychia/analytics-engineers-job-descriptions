@@ -69,5 +69,12 @@
     "testing_framing_explanation": "Responsibilities focus on performance tuning and report craft with no data-quality ownership verbs, dbt tests, or data-contract language anywhere in the JD.",
     "loss_aversion_framing": "Track usage and feedback on reports; double down on what matters, retire what doesn't",
     "loss_aversion_framing_explanation": "The JD is framed entirely in product/delivery terms (craft, usage tracking, iteration) with no compliance, audit, or operational-incident language."
-  }
+  },
+  "has_dbt_cloud": false,
+  "has_fabric_synapse": false,
+  "has_fivetran": false,
+  "has_metabase": true,
+  "has_postgres": false,
+  "has_airbyte": false,
+  "has_glue": false
 }
