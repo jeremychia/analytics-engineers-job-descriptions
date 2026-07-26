@@ -94,6 +94,21 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .card-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.35rem; }
 .card-sub { font-size: 0.74rem; color: var(--muted); margin-bottom: 1.5rem; }
 
+/* ── RELATIONSHIP THEME TABS ── */
+.rel-tabs { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2.25rem; }
+.rel-tab {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 0.15rem;
+  padding: 0.65rem 1rem; border-radius: 10px; border: 1px solid var(--border);
+  background: #fff; cursor: pointer; font-family: inherit; text-align: left;
+  transition: border-color 0.15s, background 0.15s;
+}
+.rel-tab:hover { border-color: var(--accent); }
+.rel-tab-name { font-size: 0.8rem; font-weight: 700; color: var(--text); }
+.rel-tab-count { font-size: 0.68rem; color: var(--muted); }
+.rel-tab.active { background: var(--accent); border-color: var(--accent); }
+.rel-tab.active .rel-tab-name, .rel-tab.active .rel-tab-count { color: #fff; }
+.rel-tab.active .rel-tab-count { opacity: 0.85; }
+
 /* ── RELATIONSHIP GRID (primary content unit) ── */
 .rel-grid { display: flex; flex-direction: column; gap: 2.5rem; }
 .rel-panel { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: #fff; }
@@ -360,8 +375,9 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
 <section class="section" id="relationships">
   <div class="section-label" id="relLabel">Two-variable findings</div>
   <h2 class="section-headline" id="relHead">Where dimensions move together</h2>
-  <p class="section-body" id="relBody">Each panel below crosses two classifications to answer a question a single-dimension stat can't answer: not "how many roles are strategic" but "<strong>which</strong> roles are strategic." Ordered by effect size, strongest first. Every panel's headline is one line — click "Full analysis" on any card for the underlying test, caveats, and methodology.</p>
-  <details class="rel-details" style="margin-bottom:2rem"><summary>Methodology note: why some responsibility-language pairings are excluded</summary><div class="rel-details-body" id="relOverlapNote" style="font-size:0.85rem"></div></details>
+  <p class="section-body" id="relBody">Each panel below crosses two classifications to answer a question a single-dimension stat can't answer: not "how many roles are strategic" but "<strong>which</strong> roles are strategic." Pick a theme below — each panel's headline is one line; click "Full analysis" on any card for the underlying test, caveats, and methodology.</p>
+  <details class="rel-details" style="margin-bottom:1.5rem"><summary>Methodology note: why some responsibility-language pairings are excluded</summary><div class="rel-details-body" id="relOverlapNote" style="font-size:0.85rem"></div></details>
+  <div class="rel-tabs" id="relTabs" role="tablist" aria-label="Relationship theme"></div>
   <div class="rel-grid" id="relGrid"></div>
 </section>
 
@@ -537,6 +553,33 @@ const PANEL_ORDER = {
   seeker:  ['rel-maturity-mission','rel-mission-autonomy','rel-domain-stakeholder','rel-testing-rigour','rel-fear-domainrisk','rel-testing-fear','rel-seniority-autonomy','rel-ai-autonomy','rel-authorship-autonomy','rel-authorship-dbt','rel-maturity-autonomy','rel-maturity-workarr','rel-domainrisk-rigour','rel-fear-collab','rel-stakeholder-autonomy','rel-mentorship-autonomy','rel-infra-authorship','rel-selfservice-maturity'],
   manager: ['rel-seniority-autonomy','rel-authorship-autonomy','rel-testing-rigour','rel-authorship-dbt','rel-fear-domainrisk','rel-testing-fear','rel-ai-autonomy','rel-maturity-mission','rel-mission-autonomy','rel-maturity-autonomy','rel-maturity-workarr','rel-domain-stakeholder','rel-domainrisk-rigour','rel-fear-collab','rel-stakeholder-autonomy','rel-mentorship-autonomy','rel-infra-authorship','rel-selfservice-maturity'],
 };
+// Relationship theme tabs: 18 panels grouped into 4 themes so the section shows
+// ~5 full cards at a time instead of 18 stacked vertically. Group order and labels
+// are persona-aware (same idea as PANEL_ORDER); membership itself doesn't change.
+const REL_GROUP_OF = {
+  'rel-seniority-autonomy': 'autonomy', 'rel-mission-autonomy': 'autonomy', 'rel-maturity-autonomy': 'autonomy',
+  'rel-ai-autonomy': 'autonomy', 'rel-stakeholder-autonomy': 'autonomy', 'rel-mentorship-autonomy': 'autonomy',
+  'rel-maturity-mission': 'stage', 'rel-maturity-workarr': 'stage', 'rel-selfservice-maturity': 'stage',
+  'rel-domain-stakeholder': 'risk', 'rel-testing-rigour': 'risk', 'rel-fear-collab': 'risk',
+  'rel-fear-domainrisk': 'risk', 'rel-testing-fear': 'risk', 'rel-domainrisk-rigour': 'risk',
+  'rel-authorship-autonomy': 'authorship', 'rel-authorship-dbt': 'authorship', 'rel-infra-authorship': 'authorship',
+};
+const REL_GROUPS = {
+  seeker: [
+    { key: 'autonomy',   name: 'Autonomy & scope',      desc: 'What actually predicts strategic vs. execution work' },
+    { key: 'stage',      name: 'Company stage & work type', desc: 'What company stage predicts about the job itself' },
+    { key: 'risk',       name: 'Risk & fear framing',   desc: 'How stakes, quality ownership, and rigour language relate' },
+    { key: 'authorship', name: 'Authorship tells',      desc: 'What who-wrote-the-JD reveals about the real role' },
+  ],
+  manager: [
+    { key: 'authorship', name: 'Authorship tells',      desc: 'What your posting\'s authorship signals whether you meant to or not' },
+    { key: 'autonomy',   name: 'Autonomy & scope',      desc: 'What candidates infer about real decision rights' },
+    { key: 'risk',       name: 'Risk & fear framing',   desc: 'How your risk and quality language reads against the market' },
+    { key: 'stage',      name: 'Company stage & work type', desc: 'What your stage promises, whether you meant it to or not' },
+  ],
+};
+let activeRelGroup = null;
+
 const NAV_LABELS = {
   relationships: { seeker: 'Relationships', manager: 'What candidates infer' },
   'responsibility-taxonomy': { seeker: 'Responsibility mix', manager: 'Responsibility mix' },
@@ -570,8 +613,8 @@ const COPY = {
     manager: 'What candidates read between your lines — whether you meant to write it or not',
   },
   relBody: {
-    seeker: `Each panel below crosses two classifications to answer a question a single-dimension stat can't: not "how many roles are strategic" but "<strong>which</strong> roles are strategic." Panels are ordered by effect size (Cramér's V), strongest first, and each carries its χ² test — recomputed against the active role filter. Several tables have sparse cells (expected counts under 5), which makes the χ² approximation optimistic; those are flagged inline and should be read as directional. The "Responsibility language" panels (Mentorship, Infrastructure, Self-Service) pair a separate, regex-classified reading of each JD's responsibility bullets (<code>analysis/responsibility_taxonomy.py</code>) against the Layer B codebook — see the note below for why some pairings between the two are excluded as circular rather than reported as findings.`,
-    manager: `Each panel below crosses two classifications, and each one is an inference channel: candidates — and increasingly their tools — read your company stage, your title, your authorship tells, and your framing as predictions about the actual role. Panels are ordered by how consequential each channel is to get right in a posting, and each carries its χ² test, recomputed against the active role filter. Sparse-cell caveats are flagged inline. The "Responsibility language" panels read a separate, regex-classified pass over each posting's responsibility bullets against the same behavioural codebook — see the note below for what's excluded and why.`,
+    seeker: `Each panel crosses two classifications to answer a question a single-dimension stat can't: not "how many roles are strategic" but "<strong>which</strong> roles are strategic." Pick a theme below — each panel's headline is one line; click "Full analysis" on any card for the underlying test, caveats, and methodology.`,
+    manager: `Each panel crosses two classifications, and each one is an inference channel: candidates — and increasingly their tools — read your stage, title, authorship, and framing as predictions about the real role. Pick a theme below; click "Full analysis" on any card for the underlying test and caveats.`,
   },
   relOverlapNote: {
     seeker: `<strong>A methodology note on the "Responsibility language" panels:</strong> some pairings between the 15 regex-classified responsibility themes and the Layer B codebook are excluded from this page entirely, not because they're weak, but because they're circular — the theme's trigger keywords and the dimension's own coding rubric detect the same textual signal. The clearest case: the "Data Quality & Testing" theme (Cramér's V=0.52 against <code>testing_framing</code>, the single strongest pairing found) is excluded, because <code>testing_framing</code> is itself coded by looking for testing/quality language in the JD — crossing the two mostly measures whether two different classification methods agree with each other, not a substantive relationship. Same logic excludes "Security, Privacy & Risk" vs. <code>domain_risk</code>/<code>loss_aversion_framing</code>, "Data Ownership" vs. <code>autonomy_level</code> (whose own rubric lists "own" as a strategic-verb signal), and any BI/Infrastructure theme against a tech-stack flag whose tool name is literally one of the theme's regex keywords (Looker, Tableau, Power BI, Snowflake, Databricks, dbt). The three panels shown here survived that filter <em>and</em> a follow-up stratification check (does the relationship hold within a plausible confounding subgroup, not just across the whole corpus) — the null-results section below includes a worked example of a pairing that looked real unstratified and didn't survive that check, kept specifically as a demonstration of why the check matters.`,
@@ -1142,9 +1185,25 @@ function buildRelationships(data) {
   const view = P();
   const order = PANEL_ORDER[view];
   panels.sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
+  panels.forEach(p => { p.group = REL_GROUP_OF[p.id]; });
 
+  const groups = REL_GROUPS[view];
+  if (!activeRelGroup || !groups.some(g => g.key === activeRelGroup)) activeRelGroup = groups[0].key;
+
+  const tabsEl = document.getElementById('relTabs');
+  tabsEl.innerHTML = groups.map(g => {
+    const count = panels.filter(p => p.group === g.key).length;
+    return `<button type="button" class="rel-tab${g.key === activeRelGroup ? ' active' : ''}" role="tab" aria-selected="${g.key === activeRelGroup}" data-group="${g.key}" title="${g.desc}">
+      <span class="rel-tab-name">${g.name}</span><span class="rel-tab-count">${count} relationship${count===1?'':'s'}</span>
+    </button>`;
+  }).join('');
+  tabsEl.querySelectorAll('.rel-tab').forEach(btn => {
+    btn.addEventListener('click', () => { activeRelGroup = btn.dataset.group; buildRelationships(activeData); });
+  });
+
+  const visiblePanels = panels.filter(p => p.group === activeRelGroup);
   const grid = document.getElementById('relGrid');
-  grid.innerHTML = panels.map((p, i) => `
+  grid.innerHTML = visiblePanels.map((p, i) => `
     <div class="rel-panel">
       <div class="rel-head">
         <div class="rel-tag">${p.tag}</div>
@@ -1163,7 +1222,7 @@ function buildRelationships(data) {
     </div>
   `).join('');
 
-  panels.forEach(p => {
+  visiblePanels.forEach(p => {
     const statEl = document.getElementById(`${p.id}-stat`);
     if (statEl) statEl.innerHTML = p.statFn();
     const testEl = document.getElementById(`${p.id}-test`);
