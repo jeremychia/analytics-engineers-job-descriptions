@@ -22,11 +22,13 @@ from pathlib import Path
 JD_DATA_DIR = Path(__file__).parent.parent / "data"
 
 BOOL_FIELDS = [
-    "has_dbt", "has_spark", "has_python", "has_sql",
+    "has_dbt", "has_dbt_cloud", "has_spark", "has_python", "has_sql",
     "has_airflow", "has_dagster", "has_prefect",
     "has_snowflake", "has_databricks", "has_bigquery", "has_redshift", "has_duckdb",
+    "has_fabric_synapse", "has_postgres",
+    "has_fivetran", "has_airbyte", "has_glue",
     "has_kafka", "has_terraform",
-    "has_looker", "has_tableau", "has_power_bi",
+    "has_looker", "has_tableau", "has_power_bi", "has_metabase",
     "has_great_expectations", "has_soda",
 ]
 

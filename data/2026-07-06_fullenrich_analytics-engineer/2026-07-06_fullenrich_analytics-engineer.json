@@ -88,5 +88,12 @@
       "SaaS metrics"
     ],
     "work_arrangement": "Votre rôle sera hybride"
-  }
+  },
+  "has_dbt_cloud": true,
+  "has_fabric_synapse": false,
+  "has_fivetran": true,
+  "has_metabase": false,
+  "has_postgres": false,
+  "has_airbyte": true,
+  "has_glue": false
 }

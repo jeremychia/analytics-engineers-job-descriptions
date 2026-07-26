@@ -69,5 +69,12 @@
     "testing_framing_explanation": "Data quality checks and governance are framed as an owned responsibility (implement) rather than a tool listed in a skills section.",
     "loss_aversion_framing": "ensure data quality and governance while optimizing performance; Implement data quality checks and governance practices",
     "loss_aversion_framing_explanation": "Data quality and governance are named concerns but are secondary to delivery (building pipelines, optimizing performance) with no explicit compliance/regulatory framing for the AE role itself, so this reads as moderate rather than high."
-  }
+  },
+  "has_dbt_cloud": false,
+  "has_fabric_synapse": false,
+  "has_fivetran": false,
+  "has_metabase": false,
+  "has_postgres": false,
+  "has_airbyte": false,
+  "has_glue": false
 }

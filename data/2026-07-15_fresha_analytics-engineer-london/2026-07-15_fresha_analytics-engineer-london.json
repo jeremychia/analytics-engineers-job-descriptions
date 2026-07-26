@@ -84,5 +84,12 @@
   },
   "ai_role": "ai_user",
   "testing_framing": "responsibility",
-  "loss_aversion_framing": "none"
+  "loss_aversion_framing": "none",
+  "has_dbt_cloud": false,
+  "has_fabric_synapse": false,
+  "has_fivetran": true,
+  "has_metabase": true,
+  "has_postgres": false,
+  "has_airbyte": false,
+  "has_glue": false
 }

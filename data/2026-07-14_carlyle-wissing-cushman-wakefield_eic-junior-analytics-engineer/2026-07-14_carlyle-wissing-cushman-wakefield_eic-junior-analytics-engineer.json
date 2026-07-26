@@ -71,5 +71,12 @@
     "testing_framing_explanation": "Testing and quality assurance are mentioned but framed with supportive verbs (contribute, support, assist) under senior guidance rather than full candidate ownership, closer to tool_listed than a true owned responsibility.",
     "loss_aversion_framing": "Contribute to data quality checks and basic performance monitoring of data models and semantic layers; ensure data assets and platform changes are reliable before release",
     "loss_aversion_framing_explanation": "Reliability and quality checks are present but framed as junior/supportive contributions secondary to delivery and learning, not a dominant compliance or trust narrative."
-  }
+  },
+  "has_dbt_cloud": false,
+  "has_fabric_synapse": true,
+  "has_fivetran": false,
+  "has_metabase": false,
+  "has_postgres": false,
+  "has_airbyte": false,
+  "has_glue": false
 }
