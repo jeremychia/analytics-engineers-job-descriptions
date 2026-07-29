@@ -1,102 +1,102 @@
 {
- "corpus_size": 325,
- "n_jds_with_parsed_responsibilities": 321,
- "total_bullets_extracted": 2187,
- "n_bullets_considered": 2187,
- "n_bullets_with_theme": 1807,
- "total_theme_tags_assigned": 3393,
- "uncategorized_bullet_count": 380,
+ "corpus_size": 358,
+ "n_jds_with_parsed_responsibilities": 333,
+ "total_bullets_extracted": 2309,
+ "n_bullets_considered": 2309,
+ "n_bullets_with_theme": 1912,
+ "total_theme_tags_assigned": 3654,
+ "uncategorized_bullet_count": 397,
  "max_dedup_delta_pct_points": 0.6,
  "theme_stats": [
   {
    "theme": "Stakeholder Collaboration & Requirements",
-   "n_jds": 258,
-   "pct_of_jds": 80.4,
-   "n_bullets": 428
+   "n_jds": 268,
+   "pct_of_jds": 80.5,
+   "n_bullets": 461
   },
   {
    "theme": "Data Quality & Testing",
-   "n_jds": 218,
-   "pct_of_jds": 67.9,
-   "n_bullets": 332
+   "n_jds": 229,
+   "pct_of_jds": 68.8,
+   "n_bullets": 355
   },
   {
    "theme": "BI & Reporting/Dashboards",
-   "n_jds": 218,
-   "pct_of_jds": 67.9,
-   "n_bullets": 428
+   "n_jds": 227,
+   "pct_of_jds": 68.2,
+   "n_bullets": 454
   },
   {
    "theme": "Data Modeling & Transformation",
-   "n_jds": 201,
-   "pct_of_jds": 62.6,
-   "n_bullets": 338
-  },
-  {
-   "theme": "Governance & Documentation",
-   "n_jds": 189,
-   "pct_of_jds": 58.9,
-   "n_bullets": 265
+   "n_jds": 206,
+   "pct_of_jds": 61.9,
+   "n_bullets": 357
   },
   {
    "theme": "Architecture & Platform Strategy",
-   "n_jds": 188,
-   "pct_of_jds": 58.6,
-   "n_bullets": 275
+   "n_jds": 202,
+   "pct_of_jds": 60.7,
+   "n_bullets": 303
+  },
+  {
+   "theme": "Governance & Documentation",
+   "n_jds": 200,
+   "pct_of_jds": 60.1,
+   "n_bullets": 287
   },
   {
    "theme": "Pipeline Engineering & Orchestration",
-   "n_jds": 183,
-   "pct_of_jds": 57.0,
-   "n_bullets": 253
+   "n_jds": 191,
+   "pct_of_jds": 57.4,
+   "n_bullets": 267
   },
   {
    "theme": "Data Infrastructure & Warehouse Ops",
-   "n_jds": 161,
-   "pct_of_jds": 50.2,
-   "n_bullets": 244
+   "n_jds": 170,
+   "pct_of_jds": 51.1,
+   "n_bullets": 263
   },
   {
    "theme": "Business Analysis & Insight Generation",
-   "n_jds": 147,
-   "pct_of_jds": 45.8,
-   "n_bullets": 243
+   "n_jds": 155,
+   "pct_of_jds": 46.5,
+   "n_bullets": 261
   },
   {
    "theme": "Performance & Cost Optimization",
-   "n_jds": 140,
-   "pct_of_jds": 43.6,
-   "n_bullets": 187
+   "n_jds": 148,
+   "pct_of_jds": 44.4,
+   "n_bullets": 203
   },
   {
    "theme": "Data Ownership (end-to-end)",
-   "n_jds": 87,
-   "pct_of_jds": 27.1,
-   "n_bullets": 109
+   "n_jds": 95,
+   "pct_of_jds": 28.5,
+   "n_bullets": 126
   },
   {
    "theme": "Self-Service Enablement & Data Literacy",
-   "n_jds": 83,
-   "pct_of_jds": 25.9,
-   "n_bullets": 106
+   "n_jds": 88,
+   "pct_of_jds": 26.4,
+   "n_bullets": 112
   },
   {
    "theme": "Mentorship & Leadership",
-   "n_jds": 81,
+   "n_jds": 84,
    "pct_of_jds": 25.2,
-   "n_bullets": 109
+   "n_bullets": 118
   },
   {
    "theme": "Security, Privacy & Risk",
-   "n_jds": 41,
-   "pct_of_jds": 12.8,
-   "n_bullets": 53
+   "n_jds": 45,
+   "pct_of_jds": 13.5,
+   "n_bullets": 58
   },
   {
    "theme": "Vendor & Tooling Evaluation",
-   "n_jds": 22,
-   "pct_of_jds": 6.9,
-   "n_bullets": 23
+   "n_jds": 28,
+   "pct_of_jds": 8.4,
+   "n_bullets": 29
   }
  ],
  "jd_theme_sets": {
@@ -111,6 +111,11 @@
    "Security, Privacy & Risk",
    "Self-Service Enablement & Data Literacy",
    "Stakeholder Collaboration & Requirements"
+  ],
+  "2026-04-08_parfumado_analytics-engineer": [
+   "Architecture & Platform Strategy",
+   "Data Quality & Testing",
+   "Performance & Cost Optimization"
   ],
   "2026-04-08_riverty_data-engineering-lead": [
    "Architecture & Platform Strategy",
@@ -1507,6 +1512,15 @@
    "Self-Service Enablement & Data Literacy",
    "Stakeholder Collaboration & Requirements"
   ],
+  "2026-07-06_qred_data-engineer": [
+   "Architecture & Platform Strategy",
+   "Data Infrastructure & Warehouse Ops",
+   "Data Quality & Testing",
+   "Governance & Documentation",
+   "Performance & Cost Optimization",
+   "Pipeline Engineering & Orchestration",
+   "Stakeholder Collaboration & Requirements"
+  ],
   "2026-07-06_revel_analytics-engineer": [
    "Architecture & Platform Strategy",
    "BI & Reporting/Dashboards",
@@ -2283,13 +2297,13 @@
    "Vendor & Tooling Evaluation"
   ],
   "2026-07-21_currys-plc_senior-analytics-engineer": [
-   "Architecture & Platform Strategy",
    "BI & Reporting/Dashboards",
+   "Business Analysis & Insight Generation",
    "Data Modeling & Transformation",
    "Data Quality & Testing",
    "Governance & Documentation",
-   "Mentorship & Leadership",
    "Performance & Cost Optimization",
+   "Pipeline Engineering & Orchestration",
    "Self-Service Enablement & Data Literacy",
    "Stakeholder Collaboration & Requirements"
   ],
@@ -2410,36 +2424,6 @@
    "Stakeholder Collaboration & Requirements",
    "Vendor & Tooling Evaluation"
   ],
-  "2026-07-22_canva_senior-analytics-engineer-security-insights": [
-   "Architecture & Platform Strategy",
-   "BI & Reporting/Dashboards",
-   "Data Infrastructure & Warehouse Ops",
-   "Data Modeling & Transformation",
-   "Data Quality & Testing",
-   "Performance & Cost Optimization",
-   "Pipeline Engineering & Orchestration",
-   "Security, Privacy & Risk",
-   "Self-Service Enablement & Data Literacy"
-  ],
-  "2026-07-22_casetify_data-analytics-engineer": [
-   "BI & Reporting/Dashboards",
-   "Business Analysis & Insight Generation",
-   "Data Modeling & Transformation",
-   "Governance & Documentation",
-   "Pipeline Engineering & Orchestration",
-   "Self-Service Enablement & Data Literacy",
-   "Stakeholder Collaboration & Requirements"
-  ],
-  "2026-07-22_celigo_analytics-engineer": [
-   "Architecture & Platform Strategy",
-   "Data Infrastructure & Warehouse Ops",
-   "Data Modeling & Transformation",
-   "Data Quality & Testing",
-   "Governance & Documentation",
-   "Performance & Cost Optimization",
-   "Pipeline Engineering & Orchestration",
-   "Stakeholder Collaboration & Requirements"
-  ],
   "2026-07-22_cj-more_analytic-engineer": [
    "Architecture & Platform Strategy",
    "BI & Reporting/Dashboards",
@@ -2450,6 +2434,7 @@
    "Mentorship & Leadership",
    "Performance & Cost Optimization",
    "Pipeline Engineering & Orchestration",
+   "Self-Service Enablement & Data Literacy",
    "Stakeholder Collaboration & Requirements"
   ],
   "2026-07-22_creatoriq_analytics-engineer": [
@@ -2478,19 +2463,12 @@
    "Mentorship & Leadership",
    "Pipeline Engineering & Orchestration"
   ],
-  "2026-07-22_doordash-india_analytics-engineer": [
-   "BI & Reporting/Dashboards",
-   "Business Analysis & Insight Generation",
-   "Mentorship & Leadership",
-   "Pipeline Engineering & Orchestration",
-   "Self-Service Enablement & Data Literacy",
-   "Stakeholder Collaboration & Requirements"
-  ],
   "2026-07-22_eftsure_sr-analytics-engineer": [
    "Architecture & Platform Strategy",
+   "BI & Reporting/Dashboards",
    "Business Analysis & Insight Generation",
    "Data Modeling & Transformation",
-   "Mentorship & Leadership"
+   "Data Ownership (end-to-end)"
   ],
   "2026-07-22_emagine_data-analytics-engineering-quicksight": [
    "Architecture & Platform Strategy",
@@ -2500,15 +2478,11 @@
    "Data Quality & Testing",
    "Governance & Documentation",
    "Performance & Cost Optimization",
-   "Self-Service Enablement & Data Literacy",
-   "Stakeholder Collaboration & Requirements"
+   "Self-Service Enablement & Data Literacy"
   ],
   "2026-07-22_eucalyptus_senior-analytics-engineer": [
    "BI & Reporting/Dashboards",
-   "Data Modeling & Transformation",
-   "Data Ownership (end-to-end)",
    "Data Quality & Testing",
-   "Governance & Documentation",
    "Stakeholder Collaboration & Requirements"
   ],
   "2026-07-22_frekuent_analytics-engineer": [
@@ -2554,6 +2528,7 @@
   "2026-07-22_heineken-vietnam_senior-data-analytics-engineer": [
    "Architecture & Platform Strategy",
    "BI & Reporting/Dashboards",
+   "Business Analysis & Insight Generation",
    "Data Modeling & Transformation",
    "Data Quality & Testing",
    "Governance & Documentation",
@@ -2568,11 +2543,13 @@
    "Data Modeling & Transformation",
    "Data Ownership (end-to-end)",
    "Data Quality & Testing",
+   "Performance & Cost Optimization",
    "Pipeline Engineering & Orchestration",
    "Self-Service Enablement & Data Literacy",
    "Stakeholder Collaboration & Requirements"
   ],
   "2026-07-22_insight-timer_senior-lead-analytics-engineer": [
+   "Architecture & Platform Strategy",
    "Business Analysis & Insight Generation",
    "Data Modeling & Transformation",
    "Data Ownership (end-to-end)",
@@ -2594,29 +2571,21 @@
    "Pipeline Engineering & Orchestration",
    "Stakeholder Collaboration & Requirements"
   ],
-  "2026-07-22_jetstar-qantas-group_senior-analyst-data-analytics": [
-   "Architecture & Platform Strategy",
-   "BI & Reporting/Dashboards",
-   "Business Analysis & Insight Generation",
-   "Data Infrastructure & Warehouse Ops",
-   "Data Quality & Testing",
-   "Governance & Documentation",
-   "Mentorship & Leadership",
-   "Pipeline Engineering & Orchestration",
-   "Self-Service Enablement & Data Literacy",
-   "Stakeholder Collaboration & Requirements"
-  ],
   "2026-07-22_lalamove_senior-bi-engineer": [
    "BI & Reporting/Dashboards",
    "Pipeline Engineering & Orchestration"
   ],
   "2026-07-22_lenovo_senior-finance-data-analysis-engineer": [
+   "Architecture & Platform Strategy",
    "BI & Reporting/Dashboards",
    "Business Analysis & Insight Generation",
    "Data Modeling & Transformation",
    "Data Quality & Testing",
+   "Governance & Documentation",
    "Performance & Cost Optimization",
-   "Pipeline Engineering & Orchestration"
+   "Pipeline Engineering & Orchestration",
+   "Self-Service Enablement & Data Literacy",
+   "Stakeholder Collaboration & Requirements"
   ],
   "2026-07-22_lever-sphere_analytics-engineer-middle-senior": [
    "BI & Reporting/Dashboards",
@@ -2636,14 +2605,6 @@
    "Data Quality & Testing",
    "Governance & Documentation",
    "Performance & Cost Optimization",
-   "Pipeline Engineering & Orchestration",
-   "Stakeholder Collaboration & Requirements"
-  ],
-  "2026-07-22_loreal_senior-analytics-engineer": [
-   "Data Infrastructure & Warehouse Ops",
-   "Data Modeling & Transformation",
-   "Data Quality & Testing",
-   "Governance & Documentation",
    "Pipeline Engineering & Orchestration",
    "Stakeholder Collaboration & Requirements"
   ],
@@ -2759,7 +2720,10 @@
    "Stakeholder Collaboration & Requirements"
   ],
   "2026-07-22_the-one-enterprise_analytics-engineer-data-modeling": [
-   "Data Modeling & Transformation"
+   "BI & Reporting/Dashboards",
+   "Business Analysis & Insight Generation",
+   "Data Modeling & Transformation",
+   "Governance & Documentation"
   ],
   "2026-07-22_time-dotcom-berhad_data-analytics-engineer": [
    "Architecture & Platform Strategy",
@@ -2795,20 +2759,6 @@
    "Self-Service Enablement & Data Literacy",
    "Stakeholder Collaboration & Requirements"
   ],
-  "2026-07-24_aubay-portugal_digital-analytics-engineer": [
-   "Business Analysis & Insight Generation",
-   "Performance & Cost Optimization",
-   "Stakeholder Collaboration & Requirements"
-  ],
-  "2026-07-24_borhera-ddbm_analytics-engineer": [
-   "Architecture & Platform Strategy",
-   "Data Infrastructure & Warehouse Ops",
-   "Data Modeling & Transformation",
-   "Data Quality & Testing",
-   "Governance & Documentation",
-   "Pipeline Engineering & Orchestration",
-   "Stakeholder Collaboration & Requirements"
-  ],
   "2026-07-24_cj-olive-young_data-analytics-engineer": [
    "Data Quality & Testing",
    "Governance & Documentation",
@@ -2840,7 +2790,6 @@
   "2026-07-24_dynatrace_senior-analytics-engineer": [
    "Architecture & Platform Strategy",
    "BI & Reporting/Dashboards",
-   "Data Modeling & Transformation",
    "Governance & Documentation",
    "Stakeholder Collaboration & Requirements"
   ],
@@ -2854,27 +2803,24 @@
    "Stakeholder Collaboration & Requirements"
   ],
   "2026-07-24_ecam_analytics-engineer": [
+   "Architecture & Platform Strategy",
    "BI & Reporting/Dashboards",
    "Business Analysis & Insight Generation",
-   "Data Infrastructure & Warehouse Ops",
-   "Data Modeling & Transformation",
    "Data Ownership (end-to-end)",
    "Data Quality & Testing",
-   "Governance & Documentation",
    "Pipeline Engineering & Orchestration",
-   "Stakeholder Collaboration & Requirements"
-  ],
-  "2026-07-24_four-hands-vietnam_bi-analyst-international": [
-   "Governance & Documentation",
    "Stakeholder Collaboration & Requirements"
   ],
   "2026-07-24_inchcape_digital-analytics-engineer": [
    "Architecture & Platform Strategy",
    "Data Ownership (end-to-end)",
    "Data Quality & Testing",
+   "Self-Service Enablement & Data Literacy",
    "Stakeholder Collaboration & Requirements"
   ],
   "2026-07-24_kion-dematic_analytics-engineer": [
+   "Governance & Documentation",
+   "Pipeline Engineering & Orchestration",
    "Stakeholder Collaboration & Requirements"
   ],
   "2026-07-24_lendable_analytics-engineer": [
@@ -2887,14 +2833,13 @@
    "Stakeholder Collaboration & Requirements"
   ],
   "2026-07-24_mym_analytics-engineer": [
+   "Architecture & Platform Strategy",
    "BI & Reporting/Dashboards",
-   "Data Modeling & Transformation",
-   "Data Ownership (end-to-end)",
-   "Data Quality & Testing",
-   "Governance & Documentation",
+   "Business Analysis & Insight Generation",
+   "Data Infrastructure & Warehouse Ops",
+   "Mentorship & Leadership",
    "Performance & Cost Optimization",
-   "Pipeline Engineering & Orchestration",
-   "Self-Service Enablement & Data Literacy"
+   "Stakeholder Collaboration & Requirements"
   ],
   "2026-07-24_nets_business-intelligence-data-analytics": [
    "BI & Reporting/Dashboards",
@@ -2905,17 +2850,22 @@
   ],
   "2026-07-24_occu_business-intelligence-analyst": [
    "BI & Reporting/Dashboards",
+   "Business Analysis & Insight Generation",
    "Data Modeling & Transformation",
+   "Data Ownership (end-to-end)",
+   "Data Quality & Testing",
    "Governance & Documentation",
+   "Mentorship & Leadership",
+   "Performance & Cost Optimization",
    "Security, Privacy & Risk",
    "Stakeholder Collaboration & Requirements"
   ],
   "2026-07-24_randstad-mnc_bi-and-analytics-engineer": [
    "Architecture & Platform Strategy",
    "BI & Reporting/Dashboards",
-   "Business Analysis & Insight Generation",
    "Data Infrastructure & Warehouse Ops",
    "Data Modeling & Transformation",
+   "Data Ownership (end-to-end)",
    "Performance & Cost Optimization",
    "Pipeline Engineering & Orchestration",
    "Stakeholder Collaboration & Requirements"
@@ -2940,10 +2890,13 @@
    "Stakeholder Collaboration & Requirements"
   ],
   "2026-07-24_sony-interactive-entertainment_senior-analytics-engineer": [
+   "Architecture & Platform Strategy",
    "Data Modeling & Transformation",
+   "Data Ownership (end-to-end)",
    "Data Quality & Testing",
    "Governance & Documentation",
-   "Mentorship & Leadership"
+   "Mentorship & Leadership",
+   "Pipeline Engineering & Orchestration"
   ],
   "2026-07-24_suvoda_senior-analytics-engineer": [
    "Architecture & Platform Strategy",
@@ -2957,12 +2910,203 @@
    "Mentorship & Leadership",
    "Self-Service Enablement & Data Literacy",
    "Stakeholder Collaboration & Requirements"
+  ],
+  "2026-07-26_axle-energy_analytics-engineer": [
+   "Business Analysis & Insight Generation",
+   "Stakeholder Collaboration & Requirements"
+  ],
+  "2026-07-26_foodpanda_analytics-engineering-manager-ai-agentic-analytics": [
+   "Architecture & Platform Strategy",
+   "Data Infrastructure & Warehouse Ops",
+   "Data Modeling & Transformation",
+   "Data Ownership (end-to-end)",
+   "Data Quality & Testing",
+   "Governance & Documentation",
+   "Mentorship & Leadership",
+   "Pipeline Engineering & Orchestration",
+   "Stakeholder Collaboration & Requirements"
+  ],
+  "2026-07-26_purestorage_business-intelligence-engineer": [
+   "Architecture & Platform Strategy",
+   "BI & Reporting/Dashboards",
+   "Business Analysis & Insight Generation",
+   "Data Modeling & Transformation",
+   "Data Quality & Testing",
+   "Governance & Documentation",
+   "Performance & Cost Optimization",
+   "Pipeline Engineering & Orchestration",
+   "Security, Privacy & Risk",
+   "Self-Service Enablement & Data Literacy",
+   "Stakeholder Collaboration & Requirements"
+  ],
+  "2026-07-26_taptap-send_staff-analytics-engineer": [
+   "Architecture & Platform Strategy",
+   "BI & Reporting/Dashboards",
+   "Data Modeling & Transformation",
+   "Data Ownership (end-to-end)",
+   "Data Quality & Testing",
+   "Governance & Documentation",
+   "Mentorship & Leadership",
+   "Self-Service Enablement & Data Literacy"
+  ],
+  "2026-07-28_ajaib_senior-analytics-engineer": [
+   "Business Analysis & Insight Generation",
+   "Data Infrastructure & Warehouse Ops",
+   "Data Modeling & Transformation",
+   "Data Ownership (end-to-end)",
+   "Data Quality & Testing",
+   "Governance & Documentation",
+   "Mentorship & Leadership",
+   "Performance & Cost Optimization",
+   "Pipeline Engineering & Orchestration",
+   "Stakeholder Collaboration & Requirements",
+   "Vendor & Tooling Evaluation"
+  ],
+  "2026-07-28_blinq_analytics-engineer": [
+   "Architecture & Platform Strategy",
+   "BI & Reporting/Dashboards",
+   "Business Analysis & Insight Generation",
+   "Data Infrastructure & Warehouse Ops",
+   "Data Modeling & Transformation",
+   "Data Ownership (end-to-end)",
+   "Data Quality & Testing",
+   "Governance & Documentation",
+   "Performance & Cost Optimization",
+   "Pipeline Engineering & Orchestration",
+   "Stakeholder Collaboration & Requirements",
+   "Vendor & Tooling Evaluation"
+  ],
+  "2026-07-28_enzo_analytics-engineer": [
+   "BI & Reporting/Dashboards",
+   "Data Infrastructure & Warehouse Ops",
+   "Data Modeling & Transformation",
+   "Data Quality & Testing",
+   "Governance & Documentation",
+   "Pipeline Engineering & Orchestration",
+   "Self-Service Enablement & Data Literacy",
+   "Stakeholder Collaboration & Requirements"
+  ],
+  "2026-07-28_feedzai_senior-analyst-engineer-intelligence-management": [
+   "Architecture & Platform Strategy",
+   "BI & Reporting/Dashboards",
+   "Business Analysis & Insight Generation",
+   "Data Ownership (end-to-end)",
+   "Data Quality & Testing",
+   "Governance & Documentation",
+   "Mentorship & Leadership",
+   "Security, Privacy & Risk",
+   "Self-Service Enablement & Data Literacy",
+   "Stakeholder Collaboration & Requirements",
+   "Vendor & Tooling Evaluation"
+  ],
+  "2026-07-28_harbourvest_associate-analytics-engineering": [
+   "Architecture & Platform Strategy",
+   "BI & Reporting/Dashboards",
+   "Data Infrastructure & Warehouse Ops",
+   "Data Quality & Testing",
+   "Governance & Documentation",
+   "Self-Service Enablement & Data Literacy",
+   "Stakeholder Collaboration & Requirements"
+  ],
+  "2026-07-28_multivision-consulting_senior-analytics-engineer": [
+   "Architecture & Platform Strategy",
+   "BI & Reporting/Dashboards",
+   "Data Infrastructure & Warehouse Ops",
+   "Data Modeling & Transformation",
+   "Data Quality & Testing",
+   "Governance & Documentation",
+   "Performance & Cost Optimization",
+   "Pipeline Engineering & Orchestration",
+   "Security, Privacy & Risk",
+   "Stakeholder Collaboration & Requirements"
+  ],
+  "2026-07-28_nibc-bank_senior-analytics-engineer": [
+   "Data Infrastructure & Warehouse Ops",
+   "Data Modeling & Transformation",
+   "Data Quality & Testing",
+   "Governance & Documentation",
+   "Stakeholder Collaboration & Requirements",
+   "Vendor & Tooling Evaluation"
+  ],
+  "2026-07-28_tiqets_analytics-engineer": [
+   "Architecture & Platform Strategy",
+   "BI & Reporting/Dashboards",
+   "Business Analysis & Insight Generation",
+   "Data Infrastructure & Warehouse Ops",
+   "Data Modeling & Transformation",
+   "Data Ownership (end-to-end)",
+   "Data Quality & Testing",
+   "Governance & Documentation",
+   "Performance & Cost Optimization",
+   "Pipeline Engineering & Orchestration",
+   "Security, Privacy & Risk",
+   "Self-Service Enablement & Data Literacy",
+   "Stakeholder Collaboration & Requirements",
+   "Vendor & Tooling Evaluation"
+  ],
+  "2026-07-28_vattenfall_senior-analytics-engineer": [
+   "Architecture & Platform Strategy",
+   "BI & Reporting/Dashboards",
+   "Data Infrastructure & Warehouse Ops",
+   "Governance & Documentation",
+   "Mentorship & Leadership",
+   "Pipeline Engineering & Orchestration",
+   "Stakeholder Collaboration & Requirements"
+  ],
+  "2026-07-29_asos_digital-analytics-engineer": [
+   "Data Infrastructure & Warehouse Ops",
+   "Data Modeling & Transformation"
+  ],
+  "2026-07-29_emagine_analytics-engineer": [
+   "Architecture & Platform Strategy",
+   "Data Modeling & Transformation",
+   "Data Quality & Testing",
+   "Governance & Documentation",
+   "Performance & Cost Optimization",
+   "Pipeline Engineering & Orchestration",
+   "Stakeholder Collaboration & Requirements"
+  ],
+  "2026-07-29_joon-solutions_analytics-engineer": [
+   "BI & Reporting/Dashboards",
+   "Business Analysis & Insight Generation",
+   "Data Infrastructure & Warehouse Ops",
+   "Data Modeling & Transformation",
+   "Data Quality & Testing",
+   "Governance & Documentation",
+   "Pipeline Engineering & Orchestration",
+   "Security, Privacy & Risk",
+   "Self-Service Enablement & Data Literacy",
+   "Stakeholder Collaboration & Requirements"
+  ],
+  "2026-07-29_natwest-group_data-engineer-analytics-engineering": [
+   "Architecture & Platform Strategy",
+   "Business Analysis & Insight Generation",
+   "Pipeline Engineering & Orchestration"
+  ],
+  "2026-07-29_riot_analytics-engineer": [
+   "Architecture & Platform Strategy",
+   "Data Infrastructure & Warehouse Ops",
+   "Data Modeling & Transformation",
+   "Data Quality & Testing",
+   "Governance & Documentation",
+   "Performance & Cost Optimization",
+   "Pipeline Engineering & Orchestration",
+   "Stakeholder Collaboration & Requirements"
+  ],
+  "2026-07-29_zego_analytics-engineer": [
+   "BI & Reporting/Dashboards",
+   "Data Infrastructure & Warehouse Ops",
+   "Data Modeling & Transformation",
+   "Governance & Documentation",
+   "Stakeholder Collaboration & Requirements",
+   "Vendor & Tooling Evaluation"
   ]
  },
  "examples_by_theme": {
   "Data Quality & Testing": [
    "Build data pipeline engineering, orchestration, and monitoring to deliver high-quality data products centered around Retail Execution Commercial pillar.",
    "Ensure Data Products follow CI/CD standards, adhere to data quality frameworks; include assertion checks and have performance & cost optimization applied.",
+   "Maintain and develop our data architecture to ensure reliability and performance",
    "Implement data quality frameworks and automation across pipelines owned by agile teams.",
    "Define and monitor data SLAs and SLOs, ensuring that product teams deliver data that meets business needs in terms of timeliness, accuracy, and availability.",
    "Promote proactive data reliability engineering, enabling teams to detect and resolve issues early.",
@@ -2971,8 +3115,7 @@
    "Establish data quality standards using tests, CI/CD, and documentation.",
    "Create Power BI dashboards and reports for monitoring and decision-making",
    "Build, maintain, and drive the transition to our new DataPlatform (Dagster, dbt, AWS ECS, and GCP BigQuery). This involves creating foundational tools and monitoring systems for other data teams.",
-   "Maintain high accuracy through rigorous verification of all outputs",
-   "Establish data governance, testing, and quality frameworks"
+   "Maintain high accuracy through rigorous verification of all outputs"
   ],
   "Pipeline Engineering & Orchestration": [
    "Build data pipeline engineering, orchestration, and monitoring to deliver high-quality data products centered around Retail Execution Commercial pillar.",
@@ -3018,6 +3161,7 @@
   ],
   "Performance & Cost Optimization": [
    "Ensure Data Products follow CI/CD standards, adhere to data quality frameworks; include assertion checks and have performance & cost optimization applied.",
+   "Maintain and develop our data architecture to ensure reliability and performance",
    "Drive excellence in data modeling and pipeline design, ensuring solutions are efficient, maintainable, and well-documented.",
    "Ensure consistent technical standards, delivery practices, and performance management across the discipline, even within decentralized team setups.",
    "Establish KPIs for engineering productivity, pipeline performance, and data delivery quality within product teams.",
@@ -3027,12 +3171,12 @@
    "Partner with data platform, engineering, and analytics teams on high-performance pipelines",
    "Optimise AWS cloud-native services (Glue, Athena, S3, MWAA) to support scalable analytical and AI workloads",
    "Enhance modeling patterns, performance, and development processes",
-   "Deliver high-performance, cost-optimized SQL queries designed for multi-billion row datasets",
-   "Our users' wins are our wins. You'll be active daily in shared customer Slack channels, responding to user questions, triaging bugs, and jumping on calls to pair-program through complex issues. You'll balance fast, practical solutions with thoughtful, strategic guidance on analytics architecture and process improvement. You'll leverage AI tools to work more efficiently and help users understand how to do the same."
+   "Deliver high-performance, cost-optimized SQL queries designed for multi-billion row datasets"
   ],
   "Architecture & Platform Strategy": [
    "Build and maintain semantic layer infrastructure including metric view pipelines, materialization and optimization.",
    "Consistently champion best practices in data product development within the team, across Markets & Channels and with the broader analytics community, helping ensure data integrity, quality, and scalability of overall data products on the LEGO Data Platform.",
+   "Maintain and develop our data architecture to ensure reliability and performance",
    "The Data Engineering Lead leads the design, development, and delivery of high-quality data pipelines and data products that power analytics, BI, and AI across the fintech ecosystem in payments, dunning, invoicing, and collections. This leader will build and scale a high-performing data engineering team focused on transforming raw data into trusted, accessible, and reusable assets \u2014 ensuring that the broader organization can make faster and smarter decisions.",
    "Define and execute the data engineering vision and roadmap aligned with the overall Data, AI & Analytics strategy.",
    "Work hand-in-hand with Data Governance and Data Architecture to ensure alignment on metadata, lineage, and data ownership.",
@@ -3041,8 +3185,7 @@
    "Oversee the company's largest data movement operations, handling terabyte-scale transfers from MySQL in AWS to BigQuery nightly while maintaining source system performance.",
    "Define and evolve the architecture for enterprise analytical models with a strong focus on scalability, clarity and long-term robustness",
    "Optimise AWS cloud-native services (Glue, Athena, S3, MWAA) to support scalable analytical and AI workloads",
-   "Design, own, and evolve core data models and the modelling architecture",
-   "Contribute strategic input around data modeling, BI tooling, and AI-assisted analytics"
+   "Design, own, and evolve core data models and the modelling architecture"
   ],
   "Data Modeling & Transformation": [
    "Build and maintain semantic layer infrastructure including metric view pipelines, materialization and optimization.",
@@ -3172,185 +3315,183 @@
   ]
  },
  "role_counts": {
-  "analytics_engineering_bi": 279,
-  "team_lead": 9,
-  "other": 13,
-  "data_engineering": 20
+  "analytics_engineering_bi": 296,
+  "team_lead": 10,
+  "other": 6,
+  "data_engineering": 21
  },
  "by_role": {
   "analytics_engineering_bi": {
-   "Architecture & Platform Strategy": 167,
-   "Data Infrastructure & Warehouse Ops": 138,
-   "Data Modeling & Transformation": 186,
-   "Data Quality & Testing": 189,
-   "Governance & Documentation": 166,
-   "Performance & Cost Optimization": 119,
-   "Pipeline Engineering & Orchestration": 161,
-   "Security, Privacy & Risk": 32,
-   "Self-Service Enablement & Data Literacy": 75,
-   "Stakeholder Collaboration & Requirements": 224,
-   "Data Ownership (end-to-end)": 72,
-   "Mentorship & Leadership": 72,
-   "BI & Reporting/Dashboards": 195,
-   "Business Analysis & Insight Generation": 131,
-   "Vendor & Tooling Evaluation": 17
+   "Architecture & Platform Strategy": 181,
+   "Data Infrastructure & Warehouse Ops": 148,
+   "Data Modeling & Transformation": 193,
+   "Data Quality & Testing": 201,
+   "Governance & Documentation": 179,
+   "Performance & Cost Optimization": 129,
+   "Pipeline Engineering & Orchestration": 167,
+   "Security, Privacy & Risk": 37,
+   "Self-Service Enablement & Data Literacy": 82,
+   "Stakeholder Collaboration & Requirements": 240,
+   "Data Ownership (end-to-end)": 81,
+   "Mentorship & Leadership": 74,
+   "BI & Reporting/Dashboards": 208,
+   "Business Analysis & Insight Generation": 142,
+   "Vendor & Tooling Evaluation": 23
   },
   "team_lead": {
-   "Architecture & Platform Strategy": 6,
+   "Architecture & Platform Strategy": 7,
    "BI & Reporting/Dashboards": 6,
    "Business Analysis & Insight Generation": 5,
-   "Data Infrastructure & Warehouse Ops": 6,
-   "Data Modeling & Transformation": 4,
-   "Data Ownership (end-to-end)": 5,
-   "Data Quality & Testing": 7,
-   "Governance & Documentation": 6,
-   "Mentorship & Leadership": 8,
+   "Data Infrastructure & Warehouse Ops": 7,
+   "Data Modeling & Transformation": 5,
+   "Data Ownership (end-to-end)": 6,
+   "Data Quality & Testing": 8,
+   "Governance & Documentation": 7,
+   "Mentorship & Leadership": 9,
    "Performance & Cost Optimization": 6,
-   "Pipeline Engineering & Orchestration": 5,
+   "Pipeline Engineering & Orchestration": 6,
    "Security, Privacy & Risk": 2,
    "Self-Service Enablement & Data Literacy": 4,
-   "Stakeholder Collaboration & Requirements": 8
+   "Stakeholder Collaboration & Requirements": 9
   },
   "other": {
-   "Architecture & Platform Strategy": 5,
-   "BI & Reporting/Dashboards": 7,
-   "Business Analysis & Insight Generation": 4,
-   "Data Quality & Testing": 5,
-   "Pipeline Engineering & Orchestration": 2,
-   "Stakeholder Collaboration & Requirements": 11,
-   "Data Ownership (end-to-end)": 2,
-   "Data Modeling & Transformation": 4,
-   "Performance & Cost Optimization": 5,
-   "Security, Privacy & Risk": 3,
-   "Data Infrastructure & Warehouse Ops": 2,
-   "Governance & Documentation": 3,
-   "Self-Service Enablement & Data Literacy": 1
+   "Architecture & Platform Strategy": 2,
+   "BI & Reporting/Dashboards": 4,
+   "Business Analysis & Insight Generation": 2,
+   "Data Quality & Testing": 3,
+   "Pipeline Engineering & Orchestration": 1,
+   "Stakeholder Collaboration & Requirements": 4,
+   "Data Ownership (end-to-end)": 1,
+   "Data Modeling & Transformation": 1,
+   "Performance & Cost Optimization": 2,
+   "Security, Privacy & Risk": 1
   },
   "data_engineering": {
-   "Architecture & Platform Strategy": 10,
-   "BI & Reporting/Dashboards": 10,
+   "Architecture & Platform Strategy": 12,
+   "BI & Reporting/Dashboards": 9,
    "Data Infrastructure & Warehouse Ops": 15,
-   "Data Ownership (end-to-end)": 8,
+   "Data Ownership (end-to-end)": 7,
    "Data Quality & Testing": 17,
-   "Performance & Cost Optimization": 10,
-   "Pipeline Engineering & Orchestration": 15,
+   "Performance & Cost Optimization": 11,
+   "Pipeline Engineering & Orchestration": 17,
    "Data Modeling & Transformation": 7,
-   "Self-Service Enablement & Data Literacy": 3,
+   "Self-Service Enablement & Data Literacy": 2,
    "Stakeholder Collaboration & Requirements": 15,
    "Governance & Documentation": 14,
    "Vendor & Tooling Evaluation": 5,
-   "Security, Privacy & Risk": 4,
-   "Business Analysis & Insight Generation": 7,
+   "Security, Privacy & Risk": 5,
+   "Business Analysis & Insight Generation": 6,
    "Mentorship & Leadership": 1
   }
  },
  "seniority_counts": {
-  "senior": 134,
-  "lead": 10,
-  "staff": 5,
-  "mid": 154,
-  "manager": 4,
+  "senior": 131,
+  "mid": 166,
+  "lead": 11,
+  "staff": 6,
+  "manager": 5,
   "junior": 14
  },
  "by_seniority": {
   "senior": {
-   "Architecture & Platform Strategy": 87,
-   "Data Infrastructure & Warehouse Ops": 69,
-   "Data Modeling & Transformation": 86,
+   "Architecture & Platform Strategy": 88,
+   "Data Infrastructure & Warehouse Ops": 68,
+   "Data Modeling & Transformation": 81,
    "Data Quality & Testing": 91,
-   "Governance & Documentation": 86,
-   "Performance & Cost Optimization": 55,
+   "Governance & Documentation": 87,
+   "Performance & Cost Optimization": 53,
    "Pipeline Engineering & Orchestration": 79,
-   "Security, Privacy & Risk": 24,
-   "Self-Service Enablement & Data Literacy": 39,
-   "Stakeholder Collaboration & Requirements": 100,
-   "BI & Reporting/Dashboards": 85,
-   "Business Analysis & Insight Generation": 53,
-   "Data Ownership (end-to-end)": 36,
-   "Mentorship & Leadership": 38,
-   "Vendor & Tooling Evaluation": 8
+   "Security, Privacy & Risk": 23,
+   "Self-Service Enablement & Data Literacy": 38,
+   "Stakeholder Collaboration & Requirements": 98,
+   "BI & Reporting/Dashboards": 86,
+   "Business Analysis & Insight Generation": 56,
+   "Data Ownership (end-to-end)": 38,
+   "Mentorship & Leadership": 37,
+   "Vendor & Tooling Evaluation": 10
+  },
+  "mid": {
+   "Architecture & Platform Strategy": 95,
+   "Data Quality & Testing": 110,
+   "Performance & Cost Optimization": 71,
+   "BI & Reporting/Dashboards": 120,
+   "Data Modeling & Transformation": 99,
+   "Governance & Documentation": 90,
+   "Pipeline Engineering & Orchestration": 93,
+   "Stakeholder Collaboration & Requirements": 139,
+   "Business Analysis & Insight Generation": 83,
+   "Data Ownership (end-to-end)": 43,
+   "Vendor & Tooling Evaluation": 14,
+   "Mentorship & Leadership": 27,
+   "Security, Privacy & Risk": 18,
+   "Data Infrastructure & Warehouse Ops": 77,
+   "Self-Service Enablement & Data Literacy": 38
   },
   "lead": {
-   "Architecture & Platform Strategy": 5,
+   "Architecture & Platform Strategy": 6,
    "BI & Reporting/Dashboards": 5,
-   "Business Analysis & Insight Generation": 4,
+   "Business Analysis & Insight Generation": 5,
    "Data Infrastructure & Warehouse Ops": 7,
-   "Data Modeling & Transformation": 7,
-   "Data Ownership (end-to-end)": 4,
-   "Data Quality & Testing": 8,
+   "Data Modeling & Transformation": 8,
+   "Data Ownership (end-to-end)": 5,
+   "Data Quality & Testing": 9,
    "Governance & Documentation": 6,
-   "Mentorship & Leadership": 8,
+   "Mentorship & Leadership": 9,
    "Performance & Cost Optimization": 5,
-   "Pipeline Engineering & Orchestration": 6,
+   "Pipeline Engineering & Orchestration": 7,
    "Security, Privacy & Risk": 2,
    "Self-Service Enablement & Data Literacy": 3,
-   "Stakeholder Collaboration & Requirements": 8
+   "Stakeholder Collaboration & Requirements": 8,
+   "Vendor & Tooling Evaluation": 1
   },
   "staff": {
    "Data Infrastructure & Warehouse Ops": 5,
-   "Data Modeling & Transformation": 4,
-   "Data Ownership (end-to-end)": 2,
-   "Data Quality & Testing": 4,
-   "Governance & Documentation": 4,
-   "Mentorship & Leadership": 3,
+   "Data Modeling & Transformation": 5,
+   "Data Ownership (end-to-end)": 3,
+   "Data Quality & Testing": 5,
+   "Governance & Documentation": 5,
+   "Mentorship & Leadership": 4,
    "Performance & Cost Optimization": 5,
    "Stakeholder Collaboration & Requirements": 5,
-   "Architecture & Platform Strategy": 4,
-   "BI & Reporting/Dashboards": 2,
+   "Architecture & Platform Strategy": 5,
+   "BI & Reporting/Dashboards": 3,
    "Business Analysis & Insight Generation": 2,
    "Pipeline Engineering & Orchestration": 2,
-   "Self-Service Enablement & Data Literacy": 1,
+   "Self-Service Enablement & Data Literacy": 2,
    "Security, Privacy & Risk": 1,
    "Vendor & Tooling Evaluation": 1
   },
-  "mid": {
-   "BI & Reporting/Dashboards": 114,
-   "Data Modeling & Transformation": 93,
-   "Governance & Documentation": 83,
-   "Pipeline Engineering & Orchestration": 87,
-   "Stakeholder Collaboration & Requirements": 128,
-   "Architecture & Platform Strategy": 85,
-   "Business Analysis & Insight Generation": 78,
-   "Data Quality & Testing": 101,
-   "Data Ownership (end-to-end)": 40,
-   "Vendor & Tooling Evaluation": 12,
-   "Mentorship & Leadership": 26,
-   "Security, Privacy & Risk": 13,
-   "Data Infrastructure & Warehouse Ops": 69,
-   "Performance & Cost Optimization": 61,
-   "Self-Service Enablement & Data Literacy": 33
-  },
   "manager": {
-   "Architecture & Platform Strategy": 4,
+   "Architecture & Platform Strategy": 5,
    "BI & Reporting/Dashboards": 3,
    "Business Analysis & Insight Generation": 3,
-   "Data Infrastructure & Warehouse Ops": 3,
-   "Data Ownership (end-to-end)": 3,
-   "Data Quality & Testing": 4,
-   "Governance & Documentation": 4,
-   "Mentorship & Leadership": 4,
+   "Data Infrastructure & Warehouse Ops": 4,
+   "Data Ownership (end-to-end)": 4,
+   "Data Quality & Testing": 5,
+   "Governance & Documentation": 5,
+   "Mentorship & Leadership": 5,
    "Performance & Cost Optimization": 4,
    "Security, Privacy & Risk": 1,
-   "Stakeholder Collaboration & Requirements": 4,
-   "Data Modeling & Transformation": 2,
-   "Pipeline Engineering & Orchestration": 1,
+   "Stakeholder Collaboration & Requirements": 5,
+   "Data Modeling & Transformation": 3,
+   "Pipeline Engineering & Orchestration": 2,
    "Self-Service Enablement & Data Literacy": 3
   },
   "junior": {
-   "BI & Reporting/Dashboards": 9,
-   "Business Analysis & Insight Generation": 7,
-   "Data Modeling & Transformation": 9,
-   "Data Quality & Testing": 10,
-   "Governance & Documentation": 6,
+   "BI & Reporting/Dashboards": 10,
+   "Business Analysis & Insight Generation": 6,
+   "Data Modeling & Transformation": 10,
+   "Data Quality & Testing": 9,
+   "Governance & Documentation": 7,
    "Performance & Cost Optimization": 10,
    "Stakeholder Collaboration & Requirements": 13,
-   "Data Infrastructure & Warehouse Ops": 8,
+   "Data Infrastructure & Warehouse Ops": 9,
    "Self-Service Enablement & Data Literacy": 4,
    "Mentorship & Leadership": 2,
    "Pipeline Engineering & Orchestration": 8,
    "Data Ownership (end-to-end)": 2,
    "Architecture & Platform Strategy": 3,
-   "Vendor & Tooling Evaluation": 1
+   "Vendor & Tooling Evaluation": 2
   }
  },
  "dimension_relationships": {
@@ -3360,233 +3501,293 @@
     "theme": "Data Quality & Testing",
     "dimension": "testing_framing",
     "overlap": true,
-    "n": 288,
-    "chi2": 74.61,
-    "p": 6.27515401430958e-17,
-    "V": 0.509,
-    "min_exp": 12.78
-   },
-   {
-    "theme": "Data Ownership (end-to-end)",
-    "dimension": "autonomy_level",
-    "overlap": true,
-    "n": 288,
-    "chi2": 25.76,
-    "p": 2.547035235621126e-06,
-    "V": 0.299,
-    "min_exp": 24.06
+    "n": 306,
+    "chi2": 82.06,
+    "p": 1.519794601915566e-18,
+    "V": 0.518,
+    "min_exp": 12.68
    },
    {
     "theme": "Security, Privacy & Risk",
     "dimension": "loss_aversion_framing",
     "overlap": true,
-    "n": 288,
-    "chi2": 25.63,
-    "p": 2.7156422409265026e-06,
-    "V": 0.298,
-    "min_exp": 7.56
+    "n": 306,
+    "chi2": 31.05,
+    "p": 1.8067660230814676e-07,
+    "V": 0.319,
+    "min_exp": 8.03
    },
    {
-    "theme": "Security, Privacy & Risk",
-    "dimension": "domain_risk",
+    "theme": "Data Ownership (end-to-end)",
+    "dimension": "autonomy_level",
     "overlap": true,
-    "n": 288,
-    "chi2": 18.16,
-    "p": 0.00011400472750302534,
-    "V": 0.251,
-    "min_exp": 3.07
+    "n": 306,
+    "chi2": 27.92,
+    "p": 8.649834592880286e-07,
+    "V": 0.302,
+    "min_exp": 27.01
    },
    {
     "theme": "Data Modeling & Transformation",
     "dimension": "has_dbt",
     "overlap": true,
-    "n": 288,
-    "chi2": 16.07,
-    "p": 6.0914754849783144e-05,
-    "V": 0.236,
-    "min_exp": 35.05
+    "n": 306,
+    "chi2": 18.25,
+    "p": 1.94047783402274e-05,
+    "V": 0.244,
+    "min_exp": 40.24
+   },
+   {
+    "theme": "Security, Privacy & Risk",
+    "dimension": "domain_risk",
+    "overlap": true,
+    "n": 306,
+    "chi2": 17.33,
+    "p": 0.00017251685364748248,
+    "V": 0.238,
+    "min_exp": 3.06
    },
    {
     "theme": "BI & Reporting/Dashboards",
     "dimension": "has_power_bi",
     "overlap": true,
-    "n": 288,
-    "chi2": 8.9,
-    "p": 0.002848782589571778,
-    "V": 0.176,
-    "min_exp": 35.95
+    "n": 306,
+    "chi2": 10.77,
+    "p": 0.0010328119498992816,
+    "V": 0.188,
+    "min_exp": 38.48
+   },
+   {
+    "theme": "Pipeline Engineering & Orchestration",
+    "dimension": "has_airflow",
+    "overlap": true,
+    "n": 306,
+    "chi2": 4.26,
+    "p": 0.0389164817968532,
+    "V": 0.118,
+    "min_exp": 34.34
    },
    {
     "theme": "BI & Reporting/Dashboards",
     "dimension": "has_looker",
     "overlap": true,
-    "n": 288,
-    "chi2": 2.49,
-    "p": 0.1149075443483663,
-    "V": 0.093,
-    "min_exp": 19.64
-   },
-   {
-    "theme": "Pipeline Engineering & Orchestration",
-    "dimension": "has_airflow",
-    "overlap": true,
-    "n": 288,
-    "chi2": 1.61,
-    "p": 0.20402158313516908,
-    "V": 0.075,
-    "min_exp": 32.19
+    "n": 306,
+    "chi2": 4.17,
+    "p": 0.041050077312632924,
+    "V": 0.117,
+    "min_exp": 22.55
    },
    {
     "theme": "BI & Reporting/Dashboards",
     "dimension": "has_tableau",
     "overlap": true,
-    "n": 288,
-    "chi2": 0.55,
-    "p": 0.4568217885498378,
-    "V": 0.044,
-    "min_exp": 27.19
+    "n": 306,
+    "chi2": 0.03,
+    "p": 0.8589233883640475,
+    "V": 0.01,
+    "min_exp": 29.16
    }
   ],
   "clean_findings": [
    {
     "theme": "Governance & Documentation",
-    "dimension": "testing_framing",
+    "dimension": "loss_aversion_framing",
     "overlap": false,
-    "n": 288,
-    "chi2": 27.57,
-    "p": 1.030082619063622e-06,
-    "V": 0.309,
-    "min_exp": 16.11
+    "n": 306,
+    "chi2": 31.97,
+    "p": 1.1417664082862823e-07,
+    "V": 0.323,
+    "min_exp": 24.71
    },
    {
     "theme": "Governance & Documentation",
+    "dimension": "testing_framing",
+    "overlap": false,
+    "n": 306,
+    "chi2": 30.08,
+    "p": 2.9392783062602813e-07,
+    "V": 0.314,
+    "min_exp": 15.69
+   },
+   {
+    "theme": "Data Quality & Testing",
     "dimension": "loss_aversion_framing",
     "overlap": false,
-    "n": 288,
-    "chi2": 27.37,
-    "p": 1.1385338653722251e-06,
-    "V": 0.308,
-    "min_exp": 25.78
+    "n": 306,
+    "chi2": 28.86,
+    "p": 5.401956649486484e-07,
+    "V": 0.307,
+    "min_exp": 19.97
    },
    {
     "theme": "Mentorship & Leadership",
     "dimension": "autonomy_level",
     "overlap": false,
-    "n": 288,
-    "chi2": 23.67,
-    "p": 7.229159682017392e-06,
-    "V": 0.287,
-    "min_exp": 25.0
-   },
-   {
-    "theme": "Data Quality & Testing",
-    "dimension": "loss_aversion_framing",
-    "overlap": false,
-    "n": 288,
-    "chi2": 23.25,
-    "p": 8.924717198217745e-06,
-    "V": 0.284,
-    "min_exp": 20.44
-   },
-   {
-    "theme": "Data Modeling & Transformation",
-    "dimension": "loss_aversion_framing",
-    "overlap": false,
-    "n": 288,
-    "chi2": 18.71,
-    "p": 8.649346439072188e-05,
-    "V": 0.255,
-    "min_exp": 21.78
-   },
-   {
-    "theme": "Data Infrastructure & Warehouse Ops",
-    "dimension": "jd_authorship",
-    "overlap": false,
-    "n": 288,
-    "chi2": 18.23,
-    "p": 0.00010990632698579313,
-    "V": 0.252,
-    "min_exp": 13.0
+    "n": 306,
+    "chi2": 25.58,
+    "p": 2.7898525344767903e-06,
+    "V": 0.289,
+    "min_exp": 25.77
    },
    {
     "theme": "Data Modeling & Transformation",
     "dimension": "testing_framing",
     "overlap": false,
-    "n": 288,
-    "chi2": 17.1,
-    "p": 0.00019343457172802552,
-    "V": 0.244,
-    "min_exp": 13.61
+    "n": 306,
+    "chi2": 22.56,
+    "p": 1.2605955591646743e-05,
+    "V": 0.272,
+    "min_exp": 14.12
    },
    {
-    "theme": "Architecture & Platform Strategy",
-    "dimension": "work_arrangement",
+    "theme": "Data Infrastructure & Warehouse Ops",
+    "dimension": "jd_authorship",
     "overlap": false,
-    "n": 288,
-    "chi2": 15.94,
-    "p": 0.0011688108230397246,
-    "V": 0.235,
-    "min_exp": 5.19
+    "n": 306,
+    "chi2": 18.15,
+    "p": 0.00011459913258336935,
+    "V": 0.244,
+    "min_exp": 14.31
    },
    {
     "theme": "Data Quality & Testing",
     "dimension": "jd_authorship",
     "overlap": false,
-    "n": 288,
-    "chi2": 15.08,
-    "p": 0.0005303195803738437,
-    "V": 0.229,
-    "min_exp": 8.31
+    "n": 306,
+    "chi2": 17.02,
+    "p": 0.00020172988464574256,
+    "V": 0.236,
+    "min_exp": 9.19
+   },
+   {
+    "theme": "Data Modeling & Transformation",
+    "dimension": "loss_aversion_framing",
+    "overlap": false,
+    "n": 306,
+    "chi2": 15.8,
+    "p": 0.00037039041512307454,
+    "V": 0.227,
+    "min_exp": 22.24
    },
    {
     "theme": "Performance & Cost Optimization",
     "dimension": "data_team_maturity",
     "overlap": false,
-    "n": 288,
-    "chi2": 12.34,
-    "p": 0.002089330507556842,
-    "V": 0.207,
-    "min_exp": 16.93
+    "n": 306,
+    "chi2": 15.69,
+    "p": 0.00039236671354870163,
+    "V": 0.226,
+    "min_exp": 20.29
    },
    {
-    "theme": "Governance & Documentation",
-    "dimension": "jd_authorship",
+    "theme": "Performance & Cost Optimization",
+    "dimension": "greenfield_vs_fix",
     "overlap": false,
-    "n": 288,
-    "chi2": 10.6,
-    "p": 0.004999194133240598,
-    "V": 0.192,
-    "min_exp": 10.47
+    "n": 306,
+    "chi2": 15.47,
+    "p": 0.0004363125200267979,
+    "V": 0.225,
+    "min_exp": 21.18
+   },
+   {
+    "theme": "Vendor & Tooling Evaluation",
+    "dimension": "has_looker",
+    "overlap": false,
+    "n": 306,
+    "chi2": 11.97,
+    "p": 0.0005416129757256954,
+    "V": 0.198,
+    "min_exp": 5.64
+   },
+   {
+    "theme": "Data Ownership (end-to-end)",
+    "dimension": "ai_role",
+    "overlap": false,
+    "n": 306,
+    "chi2": 11.65,
+    "p": 0.00294662249143033,
+    "V": 0.195,
+    "min_exp": 10.8
+   },
+   {
+    "theme": "Architecture & Platform Strategy",
+    "dimension": "work_arrangement",
+    "overlap": false,
+    "n": 306,
+    "chi2": 11.4,
+    "p": 0.009729960751367117,
+    "V": 0.193,
+    "min_exp": 5.01
+   },
+   {
+    "theme": "Data Ownership (end-to-end)",
+    "dimension": "greenfield_vs_fix",
+    "overlap": false,
+    "n": 306,
+    "chi2": 10.2,
+    "p": 0.006092291379946706,
+    "V": 0.183,
+    "min_exp": 13.65
    },
    {
     "theme": "Data Ownership (end-to-end)",
     "dimension": "has_power_bi",
     "overlap": false,
-    "n": 288,
-    "chi2": 9.36,
-    "p": 0.0022156748046719176,
-    "V": 0.18,
-    "min_exp": 31.82
+    "n": 306,
+    "chi2": 9.33,
+    "p": 0.002248764389957159,
+    "V": 0.175,
+    "min_exp": 36.39
+   },
+   {
+    "theme": "Governance & Documentation",
+    "dimension": "jd_authorship",
+    "overlap": false,
+    "n": 306,
+    "chi2": 9.24,
+    "p": 0.00983092817551545,
+    "V": 0.174,
+    "min_exp": 11.37
+   },
+   {
+    "theme": "Mentorship & Leadership",
+    "dimension": "jd_authorship",
+    "overlap": false,
+    "n": 306,
+    "chi2": 9.21,
+    "p": 0.009998487508691012,
+    "V": 0.173,
+    "min_exp": 7.87
    },
    {
     "theme": "BI & Reporting/Dashboards",
     "dimension": "has_airflow",
     "overlap": false,
-    "n": 288,
-    "chi2": 7.72,
-    "p": 0.005464257930568114,
-    "V": 0.164,
-    "min_exp": 22.96
+    "n": 306,
+    "chi2": 7.71,
+    "p": 0.005485151003845197,
+    "V": 0.159,
+    "min_exp": 23.75
    },
    {
-    "theme": "Pipeline Engineering & Orchestration",
+    "theme": "Data Modeling & Transformation",
+    "dimension": "has_looker",
+    "overlap": false,
+    "n": 306,
+    "chi2": 7.69,
+    "p": 0.0055572688741734365,
+    "V": 0.159,
+    "min_exp": 26.47
+   },
+   {
+    "theme": "Governance & Documentation",
     "dimension": "has_python",
     "overlap": false,
-    "n": 288,
-    "chi2": 7.38,
-    "p": 0.006600300450418437,
-    "V": 0.16,
-    "min_exp": 51.26
+    "n": 306,
+    "chi2": 7.04,
+    "p": 0.007956791702043706,
+    "V": 0.152,
+    "min_exp": 48.63
    }
   ],
   "featured": [
@@ -3600,48 +3801,48 @@
     ],
     "survives": true,
     "overall": {
-     "n": 288,
-     "chi2": 23.67,
-     "p": 7.229159682017392e-06,
-     "V": 0.287,
-     "min_exp": 25.0
+     "n": 306,
+     "chi2": 25.58,
+     "p": 2.7898525344767903e-06,
+     "V": 0.289,
+     "min_exp": 25.77
     },
     "crosstab": {
      "execution": [
       12,
-      90
+      95
      ],
      "mixed": [
-      26,
-      100
+      25,
+      110
      ],
      "strategic": [
       44,
-      98
+      101
      ]
     },
     "strata": {
      "mid": {
       "execution": [
-       8,
-       51
+       7,
+       57
       ],
       "mixed": [
-       21,
-       58
+       22,
+       68
       ],
       "strategic": [
-       35,
+       27,
        26
       ]
      },
      "senior": {
       "execution": [
-       17,
-       29
+       18,
+       28
       ],
       "mixed": [
-       30,
+       27,
        33
       ],
       "strategic": [
@@ -3657,24 +3858,24 @@
     "stratify_by": null,
     "survives": null,
     "overall": {
-     "n": 288,
-     "chi2": 18.23,
-     "p": 0.00010990632698579313,
-     "V": 0.252,
-     "min_exp": 13.0
+     "n": 306,
+     "chi2": 18.15,
+     "p": 0.00011459913258336935,
+     "V": 0.244,
+     "min_exp": 14.31
     },
     "crosstab": {
      "hiring_manager": [
       56,
-      195
+      209
      ],
      "mixed": [
-      48,
-      67
+      50,
+      68
      ],
      "recruiter": [
-      12,
-      26
+      14,
+      29
      ]
     }
    },
@@ -3684,24 +3885,24 @@
     "stratify_by": null,
     "survives": null,
     "overall": {
-     "n": 288,
-     "chi2": 8.4,
-     "p": 0.0150153605042375,
-     "V": 0.171,
-     "min_exp": 10.7
+     "n": 306,
+     "chi2": 5.56,
+     "p": 0.061936126860007,
+     "V": 0.135,
+     "min_exp": 12.93
     },
     "crosstab": {
      "early": [
-      15,
-      39
+      17,
+      46
      ],
      "mature": [
-      39,
-      71
+      37,
+      76
      ],
      "mid": [
-      25,
-      178
+      27,
+      184
      ]
     }
    }
@@ -3710,83 +3911,83 @@
    "theme": "Architecture & Platform Strategy",
    "dimension": "work_arrangement",
    "overall": {
-    "n": 288,
-    "chi2": 15.94,
-    "p": 0.0011688108230397246,
-    "V": 0.235,
-    "min_exp": 5.19
+    "n": 306,
+    "chi2": 11.4,
+    "p": 0.009729960751367117,
+    "V": 0.193,
+    "min_exp": 5.01
    },
    "crosstab": {
     "hybrid": [
      71,
-     142
+     147
     ],
     "remote": [
-     55,
-     29
+     58,
+     31
     ],
     "onsite": [
      62,
      13
     ],
     "not_stated": [
-     46,
-     104
+     50,
+     115
     ]
    },
    "strata": {
     "early": {
      "hybrid": [
-      56,
-      16
+      53,
+      19
      ],
      "remote": [
-      20,
-      5
+      17,
+      6
      ],
      "onsite": [
-      75,
-      4
+      60,
+      5
      ],
      "not_stated": [
-      57,
-      14
+      56,
+      16
      ]
     },
     "mid": {
      "hybrid": [
       70,
-      86
+      87
      ],
      "remote": [
-      59,
+      64,
       22
      ],
      "onsite": [
-      43,
-      7
+      50,
+      6
      ],
      "not_stated": [
-      43,
-      63
+      48,
+      69
      ]
     },
     "mature": {
      "hybrid": [
       80,
-      40
+      41
      ],
      "remote": [
       100,
-      2
+      3
      ],
      "onsite": [
       100,
       2
      ],
      "not_stated": [
-      48,
-      27
+      53,
+      30
      ]
     }
    }
