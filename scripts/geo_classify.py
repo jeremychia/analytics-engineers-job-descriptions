@@ -1,7 +1,7 @@
 """
 Derive a coarse geo_region bucket from a JD's free-text job_location string.
 
-Buckets match analysis/index.html's GEO_LABELS:
+Buckets match analysis/full-analysis.html's GEO_LABELS:
   berlin, hamburg, nordics, uk_remote, france, benelux, iberia, ireland,
   dach_other, baltics, other_europe, global_remote, apac, other
 
