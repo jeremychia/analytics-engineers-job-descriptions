@@ -1,10 +1,14 @@
 **URL:** https://jobs.ashbyhq.com/halter/45eb769d-37c7-4053-8161-866ad10527ef?src=linkedin
 
+Analytics Engineer
+
 About Halter
 
 At Halter, we're on a mission to enable farmers and graziers to run the most productive and sustainable operations. Our customers are using Halter to break free from the time-intensive constraints of conventional practices. Imagine watching 500 cattle stand up and walk calmly towards their next break? No quad bikes, no dogs, no fences. Just a group of cattle walking at their own pace. People say it looks like magic. Our customers are revolutionizing grazing with Halter. It's changing lives and transforming an industry. People join Halter to do meaningful work. By joining us you'll be solving challenging problems within a talented team and a culture built for high performance. Our team out-think, out-work and out-care. We're committed to delivering real change in the world - this isn't easy, and in truth, we love that it's hard.
 
 We're backed to deliver on a mission that matters by Tier 1 investors including Founders Fund, Bessemer Venture Partners, BOND, DCVC, Blackbird, Promus Ventures, Rocket Lab's Peter Beck and Icehouse ventures.
+
+To find out more, visit our LinkedIn & Instagram.
 
 About the role:
 
@@ -15,40 +19,36 @@ The ideal candidate is product-minded and user-driven; you treat datasets and me
 We're looking for people who are comfortable working in a dynamic environment where they will be challenged on a daily basis. We want people who are obsessed with helping to deliver the best outcome for our farmers. To succeed you will need to be able to learn quickly and utilise your own initiative while working under pressure and to tight deadlines.
 
 What your day could look like:
-
-Build and maintain dbt models that serve as the trusted source of truth for GTM analytics.
-Developing our semantic / metrics layer so dashboards, ad-hoc SQL and AI agents all see the same numbers.
-Working with stakeholders to define and document and metric definitions — how Halter measures itself commercially.
-Partner with Data Engineering on upstream pipeline design, and with the Data Scientist and Tableau analysts on downstream consumption.
-Maintain documentation, lineage and data quality testing across the modelling layer.
-Stay up-to-date with your area of expertise and ensure the team is aware of new technological advances and better ways of working.
-And finally, this is a start-up, so you'll also be rolling your sleeves up and helping with whatever is required to succeed in our mission, knowing that your whole organisation is with you doing the same.
+- Build and maintain dbt models that serve as the trusted source of truth for GTM analytics.
+- Developing our semantic / metrics layer so dashboards, ad-hoc SQL and AI agents all see the same numbers.
+- Working with stakeholders to define and document and metric definitions — how Halter measures itself commercially.
+- Partner with Data Engineering on upstream pipeline design, and with the Data Scientist and Tableau analysts on downstream consumption.
+- Maintain documentation, lineage and data quality testing across the modelling layer.
+- Stay up-to-date with your area of expertise and ensure the team is aware of new technological advances and better ways of working.
+- And finally, this is a start-up, so you'll also be rolling your sleeves up and helping with whatever is required to succeed in our mission, knowing that your whole organisation is with you doing the same.
 
 Who we're looking for:
-
-Deep expertise in SQL and dimensional / data modelling for analytical workloads.
-Strong working knowledge of dbt — staging, intermediate and marts layers, tests, documentation, and metrics / semantic layer.
-Foundational AI knowledge - Open to experimenting with AI tools and building skills alongside the team as the space matures.
-Experience defining metrics and building analytics-ready datasets in close partnership with BI and analyst consumers — you understand that a clean dbt model is only half the job.
-Comfort with Python (or another scripting language) for orchestration and lightweight automation — Airflow exposure is a plus.
-Strong stakeholder skills and a product mindset — you treat internal data consumers as customers, and dataset quality as a service-level commitment.
-Experience working with AWS-based analytical stacks (S3, Athena, Glue, or similar) and CI/CD-based deployment with GitHub.
+- Deep expertise in SQL and dimensional / data modelling for analytical workloads.
+- Strong working knowledge of dbt — staging, intermediate and marts layers, tests, documentation, and metrics / semantic layer.
+- Foundational AI knowledge - Open to experimenting with AI tools and building skills alongside the team as the space matures.
+- Experience defining metrics and building analytics-ready datasets in close partnership with BI and analyst consumers — you understand that a clean dbt model is only half the job.
+- Comfort with Python (or another scripting language) for orchestration and lightweight automation — Airflow exposure is a plus.
+- Strong stakeholder skills and a product mindset — you treat internal data consumers as customers, and dataset quality as a service-level commitment.
+- Experience working with AWS-based analytical stacks (S3, Athena, Glue, or similar) and CI/CD-based deployment with GitHub.
 
 Bonus things you could bring along to the role — these are not essential for you to apply
-
-Familiarity with Tableau (or another modern BI tool) — ideally enough to partner closely with analysts on the consumption layer.
-Knowledge of statistical methods and/or machine learning, or a strong interest in supporting predictive analytics workflows.
-Any exposure to one or more of our GTM platforms — Salesforce, Intercom, Netsuite, Linear.
-Experience with Terraform or other infrastructure-as-code tooling.
+- Familiarity with Tableau (or another modern BI tool) — ideally enough to partner closely with analysts on the consumption layer.
+- Knowledge of statistical methods and/or machine learning, or a strong interest in supporting predictive analytics workflows.
+- Any exposure to one or more of our GTM platforms — Salesforce, Intercom, Netsuite, Linear.
+- Experience with Terraform or other infrastructure-as-code tooling.
 
 Our Benefits:
-
-Delicious snacks and drinks are available for your daily flow.
-Healthy body, healthy mind. We're partnered with Southern Cross Health Insurance to support your well-being.
-We offer 6 months of fully paid parental leave for primary caregivers, 4 weeks of fully paid secondary caregiver leave and many other parental benefits that support you and your family.
-Our personal growth is important. Halter offers an annual $1000 self-development budget to be used for anything that fuels personal growth.
-Our time to recharge is valued, we're offered wellness leave and unlimited paid annual leave.
-Importantly, we offer an inclusive and attractive remuneration package made up of salary, benefits and an employee stock ownership plan.
+- Delicious snacks and drinks are available for your daily flow.
+- Healthy body, healthy mind. We're partnered with Southern Cross Health Insurance to support your well-being.
+- We offer 6 months of fully paid parental leave for primary caregivers, 4 weeks of fully paid secondary caregiver leave and many other parental benefits that support you and your family.
+- Our personal growth is important. Halter offers an annual $1000 self-development budget to be used for anything that fuels personal growth.
+- Our time to recharge is valued, we're offered wellness leave and unlimited paid annual leave.
+- Importantly, we offer an inclusive and attractive remuneration package made up of salary, benefits and an employee stock ownership plan.
 
 Our Office First Approach
 
@@ -60,8 +60,18 @@ Our office vibe is special, the high energy and spectacular people make work enj
 
 Join our team
 
-Halter is committed to promoting a diverse and inclusive workplace.
+Halter is committed to promoting a diverse and inclusive workplace — a place where we can each be ourselves and do the best work of our lives. Research shows that while men apply to jobs when they meet an average of 60% of the requirements, women and under-represented groups of candidates tend to only apply when they meet every requirement. If you think you have what it takes but don't necessarily tick every requirement on this job description, please still get in touch and apply to Halter. We'd love to chat to see if you'll be an epic fit!
+
+If this opportunity sounds like you, please apply below by sending through your cover letter explaining why you're excited about this role and working at Halter, along with your CV, and we'll be in touch!
+
+Please also feel free to check out the careers page for more information on working at Halter and don't forget to follow us on LinkedIn & Instagram.
 
 Why our team loves working at Halter:
 
-Work that genuinely matters. Spectacular people solving hard problems. You'll grow here. This isn't easy, and we love that it's hard. Working at Halter will be the most rewarding and the most challenging work of your life. We move fast, take bold bets, and work hard to reshape an entire industry.
+Work that genuinely matters. Every now and again a company comes along that transforms an entire industry and leaves the world in a better place. Our team gets to be part of something truly meaningful, helping farmers improve their livelihoods, spend more time with their families, and build more sustainable operations.
+
+Spectacular people solving hard problems. Our culture is designed for talented people to do work that changes lives. The team is filled with diverse, kind, and driven people who push each other to do their best work. You'll be thrown into the deep end, tackling complex challenges and building something tangible that solves real problems.
+
+You'll grow here. Autonomy, mastery, and learning define how we work. You'll have the freedom to work on interesting problems, master new skills, and continuously develop yourself, both through your role and our $1,000 personal growth fund.
+
+This isn't easy, and we love that it's hard. Working at Halter will be the most rewarding and the most challenging work of your life. We move fast, take bold bets, and work hard to reshape an entire industry. As one team member put it: "Joining Halter is a bit like strapping yourself to a rocket ship, but it's an epic journey to be a part of!"

@@ -8,56 +8,36 @@
 
 Analytics Engineer
 
-Colliers International
-Job Type: Full Time
-Service Line: Corporate and Business Services
-Experience Level: Mid-Senior Level
-Location: Sydney, Australia
-Work Type: On-site
-
 Company Description
-
 Our collaborative culture sets us apart. We help experts become true specialists and provide the long-term structure and platform to accelerate their success.
 
 Job Description
-
 The analytics engineer is responsible for the design, development, and maintenance of business intelligence solutions. This role collaborates with various business units to gather reporting requirements and translate them into Business Intelligence solutions. A successful candidate will possess strong analytical skills and be proficient in using the full suite of Power BI tools to deliver optimised data model and compelling, data-driven insights.
 
-Key Responsibilities
-
-Create and maintain dynamic, visually compelling dashboards and reports using Power BI. Work closely with the business to understand requirements and workshop solutions
-
-Develop and optimize robust data models to ensure accuracy, efficiency, and scalability of reporting solutions.
-
-Work with cross-functional teams and stakeholders to understand business requirements for data analysis and visualization.
-
-Connect to, integrate, and transform data from multiple sources (e.g., SQL databases, Excel, BigQuery) using Power Query.
-
-Use Data Analysis Expressions (DAX) to build advanced calculations, measures, and calculated columns for in-depth data analysis.
-
-Ensure high performance of reports and dashboards by optimizing queries and data models.
-
-Implement data security best practices, including row-level security, to ensure data privacy and compliance.
-
-Create and maintain technical documentation for all developed BI solutions and provide training and support to end-users.
-
-Assist in driving adoption and engagement with reporting tools. Collect and act on feedback to ensure ongoing improvement and relevance of data analytics
+Key responsibilities
+- Create and maintain dynamic, visually compelling dashboards and reports using Power BI. Work closely with the business to understand requirements and workshop solutions
+- Develop and optimize robust data models to ensure accuracy, efficiency, and scalability of reporting solutions.
+- Work with cross-functional teams and stakeholders to understand business requirements for data analysis and visualization.
+- Connect to, integrate, and transform data from multiple sources (e.g., SQL databases, Excel, BigQuery) using Power Query.
+- Use Data Analysis Expressions (DAX) to build advanced calculations, measures, and calculated columns for in-depth data analysis.
+- Ensure high performance of reports and dashboards by optimizing queries and data models.
+- Implement data security best practices, including row-level security, to ensure data privacy and compliance.
+- Create and maintain technical documentation for all developed BI solutions and provide training and support to end-users.
+- Assist in driving adoption and engagement with reporting tools. Collect and act on feedback to ensure ongoing improvement and relevance of data analytics
 
 Qualifications
+- Demonstrated expertise in Power BI, including Power BI Desktop, Power Query, Power Pivot, and Power BI Service.
+- Strong knowledge of SQL for data manipulation and querying databases. Experience developing reports and dashboards from Bigquery, supporting data-driven decision making is highly desirable.
+- Excellent analytical and problem-solving abilities with meticulous attention to detail.
+- Ability to work effectively in complex business environments, balancing competing priorities and managing stakeholder expectations across multiple teams. Strong facilitation, influencing, and relationship-building skills, with the ability to translate technical concepts into business outcomes.
+- Demonstrates curiosity and a proactive approach to learning new technologies, tools, and business domains. Embraces challenges, seeks feedback, adapts to changing priorities, and continuously develops skills to improve outcomes and deliver greater value to the business.
+- A bachelor's degree in Computer Science, Information Technology, Data Analytics, or a related field is preferred.
+- Relevant certifications in PowerBI or BigQuery are a plus.
 
-Demonstrated expertise in Power BI, including Power BI Desktop, Power Query, Power Pivot, and Power BI Service.
-
-Strong knowledge of SQL for data manipulation and querying databases. Experience developing reports and dashboards from Bigquery, supporting data-driven decision making is highly desirable.
-
-Excellent analytical and problem-solving abilities with meticulous attention to detail.
-
-Ability to work effectively in complex business environments, balancing competing priorities and managing stakeholder expectations across multiple teams.
-
-Demonstrates curiosity and a proactive approach to learning new technologies, tools, and business domains.
-
-A bachelor's degree in Computer Science, Information Technology, Data Analytics, or a related field is preferred.
-
-Relevant certifications in PowerBI or BigQuery are a plus.
+Additional Information
+We foster an environment in which everyone at Colliers feels respected and comfortable bringing their authentic selves to do their best work. It's our people who set us apart and we actively recruit people who represent the diversity of the communities in which we operate. We take great pride in doing what's right and operating in ways that benefit the business, our people, our clients, our communities, and the environment.
+Experts join experts, and we welcome you to join us as we lead the industry into the future.
+Please be advised that applications will only be accepted directly rather than via recruitment agencies.
 
 ---
 
@@ -65,31 +45,31 @@ Relevant certifications in PowerBI or BigQuery are a plus.
 
 *3-run LLM consistency check: `../../analysis/jd_traces/2026-07-24_colliers-international_analytics-engineer.md` (generated by `classify_jds.py`, may not exist yet)*
 
-**velocity_vs_rigour:** rigour — Rigour signals dominate — accuracy, efficiency, scalability, data security/compliance, documentation — with no velocity/speed language present.
+**velocity_vs_rigour:** rigour — Responsibilities emphasize accuracy, performance optimization, data security/compliance, and technical documentation with no velocity/speed language present, placing this at rigour.
 
-**domain_risk:** moderate — Corporate real estate services BI role with a compliance mention (data privacy) but no financial-reporting or regulatory-audit language, so moderate.
+**domain_risk:** moderate — Data privacy and compliance are named but generically for a BI reporting role at a real estate services firm, without financial-reporting or regulatory-audit specifics, placing this at moderate.
 
-**collaboration_width:** 1 — named teams: business units
+**collaboration_width:** 1 — named teams: the business
 
-**data_team_maturity:** mid — The role optimizes and scales existing BI solutions within an established corporate services function, indicating a growing but not fully specialized data practice.
+**data_team_maturity:** mid — The role maintains and extends an existing Power BI reporting practice across 'various business units' rather than building from zero, indicating a growing but already-established BI function.
 
-**jd_authorship:** mixed — Named tools (Power BI Desktop, Power Query, Power Pivot, DAX, BigQuery) with precise application context make the day-to-day work clear, though some bullets are generic ('curiosity and a proactive approach').
+**jd_authorship:** mixed — Responsibilities name specific tools and methodology (Power BI Desktop/Power Query/Power Pivot/Power BI Service, DAX, row-level security) but are otherwise fairly standard BI-role boilerplate, landing between hiring-manager precision and generic phrasing.
 
-**stakeholder_orientation:** internal_data — The role centers on delivering BI/reporting solutions to internal business consumers, placing it in internal_data.
+**stakeholder_orientation:** internal_data — The role serves 'various business units' broadly through BI dashboards and reports rather than one specific commercial, product, or finance function, an internal-data orientation.
 
-**autonomy_level:** execution — Verbs are largely execution-oriented (create, maintain, connect, implement, assist) delivering scoped BI solutions rather than setting broader data strategy.
+**autonomy_level:** execution — All responsibilities are scoped execution verbs (create, maintain, develop, optimize, connect, use, ensure, implement) responding to defined business requirements rather than setting new strategic direction.
 
-**ai_role:** none — No mention of AI tools for the candidate or AI-consuming data infrastructure anywhere in the JD.
+**ai_role:** none — No AI tooling or AI-adjacent responsibility is mentioned anywhere in the JD.
 
-**testing_framing:** absent — No testing, data contracts, observability, or data quality language appears anywhere in the JD.
+**testing_framing:** absent — The JD focuses on BI development, data security, and performance rather than any explicit data testing methodology.
 
-**loss_aversion_framing:** moderate — Moderate: data privacy and compliance are mentioned but as one operational safeguard among many delivery-focused bullets, not a dominant risk narrative.
+**loss_aversion_framing:** moderate — Data privacy, security, and compliance are named as an ongoing secondary concern without regulatory or stakeholder-trust framing dominating the JD, placing this at moderate.
 
-**greenfield_vs_fix:** fix_scale — Dominant verbs are optimizing, maintaining, and improving existing BI solutions rather than building new infrastructure from scratch.
+**greenfield_vs_fix:** fix_scale — Responsibilities are dominated by maintain/optimize verbs (maintain, optimize, ensure high performance) applied to existing BI reporting solutions rather than building new infrastructure from scratch, indicating fix/scale.
 
 **urgency:** standard — No urgency signals present.
 
-**work_arrangement:** onsite — Work Type: On-site
+**work_arrangement:** not_stated — Not stated in JD.
 
 **language_gate:** none — Not stated in JD.
 
@@ -99,16 +79,13 @@ Relevant certifications in PowerBI or BigQuery are a plus.
 
 **ats_job_id:** 3461
 
-**loss_aversion:** No loss aversion framing detected.
+**loss_aversion:** Implement data security best practices, including row-level security, to ensure data privacy and compliance — a secondary governance concern, not a dominant regulatory risk register.
 
 **ATS keywords:**
-- Power BI
-- Power Query
-- Power Pivot
+- Power BI Desktop, Power Query, Power Pivot
 - DAX
 - BigQuery
-- SQL
 - row-level security
-- data privacy
-- dashboards
+- dashboards and reports
 - data models
+- SQL databases

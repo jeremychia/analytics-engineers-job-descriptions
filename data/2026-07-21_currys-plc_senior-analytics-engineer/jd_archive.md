@@ -1,57 +1,55 @@
 **URL:** https://www.linkedin.com/jobs/view/4442718196/
 
-**URL:** https://www.linkedin.com/jobs/view/4442718196/
+Senior Analytics Engineer
 
-# Senior Analytics Engineer
+Role overview:
 
-**Company:** Currys plc
-**Job Title:** Senior Analytics Engineer
-**Location:** London, England, United Kingdom (Currys London Campus at Waterloo)
-**Employment Type:** Permanent, Full Time
-**Grade:** Grade 4
+London
+Currys London Campus at Waterloo
+Permanent
+Full Time
+Grade 4
 
-## Role Overview
+At Currys we're united by one passion: to help everyone enjoy amazing technology. As the UK's best-known retailer of tech, we're proud of the service our customers receive – and it's all down to our team of 25,000 caring and committed colleagues. Working as one team, we learn and grow together, celebrating the big and small moments that make every day amazing.
 
-Currys describes themselves as the UK's best-known retailer of tech with 25,000 colleagues. The company is undergoing one of the most ambitious AI and automation shifts in UK retail, focusing on how customers discover technology, store operations, supply chains, and colleague productivity.
+Currys is in the middle of one of the most ambitious AI and automation shifts in UK retail. We are rethinking how customers discover and buy technology, how stores operate, how supply chains move, and how colleagues do their best work. We're reshaping how the business trades, plans and serves.
 
-The Analytics Engineering squad operates as a greenfield team focused on a specific business domain with senior leadership support, responsible for setting roadmaps and shipping products that impact financial results.
+The AI & Monetisation function is where the boldest bets get placed. The squad you join is greenfield, built around a real business domain, and backed by senior sponsorship. You will own that domain end to end, set the roadmap with the stakeholders who run it, and ship products that move the numbers in the P&L.
 
-## Responsibilities
+These problems are genuinely hard: optimising stock availability, automating complex operating processes, putting useful AI into the hands of frontline colleagues, and monetising the audience and data we already have. You will be a change agent in a business moving fast and willing to back people who can move with it.
 
-- Develop and maintain dbt models transforming raw data into trusted datasets for analytics
-- Implement data quality tests and monitoring for accuracy
-- Optimize query performance through data modeling strategies
-- Establish documentation, data dictionaries, and metrics frameworks
-- Support self-service analytics with reusable, high-quality data models
-- Collaborate cross-functionally to translate business requirements
-- Work with data engineers on new data source requirements
-- Conduct exploratory data analysis identifying trends and anomalies
-- Build interactive dashboards and reports
-- Design visualizations communicating complex data stories
+Role overview:
+- Develop and maintain dbt models that transform raw data into trusted datasets for analytics and business intelligence
+- Implement data quality tests and monitoring to ensure accuracy and reliability
+- Optimise query performance using effective data modelling and materialisation strategies
+- Establish and maintain documentation and data dictionaries for analytical models, KPI definitions and metrics frameworks
+- Support self-service analytics by building reusable, high-quality data models
+- Collaborate with cross-functional teams to translate business requirements into technical solutions
+- Collaborate with data engineers to define requirements for new data sources and pipelines
+- Conduct exploratory data analysis to identify trends, patterns, and anomalies in business performance
+- Build interactive dashboards and reports that empower self-service analytics
+- Design visualizations that clearly communicate complex data stories to both technical and non-technical audiences
 
-## Required Experience & Skills
+What you'll bring:
+- Strong SQL skills with experience in complex data transformations, CTEs, and window functions
+- Expertise with dbt and modern analytics engineering tools
+- Solid understanding of dimensional modelling and data warehousing concepts
+- Experience with Git-based workflows for version control and collaboration for analytics
+- Knowledge of data testing frameworks and quality assurance practices
+- Experience with Snowflake, Databricks, or similar data platforms
+- Proficiency in Looker or similar BI tools (Tableau, Power BI)
+- Strong analytical thinking and problem-solving abilities
+- Excellent communication skills with ability to present findings to diverse audiences
 
-**Experience:** 4+ years in data analyst or analytics engineer roles
+Experience Required:
+- 4+ years of experience in a data analyst or analytics engineer role
+- Degree in Computer Science, Analytics, or a related technical field highly desirable
+- dbt & Analytics platform certification beneficial
 
-**Technical Skills:**
-- Strong SQL (CTEs, window functions)
-- dbt and modern analytics engineering tools expertise
-- Dimensional modeling and data warehousing knowledge
-- Git-based workflows for version control
-- Data testing frameworks and QA practices
-- Snowflake, Databricks, or similar platforms
-- Looker or comparable BI tools (Tableau, Power BI)
+Why join us:
 
-**Desirable:**
-- Computer Science, Analytics, or related degree
-- dbt & Analytics platform certifications
+Join our team and we'll be with you every step of the way, helping you develop the career you want with new opportunities, on-going training and skills for life.
 
-**Soft Skills:**
-- Analytical thinking and problem-solving
-- Excellent communication with diverse audiences
+Not only can you shape your own future, but you can help take charge of ours too. As the biggest recycler and repairer of tech in the UK, we're in a position to make a real impact on people and the planet.
 
-## Seniority Level
-Mid-Senior level
-
-## Additional Notes
-No salary information provided. The posting emphasizes Currys' commitment to inclusion and diversity and offers to provide application accommodations upon request.
+Every voice has a space at our table and we're committed to making inclusion and diversity part of everything we do, including how we strengthen our workforce. We want to make sure you have a fair opportunity to show us your talents during our application process, so if you need any additional assistance with your application please email careers@currys.co.uk and we'll do our best to help.
