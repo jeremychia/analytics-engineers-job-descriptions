@@ -7,7 +7,7 @@ argument-hint: <job-posting-url>
 
 `$ARGUMENTS` is one or more job posting URLs (whitespace- or newline-separated). Produce a structured classification for each JD. No resume adaptation, no cover letter, no tailoring — classification only.
 
-**Batch mode**: process each URL one at a time, completing Steps 1–5 fully before fetching the next. Do not hold multiple JD texts in memory simultaneously — context is finite. If a URL cannot be fetched (empty response, 403, paywall, bot block, or suspiciously short content under ~200 words), stop and ask the user to paste the JD text, then proceed from Step 2 using the pasted text. Never infer or hallucinate JD content from the URL slug or company name alone. After all URLs are processed, print a batch summary (see Step 6).
+**Batch mode**: process each URL one at a time, completing Steps 1–5 fully before fetching the next. Do not hold multiple JD texts in memory simultaneously — context is finite. If raw-HTML extraction (Step 1) fails to produce the actual JD text — empty response, 403, paywall, bot block, no embedded data payload found for an SPA, or suspiciously short extracted text under ~200 words — stop and ask the user to paste the JD text, then proceed from Step 2 using the pasted text. Never infer or hallucinate JD content from the URL slug or company name alone, and never fall back to a WebFetch summary as a substitute for verbatim text. After all URLs are processed, print a batch summary (see Step 6).
 
 Work through the steps **in order** for each URL.
 
@@ -15,9 +15,21 @@ Work through the steps **in order** for each URL.
 
 ## Step 1 — Fetch and extract the JD
 
-Fetch `$ARGUMENTS` with WebFetch. Extract:
+**Never use WebFetch as the source of the archived JD text.** WebFetch pipes page content through a small summarizing model before returning it — it always paraphrases and condenses, even on a full 200-word+ response with no visible red flags. A fetch that "looks fine" (right length, right sections, no error) can still be a rewritten summary, not the posting's actual wording. This was confirmed across a dozen postings (beapplied.com, soapbox.vc, LinkedIn, Greenhouse-embed, Personio) — WebFetch returned plausible, complete-looking prose that was paraphrased throughout, with no visible signal of the problem. Two recurring failure patterns to watch for specifically: (1) **fabrication by omission/rollup** — real, specific numbers (a salary range, a vacation-day count, an office-days split) get dropped, or several distinct numeric details get collapsed into a single invented-sounding figure that isn't actually stated anywhere in the source (e.g. a real "20 statutory + 5 additional + 2 extra + 3.5 vitality" structure flattened into a fabricated "30 vacation days"); (2) **silent translation** — a non-English source gets rendered as English prose with no indication the original language was different (see language-mismatch note below). If you ever find an existing archive record with a trailing note admitting "this is a condensed/paraphrased extraction" — that is a confirmed-bad record; don't just note it, fix it via the raw-extraction path below.
 
-**Ashby postings (jobs.ashbyhq.com) render client-side — WebFetch alone typically returns only the title.** If WebFetch returns suspiciously short content for an Ashby URL, fall back to curl + embedded JSON extraction before asking the user to paste text:
+WebFetch may be used only to *locate* a JD (confirm a URL resolves, sanity-check title/company before committing to a scrape) — never as the text that goes into `jd_archive.md` / `jd_text`.
+
+**Default extraction path — raw HTML, every URL, every ATS:**
+
+```bash
+curl -s -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36" "$URL" -o /tmp/jd_raw.html
+```
+
+Then extract the verbatim text from the raw HTML:
+- **Server-rendered pages** (plain HTML with the JD text present in the markup): strip tags directly from the relevant `<div>`/`<section>` with a script, or read the file and pull the text between the recognizable heading and footer markers. Do not paraphrase while extracting — copy the text nodes exactly, just with tags stripped and whitespace collapsed. **Never grab the JD div with a naive `raw.find('</div>')`** — the content div almost always contains nested `<div>`s (formatting wrappers, spans-as-divs, etc.) and the first `</div>` found closes one of those, truncating the real content early. Depth-count instead: walk forward from the opening tag, incrementing on every `<div` and decrementing on every `</div>`, and take the text up to the point depth returns to 0. This single bug caused truncated/incomplete extractions on Bluecode, Ebury, Colliers, SmartRecruiters (Canva/Jetstar), Similarweb, and Sony during one audit pass — always use the depth-counted version.
+- **Client-rendered / SPA pages** (React, Vue, etc. — visible page text isn't in the raw HTML, only a JS bundle and maybe a JSON blob): search the raw HTML for an embedded state/data payload (`window.__appData`, `__NEXT_DATA__`, `__INITIAL_STATE__`, a `<script type="application/json">` blob, or similar) and pull the description field out of that JSON. This is the only reliable path for SPA-rendered ATS platforms — the JD text is almost always present verbatim inside one of these payloads even when the rendered DOM (and thus WebFetch) shows nothing useful.
+
+**Ashby postings (jobs.ashbyhq.com)** are the known SPA case — the payload is `window.__appData`, extract with:
 
 ```bash
 curl -s -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36" "$URL" -o /tmp/ashby.html
@@ -49,6 +61,34 @@ print(text)
 ```
 
 The `window.__appData` payload contains a `.posting` object (or nested under it) with `descriptionHtml`, `title`, `locationName`/`location`, `employmentType`, and `compensationTierSummary` fields — strip HTML tags from `descriptionHtml` to get the plain JD text. Only fall back to asking the user for pasted text if this extraction also fails (e.g. `window.__appData` not present, or JSON parse fails).
+
+**Other known SPA/embed cases — use the platform's public API directly, don't scrape the DOM:**
+
+- **Workday** (`*.myworkdayjobs.com`): raw HTML is an empty client-rendered shell (`<div id="root">`, no title) — curl-on-HTML will find nothing and must not be mistaken for a fetch failure requiring user-pasted text. Hit the Workday CXS API instead:
+  ```bash
+  curl -s -A "Mozilla/5.0 ..." "https://{tenant}.wd{N}.myworkdayjobs.com/wday/cxs/{tenant}/{site}/job/{location}/{title}_{reqId}" -o /tmp/wd.json
+  ```
+  Parse `jobPostingInfo.jobDescription` (HTML string) from the JSON, strip tags. The `{location}/{title}_{reqId}` path segment matches the tail of the original job URL — reuse it as-is when building the API URL.
+- **Lever** (`jobs.lever.co`): also client-rendered (Next.js) — raw HTML has no JD text. Use the public API:
+  ```bash
+  curl -s "https://api.lever.co/v0/postings/{company}/{posting-id}?mode=json"
+  ```
+  Use `descriptionPlain`/`descriptionBodyPlain`/`lists[]`/`additionalPlain` fields directly — this is Lever's own canonical plain-text, no tag-stripping needed.
+- **Greenhouse embedded as a widget on a custom domain** (e.g. `careers.{company}.com` loading `boards.greenhouse.io/embed/job_board/js?for=...`): the custom-domain page is just a JS wrapper with no JD text in its own HTML. Extract the `gh_jid` from the URL query string and hit the Greenhouse public API directly:
+  ```bash
+  curl -s "https://boards-api.greenhouse.io/v1/boards/{company}/jobs/{gh_jid}"
+  ```
+  The `content` field is the true JD HTML — strip tags. (Direct `job-boards.greenhouse.io/{company}/jobs/{id}` URLs are usually server-rendered already and don't need this — check raw HTML first before assuming the API is needed.)
+- **LinkedIn** (`linkedin.com/jobs/view/...`): despite being a major platform, the public (unauthenticated) job-view page is reliably server-rendered — plain curl + browser UA returns the full JD text directly in `<div class="description__text description__text--rich">...<section class="show-more-less-html">`. No login wall was hit across dozens of postings checked. Try plain curl first; only ask the user to paste text if that div is empty or a login redirect occurs.
+- **SmartRecruiters** (`jobs.smartrecruiters.com`): server-rendered with the JD text directly in HTML inside `<div itemprop="description">` (schema.org microdata, not JSON-LD). Depth-count matching `<div>` tags to find the true closing tag — a naive `raw.find('</div>')` will truncate at the first nested close.
+- **Nuxt/Nuxt Content sites** (raw HTML shows a Nuxt app shell with `__NUXT_DATA__`): the shell often only prerenders a shallow snippet; the full content lives in a separate `_payload.json` fetched by the client. Look for `data-src="/path/_payload.json?{hash}"` in the raw HTML and curl that URL directly — it returns a flat deduplicated array where each JSON value is either a literal or an integer index into the same array (Nuxt's "devalue"-style serialization). For Nuxt Content specifically, the article body is a minimark AST (`[tag, attrs, ...childIndices]` tuples) requiring a small recursive renderer — walk the tree resolving integer refs back into the array, mapping `p`→paragraph break, `h1`-`h4`→heading, `li`→bullet, `ul`/`ol`→pass-through. Companion snippets (e.g. a separate "benefits" block) may live as sibling top-level entries in the same payload — check the page's other named routes/snippets in the array for additional sections.
+- **Next.js sites** (raw HTML shows `__NEXT_DATA__` script tag, e.g. `lego.com/.../careers/job/...`): unlike Nuxt, Next.js usually inlines the full page-props JSON directly in the initial HTML — no separate payload fetch needed. `grep` for `<script id="__NEXT_DATA__" type="application/json">`, parse it, and walk `props.pageProps` for a `description` (or similarly named) field containing the JD HTML string. Much simpler than the Nuxt case since there's no ref-resolution needed — it's a plain nested JSON object, not a flat deduplicated array.
+- **A job ID from an older archive may 404 if the listing was reposted.** Company ATS boards sometimes take down and recreate a posting for the same role under a new job ID (observed on Greenhouse: same team, same responsibilities, new numeric ID). Before concluding a posting is gone for good, search the company's current careers page or the ATS's board-listing endpoint (e.g. `boards-api.greenhouse.io/v1/boards/{company}/jobs` and grep the job list for a title match) for a live repost — only fall back to "posting removed, cannot re-verify" once that search comes up empty too.
+- **Oracle Cloud HCM recruiting** (`*.fa.ca2.oraclecloud.com/hcmUI/CandidateExperience/...`): the direct page URL is client-rendered and mostly empty. Use the sibling REST API instead — extract the numeric requisition ID from the URL path and call `https://{tenant}.fa.ca2.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitionDetails/{id}`; the JSON's `ExternalDescriptionStr` field holds the full HTML job description, strip tags as usual.
+- **Gem ATS** (`jobs.gem.com/...`) and other fully client-rendered boards with no embedded JSON and an auth-gated API (redirects to `/login` on direct query): there is no curl-only path here. Flag as "could not verify via curl" rather than guessing, and say so explicitly in the batch summary — don't silently fall back to WebFetch's paraphrase as a substitute.
+- **Cloudflare-protected pages** (curl returns a JS challenge/interstitial instead of content, common on some corporate career sites e.g. `careers.intuitive.com`): plain curl cannot get past the challenge. This is a genuine "could not verify by the tools available" case, not a signal to fall back to WebFetch — note the gate explicitly and move on; don't fabricate or silently accept a WebFetch paraphrase as if it were verified.
+
+**Language mismatch is a silent failure mode, not just a content one.** If a URL's query string or the raw HTML's `<html lang="...">` / visible body text indicates a non-English source (e.g. `?language=de`, German/French/Dutch prose in the DOM), the archived `jd_text` must preserve that original language verbatim — do not translate it into English and present it as the archive. A translated-and-summarized archive is doubly wrong: wrong language AND wrong (paraphrased) content. If you need to work in English for classification purposes, do the classification reasoning in English but keep `jd_text` in the source language.
 
 - **Company name** (slug: lowercase, hyphens, no punctuation)
 - **Job title** (slug form)
@@ -339,5 +379,7 @@ Skipped: {url} — {reason}   ← one line per skipped URL, omit section if none
 ## Notes
 
 - Classification only — not an application tool. Use `adapt-resume` if applying.
-- If a URL is inaccessible or returns suspiciously short content (<200 words), stop and ask for pasted JD text before proceeding — do not classify from the URL slug or company name alone.
+- If raw-HTML extraction is inaccessible or yields suspiciously short content (<200 words), stop and ask for pasted JD text before proceeding — do not classify from the URL slug or company name alone, and do not substitute a WebFetch summary for the verbatim text.
+- WebFetch summarizes/paraphrases by design (it runs page content through a small model) — it is never an acceptable source for `jd_archive.md`/`jd_text`, even when the response looks complete and well-formed. Always extract from raw HTML (Step 1).
+- **A posting can go stale between archiving and re-verification** — the role gets filled/removed and the URL now 404s, redirects to a generic "job not found" page, or (for Ashby) the GraphQL/API query returns `null` for that job ID even though the board itself is still live. This is a different failure mode from a scrape bug: there is no current source to diff against. Do not attempt to reconstruct or guess the original content, and do not check the Wayback Machine unless the user asks for it — report "posting removed/filled since archiving, cannot re-verify" and leave the existing archive as the historical record, flagged as unverifiable rather than confirmed-bad.
 - For non-standard roles (freelance, internship), complete the classification with best-fit mapping and note anomalies in the evidence field.
