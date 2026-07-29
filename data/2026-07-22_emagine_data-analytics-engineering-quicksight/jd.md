@@ -1,61 +1,38 @@
-# Data & Analytics Engineering (QuickSight Environment) — emagine
+# Data & Analytics Engineer — Emagine
 
 **URL:** https://www.linkedin.com/jobs/view/4434313565/
-**Location:** Lisbon, Portugal
+**Location:** Not stated in JD (Portuguese proficiency preferred, suggesting Portugal)
 **Date Posted:** 2026-07-22
 
 ---
 
-Data & Analytics Engineering (QuickSight Environment)
+Data & Analytics Engineer
 
-Location: Lisbon, Lisbon, Portugal
-Seniority Level: Mid-Senior level
-Employment Type: Full-time
+We are looking for a Data & Analytics Engineer to join our team.
+
+The focus is predominantly on Data & Analytics Engineering (backend), with limited exposure to reporting and dashboarding (frontend — QuickSight vs QlikView) for those who join.
 
 Responsibilities:
+- Apply database modeling and database exploration skills with data architecture strategy and design principles to support metrics, analytics, AI/machine learning, and self-service business intelligence across the company.
+- Support the team with data sets/products for building, standardize, and maintain reporting and self-service analytics as part of data lake and data mesh concepts;
+- Preprocess and engineer features from structured and unstructured data, ensuring quality, lineage, and reliability;
+- Analyze data from multiple sources to optimize strategies, operations, and portfolio decisions;
+- Implement models and data products with cross functional teams; set up monitoring, alerting, and lifecycle management;
+- Leverage cutting-edge cloud technologies such as AWS (preferable) and Azure and data warehouses
+- Communicate insights clearly through compelling visualizations and narratives tailored to technical and business audiences;
+- Deliver projects safely, on time, and cost effectively while upholding IT governance
+- Proactively propose process optimizations, make timely data-driven decisions, and demonstrate resilience through change.
 
-Apply database modeling and database exploration skills with data architecture strategy and design principles to support metrics, analytics, AI/machine learning, and self-service business intelligence.
-
-Support teams with datasets for building, standardizing, and maintaining reporting and self-service analytics within data lake and data mesh frameworks.
-
-Preprocess and engineer features from structured and unstructured data, ensuring quality, lineage, and reliability.
-
-Analyze multi-source data to optimize strategies, operations, and portfolio decisions.
-
-Implement models and data products with cross-functional teams; establish monitoring, alerting, and lifecycle management.
-
-Leverage cutting-edge cloud technologies such as AWS (preferable) and Azure and data warehouses.
-
-Communicate insights through visualizations and narratives for technical and business audiences.
-
-Deliver projects safely, on time, and cost effectively while upholding IT governance.
-
-Propose process optimizations and demonstrate resilience through organizational change.
-
-Requirements:
-
-Senior experience in data management, analytics, and manipulating large datasets.
-
-Strong autonomy to lead analytic solutions from design to deployment.
-
-Strong experience with cloud data-lake architecture and technology, in particular AWS.
-
-Advanced proficiency in SQL and Python.
-
-Git expertise including branch management and code reviews.
-
-SQL Server Integration Services (SSIS) experience for ETL workflows.
-
-Data visualization and reporting technologies, particularly AWS QuickSight (preferable), MS Fabric/PBI or QlikSense.
-
-Communication and mediation skills with the ability to influence and engage stakeholder.
-
-Agile methodology familiarity (SCRUM).
-
-Fluency in English is a requirement; Portuguese proficiency strongly preferred.
-
-Additional Information:
-Posted 15 hours ago. Be among the first 25 applicants. Position emphasizes backend data & analytics engineering with limited frontend exposure.
+Qualifications:
+- Senior experience in data management and data analytics with considerable experience in manipulating large datasets and data products;
+- Strong autonomy to lead analytic solutions from design to deployment; and strong foundation in analytics framework and data management;
+- Strong experience with cloud data-lake architecture and technology, in particular AWS; familiarity with Python data processing libraries; knowledge of IaC is a plus;
+- Advanced proficiency in SQL and Python; familiarity with R and object-oriented scripting is a plus;
+- Strong experience with Git for version control, including branch management, code reviews, and collaborative workflows in agile teams is a plus; Hands-on experience with SQL Server Integration Services (SSIS) for ETL/data integration workflows is a plus
+- Solid data modeling and experience in data visualization and reporting technologies-especially AWS QuickSight (preferable), MS Fabric/PBI or QlikSense.
+- Communication and mediation skills with the ability to influence and engage stakeholder and ability to understand technical concepts and turn them into business terms.
+- Familiarity with agile work methodologies (e.g. SCRUM).
+- Fluency in English is a requirement; Portuguese proficiency strongly preferred (ability to engage stakeholders in both languages)
 
 ---
 
@@ -63,33 +40,33 @@ Posted 15 hours ago. Be among the first 25 applicants. Position emphasizes backe
 
 *3-run LLM consistency check: `../../analysis/jd_traces/2026-07-22_emagine_data-analytics-engineering-quicksight.md` (generated by `classify_jds.py`, may not exist yet)*
 
-**velocity_vs_rigour:** rigour — Repeated governance, quality, lineage, and reliability language throughout ('ensuring quality, lineage, and reliability', 'establish monitoring, alerting, and lifecycle management', 'upholding IT governance') dominates with no velocity/shipping-speed phrases present.
+**velocity_vs_rigour:** rigour — Responsibilities emphasize data quality, lineage, reliability, and IT governance with no velocity/speed language present, placing this at rigour.
 
-**domain_risk:** high — "Portfolio decisions" combined with IT governance and safe/compliant delivery framing signals a finance/investment-adjacent, high-consequence context.
+**domain_risk:** moderate — Errors affect internal analytics and business decision-making without financial-reporting or regulatory-audit language, placing this at moderate.
 
-**collaboration_width:** 1 — named teams: cross-functional teams
+**collaboration_width:** 1 — named teams: cross functional teams
 
-**data_team_maturity:** mature — Data mesh and data lake frameworks are named as existing infrastructure the candidate operates within, signalling an established, specialised data function rather than one being built from scratch.
+**data_team_maturity:** mid — The role builds on existing data lake/data mesh concepts and cloud data warehouses already in use, indicating a growing but already-established data function rather than a from-zero build.
 
-**jd_authorship:** mixed — Requirements name precise tools (SSIS, QuickSight, MS Fabric/PBI, QlikSense, AWS) with application context, but responsibilities lean on generic consultancy phrasing ('propose process optimizations', 'demonstrate resilience through organizational change'), producing a mixed signal typical of staffing-agency JDs.
+**jd_authorship:** hiring_manager — Responsibilities name specific tools (AWS QuickSight, MS Fabric/PBI, QlikSense, SSIS) and concepts (data mesh, feature engineering) that show what the role does day to day, though the framing stays fairly general throughout.
 
-**stakeholder_orientation:** internal_data — The role serves internal data consumers and platform teams through self-service analytics infrastructure rather than a specific commercial, product, or finance function.
+**stakeholder_orientation:** internal_data — The role centers on building the internal data lake/mesh and self-service analytics infrastructure for internal data consumers rather than one specific commercial, product, or finance function.
 
-**autonomy_level:** strategic — The requirement explicitly names end-to-end ownership from design through deployment, a strategic framing.
+**autonomy_level:** strategic — The role explicitly requires strong autonomy to lead solutions from design to deployment, a clear strategic-ownership signal.
 
-**ai_role:** ai_enabler — The candidate builds data architecture and feature-engineered datasets that support downstream AI/ML systems, making the AI consumer of the candidate's output rather than a tool the candidate uses.
+**ai_role:** none — AI/machine learning is mentioned as a downstream consumer of the data the candidate supports, but no AI tool usage or AI-specific infrastructure-building is asked of the candidate.
 
-**testing_framing:** responsibility — Data quality, lineage, and reliability are framed as something the candidate ensures through their own engineering work, an ownership verb rather than a tool listed in a skills section.
+**testing_framing:** absent — Data quality is mentioned as a goal but without a named testing framework or explicit ownership verb tied to a specific testing practice.
 
-**loss_aversion_framing:** high — Governance, quality, lineage, and reliability language recurs across nearly every responsibility bullet, and appears early in the role framing, indicating risk/trust concerns dominate rather than being secondary.
+**loss_aversion_framing:** moderate — Data quality, lineage, and reliability are named as ongoing secondary concerns alongside 'upholding IT governance', without regulatory or stakeholder-trust framing dominating the JD, placing this at moderate.
 
-**greenfield_vs_fix:** mixed — The role both implements new models/data products (greenfield) and establishes monitoring/lifecycle management for existing data lake and mesh infrastructure (fix_scale), producing a mixed signal.
+**greenfield_vs_fix:** mixed — The JD mixes new-build language (implement models, build data products) with maintain/standardize language (standardize and maintain reporting) roughly evenly, making this mixed.
 
-**urgency:** urgent — Posted 15 hours ago. Be among the first 25 applicants.
+**urgency:** standard — No urgency signals present.
 
 **work_arrangement:** not_stated — Not stated in JD.
 
-**language_gate:** hard — "Fluency in English is a requirement; Portuguese proficiency strongly preferred."
+**language_gate:** hard — "Fluency in English is a requirement; Portuguese proficiency strongly preferred (ability to engage stakeholders in both languages)"
 
 **interview_stages:** Not stated in JD
 
@@ -97,18 +74,14 @@ Posted 15 hours ago. Be among the first 25 applicants. Position emphasizes backe
 
 **ats_job_id:** 4434313565
 
-**loss_aversion:** Deliver projects safely, on time, and cost effectively while upholding IT governance — safety and governance framing recurs across the responsibilities, anchoring a high risk register.
+**loss_aversion:** Preprocess and engineer features from structured and unstructured data, ensuring quality, lineage, and reliability — a secondary data-quality concern, not a dominant compliance risk register.
 
 **ATS keywords:**
-- Data Engineering
-- AWS
-- QuickSight
-- SQL
-- Python
+- AWS QuickSight
+- QlikSense
+- MS Fabric/PBI
+- data lake and data mesh
 - SSIS
-- ETL
-- data lake
-- data mesh
-- Azure
-- SCRUM
-- data governance
+- feature engineering
+- cloud data-lake architecture
+- IT governance

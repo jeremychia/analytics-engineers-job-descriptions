@@ -1,57 +1,55 @@
-# Analytics Engineer — ECAM
+# Analytics Engineer — Document Intelligence Platform (CSC) — ECAM
 
 **URL:** https://www.linkedin.com/jobs/view/4444071586/
-**Location:** Pasig, National Capital Region, Philippines
+**Location:** Not stated in JD (HMO benefit and leave-credit phrasing suggest Philippines)
 **Date Posted:** 2026-07-24
 
 ---
 
-Analytics Engineer
+Analytics Engineer — Document Intelligence Platform (CSC)
 
-ECAM
-Location: Pasig, National Capital Region, Philippines
+ECAM is looking for talented individuals like you! Be the next Analytics Engineer — Document Intelligence Platform (CSC).
 
-The role focuses on building data infrastructure for document intelligence.
+CSC manages large volumes of unstructured operational data—PDFs, recordings, notes—scattered across systems with limited visibility or searchability. This role automates ingestion and structure, surfacing insights through dashboards, search interfaces, and other tools that guide stakeholders to actionable intelligence. You're the founding analytics engineer for CSC's data infrastructure, responsible for moving from POC to operationalized, self-serve analytics platform. Built on Snowflake, you'll design interfaces and delivery mechanisms that make data accessible and useful to business stakeholders.
 
-Key Responsibilities
+What You'll Own
+- End-to-end pipeline: ingestion → extraction → structuring → delivery (via search interfaces, dashboards, agents, or other mechanisms that guide users to insights)
+- Full responsibility for reliability, data quality, and operational support
+- Autonomous decisions on architecture tradeoffs: extraction depth, indexing strategy, refresh cadence
+- Ownership of extraction patterns and data frameworks that inform future platform expansion
+- Partnership with CSC business users to surface needs, design delivery mechanisms that work for their workflows, and evolve data products based on feedback
 
-Designing end-to-end pipelines: ingestion -> extraction -> structuring -> delivery (via search interfaces, dashboards, agents, or other mechanisms that guide users to insights)
+Job Highlights:
+- Day 1 HMO for you and two (2) of your dependents.
+- Annual and Performance Based Salary Increase
+- Additional Leave Credits
 
-Managing data operations with incremental ingestion, multi-format content handling (PDFs, audio, video, images), and extraction workflows
+Duties & Responsibilities:
+- Data Pipeline & Operations: Design and maintain incremental ingestion for continuous data updates; handle multi-format content (PDFs, audio, video, images); build extraction and validation workflows that scale; establish data governance aligned with existing organizational security and compliance controls
+- Insight & Delivery Infrastructure: Design and build semantic layers, search indices, and query patterns that enable CSC users to find and extract insights; own the design and build of user interfaces (dashboards, reports, search tools) that make data accessible and guide users toward actionable intelligence; support multiple delivery mechanisms depending on use case and audience
+- Business Partnership & Delivery: Collaborate with CSC stakeholders to understand operational priorities and workflows; translate requirements into data products and interfaces; enable self-serve access where feasible; document learnings and reusable patterns
+- Global Business Intelligence Framework Alignment: Adopt Global Business Intelligence standards: version control, testing, documentation, data governance, monitoring, and lineage; establish data contracts and codify patterns that set precedent for other Global Business Intelligence domains
 
-Building semantic layers and search indices enabling users to find and extract insights
+Qualifications:
 
-Creating user interfaces and dashboards that make data accessible and guide stakeholders toward actionable intelligence
+Required
+- Data Engineering Fundamentals: SQL: query optimization, incremental processing, data validation; Python: scripting, data wrangling, automation; ability to build robust, maintainable data pipelines
+- AI/LLM Literacy: Hands-on experience with LLM/AI APIs: prompt design, structured extraction, information retrieval; ability to evaluate output quality and design controls for reliable, well-understood products with minimal hallucinations
+- Unstructured Data: Experience with document parsing, OCR, multi-format handling; familiarity with multi-modal data (audio, video, images)
+- Analytics & Insight Orientation: Ability to think about how data drives operational decisions; comfort building dashboards, reports, and search interfaces that guide users to insights; basic UX/design thinking—understanding how interface design influences how users discover and act on data; pragmatic approach to "good enough" vs. perfect
+- Operational Mindset: Independent work; high autonomy; attention to data quality, reliability, and user impact
 
-Collaborating with business users to understand priorities and translate requirements into data products
+Preferred
+- Experience building platforms that scale across multiple use cases or user groups
+- Semantic search, retrieval-augmented generation, or LLM-driven query engines
+- Building dashboards, reports, or visualization layers that translate data into business insight
+- Multi-tenant or access-control patterns for sensitive data
+- Crisis management, insurance, or maritime domain knowledge
 
-Adopting Global Business Intelligence standards including version control, testing, documentation, and data governance
-
-Required Qualifications
-
-SQL expertise: query optimization, incremental processing, data validation
-
-Python proficiency for scripting, data wrangling, and automation
-
-Hands-on LLM/AI APIs: prompt design, structured extraction, information retrieval
-
-Experience with document parsing, OCR, and multi-format data handling
-
-Ability to think analytically about how data drives operational decisions
-
-Independent work style with high autonomy and attention to data quality
-
-Preferred Qualifications
-
-Platform-building experience across multiple use cases
-
-Semantic search and retrieval-augmented generation expertise
-
-Dashboard and visualization development background
-
-Multi-tenant access-control patterns knowledge
-
-Crisis management or maritime domain experience
+Why join ECAM?
+- At ECAM, we invite you to make a difference. Take over a position that creates community impact.
+- Get to work with skillful team members and experience limitless growth.
+- Choose to be exceptional and be part of the never-ending cycle of innovation, transformation and evolution of surveillance technology.
 
 ---
 
@@ -59,27 +57,27 @@ Crisis management or maritime domain experience
 
 *3-run LLM consistency check: `../../analysis/jd_traces/2026-07-24_ecam_analytics-engineer.md` (generated by `classify_jds.py`, may not exist yet)*
 
-**velocity_vs_rigour:** rigour — Rigour signals dominate — testing, documentation, data governance, data validation, attention to data quality — with no velocity/speed language present.
+**velocity_vs_rigour:** rigour — Responsibilities repeatedly emphasize reliability, data quality, governance, testing, and data contracts with no velocity/speed language present, placing this at rigour.
 
-**domain_risk:** moderate — Document intelligence platform for operational/crisis decision support without explicit financial-reporting or regulatory-compliance language, so moderate.
+**domain_risk:** moderate — Compliance and security controls are named but generically, and the domain (crisis management, insurance, maritime per 'preferred') is operational rather than financial-reporting or regulatory-audit specific, placing this at moderate.
 
-**collaboration_width:** 0 — named teams: 
+**collaboration_width:** 1 — named teams: CSC business users
 
-**data_team_maturity:** early — The role builds the entire pipeline and platform from ingestion through delivery for a new document-intelligence capability, indicating the function is being established rather than an existing mature practice.
+**data_team_maturity:** early — The JD explicitly states 'You're the founding analytics engineer for CSC's data infrastructure, responsible for moving from POC to operationalized' — a clear from-zero build signal.
 
-**jd_authorship:** hiring_manager — Named, specific technical practices (OCR, RAG, multi-format content handling, prompt design) make the day-to-day work very clear.
+**jd_authorship:** hiring_manager — Responsibilities name precise technical scope (multi-format ingestion, semantic layers, search indices, LLM/AI APIs for structured extraction) that shows exactly what the role builds day to day, written by someone close to the work.
 
-**stakeholder_orientation:** internal_data — The role centers on the data/search platform itself serving internal data consumers via self-service search and dashboards, placing it in internal_data.
+**stakeholder_orientation:** commercial — The role serves CSC's specific business operations and workflows (a single named business unit/client) rather than internal data engineering peers, product, or finance, giving this a commercial orientation.
 
-**autonomy_level:** strategic — The role designs end-to-end pipelines and platform architecture independently with explicit high-autonomy framing, a clearly strategic/direction-setting role.
+**autonomy_level:** strategic — The role is explicitly founding, with autonomous architecture decisions and full ownership of the platform's direction, all strategic direction-setting language.
 
-**ai_role:** ai_enabler — The candidate both builds AI-consuming data infrastructure (semantic layers, RAG, agents) and uses LLM/AI APIs directly as core tooling; per the tie-breaker, both signals present resolves to ai_enabler.
+**ai_role:** ai_enabler — The candidate is expected to build the data/extraction infrastructure using LLM/AI APIs that downstream search and insight tools consume, the defining signal of ai_enabler.
 
-**testing_framing:** responsibility — Testing and governance are framed as an owned standard the candidate adopts and applies, not just a listed tool.
+**testing_framing:** responsibility — Testing, data contracts, and governance are framed as an owned responsibility with explicit ownership language ('full responsibility for reliability, data quality'), not just tools in a skills list.
 
-**loss_aversion_framing:** moderate — Moderate: data validation and quality attention are recurring but framed as pipeline reliability rather than compliance or regulatory risk.
+**loss_aversion_framing:** moderate — Reliability and data quality are named as a core ongoing concern secondary to building the platform, without regulatory or stakeholder-trust framing dominating the JD, placing this at moderate.
 
-**greenfield_vs_fix:** greenfield — The role explicitly designs new end-to-end infrastructure for a document-intelligence platform from scratch, a clear greenfield signal.
+**greenfield_vs_fix:** greenfield — The role is explicitly about building a brand-new platform from a proof-of-concept stage, a clear greenfield signal.
 
 **urgency:** standard — No urgency signals present.
 
@@ -93,16 +91,16 @@ Crisis management or maritime domain experience
 
 **ats_job_id:** 4444071586
 
-**loss_aversion:** No loss aversion framing detected.
+**loss_aversion:** Full responsibility for reliability, data quality, and operational support — a secondary operational concern framed around platform ownership, not a dominant compliance risk register.
 
 **ATS keywords:**
+- Document Intelligence Platform
+- Snowflake
+- semantic layers
+- search indices
 - LLM/AI APIs
-- retrieval-augmented generation
-- semantic search
+- structured extraction
+- unstructured data
 - OCR
-- document parsing
-- Python
-- SQL
-- data governance
-- multi-tenant access control
-- prompt design
+- data contracts
+- Global Business Intelligence standards

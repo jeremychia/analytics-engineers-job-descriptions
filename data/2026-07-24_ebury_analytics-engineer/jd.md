@@ -1,16 +1,18 @@
-# Analytics Engineer - Fintech — Ebury
+# Analytics Engineer — Ebury
 
 **URL:** https://job-boards.eu.greenhouse.io/ebury/jobs/4866617101?gh_src=f6fe6062teu
-**Location:** Madrid
+**Location:** Madrid, Spain (Hybrid: 4 days office / 1 day WFH)
 **Date Posted:** 2026-07-24
 
 ---
 
-Analytics Engineer - Fintech
+Analytics Engineer
+
+Ebury helps ambitious businesses unlock global growth, and we take the same approach with our people. We encourage innovation and movement, collaboration and problem-solving, and foster an environment where everyone can feel they belong, are valued, supported and empowered to succeed.
+
+If you're a collaborator who wants to help transform how businesses operate globally, get in touch - we'd love to discuss how Ebury can accelerate your career so you can shape the future.
 
 Location: Madrid (Hybrid: 4 days office / 1 day WFH)
-
-Ebury helps ambitious businesses unlock global growth, and we take the same approach with our people.
 
 We are looking for an Analytics Engineer to be embedded within one of our core product domains. You will be the owner of your domain's data warehouse, responsible for setting the standards, patterns, and practices that govern how data is modelled, structured, and consumed within your domain.
 
@@ -19,38 +21,37 @@ You will build the semantic layer that provides the context, definitions, and st
 We operate under a Domain-Driven Design (DDD) approach, where Product, Engineering, and Data align on shared goals to eliminate bottlenecks and ensure architectural coherence across the organisation.
 
 What you will do:
-
-Partner with the business to gather requirements and define technical action plans for robust data products.
-
-Lead projects from initial definition to delivery, including strategies for stakeholder (impact and testing)
-
-Ability to split between strategic management and technical execution; you are equally comfortable architecting a multi-domain roadmap as you are diving into the IDE to ship a critical fix
-
-Proactively monitor and govern data products to ensure high reliability. You will design and propose ongoing alerting frameworks to catch anomalies before they reach the business.
-
-Deliver hands-on data models using modern software engineering practices (version control, testing, and CI/CD).
-
-Collaborate with team members to reinforce best practices across the platform, encouraging a shared commitment to quality.
-
-Manage overall pipeline orchestration using Airflow (hosted in Cloud Composer).
-
-Contribute to and promote best practices for query development, version control, code review, documentation, and testing
+- Partner with the business to gather requirements and define technical action plans for robust data products.
+- Lead projects from initial definition to delivery, including strategies for stakeholder (impact and testing)
+- Ability to split between strategic management and technical execution; you are equally comfortable architecting a multi-domain roadmap as you are diving into the IDE to ship a critical fix
+- Proactively monitor and govern data products to ensure high reliability. You will design and propose ongoing alerting frameworks to catch anomalies before they reach the business.
+- Deliver hands-on data models using modern software engineering practices (version control, testing, and CI/CD).
+- Collaborate with team members to reinforce best practices across the platform, encouraging a shared commitment to quality.
+- Manage overall pipeline orchestration using Airflow (hosted in Cloud Composer).
+- Contribute to and promote best practices for query development, version control, code review, documentation, and testing
 
 What we're looking for:
+- 2+ years experience in similar roles, solid analytics engineering background — dbt, SQL, data modeling, and a strong sense of what makes a data product trustworthy and maintainable.
+- High proficiency in SQL with the ability to build, robustly test, and optimize complex models.
+- A strong sense of what makes a data product trustworthy, maintainable, and valuable to the end user.
+- Finance domain knowledge, you understand how financial data works: P&L, FX, exposure, reconciliation.
+- Experience with (or a genuine curiosity for) Domain-Driven Design and how it shapes team ownership and data structure.
+- Fluency in English (Spanish is a plus).
 
-2+ years experience in similar roles, solid analytics engineering background — dbt, SQL, data modeling, and a strong sense of what makes a data product trustworthy and maintainable.
+#LI-JC1
+#LI-HYBRID
 
-High proficiency in SQL with the ability to build, robustly test, and optimize complex models.
+About us
 
-A strong sense of what makes a data product trustworthy, maintainable, and valuable to the end user.
+Ebury delivers sophisticated, integrated solutions — business accounts, hedging, and financing — on a single platform with a seamless workflow. Our success is built on a simple premise and singular purpose: To help businesses operate and scale globally.
 
-Finance domain knowledge, you understand how financial data works: P&L, FX, exposure, reconciliation.
+Since its founding in 2009, Ebury has always been a fast-growing leader in fintech. Today, we bring together 1,800+ Eburians across nearly 70 cities and we're always looking to add to our team.
 
-Experience with (or a genuine curiosity for) Domain-Driven Design and how it shapes team ownership and data structure.
+At the heart of our offering is a proprietary platform, purpose-built to help businesses seamlessly streamline and manage global cash flow. We focus on continuous product evolution and innovation to build the infrastructure for borderless growth and help our clients scale at every stage.
 
-Fluency in English (Spanish is a plus).
+The opportunities at Ebury are as diverse as our people, ranging from business development to engineering roles across our tech pillars.
 
-About us: Ebury delivers sophisticated, integrated solutions — business accounts, hedging, and financing — on a single platform. Since its founding in 2009, Ebury has always been a fast-growing leader in fintech. Today, we bring together 1,800+ Eburians across nearly 70 cities.
+We believe in inclusion. We stand against discrimination in all forms and are against the intolerance of differences that makes us a modern and successful organisation. At Ebury, you can be whoever you want to be and still feel a sense of belonging no matter your story.
 
 ---
 
@@ -58,27 +59,27 @@ About us: Ebury delivers sophisticated, integrated solutions — business accoun
 
 *3-run LLM consistency check: `../../analysis/jd_traces/2026-07-24_ebury_analytics-engineer.md` (generated by `classify_jds.py`, may not exist yet)*
 
-**velocity_vs_rigour:** rigour — Repeated rigour signals — testing, CI/CD, governance, alerting, reliability, code review — dominate over the single velocity-adjacent phrase 'diving into the IDE to ship a critical fix'.
+**velocity_vs_rigour:** rigour — Responsibilities repeatedly emphasize governance, reliability, alerting, testing, and CI/CD with no velocity/speed language present, placing this at rigour.
 
-**domain_risk:** high — Fintech company with explicit financial reporting/reconciliation language (P&L, FX, exposure), meeting the high override criteria.
+**domain_risk:** high — The role directly handles financial data (P&L, FX, exposure, reconciliation) at a fintech providing hedging and financing solutions, a financial-reporting/reconciliation context that places this at high.
 
 **collaboration_width:** 3 — named teams: Product; Engineering; Data
 
-**data_team_maturity:** mid — A defined domain-ownership model and existing orchestration (Airflow/Cloud Composer) exist, but the role is asked to set standards within its domain from a position of ownership, indicating a growing (mid) rather than fully mature or greenfield function.
+**data_team_maturity:** mature — The JD describes an established Domain-Driven Design organizational approach with clear domain ownership boundaries and existing pipeline orchestration (Airflow/Cloud Composer) already in production, indicating a mature, specialized organization.
 
-**jd_authorship:** hiring_manager — Named tools (dbt, Airflow, Cloud Composer) and precise domain context (P&L, FX, reconciliation) make the day-to-day work very clear.
+**jd_authorship:** hiring_manager — Responsibilities name precise methodology (Domain-Driven Design, semantic layer, alerting frameworks, Airflow/Cloud Composer orchestration) that shows exactly what the role does day to day, written by someone close to the work.
 
-**stakeholder_orientation:** finance — The role is explicitly embedded in a finance-heavy fintech domain with P&L, FX, and reconciliation as core knowledge requirements.
+**stakeholder_orientation:** finance — The role explicitly requires finance domain knowledge (P&L, FX, exposure, reconciliation) tied to a core product domain, a finance-oriented audience.
 
-**autonomy_level:** strategic — The role owns domain standards, architects roadmaps, and sets governance practices — a clearly strategic framing despite occasional hands-on execution.
+**autonomy_level:** mixed — The JD explicitly names both strategic roadmap ownership and hands-on technical execution as equally weighted, an unambiguous mixed signal.
 
-**ai_role:** ai_enabler — The candidate builds semantic infrastructure explicitly consumed by AI agents downstream, meeting the ai_enabler pattern (semantic modelling for AI).
+**ai_role:** ai_enabler — The candidate is expected to build the semantic/data infrastructure that AI agents consume downstream, the defining signal of ai_enabler.
 
-**testing_framing:** responsibility — Testing and CI/CD are framed as an owned engineering practice the candidate delivers and promotes, not just a listed skill.
+**testing_framing:** responsibility — Testing and CI/CD are framed as an owned responsibility with explicit ownership language (deliver, contribute to, promote best practices), not just a tool in a skills list.
 
-**loss_aversion_framing:** high — High: fintech context combined with explicit language about catching anomalies before they reach the business and building 'trusted, reusable assets' reflects fear of bad data reaching decision-makers.
+**loss_aversion_framing:** high — Governance, reliability, and 'catch anomalies before they reach the business' framing dominate the responsibilities, combined with a finance-data domain (P&L, FX, reconciliation), placing this at high.
 
-**greenfield_vs_fix:** mixed — Mix of setting new standards/building semantic layers (greenfield) and monitoring/governing existing data products for reliability (fix_scale) with no dominant direction.
+**greenfield_vs_fix:** mixed — The JD mixes new-build language (build the semantic layer, set new standards) with governance/maintain language (monitor, govern existing data products) roughly evenly, making this mixed.
 
 **urgency:** standard — No urgency signals present.
 
@@ -92,18 +93,14 @@ About us: Ebury delivers sophisticated, integrated solutions — business accoun
 
 **ats_job_id:** 4866617101
 
-**loss_aversion:** catch anomalies before they reach the business — fintech domain data feeding financial reporting raises the cost of undetected errors.
+**loss_aversion:** You will design and propose ongoing alerting frameworks to catch anomalies before they reach the business — reflects a dominant reliability/trust framing tied to a financial-data domain, placing this at high.
 
 **ATS keywords:**
-- dbt
-- SQL
-- Airflow
-- Cloud Composer
 - Domain-Driven Design
 - semantic layer
-- P&L
-- FX
-- reconciliation
-- CI/CD
-- data governance
-- fintech
+- Airflow
+- Cloud Composer
+- P&L, FX, exposure, reconciliation
+- dbt
+- alerting frameworks
+- data warehouse ownership

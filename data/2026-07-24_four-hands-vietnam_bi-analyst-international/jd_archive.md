@@ -1,60 +1,32 @@
 **URL:** https://www.linkedin.com/jobs/view/4429015004/
 
-BI Analyst, International (English required)
+Four Hands, a leader in lifestyle home furnishings, is looking for a business-focused analyst to join our Product Data and Analytics team. This role supports International Operations through the design, development, and maintenance of ETL processes and reporting solutions, with a strong reliance on the Microsoft platform.
+You will work closely with key stakeholders and process owners to define requirements and build scalable data models and reports that support business decision-making. You will serve as the link between business requirements and technical delivery, ensuring solutions are clearly defined and effectively implemented.
 
-Four Hands Vietnam
-Location: Ho Chi Minh City, Vietnam
+In This Role:
+- Engage with stakeholders and subject matter experts to elicit, critically review, and document business requirements, translating them into technical specifications
+- Evaluate cross-departmental business needs and implications, incorporating them into structured and scalable solutions
+- Build and maintain Azure Data Factory pipelines and data flows to support data integration and reporting
+- Build and maintain Power BI reports and dashboards based on defined specifications
+- Perform predictive and prescriptive analysis and communicate findings in a clear and concise format for end users
+- Conduct regular data audits to ensure accuracy, completeness, and consistency of data and metrics
+- Support continuous improvement of data models, reporting processes, and data flows
+- Perform other tasks as defined by Management
 
-Four Hands, described as 'a leader in lifestyle home furnishings,' seeks an analyst to join their Product Data and Analytics team supporting International Operations.
+The Ideal Candidate:
+- 4+ years' experience as a Data Engineer and/or BI Analyst
+- Strong proficiency in SQL
+- Experience with Microsoft Azure Data Factory and Power BI
+- Strong analytical and problem-solving skills, with the ability to balance attention to detail and overall business context
+- Strong verbal, written, and interpersonal communication skills (English proficiency required)
+- Ability to work in a multi-cultural environment, considering both language and regional differences
+- Ability to work independently, take initiative, and remain flexible in a fast-paced, agile environment
+- Domain knowledge is advantageous – Product Development, Supply Chain, Quality
 
-Key Responsibilities
-
-Collaborate with stakeholders to elicit, critically review, and document business requirements
-
-Translate business needs into technical specifications
-
-Assess cross-departmental requirements and build scalable solutions
-
-Develop and maintain Azure Data Factory pipelines
-
-Create Power BI reports and dashboards
-
-Perform predictive and prescriptive analysis
-
-Conduct regular data audits for accuracy and consistency
-
-Support continuous improvement of data models and processes
-
-Requirements
-
-4+ years as Data Engineer and/or BI Analyst
-
-Strong SQL proficiency
-
-Experience with Microsoft Azure Data Factory and Power BI
-
-Strong analytical and problem-solving abilities
-
-Strong verbal, written, and interpersonal communication skills
-
-English proficiency required
-
-Ability to work in multicultural environments
-
-Independent work capability with flexibility
-
-Advantageous: Domain knowledge in Product Development, Supply Chain, or Quality
-
-Benefits
-
-International working environment with career development
-
-Quarterly bonus based on profit sharing
-
-Private health insurance
-
-Company laptop
-
-12 annual leave days plus additional paid leave
-
-Flexible working hours
+Why You'll Love Working at Four Hands
+- Professional, international working environment with long-term career development opportunities.
+- Quarterly bonus based on international profit sharing.
+- Private health insurance.
+- Company-provided laptop.
+- 12 annual leave days plus additional paid leave according to company policy (e.g. Christmas, birthday).
+- Flexible working hours.

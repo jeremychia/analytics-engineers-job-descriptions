@@ -8,19 +8,50 @@
 
 Digital Analytics Engineer
 
-Inchcape
-Location: Taguig, Philippines
-Date Posted: 24 Jul 2026
+Are you looking to accelerate your career path in a stimulating, fast-growing business? At Inchcape, we're pursuing an exciting strategy to evolve our global business and lead our industry's transformation.
 
-The role involves designing scalable analytics solutions that address business and operational needs across markets and owning changes through development, testing, and deployment. The engineer must build reliable and maintainable data solutions following best practices and collaborate with Product, QA, and Engineering teams to validate requirements and ensure stakeholder alignment.
+Join Inchcape Digital, part of Inchcape global network. You'll explore and develop cutting-edge technology and data solutions that are driving our innovation and unique market position. Thrive as part of a highly collaborative and supportive team of diverse and talented colleagues.
 
-Requirements
+Our Digital Experience Platform is looking for Digital Analytics Engineer will support data governance, quality, and analytics enablement across the organization. This role is responsible for transforming business and operational requirements into reliable, scalable data models and analytics solutions. It ensures the accuracy, consistency, and trustworthiness of product and behavioral data, enabling stakeholders to make informed, data-driven decisions. The position identifies data gaps, validates data integrity, and collaborates with cross-functional teams to improve data pipelines, maintain analytical assets, and ensure alignment with business goals and best practices.
 
-Candidates need experience in Product Analytics, Digital Analytics, or a technical Data Analyst role, with exposure to behavioral data. Required skills include hands-on experience with tag management systems, basic scripting (SQL, JavaScript), and understanding of how data is generated and used across systems.
+What you'll do
+- Design and implement scalable analytics solutions that address business and operational needs across markets.
+- Own changes end-to-end, including development, testing, deployment, and production validation.
+- Build reliable and maintainable data solutions following best practices that enable reuse and scalability.
+- Continuously improve data assets through incremental enhancements, refactoring, and workflow optimization.
+- Collaborate with Product, QA, and Engineering teams to clarify requirements and validate assumptions early.
+- Communicate progress, risks, and trade-offs effectively to ensure alignment with stakeholders.
+- Deliver accurate, well-documented, and trustworthy data outputs while prioritizing system reliability and simplicity.
 
-Benefits Offered
+About you
+- Experience in Product Analytics, Digital Analytics, or a technical Data Analyst role, with exposure to behavioral data.
+- Hands-on experience supporting event-based measurement implementations using Tag Management Systems or in-product instrumentation.
+- Basic scripting skills (e.g., SQL, JavaScript) for data validation, troubleshooting, and quality checks.
+- Understanding of how data is generated and used across systems, with the ability to identify inconsistencies and support data quality initiatives.
+- Ability to reconcile data across multiple sources and assist in identifying discrepancies using debugging tools.
 
-The company provides learning platforms, career development support, skills advancement through training, hybrid/remote work options with remote bonuses, HMO health coverage with dependents, life insurance, birthday leave, and work equipment.
+We offer you
+- Learning & Development: Access leading learning platforms with tailored pathways for every role, including technical and leadership training and certifications.
+- Career Growth: Receive ongoing career support, regular performance reviews, and opportunities for promotion, with access to senior leadership for guidance and mentorship.
+- Skills Advancement: Continuously upgrade your expertise through training in the latest technologies and industry advancements.
+- Flexible Work: Benefit from hybrid or remote work arrangements, with a remote work bonus to recognise your contribution.
+- Health & Wellbeing: Enjoy Health Maintenance Organization HMO coverage with free dependent inclusion and life insurance for added peace of mind.
+- Special Leave: Celebrate your birthday with a dedicated day off just for you.
+- Work Tools: Get the equipment you need to perform your role effectively.
+
+Opportunity for everyone
+
+At Inchcape, inclusion accelerates our success. We are committed to creating a workplace where everyone feels valued, heard, and empowered to thrive. We foster an inclusive culture that reflects the communities we serve, ensuring opportunities for all.
+
+About us
+
+Our diverse global team of over 16,000 talented colleagues foster an inclusive and collaborative culture, delivering a brilliant experience for our customers and partners. We're a dynamic and fast-growing business, driving the transformation of our industry and redefining tomorrow. Find out more www.inchcape.com
+
+Inchcape's Digital Delivery Centres drive innovation, empowering global mobility through advanced technology solutions. Our teams deliver impactful digital systems, ensuring long-term business success with world-class operations at scale. Learn more about us here.
+
+Additional information request
+
+Selected candidates will be contacted to initiate our hiring journey. We may request additional information from applicants to better understand your background, qualifications and experience for the role.
 
 ---
 
@@ -28,31 +59,31 @@ The company provides learning platforms, career development support, skills adva
 
 *3-run LLM consistency check: `../../analysis/jd_traces/2026-07-24_inchcape_digital-analytics-engineer.md` (generated by `classify_jds.py`, may not exist yet)*
 
-**velocity_vs_rigour:** rigour — Rigour signals dominate — reliable, maintainable, best practices, testing, validation — with no velocity/speed language present.
+**velocity_vs_rigour:** rigour — Responsibilities repeatedly emphasize accuracy, consistency, trustworthiness, data validation, and quality checks with no velocity/speed language present, placing this at rigour.
 
-**domain_risk:** moderate — Automotive/digital analytics affecting operational decisions across markets without financial-reporting or regulatory language, so moderate.
+**domain_risk:** moderate — Errors affect internal product/behavioral analytics and business decision-making at a global mobility company, a real but non-regulatory, non-financial-reporting consequence, placing this at moderate.
 
 **collaboration_width:** 3 — named teams: Product; QA; Engineering
 
-**data_team_maturity:** mid — Named cross-functional teams (Product, QA, Engineering) and an existing development/deployment process indicate a growing, structured but not fully mature data/analytics practice.
+**data_team_maturity:** mid — An existing 'Digital Experience Platform' and Digital Delivery Centres with established analytics and data pipelines are described as being improved and extended, indicating a growing but already-established data function.
 
-**jd_authorship:** mixed — Some named tools and precise process steps (tag management systems, testing, deployment) give partial precision, but bullets like 'understanding of how data is generated and used across systems' are generic, producing a mixed profile.
+**jd_authorship:** hiring_manager — Responsibilities name specific technical scope (event-based measurement, Tag Management Systems, in-product instrumentation, data reconciliation across sources) that shows what the role does day to day.
 
-**stakeholder_orientation:** product — The role is framed around product/digital analytics and behavioral data, collaborating primarily with Product and Engineering, placing it in product orientation.
+**stakeholder_orientation:** product — The role centers on product and behavioral analytics (event-based measurement, in-product instrumentation) serving Product/QA/Engineering teams, a product-oriented audience.
 
-**autonomy_level:** execution — Verbs are execution-oriented (design, own, build, collaborate, validate) delivering scoped analytics solutions rather than setting broader strategy.
+**autonomy_level:** execution — All responsibilities are scoped execution verbs (design, implement, own changes, build, improve, collaborate, communicate, deliver) responding to defined business/operational requirements rather than setting new strategic direction.
 
-**ai_role:** none — No mention of AI tools for the candidate or AI-consuming data infrastructure anywhere in the JD.
+**ai_role:** none — No AI tooling or AI-adjacent responsibility is mentioned anywhere in the JD.
 
-**testing_framing:** responsibility — Testing is framed as an owned part of the candidate's development lifecycle responsibility ('owning changes through... testing'), not just a listed skill.
+**testing_framing:** responsibility — Testing and data validation are framed as an owned responsibility with explicit ownership language (own changes end-to-end), not just a tool in a skills list.
 
-**loss_aversion_framing:** moderate — Moderate: reliability and maintainability are recurring concerns but framed as delivery/engineering quality rather than compliance or stakeholder-trust risk.
+**loss_aversion_framing:** moderate — Data trustworthiness and integrity are named as ongoing secondary concerns without regulatory or stakeholder-trust framing dominating the JD, placing this at moderate.
 
-**greenfield_vs_fix:** mixed — Mix of designing new analytics solutions (greenfield) and owning changes/maintaining existing systems (fix_scale) with no dominant direction.
+**greenfield_vs_fix:** fix_scale — Responsibilities are dominated by improve/refactor/optimize verbs applied to existing data pipelines and analytical assets rather than building new infrastructure from scratch, indicating fix/scale.
 
 **urgency:** standard — No urgency signals present.
 
-**work_arrangement:** hybrid — hybrid/remote work options with remote bonuses
+**work_arrangement:** hybrid — Flexible Work: Benefit from hybrid or remote work arrangements, with a remote work bonus to recognise your contribution.
 
 **language_gate:** none — Not stated in JD.
 
@@ -62,15 +93,14 @@ The company provides learning platforms, career development support, skills adva
 
 **ats_job_id:** 1358468157
 
-**loss_aversion:** No loss aversion framing detected.
+**loss_aversion:** It ensures the accuracy, consistency, and trustworthiness of product and behavioral data — a secondary data-quality concern, not a dominant compliance risk register.
 
 **ATS keywords:**
-- Product Analytics
-- Digital Analytics
-- tag management
+- Digital Experience Platform
+- Tag Management Systems
+- event-based measurement
+- in-product instrumentation
+- data governance
+- data integrity
 - behavioral data
-- SQL
-- JavaScript
-- scalable analytics solutions
-- testing
-- deployment
+- data reconciliation

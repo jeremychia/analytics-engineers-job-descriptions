@@ -1,33 +1,38 @@
 # Senior BI Engineer — Lalamove
 
 **URL:** https://www.linkedin.com/jobs/view/4381978995/
-**Location:** Hong Kong, Hong Kong SAR
+**Location:** Not stated in JD header (Mandarin a plus, suggesting Greater China/Asia base)
 **Date Posted:** 2026-07-22
 
 ---
 
-Senior BI Engineer - Lalamove
+Senior BI Engineer
 
-Position: Senior BI Engineer
-Company: Lalamove
-Location: Hong Kong, Hong Kong SAR
-Employment Type: Full-time
-Seniority Level: Mid-Senior level
+At Lalamove, we believe in the power of community. Millions of drivers and customers use our technology every day to connect with one another and move things that matter. Delivery is what we do best and we ensure it is always fast and simple. Since 2013, we have tackled the logistics industry head on to find the most innovative solutions for the world's delivery needs. We are full steam ahead to make Lalamove synonymous with delivery and on a mission to impact as many local communities as we can. We have massively scaled our efforts across Asia and now have our sights on taking our best in class technology to the rest of the world. And we need your help to get us there!
 
-Job Description
-At Lalamove, we believe in the power of community. Millions of drivers and customers use our technology every day to connect with one another and move things that matter.
+As a Senior BI Engineer at Lalamove, you will work with the BIE teams to support different functional departments in terms of building and maintaining the data pipelines, reporting scripts and queries. You also will be designing and creating data sources, visualizations, reports and metrics dashboards for the senior management to make informed decisions based on the analytics developed.
 
-As a Senior BI Engineer, responsibilities include: work with the BIE teams to support different functional departments in terms of building and maintaining the data pipelines, reporting scripts and queries and designing and creating data sources, visualizations, reports and metrics dashboards.
+What We Seek
+- Quick learner: you enjoy working with data and you have the ability to learn new technology and frameworks quickly
+- Problem solver: you have strong critical thinking skills, willing to find creative solutions to difficult problems and work smart before hard
+- High autonomy: self-organized, initiator, passionate with a can-do attitude and own end-to-end projects
+- Team player: you go the extra mile to ensure success and alignment of all parties involved
+- Communicative: you have the ability to elaborate complex technical concepts and collaborate effectively with fellow teammates and stakeholders
+- Specialist skills: you adhere to the norm of coding guidelines and put forward best practices to improve the quality. You also pursue chances to identify as well as resolve performance bottlenecks in data processing, ETL pipelines, and reporting queries
 
-Requirements
+What You'll Need
 - At least 5 years of work experience in a business intelligence or data analysis role
-- Experience working with complex datasets and ability to write efficient SQL queries against Hive and MySQL is a MUST, DORIS SQL as a plus
+- Experience working with complex datasets and ability to write efficient SQL queries against Hive and MySQL is a MUST, DORIS SQL as a plus.
 - Knowledge of data pipeline, ETL/ELT, workflow management and data warehousing
-- Experience using business intelligence platforms for data visualisation...Tableau is preferable
+- Experience using business intelligence platforms for data visualisation, creating and automating dashboards, reports and data sources. Tableau is preferable
 - Experience scripting Python for data manipulation, analysis and automation
-- Good command of English...Mandarin is a plus
+- Good command of English for communicating technical ideas both orally and in writing. Mandarin is a plus
 
-[NOTE: Extracted via WebFetch quoted-fragment summary from LinkedIn; full raw HTML JD text not independently confirmed verbatim but content is substantive and structured.]
+To all candidates- Lalamove respects your privacy and is committed to protecting your personal data.
+
+This Notice will inform you how we will use your personal data, explain your privacy rights and the protection you have by the law when you apply to join us. Please take time to read and understand this Notice. Candidate Privacy Notice: https://www.lalamove.com/en-hk/candidate-privacy-notice
+
+We may use artificial intelligence (AI) tools to support parts of the hiring process, such as reviewing applications, analyzing resumes, or assessing responses and identifying potential inconsistencies or verification signals in application materials based on available information. These tools assist our recruitment team but do not replace human judgment. Final hiring decisions are ultimately made by humans. If you would like more information about how your data is processed, please contact us.
 
 ---
 
@@ -35,33 +40,33 @@ Requirements
 
 *3-run LLM consistency check: `../../analysis/jd_traces/2026-07-22_lalamove_senior-bi-engineer.md` (generated by `classify_jds.py`, may not exist yet)*
 
-**velocity_vs_rigour:** mixed — No explicit rigour signals (testing, governance) or velocity signals (fast-paced, ship quickly) are present in the JD, so neither dominates.
+**velocity_vs_rigour:** mixed — Coding guidelines/best-practices language balances against 'work smart before hard' and quick-learner framing, giving mixed weight to both.
 
-**domain_risk:** moderate — On-demand logistics/delivery platform affecting operational business decisions, with no financial reporting or regulatory compliance language present.
+**domain_risk:** moderate — Errors affect internal business decision-making for senior management at a logistics company without financial-reporting or regulatory-audit language, placing this at moderate.
 
-**collaboration_width:** 0 — named teams: 
+**collaboration_width:** 1 — named teams: BIE teams
 
-**data_team_maturity:** mid — A named BIE (BI Engineering) team structure supporting multiple departments indicates an established, growing data function.
+**data_team_maturity:** mid — An existing 'BIE teams' structure supporting multiple functional departments with established data pipelines and BI platforms is described, indicating a growing but already-functioning data function.
 
-**jd_authorship:** hiring_manager — Specific database technologies (Hive, MySQL, Doris SQL) give a concrete, precise picture of the technical environment.
+**jd_authorship:** hiring_manager — Responsibilities name specific technologies (Hive, MySQL, DORIS SQL, Tableau) and concrete practices (performance bottleneck resolution) that show what the role does day to day, though phrasing is fairly standard BI-role boilerplate.
 
-**stakeholder_orientation:** internal_data — The role centres on BI engineering deliverables (dashboards, reports, data sources) for internal functional departments generically, an internal_data pattern.
+**stakeholder_orientation:** internal_data — The role serves multiple internal functional departments and senior management through BI dashboards and reporting, an internal-data orientation.
 
-**autonomy_level:** execution — The framing is explicitly support-oriented ("support different functional departments") without ownership or direction-setting verbs.
+**autonomy_level:** mixed — The role combines end-to-end project ownership and proactive performance-bottleneck resolution (strategic-leaning) with building/maintaining pipelines and dashboards for defined departmental needs (execution), making this mixed.
 
-**ai_role:** none — No AI tool or AI infrastructure mention appears anywhere in the extracted JD text.
+**ai_role:** none — AI is mentioned only in the context of the company's own hiring process, not as a skill or tool expected of the candidate in their work.
 
-**testing_framing:** absent — No testing, data quality framework, or data contract language appears anywhere in the extracted JD text.
+**testing_framing:** absent — The JD focuses on BI dashboards, pipelines, and query performance rather than any explicit data testing methodology.
 
-**loss_aversion_framing:** none — The JD is framed entirely in delivery and capability terms with no risk or compliance register.
+**loss_aversion_framing:** none — The JD is framed entirely in delivery, scaling, and capability terms (build, maintain, design, create) with no risk, compliance, or reliability register present.
 
-**greenfield_vs_fix:** fix_scale — The dominant verb is "maintaining" existing pipelines and reporting infrastructure across an established BIE team structure.
+**greenfield_vs_fix:** fix_scale — Responsibilities are dominated by maintain/optimize verbs (maintaining data pipelines, resolving performance bottlenecks) applied to existing BI infrastructure rather than building new systems from scratch, indicating fix/scale.
 
 **urgency:** standard — No urgency signals present.
 
 **work_arrangement:** not_stated — Not stated in JD.
 
-**language_gate:** soft — "Good command of English...Mandarin is a plus"
+**language_gate:** soft — "Good command of English for communicating technical ideas both orally and in writing. Mandarin is a plus"
 
 **interview_stages:** Not stated in JD
 
@@ -72,14 +77,11 @@ Requirements
 **loss_aversion:** No loss aversion framing detected.
 
 **ATS keywords:**
-- Senior BI Engineer
-- Hive
-- MySQL
+- Hive and MySQL
 - DORIS SQL
-- ETL ELT
-- data warehousing
+- ETL/ELT
 - Tableau
 - data pipelines
 - reporting scripts
 - metrics dashboards
-- BIE team
+- performance bottlenecks
