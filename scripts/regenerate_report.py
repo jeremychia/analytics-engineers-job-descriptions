@@ -244,7 +244,7 @@ The following files have been regenerated:
 
 Manual updates still needed:
   → Report statistics (report.md) — copy tables from above into the report
-  → Test the interactive dashboard at analysis/index.html
+  → Test the interactive dashboard at analysis/full-analysis.html
   → Commit changes with appropriate message
 """)
 

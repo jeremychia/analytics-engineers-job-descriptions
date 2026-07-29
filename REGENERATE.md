@@ -22,7 +22,7 @@ scripts/regenerate_report.py
            ↓
 analysis/data.json (single compiled source)
            ↓
-analysis/index.html (auto-fetches on page load)
+analysis/full-analysis.html (auto-fetches on page load)
            ↓
 Interactive browser dashboard ✨
 ```
@@ -32,7 +32,7 @@ Interactive browser dashboard ✨
 | File | What | When |
 |------|------|------|
 | `analysis/data.json` | All 248 JD records compiled | Every run (automatic) |
-| `analysis/index.html` | Dashboard | Auto-refreshes from `data.json` on page load |
+| `analysis/full-analysis.html` | Dashboard | Auto-refreshes from `data.json` on page load |
 | `analysis/report.md` | Statistics tables | Manual — copy printed tables into report |
 
 ## Workflow
@@ -75,7 +75,7 @@ STEP 2: Analyze dimensions
 
 ### 3. Update dashboard
 
-Just reload `analysis/index.html` in your browser — it auto-fetches the new `data.json`.
+Just reload `analysis/full-analysis.html` in your browser — it auto-fetches the new `data.json`.
 
 ### 4. Update report.md (optional)
 
@@ -125,7 +125,7 @@ python3 scripts/regenerate_report.py --help
 - `scripts/regenerate_report.py` — main script (compile + analyze)
 - `scripts/compile_data.py` — helper (compile data.json only)
 - `analysis/data.json` — output data for dashboard
-- `analysis/index.html` — interactive visualization
+- `analysis/full-analysis.html` — interactive visualization
 - `analysis/report.md` — static markdown analysis
 
 ## Why This Exists

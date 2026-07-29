@@ -12,7 +12,8 @@ analytics-engineers-job-descriptions/
 │       ├── jd.md             # Formatted JD + behavioral analysis
 │       └── jd_archive.md     # Raw verbatim JD text
 ├── analysis/                 # Cross-reference analysis & reports
-│   ├── index.html            # Interactive analytics dashboard
+│   ├── index.html            # Landing page (job seeker / hiring manager toggle)
+│   ├── full-analysis.html    # Full interactive statistics dashboard
 │   ├── report.md             # Full analysis vs dbt Labs reports
 │   ├── data.json             # Compiled classification dataset
 │   └── jd_traces/            # 3-run LLM consistency checks
@@ -25,3 +26,16 @@ analytics-engineers-job-descriptions/
 ## Quick Start
 
 See [`analysis/report.md`](analysis/report.md) for the full analysis and key findings.
+
+## Opening the dashboard
+
+Both `analysis/index.html` and `analysis/full-analysis.html` load their data via `fetch('./data.json')`, which browsers block under a bare `file://` URL — serve the `analysis/` folder over HTTP instead:
+
+```bash
+cd analysis
+python3 -m http.server 8000
+```
+
+Then open:
+- [http://localhost:8000/index.html](http://localhost:8000/index.html) — the landing page (job seeker / hiring manager toggle)
+- [http://localhost:8000/full-analysis.html](http://localhost:8000/full-analysis.html) — the full statistics dashboard

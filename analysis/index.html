@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AE/BI Job Market — What to look for, what to signal</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231d4ed8'/%3E%3Ccircle cx='24' cy='20' r='9' fill='%23ffffff'/%3E%3Cpath d='M8 50c0-11 7.5-18 16-18s16 7 16 18' fill='%23ffffff'/%3E%3Crect x='42' y='32' width='6' height='18' rx='1' fill='%2316a34a'/%3E%3Crect x='51' y='22' width='6' height='28' rx='1' fill='%23fbbf24'/%3E%3C/svg%3E">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #ffffff;
+  --surface: #f8f8f6;
+  --surface2: #f0f0ed;
+  --border: #e5e5e1;
+  --text: #111111;
+  --muted: #6b7280;
+  --accent: #1d4ed8;
+  --good: #16a34a;
+  --warn: #d97706;
+  --bad: #c0392b;
+  --w: 880px;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.6; }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+
+/* ── MODE SWITCH (top-right, once a mode is picked) ── */
+.mode-toggle {
+  position: fixed; top: 0.6rem; right: 1rem; z-index: 500;
+  display: flex; background: #fff; border: 1px solid var(--border);
+  border-radius: 20px; padding: 2px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+.mode-toggle.hidden { display: none; }
+.mode-toggle button {
+  font-size: 0.72rem; font-weight: 600; border: none; background: transparent;
+  color: var(--muted); padding: 0.32rem 0.85rem; border-radius: 20px;
+  cursor: pointer; white-space: nowrap; font-family: inherit;
+}
+.mode-toggle button.active { background: var(--accent); color: #fff; }
+@media (max-width: 640px) { .mode-toggle { top: auto; bottom: 1rem; box-shadow: 0 4px 16px rgba(0,0,0,0.2); } }
+
+/* ── HERO / MODE PICKER ── */
+.hero {
+  min-height: 62vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center; padding: 4.5rem 1.5rem 3rem; background: #fff; border-bottom: 1px solid var(--border);
+}
+.hero-eyebrow { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; font-weight: 600; }
+.hero h1 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); font-weight: 700; line-height: 1.2; max-width: 700px; margin-bottom: 1.1rem; letter-spacing: -0.02em; }
+.hero-sub { font-size: 0.98rem; color: var(--muted); max-width: 560px; margin-bottom: 2.25rem; line-height: 1.75; }
+.mode-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; max-width: 680px; width: 100%; }
+@media (max-width: 560px) { .mode-cards { grid-template-columns: 1fr; } }
+.mode-card {
+  border: 1px solid var(--border); border-radius: 14px; padding: 1.6rem 1.5rem;
+  cursor: pointer; text-align: left; background: var(--surface); font-family: inherit;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+.mode-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+.mode-card h3 { font-size: 1.02rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text); }
+.mode-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
+.hero-footer-link { margin-top: 2rem; font-size: 0.78rem; color: var(--muted); }
+.hero-footer-link a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+
+/* ── CONTENT WRAP ── */
+#content { display: none; }
+#content.visible { display: block; }
+.section { padding: 3.5rem 1.5rem; max-width: var(--w); margin: 0 auto; }
+.section + .section { border-top: 1px solid var(--border); }
+.section-eyebrow { font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.7rem; }
+.section-title { font-size: clamp(1.3rem, 2.8vw, 1.7rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.3; margin-bottom: 0.75rem; }
+.section-intro { font-size: 0.9rem; color: var(--muted); line-height: 1.75; max-width: 680px; margin-bottom: 2rem; }
+.section-intro strong { color: var(--text); }
+
+/* ── HYGIENE STRIP ── */
+.hygiene-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+.hygiene-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.25rem; }
+.hygiene-stat { font-size: 1.3rem; font-weight: 700; color: var(--accent); margin-bottom: 0.3rem; line-height: 1; }
+.hygiene-label { font-size: 0.78rem; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
+.hygiene-note { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
+.hygiene-check { display: flex; align-items: flex-start; gap: 0.6rem; }
+.hygiene-check-mark { flex-shrink: 0; width: 20px; height: 20px; border-radius: 5px; background: var(--surface2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: var(--muted); margin-top: 0.1rem; }
+
+.sample-text {
+  margin-top: 0.7rem; padding: 0.65rem 0.85rem; background: #fff; border: 1px dashed var(--border);
+  border-radius: 8px; font-size: 0.78rem; color: var(--text); line-height: 1.6; font-style: italic;
+}
+.sample-text-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-style: normal; display: block; margin-bottom: 0.3rem; }
+
+.why-matters { margin-top: 0.7rem; font-size: 0.8rem; color: var(--text); line-height: 1.65; }
+.why-matters b { color: var(--text); }
+
+.stat-bar-track { height: 6px; border-radius: 3px; background: var(--surface2); overflow: hidden; margin-top: 0.55rem; }
+.stat-bar-fill { height: 100%; border-radius: 3px; background: var(--accent); }
+.stat-bar-fill.warn { background: var(--warn); }
+
+/* ── SNAPSHOT (dataset composition, shown once above mode content) ── */
+.snapshot-section { padding: 2.5rem 1.5rem 0.5rem; max-width: var(--w); margin: 0 auto; }
+.snapshot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+.snapshot-group-title { font-size: 0.78rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; }
+.snapshot-row { margin-bottom: 0.65rem; }
+.snapshot-row:last-child { margin-bottom: 0; }
+.snapshot-row-label { display: flex; justify-content: space-between; font-size: 0.76rem; color: var(--muted); margin-bottom: 0.3rem; }
+.snapshot-row-label b { color: var(--text); font-weight: 600; }
+.snapshot-row .stat-bar-track { margin-top: 0; }
+
+/* ── MOTIVATOR CHIPS (seeker) ── */
+.motivator-chips { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem; }
+.motivator-chip {
+  padding: 0.65rem 1.1rem; border-radius: 24px; border: 1.5px solid var(--border);
+  background: #fff; cursor: pointer; font-family: inherit; font-size: 0.82rem; font-weight: 600;
+  color: var(--text); transition: all 0.15s; display: flex; align-items: center; gap: 0.5rem;
+}
+.motivator-chip:hover { border-color: var(--accent); }
+.motivator-chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.motivator-chip .icon { font-size: 0.9rem; }
+.motivator-empty { font-size: 0.85rem; color: var(--muted); padding: 2rem 0; text-align: center; border: 1px dashed var(--border); border-radius: 10px; }
+
+/* ── CHECKLIST CARDS (shared seeker/manager) ── */
+.check-card { border: 1px solid var(--border); border-radius: 12px; margin-bottom: 1.25rem; overflow: hidden; background: #fff; }
+.check-head { padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border); background: var(--surface); }
+.check-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
+.check-sub { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
+.check-body { padding: 1.1rem 1.5rem 1.3rem; }
+.check-item { display: flex; gap: 0.75rem; padding: 0.7rem 0; border-bottom: 1px solid var(--border); }
+.check-item:last-child { border-bottom: none; }
+.check-item-badge {
+  flex-shrink: 0; width: 22px; height: 22px; border-radius: 6px; display: flex; align-items: center;
+  justify-content: center; font-size: 0.68rem; font-weight: 700; margin-top: 0.05rem;
+}
+.badge-look { background: #dcfce7; color: #166534; }
+.badge-caution { background: #fef3c7; color: #92400e; }
+.badge-flag { background: #fee2e2; color: #991b1b; }
+.badge-do { background: #dbeafe; color: #1e40af; }
+.check-item-text { font-size: 0.85rem; color: var(--text); line-height: 1.65; }
+.check-item-text a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; font-size: 0.78rem; white-space: nowrap; }
+
+/* ── MANAGER SELF-ASSESS ── */
+.assess-card { border: 1px solid var(--border); border-radius: 12px; margin-bottom: 1.25rem; padding: 1.4rem 1.5rem; background: #fff; }
+.assess-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; }
+.assess-question { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; line-height: 1.6; }
+.assess-options { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+.assess-opt {
+  padding: 0.45rem 0.9rem; border-radius: 20px; border: 1.5px solid var(--border);
+  background: var(--surface); cursor: pointer; font-family: inherit; font-size: 0.78rem; font-weight: 600;
+  color: var(--text); transition: all 0.15s;
+}
+.assess-opt:hover { border-color: var(--accent); }
+.assess-opt.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.assess-result { display: none; padding: 1rem 1.1rem; background: var(--surface); border-radius: 8px; border-left: 3px solid var(--accent); font-size: 0.84rem; color: var(--text); line-height: 1.7; }
+.assess-result.visible { display: block; }
+.assess-result b { color: var(--accent); }
+.assess-result .find { display: block; font-size: 0.72rem; color: var(--muted); margin-top: 0.6rem; }
+.assess-result .find a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+
+/* ── FOOTER LINK ── */
+.full-analysis-cta {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+  padding: 1.5rem 1.75rem; text-align: center;
+}
+.full-analysis-cta p { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.85rem; line-height: 1.65; }
+.full-analysis-cta a {
+  display: inline-block; background: var(--accent); color: #fff; font-size: 0.82rem; font-weight: 600;
+  padding: 0.6rem 1.4rem; border-radius: 8px; text-decoration: none;
+}
+.full-analysis-cta a:hover { opacity: 0.9; }
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<div class="mode-toggle hidden" id="modeToggle" role="group" aria-label="Switch mode">
+  <button type="button" data-mode="seeker" onclick="setMode('seeker')">Job seeker</button>
+  <button type="button" data-mode="manager" onclick="setMode('manager')">Hiring manager</button>
+</div>
+
+<!-- HERO / MODE PICKER -->
+<section class="hero" id="hero">
+  <div class="hero-eyebrow">AE/BI job market · 325 JDs classified</div>
+  <h1>What are you actually trying to get out of this data?</h1>
+  <p class="hero-sub">Same dataset, two different questions - and they don't share an answer. Pick the one that's yours. Everything below is built around it, not around the statistics.</p>
+  <div class="mode-cards">
+    <button class="mode-card" type="button" onclick="setMode('seeker')">
+      <h3>I'm looking for a role</h3>
+      <p>Tell me what you want more of - autonomy, real building work, growth, quality ownership - and get a concrete checklist: language to look for, language to distrust.</p>
+    </button>
+    <button class="mode-card" type="button" onclick="setMode('manager')">
+      <h3>I'm hiring</h3>
+      <p>Check the basics your posting should state, then walk through what your role actually offers so your JD signals it - not the boilerplate every other posting already says.</p>
+    </button>
+  </div>
+  <p class="hero-footer-link">Want the underlying statistics, test results, and every relationship in the dataset? <a href="full-analysis.html">See the full analysis →</a></p>
+</section>
+
+<main id="content">
+
+  <section class="snapshot-section" id="snapshotSection">
+    <div class="section-eyebrow">The corpus behind this page</div>
+    <h2 class="section-title" style="font-size:1.05rem">325 job descriptions, classified - not surveyed</h2>
+    <p class="section-intro" style="margin-bottom:0">Every stat and checklist item below is computed live from this dataset. Here's its shape, so you can judge how much weight to give it.</p>
+    <div class="snapshot-grid" id="snapshotGrid"></div>
+  </section>
+
+  <!-- ══════════════ SEEKER MODE ══════════════ -->
+  <div id="seekerContent" style="display:none">
+
+    <section class="section" id="seekerHygiene">
+      <div class="section-eyebrow">Table stakes — screen for these first</div>
+      <h2 class="section-title">Hygiene factors: they don't make a role good, but their absence should give you pause</h2>
+      <p class="section-intro">Herzberg's two-factor theory draws a sharp line between what <strong>prevents dissatisfaction</strong> and what <strong>actually motivates</strong>. These six are hygiene. Clearing the bar is normal, not impressive - but a JD that fails several of them at once is telling you something.</p>
+      <div class="hygiene-grid" id="hygieneGrid"></div>
+    </section>
+
+    <section class="section" id="seekerMotivators">
+      <div class="section-eyebrow">What makes a role actually good</div>
+      <h2 class="section-title">Pick what you want more of</h2>
+      <p class="section-intro">These predict engagement, not just tolerance. Pick one or more and get the specific signals this dataset shows actually correlate with each one, in real JD language.</p>
+      <div class="motivator-chips" id="motivatorChips"></div>
+      <div id="motivatorChecklists"></div>
+    </section>
+
+  </div>
+
+  <!-- ══════════════ MANAGER MODE ══════════════ -->
+  <div id="managerContent" style="display:none">
+
+    <section class="section" id="managerHygiene">
+      <div class="section-eyebrow">Cover the basics</div>
+      <h2 class="section-title">Does your posting state these? Most don't.</h2>
+      <p class="section-intro">Hygiene factors won't make your posting exciting. But a posting silent on several of them reads as unfinished - and candidates screen for that before they ever get to whether the role itself is good.</p>
+      <div id="managerHygieneList"></div>
+    </section>
+
+    <section class="section" id="managerMotivators">
+      <div class="section-eyebrow">Signal what makes the role good</div>
+      <h2 class="section-title">Most JDs nail hygiene and leave the good part implicit</h2>
+      <p class="section-intro">Recruiter-templated postings, generic "cross-functional collaboration" language, an unqualified "Senior" title - these cover hygiene while leaving the actual motivators (autonomy, real ownership, growth) for the candidate to guess at. Answer honestly about your role below. Each answer surfaces what candidates actually infer, and the cheapest fix.</p>
+      <div id="assessCards"></div>
+    </section>
+
+  </div>
+
+  <section class="section">
+    <div class="full-analysis-cta">
+      <p>Everything above is a synthesis of statistical findings across 325 classified job descriptions - chi-square tests, effect sizes, sparse-cell caveats, and the relationships that didn't hold up.</p>
+      <a href="full-analysis.html">See the full statistical analysis →</a>
+    </div>
+  </section>
+
+</main>
+
+<script>
+let DATA = [];
+let mode = null;
+try { mode = localStorage.getItem('aeMode'); } catch (e) {}
+let activeMotivators = new Set();
+
+function setMode(m) {
+  mode = m;
+  try { localStorage.setItem('aeMode', m); } catch (e) {}
+  document.getElementById('hero').style.display = 'none';
+  document.getElementById('content').classList.add('visible');
+  document.getElementById('modeToggle').classList.remove('hidden');
+  document.querySelectorAll('.mode-toggle button').forEach(b => b.classList.toggle('active', b.dataset.mode === m));
+  document.getElementById('seekerContent').style.display = m === 'seeker' ? 'block' : 'none';
+  document.getElementById('managerContent').style.display = m === 'manager' ? 'block' : 'none';
+  window.scrollTo(0, 0);
+}
+
+// ── Hygiene factors: real stats from the dataset ──
+function pct(filterFn) { const n = DATA.length || 1; return Math.round(DATA.filter(filterFn).length / n * 100); }
+
+function buildHygiene() {
+  const salaryPct = pct(d => d.salary_min && d.salary_max);
+  const workStatedPct = pct(d => d.work_arrangement && d.work_arrangement !== 'not_stated');
+  const hardLangPct = pct(d => d.language_gate_type === 'hard');
+  const earlyPct = pct(d => d.data_team_maturity === 'early');
+  const highFearPct = pct(d => d.loss_aversion_framing === 'high');
+  const n = DATA.length || 1;
+  const medCollab = (() => {
+    const vals = DATA.map(d => parseFloat(d.collaboration_width)).filter(v => !isNaN(v)).sort((a,b)=>a-b);
+    if (!vals.length) return 0;
+    const m = vals.length;
+    return m % 2 ? vals[(m-1)/2] : (vals[m/2-1]+vals[m/2])/2;
+  })();
+
+  const maxCollab = 6;
+  const collabBarPct = Math.min(100, Math.round(medCollab / maxCollab * 100));
+
+  const cards = [
+    { label: 'Salary stated', stat: salaryPct + '%', bar: salaryPct, note: `Only ${salaryPct}% of postings state a range at all. That's the market norm, not a red flag specific to that employer - but ask early if it matters to you.` },
+    { label: 'Work arrangement clarity', stat: workStatedPct + '%', bar: workStatedPct, note: `${workStatedPct}% state a policy. The rest say nothing. Don't read silence as "onsite by default" - ask directly, regardless of company stage.` },
+    { label: 'Hard language requirement', stat: hardLangPct + '%', bar: hardLangPct, warn: true, note: `${hardLangPct}% hard-gate on a specific language - fluency required, not "a plus." A binary dealbreaker. Check before you invest time in an application.` },
+    { label: 'Early-stage share', stat: earlyPct + '%', bar: earlyPct, note: `${earlyPct}% of roles sit at early-stage teams - highest autonomy odds, least structural stability. Know which trade-off you're making.` },
+    { label: 'High-fear / compliance framing', stat: highFearPct + '%', bar: highFearPct, warn: true, note: `${highFearPct}% of JDs carry explicit compliance/trust/audit risk language. These also name roughly ${medCollab >= 2 ? '3×' : 'more'} the stakeholder teams of fear-free JDs - wider surface area, not just more paperwork.` },
+    { label: 'Median stakeholder teams named', stat: medCollab.toFixed(1), bar: collabBarPct, note: `Half of JDs name ${medCollab.toFixed(1)} or fewer partner teams in the responsibilities. If a wide meeting load is a dealbreaker, "cross-functional collaboration" with zero named teams deserves a direct question.` },
+  ];
+  document.getElementById('hygieneGrid').innerHTML = cards.map(c => `
+    <div class="hygiene-card">
+      <div class="hygiene-stat">${c.stat}</div>
+      <div class="hygiene-label">${c.label}</div>
+      <div class="stat-bar-track"><div class="stat-bar-fill${c.warn ? ' warn' : ''}" style="width:${c.bar}%"></div></div>
+      <div class="hygiene-note" style="margin-top:0.6rem">${c.note}</div>
+    </div>`).join('');
+}
+
+// ── Snapshot: dataset composition, shown once above mode content ──
+function buildSnapshot() {
+  const n = DATA.length || 1;
+  const groupPct = (field, order) => order.map(([key, label]) => ({
+    label, pct: Math.round(DATA.filter(d => d[field] === key).length / n * 100),
+  }));
+
+  const groups = [
+    { title: 'Seniority', rows: groupPct('seniority', [
+      ['junior', 'Junior'], ['mid', 'Mid'], ['senior', 'Senior'], ['staff', 'Staff'], ['lead', 'Lead'], ['manager', 'Manager'],
+    ]).filter(r => r.pct > 0) },
+    { title: 'Autonomy level', rows: groupPct('autonomy_level', [
+      ['strategic', 'Strategic'], ['mixed', 'Mixed'], ['execution', 'Execution'],
+    ]) },
+    { title: 'Work arrangement', rows: groupPct('work_arrangement', [
+      ['hybrid', 'Hybrid'], ['not_stated', 'Not stated'], ['remote', 'Remote'], ['onsite', 'Onsite'],
+    ]) },
+  ];
+
+  document.getElementById('snapshotGrid').innerHTML = groups.map(g => `
+    <div>
+      <div class="snapshot-group-title">${g.title}</div>
+      ${g.rows.map(r => `
+        <div class="snapshot-row">
+          <div class="snapshot-row-label"><span>${r.label}</span><b>${r.pct}%</b></div>
+          <div class="stat-bar-track"><div class="stat-bar-fill" style="width:${r.pct}%"></div></div>
+        </div>`).join('')}
+    </div>`).join('');
+}
+
+function buildManagerHygiene() {
+  const salaryPct = pct(d => d.salary_min && d.salary_max);
+  const workStatedPct = pct(d => d.work_arrangement && d.work_arrangement !== 'not_stated');
+  const items = [
+    { label: 'Salary range', note: `Only ${salaryPct}% of postings in this market state one at all. Stating a real range is still a differentiator, not table stakes yet - but its absence reads as normal, not suspicious.`,
+      sample: `"€65,000–€78,000 gross, depending on experience. We're open about this from the first call, not just once you ask."` },
+    { label: 'Work arrangement (remote / hybrid / onsite, with specifics)', note: `${workStatedPct}% of postings state a policy. If you offer genuine remote flexibility, say so explicitly - vague or absent claims get discounted as boilerplate.`,
+      sample: `"Hybrid, 2 days/week in our Berlin office. Fully remote within Germany is fine after month 3." — not "flexible working environment."` },
+    { label: 'The actual partner teams this role works with', note: `"Cross-functional collaboration" with no named teams is unread boilerplate. A real number and real team names set honest workload expectations.`,
+      sample: `"You'll work closely with Product, Finance, and the two backend squads - regular contact, not just occasional Slack pings." — not "strong cross-functional collaboration skills."` },
+    { label: 'What stage your team is at, honestly', note: `Candidates use your stage as an autonomy and stability signal whether you intend it or not. A mismatch between stated stage and real day-to-day work surfaces by day 90.`,
+      sample: `"You'd be our first analytics hire, building the warehouse from zero." or "We're a 6-person data team with an established dbt project - you'd extend it, not start it."` },
+    { label: 'The real tools and infrastructure, not just a skills list', note: `Recruiter-templated postings name the real stack at roughly a third the rate of engineer-written ones - candidates who care about the work discount generic tool lists accordingly.`,
+      sample: `"We run dbt on Snowflake, orchestrated with Dagster, with Looker on top. About 400M rows across our core models." — not "modern data stack."` },
+    { label: 'Interview process length / hard requirements upfront', note: `Say it plainly. Being upfront about hard language gates or unusual process length saves screening time on both sides.`,
+      sample: `"Fluent German is required for this role (client-facing). Process is 3 stages over ~2 weeks: screen, technical exercise, team interview."` },
+  ];
+  document.getElementById('managerHygieneList').innerHTML = `<div class="hygiene-grid">` + items.map(c => `
+    <div class="hygiene-card">
+      <div class="hygiene-check"><div class="hygiene-check-mark">?</div><div>
+        <div class="hygiene-label">${c.label}</div>
+        <div class="hygiene-note">${c.note}</div>
+        <div class="sample-text"><span class="sample-text-label">Sample text</span>${c.sample}</div>
+      </div></div>
+    </div>`).join('') + `</div>`;
+}
+
+// ── Motivators: seeker checklist content ──
+const MOTIVATORS = [
+  {
+    key: 'autonomy', icon: '🎯', name: 'Real autonomy, not execution work',
+    desc: 'You want to set direction, not just deliver against someone else\'s plan.',
+    items: [
+      { badge: 'look', text: `A "Senior" title roughly doubles your odds of strategic scope over "Mid" - but within "Senior" alone, it's close to a coin flip. Read the verbs: "define/own/shape" versus "support/assist/deliver."`, link: 'full-analysis.html#rel-seniority-autonomy' },
+      { badge: 'look', text: `A JD that's genuinely greenfield for one specific initiative - "first analytics hire," "from the ground up," "no existing pipeline" - is a stronger autonomy signal than "modernise everything" or company stage alone.`, link: 'full-analysis.html#rel-mission-autonomy' },
+      { badge: 'do', text: `Weight the claim by who wrote it. Engineer-written tells: specific tools and scale ("dbt," "Airflow," "1B rows," "multi-terabyte," named platforms). Recruiter-template tells: generic soft language with no specifics ("collaborate," "team player," "passionate," "dynamic," "stakeholder management"). If a recruiter-template JD says "you'll own X," confirm it directly - don't take it at face value.`, link: 'full-analysis.html#rel-authorship-autonomy' },
+      { badge: 'look', text: `"Must be comfortable with AI coding tools" - look for named tools ("GitHub Copilot," "Cursor," "Claude Code," "AI-assisted coding") - correlates with MORE strategic scope in this market, not less. Don't read it as a junior signal.`, link: 'full-analysis.html#rel-ai-autonomy' },
+    ],
+  },
+  {
+    key: 'building', icon: '🏗️', name: 'Building, not maintaining',
+    desc: 'You want to build something from scratch, not patch an existing system.',
+    items: [
+      { badge: 'look', text: `Greenfield tells: "build," "establish," "define," "create from scratch," "design," "from the ground up." Fix/scale tells: "improve," "maintain," "modernise," "inherited," "migrate," "refactor," "technical debt." Greenfield work concentrates almost entirely at early-stage companies - "modernise our stack" at a mid-stage company is more likely fix/scale than a true from-scratch build.`, link: 'full-analysis.html#rel-maturity-mission' },
+      { badge: 'caution', text: `Mature teams are now majority fix/scale - repairing and replacing established systems, not extending a stable stack. Good if you like fixing broken things. Misleading if you assumed "mature = calm maintenance."`, link: 'full-analysis.html#rel-maturity-mission' },
+      { badge: 'do', text: `Read the mission language directly, not the company's "About us" page. A mature company running one genuine greenfield initiative reads more like an early-stage JD than its own stage would suggest.`, link: 'full-analysis.html#rel-mission-autonomy' },
+    ],
+  },
+  {
+    key: 'growth', icon: '🌱', name: 'Growth & mentorship',
+    desc: 'You want to develop other people, or be developed — not just execute solo.',
+    items: [
+      { badge: 'look', text: `Don't assume a "Mid" or "Senior" title tells you whether you'll mentor anyone. Autonomy language ("own," "define," "shape," "drive") predicts it better, even within the same title band.`, link: 'full-analysis.html#rel-mentorship-autonomy' },
+      { badge: 'look', text: `At mature teams, the marginal responsibility increasingly shifts to teaching and enabling others - look for "enable self-serve," "run training," "office hours," "data literacy" - rather than building. Good if you want to develop others. Misleading if you assumed "mature = pure technical depth."`, link: 'full-analysis.html#rel-selfservice-maturity' },
+    ],
+  },
+  {
+    key: 'quality', icon: '🔬', name: 'Quality ownership, not just "quality talk"',
+    desc: 'You want data quality to be your named job, not a vibe everyone claims to share.',
+    items: [
+      { badge: 'caution', text: `"Rigour" language is close to universal (63%+ of JDs in every risk tier). It tells you the team values correctness, not whether YOU personally own it. Check testing framing separately: <b>owns it</b> - "own the quality," "you will define testing standards," "data contracts" as a named responsibility - versus <b>tool listed</b> - "Great Expectations," "Soda," "dbt tests" in a skills list with no ownership verb - versus <b>absent</b> entirely.`, link: 'full-analysis.html#rel-testing-rigour' },
+      { badge: 'flag', text: `"You own quality" almost always travels with a named fear - look for "regulatory," "compliance," "audit," "SLOs," "production reliability," "data accuracy has direct business impact." A JD claiming quality ownership with zero risk context is unusual. Ask directly what "quality" is protecting against.`, link: 'full-analysis.html#rel-testing-fear' },
+    ],
+  },
+  {
+    key: 'stakes', icon: '🧭', name: 'Meaningful stakeholder impact',
+    desc: 'You care who your work actually reaches and affects — not just that it\'s "high stakes."',
+    items: [
+      { badge: 'caution', text: `"High-stakes" in this market functionally means finance and compliance - look for "FP&A," "P&L," "financial reporting," "forecast," "audit," "controllership," "board." Product-facing tells ("experiment," "A/B," "funnel," "activation," "growth") almost never get coded high-risk, even when the failure mode - a bad experiment, a bad growth call - is real. Don't expect the JD's language to signal stakes if commercial or product impact matters more to you.`, link: 'full-analysis.html#rel-domain-stakeholder' },
+      { badge: 'look', text: `Who you serve is a real but weak predictor of autonomy - finance skews execution, product skews strategic, but it's a small effect. Read the actual verbs, not the stakeholder label.`, link: 'full-analysis.html#rel-stakeholder-autonomy' },
+    ],
+  },
+  {
+    key: 'tooling', icon: '⚙️', name: 'Modern tooling & AI leverage',
+    desc: 'You want to work with a current stack and real AI-assisted workflows, not legacy tooling.',
+    items: [
+      { badge: 'look', text: `Look for named tools, not vague "AI-first mindset" language: "GitHub Copilot," "Cursor," "Claude Code," "AI-assisted coding," "coding agents." These correlate with more strategic-scoped roles in this market, not less. Treat a named tool as a positive signal, not a junior checkbox.`, link: 'full-analysis.html#rel-ai-autonomy' },
+      { badge: 'caution', text: `dbt is strong but not universal - around 65% require it. A JD that doesn't name it doesn't mean the team skips it, especially if the JD reads as recruiter-templated (generic "collaborate," "team player" language) rather than engineer-written (specific tools, real scale numbers).`, link: 'full-analysis.html#rel-authorship-dbt' },
+    ],
+  },
+];
+
+const BADGE_LABEL = { look: 'OK', caution: '!', flag: '✕', do: '→' };
+
+function buildMotivatorChips() {
+  document.getElementById('motivatorChips').innerHTML = MOTIVATORS.map(m => `
+    <button type="button" class="motivator-chip${activeMotivators.has(m.key) ? ' active' : ''}" data-key="${m.key}">
+      <span class="icon">${m.icon}</span>${m.name}
+    </button>`).join('');
+  document.querySelectorAll('.motivator-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const k = btn.dataset.key;
+      activeMotivators.has(k) ? activeMotivators.delete(k) : activeMotivators.add(k);
+      buildMotivatorChips();
+      buildMotivatorChecklists();
+    });
+  });
+}
+
+function buildMotivatorChecklists() {
+  const container = document.getElementById('motivatorChecklists');
+  if (!activeMotivators.size) {
+    container.innerHTML = `<div class="motivator-empty">Pick one or more of the above — your checklist builds here.</div>`;
+    return;
+  }
+  container.innerHTML = MOTIVATORS.filter(m => activeMotivators.has(m.key)).map(m => `
+    <div class="check-card">
+      <div class="check-head">
+        <div class="check-title">${m.icon} ${m.name}</div>
+        <div class="check-sub">${m.desc}</div>
+      </div>
+      <div class="check-body">
+        ${m.items.map(it => `
+          <div class="check-item">
+            <div class="check-item-badge badge-${it.badge}">${BADGE_LABEL[it.badge]}</div>
+            <div class="check-item-text">${it.text} <a href="${it.link}" target="_blank" rel="noopener">see the data →</a></div>
+          </div>`).join('')}
+      </div>
+    </div>`).join('');
+}
+
+// ── Manager self-assessment: same 6 motivators, question + answer-triggered tip ──
+const ASSESS = [
+  {
+    key: 'autonomy', icon: '🎯', name: 'Autonomy & scope',
+    question: 'Does this hire mostly decide the approach, or mostly execute a pre-set plan?',
+    options: [
+      { label: 'Decides the approach', result: `Say so explicitly. Name a real decision the role owns in year one ("you choose the modelling architecture," "you set the testing roadmap"). A bare "Senior" title doesn't communicate this - within "Senior" alone, strategic scope is close to a coin flip in this market's postings.`, link: 'full-analysis.html#rel-seniority-autonomy',
+        sample: `"You'll decide how we structure the semantic layer - there's no existing convention to inherit, and we're relying on you to set it."`,
+        why: `Candidates who want autonomy self-select on exactly this - naming a real decision costs you nothing and screens in the people who'd actually take the role for that reason.` },
+      { label: 'Executes a set plan', result: `That's fine to say plainly. Don't dress it up with ownership language ("own," "define," "shape") if it isn't true. Candidates who care about autonomy read those verbs literally, and a mismatch surfaces fast once they're in the role.`, link: 'full-analysis.html#rel-authorship-autonomy',
+        sample: `"You'll build against a roadmap the team has already agreed on - this is an execution-focused role, not a direction-setting one, at least for the first year."`,
+        why: `Overselling autonomy you don't have is how you lose a strong hire in month two, once they realise the roadmap was never theirs to change.` },
+      { label: 'Genuinely mixed', result: `Say which parts are theirs to decide and which aren't. "Mixed" is the most common and least differentiated answer in this market - specificity here is rare enough to be a signal on its own.`, link: 'full-analysis.html#rel-mission-autonomy',
+        sample: `"You'll own how we implement testing standards, but the overall data platform roadmap is set by the Head of Data - you're shaping execution, not the strategic direction."`,
+        why: `"Mixed" is what nearly every posting defaults to when nobody's thought it through - splitting out the actual boundary is rare enough to read as honesty, not hedging.` },
+    ],
+  },
+  {
+    key: 'building', icon: '🏗️', name: 'Building vs. maintaining',
+    question: 'Is this role building something new, or improving/fixing what already exists?',
+    options: [
+      { label: 'Building from scratch', result: `Name the specific project directly ("build the first X") rather than leaning on "early-stage energy" or generic stage framing. It reads as a stronger, more credible ownership signal - even at a mature company running one genuine greenfield initiative.`, link: 'full-analysis.html#rel-maturity-mission',
+        sample: `"You'll build our analytics function from zero - no existing pipeline, no inherited dashboards. First hire on data, reporting directly to the CTO."`,
+        why: `Candidates who want a portfolio-defining build are actively filtering for this - a vague "early-stage energy" line makes them ask in the interview instead of applying in the first place.` },
+      { label: 'Fixing / scaling existing systems', result: `Say so plainly instead of "modernise our stack." The mismatch between that framing and real day-to-day maintenance work surfaces by day 90 - and costs you the candidate you screened hardest to get.`, link: 'full-analysis.html#rel-maturity-mission',
+        sample: `"You'll take over an existing dbt project (3 years old, ~200 models) and lead a migration off legacy Redshift onto Snowflake - this is fix-and-scale work, not greenfield."`,
+        why: `Someone who took the job expecting a from-scratch build and got a migration project instead is your most likely early leaver - this is cheap to prevent by being specific upfront.` },
+    ],
+  },
+  {
+    key: 'growth', icon: '🌱', name: 'Growth & mentorship',
+    question: 'Will this person mentor or develop others as part of the role?',
+    options: [
+      { label: 'Yes, meaningfully', result: `Use ownership and autonomy language ("own this domain," "define the approach") rather than relying on the seniority title alone. Candidates read it as a mentorship signal more accurately than they read title band.`, link: 'full-analysis.html#rel-mentorship-autonomy',
+        sample: `"You'll own our data quality practice end to end, including coaching two junior analysts on testing standards and code review."`,
+        why: `A title alone doesn't tell candidates whether they'll develop anyone - people who want that experience are reading the verbs, not the seniority band, so name it directly.` },
+      { label: 'No, individual contributor', result: `That's a fine, common answer. No need to imply mentorship scope you don't intend. If your team is mature-stage, "enable self-service" or "run training" language sets more accurate expectations than build-from-scratch framing your team has moved past.`, link: 'full-analysis.html#rel-selfservice-maturity',
+        sample: `"This is an individual-contributor role - you'll be deep in the modelling work, not managing or mentoring anyone directly."`,
+        why: `Candidates hoping to move into people development will self-select out fast if you're clear about this - better before an offer than during their first 1:1.` },
+    ],
+  },
+  {
+    key: 'quality', icon: '🔬', name: 'Quality ownership',
+    question: 'Does this person personally own data quality, or is it a shared team value?',
+    options: [
+      { label: 'Personally owns it', result: `Name a concrete accountability ("you own the data contract framework," "you define the testing standards"). "Data quality mindset" appears in nearly every posting and selects for nobody - a named individual accountability is rare, and it's exactly what quality-motivated candidates filter for.`, link: 'full-analysis.html#rel-testing-rigour',
+        sample: `"You own our data contract framework - defining and enforcing the testing standards every model has to pass before it ships."`,
+        why: `Nearly every posting claims a "quality mindset," so that phrase alone selects for nobody - a named, individual accountability is rare enough to actually catch the candidates who want that job.` },
+      { label: 'Shared team culture', result: `Don't dress it up as personal ownership - that reads as scope inflation in the interview. Still name what you're protecting against (incidents, compliance, trust), even as a team-level concern.`, link: 'full-analysis.html#rel-testing-fear',
+        sample: `"Data quality is a shared team responsibility, not one person's job - we care about it because a bad number reaching the board is expensive to walk back."`,
+        why: `Candidates who probe for ownership in the interview will find out it's shared anyway - saying so upfront avoids a mismatch that reads as scope inflation once they're in the room.` },
+    ],
+  },
+  {
+    key: 'stakes', icon: '🧭', name: 'Risk & stakeholder stakes',
+    question: 'If this role gets something wrong, what actually breaks?',
+    options: [
+      { label: 'Compliance / financial / regulatory exposure', result: `Name it directly. Compliance and audit language reliably correlates with genuinely high stakes in this market, so candidates take it seriously rather than reading it as boilerplate.`, link: 'full-analysis.html#rel-fear-domainrisk',
+        sample: `"Your numbers feed directly into regulatory reporting - errors here have real audit and compliance consequences, not just an awkward Slack message."`,
+        why: `This is the one risk framing candidates actually trust in this market - naming it plainly gets taken seriously instead of getting filed under generic risk-aversion boilerplate.` },
+      { label: 'Real cost, but not compliance-shaped (product, trust, revenue)', result: `Spell out the failure mode and its cost explicitly. This market has taught candidates that "high-stakes" language means finance - a sector label alone won't communicate risk that lives outside that pattern.`, link: 'full-analysis.html#rel-domain-stakeholder',
+        sample: `"A bad experiment read here can send us building the wrong feature for a quarter - it's not regulated, but a mistake is expensive in lost roadmap time, not just embarrassment."`,
+        why: `Candidates have learned "high stakes" means finance - if your real risk lives in product or trust instead, a sector label won't communicate it, so you have to spell out the failure mode yourself.` },
+      { label: 'Low stakes, iterate and fix later', result: `Say so. It's an honest, attractive pitch to candidates who want velocity over rigour - and forcing risk language onto a low-stakes role reads as inflated.`, link: 'full-analysis.html#rel-domainrisk-rigour',
+        sample: `"We move fast here and fix things in the next sprint if they're wrong - this isn't a role where a mistake takes down anything critical."`,
+        why: `Some candidates actively want low-stakes, fast-iteration work over rigour - saying so plainly attracts them, while forcing risk language onto a low-stakes role just reads as inflated to everyone else.` },
+    ],
+  },
+  {
+    key: 'tooling', icon: '⚙️', name: 'Tooling & AI leverage',
+    question: 'Is using AI-assisted coding tools genuinely part of how this role works day to day?',
+    options: [
+      { label: 'Yes, expected daily use', result: `Say so explicitly. Naming an AI-tool-fluency expectation doesn't undersell your role's seniority in this market - if anything it correlates with more strategic-scoped postings, not more junior ones.`, link: 'full-analysis.html#rel-ai-autonomy',
+        sample: `"We use Claude Code and GitHub Copilot daily as part of our normal dbt workflow - comfort with AI-assisted coding is expected, not optional."`,
+        why: `Managers often worry naming this makes a role sound junior - in this market it does the opposite, so leaving it out costs you a positive signal for free.` },
+      { label: 'Not really a factor', result: `No need to force it in. Most postings in this market - over two-thirds - state no AI expectation at all. Spend your specificity budget on the real stack instead.`, link: 'full-analysis.html#rel-authorship-dbt',
+        sample: `Leave it out entirely - naming a real tool ("dbt, Airflow, Snowflake") does more work for you than a line about AI tooling you don't actually use day to day.`,
+        why: `Most postings already say nothing here, so forcing in an AI line you don't mean just wastes space you could spend on the real stack, which candidates actually screen against.` },
+    ],
+  },
+];
+
+function buildAssessCards() {
+  document.getElementById('assessCards').innerHTML = ASSESS.map(a => `
+    <div class="assess-card">
+      <div class="assess-title">${a.icon} ${a.name}</div>
+      <div class="assess-question">${a.question}</div>
+      <div class="assess-options" data-key="${a.key}">
+        ${a.options.map((o, i) => `<button type="button" class="assess-opt" data-idx="${i}">${o.label}</button>`).join('')}
+      </div>
+      <div class="assess-result" id="assess-result-${a.key}"></div>
+    </div>`).join('');
+
+  ASSESS.forEach(a => {
+    document.querySelectorAll(`.assess-options[data-key="${a.key}"] .assess-opt`).forEach(btn => {
+      btn.addEventListener('click', () => {
+        const resultEl = document.getElementById(`assess-result-${a.key}`);
+        const wasActive = btn.classList.contains('active');
+        document.querySelectorAll(`.assess-options[data-key="${a.key}"] .assess-opt`).forEach(b => b.classList.remove('active'));
+        if (wasActive) {
+          resultEl.classList.remove('visible');
+          resultEl.innerHTML = '';
+          return;
+        }
+        btn.classList.add('active');
+        const opt = a.options[parseInt(btn.dataset.idx, 10)];
+        resultEl.innerHTML = `<b>What this means for your JD:</b> ${opt.result}` +
+          (opt.sample ? `<div class="sample-text"><span class="sample-text-label">Sample text</span>${opt.sample}</div>` : '') +
+          (opt.why ? `<div class="why-matters"><b>Why it matters:</b> ${opt.why}</div>` : '') +
+          `<span class="find"><a href="${opt.link}" target="_blank" rel="noopener">See the underlying finding →</a></span>`;
+        resultEl.classList.add('visible');
+      });
+    });
+  });
+}
+
+fetch('./data.json').then(r => r.json()).then(data => {
+  DATA = data;
+  buildSnapshot();
+  buildHygiene();
+  buildManagerHygiene();
+  buildMotivatorChips();
+  buildMotivatorChecklists();
+  buildAssessCards();
+  if (mode) setMode(mode);
+}).catch(err => {
+  document.getElementById('hero').insertAdjacentHTML('afterend',
+    `<div style="text-align:center;padding:4rem;color:#c0392b">Failed to load data.json: ${err.message}</div>`);
+});
+</script>
+</body>
+</html>
