@@ -1,0 +1,134 @@
+# Engineer, Data Analytics Engineering — Sandisk
+
+**URL:** https://jobs.smartrecruiters.com/Sandisk/744000136174390-engineer-data-analytics-engineering?trid=2d92f286-613b-4daf-9dfa-6340ffbecf73
+**Location:** Not stated in JD header
+**Date Posted:** 2026-07-30
+
+---
+
+Company Description
+
+Sandisk understands how people and businesses consume data and we relentlessly innovate to deliver solutions that enable today's needs and tomorrow's next big ideas. With a rich history of groundbreaking innovations in Flash and advanced memory technologies, our solutions have become the beating heart of the digital world we're living in and that we have the power to shape.
+
+Sandisk meets people and businesses at the intersection of their aspirations and the moment, enabling them to keep moving and pushing possibility forward. We do this through the balance of our powerhouse manufacturing capabilities and our industry-leading portfolio of products that are recognized globally for innovation, performance and quality.
+
+Sandisk has two facilities recognized by the World Economic Forum as part of the Global Lighthouse Network for advanced 4IR innovations. These facilities were also recognized as Sustainability Lighthouses for breakthroughs in efficient operations. With our global reach, we ensure the global supply chain has access to the Flash memory it needs to keep our world moving forward.
+
+Job Description
+
+We are seeking an experienced Engineer to join the Data Analytics Engineering team responsible for building next-generation data platforms, AI-enabled solutions, and manufacturing analytics products.
+
+This role will focus on designing scalable data architectures, developing enterprise-grade data pipelines, enabling AI/ML workloads, and accelerating digital transformation across manufacturing operations.
+
+The ideal candidate combines strong data engineering expertise with practical experience in cloud platforms, big data technologies, and AI solution deployment.
+
+Key Responsibilities:
+
+Build scalable data pipelines, data products, and cloud-based data platforms.
+
+Enable AI, Machine Learning, and Generative AI solutions through robust data engineering.
+
+Develop analytics, dashboards, and self-service data solutions for business users.
+
+Ensure data quality, governance, security, and operational excellence.
+
+Partner with stakeholders to solve business challenges using data and AI.
+
+Qualifications
+
+Required:
+
+Bachelor's or Master's degree in Computer Science, Data Engineering, Data Science, Engineering, or related field, with 3-5 years of experience in Data Engineering, Analytics Engineering, or Data Platform development.
+
+Knowledge of cloud data technologies (Azure/AWS) and big data processing frameworks.
+
+Strong analytical, problem-solving, and communication skills.
+
+Strong programming skills in Python and SQL with proven experience building and maintaining ETL/ELT pipelines.
+
+Preferred:
+
+Experience with Databricks, Spark, Delta Lake, or Lakehouse architecture.
+
+Experience with AI/ML, Generative AI, or MLOps solutions.
+
+Experience in manufacturing, semiconductor, or industrial analytics environments.
+
+Skills :
+
+Python, SQL, ETL/ELT, and Data Engineering
+
+Databricks, Spark, Delta Lake
+
+Azure/AWS Cloud Data Platforms
+
+AI/ML, Generative AI, and MLOps
+
+Data Governance, and Data Quality
+
+Analytics Dashboard Development (Power BI/Tableau
+
+Additional Information
+
+Sandisk thrives on the power and potential of diversity. As a global company, we believe the most effective way to embrace the diversity of our customers and communities is to mirror it from within. We believe the fusion of various perspectives results in the best outcomes for our employees, our company, our customers, and the world around us. We are committed to an inclusive environment where every individual can thrive through a sense of belonging, respect and contribution.
+
+Sandisk is committed to offering opportunities to applicants with disabilities and ensuring all candidates can successfully navigate our careers website and our hiring process. Please contact us at [email protected] to advise us of your accommodation request. In your email, please include a description of the specific accommodation you are requesting as well as the job title and requisition number of the position for which you are applying.
+
+NOTICE TO CANDIDATES:
+ Sandisk has received reports of scams where a payment is requested on Sandisk's behalf as a condition for receiving an offer of employment. Please be aware that Sandisk and its subsidiaries will never request payment as a condition for applying for a position or receiving an offer of employment. Should you encounter any such requests, please report it immediately to Sandisk Ethics Helpline or email [email protected].
+
+---
+
+## Layer B — Behavioural Analysis
+
+*3-run LLM consistency check: `../../analysis/jd_traces/2026-07-30_sandisk_engineer-data-analytics-engineering.md` (generated by `classify_jds.py`, may not exist yet)*
+
+**velocity_vs_rigour:** mixed — Rigour signals (data quality, governance, security) are balanced against 'next-generation', 'accelerating digital transformation', and innovation-forward language, giving a mixed classification.
+
+**domain_risk:** moderate — Errors affect manufacturing/industrial analytics decision-making at a hardware company, without explicit regulatory or financial-reporting framing, placing this at moderate risk despite the industrial/semiconductor context.
+
+**collaboration_width:** 1 — named teams: stakeholders
+
+**data_team_maturity:** mid — The team already exists with a defined charter (Data Analytics Engineering) building next-gen platforms, indicating an actively growing mid-stage function rather than a from-zero build.
+
+**jd_authorship:** mixed — Some bullets name specific technologies (Databricks, Spark, Delta Lake) but responsibilities are largely generic and boilerplate ('Enable AI... through robust data engineering', 'Partner with stakeholders to solve business challenges'), giving a mixed authorship signal.
+
+**stakeholder_orientation:** internal_data — The role serves internal business users and data platform consumers broadly, without a named commercial, product, or finance function taking priority.
+
+**autonomy_level:** execution — Responsibilities are scoped delivery tasks (build, develop, ensure, partner) within an existing team charter rather than defining strategic direction, placing this at execution.
+
+**ai_role:** ai_enabler — The candidate builds data infrastructure and pipelines that enable AI/ML/GenAI workloads downstream — the AI is downstream of the candidate's engineering output, making this ai_enabler.
+
+**testing_framing:** tool_listed — Data quality and governance appear as a responsibility bullet but without a specific ownership verb tied to testing practices or frameworks — closer to a tool/practice listed than a defined owned testing program.
+
+**loss_aversion_framing:** moderate — Moderate: data quality, governance, and security are named concerns but framed briefly alongside delivery-focused responsibilities, not as a dominant risk register.
+
+**greenfield_vs_fix:** greenfield — Explicit 'next-generation' and 'building' framing for new data platforms and AI-enabled solutions indicates greenfield work.
+
+**urgency:** standard — No urgency signals present.
+
+**work_arrangement:** not_stated — Not stated in JD.
+
+**language_gate:** none — Not stated in JD.
+
+**interview_stages:** Not stated in JD
+
+**ats_platform:** smartrecruiters
+
+**ats_job_id:** 744000136174390
+
+**loss_aversion:** Ensure data quality, governance, security, and operational excellence — brief governance/security mention without a dominant risk register.
+
+**ATS keywords:**
+- Data Analytics Engineering
+- data pipelines
+- cloud-based data platforms
+- AI/ML
+- Generative AI
+- Databricks
+- Spark
+- Delta Lake
+- ETL/ELT
+- Azure/AWS
+- data governance
+- Power BI/Tableau
