@@ -9,7 +9,6 @@ analytics-engineers-job-descriptions/
 ├── data/                     # Job description records (one folder per JD)
 │   └── YYYY-MM-DD_company_role/
 │       ├── {jd_id}.json      # Structured Layer B classification
-│       ├── jd.md             # Formatted JD + behavioral analysis
 │       └── jd_archive.md     # Raw verbatim JD text
 ├── analysis/                 # Cross-reference analysis & reports
 │   ├── index.html            # Landing page (job seeker / hiring manager toggle)

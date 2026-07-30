@@ -1,6 +1,6 @@
 ---
 name: classify-jd
-description: Fetches a job posting URL and produces a structured Layer B classification record (JSON) and a jd.md file. No resume adaptation — classification only. JD data capture and behavioural analysis tool.
+description: Fetches a job posting URL and produces a structured Layer B classification record (JSON) and a verbatim jd_archive.md. No resume adaptation — classification only. JD data capture and behavioural analysis tool.
 allowed-tools: WebFetch Read Write Bash
 argument-hint: <job-posting-url>
 ---
@@ -245,7 +245,7 @@ Also extract:
 
 ## Step 4 — Write output files
 
-Produce a single JSON object and pipe it to `write_jd.py`. The script writes all three output files (`jd_archive.md`, `jd.md`, `{base-name}.json`) in one shot. `jd_archive.md` is prefixed with a `**URL:** {source_url}` line for traceability back to the original posting.
+Produce a single JSON object and pipe it to `write_jd.py`. The script writes both output files (`jd_archive.md`, `{base-name}.json`) in one shot. `jd_archive.md` is prefixed with a `**URL:** {source_url}` line for traceability back to the original posting.
 
 **Important: When user provides pasted JD text**, store the FULL VERBATIM text in jd_archive.md — do NOT rewrite, summarize, or hallucinate. If JD text was pasted by user or appears in conversation (not fetched), copy it exactly as provided into jd_archive.md after the URL line, preserving original formatting and language. This is a historical record and must be faithful to source.
 
