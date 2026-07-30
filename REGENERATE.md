@@ -44,7 +44,6 @@ Use `/classify-jd` skill to scrape and classify, OR manually add JSON files to `
 ```
 data/2026-07-15_capitalontap_analytics-engineer-london/
   ├── 2026-07-15_capitalontap_analytics-engineer-london.json
-  ├── jd.md
   └── jd_archive.md
 ```
 
