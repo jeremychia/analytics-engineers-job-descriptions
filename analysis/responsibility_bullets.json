@@ -4425,5 +4425,145 @@
    "Wrangle and integrate data from multiple third-party sources (e.g. Amplitude, Segment, Google Ads)"
   ],
   "source": "regex"
+ },
+ {
+  "jd_id": "2026-07-30_bereal_staff-analytics-engineer",
+  "bullets": [],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-07-30_blinq_analytics-engineer",
+  "bullets": [
+   "Own and evolve Blinq's analytics layer, building clean, reusable data models that turn raw product and business data into trusted datasets.",
+   "Partner with Product, Growth, Revenue, Finance, and Engineering to translate ambiguous questions into clear metrics, analysis, and data products.",
+   "Build and maintain scalable ELT workflows using SQL, dbt, and modern cloud data tools.",
+   "Define canonical metrics and semantic models so teams work from consistent definitions across dashboards and decision-making.",
+   "Develop high-quality dashboards and self-serve reporting that help teams move quickly without relying on one-off analysis.",
+   "Support product analytics and experimentation, including funnel analysis, cohorts, retention, activation, monetisation, and A/B testing.",
+   "Improve data quality and trust through testing, documentation, lineage, monitoring, and clear ownership.",
+   "Investigate complex questions, surface the \"why\" behind performance, and turn insights into practical recommendations.",
+   "Work with data and software engineers to improve instrumentation, event tracking, and the reliability of data flowing from source systems.",
+   "Raise the bar for how Blinq uses data by improving standards, tooling, and analytics practices as the company scales."
+  ],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-07-30_brand-new-day_analytics-engineer",
+  "bullets": [],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-07-30_crystalloids_analytics-engineer",
+  "bullets": [],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-07-30_eftsure_senior-analytics-engineer",
+  "bullets": [
+   "Own our analytics engineering layer",
+   "You'll design, build and maintain scalable data models that transform raw and staged data into trusted, analytics-ready datasets. Working across our silver and gold layers, you'll create clean, reliable and well-documented data assets that become the foundation for reporting, analytics and decision-making."
+  ],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-07-30_emapta_analytics-engineer",
+  "bullets": [],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-07-30_harnham_analytics-engineer",
+  "bullets": [],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-07-30_infinite-lambda_analytics-engineer",
+  "bullets": [
+   "Design and implement data models, transformations, and ELT/ETL processes using tools like dbt, Snowflake, and Fivetran.",
+   "Develop insightful BI reports and dashboards in tools such as Omni, Looker, Tableau, Qlik, or Power BI.",
+   "Collaborate with cross-functional teams to understand business needs and deliver data solutions that enhance decision-making.",
+   "Maintain version control with Git and ensure data pipelines are efficient, scalable, and reliable.",
+   "Troubleshoot data issues, optimize queries, and automate reporting workflows.",
+   "Contribute to knowledge-sharing and best practices within the team.",
+   "\u25b6 \u25b6 Anticipated start date: Q1.2026"
+  ],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-07-30_kleinanzeigen_data-engineer-analytics-products",
+  "bullets": [
+   "Data Modelling & dbt Development",
+   "Implement dbt models across the medallion architecture applying the right materialisation strategy for each layer and use case \u2014 incremental, full refresh or snapshots \u2014 with consistent naming conventions, YAML documentation, metadata tagging, unit tests to validate critical business logic, and reusable macros for common transformation and data replication patterns",
+   "Build and refactor models for different business areas of the company, including for example marketing performance, product metrics, C2C transactions, monetisation, vibrancy, and trust & safety",
+   "Author reusable macros and apply consistent naming conventions, YAML documentation, and metadata tagging (billed, retention, gdpr)",
+   "Design data models that are homogeneous with the existing stack, built at the right grain for the use case, cost-effective to run, and self-discoverable without needing the author to explain them",
+   "Perform cost-aware modelling: clustering strategies, warehouse sizing, incremental scan reduction, and pre-aggregation layers"
+  ],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-07-30_kognitiv_senior-data-analytics-engineer",
+  "bullets": [
+   "Build and maintain scalable, secure ETL/ELT pipelines, ingestion systems, and transformation workflows across distributed cloud data warehouses. Optimise for query performance, cost, and scalability as data volumes grow.Establish standard data schemas, dimensional modeling structures, and automated validation tests to enforce data accuracy, consistency, and downstream reliability.Manage and optimize backend data layers feeding business intelligence systems, reporting engines, and analytical discovery platforms.Conduct query performance tuning, data partitioning analysis, and infrastructure scaling to control computational overhead and latency within cloud data lakes.Partner with business units, IT leadership, and software engineers to translate business requirements into sustainable data engineering architectures."
+  ],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-07-30_samsara-eco_analytics-engineer",
+  "bullets": [
+   "Ontology and Data Modelling",
+   "Own the shared ontology and schema design for Samsara's core scientific and engineering entities.",
+   "Iterate the ontology and data model as new verticals arise."
+  ],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-07-30_sandisk_engineer-data-analytics-engineering",
+  "bullets": [
+   "Build scalable data pipelines, data products, and cloud-based data platforms.",
+   "Enable AI, Machine Learning, and Generative AI solutions through robust data engineering.",
+   "Develop analytics, dashboards, and self-service data solutions for business users.",
+   "Ensure data quality, governance, security, and operational excellence.",
+   "Partner with stakeholders to solve business challenges using data and AI."
+  ],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-07-30_southern-cross_senior-analytics-engineer",
+  "bullets": [
+   "\u2022    Build, test and maintain dbt models that turn raw data into trusted, analytics-ready datasets",
+   "\u2022    Design and improve data marts and semantic layers that power self-service analytics, data products and agentic agents",
+   "\u2022    Optimise query performance and efficiency across Snowflake and dbt",
+   "\u2022    Investigate and resolve data quality issues, and build the automated checks that catch them earlier next time",
+   "\u2022    Partner with analysts, product managers and stakeholders to align business definitions with technical implementation",
+   "\u2022    Write and maintain automated tests, documentation and data lineage so the model can be trusted and traced",
+   "\u2022    Participate in code reviews and help set the engineering standards for the analytics codebase",
+   "\u2022    Look for opportunities to simplify complex models and remove redundancy as the platform scales"
+  ],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-07-30_toss_data-analytics-engineer-dw",
+  "bullets": [],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-07-30_zego_senior-analytics-engineer",
+  "bullets": [
+   "Data Modelling & Engineering (AI-assisted):Partner with stakeholders to understand business needs and translate ambiguous problems into clear, well-scoped requirementsOwn the design of robust, scalable data models and exposures in dbt, Snowflake, and Looker \u2014 and set the patterns and conventions the wider team reusesMake and document the architectural decisions and trade-offs that shape our data platformUse AI-assisted development to move faster \u2014 spending less time hand-writing boilerplate and more time specifying intent, reviewing, and refining \u2014 and help define how the team gets the best out of these toolsRead, debug, and critically review SQL (including AI-generated code), so we ship models we can trustWrangle and integrate data from multiple third-party sources (e.g. Amplitude, Segment, Google Ads)",
+   "Data Quality, Trust & Operations:Define and champion the \"trust infrastructure\" \u2014 the testing, data-contract, and observability standards the team works to \u2014 that lets the business depend on our modelsOwn quality, reliability, and stability across data models and pipelinesCreate secure, efficient data shares for external partners (e.g. S3, SFTP, Snowflake Data Sharing)Drive the continuous improvement of our data platform, tooling, and ways of working \u2014 including how we use AI",
+   "Stakeholder Enablement & Technical Leadership:Act as a technical anchor for the team \u2014 raising the bar through code review, mentoring, and pairingSupport business users across the company to promote a culture of data-driven decision-makingTranslate complex business questions into well-designed data solutions and metricsEnable and maintain self-service capabilities within our BI tools",
+   "About YouYou'll have 5+ years' experience as an Analytics Engineer, or in a similar roleYou'll have expert SQL skills \u2014 you write it fluently, debug it fast, and critically review it (including AI-generated code) with a sharp eye for where it goes subtly wrongYou'll have proven experience designing and owning data models for warehousing and BI \u2014 dimensional modelling, defining grain, and shaping the structure of a data domain from the ground upYou'll have deep, hands-on experience with dbt, and with modern data platforms (e.g. Snowflake, Looker, AWS, GCP)You'll have experience with version control tools such as Git, and sound engineering practices around itYou'll ideally have exposure to Python for data or analytics engineering tasksYou'll have a meticulous eye for detail and strong problem-solving instincts \u2014 you care about whether the answer is correct, not just whether the code runsYou'll have a track record of raising the standard around you \u2014 mentoring, reviewing, or setting the technical direction others followYou'll be genuinely excited about AI and how it changes our work \u2014 already using AI tools to work smarter, thinking critically about where they help and where they don't, and taking ownership of staying ahead. This is central to how our team works, not a nice-to-haveYou'll have strong commercial acumen \u2014 a real interest in the \"why\" behind the numbers and the ability to connect data work to business outcomesExperience in the insurance sector is a plus. As more of the routine coding becomes AI-assisted, deep domain understanding becomes more of a differentiator, not less",
+   "What's it Like to Work at Zego?Joining Zego is a career-defining move. People go further here, reaching their full potential to achieve extraordinary things.",
+   "We're spread throughout the UK and Europe, and united by our drive to get things done. We're proud of our company and our culture \u2014 a friendly and inclusive space where we can lift each other up and celebrate our wins every day.",
+   "Together, we're setting the bar higher, delivering exceptional work that makes a difference.",
+   "Our people are the most important part of our story, and everyone here plays a role. There's loads of room to learn and grow, and you'll get the freedom to steer your career wherever you want.",
+   "You'll work alongside a talented group who embrace each other's differences and aren't afraid of a challenge. We recognise our achievements, learn from our mistakes, and help each other to be the best we can be. Together, we're making insurance matter.",
+   "How We WorkWe believe that teams work better when they have time to collaborate and space to get things done. We call it Zego Hybrid. While some of our team choose to come into our central London office once a week, we're flexible \u2014 some people prefer being in once a month or even quarterly. It's all about finding the right balance between collaborative face time and focused home-working, so we can achieve great results while maintaining a healthy work-life balance",
+   "Our Approach to AIWe believe in the power of AI to meaningfully improve how we work \u2014 helping us move faster, think differently, and focus on what matters most. At Zego, we encourage people to stay curious and intentional about how AI is leveraged in their work and teams to drive practical impact every day. This is your chance to do the most meaningful work of your career \u2014 and we'll provide you with the tools, support, and freedom to do it well.",
+   "BenefitsWe reward our people well. Join us and you'll get a market-competitive salary, private medical insurance, company share options, generous holiday allowance, and a whole lot of wellbeing benefits. We also offer an annual flexible hybrid working contribution, which you can use to support with your travel to the office or towards your own personal development. And that's just for starters!",
+   "There's more to Zego than just a job \u2014 check out our blog for insights, stories, and more.",
+   "We are an equal opportunity employer and value diversity at our company. We do not discriminate on the basis of race, religion, national origin, gender, sexual orientation, age, marital status, or disability status."
+  ],
+  "source": "regex"
  }
 ]

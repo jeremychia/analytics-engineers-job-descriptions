@@ -1,7 +1,7 @@
 # Analytics Engineering Job Market, 2026 — JD Analysis
 
-**Prepared:** June 2026; revised July 2026 against the full corpus, expanded July 13 2026 with 9 new roles, July 16 2026 with 12 new roles, July 17 2026 with 13 new roles, July 21 2026 with 21 further new roles, July 22–24 2026 with 55 further new roles including the corpus's first substantial APAC batch, deduplicated 2026-07-25 in two passes (36 records removed as re-scrapes, plus one further duplicate on a follow-up audit — see §3, §9.6), and expanded again 2026-07-26–29 with 33 further new roles (28 in the analytical cohort), including Parfumado, Tiqets, Riot, Emagine, Licorne Society, Montblanc, Qred Bank, Hack A Boss, StackFuel, Cultura, ASOS, Zego, NatWest Group, Kaluza, Fremantle Dockers, Joon Solutions, and Alight (§9.7); all tables and test statistics reconciled to this current corpus.
-**Dataset:** 329 analytics-engineering/BI/team-lead job descriptions from `data/` (April–July 2026; primarily European, Berlin-heavy, with UK, DACH, Nordics, and a 37-role APAC stratum large enough to compare directly against the European majority; see §3, §9.5). 358 records total in the corpus including 23 data-engineering and 6 other roles excluded from the analytical cohort; see §3.
+**Prepared:** June 2026; revised July 2026 against the full corpus, expanded July 13 2026 with 9 new roles, July 16 2026 with 12 new roles, July 17 2026 with 13 new roles, July 21 2026 with 21 further new roles, July 22–24 2026 with 55 further new roles including the corpus's first substantial APAC batch, deduplicated 2026-07-25 in two passes (36 records removed as re-scrapes, plus one further duplicate on a follow-up audit — see §3, §9.6), expanded again 2026-07-26–29 with 33 further new roles (28 in the analytical cohort), including Parfumado, Tiqets, Riot, Emagine, Licorne Society, Montblanc, Qred Bank, Hack A Boss, StackFuel, Cultura, ASOS, Zego, NatWest Group, Kaluza, Fremantle Dockers, Joon Solutions, and Alight (§9.7), and expanded again 2026-07-30 with 15 further new roles (11 in the analytical cohort), a single-day, heavily-APAC batch including Blinq, Brand New Day, Eftsure, Emapta, Samsara Eco, Southern Cross, plus BeReal, Crystalloids, Harnham, Infinite Lambda, and Zego's second posting (§9.8); all tables and test statistics reconciled to this current corpus.
+**Dataset:** 340 analytics-engineering/BI/team-lead job descriptions from `data/` (April–July 2026; primarily European, Berlin-heavy, with UK, DACH, Nordics, and a 43-role APAC stratum large enough to compare directly against the European majority; see §3, §9.5). 373 records total in the corpus including 27 data-engineering and 6 other roles excluded from the analytical cohort; see §3.
 **Classification:** Layer B codebook applied by one analyst (manual) or by LLM majority vote (3 independent claude-haiku-4-5 runs per JD); full consistency study in `consistency_report.md`.
 **Context source:** dbt Labs "[State of Analytics Engineering](https://www.getdbt.com/resources/state-of-analytics-engineering-2026)" reports, 2023–2026 (2026 edition linked) — used as a foil, not as the primary data.
 **Theoretical frame:** Abrahamson (1996), management fashion theory — used to derive two falsifiable predictions before presenting findings (§4.0). Other theoretical lenses (§6) are applied afterward as secondary, exploratory reads, not as pre-registered tests.
@@ -10,13 +10,13 @@
 
 ## 1. What this document is
 
-This is a structured analysis of 329 analytics engineering, BI, and team-lead job postings collected during a job search in 2026, primarily European with a substantial APAC stratum (§3, §9.5). The goal is to characterise what employers actually reveal they want through hiring language — not what practitioners report wanting in surveys.
+This is a structured analysis of 340 analytics engineering, BI, and team-lead job postings collected during a job search in 2026, primarily European with a substantial APAC stratum (§3, §9.5). The goal is to characterise what employers actually reveal they want through hiring language — not what practitioners report wanting in surveys.
 
 The dbt Labs annual reports (2023–2026) are used as a reference point throughout: they are the most widely-circulated claims about the state of the profession. The core question is whether those claims show up in what employers write when they have real hiring costs at stake.
 
 **Why this matters:** Survey responses are cheap. Writing a job description carries hiring cost. Deming and Kahn (2018) established that job postings are revealed-preference data — employers write what they actually value. This analysis holds the survey claims against that harder evidence.
 
-**Honest scope limitations:** 329 JDs (analytical cohort) is a moderate-scale dataset with tighter confidence intervals than earlier snapshots. The confidence interval on a single proportion is approximately ±5pp at 95% (Wilson interval) — tight enough that core dimensions (rigour, domain_risk, maturity) show directional consistency, but still wide enough that individual percentages should be read as directional signals, not precise market measurements. The geographic concentration is still primarily European/Berlin, but the APAC stratum (n=37) remains large enough to test directly against the European majority rather than merely disclaim — see §9.5 for what that comparison shows and its own, tighter limits. Generalisation to North America remains untested. These limitations are stated once here and apply to every finding in this document; they are not repeated at every mention. Mid-corpus expansions (July 13, 2026: +9 JDs; July 16, 2026: +12 JDs; July 17, 2026: +13 JDs; July 21, 2026: +21 JDs; July 22–24, 2026: +55 JDs; July 26–29, 2026: +38 JDs to the analytical cohort, §9.7) added new roles without statistical re-weighting, so updated findings through that point reflected raw inclusion in the analytical cohort. The 2026-07-25 dedup removed 37 duplicate records across two passes rather than adding new ones (§3, §9.6) — this tightened the corpus rather than diluting it. Every relationship in this document is re-tested at each corpus update, and significance is not treated as permanent: this revision (n=329) finds `velocity_vs_rigour × has_dbt` (§4.0's Prediction 1 comparator), `domain_risk × greenfield_vs_fix` (previously Finding B), `stakeholder_orientation × autonomy_level` (previously Finding E), and `geo_region (APAC) × jd_authorship` (previously part of Finding G) no longer clear p<0.05 — each is restated below as a current null or directional read, not flagged as a reversal. One relationship not previously significant, `data_team_maturity × work_arrangement` on the stated-arrangement subset, now clears p<0.05 for the first time and is promoted into the findings below.
+**Honest scope limitations:** 340 JDs (analytical cohort) is a moderate-scale dataset with tighter confidence intervals than earlier snapshots. The confidence interval on a single proportion is approximately ±4.8pp at 95% (Wilson interval) — tight enough that core dimensions (rigour, domain_risk, maturity) show directional consistency, but still wide enough that individual percentages should be read as directional signals, not precise market measurements. The geographic concentration is still primarily European/Berlin, but the APAC stratum (n=43) remains large enough to test directly against the European majority rather than merely disclaim — see §9.5 for what that comparison shows and its own, tighter limits. Generalisation to North America remains untested. These limitations are stated once here and apply to every finding in this document; they are not repeated at every mention. Mid-corpus expansions (July 13, 2026: +9 JDs; July 16, 2026: +12 JDs; July 17, 2026: +13 JDs; July 21, 2026: +21 JDs; July 22–24, 2026: +55 JDs; July 26–29, 2026: +38 JDs; July 30, 2026: +11 JDs to the analytical cohort, §9.8) added new roles without statistical re-weighting, so updated findings through that point reflected raw inclusion in the analytical cohort. The 2026-07-25 dedup removed 37 duplicate records across two passes rather than adding new ones (§3, §9.6) — this tightened the corpus rather than diluting it. Every relationship in this document is re-tested at each corpus update, and significance is not treated as permanent: this revision (n=340) finds `velocity_vs_rigour × has_dbt` (§4.0's Prediction 1 comparator), `domain_risk × greenfield_vs_fix` (previously Finding B), and `stakeholder_orientation × autonomy_level` (previously Finding E) still do not clear p<0.05 — each restated below as a current null or directional read. `geo_region (APAC) × jd_authorship` (previously part of Finding G), which had drifted just above the threshold at n=329, is back below p<0.05 at this n and is restated as a current finding, not a reinstated one. `data_team_maturity × work_arrangement` on the stated-arrangement subset, promoted into the findings at the last update, remains significant and if anything strengthens further at this n.
 
 ---
 
@@ -43,18 +43,18 @@ These constraints don't make the findings false. They mean the reports should be
 
 ## 3. The dataset
 
-**358 job descriptions** collected April–July 2026 across `data/`, deduplicated 2026-07-25 in two passes (§9.6). Role-type breakdown:
+**373 job descriptions** collected April–July 2026 across `data/`, deduplicated 2026-07-25 in two passes (§9.6). Role-type breakdown:
 
 | role_type | n | In scope |
 |---|---|---|
-| analytics_engineering_bi | 318 | Yes — primary cohort |
+| analytics_engineering_bi | 329 | Yes — primary cohort |
 | team_lead | 11 | Yes — governance-signalling stratum |
-| data_engineering | 23 | No — excluded, different discourse population |
+| data_engineering | 27 | No — excluded, different discourse population |
 | other | 6 | No — excluded |
 
-**Analytical cohort: 329 records** (AE/BI + team_lead). Team-lead roles are retained because they are the most likely to contain explicit governance-mandate language ("define testing standards", "establish data culture") — relevant to whether the 2026 report's governance anxiety has entered hiring language at the decision-making level, not just the individual-contributor level.
+**Analytical cohort: 340 records** (AE/BI + team_lead). Team-lead roles are retained because they are the most likely to contain explicit governance-mandate language ("define testing standards", "establish data culture") — relevant to whether the 2026 report's governance anxiety has entered hiring language at the decision-making level, not just the individual-contributor level.
 
-**Geographic spread:** Primarily European (UK/remote 13%, Benelux 11%, Berlin 9%, Iberia 10%, Nordics 8%, France 7%), but APAC is the third-largest single bucket at **37 roles (11% of the analytical cohort)** — large enough to compare directly against the European majority rather than merely disclaim as a blind spot (§9.5). The `geo_region` field is a keyword match against free-text `job_location` strings collected opportunistically during a job search — it describes what got scraped, not real market concentration. Treat regional splits as corpus-coverage information, not a labour-market claim. See §9.5 for a worked APAC-vs-Europe comparison.
+**Geographic spread:** Primarily European (UK/remote 14%, Benelux 11%, Berlin 9%, Iberia 9%, Nordics 8%, France 7%), but APAC is now the second-largest single bucket at **43 roles (13% of the analytical cohort)** — large enough to compare directly against the European majority rather than merely disclaim as a blind spot (§9.5). The `geo_region` field is a keyword match against free-text `job_location` strings collected opportunistically during a job search — it describes what got scraped, not real market concentration. Treat regional splits as corpus-coverage information, not a labour-market claim. See §9.5 for a worked APAC-vs-Europe comparison.
 
 **2026-07-13 expansion:** Nine new JDs added mid-corpus (airSlate, EPAM, KTM AG, Bose, Resourcery Group, TapTap Send, TeamViewer, woom, Funding Circle) representing high-risk (5) and moderate-risk (4) roles. Early-stage (2) and mature (2) organisations represented alongside mid-stage (5). All classified using the same Layer B codebook; no statistical re-weighting applied — new entries are simply added to the analytical cohort at their face distribution.
 
@@ -85,14 +85,14 @@ Six theoretical lenses were applied to this dataset in an earlier draft, each fi
 **Prediction 1 — rigour framing should track organisational risk more than vendor-adoption or template-sophistication signals, if it reflects genuine need rather than fashion diffusion.**
 If rigour-oriented JD language (§4.1) is substantively driven by real stakes — the cost of a data error — it should correlate more strongly with `domain_risk` (a property of the business, independent of any vendor) than with proxies for how deeply a company has absorbed vendor/fashion language, such as `has_dbt` (tool adoption) or `jd_authorship` (how technically fluent the JD's language is).
 
-**Test:** χ² for `velocity_vs_rigour` × `domain_risk` (n=329): χ²=19.42, p=0.0006, V=0.17 — stable, and if anything slightly stronger than the n=291 reading (p=0.0018, V=0.17). χ² for `velocity_vs_rigour` × `has_dbt` (n=318): χ²=3.47, p=0.177, V=0.10 — **no longer significant at this n.** The point estimate has narrowed rather than vanished (rigour rate 67% for `has_dbt=False` vs. 75% for `has_dbt=True`, an 8pp gap, down from the 12pp read at n=282) — enough to drop the test below significance at this n. The relationship has sat close to the conventional threshold across the last several snapshots (crossing it in both directions after the 2026-07-25 dedup passes), and the current expansion (§9.7) moved it further into null territory rather than back across the line. Read this as the comparator relationship no longer clearing the bar Prediction 1 needs it to clear — not as `domain_risk` weakening; `domain_risk`'s own association with rigour is essentially unchanged. With the `has_dbt` comparator now null and `domain_risk` still real, Prediction 1's core claim ("rigour is not detectably *more* tied to real risk than to vendor-adoption signal") no longer has two comparable-magnitude effects to point to — the current picture is a small, real `domain_risk` effect and no detectable `has_dbt` effect, which is a *different* (and arguably cleaner) reading than "both weak and comparable": rigour framing tracks real organisational stakes, not tool adoption, at this corpus size. High-risk roles remain markedly more rigour-dominant (88% vs. 54–69% for low/moderate — §4.2), a real gradient, stable across every snapshot from n≤240 onward.
+**Test:** χ² for `velocity_vs_rigour` × `domain_risk` (n=340): χ²=20.14, p=0.0005, V=0.17 — stable, essentially identical to the n=329 reading (p=0.0006, V=0.17). χ² for `velocity_vs_rigour` × `has_dbt` (n=329): χ²=2.24, p=0.326, V=0.08 — **still not significant, and the effect has weakened further.** The point estimate has narrowed again (rigour rate 67% for `has_dbt=False` vs. 73% for `has_dbt=True`, a 6pp gap, down from the 8pp read at n=318), and the effect size itself dropped (V=0.08, was 0.10, now below even the small-effect floor used elsewhere in this document). The relationship sat close to the conventional threshold across several snapshots (crossing it in both directions through the 2026-07-25 dedup passes) before settling into null territory at n=318; the current expansion moved it further still. Read this as the comparator relationship continuing to show no detectable link between rigour framing and tool adoption — not as `domain_risk` weakening; `domain_risk`'s own association with rigour is essentially unchanged. With the `has_dbt` comparator null and `domain_risk` still real, Prediction 1's core claim ("rigour is not detectably *more* tied to real risk than to vendor-adoption signal") continues to have a small, real `domain_risk` effect and no detectable `has_dbt` effect to point to: rigour framing tracks real organisational stakes, not tool adoption, at this corpus size. High-risk roles remain markedly more rigour-dominant (88% vs. 58–66% for low/moderate — §4.2), a real gradient, stable across every snapshot from n≤240 onward.
 
 **Prediction 2 — AI-skill hiring criteria, if still an unconsummated fashion (adopted informally, not yet institutionalised into screening), should show both a low base rate relative to survey-claimed adoption and concentration in a narrow, structurally-motivated segment rather than even market-wide spread.**
 Abrahamson's model distinguishes early-fashion adoption (informal, imitative, uneven) from institutionalised practice (formal, criteria-based, widespread). If AI tool use is currently informal and imitative — teams copying peers without a shared professional standard — the *survey* self-report (informal use) should run well ahead of the *JD* screening criterion (formal adoption), and what formal adoption does exist should cluster in companies with a structural reason to need it (AI-product companies, AI-consuming infrastructure), not diffuse evenly.
 
-**Test:** `ai_role` is coded across the full analytical cohort (n=329 — see §9.3 for the pipeline-bug history). `ai_role = none` is 68% of the cohort (essentially flat against every prior snapshot) — against the dbt 2026 report's claim of 72% *daily* AI coding use. χ² for `ai_role` × `stakeholder_orientation` (n=329): χ²=10.61, p=0.225, V=0.13 — **remains not significant**, consistent with every prior reading. `ai_enabler` (63 of 329, 19%) still concentrates somewhat in `internal_data` (52%) and `mixed` (24%) stakeholder orientation versus `ai_user` (42, 13%) which spreads more toward `commercial`/`finance` (12%/12%), and the association's weakness is stable rather than still trending toward zero. **Prediction 2's second half (non-random concentration) continues to not hold at conventional significance; the first half (large adoption-claim/hiring-criterion gap) still holds — `none` is 68% of hiring criteria against the survey's 72% daily-use claim.**
+**Test:** `ai_role` is coded across the full analytical cohort (n=340 — see §9.3 for the pipeline-bug history). `ai_role = none` is 67% of the cohort (essentially flat against every prior snapshot) — against the dbt 2026 report's claim of 72% *daily* AI coding use. χ² for `ai_role` × `stakeholder_orientation` (n=340): χ²=11.21, p=0.19, V=0.13 — **remains not significant**, consistent with every prior reading. `ai_enabler` (67 of 340, 20%) still concentrates somewhat in `internal_data` (54%) and `mixed` (22%) stakeholder orientation versus `ai_user` (44, 13%) which spreads more toward `commercial`/`finance` (11%/11%), and the association's weakness is stable rather than still trending toward zero. **Prediction 2's second half (non-random concentration) continues to not hold at conventional significance; the first half (large adoption-claim/hiring-criterion gap) still holds — `none` is 67% of hiring criteria against the survey's 72% daily-use claim.**
 
-**What this buys the document:** two explicit, checkable predictions, stated before the findings that test them, with the statistical result reported honestly as it changes — including when a corpus expansion moves an earlier reading, as happened here. Prediction 1's `domain_risk` comparator has held significant at essentially the same effect size from n=272 through the current n=329; its `has_dbt` comparator, which had already been sitting close to the conventional threshold and crossing it in both directions through the 2026-07-25 dedup passes, is now clearly non-significant at n=318 — the current expansion (§9.7) resolved the back-and-forth in the null direction rather than reversing it again. Prediction 2 flipped a different direction earlier on: a marginal, medium-effect result at a small, biased coded subset (n=86) gave way to a clear non-result once the same three dimensions were coded across the full cohort, and that non-result has held at every subsequent n including n=329. These trajectories are instructive about statistical power and sample composition rather than embarrassing reversals to paper over — this is the fix for Appendix B's "six theories, none tested" critique — not a stronger claim than the data supports, but an honest, and honestly-updated, one.
+**What this buys the document:** two explicit, checkable predictions, stated before the findings that test them, with the statistical result reported honestly as it changes — including when a corpus expansion moves an earlier reading, as happened here. Prediction 1's `domain_risk` comparator has held significant at essentially the same effect size from n=272 through the current n=340; its `has_dbt` comparator, which had already settled into null territory by n=318, is even more clearly non-significant at n=329 (p=0.326, V=0.08, both weaker than the n=318 reading) — the current expansion moved it further from the threshold rather than back across it. Prediction 2 flipped a different direction earlier on: a marginal, medium-effect result at a small, biased coded subset (n=86) gave way to a clear non-result once the same three dimensions were coded across the full cohort, and that non-result has held at every subsequent n including n=340. These trajectories are instructive about statistical power and sample composition rather than embarrassing reversals to paper over — this is the fix for Appendix B's "six theories, none tested" critique — not a stronger claim than the data supports, but an honest, and honestly-updated, one.
 
 ---
 
@@ -102,13 +102,13 @@ Abrahamson's model distinguishes early-fashion adoption (informal, imitative, un
 
 The `velocity_vs_rigour` dimension captures whether the JD's primary framing is about quality, correctness, and reliability (rigour) or about speed, iteration, and throughput (velocity).
 
-| velocity_vs_rigour | n | % (analytical, n=329) |
+| velocity_vs_rigour | n | % (analytical, n=340) |
 |--------------------|---|---|
-| rigour | 235 | 71% |
-| mixed | 88 | 27% |
+| rigour | 240 | 71% |
+| mixed | 94 | 28% |
 | velocity | 6 | 2% |
 
-**71% of JDs in the analytical cohort signal a rigour orientation**, down 2pp from the 73% reading at n=291 — a small drift worth flagging (the current +38-record expansion since n=291, batches 07-26–29, ran slightly less rigour-dominant than the standing corpus). Pure velocity holds flat at 2% (6 JDs across 329). This remains the clearest single-dimension finding in the dataset — the percentage has drifted down across nearly every expansion (80% → 75% → 75% → 72% → 73% → 71%) as the corpus has diversified into more low-risk, gaming/consumer, and now AI-forward roles (§3), but the band has stayed narrow (71-73%) since n=272, including the first sizeable non-European stratum. Per §4.2, rigour framing shows a small but statistically real gradient with domain risk; per §4.0, its gradient with tool adoption (`has_dbt`) no longer clears significance at this n — an institutionalised norm that still responds modestly to real stakes, but not detectably to tool adoption.
+**71% of JDs in the analytical cohort signal a rigour orientation**, unchanged from the 71% reading at n=329 — the flattest single-update reading yet, since this batch's 11 new cohort records were not disproportionately rigour- or velocity-skewed. Pure velocity holds flat at 2% (6 JDs across 340). This remains the clearest single-dimension finding in the dataset — the percentage has drifted down across most expansions (80% → 75% → 75% → 72% → 73% → 71% → 71%) as the corpus has diversified into more low-risk, gaming/consumer, and now AI-forward roles (§3), but the band has stayed narrow (71-73%) since n=272, including the first sizeable non-European stratum. Per §4.2, rigour framing shows a small but statistically real gradient with domain risk; per §4.0, its gradient with tool adoption (`has_dbt`) continues to show no detectable effect at this n — an institutionalised norm that still responds modestly to real stakes, but not detectably to tool adoption.
 
 This is broadly consistent with the dbt 2026 report's governance framing — but the consistency is directional, not mechanistic. The JD data cannot distinguish "rigour because of genuine engineering craft" from "rigour because of fashion diffusion" from "rigour because of fear of AI-generated errors." §4.0's test finds a small, real effect for risk but no longer a detectable one for tooling.
 
@@ -120,21 +120,21 @@ This is broadly consistent with the dbt 2026 report's governance framing — but
 
 `domain_risk` measures the stakes of a data error in the role's primary domain (high = finance, fintech, compliance, safety; moderate = marketplace, SaaS, general commercial; low = internal tooling, education).
 
-| domain_risk | n | % (analytical, n=329) |
+| domain_risk | n | % (analytical, n=340) |
 |-------------|---|---|
-| moderate | 222 | 67% |
-| high | 81 | 25% |
+| moderate | 229 | 67% |
+| high | 85 | 25% |
 | low | 26 | 8% |
 
 **Cross-tab with velocity_vs_rigour:**
 
 | domain_risk | rigour | mixed | velocity | n |
 |-------------|--------|-------|----------|---|
-| high | 89% | 8% | 3% | 81 |
-| low | 54% | 42% | 4% | 26 |
-| moderate | 66% | 32% | 2% | 222 |
+| high | 88% | 9% | 2% | 85 |
+| low | 58% | 38% | 4% | 26 |
+| moderate | 66% | 33% | 1% | 229 |
 
-χ²=19.42, p=0.0006, V=0.17 (n=329 — stable, and if anything marginally stronger than the n=291 reading of p=0.0018, V=0.17). **High-risk roles remain detectably more rigour-dominant (89%) than moderate or low-risk roles (54–66%),** and the relationship has held through every expansion and both dedup passes essentially unchanged in effect size. This confirms §4.0 Prediction 1's interpretation: with the `has_dbt` comparator now null (§4.0), this is currently the more clearly real of the two originally-compared associations. The effect size (V=0.17) stays in "small" territory — domain risk explains some but far from most of the variance in rigour framing. Read this as: rigour language is close to universal everywhere (54%+ in every risk tier) but shifts upward, modestly and reliably, when the stakes of an error are genuinely higher.
+χ²=20.14, p=0.0005, V=0.17 (n=340 — stable, essentially identical to the n=329 reading of p=0.0006, V=0.17). **High-risk roles remain detectably more rigour-dominant (88%) than moderate or low-risk roles (58–66%),** and the relationship has held through every expansion and both dedup passes essentially unchanged in effect size. This confirms §4.0 Prediction 1's interpretation: with the `has_dbt` comparator continuing to test null (§4.0), this remains the more clearly real of the two originally-compared associations. The effect size (V=0.17) stays in "small" territory — domain risk explains some but far from most of the variance in rigour framing. Read this as: rigour language is close to universal everywhere (58%+ in every risk tier) but shifts upward, modestly and reliably, when the stakes of an error are genuinely higher.
 
 ---
 
@@ -142,33 +142,33 @@ This is broadly consistent with the dbt 2026 report's governance framing — but
 
 `data_team_maturity` estimates where the organisation's data function sits on a development arc: `early` (building the foundation, often first or second data hire), `mid` (established stack, active growth), or `mature` (sophisticated platform, federated or domain-oriented structure).
 
-| data_team_maturity | n | % (analytical, n=329) |
+| data_team_maturity | n | % (analytical, n=340) |
 |--------------------|---|---|
-| mid | 195 | 59% |
-| mature | 84 | 26% |
-| early | 50 | 15% |
+| mid | 202 | 59% |
+| mature | 85 | 25% |
+| early | 53 | 16% |
 
-**Just under two-thirds of roles are mid-stage.** Early-stage roles hold at 15%; genuinely mature organisations are 26% — both close to the n=291 snapshot (14%/24%), with a small (3pp) dip in the mid share reflecting the current batch's slightly mature-skewed composition (§9.7). APAC's own maturity mix (§9.5) continues to track the corpus average closely.
+**Just under two-thirds of roles are mid-stage.** Early-stage roles hold at 16%; genuinely mature organisations are 25% — both close to the n=329 snapshot (15%/26%), with the current batch's slightly early-skewed composition (§9.8) nudging the early share up a point rather than down. APAC's own maturity mix (§9.5) continues to track the corpus average closely.
 
-**Maturity × greenfield_vs_fix cross-tab** (χ²=175.81, p<0.0001, V=0.52, n=329 — the strongest relationship in the dataset, and stable across every expansion and dedup pass):
+**Maturity × greenfield_vs_fix cross-tab** (χ²=185.57, p<0.0001, V=0.52, n=340 — the strongest relationship in the dataset, and stable across every expansion and dedup pass):
 
 | data_team_maturity | fix_scale | greenfield | mixed | n |
 |--------------------|-----------|-----------|-------|---|
-| early | 10% | 76% | 14% | 50 |
-| mid | 38% | 4% | 57% | 195 |
-| mature | 54% | 5% | 42% | 84 |
+| early | 9% | 77% | 13% | 53 |
+| mid | 38% | 4% | 58% | 202 |
+| mature | 54% | 5% | 41% | 85 |
 
-Greenfield work concentrates sharply at early-stage (76%) and is nearly absent at mature (5%). This is the structural basis for the common career-advice claim "go early-stage for greenfield work," and it continues to hold cleanly — the strongest and most reliable relationship in the entire dataset, with the effect size unchanged at V=0.52.
+Greenfield work concentrates sharply at early-stage (77%) and is nearly absent at mature (5%). This is the structural basis for the common career-advice claim "go early-stage for greenfield work," and it continues to hold cleanly — the strongest and most reliable relationship in the entire dataset, with the effect size unchanged at V=0.52.
 
 **Autonomy by maturity:**
 
 | data_team_maturity | execution | mixed | strategic | n |
 |--------------------|-----------|-------|-----------|---|
-| early | 16% | 22% | 62% | 50 |
-| mid | 34% | 39% | 27% | 195 |
-| mature | 32% | 33% | 35% | 84 |
+| early | 13% | 21% | 66% | 53 |
+| mid | 36% | 38% | 26% | 202 |
+| mature | 31% | 39% | 31% | 85 |
 
-χ²=28.33, p<0.0001, V=0.21 (n=329, slightly stronger than n=291's V=0.19). Early-stage roles offer strategic autonomy at 62% — still far above mid- or mature-stage roles (27% and 35%), a small softening from n=291's 66% but the same overall pattern. Mid-stage remains the least strategic tier despite being the largest market segment. The core pattern — greenfield work and direction-setting cluster at early-stage companies — holds.
+χ²=31.73, p<0.0001, V=0.22 (n=340, essentially unchanged from n=329's V=0.21). Early-stage roles offer strategic autonomy at 66% — still far above mid- or mature-stage roles (26% and 31%), back up from n=329's 62% and closer to the n=291 reading of 66%. Mid-stage remains the least strategic tier despite being the largest market segment. The core pattern — greenfield work and direction-setting cluster at early-stage companies — holds.
 
 ---
 
@@ -176,27 +176,27 @@ Greenfield work concentrates sharply at early-stage (76%) and is nearly absent a
 
 `stakeholder_orientation` identifies who the AE primarily serves: `commercial` (GTM, sales, marketing, RevOps), `product` (experimentation, funnels), `internal_data` (other data practitioners, platform consumers), `finance`, or `mixed`.
 
-| stakeholder_orientation | n | % (analytical, n=329) |
+| stakeholder_orientation | n | % (analytical, n=340) |
 |-------------------------|---|---|
-| internal_data | 167 | 51% |
-| mixed | 58 | 18% |
-| commercial | 42 | 13% |
-| finance | 36 | 11% |
-| product | 26 | 8% |
+| internal_data | 172 | 51% |
+| mixed | 61 | 18% |
+| commercial | 43 | 13% |
+| finance | 37 | 11% |
+| product | 27 | 8% |
 
-**51% of roles in this cohort primarily serve internal data consumers** — other analysts, data scientists, ML engineers, or the platform itself. This remains the dominant archetype in the market, essentially flat against the n=291 reading (52%) — the decline that ran through earlier snapshots (60%→55%→51%→54%→52%) has clearly stabilised in the 51-54% band. APAC's own stakeholder mix isn't a standout finding — see §9.5.
+**51% of roles in this cohort primarily serve internal data consumers** — other analysts, data scientists, ML engineers, or the platform itself. This remains the dominant archetype in the market, unchanged from the n=329 reading (51%) — the decline that ran through earlier snapshots (60%→55%→51%→54%→52%→51%) has clearly stabilised in the 51-54% band. APAC's own stakeholder mix isn't a standout finding — see §9.5.
 
-**Cross-tab with rigour** (χ²=46.32, p<0.0001, V=0.27, n=329):
+**Cross-tab with rigour** (χ²=52.43, p<0.0001, V=0.28, n=340):
 
 | stakeholder_orientation | mixed | rigour | velocity | n |
 |-------------------------|-------|--------|----------|---|
-| finance | 8% | 92% | 0% | 36 |
-| internal_data | 16% | 83% | 2% | 167 |
-| product | 38% | 58% | 4% | 26 |
-| commercial | 48% | 50% | 2% | 42 |
-| mixed | 50% | 48% | 2% | 58 |
+| finance | 8% | 92% | 0% | 37 |
+| internal_data | 16% | 83% | 2% | 172 |
+| product | 41% | 56% | 4% | 27 |
+| commercial | 49% | 49% | 2% | 43 |
+| mixed | 52% | 46% | 2% | 61 |
 
-Finance and internal_data roles remain the most rigour-dominant (83–92%); commercial and product roles are close to evenly split between rigour and mixed framing. This relationship remains clearly significant at n=329 (V=0.27, unchanged from n=291) — still the clearest stakeholder-level driver of rigour/velocity framing in the dataset.
+Finance and internal_data roles remain the most rigour-dominant (83–92%); commercial and product roles are close to evenly split between rigour and mixed framing. This relationship remains clearly significant at n=340 (V=0.28, essentially unchanged from n=329) — still the clearest stakeholder-level driver of rigour/velocity framing in the dataset.
 
 **What this means for positioning:** applying to an `internal_data` role with a speed-first pitch is a framing mismatch with what these employers write they want.
 
@@ -206,52 +206,52 @@ Finance and internal_data roles remain the most rigour-dominant (83–92%); comm
 
 `autonomy_level` separates roles where the AE sets direction (`strategic`) from roles that execute against direction set by others (`execution`), with `mixed` covering roles signalling both.
 
-| autonomy_level | n | % (analytical, n=329) |
+| autonomy_level | n | % (analytical, n=340) |
 |----------------|---|---|
-| mixed | 119 | 36% |
-| strategic | 107 | 33% |
-| execution | 103 | 31% |
+| mixed | 121 | 36% |
+| strategic | 113 | 33% |
+| execution | 106 | 31% |
 
-The three-way split persists, and `mixed` now edges narrowly ahead of `strategic` (36% vs. 33%, a 3pp gap) rather than the exact tie seen at n=291. Given that a 1pp gap at n=291 was itself shown to be noise (§4.5, prior revision), a 3pp gap at n=329 is still well within the range this corpus size produces — not a trend toward `mixed` overtaking `strategic`, just where the current n happens to land. This even distribution reinforces that autonomy cannot be read from title or seniority label alone; context (maturity, stakeholder, domain risk) matters much more.
+The three-way split persists, and `mixed` continues to edge narrowly ahead of `strategic` (36% vs. 33%, the same 3pp gap as at n=329). Given that both a 1pp gap at n=291 and this gap at prior snapshots have been shown to sit well within the range this corpus size produces, the stable 3pp reading is not evidence of a trend toward `mixed` overtaking `strategic` — just where the current n happens to land. This even distribution reinforces that autonomy cannot be read from title or seniority label alone; context (maturity, stakeholder, domain risk) matters much more.
 
-**Seniority × autonomy** (χ²=65.77, p<0.0001, V=0.32, n=329):
+**Seniority × autonomy** (χ²=69.40, p<0.0001, V=0.32, n=340):
 
 | seniority | execution | mixed | strategic | n |
 |-----------|-----------|-------|-----------|---|
 | junior | 77% | 23% | 0% | 13 |
-| mid | 38% | 44% | 18% | 164 |
-| senior | 23% | 29% | 48% | 130 |
+| mid | 39% | 43% | 18% | 171 |
+| senior | 23% | 29% | 49% | 133 |
 | lead | 0% | 42% | 58% | 12 |
 | manager | 0% | 20% | 80% | 5 |
-| staff | 0% | 0% | 100% | 5 |
+| staff | 0% | 0% | 100% | 6 |
 
-The relationship remains statistically real (p<0.0001, effect size essentially unchanged at V=0.32) and the practical read is stable: **"Mid" remains the single largest title cohort (n=164) but "Senior" (n=130) remains the more informative one, splitting 23/29/48 across execution/mixed/strategic — solidly more strategic-leaning than the corpus-wide split, and consistent with the n=291 reading (23/27/50).** A "Senior Analytics Engineer" title continues to be a meaningfully positive predictor of strategic scope, though it remains far from deterministic (roughly a quarter of senior roles are still pure execution). Lead, manager, and staff titles predict strategic scope more clearly still (58–100%), but remain small cells. The practical implication for interviews is unchanged: ask explicitly what decisions the role makes autonomously in year one; the senior title is informative but still leaves real uncertainty.
+The relationship remains statistically real (p<0.0001, effect size essentially unchanged at V=0.32) and the practical read is stable: **"Mid" remains the single largest title cohort (n=171) but "Senior" (n=133) remains the more informative one, splitting 23/29/49 across execution/mixed/strategic — solidly more strategic-leaning than the corpus-wide split, and consistent with the n=329 reading (23/29/48).** A "Senior Analytics Engineer" title continues to be a meaningfully positive predictor of strategic scope, though it remains far from deterministic (roughly a quarter of senior roles are still pure execution). Lead, manager, and staff titles predict strategic scope more clearly still (58–100%), but remain small cells. The practical implication for interviews is unchanged: ask explicitly what decisions the role makes autonomously in year one; the senior title is informative but still leaves real uncertainty.
 
 ---
 
-### 4.6 JD authorship: hiring managers write roughly 69% of the corpus; the APAC gap is now directional, not confirmed
+### 4.6 JD authorship: hiring managers write roughly 70% of the corpus; the APAC gap is back below the significance threshold
 
 `jd_authorship` distinguishes JDs written by (or heavily informed by) the hiring manager — technical specificity, named tools in precise context — from recruiter-authored JDs (generic requirements, boilerplate language).
 
-| jd_authorship | n | % (analytical, n=329) |
+| jd_authorship | n | % (analytical, n=340) |
 |---------------|---|---|
-| hiring_manager | 228 | 69% |
-| mixed | 70 | 21% |
+| hiring_manager | 238 | 70% |
+| mixed | 71 | 21% |
 | recruiter | 31 | 9% |
 
-**Hiring-manager-authored JDs are 69% of the corpus**, essentially unchanged from 68% at n=291. **The APAC gap is directionally the same as before but no longer clears p<0.05 at this n:** APAC roles are 86% hiring_manager-authored vs. 67% for the rest of the corpus (χ²=5.92, p=0.052, V=0.13, n=329 — down from χ²=14.18, p=0.0008, V=0.22 at n=291; see §9.5). One of the 37 APAC JDs now codes as pure `recruiter` (previously zero) — a single-record change that, combined with the added non-APAC JDs in this batch skewing hiring-manager-authored themselves (§9.7), narrowed the gap the test detects. This dimension remains the lowest in LLM self-consistency (0.58) — a codebook-ambiguity signal — so the softened finding should be read as "a real gap that no longer clears conventional significance at this n," not as a reversal of direction.
+**Hiring-manager-authored JDs are 70% of the corpus**, essentially unchanged from 69% at n=329. **The APAC gap is back below p<0.05 at this n:** APAC roles are 86% hiring_manager-authored vs. 68% for the rest of the corpus (χ²=6.32, p=0.042, V=0.14, n=340 — up from χ²=5.92, p=0.052, V=0.13 at n=329; see §9.5). This batch's six new APAC records (§9.8) are 5 hiring_manager / 1 mixed, none recruiter, which pulled the APAC hiring-manager share back toward its earlier, larger gap against the rest of the corpus. This dimension remains the lowest in LLM self-consistency (0.58) — a codebook-ambiguity signal — so this finding should be read as "a real, currently-significant gap," carrying that caveat, not as a newly-confirmed claim independent of it; the relationship has crossed the conventional threshold in both directions across the last two snapshots, which is itself informative about how close to the boundary it sits.
 
-**Cross-tab with rigour** (χ²=6.54, p=0.163, V=0.10, n=329): hiring_manager 75% rigour / 23% mixed / 1% velocity; mixed 64% rigour / 33% mixed / 3% velocity; recruiter 58% rigour / 39% mixed / 3% velocity. Still not significant at conventional thresholds — unlike domain_risk (§4.2), authorship sophistication continues to show no detectable relationship with rigour framing.
+**Cross-tab with rigour** (χ²=6.13, p=0.190, V=0.10, n=340): hiring_manager 74% rigour / 24% mixed / 1% velocity; mixed 63% rigour / 34% mixed / 3% velocity; recruiter 58% rigour / 39% mixed / 3% velocity. Still not significant at conventional thresholds — unlike domain_risk (§4.2), authorship sophistication continues to show no detectable relationship with rigour framing.
 
-**Cross-tab with has_dbt** (χ²=17.86, p=0.0001, V=0.24, n=318, AE/BI only):
+**Cross-tab with has_dbt** (χ²=19.03, p<0.0001, V=0.24, n=329, AE/BI only):
 
 | jd_authorship | has_dbt=False | has_dbt=True | n |
 |---------------|---------------|---------------|---|
-| hiring_manager | 29% | 71% | 220 |
-| mixed | 47% | 53% | 68 |
+| hiring_manager | 28% | 72% | 230 |
+| mixed | 46% | 54% | 69 |
 | recruiter | 63% | 37% | 30 |
 
-Hiring-manager-authored JDs name dbt at roughly 2× the rate of recruiter-authored ones (71% vs. 37%), essentially unchanged from the n=291 reading (73% vs. 42%) — the relationship is stable and the effect size held (V=0.24). Read against Deming & Kahn's revealed-preference framework (§6): a hiring-manager-named tool requirement is a higher-fidelity signal than a recruiter-named one — the manager screens for it because they use it; the recruiter may be pulling from a template. The practical implication: dbt's *absence* in a recruiter-authored JD is weaker evidence the team doesn't use it than absence in a hiring-manager-authored JD.
+Hiring-manager-authored JDs name dbt at roughly 2× the rate of recruiter-authored ones (72% vs. 37%), essentially unchanged from the n=329 reading (71% vs. 37%) — the relationship is stable and the effect size held (V=0.24). Read against Deming & Kahn's revealed-preference framework (§6): a hiring-manager-named tool requirement is a higher-fidelity signal than a recruiter-named one — the manager screens for it because they use it; the recruiter may be pulling from a template. The practical implication: dbt's *absence* in a recruiter-authored JD is weaker evidence the team doesn't use it than absence in a hiring-manager-authored JD.
 
 ---
 
@@ -261,19 +261,19 @@ Hiring-manager-authored JDs name dbt at roughly 2× the rate of recruiter-author
 
 | data_team_maturity | mean collaboration_width | n |
 |--------------------|--------------------------|---|
-| mature | 2.60 | 84 |
-| mid | 2.32 | 195 |
-| early | 2.22 | 50 |
+| mature | 2.58 | 85 |
+| mid | 2.36 | 202 |
+| early | 2.34 | 53 |
 
-The earlier draft's finding — mature teams have the widest named-stakeholder count — is directionally intact (2.60 vs. 2.32 vs. 2.22), and the spread has widened slightly since n=291 (2.31/2.20/2.10) — the ordering hasn't changed at any snapshot, but the gap between mature and early hasn't reached a magnitude worth treating as reliable given this dimension's known noise (§9.1's evidence-quote pass-rate problem). **This dimension still does not currently support a confident finding.** It is retained in the codebook for future corpus growth, but no claim built on it should be treated as established.
+The earlier draft's finding — mature teams have the widest named-stakeholder count — is directionally intact (2.58 vs. 2.36 vs. 2.34), and the spread has narrowed slightly since n=329 (2.60/2.32/2.22) as the current batch's early-stage additions pulled that tier's mean up toward mid — the ordering hasn't changed at any snapshot, but the gap between mature and early still hasn't reached a magnitude worth treating as reliable given this dimension's known noise (§9.1's evidence-quote pass-rate problem). **This dimension still does not currently support a confident finding.** It is retained in the codebook for future corpus growth, but no claim built on it should be treated as established.
 
 ---
 
 ### 4.8 dbt prevalence: real but not universal
 
-`has_dbt` is a required-or-preferred tool flag, not a Layer B dimension. **64% of AE/BI roles (n=318) mention dbt.**
+`has_dbt` is a required-or-preferred tool flag, not a Layer B dimension. **65% of AE/BI roles (n=329) mention dbt.**
 
-This is consistent with dbt's own claim that it has become the field standard, but roughly one in three AE/BI roles run on a stack without it. The prevalence has held essentially flat across the last several snapshots (68%→66%→65%→65%→66%→65%→64%), including through both dedup passes and the current expansion — dbt prevalence (59%, n=37 APAC AE/BI) tracks the corpus average closely (§9.5). This market includes a meaningful share of Databricks SQL, BigQuery-native, and Spark-first stacks. A survey distributed exclusively through dbt's community channels cannot see that portion of the market by construction — this is the self-selection constraint from §2, made concrete. The JD data documents this blind spot directly: roughly one in three roles don't name dbt at all, stable across seven consecutive corpus snapshots.
+This is consistent with dbt's own claim that it has become the field standard, but roughly one in three AE/BI roles run on a stack without it. The prevalence has held essentially flat across the last several snapshots (68%→66%→65%→65%→66%→65%→64%→65%), including through both dedup passes and the current expansion — dbt prevalence (65%, n=43 APAC AE/BI) has converged exactly onto the corpus average this snapshot, up from 59% at n=329 (§9.5). This market includes a meaningful share of Databricks SQL, BigQuery-native, and Spark-first stacks. A survey distributed exclusively through dbt's community channels cannot see that portion of the market by construction — this is the self-selection constraint from §2, made concrete. The JD data documents this blind spot directly: roughly one in three roles don't name dbt at all, stable across eight consecutive corpus snapshots.
 
 ---
 
@@ -283,7 +283,7 @@ The sections above treat each dimension mostly in isolation. This section runs p
 
 ### Statistical methods
 
-**Chi-squared (χ²):** applied to categorical × categorical pairs with adequate expected cell frequencies. At n=329, the minimum detectable effect (α=0.05, 80% power) for a typical cross-tab is Cramér's V ≈ 0.17 — slightly tighter than the n=291 threshold of ≈0.18, since the corpus has grown rather than shrunk this time. Findings below the current threshold are still directional only.
+**Chi-squared (χ²):** applied to categorical × categorical pairs with adequate expected cell frequencies. At n=340, the minimum detectable effect (α=0.05, 80% power) for a typical cross-tab is Cramér's V ≈ 0.17 — essentially the same as the n=329 threshold, since this update added only 11 cohort records. Findings below the current threshold are still directional only.
 
 **Cramér's V** reported alongside all χ² tests (0 = no association, 1 = perfect association). V≥0.10 small, V≥0.30 medium, V≥0.50 large.
 
@@ -291,141 +291,141 @@ The sections above treat each dimension mostly in isolation. This section runs p
 
 ---
 
-### Finding A: Domain risk and stakeholder orientation are structurally linked (χ², p<0.0001, V=0.39, n=329)
+### Finding A: Domain risk and stakeholder orientation are structurally linked (χ², p<0.0001, V=0.38, n=340)
 
 | domain_risk | commercial | finance | internal_data | mixed | product |
 |-------------|-----------|---------|---------------|-------|---------|
-| high (n=81) | 6% | 40% | 41% | 11% | 2% |
+| high (n=85) | 6% | 39% | 41% | 12% | 2% |
 | low (n=26) | 4% | 0% | 73% | 15% | 8% |
-| moderate (n=222) | 16% | 2% | 52% | 20% | 10% |
+| moderate (n=229) | 16% | 2% | 52% | 21% | 10% |
 
-High-risk roles concentrate heavily in finance (40%, vs. 0% of low-risk and 2% of moderate-risk roles), essentially unchanged since n=291 — still the strongest, cleanest relationship in the dataset outside of maturity × mission (§4.3), with the effect size if anything slightly stronger (V=0.39, was 0.37). Product-facing roles remain rare in high-risk contexts (2%) — experimentation and funnel work is essentially never coded high-stakes in this corpus, even though A/B test errors can carry real revenue consequences. Low-risk roles skew overwhelmingly `internal_data` (73%) — internal tooling and education-sector roles serve internal data consumers almost by definition.
+High-risk roles concentrate heavily in finance (39%, vs. 0% of low-risk and 2% of moderate-risk roles), essentially unchanged since n=329 — still the strongest, cleanest relationship in the dataset outside of maturity × mission (§4.3), with the effect size essentially stable (V=0.38, was 0.39). Product-facing roles remain rare in high-risk contexts (2%) — experimentation and funnel work is essentially never coded high-stakes in this corpus, even though A/B test errors can carry real revenue consequences. Low-risk roles skew overwhelmingly `internal_data` (73%) — internal tooling and education-sector roles serve internal data consumers almost by definition.
 
 **Theoretical read — DiMaggio & Powell (1983), coercive isomorphism:** finance is a field with an externally imposed risk hierarchy (audit standards, IFRS, regulatory reporting) that constrains how the role gets written regardless of the individual employer's preference. Product analytics has no equivalent external body defining what "high stakes" means for an experiment, so employers default to moderate. The domain-risk classification in this dataset appears to track external regulatory pressure more than an employer's independent risk judgment.
 
 ---
 
-### Finding B (now a tested null): domain risk and mission type (χ², p=0.134, V=0.10, n=329)
+### Finding B: domain risk and mission type — a tested null (χ², p=0.194, V=0.09, n=340)
 
 | domain_risk | fix_scale | greenfield | mixed |
 |-------------|-----------|-----------|-------|
-| high (n=81) | 44% | 16% | 40% |
+| high (n=85) | 42% | 16% | 41% |
 | low (n=26) | 54% | 15% | 31% |
-| moderate (n=222) | 34% | 15% | 51% |
+| moderate (n=229) | 34% | 16% | 51% |
 
-Moderate-risk roles still look the most "mixed" (incremental extension of an existing stack, 51%) and high/low-risk roles still lean somewhat more toward fix_scale (44%, 54%) than moderate-risk roles (34%) — the direction is the same as prior snapshots, but the test no longer clears p<0.05 at this n (V=0.10 sits right at the small-effect floor used elsewhere in this document). This relationship has moved across the threshold in both directions across recent snapshots (p=0.040 pre-dedup → p=0.017 post-dedup → p=0.134 at the current n) — read that trajectory as a small, marginal effect that this corpus size can't reliably detect either way, not as evidence the underlying pattern has changed. Kept here as a documented test, not as a claimed finding.
+Moderate-risk roles still look the most "mixed" (incremental extension of an existing stack, 51%) and high/low-risk roles still lean somewhat more toward fix_scale (42%, 54%) than moderate-risk roles (34%) — the direction is the same as prior snapshots, and the test remains well short of p<0.05 at this n (V=0.09, below the small-effect floor used elsewhere in this document). This relationship has moved across the threshold in both directions across recent snapshots (p=0.040 pre-dedup → p=0.017 post-dedup → p=0.134 at n=329 → p=0.194 at the current n) — read that trajectory as a small, marginal effect that this corpus size can't reliably detect either way, not as evidence the underlying pattern has changed. Kept here as a documented test, not as a claimed finding.
 
 ---
 
-### Finding C: Maturity determines mission almost deterministically (χ², p<0.0001, V=0.52, n=329)
+### Finding C: Maturity determines mission almost deterministically (χ², p<0.0001, V=0.52, n=340)
 
-Full cross-tab in §4.3. Greenfield work is 76% of early-stage roles and 5% of mature-team roles — the sharpest, most reliable relationship in the corpus, holding at V=0.52, unchanged from n=291.
+Full cross-tab in §4.3. Greenfield work is 77% of early-stage roles and 5% of mature-team roles — the sharpest, most reliable relationship in the corpus, holding at V=0.52, unchanged from n=329.
 
 **Theoretical read — Rogers (2003), diffusion S-curve:** early adopters build from scratch, the majority scale and extend, late adopters inherit and optimise. The maturity × mission distribution maps closely onto this. What the diffusion model doesn't predict as cleanly is the mature/fix_scale share (45%) — Rogers treats late-stage adoption as stabilisation, not remediation. Read alongside Finding B, this looks like a *post-stabilisation regression*: mature teams rebuilding systems that were adequate when adopted but have since accumulated debt — closer to Collingridge's framework than Rogers' for that specific slice.
 
 ---
 
-### Finding D: Seniority predicts autonomy moderately for the modal title, strongly at the tails (χ², p<0.0001, V=0.32, n=329)
+### Finding D: Seniority predicts autonomy moderately for the modal title, strongly at the tails (χ², p<0.0001, V=0.32, n=340)
 
-Full cross-tab in §4.5. "Mid" (n=164) remains the largest title cohort by count, but "Senior" (n=130) remains the more informative title, spanning execution/mixed/strategic at 23/29/48 — noticeably more strategic-leaning than the corpus-wide split, and consistent with the n=291 reading (23/27/50). Staff, manager, and lead titles (n=5, n=5, n=12) predict strategic scope near-perfectly (58–100%), but the cells remain too small to generalise with confidence.
+Full cross-tab in §4.5. "Mid" (n=171) remains the largest title cohort by count, but "Senior" (n=133) remains the more informative title, spanning execution/mixed/strategic at 23/29/49 — noticeably more strategic-leaning than the corpus-wide split, and consistent with the n=329 reading (23/29/48). Staff, manager, and lead titles (n=6, n=5, n=12) predict strategic scope near-perfectly (58–100%), but the cells remain too small to generalise with confidence.
 
-**Theoretical read — Spence (1973), signalling, now more mixed than contradicted:** if job titles were reliable, costly-to-fake signals, "Senior" should predict autonomy cleanly. At n=329 "Senior" remains a meaningfully informative signal (48% strategic vs. an overall cohort rate of 33%), consistent with the n=291 reading (50% vs. 34%) — the signalling account continues to look less contradicted than the n=123 baseline suggested, though a quarter of senior roles remain pure execution, so the signal stays noisy. Staff/manager/lead titles retain the strongest signal value, consistent with being rarer and costlier to award, but the cells are too small here to treat as confirmed.
+**Theoretical read — Spence (1973), signalling, now more mixed than contradicted:** if job titles were reliable, costly-to-fake signals, "Senior" should predict autonomy cleanly. At n=340 "Senior" remains a meaningfully informative signal (49% strategic vs. an overall cohort rate of 33%), consistent with the n=329 reading (48% vs. 33%) — the signalling account continues to look less contradicted than the n=123 baseline suggested, though a quarter of senior roles remain pure execution, so the signal stays noisy. Staff/manager/lead titles retain the strongest signal value, consistent with being rarer and costlier to award, but the cells are too small here to treat as confirmed.
 
 ---
 
-### Finding E (now a tested null): stakeholder orientation and autonomy level (χ², p=0.087, V=0.15, n=329)
+### Finding E: stakeholder orientation and autonomy level — a tested null (χ², p=0.072, V=0.15, n=340)
 
 | stakeholder_orientation | execution | mixed | strategic |
 |-------------------------|-----------|-------|-----------|
-| finance (n=36) | 42% | 28% | 31% |
-| commercial (n=42) | 19% | 52% | 29% |
-| mixed (n=58) | 29% | 40% | 31% |
-| internal_data (n=167) | 34% | 35% | 31% |
-| product (n=26) | 27% | 19% | 54% |
+| finance (n=37) | 43% | 27% | 30% |
+| commercial (n=43) | 21% | 51% | 28% |
+| mixed (n=61) | 30% | 39% | 31% |
+| internal_data (n=172) | 33% | 35% | 33% |
+| product (n=27) | 26% | 19% | 56% |
 
-Finance-facing roles still look the most execution-concentrated segment (42%) and product-facing roles still look the most strategic (54%), the same direction as every prior snapshot, but the test no longer clears p<0.05 at this n. This relationship has now crossed the significance threshold four times across six snapshots (significant at n=123, non-significant at n=272, significant from n=327 through n=291, non-significant again at n=329) — the clearest demonstration in this document that a small effect sitting close to the detection threshold will keep crossing it as n changes by double digits in either direction. Read the underlying pattern as a stable, small, directionally-consistent tendency that this corpus size cannot reliably confirm or reject — not as a relationship that comes and goes.
-
----
-
-### Finding G: JD authorship predicts stated dbt requirement (χ², p<0.001, V=0.24, n=318)
-
-Full cross-tab in §4.6. Hiring-manager-authored JDs name dbt at 71% vs. 37% for recruiter-authored — still the clearest authorship-quality signal in the dataset, with the gap and effect size essentially stable against the n=291 reading (V=0.24). Directly relevant to the dbt-prevalence caveat in §4.8 (recruiter-authored non-mentions of dbt are lower-fidelity evidence than hiring-manager non-mentions).
-
-**Geography's link to JD authorship is now directional, not confirmed (χ², p=0.052, V=0.13, n=329):** APAC roles are 86% hiring-manager-authored vs. 67% for the rest of the corpus, and one of the 37 APAC JDs now codes as pure `recruiter` (§9.5) — down from the χ²=14.18, p=0.0008, V=0.22 reading at n=291. The direction is unchanged and this was still, until this snapshot, the single clearest geographic effect in the dataset; the current batch's non-APAC additions skew somewhat more hiring-manager-authored themselves (§9.7), which narrows the gap between the two groups. Two readings remain plausible and the JD text alone can't distinguish them: APAC hiring managers may write JDs more directly (less recruiter/ATS-template mediation in this sample), or the `jd_authorship` codebook's technical-specificity heuristic may be picking up an ATS-formatting convention specific to how these postings were sourced (many via LinkedIn/company career pages with detailed bullet-point tool lists) rather than true authorship. Given `jd_authorship`'s already-low self-consistency (0.58, §3), this finding should be read as a real pattern that no longer clears conventional significance at this n, not as a confirmed claim about who actually writes APAC job postings.
+Finance-facing roles still look the most execution-concentrated segment (43%) and product-facing roles still look the most strategic (56%), the same direction as every prior snapshot, and the test remains just short of p<0.05 at this n (p=0.072, down from p=0.087 at n=329 — closer to the line, still on the null side). This relationship has now crossed the significance threshold four times across seven snapshots (significant at n=123, non-significant at n=272, significant from n=327 through n=291, non-significant at n=329 and n=340) — the clearest demonstration in this document that a small effect sitting close to the detection threshold will keep crossing it as n changes by double digits in either direction. Read the underlying pattern as a stable, small, directionally-consistent tendency that this corpus size cannot reliably confirm or reject — not as a relationship that comes and goes.
 
 ---
 
-### Finding H: Work arrangement — driven almost entirely by geography, now with a maturity effect that clears significance for the first time, and an APAC disclosure signature that remains directional (n=358 total / 329 analytical cohort)
+### Finding G: JD authorship predicts stated dbt requirement (χ², p<0.0001, V=0.24, n=329)
 
-A chi-square sweep of `work_arrangement` (hybrid / remote / onsite; `not_stated` excluded, 37% of the analytical cohort) against all other categorical and boolean dimensions found essentially one dominant driver: **where the job is**. `geo_region` remains by far the strongest association (χ²=108.39, p<0.0001, V=0.51, n=206 stated — direction and magnitude consistent with earlier snapshots) — remote roles concentrate almost entirely in `global_remote` and `uk_remote`, hybrid dominates every other region (Berlin, Iberia, Benelux, Nordics, France). This is close to tautological (a posting tagged "global remote" is remote by construction of the label) and the test remains statistically unreliable at the sparse-cell level given 14 regions × 3-4 arrangement categories. Treat the direction as real, the p-value as decorative.
+Full cross-tab in §4.6. Hiring-manager-authored JDs name dbt at 72% vs. 37% for recruiter-authored — still the clearest authorship-quality signal in the dataset, with the gap and effect size essentially stable against the n=329 reading (V=0.24). Directly relevant to the dbt-prevalence caveat in §4.8 (recruiter-authored non-mentions of dbt are lower-fidelity evidence than hiring-manager non-mentions).
 
-**APAC's own signature still points toward "silent," and the test remains directional, not confirmed.** Of the 37 APAC roles, 49% state no work arrangement at all, vs. 36% for the rest of the corpus (χ²=7.57, p=0.056, V=0.15, n=329) — still the largest not-stated rate of any region in the dataset, and just above the conventional threshold, essentially the same read as the n=291 snapshot (p=0.059). Read the direction as real (APAC states an arrangement less often, consistently across every snapshot) but the significance claim as still not confirmed at this n. Among the 19 APAC roles that do state an arrangement, hybrid still dominates (16 of 19).
-
-**The `data_team_maturity` relationship now clears p<0.05 for the first time: χ²=10.28, p=0.036, V=0.16 (n=206 stated).** Mature teams post hybrid most often (90% of stated arrangements) vs. 67% for early-stage teams, who still split more evenly across hybrid/remote/onsite (67% / 18% / 15%); mid-stage sits between the two (76% / 19% / 5%). The direction is identical to every prior snapshot and matches the §4.3 maturity story — mature teams have converged on an operating default, early-stage teams are still deciding theirs — and the added n from the current expansion (§9.7, which skewed slightly mature) pushed a long-standing near-miss (p=0.054-0.075 across the last several snapshots) across the line. Promoted here as a real, small finding rather than a directional one; the effect size (V=0.16) is modest, so treat the crossing itself as a corpus-size effect, not evidence the underlying relationship strengthened. Interactive cross-tab and full write-up live in the dashboard (`index.html`, "Team maturity × Work arrangement" panel).
-
-**A new marginal signal: `autonomy_level` × `work_arrangement` (χ²=9.95, p=0.041, V=0.16, n=206 stated)** — not previously tested as significant. Hybrid roles split 27%/42%/32% execution/mixed/strategic; remote roles skew somewhat more strategic and less mixed (41%/13%/47%); onsite (n=13) is too small to read confidently. The effect size sits right at the small-effect floor (V=0.16) and the `onsite` cell is sparse — worth naming as a newly-crossed threshold rather than a confident finding, and one to re-check at the next corpus update rather than build a claim on now.
-
-**On the missing 37% itself:** rather than just excluding `not_stated`, it's worth showing it as its own category, because it's an interesting result in its own right. Across maturity tiers it does *not* concentrate strongly — mature (40%), mid (37%), and early-stage (34%) withhold a policy at close to the same rate, essentially unchanged from earlier snapshots. That's the more useful finding than it first appears: the arrangement-silence rate is close to a flat, corpus-wide background level *by maturity*. Folding `not_stated` back in as a fourth category for the maturity test (rather than excluding it) keeps the maturity × arrangement relationship non-significant (χ²=10.94, dof=6, p=0.090, V=0.13, n=329) — this is a different question than the stated-only test above ("does maturity predict whether an arrangement is stated at all," answer: no) and both readings are legitimate. "Does geography predict whether an arrangement is stated at all" remains directionally yes for APAC, not confirmed at conventional thresholds — and the dashboard panel shows the maturity views.
-
-**Everything else tested null.** No tool-stack flag (`has_dbt`, `has_python`, `has_airflow`, `has_snowflake`, etc.) shows any association with work arrangement — remote/hybrid/onsite roles run the same stack in the same proportions. Same null result for `seniority`, `velocity_vs_rigour`, `domain_risk`, `urgency`, `jd_authorship`, `greenfield_vs_fix`, `ai_role`, `testing_framing`, `loss_aversion_framing`, and `stakeholder_orientation` (all p>0.20) — `autonomy_level` is the one dimension in this list that has now crossed into marginal significance (above). `ats_platform` came close in earlier snapshots but has the worst sparse-cell problem of any test run and isn't interpretable without collapsing platforms into broader buckets first.
-
-**Caveat on missingness:** 37% of the analytical cohort states no work arrangement at all, and that rate is not uniform by region — APAC's 49% not-stated rate (above) is the clearest directional evidence that non-response may not be random with respect to geography, though it does not clear conventional significance. Whether it reflects different posting conventions (many APAC postings were sourced via LinkedIn/company career pages that omit a work-arrangement field entirely) or genuine underlying differences in how APAC employers set policy is not resolvable from JD text alone.
+**Geography's link to JD authorship is back below p<0.05 (χ², p=0.042, V=0.14, n=340):** APAC roles are 86% hiring-manager-authored vs. 68% for the rest of the corpus, up from χ²=5.92, p=0.052, V=0.13 at n=329 (§9.5). The current batch's six new APAC records (§9.8) are almost entirely hiring_manager-authored (5 of 6), which widened the gap back across the threshold after it had narrowed at the last snapshot. The direction has been consistent throughout and this remains one of the clearer geographic effects in the dataset, though its p-value has now crossed the conventional line in both directions across two consecutive updates (0.0008 at n=291 → 0.052 at n=329 → 0.042 at n=340) — a small effect sitting close to the detection boundary, not a settled one. Two readings remain plausible and the JD text alone can't distinguish them: APAC hiring managers may write JDs more directly (less recruiter/ATS-template mediation in this sample), or the `jd_authorship` codebook's technical-specificity heuristic may be picking up an ATS-formatting convention specific to how these postings were sourced (many via LinkedIn/company career pages with detailed bullet-point tool lists) rather than true authorship. Given `jd_authorship`'s already-low self-consistency (0.58, §3), this finding should be read as a real, currently-significant pattern that has moved across the threshold before and could again, not as a settled claim about who actually writes APAC job postings.
 
 ---
 
-### Finding I: With `ai_role`, `testing_framing`, and `loss_aversion_framing` coded on the full cohort (n=329; §9.3), a systematic sweep against every other categorical dimension and tool flag surfaces several relationships, all stable at the current n
+### Finding H: Work arrangement — driven almost entirely by geography, with a maturity effect and an APAC disclosure signature that both now clear significance (n=373 total / 340 analytical cohort)
 
-**Testing accountability tracks the fear register closely (χ²=77.65, p<0.0001, V=0.34, n=329):**
+A chi-square sweep of `work_arrangement` (hybrid / remote / onsite; `not_stated` excluded, 37% of the analytical cohort) against all other categorical and boolean dimensions found essentially one dominant driver: **where the job is**. `geo_region` remains by far the strongest association (χ²=113.41, p<0.0001, V=0.51, n=214 stated — direction and magnitude consistent with earlier snapshots) — remote roles concentrate almost entirely in `global_remote` and `uk_remote`, hybrid dominates every other region (Berlin, Iberia, Benelux, Nordics, France). This is close to tautological (a posting tagged "global remote" is remote by construction of the label) and the test remains statistically unreliable at the sparse-cell level given 14 regions × 3-4 arrangement categories. Treat the direction as real, the p-value as decorative.
+
+**APAC's own signature now clears p<0.05 for the first time, on both cuts of the question.** Of the 43 APAC roles, 44% state no work arrangement at all, vs. 36% for the rest of the corpus — directionally the same read as every prior snapshot, but the current batch's six new APAC records (§9.8, 3 not_stated of 6) also brought a new signal: APAC's *stated* arrangements now include a meaningfully higher onsite share (14% vs. 3% for the rest of the corpus) alongside a lower hybrid share (40% vs. 50%). Crossing the full four-category `work_arrangement` breakdown (hybrid/not_stated/onsite/remote) against APAC-vs-rest gives χ²=13.20, p=0.0042, V=0.20, n=340 — a small effect, but now on the significant side of the line for the first time, up from χ²=7.57, p=0.056, V=0.15 at n=329. Read this as APAC's work-arrangement profile (both what gets disclosed and, when disclosed, what it says) now measurably differing from the rest of the corpus, not just directionally suggestive of it. Among the 24 APAC roles that do state an arrangement, hybrid still dominates numerically (17 of 24) but the onsite share (6 of 24) is the largest of any region in the dataset.
+
+**The `data_team_maturity` relationship, on the stated-arrangement subset, remains significant and strengthens: χ²=14.97, p=0.0048, V=0.19 (n=214 stated)** — a clearly tighter reading than the n=329 snapshot's χ²=10.28, p=0.036, V=0.16. Mature teams post hybrid most often (90% of stated arrangements) vs. 63% for early-stage teams, who split more evenly across hybrid/remote/onsite (63% / 17% / 20%); mid-stage sits between the two (76% / 19% / 5%). The direction is identical to every prior snapshot and matches the §4.3 maturity story — mature teams have converged on an operating default, early-stage teams are still deciding theirs. This is now the second consecutive snapshot in which this relationship clears p<0.05, and the effect size has grown rather than merely held, which is a stronger signal than a single threshold-crossing would be on its own. Interactive cross-tab and full write-up live in the dashboard (`index.html`, "Team maturity × Work arrangement" panel).
+
+**`autonomy_level` × `work_arrangement` remains marginally significant: χ²=11.20, p=0.024, V=0.16 (n=214 stated)** — slightly stronger than the n=329 reading (p=0.041, V=0.16). Hybrid roles split 27%/42%/32% execution/mixed/strategic; onsite roles skew toward execution and away from strategic (much smaller cell, n=14); remote roles remain the most strategic-leaning group. The effect size still sits right at the small-effect floor (V=0.16) — worth treating as a small, currently-real relationship rather than a headline finding, and one to keep re-checking rather than build a large claim on.
+
+**On the missing 37% itself:** rather than just excluding `not_stated`, it's worth showing it as its own category, because it's an interesting result in its own right. Across maturity tiers it still does not concentrate strongly — mature (40%), mid (37%), and early-stage (34%) withhold a policy at close to the same rate, essentially unchanged from earlier snapshots. Folding `not_stated` back in as a fourth category for the maturity test (rather than excluding it) now *also* crosses into significance: χ²=15.71, dof=6, p=0.015, V=0.15, n=340 — up from χ²=10.94, p=0.090, V=0.13 at n=329. This is a different question than the stated-only test above ("does maturity predict whether an arrangement is stated at all," answer now: modestly, yes) and both readings are legitimate; the two tests moving into agreement at this n is a stronger overall maturity-arrangement story than either reading alone gave at the last snapshot. "Does geography predict whether an arrangement is stated at all" is now also confirmed at conventional thresholds for APAC (above) — and the dashboard panel shows the maturity views.
+
+**Everything else tested null.** No tool-stack flag (`has_dbt`, `has_python`, `has_airflow`, `has_snowflake`, etc.) shows any association with work arrangement — remote/hybrid/onsite roles run the same stack in the same proportions. Same null result for `seniority`, `velocity_vs_rigour`, `domain_risk`, `urgency`, `jd_authorship`, `greenfield_vs_fix`, `ai_role`, `testing_framing`, `loss_aversion_framing`, and `stakeholder_orientation` (all p>0.20). `ats_platform` came close in earlier snapshots but has the worst sparse-cell problem of any test run and isn't interpretable without collapsing platforms into broader buckets first.
+
+**Caveat on missingness:** 37% of the analytical cohort states no work arrangement at all, and that rate is not uniform by region — APAC's 44% not-stated rate (above), combined with its distinct stated-arrangement mix (more onsite, less hybrid), is now a confirmed, not merely directional, difference at this n. Whether it reflects different posting conventions (many APAC postings were sourced via LinkedIn/company career pages that omit a work-arrangement field entirely, or via channels more likely to post explicitly onsite roles) or genuine underlying differences in how APAC employers set policy is not resolvable from JD text alone.
+
+---
+
+### Finding I: With `ai_role`, `testing_framing`, and `loss_aversion_framing` coded on the full cohort (n=340; §9.3), a systematic sweep against every other categorical dimension and tool flag surfaces several relationships, all stable at the current n
+
+**Testing accountability tracks the fear register closely (χ²=83.09, p<0.0001, V=0.35, n=340):**
 
 | testing_framing | high | moderate | none |
 |---|---|---|---|
-| absent (n=80) | 10% | 34% | 56% |
-| responsibility (n=203) | 27% | 65% | 9% |
-| tool_listed (n=46) | 9% | 63% | 28% |
+| absent (n=81) | 10% | 33% | 57% |
+| responsibility (n=211) | 27% | 64% | 9% |
+| tool_listed (n=48) | 8% | 62% | 29% |
 
-JDs that frame testing as an owned responsibility carry almost no `loss_aversion_framing = none` (9%, vs. 56% for `absent`-testing JDs) — essentially unchanged from prior snapshots. This is a construct-validity result as much as a substantive one: two dimensions coded independently, from different evidence quotes, land in the same place — a JD that asks the candidate to own data quality is, unsurprisingly, also a JD that is afraid of something going wrong. The `absent`/`none` corner (56%) is the "pure delivery" JD with no quality or risk register at all; the `responsibility`/`moderate` combination (65% of `responsibility`-coded JDs) is the modal case — quality ownership paired with garden-variety operational-reliability fear, not compliance framing.
+JDs that frame testing as an owned responsibility carry almost no `loss_aversion_framing = none` (9%, vs. 57% for `absent`-testing JDs) — essentially unchanged from prior snapshots. This is a construct-validity result as much as a substantive one: two dimensions coded independently, from different evidence quotes, land in the same place — a JD that asks the candidate to own data quality is, unsurprisingly, also a JD that is afraid of something going wrong. The `absent`/`none` corner (57%) is the "pure delivery" JD with no quality or risk register at all; the `responsibility`/`moderate` combination (64% of `responsibility`-coded JDs) is the modal case — quality ownership paired with garden-variety operational-reliability fear, not compliance framing.
 
-**Loss aversion tracks rigour framing even more tightly than domain risk does (χ²=76.18, p<0.0001, V=0.34, n=329):**
+**Loss aversion tracks rigour framing even more tightly than domain risk does (χ²=78.44, p<0.0001, V=0.34, n=340):**
 
 | loss_aversion_framing | mixed | rigour | velocity |
 |---|---|---|---|
-| high (n=66) | 3% | 97% | 0% |
-| moderate (n=187) | 21% | 78% | 2% |
-| none (n=76) | 62% | 34% | 4% |
+| high (n=69) | 3% | 97% | 0% |
+| moderate (n=193) | 22% | 76% | 2% |
+| none (n=78) | 63% | 33% | 4% |
 
-97% of `high`-loss-aversion JDs are rigour-framed, against 34% for JDs with no loss-aversion signal at all — essentially unchanged in magnitude from prior snapshots, and still a cleaner split than domain_risk's own relationship with rigour framing (§4.2, V=0.17). Read together with §4.2, this suggests `loss_aversion_framing` is picking up something closer to the JD's *actual* fear register than `domain_risk`'s sector-level proxy does — a JD can be sector-coded `moderate` risk but still carry `high` loss-aversion language if the role's specific responsibilities emphasise trust/audit framing (see Finding A's DiMaggio & Powell read, §4.9, for why sector and role-level framing can diverge).
+97% of `high`-loss-aversion JDs are rigour-framed, against 33% for JDs with no loss-aversion signal at all — essentially unchanged in magnitude from prior snapshots, and still a cleaner split than domain_risk's own relationship with rigour framing (§4.2, V=0.17). Read together with §4.2, this suggests `loss_aversion_framing` is picking up something closer to the JD's *actual* fear register than `domain_risk`'s sector-level proxy does — a JD can be sector-coded `moderate` risk but still carry `high` loss-aversion language if the role's specific responsibilities emphasise trust/audit framing (see Finding A's DiMaggio & Powell read, §4.9, for why sector and role-level framing can diverge).
 
-**dbt-equipped roles are far more likely to frame testing as an owned responsibility (χ²=33.89, p<0.0001, V=0.33, n=318, AE/BI only):**
+**dbt-equipped roles are far more likely to frame testing as an owned responsibility (χ²=35.17, p<0.0001, V=0.33, n=329, AE/BI only):**
 
 | testing_framing | has_dbt=False | has_dbt=True |
 |---|---|---|
-| absent (n=77) | 64% | 36% |
-| responsibility (n=195) | 26% | 74% |
-| tool_listed (n=46) | 33% | 67% |
+| absent (n=78) | 63% | 37% |
+| responsibility (n=203) | 25% | 75% |
+| tool_listed (n=48) | 33% | 67% |
 
-This remains the strongest tool-stack relationship found for any of the three dimensions, essentially unchanged from prior snapshots, and it cuts against a purely fashion-driven reading of dbt adoption: `has_dbt` JDs are 74% likely to frame testing as an owned responsibility, vs. 36% for JDs with no dbt mention — dbt's testing framework (`dbt test`) appears to travel with genuine ownership language, not just as a name-drop.
+This remains the strongest tool-stack relationship found for any of the three dimensions, essentially unchanged from prior snapshots, and it cuts against a purely fashion-driven reading of dbt adoption: `has_dbt` JDs are 75% likely to frame testing as an owned responsibility, vs. 37% for JDs with no dbt mention — dbt's testing framework (`dbt test`) appears to travel with genuine ownership language, not just as a name-drop.
 
-**`ai_role` and autonomy move together in an unexpected direction — `ai_user` roles skew the most strategic of the three groups, not the least (χ²=27.40, p<0.0001, V=0.20, n=329):**
+**`ai_role` and autonomy move together in an unexpected direction — `ai_user` roles skew the most strategic of the three groups, not the least (χ²=32.08, p<0.0001, V=0.22, n=340):**
 
 | ai_role | execution | mixed | strategic |
 |---|---|---|---|
-| ai_enabler (n=63) | 19% | 38% | 43% |
-| ai_user (n=42) | 10% | 33% | 57% |
-| none (n=224) | 39% | 36% | 25% |
+| ai_enabler (n=67) | 18% | 37% | 45% |
+| ai_user (n=44) | 9% | 32% | 59% |
+| none (n=229) | 39% | 36% | 25% |
 
-The naive expectation might be that "use AI coding tools" is a junior-coded, execution-heavy ask (accelerate scoped work faster) while "build AI-consuming infrastructure" is the more strategic mandate. The data continues to show the opposite ordering, essentially unchanged from prior snapshots: `ai_user` JDs are the *most* strategic-leaning of the three groups (57%, only 10% pure execution), more so even than `ai_enabler` (43% strategic). One plausible read: JDs that expect AI-tool fluency are disproportionately senior/lead-level postings at companies confident enough in their engineering culture to name a specific workflow expectation ("use Claude Code/Copilot as part of your daily workflow") rather than a junior competency checkbox — the ask reads more like "operate at a higher level of leverage" than "be fast at typing." This is exploratory and not pre-registered (§4.0 only tested `ai_role × stakeholder_orientation`); it's flagged here as a candidate for a future prediction, not a confirmed causal story.
+The naive expectation might be that "use AI coding tools" is a junior-coded, execution-heavy ask (accelerate scoped work faster) while "build AI-consuming infrastructure" is the more strategic mandate. The data continues to show the opposite ordering, essentially unchanged from prior snapshots: `ai_user` JDs are the *most* strategic-leaning of the three groups (59%, only 9% pure execution), more so even than `ai_enabler` (45% strategic). One plausible read: JDs that expect AI-tool fluency are disproportionately senior/lead-level postings at companies confident enough in their engineering culture to name a specific workflow expectation ("use Claude Code/Copilot as part of your daily workflow") rather than a junior competency checkbox — the ask reads more like "operate at a higher level of leverage" than "be fast at typing." This is exploratory and not pre-registered (§4.0 only tested `ai_role × stakeholder_orientation`); it's flagged here as a candidate for a future prediction, not a confirmed causal story.
 
-**`ai_role` also tracks `greenfield_vs_fix` (χ²=27.55, p<0.0001, V=0.21, n=329):**
+**`ai_role` also tracks `greenfield_vs_fix` (χ²=32.42, p<0.0001, V=0.22, n=340):**
 
 | ai_role | fix_scale | greenfield | mixed |
 |---|---|---|---|
-| ai_enabler (n=63) | 22% | 30% | 48% |
-| ai_user (n=42) | 21% | 24% | 55% |
-| none (n=224) | 46% | 9% | 45% |
+| ai_enabler (n=67) | 21% | 33% | 46% |
+| ai_user (n=44) | 20% | 23% | 57% |
+| none (n=229) | 45% | 10% | 45% |
 
-Both `ai_enabler` and `ai_user` roles show meaningfully more greenfield work (30%/24%) than `none` roles (9%) — consistent with prior snapshots, with the effect size if anything slightly stronger (V=0.17→0.21). This dovetails with the `ai_role × autonomy_level` finding above: greenfield work and strategic autonomy already travel together generally (§4.3), so some of the "AI roles skew strategic" pattern may be downstream of "AI roles skew greenfield" rather than a direct effect of the AI expectation itself. Disentangling the two would need a three-way cross-tab at a larger n than this corpus currently supports.
+Both `ai_enabler` and `ai_user` roles show meaningfully more greenfield work (33%/23%) than `none` roles (10%) — consistent with prior snapshots, with the effect size essentially stable (V=0.21→0.22). This dovetails with the `ai_role × autonomy_level` finding above: greenfield work and strategic autonomy already travel together generally (§4.3), so some of the "AI roles skew strategic" pattern may be downstream of "AI roles skew greenfield" rather than a direct effect of the AI expectation itself. Disentangling the two would need a three-way cross-tab at a larger n than this corpus currently supports.
 
-**Everything else involving the three new dimensions tested null or only weakly suggestive** (p>0.05 or V<0.15): no meaningful association between `ai_role`/`testing_framing`/`loss_aversion_framing` and `seniority`, `urgency`, or most individual BI-tool flags. `work_arrangement` also stays null for all three dimensions on the stated-arrangement subset (§4.9 Finding H). `testing_framing × geo_region` remains a sparse-cell test (14 regions × 3 categories, several expected cells <1) and should be treated as decorative, not evidential, despite APAC's own testing_framing mix (62% responsibility, close to the corpus average of 62%; §9.5) no longer standing out as directionally interesting the way it did at n=291.
+**Everything else involving the three new dimensions tested null or only weakly suggestive** (p>0.05 or V<0.15): no meaningful association between `ai_role`/`testing_framing`/`loss_aversion_framing` and `seniority`, `urgency`, or most individual BI-tool flags. `testing_framing × geo_region` remains a sparse-cell test (14 regions × 3 categories, several expected cells <1) and should be treated as decorative, not evidential, despite APAC's own testing_framing mix (65% responsibility, close to the corpus average of 62%; §9.5) not standing out as directionally interesting.
 
 ---
 
@@ -433,80 +433,80 @@ Both `ai_enabler` and `ai_user` roles show meaningfully more greenfield work (30
 
 | Relationship | Test | p | V | Interpretation |
 |---|---|---|---|---|
-| velocity_vs_rigour × domain_risk (Prediction 1) | χ² | 0.0006 | 0.17 | Stable at n=329 (was p=0.0018, V=0.17 at n=291) — small real effect, high-risk roles more rigour-dominant |
-| velocity_vs_rigour × has_dbt (Prediction 1 comparator) | χ² | 0.177 | 0.10 | **No longer significant at n=318** (was p=0.045, V=0.15 at n=282) — point estimate narrowed to an 8pp rigour-rate gap (was 12pp); this comparator had already been crossing the threshold in both directions through the 2026-07-25 dedup passes, and the current expansion resolved it in the null direction — see §4.0 |
-| ai_role × stakeholder_orientation (Prediction 2) | χ² | 0.225 | 0.13 | Still not significant at n=329 (was p=0.335, V=0.12 at n=291) — stable non-result |
-| domain_risk × stakeholder_orientation | χ² | <0.0001 | 0.39 | Strongest relationship: finance concentrates high-risk, low-risk concentrates internal_data |
+| velocity_vs_rigour × domain_risk (Prediction 1) | χ² | 0.0005 | 0.17 | Stable at n=340 (was p=0.0006, V=0.17 at n=329) — small real effect, high-risk roles more rigour-dominant |
+| velocity_vs_rigour × has_dbt (Prediction 1 comparator) | χ² | 0.326 | 0.08 | **Still not significant at n=329**, and weaker still (was p=0.177, V=0.10 at n=318) — point estimate narrowed further to a 6pp rigour-rate gap (was 8pp); this comparator settled into null territory at n=318 after crossing the threshold in both directions through the 2026-07-25 dedup passes, and has stayed there and weakened further since — see §4.0 |
+| ai_role × stakeholder_orientation (Prediction 2) | χ² | 0.19 | 0.13 | Still not significant at n=340 (was p=0.225, V=0.13 at n=329) — stable non-result |
+| domain_risk × stakeholder_orientation | χ² | <0.0001 | 0.38 | Strongest relationship: finance concentrates high-risk, low-risk concentrates internal_data |
 | data_team_maturity × greenfield_vs_fix | χ² | <0.0001 | 0.52 | Near-deterministic and stable: early=greenfield, mature=fix/scale |
-| domain_risk × greenfield_vs_fix | χ² | 0.134 | 0.10 | **No longer significant at n=329** (was p=0.017, V=0.14 at n=291) — this relationship has crossed the threshold in both directions across recent snapshots (p=0.040→0.017→0.134); read as a marginal effect this corpus size can't reliably detect either way, not a reversal (§4.9 Finding B) |
-| jd_authorship × has_dbt | χ² | 0.0001 | 0.24 | Hiring-manager JDs name dbt ~1.9× more than recruiter JDs — stable |
-| geo_region (APAC vs. rest) × jd_authorship | χ² | 0.052 | 0.13 | **No longer significant at n=329** (was p=0.0008, V=0.22 at n=291) — direction unchanged (86% vs. 67% hiring-manager-authored), one APAC record now codes `recruiter` and the current batch's non-APAC additions skew more hiring-manager-authored themselves, narrowing the gap; Finding G, §9.5 |
-| geo_region (APAC vs. rest) × work_arrangement | χ² | 0.056 | 0.15 | Still not significant (was p=0.059, V=0.11 at n=291) — direction unchanged (49% vs. 36% not-stated); Finding H, §9.5 |
-| seniority × autonomy_level | χ² | <0.0001 | 0.32 | Significant overall; "Senior" (n=130, still not the modal title by count — "Mid" is, at n=164) still predicts strongly (48% strategic) |
-| stakeholder_orientation × autonomy_level | χ² | 0.087 | 0.15 | **No longer significant at n=329** (was p=0.039, V=0.17 at n=291) — this relationship has now crossed the threshold four times across six snapshots; read as a stable, small, directionally-consistent effect this corpus size can't reliably confirm (§4.9 Finding E) |
-| stakeholder_orientation × velocity_vs_rigour | χ² | <0.0001 | 0.27 | Finance/internal_data most rigour-dominant; commercial/product carry the most mixed framing |
-| collaboration_width × data_team_maturity | — | — | — | Still does not support a claim at n=329 (§4.7) |
-| work_arrangement × geo_region | χ² | <0.0001 | 0.51 | Strongest association found, but unreliable — most cells <5 (Finding H) |
-| work_arrangement × data_team_maturity | χ² | 0.036 | 0.16 | **Newly significant at n=329** (was p=0.063, V=0.16 at n=291) — same direction as every prior snapshot (mature teams skew hybrid); promoted from directional to a current finding (Finding H) |
-| work_arrangement × autonomy_level | χ² | 0.041 | 0.16 | **Newly, marginally significant** — not previously tested as significant; remote roles skew somewhat more strategic than hybrid on the stated subset, but the effect sits right at the small-effect floor and the onsite cell is sparse (Finding H) |
-| work_arrangement × everything else (27 dims tested) | χ² | >0.20 | ≤0.13 | Null — tool stack, seniority, rigour, domain risk unrelated to arrangement |
-| loss_aversion_framing × domain_risk | χ² | <0.0001 | 0.40 | 71% of high-risk roles carry high loss-aversion framing (Finding I) |
-| testing_framing × loss_aversion_framing | χ² | <0.0001 | 0.34 | Quality-ownership and fear-register track each other closely (Finding I) |
+| domain_risk × greenfield_vs_fix | χ² | 0.194 | 0.09 | **Still not significant at n=340** (was p=0.134, V=0.10 at n=329) — this relationship has crossed the threshold in both directions across recent snapshots (p=0.040→0.017→0.134→0.194); read as a marginal effect this corpus size can't reliably detect either way, not a reversal (§4.9 Finding B) |
+| jd_authorship × has_dbt | χ² | <0.0001 | 0.24 | Hiring-manager JDs name dbt ~1.9× more than recruiter JDs — stable |
+| geo_region (APAC vs. rest) × jd_authorship | χ² | 0.042 | 0.14 | **Back below p<0.05 at n=340** (was p=0.052, V=0.13 at n=329) — direction unchanged (86% vs. 68% hiring-manager-authored); the current batch's new APAC records are almost entirely hiring-manager-authored, widening the gap back across the threshold; Finding G, §9.5 |
+| geo_region (APAC vs. rest) × work_arrangement (4-category) | χ² | 0.0042 | 0.20 | **Newly significant at n=340** (was p=0.056, V=0.15 at n=329) — APAC's not-stated rate (44% vs. 36%) and its stated-arrangement mix (more onsite, less hybrid) both now measurably differ from the rest of the corpus; Finding H, §9.5 |
+| seniority × autonomy_level | χ² | <0.0001 | 0.32 | Significant overall; "Senior" (n=133, still not the modal title by count — "Mid" is, at n=171) still predicts strongly (49% strategic) |
+| stakeholder_orientation × autonomy_level | χ² | 0.072 | 0.15 | **Still not significant at n=340** (was p=0.087, V=0.15 at n=329) — this relationship has now crossed the threshold four times across seven snapshots; read as a stable, small, directionally-consistent effect this corpus size can't reliably confirm (§4.9 Finding E) |
+| stakeholder_orientation × velocity_vs_rigour | χ² | <0.0001 | 0.28 | Finance/internal_data most rigour-dominant; commercial/product carry the most mixed framing |
+| collaboration_width × data_team_maturity | — | — | — | Still does not support a claim at n=340 (§4.7) |
+| work_arrangement × geo_region (stated subset) | χ² | <0.0001 | 0.51 | Strongest association found, but unreliable — most cells <5 (Finding H) |
+| work_arrangement × data_team_maturity (stated subset) | χ² | 0.0048 | 0.19 | **Still significant at n=340, and strengthening** (was p=0.036, V=0.16 at n=329) — same direction as every prior snapshot (mature teams skew hybrid); second consecutive snapshot clearing the threshold (Finding H) |
+| work_arrangement × autonomy_level (stated subset) | χ² | 0.024 | 0.16 | **Still marginally significant** (was p=0.041, V=0.16 at n=329) — remote roles skew somewhat more strategic than hybrid on the stated subset, effect sits right at the small-effect floor (Finding H) |
+| work_arrangement × everything else (tool stack, seniority, rigour, domain risk) | χ² | >0.20 | ≤0.13 | Null — unrelated to arrangement |
+| loss_aversion_framing × domain_risk | χ² | <0.0001 | 0.41 | 72% of high-loss-aversion JDs are high-domain-risk (equivalently: 59% of high-domain-risk roles carry high loss-aversion framing) (Finding I) |
+| testing_framing × loss_aversion_framing | χ² | <0.0001 | 0.35 | Quality-ownership and fear-register track each other closely (Finding I) |
 | loss_aversion_framing × velocity_vs_rigour | χ² | <0.0001 | 0.34 | Cleaner than domain_risk's own link to rigour — 97% of high-loss-aversion JDs are rigour-framed (Finding I) |
-| testing_framing × has_dbt | χ² | <0.0001 | 0.33 | dbt JDs 74% likely to frame testing as owned responsibility vs. 36% without dbt (Finding I) |
+| testing_framing × has_dbt | χ² | <0.0001 | 0.33 | dbt JDs 75% likely to frame testing as owned responsibility vs. 37% without dbt (Finding I) |
 | testing_framing × jd_authorship | χ² | <0.0001 | 0.27 | Hiring-manager JDs skew toward `responsibility`/`tool_listed`, recruiter JDs toward `absent` (Finding I) |
-| ai_role × autonomy_level | χ² | <0.0001 | 0.20 | Unexpected direction, stable: `ai_user` roles are the most strategic-leaning of the three groups, not the least (Finding I) |
-| ai_role × greenfield_vs_fix | χ² | <0.0001 | 0.21 | `ai_enabler`/`ai_user` roles carry meaningfully more greenfield work than `none` roles (Finding I) |
+| ai_role × autonomy_level | χ² | <0.0001 | 0.22 | Unexpected direction, stable: `ai_user` roles are the most strategic-leaning of the three groups, not the least (Finding I) |
+| ai_role × greenfield_vs_fix | χ² | <0.0001 | 0.22 | `ai_enabler`/`ai_user` roles carry meaningfully more greenfield work than `none` roles (Finding I) |
 
 ---
 
 ### 4.10 AI role: the gap between AI adoption discourse and hiring language narrows once fully coded, but stays real
 
-`ai_role` classifies whether the JD expects the candidate to *use* AI tools, *build* infrastructure AI systems consume, or neither. **Coded on the full analytical cohort (n=329)** — a bug in `scripts/write_jd.py` had silently dropped this field (and `testing_framing`, `loss_aversion_framing`) from JSON output for a long stretch of the corpus even when correctly classified; the backlog was fully re-coded against the JD archive text and the codebook (§9.3).
+`ai_role` classifies whether the JD expects the candidate to *use* AI tools, *build* infrastructure AI systems consume, or neither. **Coded on the full analytical cohort (n=340)** — a bug in `scripts/write_jd.py` had silently dropped this field (and `testing_framing`, `loss_aversion_framing`) from JSON output for a long stretch of the corpus even when correctly classified; the backlog was fully re-coded against the JD archive text and the codebook (§9.3).
 
-| ai_role | n | % (n=329) |
+| ai_role | n | % (n=340) |
 |---------|---|---|
-| none | 224 | 68% |
-| ai_enabler | 63 | 19% |
-| ai_user | 42 | 13% |
+| none | 229 | 67% |
+| ai_enabler | 67 | 20% |
+| ai_user | 44 | 13% |
 
-This is Prediction 2 from §4.0. **68% of JDs expect no AI skill from the candidate**, essentially flat against the n=291 reading, against the dbt 2026 report's claim of 72% *daily* AI coding use among survey respondents. The gap between claimed personal-workflow adoption and formal hiring criteria has held steady, even as the current batch includes two explicitly AI-forward postings (Zego — `ai_user`; Hack A Boss — `ai_enabler`, §9.7) that individually read as counter-trend. χ² for `ai_role` × `stakeholder_orientation` (n=329) remains non-significant (p=0.225, V=0.13; §4.0) — the `ai_enabler` cohort still leans toward `internal_data` (52%) and `mixed` (24%) stakeholder orientation, and `ai_user` leans more evenly toward `commercial`/`finance` (12%/12%), and the association's weakness is stable rather than still trending toward zero as it was at earlier snapshots.
+This is Prediction 2 from §4.0. **67% of JDs expect no AI skill from the candidate**, essentially flat against the n=329 reading (68%), against the dbt 2026 report's claim of 72% *daily* AI coding use among survey respondents. The gap between claimed personal-workflow adoption and formal hiring criteria has held steady. χ² for `ai_role` × `stakeholder_orientation` (n=340) remains non-significant (p=0.19, V=0.13; §4.0) — the `ai_enabler` cohort still leans toward `internal_data` (54%) and `mixed` (22%) stakeholder orientation, and `ai_user` leans more evenly toward `commercial`/`finance` (11%/11%), and the association's weakness is stable rather than still trending toward zero as it was at earlier snapshots.
 
-**Actionable read:** `ai_enabler` roles → demonstrate data infrastructure built specifically for AI consumption. `ai_user` roles → demonstrate fluency with AI coding tools directly (Copilot, Claude Code, Cursor) as a nontrivial minority expectation. `none` (still the majority at 68%) → AI tool fluency is not a stated differentiator; leading with it misreads what's being screened for.
+**Actionable read:** `ai_enabler` roles → demonstrate data infrastructure built specifically for AI consumption. `ai_user` roles → demonstrate fluency with AI coding tools directly (Copilot, Claude Code, Cursor) as a nontrivial minority expectation. `none` (still the majority at 67%) → AI tool fluency is not a stated differentiator; leading with it misreads what's being screened for.
 
-`ai_role` continues to track `autonomy_level` (χ²=27.40, p<0.0001, V=0.20) and `greenfield_vs_fix` (χ²=27.55, p<0.0001, V=0.21) at n=329 — see Finding I (§4.9) for the counter-intuitive direction (`ai_user` roles skew *more* strategic and *more* greenfield, not less). Both relationships are stable in direction against the n=291 reading, with the `greenfield_vs_fix` link if anything slightly stronger.
+`ai_role` continues to track `autonomy_level` (χ²=32.08, p<0.0001, V=0.22) and `greenfield_vs_fix` (χ²=32.42, p<0.0001, V=0.22) at n=340 — see Finding I (§4.9) for the counter-intuitive direction (`ai_user` roles skew *more* strategic and *more* greenfield, not less). Both relationships are stable in direction against the n=329 reading, with both effect sizes essentially unchanged.
 
 ---
 
 ### 4.11 Testing framing: governance accountability is a majority hiring criterion
 
-`testing_framing` distinguishes whether testing/data quality appears as something the candidate *owns*, a listed tool, or absent. **Coded on the full analytical cohort (n=329)** — see §9.3 for the write-pipeline bug that delayed this.
+`testing_framing` distinguishes whether testing/data quality appears as something the candidate *owns*, a listed tool, or absent. **Coded on the full analytical cohort (n=340)** — see §9.3 for the write-pipeline bug that delayed this.
 
-| testing_framing | n | % (n=329) |
+| testing_framing | n | % (n=340) |
 |-----------------|---|---|
-| responsibility | 203 | 62% |
-| absent | 80 | 24% |
-| tool_listed | 46 | 14% |
+| responsibility | 211 | 62% |
+| absent | 81 | 24% |
+| tool_listed | 48 | 14% |
 
-**62% of JDs frame testing as an owned responsibility** — action verbs (own, ensure, define, implement) paired with quality/data-contracts/observability language, essentially unchanged from 61% at n=291. This is the clearest confirmation in the dataset of dbt 2026's "trust gap" narrative at the level of formal hiring criteria, distinct from §4.1's rigour finding: two rigour-coded JDs can differ in whether the *individual hire* is personally accountable for quality or whether it's team culture. `testing_framing = responsibility` identifies the former. `testing_framing × velocity_vs_rigour` is significant (χ²=43.03, p<0.0001, V=0.26, n=329): `responsibility`-coded JDs are 84% rigour-framed vs. 50% for `absent`-coded JDs — testing ownership and rigour framing move together but are not the same signal, since a substantial share of the cohort is rigour-framed with no testing-ownership language at all.
+**62% of JDs frame testing as an owned responsibility** — action verbs (own, ensure, define, implement) paired with quality/data-contracts/observability language, unchanged from 62% at n=329. This is the clearest confirmation in the dataset of dbt 2026's "trust gap" narrative at the level of formal hiring criteria, distinct from §4.1's rigour finding: two rigour-coded JDs can differ in whether the *individual hire* is personally accountable for quality or whether it's team culture. `testing_framing = responsibility` identifies the former. `testing_framing × velocity_vs_rigour` is significant (χ²=41.87, p<0.0001, V=0.25, n=340): `responsibility`-coded JDs are 82% rigour-framed vs. 49% for `absent`-coded JDs — testing ownership and rigour framing move together but are not the same signal, since a substantial share of the cohort is rigour-framed with no testing-ownership language at all.
 
 The 24% `absent` cluster has not operationalised quality concern into hiring language even where the role otherwise reads as rigour-oriented — either the expectation is assumed and unstated, or it isn't a real priority. JD text alone can't distinguish the two; that requires interview-stage questions (§7).
 
-`testing_framing`'s strongest tool-stack link (`has_dbt`, χ²=33.89, p<0.0001, V=0.33) and its link to `jd_authorship` (χ²=48.10, p<0.0001, V=0.27) and `loss_aversion_framing` (χ²=77.65, p<0.0001, V=0.34) all hold stable at n=329 — see Finding I (§4.9) for detail. APAC roles now track the corpus average closely on `responsibility` framing (62% for both APAC and the rest of the corpus) — the gap that stood out at n=291 (70% vs. 59%) has narrowed to nothing at this n; §9.5.
+`testing_framing`'s strongest tool-stack link (`has_dbt`, χ²=35.17, p<0.0001, V=0.33) and its link to `jd_authorship` (χ²=49.89, p<0.0001, V=0.27) and `loss_aversion_framing` (χ²=83.09, p<0.0001, V=0.35) all hold stable at n=340 — see Finding I (§4.9) for detail. APAC roles now run somewhat above the corpus average on `responsibility` framing (65% vs. 62% for the rest of the corpus) — a small gap that has re-opened slightly since the n=329 snapshot, where APAC and the rest of the corpus were identical at 62%; §9.5.
 
 ---
 
 ### 4.12 Loss-aversion framing: the market fears operational failure, not AI hallucinations
 
-`loss_aversion_framing` classifies what the JD is afraid of: nothing, operational failure (outages, SLOs), or compliance/stakeholder-trust failure. **Coded on the full analytical cohort (n=329)** — see §9.3.
+`loss_aversion_framing` classifies what the JD is afraid of: nothing, operational failure (outages, SLOs), or compliance/stakeholder-trust failure. **Coded on the full analytical cohort (n=340)** — see §9.3.
 
-| loss_aversion_framing | n | % (n=329) |
+| loss_aversion_framing | n | % (n=340) |
 |-----------------------|---|---|
-| moderate | 187 | 57% |
-| none | 76 | 23% |
-| high | 66 | 20% |
+| moderate | 193 | 57% |
+| none | 78 | 23% |
+| high | 69 | 20% |
 
-Roughly three in four JDs carry some fear signal, but it's still predominantly operational (57%), not the compliance/AI-trust framing the dbt 2026 report leads with (71% citing fear of hallucinated outputs). `high` loss-aversion framing sits at 20%, a small dip from 22% at n=291 — within the range of noise this corpus size produces. `loss_aversion_framing × domain_risk` is the strongest relationship among these three dimensions (χ²=104.10, p<0.0001, V=0.40, n=329, unchanged from n=291): 71% of `high`-domain-risk roles carry `high` loss-aversion framing, vs. 16% of `moderate`-risk and 0% of `low`-risk roles (equivalently: of JDs with `high` loss-aversion framing, 71% are `high`-domain-risk) — the fear register tracks real domain stakes closely, which is reassuring for the codebook's construct validity on this dimension. `high` loss-aversion framing remains concentrated in finance-adjacent and regulated-sector roles, reinforced this batch by Montblanc and NatWest-adjacent finance postings (§9.7); APAC's own `high` rate (11%) has dropped below the corpus average this snapshot (§9.5).
+Roughly three in four JDs carry some fear signal, but it's still predominantly operational (57%), not the compliance/AI-trust framing the dbt 2026 report leads with (71% citing fear of hallucinated outputs). `high` loss-aversion framing sits at 20%, unchanged from n=329. `loss_aversion_framing × domain_risk` is the strongest relationship among these three dimensions (χ²=111.67, p<0.0001, V=0.41, n=340, essentially unchanged from n=329): of JDs with `high` loss-aversion framing, 72% are `high`-domain-risk, vs. 16% of `moderate`-risk and 0% of `low`-risk roles carrying `high` framing — the fear register tracks real domain stakes closely, which is reassuring for the codebook's construct validity on this dimension. `high` loss-aversion framing remains concentrated in finance-adjacent and regulated-sector roles; APAC's own `high` rate (14%) remains below the corpus average this snapshot, up slightly from 11% at n=329 (§9.5).
 
 **Actionable read:** `high` → lead with risk-reduction proof (zero-incident records, audit trails). `moderate` (the majority case) → reliability metrics (uptime, incident response) resonate more than feature-delivery framing. `none` → pure capability and delivery framing; risk-avoidance language will read as mismatched.
 
@@ -514,21 +514,21 @@ Roughly three in four JDs carry some fear signal, but it's still predominantly o
 
 ### 4.13 What the responsibility text itself predicts — a second, independent classification pass
 
-Everything above classifies each JD as a whole against the ten Layer B dimensions. A separate pipeline (`analysis/responsibility_taxonomy.py`) takes a different cut of the same corpus: it parses just the responsibilities section of each JD (markdown headings, plain-text scrapes, condensed paragraph summaries, or — for JDs with no cleanly-parseable structure — an LLM-interpreted fallback, see `responsibility_bullets_llm.json`) into individual bullets, then keyword-classifies each bullet against a fixed 15-theme taxonomy (Data Modeling & Transformation, Stakeholder Collaboration, Mentorship & Leadership, and so on — full definitions and the keyword pattern behind each theme are in `analysis/responsibility_taxonomy.md`). 333 of the 358 total JDs (306 of the 329 analytical-cohort JDs) have a theme reading, extracting 2,309 bullets. Because each theme is a binary per-JD indicator, it can be crossed against any Layer B dimension as an ordinary 2×k contingency table — the question this section asks is which *specific responsibilities* go with which *behavioural traits*, not just which traits co-occur with each other (§4.9).
+Everything above classifies each JD as a whole against the ten Layer B dimensions. A separate pipeline (`analysis/responsibility_taxonomy.py`) takes a different cut of the same corpus: it parses just the responsibilities section of each JD (markdown headings, plain-text scrapes, condensed paragraph summaries, or — for JDs with no cleanly-parseable structure — an LLM-interpreted fallback, see `responsibility_bullets_llm.json`) into individual bullets, then keyword-classifies each bullet against a fixed 15-theme taxonomy (Data Modeling & Transformation, Stakeholder Collaboration, Mentorship & Leadership, and so on — full definitions and the keyword pattern behind each theme are in `analysis/responsibility_taxonomy.md`). 342 of the 373 total JDs (312 of the 340 analytical-cohort JDs) have a theme reading, extracting 2,365 bullets. Because each theme is a binary per-JD indicator, it can be crossed against any Layer B dimension as an ordinary 2×k contingency table — the question this section asks is which *specific responsibilities* go with which *behavioural traits*, not just which traits co-occur with each other (§4.9).
 
-The most prevalent themes are Stakeholder Collaboration & Requirements (81% of parsed JDs), Data Quality & Testing (69%), BI & Reporting/Dashboards (68%), Data Modeling & Transformation (62%), and Architecture & Platform Strategy (61%) — essentially unchanged in ranking from the n=288 snapshot.
+The most prevalent themes are Stakeholder Collaboration & Requirements (80% of parsed JDs), Data Quality & Testing (69%), BI & Reporting/Dashboards (68%), Data Modeling & Transformation (63%), and Architecture & Platform Strategy (61%) — essentially unchanged in ranking from the n=306 snapshot.
 
-**The auto-correlation risk, and how it's handled.** Several theme/dimension pairs are excluded from the findings below because they're circular, not because they're weak — the theme's regex keywords and the dimension's own LLM coding rubric detect the same textual signal. The single strongest pairing in the entire sweep, "Data Quality & Testing" vs. `testing_framing` (V=0.52), is excluded on exactly this basis: `testing_framing` is coded by looking for testing/quality language in the JD, so crossing it against a theme built from testing/quality keywords mostly measures whether two classification methods agree with each other. The same logic excludes "Security, Privacy & Risk" vs. `domain_risk`/`loss_aversion_framing`, "Data Ownership" vs. `autonomy_level` (whose own rubric lists "own" as a strategic-verb signal), and any theme against a tech-stack flag whose tool name is literally embedded in that theme's regex (dbt, Looker, Tableau, Power BI, Snowflake, Databricks, Airflow). See `OVERLAP_PAIRS` in `responsibility_taxonomy.py` for the full list.
+**The auto-correlation risk, and how it's handled.** Several theme/dimension pairs are excluded from the findings below because they're circular, not because they're weak — the theme's regex keywords and the dimension's own LLM coding rubric detect the same textual signal. The single strongest pairing in the entire sweep, "Data Quality & Testing" vs. `testing_framing` (V=0.51), is excluded on exactly this basis: `testing_framing` is coded by looking for testing/quality language in the JD, so crossing it against a theme built from testing/quality keywords mostly measures whether two classification methods agree with each other. The same logic excludes "Security, Privacy & Risk" vs. `domain_risk`/`loss_aversion_framing`, "Data Ownership" vs. `autonomy_level` (whose own rubric lists "own" as a strategic-verb signal), and any theme against a tech-stack flag whose tool name is literally embedded in that theme's regex (dbt, Looker, Tableau, Power BI, Snowflake, Databricks, Airflow). See `OVERLAP_PAIRS` in `responsibility_taxonomy.py` for the full list.
 
 **Three relationships survived that screen at p<0.01 with no keyword overlap and a reasonable effect size, and are reported here — with different levels of confidence:**
 
-1. **Mentorship & Leadership × `autonomy_level` (χ²=25.58, p<0.0001, V=0.29, n=306) — the one relationship in this section that received an actual confounder check, and passed it.** Mentorship/leadership language climbs from 12% of execution-coded JDs to 25% mixed to 44% strategic. Because `autonomy_level` and seniority title are themselves correlated (§4.5), this could just be seniority in disguise — so it was re-tested within seniority strata specifically: **within "Mid" titles alone**, the gradient is 7%→22%→27% (execution→mixed→strategic); **within "Senior" titles alone**, it's 18%→27%→38%. The gradient survives in both strata, meaning `autonomy_level` predicts mentorship-scope on top of what the title already tells you, not instead of it.
-2. **Data Infrastructure & Warehouse Ops × `jd_authorship` (χ²=18.15, p<0.001, V=0.24, n=306) — clean-screen only, not independently confounder-checked.** Hiring-manager-authored JDs name warehouse/infrastructure responsibilities at 56% vs. 14% for recruiter-authored — a considerably wider gap than authorship's already-known link to whether dbt is merely named (§4.6, §4.9 Finding G). Directionally consistent with the revealed-preference logic elsewhere in this document (naming a platform's actual cost/governance responsibilities requires knowing the team's real infrastructure problem, not just its tool list), but this specific pairing has not been re-tested against a plausible confounder the way (1) was.
-3. **Self-Service Enablement & Data Literacy × `data_team_maturity` (χ²=5.56, p=0.06, V=0.14, n=306) — clean-screen only, no longer clears p<0.01 at this n.** Self-service/data-literacy responsibilities appear in 37% of mature-team JDs vs. 17% of early-stage ones. The direction is unchanged from the n=288 reading, but the added n this batch (§9.7) pushed the p-value from 0.02 to 0.06 — read this as the weakest of the three, now sitting outside the p<0.01 screen the other two still clear, not as a confirmed finding. Kept here because the direction is consistent and the underlying maturity→autonomy story (§4.3) it complements is well-established, but it should be read more cautiously than (1) and (2) going forward.
+1. **Mentorship & Leadership × `autonomy_level` (χ²=25.38, p<0.0001, V=0.29, n=312) — the one relationship in this section that received an actual confounder check, and passed it.** Mentorship/leadership language climbs from 11% of execution-coded JDs to 25% mixed to 43% strategic. Because `autonomy_level` and seniority title are themselves correlated (§4.5), this could just be seniority in disguise — so it was re-tested within seniority strata specifically: **within "Mid" titles alone**, the gradient is 7%→22%→26% (execution→mixed→strategic); **within "Senior" titles alone**, it's 18%→27%→38%. The gradient survives in both strata, meaning `autonomy_level` predicts mentorship-scope on top of what the title already tells you, not instead of it.
+2. **Data Infrastructure & Warehouse Ops × `jd_authorship` (χ²=18.49, p<0.0001, V=0.24, n=312) — clean-screen only, not independently confounder-checked.** Hiring-manager-authored JDs name warehouse/infrastructure responsibilities at 56% vs. 14% for recruiter-authored — a considerably wider gap than authorship's already-known link to whether dbt is merely named (§4.6, §4.9 Finding G). Directionally consistent with the revealed-preference logic elsewhere in this document (naming a platform's actual cost/governance responsibilities requires knowing the team's real infrastructure problem, not just its tool list), but this specific pairing has not been re-tested against a plausible confounder the way (1) was.
+3. **Self-Service Enablement & Data Literacy × `data_team_maturity` (χ²=5.55, p=0.06, V=0.13, n=312) — clean-screen only, still doesn't clear p<0.01 at this n.** Self-service/data-literacy responsibilities appear in 38% of mature-team JDs vs. 19% of early-stage ones. The direction is unchanged from the n=306 reading, and the p-value is essentially unchanged (0.06→0.06) — this relationship has now sat just outside the p<0.01 screen for two consecutive updates, having previously crossed it (p=0.02 at n=288). Read as the weakest of the three, kept here because the direction is consistent and the underlying maturity→autonomy story (§4.3) it complements is well-established, but it should be read more cautiously than (1) and (2).
 
-**A relationship that looked exactly as real as the three above, and didn't survive scrutiny — kept as a worked example, not dropped:** `Architecture & Platform Strategy × work_arrangement` clears the identical screen (χ²=11.4, p=0.010, V=0.19, n=306) and on its own reads as a headline — "remote roles carry less architectural scope" (71% hybrid vs. 58% remote). It does not survive a stratification check against `data_team_maturity`, a plausible confounder since maturity independently correlates with both work arrangement (mature teams skew hybrid, §4.9 Finding H) and this theme. Split by maturity tier, `remote` stops being consistently the lowest group — `not_stated` is consistently the lowest group in every tier instead, and several strata have single-digit cell counts for `remote`/`onsite`, which makes the unstratified comparison mostly noise. Full stratified breakdown in `responsibility_taxonomy.md`.
+**A relationship that looked exactly as real as the three above, and didn't survive scrutiny — kept as a worked example, not dropped:** `Architecture & Platform Strategy × work_arrangement` clears the identical screen (χ²=11.86, p=0.008, V=0.20, n=312) and on its own reads as a headline — "remote roles carry less architectural scope" (71% hybrid vs. 58% remote). It does not survive a stratification check against `data_team_maturity`, a plausible confounder since maturity independently correlates with both work arrangement (mature teams skew hybrid, §4.9 Finding H) and this theme. Split by maturity tier, `remote` stops being consistently the lowest group — `not_stated` is consistently the lowest group in every tier instead, and several strata have single-digit cell counts for `remote`/`onsite`, which makes the unstratified comparison mostly noise. Full stratified breakdown in `responsibility_taxonomy.md`.
 
-**Why this pairing was checked and the other two weren't, and what that means for reading them:** the architecture/work-arrangement check was run first, specifically because "remote work correlates with less architectural ownership" was the kind of clean, quotable claim that warranted scrutiny before being written up — and it failed. That's informative about the corpus generally: a p<0.01, no-keyword-overlap screen alone is not sufficient here, and relationship (2) above has only cleared that screen, not the stratification check that debunked this one; relationship (3) no longer even clears the screen cleanly. Treat (1) as confounder-checked, (2) as "survived the same filter a false lead also passed," and (3) as directional only.
+**Why this pairing was checked and the other two weren't, and what that means for reading them:** the architecture/work-arrangement check was run first, specifically because "remote work correlates with less architectural ownership" was the kind of clean, quotable claim that warranted scrutiny before being written up — and it failed. That's informative about the corpus generally: a p<0.01, no-keyword-overlap screen alone is not sufficient here, and relationship (2) above has only cleared that screen, not the stratification check that debunked this one; relationship (3) sits outside the screen entirely at this n. Treat (1) as confounder-checked, (2) as "survived the same filter a false lead also passed," and (3) as directional only.
 
 **How this section could be wrong, more broadly:**
 
@@ -537,7 +537,7 @@ The most prevalent themes are Stakeholder Collaboration & Requirements (81% of p
 - **Two independent classification methods, two independent error rates.** Every relationship compounds the regex theme-classifier's error rate with whatever error rate the paired Layer B dimension's LLM coding carries — `jd_authorship` specifically has the lowest self-consistency of any dimension in the codebook (0.58, §3), so relationship (2) above should be read with that additional caveat.
 - **Cross-sectional text, not causal evidence.** Every relationship here is a same-JD language co-occurrence, not a causal claim — "mentorship language correlates with strategic-autonomy language" says nothing about which drives which, or whether both are downstream of an uncoded third factor (company size, funding stage, sector) this corpus can't check.
 - **The stratification checks are not exhaustive.** Surviving one plausible confounder (seniority, for relationship 1) doesn't rule out others not tested. Company size and sector are not coded dimensions in this corpus.
-- **Significance is not permanent, demonstrated directly this update.** Relationship (3) above weakened from p=0.02 to p=0.06 between the n=288 and n=306 snapshots purely from added n — the clearest evidence yet in this section that a p<0.01 screen at one corpus size is not a durable property of the underlying pattern.
+- **Significance is not permanent, and this update again shows the same pattern in the opposite direction from most of this document.** Relationship (3) above has now held flat at p=0.06 across two consecutive snapshots (n=306, n=312) after weakening from p=0.02 at n=288 — a small effect that has stabilised just outside, rather than continuing to drift from, the p<0.01 screen. That plateau is itself informative: not every marginal relationship keeps moving as n grows; some settle.
 
 Full theme definitions, all 285 tested pairs, the complete construct-overlap table, and this same write-up regenerated fresh on every corpus update live in `analysis/responsibility_taxonomy.md` (`python3 analysis/responsibility_taxonomy.py` to reproduce).
 
@@ -545,16 +545,16 @@ Full theme definitions, all 285 tested pairs, the complete construct-overlap tab
 
 ## 5. What the survey claims vs. what JDs show
 
-| dbt 2026 claim | JD evidence (n=329 analytical cohort) | Assessment |
+| dbt 2026 claim | JD evidence (n=340 analytical cohort) | Assessment |
 |----------------|-------------|------------|
-| 83% prioritise data trust | 71% rigour-oriented; testing framing coded on full cohort (n=329, 62% responsibility framing) | Confirmed at the orientation level and at the testing-accountability level, essentially unchanged from n=291 |
-| 72% use AI in coding workflows daily | 68% of JDs (n=329, full coverage) expect no AI skill; 13% name AI coding tools directly (`ai_user`) | Gap persists, essentially unchanged from the n=291 reading (68%/12%) — Prediction 2 (§4.0), first half still holds, second half (structural concentration) remains non-significant |
-| AI adoption outpacing governance (72% vs. 24%) | Governance accountability (62% of n=329 full cohort); AI hiring signal ~32% (`ai_enabler`+`ai_user`) | The JD evidence still suggests governance accountability further institutionalised than AI hiring criteria, and the ratio has held stable |
-| Fear of hallucinated outputs (71%) | `loss_aversion_framing = high` is 20% of n=329 full cohort; 57% report operational reliability concerns | Not confirmed — dominant fear is still operational reliability, not AI-trust hallucination; both figures close to the n=291 reading |
-| Rigour framing tracks risk/stakes | χ²=19.42, p=0.0006, V=0.17 (§4.0/§4.2, Prediction 1) — stable at n=329 | Confirmed for `domain_risk`; the `has_dbt` comparator that previously ran alongside it (§4.0) is no longer significant, which if anything sharpens this reading — rigour tracks risk, not tool adoption; rigour still close to universal (54%+) in every risk tier |
-| dbt is the field standard | 64% of AE/BI JDs mention dbt (n=318) | Real but not universal; roughly one in three AE/BI roles run dbt-free stacks; stable across seven consecutive snapshots, including in the APAC subset specifically (59%; §9.5) |
+| 83% prioritise data trust | 71% rigour-oriented; testing framing coded on full cohort (n=340, 62% responsibility framing) | Confirmed at the orientation level and at the testing-accountability level, essentially unchanged from n=329 |
+| 72% use AI in coding workflows daily | 67% of JDs (n=340, full coverage) expect no AI skill; 13% name AI coding tools directly (`ai_user`) | Gap persists, essentially unchanged from the n=329 reading (68%/13%) — Prediction 2 (§4.0), first half still holds, second half (structural concentration) remains non-significant |
+| AI adoption outpacing governance (72% vs. 24%) | Governance accountability (62% of n=340 full cohort); AI hiring signal ~33% (`ai_enabler`+`ai_user`) | The JD evidence still suggests governance accountability further institutionalised than AI hiring criteria, and the ratio has held stable |
+| Fear of hallucinated outputs (71%) | `loss_aversion_framing = high` is 20% of n=340 full cohort; 57% report operational reliability concerns | Not confirmed — dominant fear is still operational reliability, not AI-trust hallucination; both figures unchanged from the n=329 reading |
+| Rigour framing tracks risk/stakes | χ²=20.14, p=0.0005, V=0.17 (§4.0/§4.2, Prediction 1) — stable at n=340 | Confirmed for `domain_risk`; the `has_dbt` comparator that previously ran alongside it (§4.0) continues to show no detectable effect, which if anything sharpens this reading — rigour tracks risk, not tool adoption; rigour still close to universal (58%+) in every risk tier |
+| dbt is the field standard | 65% of AE/BI JDs mention dbt (n=329) | Real but not universal; roughly one in three AE/BI roles run dbt-free stacks; stable across eight consecutive snapshots, including in the APAC subset specifically (65% — now identical to the corpus average; §9.5) |
 
-**The governance-vs-AI gap inverts the dbt narrative's emphasis**, though both halves are visible in the data: dbt 2026 frames the central tension as AI adoption outrunning governance readiness. The JD evidence shows governance accountability further along toward institutionalisation (62% of coded roles) than AI hiring criteria (32% combined `ai_enabler`+`ai_user`). Whether that reflects genuine institutional maturity in analytics engineering specifically, or simply that governance is an older, more diffused fashion than AI-assisted coding, the data doesn't resolve — but the dbt framing of governance as the deficit side of the gap is not what employer hiring language shows.
+**The governance-vs-AI gap inverts the dbt narrative's emphasis**, though both halves are visible in the data: dbt 2026 frames the central tension as AI adoption outrunning governance readiness. The JD evidence shows governance accountability further along toward institutionalisation (62% of coded roles) than AI hiring criteria (33% combined `ai_enabler`+`ai_user`). Whether that reflects genuine institutional maturity in analytics engineering specifically, or simply that governance is an older, more diffused fashion than AI-assisted coding, the data doesn't resolve — but the dbt framing of governance as the deficit side of the gap is not what employer hiring language shows.
 
 ---
 
@@ -655,28 +655,28 @@ Investigating the stall found the root cause: `scripts/write_jd.py`'s field-seri
 
 All backfill classification work was done by reading each JD's archived text directly against the exact codebook rules in `.claude/skills/classify-jd/SKILL.md` — not by guessing from partial evidence or regex-extracting values from free-text explanations (an early attempt at the latter was tried and abandoned once it proved unreliable — different classification runs used inconsistent explanation phrasing that didn't survive pattern-matching). Several dozen pre-existing values were corrected in the process where the archived JD text clearly contradicted the stored evidence or reasoning (most commonly: missed `ai_user` signals like "AI-assisted coding tools" or "Claude Code" mentioned in requirements, misclassified as `none`).
 
-**Current state: all three dimensions are coded on the full analytical cohort (n=329, including all JDs added since the fix, surviving both 2026-07-25 dedup passes, and the current 2026-07-26–29 expansion)**, with consistent `evidence.{dim}` (quote) + `evidence.{dim}_explanation` (reasoning) entries on every record, and no legacy-format duplication. Findings in §4.10–4.12 and Prediction 2 (§4.0) are stated against the full current n, not a small coded subset — this changed several conclusions materially when the fix first landed at n=272 (§4.0, §4.10), and the corpus has grown, been deduplicated twice, and grown again since without disturbing that fix.
+**Current state: all three dimensions are coded on the full analytical cohort (n=340, including all JDs added since the fix, surviving both 2026-07-25 dedup passes, and both the 2026-07-26–29 and 2026-07-30 expansions)**, with consistent `evidence.{dim}` (quote) + `evidence.{dim}_explanation` (reasoning) entries on every record, and no legacy-format duplication. Findings in §4.10–4.12 and Prediction 2 (§4.0) are stated against the full current n, not a small coded subset — this changed several conclusions materially when the fix first landed at n=272 (§4.0, §4.10), and the corpus has grown, been deduplicated twice, and grown again since without disturbing that fix.
 
-### 9.4 What n=329 supports
+### 9.4 What n=340 supports
 
-At n=329, the margin of error on a single proportion is approximately ±5pp at 95% confidence (Wilson interval) — the 71% rigour finding (§4.1) is defensible as "likely between 66% and 76%," not as a precise market figure. Cross-tabs with cell sizes below ~15 (junior seniority, pure velocity, low domain-risk in some cross-tabs) are illustrative, not evidential, and are flagged as such at each occurrence above. The corpus additions from the n=123 baseline through n=329 provided meaningful confidence-interval tightening and, along the way, flipped several relationships across the significance threshold in both directions (§4.0, §4.9 document each one as it happened). The current +33-record expansion (§9.7) moved four relationships across the significance threshold: `velocity_vs_rigour × has_dbt` (Prediction 1's comparator, §4.0), `domain_risk × greenfield_vs_fix` (previously Finding B), `stakeholder_orientation × autonomy_level` (previously Finding E), and `geo_region (APAC) × jd_authorship` (previously part of Finding G) all dropped below p<0.05 at this n — each restated in §4 and §4.9 as its current state, not flagged as a reversal. One relationship, `data_team_maturity × work_arrangement` on the stated-arrangement subset, crossed the other direction and is now reported as a finding for the first time (§4.9 Finding H). This many threshold-crossings in a single update is itself the expected behaviour of a corpus this size carrying several small-effect (V≈0.10-0.17) relationships close to the detection boundary — not evidence that this batch was unusual. Pattern stability continues to hold for the strongest relationships (maturity × mission, domain_risk × stakeholder, domain_risk × rigour) across every snapshot from n=123 to n=329.
+At n=340, the margin of error on a single proportion is approximately ±4.8pp at 95% confidence (Wilson interval) — the 71% rigour finding (§4.1) is defensible as "likely between 66% and 75%," not as a precise market figure. Cross-tabs with cell sizes below ~15 (junior seniority, pure velocity, low domain-risk in some cross-tabs) are illustrative, not evidential, and are flagged as such at each occurrence above. The corpus additions from the n=123 baseline through n=340 provided meaningful confidence-interval tightening and, along the way, flipped several relationships across the significance threshold in both directions (§4.0, §4.9 document each one as it happened). The current +11-record expansion (§9.8) is small, but it still moved two relationships across the significance threshold, both into significance: `geo_region (APAC) × jd_authorship` (previously part of Finding G, back below p<0.05 after briefly sitting above it at n=329) and `geo_region (APAC) × work_arrangement` (previously part of Finding H, now significant for the first time on the full four-category breakdown). `data_team_maturity × work_arrangement` on the stated-arrangement subset (promoted at the last update) remained significant and strengthened further. The three relationships that tested null at n=329 — `velocity_vs_rigour × has_dbt`, `domain_risk × greenfield_vs_fix`, `stakeholder_orientation × autonomy_level` — all remain null at n=340, with the first two weakening further rather than approaching the line. This asymmetry (small-batch geographic effects moving while the Prediction-1-adjacent nulls stay put or weaken) is plausible given the batch's composition: 6 of 11 new cohort records are APAC (§9.8), so a small addition had an outsized effect specifically on APAC-linked tests, while dimensions unrelated to geography saw only the general n increase. Pattern stability continues to hold for the strongest relationships (maturity × mission, domain_risk × stakeholder, domain_risk × rigour) across every snapshot from n=123 to n=340.
 
 ### 9.5 What the geographic concentration means, and what the APAC stratum shows
 
-This remains a primarily European, Berlin-heavy dataset. The APAC stratum, built by a deliberate scraping pass in late July, holds at **37 roles (11% of the analytical cohort)** — the current batch (§9.7) added several more APAC roles (Alight, Blinq, Fremantle Dockers, Harbourvest, Joon Solutions) but the total count is unchanged from the n=291 snapshot, net of other adjustments — still large enough to run a direct APAC-vs-rest-of-corpus comparison rather than only disclaiming the gap, as earlier snapshots of this document had to.
+This remains a primarily European, Berlin-heavy dataset. The APAC stratum, built by a deliberate scraping pass in late July and reinforced by the 2026-07-30 batch (§9.8), holds at **43 roles (13% of the analytical cohort)** — up from 37 at the last snapshot, and now the second-largest single geographic bucket in the corpus after UK/remote — still large enough to run a direct APAC-vs-rest-of-corpus comparison rather than only disclaiming the gap, as earlier snapshots of this document had to.
 
-**The headline result is now more nuanced than "APAC looks like the rest of the corpus": most substantive dimensions still track closely, but rigour orientation has moved to the other side of the corpus average.** Domain risk (76% moderate vs. 66%), data team maturity (51% mid vs. 60%), dbt prevalence (59% vs. 66%), and `testing_framing` mix (62% responsibility, identical to the rest of the corpus) all still sit within a normal range of the non-APAC corpus. But rigour orientation is now 65% for APAC vs. 72% for the rest of the corpus — a reversal from the n=291 snapshot, where APAC (76%) ran slightly *above* the corpus average; this batch's APAC additions (several early/mid-stage, moderate-risk roles) pulled the stratum's rigour rate down. `loss_aversion_framing = high` has also dropped for APAC specifically (11% vs. 21% for the rest of the corpus), consistent with the same shift in composition. None of these differences are statistically distinguishable at this n (the corpus is not large enough to formally test every dimension against a 37-role stratum), but the direction on rigour and loss-aversion is worth flagging as a point to watch, not a stable finding — it moved once already between snapshots on a stratum this size.
+**Most substantive dimensions still track closely, but rigour orientation and work-arrangement disclosure both continue to differ from the rest of the corpus, the latter now confirmed rather than directional.** Domain risk (72% moderate vs. 67%), data team maturity (53% mid vs. 60%), dbt prevalence (65% vs. 65% — now identical), and `testing_framing` mix (65% responsibility vs. 62%) all sit within a normal range of the non-APAC corpus. Rigour orientation remains lower for APAC (60%) than the rest of the corpus (72%) — consistent in direction with the n=329 snapshot (65% vs. 72%), and now a two-snapshot pattern rather than a single-batch anomaly, though still not formally tested given the stratum's size. `loss_aversion_framing = high` also remains lower for APAC (14% vs. 21% for the rest of the corpus), essentially unchanged from n=329's 11% vs. 21%. None of the risk/maturity/dbt/testing comparisons are statistically distinguishable at this n, but the rigour and loss-aversion gap having now held in the same direction across two consecutive, partly-independent scraping batches makes it a steadier signal than a single-snapshot reading would be.
 
-**Two dimensions that stood out at n=291 are now both directional rather than confirmed:**
+**Two dimensions that were directional at n=329 now both clear conventional significance:**
 
-| Dimension | APAC (n=37) | Rest of corpus (n=292) | Test |
+| Dimension | APAC (n=43) | Rest of corpus (n=297) | Test |
 |---|---|---|---|
-| `jd_authorship = hiring_manager` | 86% | 67% | χ²=5.92, p=0.052, V=0.13 |
-| `work_arrangement = not_stated` | 49% | 36% | χ²=7.57, p=0.056, V=0.15 |
+| `jd_authorship = hiring_manager` | 86% | 68% | χ²=6.32, p=0.042, V=0.14 |
+| `work_arrangement` (full 4-category: hybrid/not_stated/onsite/remote) | 40% / 44% / 14% / 2% | 50% / 36% / 3% / 11% | χ²=13.20, p=0.0042, V=0.20 |
 
-One of the 37 APAC JDs now codes as pure `recruiter`-authored (previously zero) — the authorship gap is directionally the same as before but has narrowed enough that the test no longer clears p<0.05 (was χ²=14.08, p=0.0009, V=0.22 at n=291). Held carefully: `jd_authorship`'s LLM self-consistency is the lowest of any dimension in the codebook (0.58, §3), so part of this gap could be a codebook-boundary artefact interacting with how APAC postings happen to be formatted (many sourced via LinkedIn/company career pages with detailed technical bullet lists, which the heuristic may read as "hiring-manager-authored" regardless of who actually wrote them) rather than a real difference in who authors these JDs. The work-arrangement-silence gap points the same direction as before (49% vs. 36% not-stated) and remains just above the conventional threshold, essentially unchanged from n=291 (p=0.059→0.056); treat "APAC states a work arrangement less often" as directional, not confirmed. Among APAC roles that do state an arrangement, hybrid still dominates (16 of 19).
+This batch's six new APAC records (§9.8) are almost entirely hiring-manager-authored (5 of 6), which pushed the authorship gap back below p<0.05 after it had briefly narrowed above the threshold at n=329 (χ²=5.92, p=0.052, V=0.13). Held carefully: `jd_authorship`'s LLM self-consistency is the lowest of any dimension in the codebook (0.58, §3), so part of this gap could be a codebook-boundary artefact interacting with how APAC postings happen to be formatted (many sourced via LinkedIn/company career pages with detailed technical bullet lists, which the heuristic may read as "hiring-manager-authored" regardless of who actually wrote them) rather than a real difference in who authors these JDs — and the test has now crossed the conventional threshold in both directions across two consecutive snapshots, which is itself a reason for caution. The work-arrangement picture has changed in kind, not just degree: APAC's not-stated rate (44% vs. 36%) is the same direction as every prior snapshot, but the batch's new APAC records also carry a distinctly higher onsite share (14% vs. 3%) and lower hybrid share (40% vs. 50%) among stated arrangements, and testing the full category breakdown (rather than a stated/not-stated binary) now clears p<0.05 for the first time (was χ²=7.57, p=0.056, V=0.15 at n=329, using the binary cut). Among APAC roles that do state an arrangement, hybrid still dominates numerically (17 of 24) but the onsite share (6 of 24) stands out against the rest of the corpus.
 
-**What this does and doesn't license:** the JD data cannot distinguish "APAC employers write JDs differently" from "this specific sample happens to have been sourced through channels that produce more hiring-manager-style postings" — the collection method for this stratum (several distinct scraping passes, not the same multi-month opportunistic accumulation as the European portion) is a real confound. Treat most of the substantive-dimension comparisons (risk, maturity, dbt, testing framing) as reasonably solid — a genuine absence of large difference across several independently-coded dimensions. Treat the rigour and loss-aversion shift as a real change in this snapshot's APAC composition worth re-checking at the next update, and the authorship and work-arrangement-disclosure findings as directional only at the current n.
+**What this does and doesn't license:** the JD data cannot distinguish "APAC employers write JDs differently" from "this specific sample happens to have been sourced through channels that produce more hiring-manager-style, or more onsite, postings" — the collection method for this stratum (several distinct scraping passes, not the same multi-month opportunistic accumulation as the European portion) is a real confound, and it is a plausible explanation for why a single small batch (11 records) moved two tests across a significance threshold at once. Treat most of the substantive-dimension comparisons (risk, maturity, dbt, testing framing) as reasonably solid — a genuine absence of large difference across several independently-coded dimensions, holding across two snapshots now. Treat the authorship and work-arrangement findings as real at this n but worth re-checking at the next update, given how much a small APAC-heavy batch just moved them.
 
 The dbt survey itself skews North American, though post-2023 reports don't disclose the exact split — this dataset still has no North American stratum to compare against, and the 71% rigour figure should not be assumed to hold in the US market without separate data.
 
@@ -697,6 +697,14 @@ Every distribution and cross-tab in §4 has been recomputed against the corpus a
 New JDs added, taking the corpus from 325→358 total (33 net new records), 291→329 analytical cohort (38 net new cohort records — the count exceeds the number of individually-dated 07-26–29 additions because a small number of records dated on or before 2026-07-25 were also added to the corpus in the same working session, after the dedup snapshot in §9.6 was written). Notable additions in this batch: a small finance/regulated-banking cluster (Montblanc — finance-domain, high `domain_risk`; NatWest Group — regulated bank, though its record classifies as `data_engineering` and sits outside the analytical cohort; Qred Bank/NIBC Bank — fintech/banking, high `domain_risk`), and an AI-forward cluster at the opposite end of the risk spectrum (Zego — explicitly AI-first framing, `ai_role = ai_user`; Hack A Boss — an AI-native analytics-education product, early-stage/greenfield, `ai_role = ai_enabler`). Kaluza (`team_lead`, Analytics Engineering Lead) and Fremantle Dockers (AFL sports club, low `domain_risk`, early-stage) add further variety at the seniority and domain-risk tails.
 
 Batch-level distribution (the 28 cohort records dated 2026-07-26 or later): `domain_risk` moderate 20 (71%), high 6 (21%), low 2 (7%) — close to the corpus-wide split (67%/25%/8%) with a slightly higher moderate share. `data_team_maturity` mid 14 (50%), mature 9 (32%), early 5 (18%) — mature is somewhat over-represented against the corpus average (26% at n=329) on this batch. `seniority` skews mid (18, 64%), consistent with the corpus overall. All classified using the same Layer B codebook; no statistical re-weighting applied — the batch is small enough relative to the standing corpus that it nudges but doesn't materially reshape any headline distribution in §4.1–4.8. See §4.9 for which relationships the added n moved across a significance threshold in either direction.
+
+### 9.8 2026-07-30 expansion
+
+Eleven new AE/BI JDs (plus four `data_engineering` records excluded from the analytical cohort — Kleinanzeigen, Kognitiv, SanDisk, Toss) added in a single day, taking the corpus from 358→373 total, 329→340 analytical cohort. This is the smallest expansion batch since the 2026-07-13 baseline (+9 JDs), but it is also the most geographically concentrated: 6 of the 11 new cohort roles are APAC (Blinq, Brand New Day, Eftsure, Emapta, Samsara Eco, Southern Cross), pushing the APAC stratum from 37 to 43 roles and making it the second-largest single geographic bucket in the corpus (§3, §9.5). The remainder is UK/remote (Harnham, Infinite Lambda, a second Zego posting distinct from the one added in §9.7), France (BeReal), and Benelux (Crystalloids).
+
+Batch-level distribution (the 11 new cohort records): `domain_risk` moderate 7 (64%), high 4 (36%) — no low-risk roles this batch, skewing the batch itself higher-risk than the corpus average, though the batch is too small (n=11) to move the corpus-wide split meaningfully (§4.2 shows only a 1pp change in the high-risk share). `data_team_maturity` mid 7 (64%), early 3 (27%), mature 1 (9%) — early-stage is over-represented against the corpus average (16% at n=340) on this batch, nudging the corpus-wide early share up a point (§4.3). `seniority` mid (7), senior (3), staff (1 — BeReal's Staff Analytics Engineer posting, a rare title in this corpus). No `team_lead` roles in this batch.
+
+Because 6 of the 11 new records are APAC, this batch's effect on APAC-linked statistics is disproportionate to its overall size: it moved `geo_region (APAC) × jd_authorship` back below p<0.05 (§4.9 Finding G, §9.5) and pushed `geo_region (APAC) × work_arrangement` into significance for the first time on the full four-category breakdown (§4.9 Finding H, §9.5). Non-geographic relationships were largely unaffected by a batch this small — the three long-standing nulls (`velocity_vs_rigour × has_dbt`, `domain_risk × greenfield_vs_fix`, `stakeholder_orientation × autonomy_level`) all remained null, with the first two weakening slightly further. All classified using the same Layer B codebook; no statistical re-weighting applied. See §4.9 and §9.4 for the full account of which relationships moved.
 
 ---
 
