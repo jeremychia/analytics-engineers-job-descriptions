@@ -228,22 +228,89 @@ def clean_bullet(b: str) -> str:
 # ---------------------------------------------------------------------------
 
 TAXONOMY = {
-    "Data Modeling & Transformation": r'\b(data model(l)?ing|dbt model|semantic (layer|model)|data mart|star schema|dimensional model|DAX|LookML|transform(ation)?s?\b|build.*models|reusable (data )?models|metrics? (layer|definition)|business logic)',
-    "Pipeline Engineering & Orchestration": r'\b(pipeline|ETL|ELT|ingest(ion)?|orchestrat|airflow|dagster|prefect|data flows?|data integration)',
+    # "data model(s)" bare (no "modeling"/"build ... models" wrapper) was entirely missed -
+    # e.g. "Design data models facilitating analysis", "Contributing to the ongoing design
+    # of our core data model" - despite being the most direct possible phrasing for this
+    # theme. Added as its own alternative rather than loosening to bare "model(s)", which
+    # would risk catching statistical/ML model or "business model" bullets unrelated to
+    # data modeling. "data product(s)" is the modern synonym for a trusted, reusable
+    # dataset - this theme's own description - and was likewise uncategorized.
+    "Data Modeling & Transformation": r'\b(data model(l)?(ing|s)?\b|dbt model|semantic (layer|model)|data mart|star schema|dimensional model|DAX|LookML|transform(ation)?s?\b|build.*models|reusable (data )?models|metrics? (layer|definition)|business logic|data product)',
+    # Bare "integrat(e/ion)" was deliberately left out (catches "GitHub Copilot integration",
+    # "continuous integration"/CI, unrelated) - but "data source(s)" + "integrat*" close
+    # together, in either order, is unambiguous pipeline-ingestion language ("integrate new
+    # data sources", "data source integrations via APIs") and was falling through entirely
+    # since only the exact phrase "data integration" was covered. Window is bounded to a
+    # few words rather than unbounded .* so an unrelated "integration" and an unrelated,
+    # distant "data sources" mention in the same long bullet can't falsely pair up.
+    "Pipeline Engineering & Orchestration": r'\b(pipeline|ETL|ELT|ingest(ion)?|orchestrat|airflow|dagster|prefect|data flows?|data integration|data sources?\b(?:\W+\w+){0,6}?\W+integrat|integrat\w*(?:\W+\w+){0,6}?\W+data sources?\b)',
     "Data Quality & Testing": r'\b(data quality|test(ing|s)?\b|validat|monitor(ing)?|assertion|anomaly|reliability|accura(cy|te)|observability|data trust|Monte Carlo)',
     "Governance & Documentation": r'\b(governance|catalog|metadata|access control|documentation|document\b|lineage|compliance|standards?\b|single (source|version) of truth|certified metrics)',
     "Stakeholder Collaboration & Requirements": r'\b(stakeholder|collaborat|partner with|cross-functional|business (needs|requirements|users)|translate|liais|bridg(e|ing)|link between|align(ment)?|requirements gathering|work(ing)? closely with|works? with (customer|end.user)s?)',
     "BI & Reporting/Dashboards": r'\b(dashboard|report(ing|s)?\b|visuali[sz]ation|Looker\b|Tableau\b|Power ?BI|Grafana|BI (tool|layer|developer)|self-service (analytics|reporting)?)',
-    "Architecture & Platform Strategy": r'\b(architecture|platform (design|strategy)|scal(e|ability|able)|infrastructure|tech(nology)? stack|system design|roadmap|strategy|strategic)',
-    "Self-Service Enablement & Data Literacy": r'\b(self-service|data literacy|training|enable(ment)?|educat|champion.*(practice|literacy)|drop-in sessions|knowledge.shar)',
-    "Mentorship & Leadership": r'\b(mentor|lead(ing|ership)?\b|manage (a|the) team|coach|hire|hiring|grow (the )?team|line manag|people manag|guide (junior|other))',
+    # scal(e|ability|able) and bare strategy/strategic were dropped: they matched "scalable
+    # analytics"/"as the platform scales" and any unrelated "strategic X" with no architecture
+    # content. Scoped variants below require a data/platform/tech object alongside them.
+    # "data platform" (the noun - "our data platform", "the Data Platform team") is the most
+    # common phrasing for this theme's subject matter and was missing entirely; only
+    # "platform (design|strategy)" was covered before.
+    # "data delivery platform" is a specific product name in this corpus (PGGM's internal
+    # platform) but reads as generic "data platform" phrasing, so covered here too.
+    "Architecture & Platform Strategy": r'\b(architecture|data (delivery )?platform|platform (design|strategy)|scalab(le|ility) (data|pipeline|platform|architecture|system)s?|infrastructure|tech(nical|nology)? stack( strateg(y|ies))?|system design|roadmap|(data|platform|technical|technology) strateg(y|ies)|strategic (data|platform|direction|decision))',
+    # "self-serve" is the more common phrasing in this corpus but was missing entirely
+    # (only "self-service" was matched), silently undercounting this theme.
+    "Self-Service Enablement & Data Literacy": r'\b(self-serv(e|ice)|data literacy|training|enable(ment)?|educat|champion.*(practice|literacy)|drop-in sessions|knowledge.shar)',
+    # Bare "lead(ing|ership)" conflated people/team leadership with technical or project
+    # leadership ("lead the architecture", "lead cross-domain projects") - two different
+    # constructs this theme's own description says it separates. "lead" now only counts
+    # when paired with team/people language; mentor/coach/hire/etc. stay bare since those
+    # are already people-specific. Bare "leadership" was dropped too - in this corpus it's
+    # overwhelmingly used as a stakeholder-audience noun ("reporting to leadership",
+    # "collaborating with... leadership teams"), not the JD-holder's own leadership; only
+    # "provide/technical leadership" phrasing describes the role's own leadership.
+    "Mentorship & Leadership": r'\b(mentor|lead(ing|ership)?\b\s*(,|and)?\s*(mentor|develop|grow|coach)?\s*(a |the )?team\b|\bteam lead\b|lead(ing)? a team of|\bas a lead\b|\bas the lead\b|carry expertise as a lead|(provide|providing) (technical )?leadership|technical leadership|manage (a|the) team|coach|hire|hiring|grow (the )?team|line manag|people manag|guide (junior|other))',
     "Performance & Cost Optimization": r'\b(performance|cost (optimi[sz]ation|efficiency|reduction)|efficien(cy|t)|optimi[sz]e)',
-    "Data Infrastructure & Warehouse Ops": r'\b(warehouse|infrastructure|CI/CD|version control|cloud\b|devops|Snowflake|BigQuery|Redshift|Databricks|Terraform)',
+    "Data Infrastructure & Warehouse Ops": r'\b(warehouse|data lake|infrastructure|CI/CD|version control|cloud\b|devops|Snowflake|BigQuery|Redshift|Databricks|Terraform)',
     "Business Analysis & Insight Generation": r'\b(insight|analy[sz]e|analytics? (to support|for)|decision.making|forecast|experiment(ation)?|A/B test|KPI|metrics? (tracking|definition)|business (impact|problems|decisions))',
-    "Vendor & Tooling Evaluation": r'\b(vendor|tool selection|evaluate (new )?tools|tooling|third.party)',
-    "Security, Privacy & Risk": r'\b(privacy|security\b|risk\b|PII|GDPR|complian)',
+    # Bare "tooling" was the single biggest precision problem in the whole taxonomy: 23/32
+    # of this theme's matches were bare "tooling", and the large majority of those are just
+    # "using/improving/BI tooling" - ordinary tool usage, not the evaluation/selection this
+    # theme's own description promises ("Evaluating/selecting third-party tools and
+    # vendors"). Narrowed to require actual evaluation/selection/adoption language attached.
+    "Vendor & Tooling Evaluation": r'\b(vendor|tool(ing)? selection|evaluat\w* (new )?tool|evaluat\w*.{0,20}vendor|new tooling|tooling adoption|third.party)',
+    # Bare "risk\b" mostly matched "Risk" as a stakeholder team/department name
+    # ("trading, risk, and finance stakeholders", "Risk Controlling", "Risk/Compliance
+    # team") rather than data privacy/security risk, which is this theme's actual intent.
+    # Narrowed to risk-management/assessment/scoring language and data/privacy/compliance
+    # risk specifically.
+    "Security, Privacy & Risk": r'\b(privacy|security\b|risk (management|mitigation|assessment|scoring|model)|data risk|privacy risk|compliance risk|PII|GDPR|complian)',
+    # Bare "own(ership)" matched "taking ownership of personal development", "accelerate
+    # your own output" - reflexive/career language, not data ownership. Excluded explicitly
+    # rather than narrowing "own" itself, since the vast majority of "own"/"ownership" hits
+    # in this corpus are genuinely about data/product ownership and a data-object
+    # allowlist would have been longer and more brittle than this short denylist.
     "Data Ownership (end-to-end)": r'\b(own(ership)?\b|end.to.end|full.stack|from ingestion to)',
 }
+
+# Applied after an "own(ership)" match to drop reflexive/career-development false positives
+# (see comment on Data Ownership above). Matched independently of TAXONOMY so it only
+# suppresses this one theme's false positives without touching any other pattern.
+OWNERSHIP_FALSE_POSITIVE_RE = re.compile(
+    r'\b(your|my)\s+own\s+(\w+\s+)?(output|words|pace|time|career|personal development|professional development|development)\b'
+    r'|\bownership of (personal|your own)\b'
+    r'|\btaking ownership of personal\b',
+    re.I,
+)
+
+# Applied after a "transform(ation)" match to drop the two recurring non-data-modeling
+# false-positive shapes: "digital transformation" (an org-change buzzword) and
+# "transform X into Y" where X is an abstract noun (ambiguity/complexity/challenges),
+# a soft-skill metaphor rather than data transformation.
+TRANSFORM_FALSE_POSITIVE_RE = re.compile(
+    r'\bdigital transformation\b'
+    r'|\btransform (it|them|challenges|ambiguity|complexity) into\b',
+    re.I,
+)
 
 TAXONOMY_DESCRIPTIONS = {
     "Data Modeling & Transformation": "Building/maintaining dbt models, semantic layers, metrics definitions, dimensional models — turning raw data into trusted, reusable structures.",
@@ -502,6 +569,10 @@ def main():
     jd_theme_sets = {}
     theme_bullet_counts = Counter()
     examples = defaultdict(list)
+    # Full per-bullet hits, every bullet (not capped), tagged with the jd_id and the
+    # matched keyword span(s) so the HTML can show "why" a bullet was tagged and
+    # link back to the posting it came from.
+    bullets_by_theme = defaultdict(list)
     uncategorized = []
     n_bullets_considered = 0
     n_bullets_with_theme = 0
@@ -516,7 +587,24 @@ def main():
             if len(b) < 10:
                 continue
             n_bullets_considered += 1
-            matched = {cat for cat, pat in COMPILED.items() if pat.search(b)}
+            matches = {cat: pat.search(b) for cat, pat in COMPILED.items()}
+            # Re-search each theme's pattern past every false-positive span in turn, so a
+            # bullet that legitimately matches elsewhere (e.g. "dbt models" later in a bullet
+            # that opens with "digital transformation") isn't dropped just because *a* false
+            # positive occurs somewhere in the text - only a match whose own span overlaps
+            # a false-positive span gets skipped.
+            for cat, fp_re in (
+                ("Data Ownership (end-to-end)", OWNERSHIP_FALSE_POSITIVE_RE),
+                ("Data Modeling & Transformation", TRANSFORM_FALSE_POSITIVE_RE),
+            ):
+                m = matches.get(cat)
+                while m and any(
+                    fp.start() < m.end() and fp.end() > m.start()
+                    for fp in fp_re.finditer(b)
+                ):
+                    m = COMPILED[cat].search(b, m.end())
+                matches[cat] = m
+            matched = {cat for cat, m in matches.items() if m}
             if not matched:
                 uncategorized.append(b)
             else:
@@ -525,6 +613,11 @@ def main():
                 theme_bullet_counts[m] += 1
                 if len(examples[m]) < 12:
                     examples[m].append(b)
+                bullets_by_theme[m].append({
+                    "jd_id": jd_id,
+                    "bullet": b,
+                    "matched_text": matches[m].group(0),
+                })
             themes_for_jd |= matched
         jd_theme_sets[jd_id] = sorted(themes_for_jd)
 
@@ -584,6 +677,7 @@ def main():
         "theme_stats": theme_rows,
         "jd_theme_sets": jd_theme_sets,
         "examples_by_theme": dict(examples),
+        "bullets_by_theme": {k: v for k, v in bullets_by_theme.items()},
         "role_counts": dict(role_counts),
         "by_role": {k: dict(v) for k, v in by_role.items()},
         "seniority_counts": dict(seniority_counts),

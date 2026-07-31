@@ -389,7 +389,10 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
   <p class="section-body" id="rtBody">The dimensions above classify each JD as a whole. This section instead parses just the responsibilities section of each posting into individual bullets, and classifies <em>those</em> against a fixed 15-theme taxonomy - regex-based, not LLM, see <code>analysis/responsibility_taxonomy.py</code>. A JD can carry several themes at once, so the bars sum to well over 100%. n=<span id="rtN">—</span> of the active filter's JDs have a theme reading (a few have no archived JD text or no extractable responsibilities section).</p>
   <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:1.5rem;align-items:start" class="rt-grid-wrap">
     <div class="card">
-      <div class="card-title">Theme prevalence</div>
+      <div class="card-title-row">
+        <div class="card-title">Theme prevalence</div>
+        <span class="rt-click-badge">🔎 click a bar for JD examples</span>
+      </div>
       <p class="card-sub">% of JDs (with a theme reading) whose responsibilities include each theme · recomputed against the active role filter</p>
       <div class="rt-chart-wrap"><canvas id="rtChart"></canvas></div>
     </div>
@@ -407,7 +410,49 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
   .rt-cooc-pair { flex: 1; line-height: 1.4; }
   .rt-cooc-stat { white-space: nowrap; color: var(--muted); font-size: 0.76rem; text-align: right; }
   .rt-cooc-lift { font-weight: 700; color: var(--text); }
+  .card-title-row { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap; }
+  .card-title-row .card-title { margin-bottom: 0; }
+  .rt-click-badge {
+    font-size: 0.72rem; font-weight: 600; color: #1d4ed8; background: rgba(29,78,216,0.09);
+    border: 1px solid rgba(29,78,216,0.25); border-radius: 999px; padding: 0.2rem 0.65rem;
+    white-space: nowrap;
+  }
+  #rtChart { cursor: pointer; }
+  .rt-evidence-overlay {
+    position: fixed; inset: 0; background: rgba(17,17,17,0.5); backdrop-filter: blur(3px);
+    z-index: 1100; display: flex; align-items: flex-start; justify-content: center;
+    padding: 4vh 1.5rem; overflow-y: auto;
+  }
+  .rt-evidence-overlay.hidden { display: none; }
+  .rt-evidence-modal {
+    background: #fff; border-radius: 16px; max-width: 720px; width: 100%;
+    padding: 1.75rem 2rem 2rem; box-shadow: 0 24px 64px rgba(0,0,0,0.25); margin-bottom: 4vh;
+  }
+  .rt-evidence-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.25rem; }
+  .rt-evidence-modal h3 { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.01em; }
+  .rt-evidence-close {
+    border: none; background: var(--bg, #f4f4f2); color: var(--muted); width: 28px; height: 28px;
+    border-radius: 50%; font-size: 1rem; cursor: pointer; flex-shrink: 0; line-height: 1;
+  }
+  .rt-evidence-close:hover { background: var(--border); }
+  .rt-evidence-modal .card-sub { margin-bottom: 1rem; }
+  .rt-evidence-list { max-height: 60vh; overflow-y: auto; }
+  .rt-evidence-item { padding: 0.7rem 0; border-bottom: 1px solid var(--border); font-size: 0.83rem; line-height: 1.55; }
+  .rt-evidence-item:last-child { border-bottom: none; }
+  .rt-evidence-item mark { background: #fde68a; color: inherit; padding: 0 2px; border-radius: 2px; }
+  .rt-evidence-meta { font-size: 0.72rem; color: var(--muted); margin-top: 0.25rem; }
+  .rt-evidence-empty { font-size: 0.85rem; color: var(--muted); padding: 1rem 0; }
 </style>
+<div class="rt-evidence-overlay hidden" id="rtEvidenceOverlay" onclick="if(event.target===this) closeRtEvidence()">
+  <div class="rt-evidence-modal" role="dialog" aria-modal="true" aria-labelledby="rtEvidenceTitle">
+    <div class="rt-evidence-head">
+      <h3 id="rtEvidenceTitle"></h3>
+      <button class="rt-evidence-close" type="button" onclick="closeRtEvidence()" aria-label="Close">&times;</button>
+    </div>
+    <p class="card-sub" id="rtEvidenceSub"></p>
+    <div class="rt-evidence-list" id="rtEvidenceList"></div>
+  </div>
+</div>
 
 
 <!-- SECTION: NULL RESULTS -->
@@ -1543,10 +1588,15 @@ function buildResponsibilityTaxonomy(data) {
     options: {
       indexAxis: 'y', responsive: true, maintainAspectRatio: false, animation: { duration: 250 },
       layout: { padding: { right: 8 } },
-      plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ` ${ctx.raw}% of JDs (n=${prevalence[ctx.dataIndex].cnt})` } } },
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ` ${ctx.raw}% of JDs (n=${prevalence[ctx.dataIndex].cnt}) — click for JD language` } } },
       scales: {
         x: { max: 100, ticks: { callback: v => v + '%', font: { size: 10 } }, grid: { color: '#f0f0ed' } },
         y: { ticks: { font: { size: 10.5 }, autoSkip: false, crossAlign: 'far' }, grid: { display: false } },
+      },
+      onHover: (e, els) => { e.native.target.style.cursor = els.length ? 'pointer' : 'default'; },
+      onClick: (e, els) => {
+        if (!els.length) return;
+        openRtEvidence(prevalence[els[0].index].theme);
       },
     },
   });
@@ -1572,6 +1622,7 @@ function buildResponsibilityTaxonomy(data) {
   pairs.sort((a, b) => b.lift - a.lift || b.nAB - a.nAB);
 
   const list = document.getElementById('rtCoocList');
+  window._rtActiveJdIds = new Set(withTheme.map(d => d.jd_id));
   if (!pairs.length) {
     list.innerHTML = `<p style="font-size:0.8rem;color:var(--muted)">Not enough co-coded pairs under this filter to compute co-occurrence.</p>`;
     return;
@@ -1584,6 +1635,62 @@ function buildResponsibilityTaxonomy(data) {
     </div>
   `).join('');
 }
+
+function rtEscapeHtml(s) {
+  return s.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+}
+
+// Wraps the regex-matched span in <mark>, working against the escaped string so
+// tags inserted for highlighting can't themselves be escaped. Some taxonomy
+// patterns match only a word stem (e.g. "collaborat" out of "Collaborate" /
+// "Collaboration", or "liais" out of "liaising") since that's all the classifier
+// needs — extend the highlight to the end of that word so it reads naturally,
+// without pulling in trailing words (which would wrongly extend true whole-word/
+// phrase matches like "partner with" or "cross-functional").
+function rtHighlight(bullet, matchedText) {
+  const escaped = rtEscapeHtml(bullet);
+  const escapedMatch = rtEscapeHtml(matchedText);
+  const stemPattern = escapedMatch.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const re = new RegExp(stemPattern + '[\\w-]*', 'i');
+  const m = escaped.match(re);
+  if (!m) return escaped;
+  return escaped.slice(0, m.index) + `<mark>${m[0]}</mark>` + escaped.slice(m.index + m[0].length);
+}
+
+function openRtEvidence(theme) {
+  const overlay = document.getElementById('rtEvidenceOverlay');
+  const byId = Object.fromEntries(ALL_DATA.map(d => [d.jd_id, d]));
+  const activeIds = window._rtActiveJdIds || new Set(ALL_DATA.map(d => d.jd_id));
+  const allHits = (RT_BULLETS_BY_THEME[theme] || []).filter(h => activeIds.has(h.jd_id));
+
+  document.getElementById('rtEvidenceTitle').textContent = theme;
+  const nJds = new Set(allHits.map(h => h.jd_id)).size;
+  document.getElementById('rtEvidenceSub').innerHTML =
+    `${allHits.length} responsibility bullet${allHits.length===1?'':'s'} across ${nJds} JD${nJds===1?'':'s'} matched this theme's keyword pattern (highlighted below) · showing up to 40`;
+
+  const listEl = document.getElementById('rtEvidenceList');
+  if (!allHits.length) {
+    listEl.innerHTML = `<p class="rt-evidence-empty">No matching bullets under the active role filter.</p>`;
+  } else {
+    listEl.innerHTML = allHits.slice(0, 40).map(h => {
+      const meta = byId[h.jd_id];
+      const label = meta ? `${meta.company} — ${meta.role}` : h.jd_id;
+      return `
+        <div class="rt-evidence-item">
+          <div>${rtHighlight(h.bullet, h.matched_text)}</div>
+          <div class="rt-evidence-meta">${label}</div>
+        </div>`;
+    }).join('');
+  }
+  overlay.classList.remove('hidden');
+}
+
+function closeRtEvidence() {
+  document.getElementById('rtEvidenceOverlay').classList.add('hidden');
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeRtEvidence();
+});
 
 // ── Main render ──
 function render() {
@@ -1634,6 +1741,10 @@ const RT_THEME_ORDER = [
   'Data Ownership (end-to-end)','Self-Service Enablement & Data Literacy','Mentorship & Leadership',
   'Security, Privacy & Risk','Vendor & Tooling Evaluation',
 ];
+// Populated on load from responsibility_classification.json's bullets_by_theme:
+// theme -> [{jd_id, bullet, matched_text}] — every matching bullet, used to show
+// verbatim JD language behind a theme when a user clicks its prevalence bar.
+let RT_BULLETS_BY_THEME = {};
 
 Promise.all([
   fetch('./data.json').then(r=>r.json()),
@@ -1641,6 +1752,9 @@ Promise.all([
 ])
   .then(([data, rtClassification])=>{
     data.forEach(d => { d.dbt_named = String(d.has_dbt).toLowerCase() === 'true' ? 'named' : 'not_named'; });
+    if (rtClassification && rtClassification.bullets_by_theme) {
+      RT_BULLETS_BY_THEME = rtClassification.bullets_by_theme;
+    }
     if (rtClassification && rtClassification.jd_theme_sets) {
       const themeSets = rtClassification.jd_theme_sets;
       data.forEach(d => {
