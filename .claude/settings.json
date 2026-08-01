@@ -2,13 +2,30 @@
   "permissions": {
     "allow": [
       "Bash(curl:*)",
-      "Bash(python3 scripts/check_duplicate_jd.py:*)",
-      "Bash(python3 scripts/write_jd.py:*)",
-      "Bash(python3 -c:*)",
+      "Bash(python3:*)",
+      "Bash(python:*)",
+      "Bash(grep:*)",
+      "Bash(rg:*)",
+      "Bash(wc:*)",
+      "Bash(find:*)",
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(sed:*)",
+      "Bash(ls:*)",
+      "Bash(cp:*)",
+      "Bash(rm data/*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git show:*)",
+      "Bash(git log:*)",
       "WebFetch",
-      "Read(data/**)",
-      "Write(data/**)",
-      "Edit(data/**)"
+      "Read(//Users/jeremychia/Documents/Github/analytics-engineers-job-descriptions/**)",
+      "Write(//Users/jeremychia/Documents/Github/analytics-engineers-job-descriptions/data/**)",
+      "Edit(//Users/jeremychia/Documents/Github/analytics-engineers-job-descriptions/data/**)",
+      "Edit(//Users/jeremychia/Documents/Github/analytics-engineers-job-descriptions/analysis/**)",
+      "Edit(//Users/jeremychia/Documents/Github/analytics-engineers-job-descriptions/scripts/**)",
+      "Edit(//Users/jeremychia/Documents/Github/analytics-engineers-job-descriptions/.claude/**)"
     ]
   }
 }
