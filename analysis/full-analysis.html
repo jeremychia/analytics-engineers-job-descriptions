@@ -386,7 +386,7 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
 <section class="section" id="responsibility-taxonomy">
   <div class="section-label" id="rtLabel">A second, independent read of the same corpus</div>
   <h2 class="section-headline" id="rtHead">What the responsibilities actually say, bullet by bullet</h2>
-  <p class="section-body" id="rtBody">The dimensions above classify each JD as a whole. This section instead parses just the responsibilities section of each posting into individual bullets, and classifies <em>those</em> against a fixed 15-theme taxonomy - regex-based, not LLM, see <code>analysis/responsibility_taxonomy.py</code>. A JD can carry several themes at once, so the bars sum to well over 100%. n=<span id="rtN">—</span> of the active filter's JDs have a theme reading (a few have no archived JD text or no extractable responsibilities section).</p>
+  <p class="section-body" id="rtBody">The dimensions above classify each JD as a whole. This section instead parses just the responsibilities section of each posting into individual bullets, and classifies <em>those</em> against a fixed 16-theme taxonomy - regex-based, not LLM, see <code>analysis/responsibility_taxonomy.py</code>. A JD can carry several themes at once, so the bars sum to well over 100%. n=<span id="rtN">—</span> of the active filter's JDs have a theme reading (a few have no archived JD text or no extractable responsibilities section).</p>
   <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:1.5rem;align-items:start" class="rt-grid-wrap">
     <div class="card">
       <div class="card-title-row">
@@ -1727,6 +1727,7 @@ const RT_THEME_FIELDS = {
   'Performance & Cost Optimization': 'rt_perfcost',
   'Data Ownership (end-to-end)': 'rt_ownership',
   'Self-Service Enablement & Data Literacy': 'rt_selfservice',
+  'AI & Agentic Workflows': 'rt_ai',
   'Mentorship & Leadership': 'rt_mentorship',
   'Security, Privacy & Risk': 'rt_security',
   'Vendor & Tooling Evaluation': 'rt_vendor',
@@ -1738,8 +1739,8 @@ const RT_THEME_ORDER = [
   'Data Modeling & Transformation','Governance & Documentation','Architecture & Platform Strategy',
   'Pipeline Engineering & Orchestration','Data Infrastructure & Warehouse Ops',
   'Business Analysis & Insight Generation','Performance & Cost Optimization',
-  'Data Ownership (end-to-end)','Self-Service Enablement & Data Literacy','Mentorship & Leadership',
-  'Security, Privacy & Risk','Vendor & Tooling Evaluation',
+  'Data Ownership (end-to-end)','Self-Service Enablement & Data Literacy','AI & Agentic Workflows',
+  'Mentorship & Leadership','Security, Privacy & Risk','Vendor & Tooling Evaluation',
 ];
 // Populated on load from responsibility_classification.json's bullets_by_theme:
 // theme -> [{jd_id, bullet, matched_text}] — every matching bullet, used to show

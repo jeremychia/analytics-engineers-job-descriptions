@@ -48,7 +48,7 @@ JSON_FIELD_ORDER = [
     "collaboration_width", "data_team_maturity", "urgency", "work_arrangement",
     "language_gate_type", "language_gate_languages",
     "interview_stages", "ats_platform", "ats_job_id",
-] + BOOL_FIELDS + ["source_url", "evidence"]
+] + BOOL_FIELDS + ["required_tools", "preferred_tools", "source_url", "evidence"]
 
 
 def write_files(data: dict):
