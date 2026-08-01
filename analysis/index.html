@@ -42,6 +42,16 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .mode-toggle button.active { background: var(--accent); color: #fff; }
 @media (max-width: 640px) { .mode-toggle { top: auto; bottom: 1rem; box-shadow: 0 4px 16px rgba(0,0,0,0.2); } }
 
+.region-filter {
+  position: fixed; top: 0.6rem; left: 1rem; z-index: 500;
+  display: flex; align-items: center; gap: 0.4rem; background: #fff; border: 1px solid var(--border);
+  border-radius: 20px; padding: 0.3rem 0.9rem 0.3rem 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+.region-filter.hidden { display: none; }
+.region-filter label { font-size: 0.68rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.region-filter select { font-size: 0.76rem; font-family: inherit; border: none; background: transparent; color: var(--text); font-weight: 600; }
+@media (max-width: 640px) { .region-filter { top: auto; bottom: 1rem; left: 1rem; box-shadow: 0 4px 16px rgba(0,0,0,0.2); } }
+
 /* ── HERO / MODE PICKER ── */
 .hero {
   min-height: 62vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
@@ -178,6 +188,11 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
   <button type="button" data-mode="manager" onclick="setMode('manager')">Hiring manager</button>
 </div>
 
+<div class="region-filter hidden" id="regionFilter">
+  <label for="regionSelect">Region</label>
+  <select id="regionSelect" aria-label="Filter by region"></select>
+</div>
+
 <!-- HERO / MODE PICKER -->
 <section class="hero" id="hero">
   <div class="hero-eyebrow">AE/BI job market · 395 JDs classified</div>
@@ -200,8 +215,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 
   <section class="snapshot-section" id="snapshotSection">
     <div class="section-eyebrow">The corpus behind this page</div>
-    <h2 class="section-title" style="font-size:1.05rem">395 job descriptions, classified - not surveyed</h2>
-    <p class="section-intro" style="margin-bottom:0">Every stat and checklist item below is computed live from this dataset. Here's its shape, so you can judge how much weight to give it.</p>
+    <h2 class="section-title" style="font-size:1.05rem" id="snapshotTitle">395 job descriptions, classified - not surveyed</h2>
+    <p class="section-intro" style="margin-bottom:0">Every stat and checklist item below is computed live from this dataset. Use the region filter (top-left) to narrow it — most numbers move once you do, and some cells get too small to trust.</p>
     <div class="snapshot-grid" id="snapshotGrid"></div>
   </section>
 
@@ -212,6 +227,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
       <div class="section-eyebrow">Table stakes — screen for these first</div>
       <h2 class="section-title">Hygiene factors: they don't make a role good, but their absence should give you pause</h2>
       <p class="section-intro">Herzberg's two-factor theory draws a sharp line between what <strong>prevents dissatisfaction</strong> and what <strong>actually motivates</strong>. These six are hygiene. Clearing the bar is normal, not impressive - but a JD that fails several of them at once is telling you something.</p>
+      <p class="section-intro" id="hygieneSmallN" style="display:none;color:#92400e;font-weight:600;margin-top:-1.25rem"></p>
       <div class="hygiene-grid" id="hygieneGrid"></div>
     </section>
 
@@ -254,10 +270,39 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 </main>
 
 <script>
+let ALL_DATA = [];
 let DATA = [];
 let mode = null;
 try { mode = localStorage.getItem('aeMode'); } catch (e) {}
 let activeMotivators = new Set();
+let region = 'all';
+
+const REGION_LABELS = {
+  all: 'All regions', apac: 'APAC', uk_remote: 'UK / remote', benelux: 'Benelux', berlin: 'Berlin',
+  iberia: 'Iberia', other_europe: 'Other Europe', nordics: 'Nordics', france: 'France',
+  global_remote: 'Global remote', dach_other: 'DACH (other)', hamburg: 'Hamburg', baltics: 'Baltics',
+  ireland: 'Ireland', other: 'Other / unclear',
+};
+
+function buildRegionFilter() {
+  const counts = {};
+  ALL_DATA.forEach(d => { const r = d.geo_region || 'other'; counts[r] = (counts[r]||0)+1; });
+  const regions = Object.keys(counts).sort((a,b) => counts[b]-counts[a]);
+  const sel = document.getElementById('regionSelect');
+  sel.innerHTML = `<option value="all">All regions (${ALL_DATA.length})</option>` +
+    regions.map(r => `<option value="${r}">${REGION_LABELS[r]||r} (${counts[r]})</option>`).join('');
+  sel.value = region;
+  sel.addEventListener('change', () => {
+    region = sel.value;
+    applyRegionFilter();
+  });
+}
+
+function applyRegionFilter() {
+  DATA = region === 'all' ? ALL_DATA : ALL_DATA.filter(d => (d.geo_region || 'other') === region);
+  buildSnapshot();
+  buildHygiene();
+}
 
 function setMode(m) {
   mode = m;
@@ -265,6 +310,7 @@ function setMode(m) {
   document.getElementById('hero').style.display = 'none';
   document.getElementById('content').classList.add('visible');
   document.getElementById('modeToggle').classList.remove('hidden');
+  document.getElementById('regionFilter').classList.remove('hidden');
   document.querySelectorAll('.mode-toggle button').forEach(b => b.classList.toggle('active', b.dataset.mode === m));
   document.getElementById('seekerContent').style.display = m === 'seeker' ? 'block' : 'none';
   document.getElementById('managerContent').style.display = m === 'manager' ? 'block' : 'none';
@@ -275,6 +321,13 @@ function setMode(m) {
 function pct(filterFn) { const n = DATA.length || 1; return Math.round(DATA.filter(filterFn).length / n * 100); }
 
 function buildHygiene() {
+  const smallN = document.getElementById('hygieneSmallN');
+  if (DATA.length < 20) {
+    smallN.style.display = 'block';
+    smallN.textContent = `Only ${DATA.length} JDs in this region — percentages below swing hard on a single posting. Treat as anecdote, not signal.`;
+  } else {
+    smallN.style.display = 'none';
+  }
   const salaryPct = pct(d => d.salary_min && d.salary_max);
   const workStatedPct = pct(d => d.work_arrangement && d.work_arrangement !== 'not_stated');
   const hardLangPct = pct(d => d.language_gate_type === 'hard');
@@ -311,6 +364,9 @@ function buildHygiene() {
 // ── Snapshot: dataset composition, shown once above mode content ──
 function buildSnapshot() {
   const n = DATA.length || 1;
+  document.getElementById('snapshotTitle').textContent = region === 'all'
+    ? `${ALL_DATA.length} job descriptions, classified - not surveyed`
+    : `${DATA.length} of ${ALL_DATA.length} — ${REGION_LABELS[region]||region} only`;
   const groupPct = (field, order) => order.map(([key, label]) => ({
     label, pct: Math.round(DATA.filter(d => d[field] === key).length / n * 100),
   }));
@@ -576,7 +632,9 @@ function buildAssessCards() {
 }
 
 fetch('./data.json').then(r => r.json()).then(data => {
+  ALL_DATA = data;
   DATA = data;
+  buildRegionFilter();
   buildSnapshot();
   buildHygiene();
   buildManagerHygiene();
