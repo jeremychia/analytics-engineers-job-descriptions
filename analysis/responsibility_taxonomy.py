@@ -4,7 +4,7 @@ Responsibility-theme extraction and classification across the JD corpus.
 Parses the "responsibilities" section out of each data/<jd_id>/jd_archive.md
 (handles clean markdown headings, unstructured plain-text scrapes, and
 condensed single-paragraph summaries), then classifies each bullet against a
-fixed 15-theme taxonomy via keyword matching (multi-label — a bullet can hit
+fixed 16-theme taxonomy via keyword matching (multi-label — a bullet can hit
 more than one theme).
 
 For JDs the regex extractor can't parse at all (prose-only descriptions,
@@ -19,7 +19,7 @@ unparseable JDs show up, using the same jd_id keys.
 Inputs (read from analysis/):
   responsibility_bullets_llm.json    — optional LLM-interpreted fallback bullets
 
-Also cross-tabs the 15 responsibility themes against the Layer B codebook dimensions
+Also cross-tabs the 16 responsibility themes against the Layer B codebook dimensions
 in data.json (seniority, autonomy_level, jd_authorship, data_team_maturity, etc.) to
 surface which specific responsibilities go with which behavioural traits. Pairs where
 a theme's regex keywords and a dimension's own coding rubric detect the same textual
@@ -60,18 +60,34 @@ OUT_DIR = Path(__file__).parent
 
 START_RE = re.compile(
     r'^(your |key |main |core |primary |essential )?responsibilit(y|ies)$'
+    r'|^key job responsibilit(y|ies)$'
     r'|^task(s)?( and responsibilit(y|ies))?$'
     r'|^you will be responsible (to|for)$'
     r'|^what you.ll be up to'
-    r'|^what you.ll (do|be doing|work on|own|tackle)( in.*)?$'
+    r'|^what you.[dl]l? (do|be doing|be working on|work on|own|tackle)( in.*)?$'
     r'|^what you will (do|be doing|work on|own|tackle)$'
+    r'|^what you.ll achieve:?$'
+    r'|^what will you do$'
     r'|^your (role|impact|day.to.day|mission)$'
     r'|^the role$'
+    r'|^in this role:?$'
     r'|^main tasks( and responsibilities)?$'
+    r'|^tasks and remit$'
+    r'|^responsibilities and tasks:?$'
     r'|^role (summary|overview|description)$'
     r'|^day.to.day$'
     r'|^in this role.*you.ll$'
-    r'|^the impact you.ll have$'
+    # Bounded to 60 chars and requires a leading "As a/an" + a trailing "you will" -
+    # checked against the corpus for false positives (see 2026-08-01 audit): every
+    # line matching this shape was a genuine role-title clause opening the
+    # responsibilities section, not an unrelated sentence with the same words.
+    # Path 2 (the only path this pattern is used from) additionally restricts
+    # START_RE to lines under 70 chars, bounding the risk further.
+    r'|^as (a|an) .{2,60}, ?you will:?$'
+    r'|^in this role,? you will\.{0,2}$'
+    r'|^your (key )?(activities and )?responsibilit(y|ies):?$'
+    r'|^your daily tasks$'
+    r'|^the impact you.ll (have|make)$'
     r'|^how you.ll (spend your time|make an impact)$',
     re.I,
 )
@@ -106,7 +122,6 @@ STOP_RE = re.compile(
     r'|^skills'
     r'|^experience'
     r'|^you (have|are|bring|hold|possess)'
-    r'|^to succeed'
     r'|^location'
     r'|^employment type'
     r'|^department'
@@ -187,7 +202,15 @@ def extract_responsibility_bullets(text: str) -> list[str]:
     in_section = False
     count = 0
     for p in flat:
-        pp = p.rstrip(":")
+        # rstrip(".:?") not just ":" - some JD authors close a heading with a
+        # stylistic ellipsis ("In this role, You will.."), double period, or
+        # question mark ("What will you do?"), which the old ":"-only strip
+        # left trailing, tripping the `not pp.endswith(".")` guard below and
+        # silently making a genuine short heading register as a prose
+        # sentence instead. Confirmed via the L'Oréal ("In this role, You
+        # will..") and Aubay Portugal ("What will you do?") JDs in the
+        # 2026-08-01 audit.
+        pp = p.rstrip(".:?")
         short = len(pp) < 70 and not pp.endswith(".")
         if short and START_RE.match(pp):
             in_section = True
@@ -225,6 +248,41 @@ def clean_bullet(b: str) -> str:
 # Taxonomy — 15 responsibility themes, keyword-matched (multi-label per bullet).
 # Each pattern was tuned against a manual read of a random bullet sample, then
 # checked against the corpus-wide leftover ("uncategorized") pool.
+#
+# GAP FOUND AND FIXED 2026-08-01 (corpus n=395): an uncategorized-bullet audit
+# found "AI & Agentic Workflows" was missing despite being a real, sizeable
+# pattern — 130/349 parsed JDs (37%) had at least one responsibility bullet
+# referencing AI/ML/agentic work, 40 of 178 such bullets matched no theme at
+# all, and the rest scattered into loosely-related themes (Data Modeling, BI
+# & Reporting, Pipeline Engineering) purely on incidental keyword overlap.
+# Layer B already had a whole-JD codebook dimension for this (`ai_role`:
+# none/ai_user/ai_enabler, coded on 132/395 = 33% of the corpus) — the gap
+# was specifically that the finer-grained, per-bullet taxonomy had no
+# counterpart theme. Added as the 16th theme below; see AI_FALSE_POSITIVE_RE
+# for the one false-positive collision found and excluded (Looker/LookML "ML
+# models" ≠ machine learning), and OVERLAP_PAIRS for why this theme is
+# construct-overlapping with `ai_role` and excluded from relationship
+# findings the same way "Data Quality & Testing" is excluded against
+# `testing_framing`. Deliberately scoped to AI/ML/agentic content only, not
+# general "automate/automation" language — see the theme's own inline
+# comment for why bare "automat*" was left out.
+#
+# Two smaller, lower-priority patterns noticed in the same audit, deliberately
+# NOT proposed as new themes (too small / too structurally different to be
+# worth a 17th theme):
+#   - Client/customer-facing responsibilities (client relationship management,
+#     presales, business development) appear in ~10 JDs, concentrated in
+#     consultancies/agencies (Turner & Townsend, Mantel Group, Holistics,
+#     Joon Solutions, etc.). Real pattern, but narrow enough — and different
+#     enough from the internal-single-employer framing every other theme
+#     assumes — that folding it in would need its own employment-model
+#     handling, not just a regex.
+#   - Non-English bullets are invisible to every theme (regex vocabulary is
+#     English-only) — e.g. 2 Dutch bullets in klimaatroute's JD ("Bewaken en
+#     verbeteren van de prestaties...") land in "uncategorized" purely
+#     because of language, not content. Confirmed as a parser/vocabulary
+#     limitation (1 JD, 2 bullets) rather than a corpus-wide issue worth a
+#     multi-language taxonomy investment at current scale.
 # ---------------------------------------------------------------------------
 
 TAXONOMY = {
@@ -290,6 +348,22 @@ TAXONOMY = {
     # in this corpus are genuinely about data/product ownership and a data-object
     # allowlist would have been longer and more brittle than this short denylist.
     "Data Ownership (end-to-end)": r'\b(own(ership)?\b|end.to.end|full.stack|from ingestion to)',
+    # Added 2026-08-01 after an uncategorized-bullet audit found 130/349 parsed JDs
+    # (37%) had at least one AI/agentic-referencing bullet, 40 of which matched no
+    # theme at all and the rest scattered into unrelated themes purely on incidental
+    # keyword overlap (e.g. "AI-generated code" landing in Data Quality & Testing
+    # only because it also said "review"). This is the bullet-level counterpart to
+    # the existing whole-JD `ai_role` Layer B dimension (none/ai_user/ai_enabler,
+    # coded on 132/395 = 33% of the corpus) — see OVERLAP_PAIRS below, this theme
+    # is construct-overlapping with `ai_role` by design and excluded from findings
+    # the same way "Data Quality & Testing" is excluded against `testing_framing`.
+    # Deliberately scoped to AI/ML/agentic content only, not general automation —
+    # a smaller "automate internal work" cluster found in the same audit (~10
+    # bullets) was about half AI-tool-driven ("automate reconciliation tasks" via
+    # Claude Code/Cursor, already caught here) and half unrelated process
+    # automation with no AI framing at all; folding bare "automat*" in here would
+    # have pulled in that unrelated half and diluted what this theme measures.
+    "AI & Agentic Workflows": r'\b(AI|ML|machine learning|LLM|GenAI|generative AI|agentic|AI agents?|AI-assisted|AI-driven|AI-powered|AI-native|AI coding|copilot|prompts?)\b',
 }
 
 # Applied after an "own(ership)" match to drop reflexive/career-development false positives
@@ -312,6 +386,19 @@ TRANSFORM_FALSE_POSITIVE_RE = re.compile(
     re.I,
 )
 
+# Applied after an AI & Agentic Workflows match to drop the one recurring false
+# positive found in the 2026-08-01 audit: "ML" as a bare abbreviation for a
+# Looker/LookML model artifact ("BI tool semantic layer (ML models, explores,
+# derived tables)"), not machine learning. Scoped narrowly to that Looker/BI-tool
+# context specifically, rather than suppressing "ML models" everywhere, since a
+# bullet like "train and deploy ML models for churn prediction" with no other AI
+# keyword is a genuine machine-learning reference and must still match.
+AI_FALSE_POSITIVE_RE = re.compile(
+    r'\bLooker\b.{0,40}\bML models?\b'
+    r'|\bsemantic layer\s*\(\s*ML models?\b',
+    re.I,
+)
+
 TAXONOMY_DESCRIPTIONS = {
     "Data Modeling & Transformation": "Building/maintaining dbt models, semantic layers, metrics definitions, dimensional models — turning raw data into trusted, reusable structures.",
     "Pipeline Engineering & Orchestration": "ETL/ELT pipelines, ingestion, orchestration tooling (Airflow/Dagster/Prefect), moving data end to end.",
@@ -328,6 +415,7 @@ TAXONOMY_DESCRIPTIONS = {
     "Vendor & Tooling Evaluation": "Evaluating/selecting third-party tools and vendors.",
     "Security, Privacy & Risk": "Data privacy, security, PII/GDPR handling, risk management.",
     "Data Ownership (end-to-end)": "Explicit end-to-end/full-stack ownership language, independent of which stage.",
+    "AI & Agentic Workflows": "Using AI/agentic tools to accelerate the candidate's own work (Claude Code, Cursor, Copilot), or building data infrastructure that AI/ML systems consume or run on — the bullet-level counterpart to the `ai_role` Layer B dimension.",
 }
 
 COMPILED = {k: re.compile(v, re.I) for k, v in TAXONOMY.items()}
@@ -397,6 +485,7 @@ OVERLAP_PAIRS = {
     ("Data Infrastructure & Warehouse Ops", "has_snowflake"),
     ("Data Infrastructure & Warehouse Ops", "has_databricks"),
     ("Pipeline Engineering & Orchestration", "has_airflow"),
+    ("AI & Agentic Workflows", "ai_role"),
 }
 
 DIMENSIONS_TO_TEST = [
@@ -596,6 +685,7 @@ def main():
             for cat, fp_re in (
                 ("Data Ownership (end-to-end)", OWNERSHIP_FALSE_POSITIVE_RE),
                 ("Data Modeling & Transformation", TRANSFORM_FALSE_POSITIVE_RE),
+                ("AI & Agentic Workflows", AI_FALSE_POSITIVE_RE),
             ):
                 m = matches.get(cat)
                 while m and any(
@@ -807,7 +897,7 @@ def write_relationships_section(lines, rel):
     lines.append("### Critical assessment: how this whole approach could be wrong\n")
     lines.append(
         "- **Multiple comparisons.** The full sweep tests every theme against every dimension "
-        f"({rel['n_pairs_tested']} pairs tested in total across all 15 themes) with no Bonferroni or FDR "
+        f"({rel['n_pairs_tested']} pairs tested in total across all 16 themes) with no Bonferroni or FDR "
         "correction. At "
         "p<0.01 with that many tests, a meaningful number of the \"clean\" pairs are expected to be false "
         "positives by chance alone — the effect-size floor (V) and the stratification checks are the "
