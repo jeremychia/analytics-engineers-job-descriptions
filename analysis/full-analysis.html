@@ -248,6 +248,22 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
 .tool-row-n { width: 34px; flex-shrink: 0; font-size: 0.72rem; font-weight: 700; color: var(--text); }
 .rt-chart-wrap { position: relative; height: 460px; }
 
+.salary-caveat { font-size: 0.78rem; color: var(--muted); line-height: 1.65; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem 1.1rem; margin-bottom: 1.5rem; }
+.salary-legend { display: flex; gap: 1.4rem; margin-bottom: 1.5rem; font-size: 0.78rem; color: var(--muted); flex-wrap: wrap; }
+.salary-group { margin-bottom: 1.75rem; }
+.salary-group:last-child { margin-bottom: 0; }
+.salary-group-title { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.85rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.salary-row { display: grid; grid-template-columns: 190px 1fr; align-items: center; gap: 0.75rem; padding: 0.5rem 0; }
+.salary-row-label { font-size: 0.74rem; color: var(--muted); text-align: right; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.salary-row-label b { color: var(--text); font-weight: 600; display: block; font-size: 0.76rem; }
+.salary-row-track { position: relative; height: 20px; }
+.salary-range-line { position: absolute; top: 50%; height: 2px; transform: translateY(-50%); border-radius: 1px; }
+.salary-range-dot { position: absolute; top: 50%; width: 9px; height: 9px; border-radius: 50%; transform: translate(-50%,-50%); border: 2px solid var(--bg,#fff); }
+.salary-range-value { position: absolute; top: -1.05rem; transform: translateX(-100%); font-size: 0.66rem; font-weight: 600; color: var(--muted); white-space: nowrap; }
+.salary-axis-ticks { display: grid; grid-template-columns: 190px 1fr; margin-top: 0.35rem; }
+.salary-axis-inner { position: relative; height: 14px; }
+.salary-tick { position: absolute; font-size: 0.68rem; color: var(--muted); }
+
 /* ── PERSONA TOGGLE (fixed, top-right of screen) ── */
 .persona-toggle {
   position: fixed; top: 0.55rem; right: 1rem; z-index: 500;
@@ -477,7 +493,7 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
         <label>X axis</label>
         <select id="xAxis">
           <option value="collaboration_width">Collaboration width</option>
-          <option value="salary_mid">Salary midpoint (EUR)</option>
+          <option value="salary_mid">Salary midpoint (EUR, annual only, n≈16)</option>
         </select>
       </div>
       <div class="ctrl-group">
@@ -572,6 +588,19 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
     </div>
   </div>
 </section>
+
+<!-- SECTION: SALARY (annual ranges only — monthly/no-period figures excluded to avoid mixing scales) -->
+<section class="section" id="salary">
+  <div class="section-label">Reference</div>
+  <h2 class="section-headline">What the postings that disclosed a salary actually said</h2>
+  <p class="section-body" id="salaryBody">Loading…</p>
+  <div class="card">
+    <div class="card-title">Annual salary ranges by posting</div>
+    <p class="card-sub" id="salarySub">Each line is one job posting's stated min–max range · grouped by currency, sorted by midpoint</p>
+    <div id="salaryCaveat" class="salary-caveat"></div>
+    <div id="salaryChart"></div>
+  </div>
+</section>
 </main>
 
 <div id="tooltip"></div>
@@ -589,8 +618,8 @@ const TIP_LABEL = { seeker: 'Apply this', manager: 'For your JD' };
 // Section order: seekers get targeting findings first, then the stack (what to learn).
 // Managers get the baseline, then the saturated signals (what NOT to rely on), then inference channels.
 const SECTION_ORDER = {
-  seeker:  ['summary','relationships','responsibility-taxonomy','nulls','stack','explorer','orientation','geo-section'],
-  manager: ['summary','nulls','relationships','responsibility-taxonomy','explorer','orientation','stack','geo-section'],
+  seeker:  ['summary','relationships','responsibility-taxonomy','nulls','stack','salary','explorer','orientation','geo-section'],
+  manager: ['summary','nulls','relationships','responsibility-taxonomy','explorer','orientation','stack','salary','geo-section'],
 };
 // Panel order: seeker = effect size (discriminating power is what targeting needs);
 // manager = consequence for writing a posting (title language first — it's the cheapest fix).
@@ -633,6 +662,7 @@ const NAV_LABELS = {
   orientation:   { seeker: 'Reference',     manager: 'Reference' },
   'geo-section': { seeker: 'Coverage',      manager: 'Coverage' },
   stack:         { seeker: 'Stack',         manager: 'Stack' },
+  salary:        { seeker: 'Salary',        manager: 'Salary' },
 };
 const COPY = {
   heroH1: {
@@ -1387,7 +1417,7 @@ function buildScatter(data) {
   const groups = {};
   data.forEach(d => {
     const xVal = xKey === 'salary_mid'
-      ? (d.salary_min && d.salary_max && d.salary_currency === 'EUR' ? (parseFloat(d.salary_min)+parseFloat(d.salary_max))/2 : null)
+      ? (d.salary_min && d.salary_max && d.salary_currency === 'EUR' && d.salary_period === 'annual' ? (parseFloat(d.salary_min)+parseFloat(d.salary_max))/2 : null)
       : parseFloat(d.collaboration_width) || null;
     if (xVal === null || !riskY[d.domain_risk]) return;
     const cat = d[colKey] || 'unknown';
@@ -1407,7 +1437,7 @@ function buildScatter(data) {
       responsive: true, maintainAspectRatio: false, animation: { duration: 250 },
       plugins: { legend: { display: false }, tooltip: { enabled: false } },
       scales: {
-        x: { title: { display: true, text: xKey==='salary_mid' ? 'Salary midpoint (EUR)' : 'Collaboration width (named partner teams)', font:{size:11} }, grid:{color:'#f0f0ed'}, ticks:{font:{size:10}} },
+        x: { title: { display: true, text: xKey==='salary_mid' ? 'Salary midpoint (EUR, annual only)' : 'Collaboration width (named partner teams)', font:{size:11} }, grid:{color:'#f0f0ed'}, ticks:{font:{size:10}} },
         y: { min:0.5, max:3.5, ticks:{stepSize:1, callback:v=>({1:'Low risk',2:'Moderate',3:'High risk'}[v]||''), font:{size:10}}, grid:{color:'#f0f0ed'} },
       },
       onHover: (e,els) => { e.native.target.style.cursor = els.length?'pointer':'default'; },
@@ -1559,6 +1589,97 @@ function buildToolChart(data) {
   });
 }
 
+// ── Salary: dumbbell of annual ranges, grouped by currency ──
+// Restricted to salary_period === 'annual' — the corpus also has monthly-quoted
+// figures (Dutch/German market convention) and figures with no period stated at all;
+// mixing either into this chart would silently distort the scale (see 2026-08-01 audit,
+// which also removed 4 salary values found to have no basis in their own JD's archived
+// text — this chart only ever reflects extracted, not estimated, figures).
+const SALARY_CUR_COLOR = { EUR: '#1d4ed8', GBP: '#eb6834', USD: '#16a34a', JPY: '#9ca3af' };
+const SALARY_CUR_SYM   = { EUR: '€', GBP: '£', USD: '$', JPY: '¥' };
+function salaryFmt(n) { return Math.round(n/1000) + 'k'; }
+
+function buildSalary(data) {
+  const annual = data.filter(d => d.salary_period === 'annual' && d.salary_min && d.salary_max);
+  const n = annual.length;
+  const nAll = data.filter(d => d.salary_min && d.salary_max).length;
+  document.getElementById('salaryBody').innerHTML =
+    `${n} of ${data.length} filtered postings (${nAll - n} more stated a monthly figure or a number with no period at all, and are excluded here to avoid mixing scales) named an explicit annual salary range. Most postings in this market state no salary at all — this is what the minority that did, said, not a market survey.`;
+  document.getElementById('salaryCaveat').innerHTML = n < 5
+    ? `Too few filtered postings (n=${n}) with an annual range to chart meaningfully — widen the role filter above.`
+    : `Sample skews EU/UK — companies willing to disclose a salary in this market are not necessarily representative of the market overall. Each line is one posting's own stated min–max; nothing here is inferred or averaged.`;
+
+  const wrap = document.getElementById('salaryChart');
+  if (n < 5) { wrap.innerHTML = ''; return; }
+
+  const byCurrency = {};
+  annual.forEach(d => { (byCurrency[d.salary_currency] = byCurrency[d.salary_currency] || []).push(d); });
+  const currencies = Object.keys(byCurrency).sort((a,b) => byCurrency[b].length - byCurrency[a].length);
+
+  const legendHtml = currencies.map(cur => `
+    <div class="legend-item"><div class="legend-dot" style="background:${SALARY_CUR_COLOR[cur]||'#9ca3af'}"></div>${cur} (n=${byCurrency[cur].length})</div>`).join('');
+
+  const groupsHtml = currencies.map(cur => {
+    const rows = byCurrency[cur].slice().sort((a,b) => (parseFloat(a.salary_min)+parseFloat(a.salary_max)) - (parseFloat(b.salary_min)+parseFloat(b.salary_max)));
+    const vals = rows.flatMap(d => [parseFloat(d.salary_min), parseFloat(d.salary_max)]);
+    const lo = Math.min(...vals), hi = Math.max(...vals);
+    const pad = (hi - lo) * 0.08 || 1;
+    const axisMin = Math.max(0, lo - pad), axisMax = hi + pad;
+    const pct = v => ((v - axisMin) / (axisMax - axisMin)) * 100;
+    const color = SALARY_CUR_COLOR[cur] || '#9ca3af';
+    const sym = SALARY_CUR_SYM[cur] || '';
+
+    const rowsHtml = rows.map(d => {
+      const x1 = pct(parseFloat(d.salary_min)), x2 = pct(parseFloat(d.salary_max));
+      return `
+      <div class="salary-row" data-jd="${d.jd_id}">
+        <div class="salary-row-label"><b>${d.company}</b>${LABELS.seniority[d.seniority]||d.seniority||''}</div>
+        <div class="salary-row-track">
+          <div class="salary-range-line" style="left:${x1}%;width:${Math.max(x2-x1,0.5)}%;background:${color}"></div>
+          <div class="salary-range-dot" style="left:${x1}%;background:${color}"></div>
+          <div class="salary-range-dot" style="left:${x2}%;background:${color}"></div>
+          <div class="salary-range-value" style="left:${x2}%">${sym}${salaryFmt(d.salary_min)}–${sym}${salaryFmt(d.salary_max)}</div>
+        </div>
+      </div>`;
+    }).join('');
+
+    return `
+      <div class="salary-group">
+        <div class="salary-group-title">${cur} — annual (n=${rows.length})</div>
+        ${rowsHtml}
+        <div class="salary-axis-ticks">
+          <div class="salary-axis-spacer"></div>
+          <div class="salary-axis-inner">
+            <span class="salary-tick" style="left:0%">${sym}${salaryFmt(axisMin)}</span>
+            <span class="salary-tick" style="left:50%;transform:translateX(-50%)">${sym}${salaryFmt((axisMin+axisMax)/2)}</span>
+            <span class="salary-tick" style="left:100%;transform:translateX(-100%)">${sym}${salaryFmt(axisMax)}</span>
+          </div>
+        </div>
+      </div>`;
+  }).join('');
+
+  wrap.innerHTML = `<div class="salary-legend">${legendHtml}</div>${groupsHtml}`;
+
+  const tt = document.getElementById('tooltip');
+  wrap.querySelectorAll('.salary-row').forEach(row => {
+    const rec = annual.find(d => d.jd_id === row.dataset.jd);
+    if (!rec) return;
+    row.addEventListener('mousemove', e => {
+      const sym = SALARY_CUR_SYM[rec.salary_currency] || '';
+      tt.innerHTML = `
+        <div class="tt-company">${rec.company}</div>
+        <div class="tt-role">${rec.role}</div>
+        <div class="tt-field"><div class="tt-label">Range</div><div class="tt-quote">${sym}${Number(rec.salary_min).toLocaleString()}–${sym}${Number(rec.salary_max).toLocaleString()} ${rec.salary_currency} / year</div></div>
+        <div class="tt-field"><div class="tt-label">Seniority</div><div class="tt-quote">${LABELS.seniority[rec.seniority]||rec.seniority||'—'}</div></div>`;
+      const pad=14;
+      tt.style.left=(e.clientX+pad+310>window.innerWidth?e.clientX-310-pad:e.clientX+pad)+'px';
+      tt.style.top=(e.clientY+pad+150>window.innerHeight?e.clientY-150-pad:e.clientY+pad)+'px';
+      tt.classList.add('visible');
+    });
+    row.addEventListener('mouseleave', () => tt.classList.remove('visible'));
+  });
+}
+
 // ── Responsibility taxonomy: theme prevalence + co-occurrence (lift) ──
 // Lift(A,B) = P(A and B) / (P(A) * P(B)) — how much more (or less) often two themes
 // co-occur than you'd expect if a JD's responsibilities were assembled from each theme
@@ -1706,6 +1827,7 @@ function render() {
   buildOrientation();
   buildGeo(activeData);
   buildToolChart(activeData);
+  buildSalary(activeData);
 }
 
 // Responsibility-theme tags (from analysis/responsibility_taxonomy.py) are a separate

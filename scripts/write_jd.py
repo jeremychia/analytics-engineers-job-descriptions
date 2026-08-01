@@ -41,7 +41,7 @@ LAYER_B_FIELDS = [
 
 JSON_FIELD_ORDER = [
     "jd_id", "company", "role", "job_location", "seniority", "role_type",
-    "salary_min", "salary_max", "salary_currency",
+    "salary_min", "salary_max", "salary_currency", "salary_period",
     "jd_authorship", "stakeholder_orientation", "autonomy_level",
     "ai_role", "testing_framing", "loss_aversion_framing",
     "greenfield_vs_fix", "velocity_vs_rigour", "domain_risk",
