@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl:*)",
+      "Bash(python3 scripts/check_duplicate_jd.py:*)",
+      "Bash(python3 scripts/write_jd.py:*)",
+      "Bash(python3 -c:*)",
+      "WebFetch",
+      "Read(data/**)",
+      "Write(data/**)",
+      "Edit(data/**)"
+    ]
+  }
+}
