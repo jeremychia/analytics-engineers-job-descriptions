@@ -263,6 +263,15 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
 .salary-axis-ticks { display: grid; grid-template-columns: 190px 1fr; margin-top: 0.35rem; }
 .salary-axis-inner { position: relative; height: 14px; }
 .salary-tick { position: absolute; font-size: 0.68rem; color: var(--muted); }
+.salary-row.inferred .salary-row-label b::after { content: ' *'; color: #d97706; }
+.salary-est-legend { display: flex; gap: 1.4rem; margin-bottom: 1rem; font-size: 0.76rem; color: var(--muted); flex-wrap: wrap; align-items: center; }
+.salary-est-legend .legend-dot.inferred { background: repeating-linear-gradient(45deg, #d97706, #d97706 2px, #fff 2px, #fff 4px); border: 1px solid #d97706; }
+.senior-sal-row { display: grid; grid-template-columns: 90px 1fr 100px; align-items: center; gap: 0.75rem; padding: 0.45rem 0; font-size: 0.78rem; }
+.senior-sal-label { font-weight: 600; color: var(--text); }
+.senior-sal-track { position: relative; height: 8px; background: var(--surface2); border-radius: 4px; overflow: hidden; }
+.senior-sal-range { position: absolute; top: 0; height: 100%; background: rgba(29,78,216,0.25); border-radius: 4px; }
+.senior-sal-median { position: absolute; top: -2px; width: 3px; height: 12px; background: var(--accent); border-radius: 1px; }
+.senior-sal-value { text-align: right; color: var(--muted); white-space: nowrap; }
 
 /* ── PERSONA TOGGLE (fixed, top-right of screen) ── */
 .persona-toggle {
@@ -589,17 +598,41 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
   </div>
 </section>
 
-<!-- SECTION: SALARY (annual ranges only — monthly/no-period figures excluded to avoid mixing scales) -->
+<!-- SECTION: SALARY (summary leads; both per-posting detail views are opt-in) -->
 <section class="section" id="salary">
   <div class="section-label">Reference</div>
   <h2 class="section-headline">What the postings that disclosed a salary actually said</h2>
   <p class="section-body" id="salaryBody">Loading…</p>
+
   <div class="card">
-    <div class="card-title">Annual salary ranges by posting</div>
-    <p class="card-sub" id="salarySub">Each line is one job posting's stated min–max range · grouped by currency, sorted by midpoint</p>
-    <div id="salaryCaveat" class="salary-caveat"></div>
-    <div id="salaryChart"></div>
+    <div class="card-title-row">
+      <div class="card-title">Median pay by seniority, EUR/annual-equivalent</div>
+      <span class="rt-click-badge" style="background:rgba(217,119,6,0.1);border-color:rgba(217,119,6,0.3);color:#92400e">⚠ estimated, not extracted</span>
+    </div>
+    <p class="card-sub" id="salaryEstSub">Every disclosed figure, converting non-EUR currencies at a fixed rate and — where a posting states no pay period — inferring monthly vs. annual from the number's magnitude. Bar spans the observed min–max within that band; tick marks the median.</p>
+    <div id="salaryEstCaveat" class="salary-caveat"></div>
+    <p class="card-sub" id="salaryEstSenioritySub" style="margin-bottom:0.85rem"></p>
+    <div id="salaryEstSeniority"></div>
   </div>
+
+  <details class="rel-details" style="margin-top:1.25rem">
+    <summary>Show individual postings — extracted-only (n≈annual subset)</summary>
+    <div class="rel-details-body">
+      <div class="card">
+        <div class="card-title">Annual salary ranges by posting</div>
+        <p class="card-sub" id="salarySub">Each line is one job posting's stated min–max range · grouped by currency, sorted by midpoint · figures as extracted, no conversion or inference</p>
+        <div id="salaryCaveat" class="salary-caveat"></div>
+        <div id="salaryChart"></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="rel-details" style="margin-top:0.75rem">
+    <summary>Show individual postings behind the estimated view above</summary>
+    <div class="rel-details-body">
+      <div id="salaryEstChart"></div>
+    </div>
+  </details>
 </section>
 </main>
 
@@ -1604,10 +1637,10 @@ function buildSalary(data) {
   const n = annual.length;
   const nAll = data.filter(d => d.salary_min && d.salary_max).length;
   document.getElementById('salaryBody').innerHTML =
-    `${n} of ${data.length} filtered postings (${nAll - n} more stated a monthly figure or a number with no period at all, and are excluded here to avoid mixing scales) named an explicit annual salary range. Most postings in this market state no salary at all — this is what the minority that did, said, not a market survey.`;
+    `${nAll} of ${data.length} filtered postings named a salary at all — most in this market state none. Sample skews EU/UK; companies willing to disclose are not necessarily representative of the market overall. The summary below uses all ${nAll}; the sections beneath it show the individual postings, extracted-only or converted/estimated.`;
   document.getElementById('salaryCaveat').innerHTML = n < 5
-    ? `Too few filtered postings (n=${n}) with an annual range to chart meaningfully — widen the role filter above.`
-    : `Sample skews EU/UK — companies willing to disclose a salary in this market are not necessarily representative of the market overall. Each line is one posting's own stated min–max; nothing here is inferred or averaged.`;
+    ? `Too few filtered postings (n=${n}) with an explicitly stated annual range to chart meaningfully — widen the role filter above.`
+    : `n=${n} postings stated an explicit annual range (${nAll - n} more stated a monthly figure or a number with no period at all, excluded here to avoid mixing scales). Each line is one posting's own stated min–max; nothing in this chart is inferred or averaged.`;
 
   const wrap = document.getElementById('salaryChart');
   if (n < 5) { wrap.innerHTML = ''; return; }
@@ -1678,6 +1711,151 @@ function buildSalary(data) {
     });
     row.addEventListener('mouseleave', () => tt.classList.remove('visible'));
   });
+}
+
+// ── Salary (estimated): normalizes every disclosed figure to EUR/annual ──
+// This is a DIFFERENT, deliberately separate view from buildSalary() above.
+// buildSalary() only ever plots extracted figures (salary_period === 'annual',
+// stated explicitly in the source JD) — that discipline exists because a prior
+// audit found fabricated/cross-contaminated salary values and inferred-from-
+// magnitude periods had silently corrupted an earlier version of this chart
+// (see analysis git history, "fix(data): correct fabricated/mislabeled salary
+// data"). This view knowingly reintroduces estimation — fixed FX rates, and a
+// magnitude+region heuristic for the ~40% of records with no stated period —
+// to answer "what's the market actually paying" at a usable sample size. Every
+// inferred cell is flagged inline (row marker + tooltip breakdown) precisely
+// so this estimated view is never mistaken for the extraction-only one above it.
+const SALARY_FX_TO_EUR = { EUR: 1.0, GBP: 1.17, USD: 0.92, PLN: 0.23, JPY: 0.0061, VND: 0.000038 };
+// Below this EUR-equivalent monthly-scale threshold, a no-period figure reads as
+// a monthly wage (matches this corpus's real monthly range, e.g. Dutch/German
+// listings quoting €2,000–€8,000/month); above it, annual. Applied per-currency
+// after FX conversion so it isn't distorted by any single currency's raw scale.
+const SALARY_INFERENCE_THRESHOLD_EUR = 12000;
+
+function estimateSalaryEUR(d) {
+  const cur = d.salary_currency;
+  const fx = SALARY_FX_TO_EUR[cur];
+  if (!fx || !d.salary_min) return null;
+  let period = d.salary_period;
+  let periodInferred = false;
+  if (period !== 'annual' && period !== 'monthly') {
+    const loEur = parseFloat(d.salary_min) * fx;
+    period = loEur < SALARY_INFERENCE_THRESHOLD_EUR ? 'monthly' : 'annual';
+    periodInferred = true;
+  }
+  const mult = period === 'monthly' ? 12 : 1;
+  const lo = Math.round(parseFloat(d.salary_min) * fx * mult);
+  const hi = Math.round((parseFloat(d.salary_max) || parseFloat(d.salary_min)) * fx * mult);
+  return { lo, hi, mid: (lo + hi) / 2, period, periodInferred, currencyConverted: cur !== 'EUR' };
+}
+
+function buildSalaryEstimated(data) {
+  const withSalary = data.filter(d => d.salary_min && d.salary_currency && SALARY_FX_TO_EUR[d.salary_currency]);
+  const est = withSalary.map(d => ({ d, e: estimateSalaryEUR(d) })).filter(x => x.e);
+  const n = est.length;
+  const nExcluded = data.filter(d => d.salary_min).length - n;
+
+  document.getElementById('salaryEstCaveat').innerHTML = n < 5
+    ? `Too few filtered postings (n=${n}) to chart — widen the role filter above.`
+    : `n=${n} postings normalized to EUR/annual${nExcluded ? ` (${nExcluded} more disclosed a figure in a currency without a conversion rate here and are excluded)` : ''}. <b style="color:#92400e">${est.filter(x=>x.e.periodInferred).length} of ${n}</b> had no stated pay period — for those, monthly vs. annual was inferred from the figure's EUR-equivalent scale (below ${(SALARY_INFERENCE_THRESHOLD_EUR/1000)}k ≈ monthly, matching this corpus's real monthly-quoted range), not read from the JD text. FX rates are fixed, illustrative spot rates, not the rate at time of posting. Treat this chart as directional market shape, not individual-posting accuracy.`;
+
+  const wrap = document.getElementById('salaryEstChart');
+  if (n < 5) { wrap.innerHTML = ''; return; }
+
+  const rows = est.slice().sort((a, b) => a.e.mid - b.e.mid);
+  const vals = rows.flatMap(x => [x.e.lo, x.e.hi]);
+  const lo = Math.min(...vals), hi = Math.max(...vals);
+  const pad = (hi - lo) * 0.05 || 1;
+  const axisMin = Math.max(0, lo - pad), axisMax = hi + pad;
+  const pct = v => ((v - axisMin) / (axisMax - axisMin)) * 100;
+
+  const inferredCount = rows.filter(x => x.e.periodInferred).length;
+  const legendHtml = `
+    <div class="legend-item"><div class="legend-dot" style="background:#1d4ed8"></div>Stated period (n=${n - inferredCount})</div>
+    <div class="legend-item"><div class="legend-dot inferred"></div>Inferred period * (n=${inferredCount})</div>`;
+
+  const rowsHtml = rows.map(({ d, e }) => {
+    const x1 = pct(e.lo), x2 = pct(e.hi);
+    const color = e.periodInferred ? '#d97706' : '#1d4ed8';
+    return `
+      <div class="salary-row${e.periodInferred ? ' inferred' : ''}" data-jd="${d.jd_id}">
+        <div class="salary-row-label"><b>${d.company}</b>${LABELS.seniority[d.seniority]||d.seniority||''}</div>
+        <div class="salary-row-track">
+          <div class="salary-range-line" style="left:${x1}%;width:${Math.max(x2-x1,0.5)}%;background:${color}${e.periodInferred?';opacity:0.75':''}"></div>
+          <div class="salary-range-dot" style="left:${x1}%;background:${color}"></div>
+          <div class="salary-range-dot" style="left:${x2}%;background:${color}"></div>
+          <div class="salary-range-value" style="left:${x2}%">€${salaryFmt(e.lo)}–€${salaryFmt(e.hi)}</div>
+        </div>
+      </div>`;
+  }).join('');
+
+  wrap.innerHTML = `<div class="salary-est-legend">${legendHtml}</div>
+    <div class="salary-group">
+      ${rowsHtml}
+      <div class="salary-axis-ticks">
+        <div class="salary-axis-spacer"></div>
+        <div class="salary-axis-inner">
+          <span class="salary-tick" style="left:0%">€${salaryFmt(axisMin)}</span>
+          <span class="salary-tick" style="left:50%;transform:translateX(-50%)">€${salaryFmt((axisMin+axisMax)/2)}</span>
+          <span class="salary-tick" style="left:100%;transform:translateX(-100%)">€${salaryFmt(axisMax)}</span>
+        </div>
+      </div>
+    </div>`;
+
+  const tt = document.getElementById('tooltip');
+  wrap.querySelectorAll('.salary-row').forEach(row => {
+    const rec = rows.find(x => x.d.jd_id === row.dataset.jd);
+    if (!rec) return;
+    const { d, e } = rec;
+    row.addEventListener('mousemove', ev => {
+      const assumptions = [];
+      if (e.currencyConverted) assumptions.push(`Converted ${d.salary_currency} → EUR at a fixed illustrative rate`);
+      if (e.periodInferred) assumptions.push(`No period stated — inferred <b>${e.period}</b> from magnitude`);
+      else assumptions.push(`Period stated as <b>${e.period}</b> in the JD`);
+      tt.innerHTML = `
+        <div class="tt-company">${d.company}</div>
+        <div class="tt-role">${d.role}</div>
+        <div class="tt-field"><div class="tt-label">Original</div><div class="tt-quote">${Number(d.salary_min).toLocaleString()}–${Number(d.salary_max||d.salary_min).toLocaleString()} ${d.salary_currency}${d.salary_period ? ' / '+d.salary_period : ''}</div></div>
+        <div class="tt-field"><div class="tt-label">Estimated EUR/annual</div><div class="tt-quote">€${e.lo.toLocaleString()}–€${e.hi.toLocaleString()}</div></div>
+        <div class="tt-field"><div class="tt-label">Assumptions</div><div class="tt-quote">${assumptions.join('<br>')}</div></div>
+        <div class="tt-field"><div class="tt-label">Seniority</div><div class="tt-quote">${LABELS.seniority[d.seniority]||d.seniority||'—'}</div></div>`;
+      const padPx = 14;
+      tt.style.left = (ev.clientX+padPx+310>window.innerWidth ? ev.clientX-310-padPx : ev.clientX+padPx)+'px';
+      tt.style.top = (ev.clientY+padPx+180>window.innerHeight ? ev.clientY-180-padPx : ev.clientY+padPx)+'px';
+      tt.classList.add('visible');
+    });
+    row.addEventListener('mouseleave', () => tt.classList.remove('visible'));
+  });
+
+  buildSalaryEstSeniority(est);
+}
+
+const SENIORITY_ORDER = ['junior', 'mid', 'senior', 'staff', 'lead', 'manager'];
+function buildSalaryEstSeniority(est) {
+  document.getElementById('salaryEstSenioritySub').textContent =
+    `Median of each posting's EUR/annual-equivalent midpoint, grouped by title band · bar spans the observed min–max within that band · n shown per band`;
+  const bySen = {};
+  est.forEach(({ d, e }) => { (bySen[d.seniority] = bySen[d.seniority] || []).push(e.mid); });
+  const allMids = est.map(x => x.e.mid);
+  const axisMin = 0, axisMax = Math.max(...allMids) * 1.05;
+  const pct = v => (v / axisMax) * 100;
+
+  const rowsHtml = SENIORITY_ORDER.filter(s => bySen[s] && bySen[s].length).map(s => {
+    const vals = bySen[s].slice().sort((a,b) => a-b);
+    const m = vals.length;
+    const median = m % 2 ? vals[(m-1)/2] : (vals[m/2-1]+vals[m/2])/2;
+    const lo = vals[0], hi = vals[m-1];
+    return `
+      <div class="senior-sal-row">
+        <div class="senior-sal-label">${LABELS.seniority[s]||s} <span style="color:var(--muted);font-weight:500">n=${m}</span></div>
+        <div class="senior-sal-track">
+          <div class="senior-sal-range" style="left:${pct(lo)}%;width:${Math.max(pct(hi)-pct(lo),0.5)}%"></div>
+          <div class="senior-sal-median" style="left:${pct(median)}%"></div>
+        </div>
+        <div class="senior-sal-value">€${salaryFmt(median)}</div>
+      </div>`;
+  }).join('');
+  document.getElementById('salaryEstSeniority').innerHTML = rowsHtml || `<p style="font-size:0.8rem;color:var(--muted)">Not enough records per band to summarize.</p>`;
 }
 
 // ── Responsibility taxonomy: theme prevalence + co-occurrence (lift) ──
@@ -1828,6 +2006,7 @@ function render() {
   buildGeo(activeData);
   buildToolChart(activeData);
   buildSalary(activeData);
+  buildSalaryEstimated(activeData);
 }
 
 // Responsibility-theme tags (from analysis/responsibility_taxonomy.py) are a separate
