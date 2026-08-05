@@ -1,5 +1,6 @@
 {
   "permissions": {
+    "defaultMode": "acceptEdits",
     "allow": [
       "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --print-to-pdf=/Users/jeremychia/Documents/Github/jeremychia/resume/2026-04-08_lego_senior-analytics-engineer.pdf --print-to-pdf-no-header-footer --no-margins --disable-gpu /Users/jeremychia/Documents/Github/jeremychia/resume/2026-04-08_lego_senior-analytics-engineer.html)",
       "Bash(echo \"exit:$?\")",

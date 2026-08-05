@@ -570,6 +570,10 @@ def compute_dimension_relationships(jd_theme_sets, jd_meta):
     # auto-selected because "does this survive a confound check" isn't something
     # this script can decide on its own — it's a judgment call re-made by a human
     # (or an agent) each time the featured set changes, not derived mechanically.
+    # "Self-Service Enablement & Data Literacy × data_team_maturity" was featured here
+    # through the 395-JD snapshot but stopped clearing the p<0.01 screen once the
+    # corpus grew past ~340 (see report.md §4.13 for the full before/after) and has
+    # been dropped rather than kept at the same confidence level as the two below.
     featured = [
         {
             "theme": "Mentorship & Leadership", "dimension": "autonomy_level",
@@ -579,10 +583,6 @@ def compute_dimension_relationships(jd_theme_sets, jd_meta):
         {
             "theme": "Data Infrastructure & Warehouse Ops", "dimension": "jd_authorship",
             "stratify_by": None, "survives": None,  # not independently stratification-checked
-        },
-        {
-            "theme": "Self-Service Enablement & Data Literacy", "dimension": "data_team_maturity",
-            "stratify_by": None, "survives": None,
         },
     ]
     for f in featured:
@@ -902,11 +902,11 @@ def write_relationships_section(lines, rel):
         "p<0.01 with that many tests, a meaningful number of the \"clean\" pairs are expected to be false "
         "positives by chance alone — the effect-size floor (V) and the stratification checks are the "
         "mitigation, not a substitute for treating this section as exploratory.\n"
-        "- **Post-hoc selection.** The three featured relationships were picked *after* seeing which "
+        "- **Post-hoc selection.** The featured relationships were picked *after* seeing which "
         "pairs had large effect sizes, then checked — not pre-registered. That ordering (see p-values, "
         "then decide what to scrutinize) is exactly the \"garden of forking paths\" pattern that makes "
-        "exploratory findings less trustworthy than confirmatory ones. Only one of the three received an "
-        "actual stratification check; the other two are reported with that caveat explicit, not implied.\n"
+        "exploratory findings less trustworthy than confirmatory ones. Only one of the two received an "
+        "actual stratification check; the other is reported with that caveat explicit, not implied.\n"
         "- **Two independent classification methods, two independent error rates.** Every relationship "
         "here compounds the regex classifier's error rate (§ uncategorized-bullet rate above) with "
         "whatever error rate the Layer B LLM coding carries on the paired dimension (`jd_authorship` "
@@ -923,11 +923,11 @@ def write_relationships_section(lines, rel):
         "confounder not tested — company size, sector, and funding stage are not coded dimensions in "
         "this corpus and could not be checked.\n"
         "- **Rebuttal most likely to land:** an outside reviewer's strongest objection would probably be "
-        "the multiple-comparisons point combined with the fact that only one of the three featured "
-        "relationships got an actual confounder check — the other two (`Data Infrastructure & Warehouse "
-        "Ops × jd_authorship`, `Self-Service Enablement × data_team_maturity`) are reported at the same "
+        "the multiple-comparisons point combined with the fact that only one of the two featured "
+        "relationships got an actual confounder check — the other (`Data Infrastructure & Warehouse "
+        "Ops × jd_authorship`) is reported at the same "
         "confidence level as a relationship that hasn't been stress-tested the way the debunked example "
-        "shows this corpus can produce false leads. Treat those two as \"survived the overlap screen and "
+        "shows this corpus can produce false leads. Treat that one as \"survived the overlap screen and "
         "a p<0.01/effect-size floor,\" not as \"confirmed.\"\n"
     )
 
