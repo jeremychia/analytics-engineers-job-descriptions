@@ -3,10 +3,20 @@ Derive a coarse geo_region bucket from a JD's free-text job_location string.
 
 Buckets match analysis/full-analysis.html's GEO_LABELS:
   berlin, hamburg, nordics, uk_remote, france, benelux, iberia, ireland,
-  dach_other, baltics, other_europe, global_remote, apac, other
+  dach_other, baltics, other_europe, global_remote, nyc_metro, apac, other
 
 APAC is a single catch-all bucket for now (SG, AU, JP, HK, IN, VN, etc.) —
 volume is too low to split further. Revisit once the APAC sample grows.
+
+NYC_METRO covers the New York City metro area specifically (Manhattan,
+Jersey City, Basking Ridge NJ, Stony Brook NY, etc.) — added 2026-08-10
+once a real NY-area cohort appeared in the corpus (~20 postings, all from
+one scrape batch); before that, every US posting silently fell into
+"other" alongside genuinely unstated locations. Deliberately scoped to NYC
+only, not all of North America — other US postings (SF, Austin, etc.) are
+too sparse individually to warrant their own bucket yet and stay in
+"other" until volume justifies a broader US/Canada region (or splitting
+this one further).
 """
 
 import re
@@ -73,6 +83,14 @@ OTHER_EUROPE_MARKERS = [
     "gibraltar",
 ]
 
+# New York City metro area only — deliberately narrow, see module docstring.
+# "new york" alone matches both "New York, NY" and "New York, New York";
+# NJ/CT satellite towns and named NYC offices are included as they turn up.
+NYC_METRO_MARKERS = [
+    "new york", "nyc", "manhattan", "brooklyn", "jersey city",
+    "basking ridge", "stony brook",
+]
+
 # Single catch-all for the APAC region until sample size justifies splitting
 # into sub-buckets (e.g. anz, sea, japan_korea, india).
 APAC_MARKERS = [
@@ -119,6 +137,9 @@ def classify_geo_region(job_location: str) -> str:
         return "uk_remote"
     if any(re.search(rf"\b{re.escape(m)}\b", loc) for m in UK_WORD_MARKERS):
         return "uk_remote"
+
+    if any(m in loc for m in NYC_METRO_MARKERS):
+        return "nyc_metro"
 
     if is_remote:
         # "Remote" with no specific country/region anchor, or explicit global/Europe-wide remote.
