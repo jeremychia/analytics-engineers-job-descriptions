@@ -49,8 +49,48 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 }
 .region-filter.hidden { display: none; }
 .region-filter label { font-size: 0.68rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
-.region-filter select { font-size: 0.76rem; font-family: inherit; border: none; background: transparent; color: var(--text); font-weight: 600; }
 @media (max-width: 640px) { .region-filter { top: auto; bottom: 1rem; left: 1rem; box-shadow: 0 4px 16px rgba(0,0,0,0.2); } }
+
+/* Custom dropdown (not native <select> — a native-popup rendering bug was observed
+   in some Chrome/macOS setups where the select would focus but never open). */
+.region-dd { position: relative; }
+.region-dd-trigger {
+  font-size: 0.76rem; font-family: inherit; border: none; background: transparent; color: var(--text);
+  font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 0.3rem; padding: 0.1rem 0;
+}
+.region-dd-trigger:disabled { color: var(--muted); cursor: default; }
+.region-dd-trigger .caret { font-size: 0.6rem; color: var(--muted); }
+.region-dd-list {
+  position: absolute; top: calc(100% + 0.5rem); left: -1rem; min-width: 220px; max-height: 340px;
+  overflow-y: auto; background: #fff; border: 1px solid var(--border); border-radius: 10px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.14); padding: 0.35rem; z-index: 600; display: none;
+}
+.region-dd-list.open { display: block; }
+.region-dd-opt {
+  display: block; width: 100%; text-align: left; font-family: inherit; font-size: 0.8rem;
+  border: none; background: transparent; color: var(--text); padding: 0.5rem 0.7rem; border-radius: 6px; cursor: pointer;
+}
+.region-dd-opt:hover { background: var(--surface2); }
+.region-dd-opt.active { background: var(--accent); color: #fff; }
+@media (max-width: 640px) { .region-dd-list { left: 0; bottom: calc(100% + 0.5rem); top: auto; } }
+
+/* ── REGION NUDGE (one-time prompt shown right after mode is picked) ── */
+.region-nudge {
+  background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 12px;
+  padding: 1.1rem 1.4rem; margin: 0 auto 2rem; max-width: var(--w);
+}
+.region-nudge.hidden { display: none; }
+.region-nudge-title { font-size: 0.85rem; font-weight: 700; color: var(--text); margin-bottom: 0.3rem; }
+.region-nudge-sub { font-size: 0.78rem; color: var(--muted); line-height: 1.6; margin-bottom: 0.9rem; }
+.region-nudge-opts { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.region-nudge-opt {
+  padding: 0.5rem 1rem; border-radius: 20px; border: 1.5px solid var(--border);
+  background: #fff; cursor: pointer; font-family: inherit; font-size: 0.8rem; font-weight: 600;
+  color: var(--text); transition: all 0.15s;
+}
+.region-nudge-opt:hover { border-color: var(--accent); }
+.region-nudge-opt.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.region-nudge-dismiss { font-size: 0.72rem; color: var(--muted); text-decoration: underline; cursor: pointer; margin-left: 0.4rem; background: none; border: none; font-family: inherit; }
 
 /* ── HERO / MODE PICKER ── */
 .hero {
@@ -189,8 +229,13 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 </div>
 
 <div class="region-filter hidden" id="regionFilter">
-  <label for="regionSelect">Region</label>
-  <select id="regionSelect" aria-label="Filter by region"></select>
+  <label id="regionDdLabel">Region</label>
+  <div class="region-dd">
+    <button type="button" class="region-dd-trigger" id="regionDdTrigger" aria-haspopup="listbox" aria-expanded="false" disabled>
+      <span id="regionDdTriggerText">Loading…</span><span class="caret">▾</span>
+    </button>
+    <div class="region-dd-list" id="regionDdList" role="listbox" aria-label="Filter by region"></div>
+  </div>
 </div>
 
 <!-- HERO / MODE PICKER -->
@@ -212,6 +257,12 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 </section>
 
 <main id="content">
+
+  <div class="region-nudge hidden" id="regionNudge">
+    <div class="region-nudge-title" id="regionNudgeTitle">Where are you applying?</div>
+    <div class="region-nudge-sub">JD language doesn't mean the same thing everywhere in this dataset. Language requirements are almost entirely a European pattern, salary ranges are close to mandatory in NYC metro and close to unheard-of in APAC, and "rigour" language reads as more routine in Europe than the same language would in the US. Pick a region to calibrate the numbers below - or skip it and see the blended average across all regions (currently ~77% European by volume).</div>
+    <div class="region-nudge-opts" id="regionNudgeOpts"></div>
+  </div>
 
   <section class="snapshot-section" id="snapshotSection">
     <div class="section-eyebrow">The corpus behind this page</div>
@@ -281,27 +332,70 @@ const REGION_LABELS = {
   all: 'All regions', apac: 'APAC', uk_remote: 'UK / remote', benelux: 'Benelux', berlin: 'Berlin',
   iberia: 'Iberia', other_europe: 'Other Europe', nordics: 'Nordics', france: 'France',
   global_remote: 'Global remote', dach_other: 'DACH (other)', hamburg: 'Hamburg', baltics: 'Baltics',
-  ireland: 'Ireland', nyc_metro: 'NYC Metro', other: 'Other / unclear',
+  ireland: 'Ireland', nyc_metro: 'NYC Metro', other: 'Other / unclear', europe: 'Europe (all)',
 };
 
 function buildRegionFilter() {
   const counts = {};
   ALL_DATA.forEach(d => { const r = d.geo_region || 'other'; counts[r] = (counts[r]||0)+1; });
+  const europeCount = ALL_DATA.filter(d => EUROPE_REGIONS.has(d.geo_region)).length;
   const regions = Object.keys(counts).sort((a,b) => counts[b]-counts[a]);
-  const sel = document.getElementById('regionSelect');
-  sel.innerHTML = `<option value="all">All regions (${ALL_DATA.length})</option>` +
-    regions.map(r => `<option value="${r}">${REGION_LABELS[r]||r} (${counts[r]})</option>`).join('');
-  sel.value = region;
-  sel.addEventListener('change', () => {
-    region = sel.value;
-    applyRegionFilter();
+  const opts = [
+    { value: 'all', label: `All regions (${ALL_DATA.length})` },
+    { value: 'europe', label: `Europe, all (${europeCount})` },
+    ...regions.map(r => ({ value: r, label: `${REGION_LABELS[r]||r} (${counts[r]})` })),
+  ];
+
+  const trigger = document.getElementById('regionDdTrigger');
+  const triggerText = document.getElementById('regionDdTriggerText');
+  const list = document.getElementById('regionDdList');
+
+  function renderList() {
+    list.innerHTML = opts.map(o => `
+      <button type="button" class="region-dd-opt${o.value === region ? ' active' : ''}" role="option" aria-selected="${o.value === region}" data-value="${o.value}">${o.label}</button>`
+    ).join('');
+    list.querySelectorAll('.region-dd-opt').forEach(btn => {
+      btn.addEventListener('click', () => {
+        region = btn.dataset.value;
+        closeList();
+        syncTriggerText();
+        applyRegionFilter();
+      });
+    });
+  }
+  function syncTriggerText() {
+    const cur = opts.find(o => o.value === region) || opts[0];
+    triggerText.textContent = cur.label;
+  }
+  function openList() { renderList(); list.classList.add('open'); trigger.setAttribute('aria-expanded', 'true'); }
+  function closeList() { list.classList.remove('open'); trigger.setAttribute('aria-expanded', 'false'); }
+  function toggleList() { list.classList.contains('open') ? closeList() : openList(); }
+
+  trigger.disabled = false;
+  syncTriggerText();
+  trigger.addEventListener('click', (e) => { e.stopPropagation(); toggleList(); });
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.region-dd')) closeList();
   });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeList(); });
+
+  window._regionDdSyncTriggerText = syncTriggerText;
 }
 
+const EUROPE_REGIONS = new Set(['uk_remote','benelux','iberia','berlin','other_europe','france','nordics','dach_other','baltics','hamburg','ireland']);
 function applyRegionFilter() {
-  DATA = region === 'all' ? ALL_DATA : ALL_DATA.filter(d => (d.geo_region || 'other') === region);
+  if (region === 'all') {
+    DATA = ALL_DATA;
+  } else if (region === 'europe') {
+    DATA = ALL_DATA.filter(d => EUROPE_REGIONS.has(d.geo_region));
+  } else {
+    DATA = ALL_DATA.filter(d => (d.geo_region || 'other') === region);
+  }
   buildSnapshot();
   buildHygiene();
+  buildManagerHygiene();
+  updateRegionNudge();
+  if (window._regionDdSyncTriggerText) window._regionDdSyncTriggerText();
 }
 
 function setMode(m) {
@@ -314,7 +408,44 @@ function setMode(m) {
   document.querySelectorAll('.mode-toggle button').forEach(b => b.classList.toggle('active', b.dataset.mode === m));
   document.getElementById('seekerContent').style.display = m === 'seeker' ? 'block' : 'none';
   document.getElementById('managerContent').style.display = m === 'manager' ? 'block' : 'none';
+  document.getElementById('regionNudgeTitle').textContent = m === 'manager' ? 'Where are you hiring?' : 'Where are you applying?';
+  maybeShowRegionNudge();
   window.scrollTo(0, 0);
+}
+
+// ── Region nudge: shown once per session right after mode is picked, so region
+// is a conscious choice instead of a corner dropdown a user has to discover. ──
+let regionNudgeDismissed = false;
+const REGION_NUDGE_OPTS = [
+  { key: 'europe', label: 'Europe' },
+  { key: 'apac', label: 'APAC' },
+  { key: 'nyc_metro', label: 'NYC metro' },
+  { key: 'all', label: 'All regions (blended)' },
+];
+function buildRegionNudge() {
+  document.getElementById('regionNudgeOpts').innerHTML = REGION_NUDGE_OPTS.map(o => `
+    <button type="button" class="region-nudge-opt${region === o.key ? ' active' : ''}" data-region="${o.key}">${o.label}</button>`
+  ).join('') + `<button type="button" class="region-nudge-dismiss" id="regionNudgeSkip">Skip, decide later</button>`;
+  document.querySelectorAll('.region-nudge-opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      region = btn.dataset.region;
+      applyRegionFilter();
+      regionNudgeDismissed = true;
+      document.getElementById('regionNudge').classList.add('hidden');
+    });
+  });
+  document.getElementById('regionNudgeSkip').addEventListener('click', () => {
+    regionNudgeDismissed = true;
+    document.getElementById('regionNudge').classList.add('hidden');
+  });
+}
+function maybeShowRegionNudge() {
+  if (regionNudgeDismissed) return;
+  buildRegionNudge();
+  document.getElementById('regionNudge').classList.remove('hidden');
+}
+function updateRegionNudge() {
+  document.querySelectorAll('.region-nudge-opt').forEach(b => b.classList.toggle('active', b.dataset.region === region));
 }
 
 // ── Hygiene factors: real stats from the dataset ──
@@ -344,10 +475,22 @@ function buildHygiene() {
   const maxCollab = 6;
   const collabBarPct = Math.min(100, Math.round(medCollab / maxCollab * 100));
 
+  const salaryNote = region === 'nyc_metro'
+    ? `${salaryPct}% state a range here - high because NYC and NY State pay-transparency law requires it, not because employers are unusually forthcoming. Don't expect the same rate elsewhere.`
+    : region === 'apac'
+    ? `Just ${salaryPct}% state a range in APAC. Near-total silence, not a signal about any specific employer - assume you'll need to ask directly.`
+    : `Only ${salaryPct}% of postings state a range at all. That's the market norm, not a red flag specific to that employer - but ask early if it matters to you.`;
+  const workNote = region === 'apac'
+    ? `${workStatedPct}% state a policy - the lowest disclosure rate of any region here. Where APAC postings do state one, onsite outweighs remote roughly 4:1, the most onsite-leaning split in this dataset. Silence here correlates with onsite more than it does elsewhere - ask directly.`
+    : `${workStatedPct}% state a policy. The rest say nothing. Don't read silence as "onsite by default" - ask directly, regardless of company stage.`;
+  const langNote = region === 'nyc_metro' || region === 'apac'
+    ? `${hardLangPct}% hard-gate on a specific language here - language gates in this dataset are overwhelmingly a European pattern (40% of European postings carry a hard or soft gate, vs. under 10% in APAC and effectively none in NYC metro).`
+    : `${hardLangPct}% hard-gate on a specific language - fluency required, not "a plus." A binary dealbreaker, and the single strongest regional pattern in this dataset - concentrated in Europe far more than APAC or NYC metro. Check before you invest time in an application.`;
+
   const cards = [
-    { label: 'Salary stated', stat: salaryPct + '%', bar: salaryPct, note: `Only ${salaryPct}% of postings state a range at all. That's the market norm, not a red flag specific to that employer - but ask early if it matters to you.` },
-    { label: 'Work arrangement clarity', stat: workStatedPct + '%', bar: workStatedPct, note: `${workStatedPct}% state a policy. The rest say nothing. Don't read silence as "onsite by default" - ask directly, regardless of company stage.` },
-    { label: 'Hard language requirement', stat: hardLangPct + '%', bar: hardLangPct, warn: true, note: `${hardLangPct}% hard-gate on a specific language - fluency required, not "a plus." A binary dealbreaker. Check before you invest time in an application.` },
+    { label: 'Salary stated', stat: salaryPct + '%', bar: salaryPct, note: salaryNote },
+    { label: 'Work arrangement clarity', stat: workStatedPct + '%', bar: workStatedPct, note: workNote },
+    { label: 'Hard language requirement', stat: hardLangPct + '%', bar: hardLangPct, warn: true, note: langNote },
     { label: 'Early-stage share', stat: earlyPct + '%', bar: earlyPct, note: `${earlyPct}% of roles sit at early-stage teams - highest autonomy odds, least structural stability. Know which trade-off you're making.` },
     { label: 'High-fear / compliance framing', stat: highFearPct + '%', bar: highFearPct, warn: true, note: `${highFearPct}% of JDs carry explicit compliance/trust/audit risk language. These also name roughly ${medCollab >= 2 ? '3×' : 'more'} the stakeholder teams of fear-free JDs - wider surface area, not just more paperwork.` },
     { label: 'Median stakeholder teams named', stat: medCollab.toFixed(1), bar: collabBarPct, note: `Half of JDs name ${medCollab.toFixed(1)} or fewer partner teams in the responsibilities. If a wide meeting load is a dealbreaker, "cross-functional collaboration" with zero named teams deserves a direct question.` },
@@ -397,10 +540,22 @@ function buildSnapshot() {
 function buildManagerHygiene() {
   const salaryPct = pct(d => d.salary_min && d.salary_max);
   const workStatedPct = pct(d => d.work_arrangement && d.work_arrangement !== 'not_stated');
+  const hardLangPct = pct(d => d.language_gate_type === 'hard');
+  const salaryNote = region === 'nyc_metro'
+    ? `${salaryPct}% of postings here state a range - high, because NYC and NY State pay-transparency law requires it. If you're hiring in this market, confirm you're actually compliant, not just competitive.`
+    : region === 'apac'
+    ? `Just ${salaryPct}% of postings in this market state a range at all. Stating one here is a much bigger differentiator than it would be in NYC metro, where it's closer to mandatory.`
+    : `Only ${salaryPct}% of postings in this market state one at all. Stating a real range is still a differentiator, not table stakes yet - but its absence reads as normal, not suspicious.`;
+  const workNote = region === 'apac'
+    ? `${workStatedPct}% state a policy here - the lowest disclosure rate of any region in this dataset, and where postings do state one, onsite outweighs remote roughly 4:1. If you offer genuine remote flexibility in this market, say so explicitly - it will read as unusual, in a good way.`
+    : `${workStatedPct}% of postings state a policy. If you offer genuine remote flexibility, say so explicitly - vague or absent claims get discounted as boilerplate.`;
+  const langNote = (region === 'nyc_metro' || region === 'apac')
+    ? `${hardLangPct}% hard-gate on a specific language here. Language gates are overwhelmingly a European pattern in this dataset (40% of European postings vs. under 10% here) - if you have one in this market, it's unusual enough to flag explicitly, since candidates won't expect it by default.`
+    : `Say it plainly. Being upfront about hard language gates or unusual process length saves screening time on both sides - hard gates are common enough in this market (${hardLangPct}% of postings) that candidates actively screen for them.`;
   const items = [
-    { label: 'Salary range', note: `Only ${salaryPct}% of postings in this market state one at all. Stating a real range is still a differentiator, not table stakes yet - but its absence reads as normal, not suspicious.`,
+    { label: 'Salary range', note: salaryNote,
       sample: `"€65,000–€78,000 gross, depending on experience. We're open about this from the first call, not just once you ask."` },
-    { label: 'Work arrangement (remote / hybrid / onsite, with specifics)', note: `${workStatedPct}% of postings state a policy. If you offer genuine remote flexibility, say so explicitly - vague or absent claims get discounted as boilerplate.`,
+    { label: 'Work arrangement (remote / hybrid / onsite, with specifics)', note: workNote,
       sample: `"Hybrid, 2 days/week in our Berlin office. Fully remote within Germany is fine after month 3." — not "flexible working environment."` },
     { label: 'The actual partner teams this role works with', note: `"Cross-functional collaboration" with no named teams is unread boilerplate. A real number and real team names set honest workload expectations.`,
       sample: `"You'll work closely with Product, Finance, and the two backend squads - regular contact, not just occasional Slack pings." — not "strong cross-functional collaboration skills."` },
@@ -408,7 +563,7 @@ function buildManagerHygiene() {
       sample: `"You'd be our first analytics hire, building the warehouse from zero." or "We're a 6-person data team with an established dbt project - you'd extend it, not start it."` },
     { label: 'The real tools and infrastructure, not just a skills list', note: `Recruiter-templated postings name the real stack at roughly a third the rate of engineer-written ones - candidates who care about the work discount generic tool lists accordingly.`,
       sample: `"We run dbt on Snowflake, orchestrated with Dagster, with Looker on top. About 400M rows across our core models." — not "modern data stack."` },
-    { label: 'Interview process length / hard requirements upfront', note: `Say it plainly. Being upfront about hard language gates or unusual process length saves screening time on both sides.`,
+    { label: 'Interview process length / hard requirements upfront', note: langNote,
       sample: `"Fluent German is required for this role (client-facing). Process is 3 stages over ~2 weeks: screen, technical exercise, team interview."` },
   ];
   document.getElementById('managerHygieneList').innerHTML = `<div class="hygiene-grid">` + items.map(c => `

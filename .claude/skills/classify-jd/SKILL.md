@@ -134,6 +134,8 @@ Assign values to all seven dimensions from JD language alone — not sector assu
 - **mixed**: at least two distinct velocity phrases alongside rigour signals. One "fast-paced" in a rigour-dominated JD → `rigour`.
 - Tie-breaker: rigour signals ≥2× velocity → `rigour`. Parity → `mixed`. Velocity ≥2× → `velocity`.
 
+**Known regional dialect effect (do not correct for it, just classify what's on the page):** a 2026-08-17 cross-region audit (n=428, `domain_risk` mix statistically flat across regions) found European JDs code `rigour` at 72% versus 64% (APAC) and 45% (NYC metro) at matched risk levels — European hiring language defaults to governance/compliance vocabulary even for moderate-risk roles more often than US/APAC postings for comparably-risky work. This means `rigour` classified from a European JD is weaker evidence of genuinely elevated stakes than the same classification from a US JD — a real interpretive difference downstream analysis should account for, not something to normalize away at classification time. Classify strictly from the JD's own language as written; do not adjust the call based on the company's region.
+
 Quote the single most decisive phrase in evidence.
 
 ### domain_risk

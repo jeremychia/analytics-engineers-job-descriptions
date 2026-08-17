@@ -574,6 +574,7 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
     <p><strong>The regional split below reflects what got scraped, not where demand exists.</strong> It's a keyword match on free-text location strings, collected opportunistically during one person's job search - sourced from whatever job boards and company pages surfaced roles worth applying to. A city appears here because a posting was found and classified, not because analytics engineering hiring is concentrated there.</p>
     <p>Roughly a quarter of records fall into "other" - locations too ambiguous to bucket: multi-city remote listings, unstated locations, cities outside the keyword list. Treat every number in this section as a description of the dataset's blind spots, not the labour market's shape.</p>
     <p><strong>A concrete example of the artifact:</strong> "Global remote" postings hard-gate on language (typically German) more often than Berlin postings do in this bucketing - backwards from what you'd expect if the categories meant what they sound like. The likely cause: a remote role that requires German gets classified as "global remote" by the location-string matcher rather than folded into the Berlin/DACH bucket, because the matcher keys off literal city names, not the language requirement itself. Read that as a bug in the bucketing, not a claim that remote roles gate on language more than local ones.</p>
+    <p><strong>That said, once regions are grouped into three broad, comparably-sized buckets (Europe / APAC / NYC metro) rather than read as fifteen fine-grained cells, a few effects survive confound-checking and are large enough to treat as real</strong> - language gates, rigour-vs-velocity framing, and salary disclosure norms differ by region in ways that hold up even after checking that domain-risk mix and company concentration aren't driving them. See the <strong>Region</strong> tab in the relationships section above for those three, presented with the same statistical rigour as every other cross-tab on this page. The caveat on this section stands for everything else - seniority mix, tool prevalence, and most other per-region breakdowns here are still corpus-coverage information, not a market claim.</p>
   </div>
   <div class="geo-grid" id="geoBreakdown"></div>
 </section>
@@ -657,8 +658,8 @@ const SECTION_ORDER = {
 // Panel order: seeker = effect size (discriminating power is what targeting needs);
 // manager = consequence for writing a posting (title language first — it's the cheapest fix).
 const PANEL_ORDER = {
-  seeker:  ['rel-maturity-mission','rel-mission-autonomy','rel-domain-stakeholder','rel-testing-rigour','rel-fear-domainrisk','rel-testing-fear','rel-seniority-autonomy','rel-ai-autonomy','rel-authorship-autonomy','rel-authorship-dbt','rel-maturity-autonomy','rel-maturity-workarr','rel-domainrisk-rigour','rel-fear-collab','rel-stakeholder-autonomy','rel-mentorship-autonomy','rel-infra-authorship','rel-selfservice-maturity'],
-  manager: ['rel-seniority-autonomy','rel-authorship-autonomy','rel-testing-rigour','rel-authorship-dbt','rel-fear-domainrisk','rel-testing-fear','rel-ai-autonomy','rel-maturity-mission','rel-mission-autonomy','rel-maturity-autonomy','rel-maturity-workarr','rel-domain-stakeholder','rel-domainrisk-rigour','rel-fear-collab','rel-stakeholder-autonomy','rel-mentorship-autonomy','rel-infra-authorship','rel-selfservice-maturity'],
+  seeker:  ['rel-maturity-mission','rel-mission-autonomy','rel-domain-stakeholder','rel-testing-rigour','rel-fear-domainrisk','rel-testing-fear','rel-seniority-autonomy','rel-ai-autonomy','rel-authorship-autonomy','rel-authorship-dbt','rel-maturity-autonomy','rel-maturity-workarr','rel-domainrisk-rigour','rel-fear-collab','rel-stakeholder-autonomy','rel-mentorship-autonomy','rel-infra-authorship','rel-selfservice-maturity','rel-region-langgate','rel-region-rigour','rel-region-salary'],
+  manager: ['rel-seniority-autonomy','rel-authorship-autonomy','rel-testing-rigour','rel-authorship-dbt','rel-fear-domainrisk','rel-testing-fear','rel-ai-autonomy','rel-maturity-mission','rel-mission-autonomy','rel-maturity-autonomy','rel-maturity-workarr','rel-domain-stakeholder','rel-domainrisk-rigour','rel-fear-collab','rel-stakeholder-autonomy','rel-mentorship-autonomy','rel-infra-authorship','rel-selfservice-maturity','rel-region-langgate','rel-region-rigour','rel-region-salary'],
 };
 // Relationship theme tabs: 18 panels grouped into 4 themes so the section shows
 // ~5 full cards at a time instead of 18 stacked vertically. Group order and labels
@@ -670,6 +671,7 @@ const REL_GROUP_OF = {
   'rel-domain-stakeholder': 'risk', 'rel-testing-rigour': 'risk', 'rel-fear-collab': 'risk',
   'rel-fear-domainrisk': 'risk', 'rel-testing-fear': 'risk', 'rel-domainrisk-rigour': 'risk',
   'rel-authorship-autonomy': 'authorship', 'rel-authorship-dbt': 'authorship', 'rel-infra-authorship': 'authorship',
+  'rel-region-rigour': 'region', 'rel-region-langgate': 'region', 'rel-region-salary': 'region',
 };
 const REL_GROUPS = {
   seeker: [
@@ -677,12 +679,14 @@ const REL_GROUPS = {
     { key: 'stage',      name: 'Company stage & work type', desc: 'What company stage predicts about the job itself' },
     { key: 'risk',       name: 'Risk & fear framing',   desc: 'How stakes, quality ownership, and rigour language relate' },
     { key: 'authorship', name: 'Authorship tells',      desc: 'What who-wrote-the-JD reveals about the real role' },
+    { key: 'region',     name: 'Region',                desc: 'What changes about JD language depending where you\'re applying' },
   ],
   manager: [
     { key: 'authorship', name: 'Authorship tells',      desc: 'What your posting\'s authorship signals whether you meant to or not' },
     { key: 'autonomy',   name: 'Autonomy & scope',      desc: 'What candidates infer about real decision rights' },
     { key: 'risk',       name: 'Risk & fear framing',   desc: 'How your risk and quality language reads against the market' },
     { key: 'stage',      name: 'Company stage & work type', desc: 'What your stage promises, whether you meant it to or not' },
+    { key: 'region',     name: 'Region',                desc: 'What your region changes about how your posting reads' },
   ],
 };
 let activeRelGroup = null;
@@ -1016,6 +1020,9 @@ const REL_ORDER = {
   ai_role: ['ai_enabler','ai_user','none'],
   dbt_named: ['named','not_named'],
   work_arrangement: ['remote','hybrid','onsite','not_stated'],
+  geo_macro: ['europe','apac','nyc_metro'],
+  language_gate_type: ['hard','soft','none'],
+  salary_stated: ['stated','not_stated'],
   rt_mentorship: ['yes','no'],
   rt_infra: ['yes','no'],
   rt_selfservice: ['yes','no'],
@@ -1286,6 +1293,45 @@ function buildRelationships(data) {
       tip: {
         seeker: `Rigour framing is close to table stakes everywhere, but high-stakes domains do write it slightly more consistently. Worth a small weight in how you read a JD's seriousness about quality, not a strong signal on its own. What differentiates roles more is whether quality is <em>your named job</em> - see the testing-framing panel - not whether the JD says "data quality."`,
         manager: `"Data quality," "single source of truth," "reliability" - nearly every posting says it, so it barely selects. It does track real stakes slightly more than chance, so keep it honest to your actual risk profile. But differentiation still lives mainly in named accountabilities and explicit decision rights, not in how much quality vocabulary you pile on.`,
+      },
+    },
+    {
+      id: 'rel-region-langgate', rowKey: 'geo_macro', colKey: 'language_gate_type',
+      tag: 'Region × Language gate · Largest regional effect in the dataset',
+      takeaway: 'Language requirements are almost entirely a European pattern. Hard gates: 30% of European postings, 6% of APAC, 0% of NYC-metro.',
+      q: { seeker: 'Which region actually gates on language, and how hard?',
+           manager: 'If you gate on language, say so plainly - the rest of this market mostly doesn\'t' },
+      statFn: () => `Hard language requirements: ${grpPct(data,'geo_macro','europe','language_gate_type','hard')}% of European postings (n=${cnt('geo_macro','europe')}) versus ${grpPct(data,'geo_macro','apac','language_gate_type','hard')}% APAC (n=${cnt('geo_macro','apac')}) and ${grpPct(data,'geo_macro','nyc_metro','language_gate_type','hard')}% NYC metro (n=${cnt('geo_macro','nyc_metro')}). Add soft gates and Europe reaches ${100-grpPct(data,'geo_macro','europe','language_gate_type','none')}%.`,
+      read: `This is the largest regional effect found anywhere in this dataset (Cramér's V≈0.22, larger than any other region cross-tab here), and it's checked against the obvious confound: <code>domain_risk</code> composition is statistically flat across all three regions, so this isn't "Europe just has more client-facing roles that happen to be risky." Client-facing analytics roles across DACH, Benelux, and France routinely gate on the local language in a way that has no real equivalent in an English-default APAC or US hiring market. n=29 for NYC metro is thin - read that cell as directional, not precise - but the pattern (essentially zero language gates) is consistent with the region's international, English-default hiring norm.`,
+      tip: {
+        seeker: `If you're applying in Europe, check the requirements section for a language gate before investing time - it's the single most common reason a European posting isn't actually open to you if you don't speak the local language. In APAC or NYC metro, this is a much smaller factor and less worth screening for upfront.`,
+        manager: `If your role genuinely requires a local language (client-facing, regulatory), say so plainly and early - hard-gating in Europe is common enough that candidates expect to see it stated, not implied. If you're hiring in APAC or NYC metro, a language requirement is unusual enough in this market that it's worth flagging explicitly if you have one, since candidates won't default to expecting it.`,
+      },
+    },
+    {
+      id: 'rel-region-rigour', rowKey: 'geo_macro', colKey: 'velocity_vs_rigour',
+      tag: 'Region × Rigour orientation · A dialect gap, not a risk gap',
+      takeaway: 'Rigour-coded language drops step-wise Europe → APAC → NYC metro, even though the underlying risk mix is the same across all three.',
+      q: { seeker: 'Does "rigour" language mean the same thing everywhere?',
+           manager: 'Is your rigour language matching your actual risk profile, or just the regional default?' },
+      statFn: () => `Rigour-coded: ${grpPct(data,'geo_macro','europe','velocity_vs_rigour','rigour')}% Europe (n=${cnt('geo_macro','europe')}) vs. ${grpPct(data,'geo_macro','apac','velocity_vs_rigour','rigour')}% APAC (n=${cnt('geo_macro','apac')}) vs. ${grpPct(data,'geo_macro','nyc_metro','velocity_vs_rigour','rigour')}% NYC metro (n=${cnt('geo_macro','nyc_metro')}) - a step-wise decline with domain_risk composition held flat across all three regions.`,
+      read: `Because <code>domain_risk</code> mix doesn't differ meaningfully by region (checked directly before trusting this), the gap reads as a genuine dialect difference in how comparable-risk roles get written up, not a real difference in stakes. European JDs default to governance/compliance/correctness vocabulary even at moderate-risk, non-regulated companies. Looking at the NYC-metro roll call by hand: the velocity-coded roles cluster in genuinely earlier-stage consumer fintech/proptech, while the rigour-coded ones are the regulated-finance names - even those still code as rigour or mixed, they're just not the majority framing the way they are in Europe. Practically: a "rigour" classification from a European JD is weaker evidence of genuinely elevated stakes than the same classification from a US JD, because the base rate of reaching for that vocabulary differs by region independent of actual risk.`,
+      tip: {
+        seeker: `Don't take "rigour" language in a European JD as strong evidence of unusually high stakes on its own - it's closer to the regional default there. In NYC-metro postings, rigour language is a more concentrated signal precisely because it's used more sparingly, closer to when the company means it. Ask directly what a mistake would actually cost, rather than reading the vocabulary literally.`,
+        manager: `If you're hiring in Europe, know that rigour/compliance language reads as less distinctive here - most JDs already use it, so it won't differentiate a genuinely high-stakes role from a moderate one. If you're hiring in the US and your role has real compliance or trust stakes, naming them explicitly will carry more weight than it would in a market where that vocabulary is already everywhere.`,
+      },
+    },
+    {
+      id: 'rel-region-salary', rowKey: 'geo_macro', colKey: 'salary_stated',
+      tag: 'Region × Salary disclosure · A legal-regime effect, not a culture one',
+      takeaway: 'NYC metro states a salary range 83% of the time - almost certainly pay-transparency law, not employer culture. APAC states one 3% of the time.',
+      q: { seeker: 'Where can I actually expect a stated salary range?',
+           manager: 'Are you required to state a range where you\'re hiring - and are you doing it?' },
+      statFn: () => `Salary range stated: ${grpPct(data,'geo_macro','nyc_metro','salary_stated','stated')}% NYC metro (n=${cnt('geo_macro','nyc_metro')}) vs. ${grpPct(data,'geo_macro','europe','salary_stated','stated')}% Europe (n=${cnt('geo_macro','europe')}) vs. ${grpPct(data,'geo_macro','apac','salary_stated','stated')}% APAC (n=${cnt('geo_macro','apac')}, ${data.filter(d=>d.geo_macro==='apac'&&d.salary_stated==='stated').length} of ${cnt('geo_macro','apac')} roles).`,
+      read: `The NYC-metro figure is very likely a legal-regime effect, not an employer-culture one - New York's pay transparency law requires a posted range, so this number reflects that law doing what it was designed to do, not that NYC employers are unusually forthcoming by disposition. Don't extrapolate the NYC rate to other US cities without their own transparency laws. The APAC figure (2 of 69 roles) is close to a null result - plan to ask directly, every time, regardless of company quality or size.`,
+      tip: {
+        seeker: `In NYC metro, expect a stated range as the norm, enforced by law - if a posting doesn't have one, that's more unusual there than it is elsewhere. In Europe, absence of a range is the market norm, not a red flag on a specific employer. In APAC, expect near-total silence and plan to ask directly and early if it matters to you.`,
+        manager: `If you're hiring in NYC or another pay-transparency jurisdiction, confirm you're actually compliant - this isn't optional there the way it is elsewhere. If you're hiring in Europe or APAC, stating a real range is still a genuine differentiator, not table stakes yet - candidates in those markets don't expect it by default, so doing it anyway stands out.`,
       },
     },
   ];
@@ -2054,6 +2100,12 @@ Promise.all([
 ])
   .then(([data, rtClassification])=>{
     data.forEach(d => { d.dbt_named = String(d.has_dbt).toLowerCase() === 'true' ? 'named' : 'not_named'; });
+    const EUROPE_REGIONS = new Set(['uk_remote','benelux','iberia','berlin','other_europe','france','nordics','dach_other','baltics','hamburg','ireland']);
+    data.forEach(d => {
+      const r = d.geo_region;
+      d.geo_macro = r === 'apac' ? 'apac' : r === 'nyc_metro' ? 'nyc_metro' : EUROPE_REGIONS.has(r) ? 'europe' : undefined;
+      d.salary_stated = (d.salary_min && d.salary_max) ? 'stated' : 'not_stated';
+    });
     if (rtClassification && rtClassification.bullets_by_theme) {
       RT_BULLETS_BY_THEME = rtClassification.bullets_by_theme;
     }
