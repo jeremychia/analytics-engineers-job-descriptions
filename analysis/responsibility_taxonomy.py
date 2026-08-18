@@ -88,6 +88,17 @@ START_RE = re.compile(
     r'|^your (key )?(activities and )?responsibilit(y|ies):?$'
     r'|^your daily tasks$'
     r'|^the impact you.ll (have|make)$'
+    # "you will" spelled out in full (not contracted "you'll") was entirely missed by
+    # the existing "the impact you.ll (have|make)$" and "as (a|an) ..., ?you will:?$"
+    # patterns above, which only match the "you.ll" contraction token. Confirmed via
+    # Ridgeline/Pluang ("The impact you will have:") and Qonto ("As an Analytics
+    # Engineer at Qonto, you will:") in the 2026-08-18 batch — both are genuine
+    # responsibilities-section openers, just spelled out instead of contracted.
+    r'|^the impact you will (have|make)$'
+    r'|^as (a|an) .{2,60} at .{2,40}, ?you will:?$'
+    # "You are driven to:" (QL Resources) - a "you [verb] to:" variant not covered by
+    # any existing "what you'll do" phrasing.
+    r'|^you are driven to$'
     r'|^how you.ll (spend your time|make an impact)$',
     re.I,
 )
@@ -210,7 +221,18 @@ def extract_responsibility_bullets(text: str) -> list[str]:
         # sentence instead. Confirmed via the L'Oréal ("In this role, You
         # will..") and Aubay Portugal ("What will you do?") JDs in the
         # 2026-08-01 audit.
-        pp = p.rstrip(".:?")
+        # lstrip leading emoji bullet markers (➡️, 🚀, ✅, 👉, etc.) before matching
+        # START_RE/STOP_RE - the "^" anchors in those patterns otherwise never fire
+        # on an emoji-prefixed heading. Confirmed via Qonto's "➡️ As an Analytics
+        # Engineer at Qonto, you will:" in the 2026-08-18 batch. Scoped to the
+        # Unicode emoji/pictograph/arrow ranges specifically (not a bare
+        # non-word-character strip) - an earlier version using `[^\w"']` also ate
+        # leading "- "/"• " bullet markers on ordinary responsibility bullets,
+        # which then falsely tripped the short-heading-guess re-match a few lines
+        # below and truncated sections early across the whole corpus (3541 -> 3252
+        # bullets extracted). Emoji/pictograph ranges don't overlap "-"/"•"/"*", so
+        # this scoped version only affects genuinely emoji-prefixed lines.
+        pp = re.sub(r'^[←-⇿⌀-➿\U0001F000-\U0001FAFF️\s]+', '', p).rstrip(".:?")
         short = len(pp) < 70 and not pp.endswith(".")
         if short and START_RE.match(pp):
             in_section = True
