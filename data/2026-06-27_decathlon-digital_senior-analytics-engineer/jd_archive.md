@@ -1,74 +1,82 @@
 **URL:** https://job-boards.eu.greenhouse.io/decathlontechnology/jobs/4798519101?gh_src=cb30d7c2teu
 
-# Senior Analytics Engineer - Decathlon Digital FR
+Notre Digital Sport Team recherche un·e Analytics Engineer (f/m/d) en CDI basé·e à Lille (Btwin Village) ou Paris.
 
-**Job Title:** Senior Analytics Engineer - Decathlon
+L’équipe Digital Sport - Quality est au cœur de la conception et de la commercialisation des produits Decathlon (80% de nos produits sont conçus en interne !). Composée d'expert·es passionné·es de la tech et de la data, notre équipe a pour objectif de bâtir un écosystème digital fiable et robuste. Ton rôle sera crucial pour relever nos défis d'industrialisation et de valorisation de la donnée, avec un impact direct sur l'expérience de millions de sportives et sportifs à travers le monde.
 
-**Company:** Decathlon Digital FR
+TA FUTURE CONTRIBUTION
 
-**Locations:** Lille (Btwin Village), Nord, France; Paris, France
+En tant qu'Analytics Engineer (f/m/d), tes missions principales s'articulent autour des axes suivants :
 
-**Employment Type:** CDI (Permanent contract)
+Industrialisation & Modélisation :
+ Automatiser et industrialiser les pipelines de transformation de données alimentant les dashboards, les modèles IA et les analyses de données. Tu construis et modélises la 
+semantic layer
+ du domaine métier Sport.
 
----
+Stratégie & Qualité :
+ Définir la stratégie de nos stacks techniques et garantir la qualité, la fiabilité et la pertinence des données exposées.
 
-## Key Responsibilities
+Évolution de l'existant :
+ Maintenir et repenser les datasets ainsi que les pipelines actuels pour répondre à une variété toujours plus large de cas d'usage.
 
-The role focuses on four main areas:
+Partage & Communauté :
+ Contribuer activement à l'animation et au rayonnement de notre communauté interne d'analytics engineers et de data engineers.
 
-1. **Data Industrialization & Modeling:** "Automatiser et industrialiser les pipelines de transformation de données" (automating data transformation pipelines for dashboards, AI models, and analyses), including building the semantic layer for the sports domain.
+CE QUE TU APPORTES
 
-2. **Strategy & Quality:** Defining technical stack strategies and ensuring "la qualité, la fiabilité et la pertinence des données exposées" (quality, reliability, and relevance of exposed data).
+Une expérience significative (environ 3 ans et plus) en Analytics Engineering ou Data Engineering, ou une solide expérience en Data Analyse avec une pratique transverse de l'ingénierie de données.
 
-3. **Maintenance & Evolution:** Updating datasets and pipelines to support expanding use cases.
+Une maîtrise éprouvée d'au moins un environnement Cloud majeur (AWS, GCP ou Azure), de la mise en œuvre de pipelines de transformation de données avec 
+dbt 
+ainsi que des technologies 
+SQL et Python
 
-4. **Community Building:** Contributing to the internal analytics and data engineering community.
+Une vraie connaissance des outils de développement : 
+Git, Github, CI/CD, VSCode
 
----
+Un esprit collaboratif et une aisance à évoluer dans un environnement agile (Scrum / Kanban).
 
-## Required Qualifications
+Une excellente capacité de communication en anglais pour échanger au quotidien avec nos partenaires répartis dans 60 pays.
 
-- Approximately 3+ years in Analytics Engineering, Data Engineering, or comprehensive Data Analysis with data engineering experience
-- Proven expertise in major cloud platforms (AWS, GCP, or Azure)
-- "dbt" implementation and "SQL et Python" proficiency
-- Development tools knowledge: Git, Github, CI/CD, VSCode
-- Collaborative mindset suited for agile environments (Scrum/Kanban)
-- Fluent English for daily communication across 60 countries
+Le petit + :
+ Une sensibilité humaine pour les valeurs du sport, un esprit d'équipe prononcé et l'envie de t'investir dans des projets de #Tech4Good. Une connaissance d'outils comme Spark, Airflow, Tableau ou des technologies émergentes de la 
+Modern Data Stack
+ (PolaRS, DuckDB...) sera grandement appréciée.
 
-**Preferred additions:** Sports passion, Spark, Airflow, Tableau, or Modern Data Stack technologies (Polars, DuckDB)
+STACK TECHNIQUE
 
----
+Data Platform :
+ Amazon Web Services (AWS), Databricks, S3
 
-## Technical Stack
+Code & Orchestration :
+ SQL, Python, Airflow
 
-- **Data Platform:** AWS, Databricks, S3
-- **Code & Orchestration:** SQL, Python, Airflow
-- **Modeling & Quality:** dbt, great_expectations
-- **Software Delivery:** Git, GitHub, CI/CD practices
+Modélisation & Qualité :
+ dbt, great_expectations
 
----
+Software Delivery :
+ Git, GitHub, pratiques CI/CD
 
-## Offered Benefits
+CE QUE NOUS T’OFFRONS
 
-- Hybrid work arrangement
-- Equipment (Mac or Windows) aligned with role and sustainability commitments
-- International career opportunities within global network
-- Skills development and training (diverse projects, internal/external programs)
-- Compensation package including employee stock options and performance bonuses
+Organisation de travail hybride ;
 
----
+Matériel fourni en accord avec tes missions et nos engagements sociétaux (Mac ou Windows) ;
 
-## Company Context
+Une équipe de projet locale au sein d'un réseau mondial (possibilité de carrière internationale) ;
 
-Decathlon Digital comprises 5,000+ technology experts across Paris, Lille, and Amsterdam, creating "la plus vaste plateforme sportive numérique" (the largest digital sports platform) through software engineering, product management, data, cloud, and cybersecurity innovation.
+Développement des compétences et accompagnement (diversité des projets, formations internes et externes, etc.) ;
 
----
+Package de rémunération (actionnariat salarié, bonus mensuels/trimestriels).
 
-## Diversity Commitment
+NOTRE ENGAGEMENT EN FAVEUR DE L'INCLUSION ET DE L'ACCESSIBILITE
 
-Decathlon emphasizes inclusion as a core value and explicitly welcomes applicants from all backgrounds, offering accessible recruitment processes and confidential accommodation requests.
+Chez Decathlon, nous reconnaissons l'immense valeur qu'apporte la diversité à nos équipes et nous nous efforçons continuellement de favoriser et de cultiver un lieu de travail inclusif et équitable : c'est pourquoi l'Inclusion est l'un de nos Fondamentaux Humains. Nous encourageons les personnes de tous horizons et de toutes capacités à postuler, car nous sommes convaincu·es que la diversité des pensées, des cultures, des identités et des expériences vécues nous rend plus fort·es.
+Decathlon s'engage également à offrir un processus de sélection inclusif et accessible à tous les candidat·es. En cas de besoin d'aménagement, tu peux en faire la demande via le formulaire de candidature, celle-ci sera confidentielle. Ces demandes n'affectent pas le résultat du processus de recrutement.s 
 
----
+DECATHLON DIGITAL 
 
-Source URL: https://job-boards.eu.greenhouse.io/decathlontechnology/jobs/4798519101?gh_src=cb30d7c2teu
-Fetched: 2026-06-27
+Imaginez si la technologie nous permettait de repousser les frontières et d'offrir des expériences sportives inédites. C'est précisément notre ambition chez Decathlon Digital ! Nous sommes une équipe de plus de 5 000 experts en ingénierie logicielle, gestion de produits, données, cloud et cybersécurité, répartis à Paris, Lille et Amsterdam. Ensemble, nous créons la plus vaste plateforme sportive numérique, en exploitant les innovations technologiques pour optimiser la chaîne de valeur, concevoir des expériences connectées et donner une seconde vie à nos produits.
+
+Changeons la donne pour de bon.
+ Notre passion du sport nous guide et nous voulons qu’elle perdure. C’est pourquoi nous nous engageons à bâtir un modèle technologique plus durable, en réduisant notre impact direct sur l'environnement, et en créant un espace sûr et inclusif pour apprendre et nous épanouir ensemble. Rejoins l’équipe et façonnons le futur du sport.

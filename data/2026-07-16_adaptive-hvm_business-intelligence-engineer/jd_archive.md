@@ -1,34 +1,12 @@
 **URL:** https://www.linkedin.com/jobs/view/4441201627/
 
-# Job Posting Summary
+We are seeking a talented, data-driven, and analytical Business Intelligence Engineer to join our team in a 6 months contract with possibility of extension or become permanent. Salary 70kIf you are motivated to serve the needs of our customers, you will also be able to satisfy your curiosity working with one of the world's largest datasets. We seek candidates who are passionate about data analysis and data-driven decision making, uncompromisingly detail oriented, smart, efficient, and driven to help our business succeed by providing key insights that translate into action.
+Key Responsibilities:
+- Evaluation of the performance of program features and marketing content along measures of customer response, use, conversion, and retention- Statistical testing of A/B and multivariate experiments- Design, build and maintain metrics and reports on program health- Respond to ad hoc requests from business leaders to investigate critical aspects of customer behavior, e.g. how many customers use a given feature or fit a given profile, deep dive into unusual patterns, and exploratory data analysis- Employ data mining, model building, segmentation, and other analytical techniques to capture important trends in the customer base- Participate in strategic and tactical planning discussions
+Job Qualifications:
+- Experience working with large-scale complex datasets- Strong analytical mindset, ability to decompose business requirements into an analytical plan, and execute the plan to answer those business questions- Strong working knowledge of SQL- Background (academic or professional) in statistics, programming, and marketing- SAS experience a plus- Graduate degree in math/statistics, computer science or related field, or marketing is highly desirable.- Excellent communication skills, equally adept at working with engineers as well as business leaders
+The ideal candidate must be eligible to work full time in the country without sponsorship.
 
-**Job Title:** Business Intelligence Engineer
-**Company:** Adaptive HVM
-**Location:** Dublin, County Dublin, Ireland
-**Salary:** Not provided
+ Show more
 
-## Key Responsibilities
-
-The role focuses on bridging data and strategic decisions. Main duties include designing scalable data pipelines, creating automated dashboards with tools like Tableau or PowerBI, and writing optimized SQL queries for large datasets. Candidates will collaborate with product and business teams, document data governance practices, and automate reporting through Python scripting.
-
-## Required Qualifications
-
-- Bachelor's degree in Computer Science, Engineering, Mathematics, Statistics, Finance, or related quantitative field
-- 2-3+ years in business intelligence, data engineering, or analytics
-- Advanced SQL proficiency across data warehouses such as Redshift, Snowflake, or BigQuery
-- Enterprise dashboard experience with Tableau, AWS QuickSight, or PowerBI
-- Python or R programming capability
-- ETL/ELT pipeline design and scheduling experience
-
-## Preferred Qualifications
-
-- AWS cloud services experience (Redshift, S3, Glue, Athena)
-- Statistical and machine learning knowledge
-- Strong written communication for translating insights into executive reports
-
-## Employment Details
-
-- **Seniority Level:** Associate
-- **Employment Type:** Contract
-- **Industry:** Appliances, Electrical, and Electronics Manufacturing
-- **Note:** "The ideal candidate must be eligible to work full time in the country without sponsorship."
+ Show less

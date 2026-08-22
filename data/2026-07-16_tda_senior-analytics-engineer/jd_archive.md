@@ -1,39 +1,11 @@
 **URL:** https://www.linkedin.com/jobs/view/4440923217/
 
-# Job Posting Summary
+We’re looking for a talented Data Analyst / Analytics Engineer to join a growing Intelligence and Reporting team.This role is ideal for someone who enjoys turning complex, messy data into reliable pipelines, meaningful analysis and clear stories that help senior stakeholders make better decisions.
+What you’ll be doing:• Writing production-quality SQL and building maintainable data transformation workflows• Working with cloud data warehouses and data lakes, ideally Snowflake• Developing and improving reliable data pipelines• Using dbt and GitHub within a structured development-to-production workflow• Analysing data, identifying meaningful insights and communicating what the findings actually mean• Implementing data validation and quality-testing processes• Using Python for data manipulation and analysis• Creating clear and compelling visualisations using tools such as ThoughtSpot, Tableau or Power BI• Supporting colleagues across the wider Intelligence and Reporting team
+What we’re looking for:• Strong SQL skills, including CTEs, joins, window functions and aggregations• Experience working with semi-structured data such as JSON, VARIANT or ARRAY• Practical experience with a cloud data platform such as Snowflake, BigQuery, Redshift or Databricks• Working knowledge of dbt, or the ability to learn it quickly• Confidence using GitHub and version-control workflows• An understanding of data pipelines, quality controls and common failure points• Basic Python skills, ideally using pandas or a similar library• Experience with data visualisation and presenting insights• Strong Excel and presentation skills• Excellent written and spoken English
+Just as importantly, you’ll be proactive, highly responsive and a genuine team player who takes pride in helping the whole team succeed.
+Interested, or know someone who could be a great fit? Please send in your resume for more information
 
-**Job Title:** Senior Analytics Engineer
-**Company:** TDA
-**Location:** London Area, United Kingdom
-**Salary:** £50,000.00/yr
+ Show more
 
----
-
-## Complete Job Description
-
-The role involves joining an Intelligence and Reporting team to transform complex data into reliable pipelines and meaningful analysis. Key responsibilities include:
-
-**Primary Duties:**
-- Writing production-quality SQL and building maintainable data transformation workflows
-- Working with cloud data warehouses and data lakes, particularly Snowflake
-- Developing and improving reliable data pipelines
-- Using dbt and GitHub within structured development-to-production workflows
-- Analyzing data to identify insights and communicating findings to stakeholders
-- Implementing data validation and quality-testing processes
-- Using Python for data manipulation and analysis
-- Creating visualizations using tools like ThoughtSpot, Tableau, or Power BI
-- Supporting the broader Intelligence and Reporting team
-
-**Required Qualifications:**
-- Strong SQL expertise including "CTEs, joins, window functions and aggregations"
-- Experience with semi-structured data (JSON, VARIANT, ARRAY)
-- Practical cloud data platform experience (Snowflake, BigQuery, Redshift, Databricks)
-- Working knowledge of dbt
-- GitHub and version-control proficiency
-- Understanding of data pipelines and quality controls
-- Basic Python skills with pandas or similar libraries
-- Data visualization and presentation experience
-- Strong Excel and communication skills
-
-**Seniority Level:** Associate
-**Employment Type:** Full-time
+ Show less

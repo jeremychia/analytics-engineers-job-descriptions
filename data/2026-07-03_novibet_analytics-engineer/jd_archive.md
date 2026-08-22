@@ -1,29 +1,86 @@
 **URL:** https://www.linkedin.com/jobs/view/4435411631/
 
-Analytics Engineer
+📢 Join Novibet as an 
+Analytics Engineer!
 
-Novibet seeks an Analytics Engineer to build data infrastructure supporting analytics across the organization.
+Are you ready to take on a key role in a dynamic, fast-growing company? If you have a passion for Data Analytics and thrive in a fast-paced environment, this could be the right opportunity for you.
+
+Who We Are
+
+Founded in 2010, Novibet is an established GameTech company operating in Europe, the Americas, and ROW countries (Greece, Brazil, Ireland, Finland, Mexico, Chile, Ecuador, Cyprus, and New Zealand), with hubs in Greece, Malta, Brazil, and Mexico and 1200+ employees across all countries of operation. We are committed to staying at the forefront of technological advancements, continually pushing boundaries and delivering seamless entertainment and online gaming experiences to our rapidly expanding customer base.
+
+Why Novibet
+
+At Novibet, you are empowered to excel, prioritising growth through listening and learning as part of a group of forward-thinkers and doers continuously adapting to new challenges. We are equally committed to fostering a positive, inclusive, and supportive workplace culture that empowers every individual to thrive.
+
+Join us, and you will be part of a team of over 1,200 people worldwide that values collaboration, innovation, and personal growth.
+
+What you will work on
+
+We are looking for a highly skilled Analytics Engineer to join our growing BI/Analytics Engineer team at Novibet. In this role, you will design, build, and maintain scalable data pipelines and curated datasets that power analytics, reporting, and decision-making across the business. You will work closely with Data Analysts, BI Analysts, and collaborate daily with the Data Analytics Team to ensure reliable, high-quality data products in Azure Databricks.
 
 Key Responsibilities
-• Design, build, and maintain scalable data pipelines and curated datasets
-• Create ETL/ELT pipelines in Azure Databricks
-• Partner with analysts to deliver reporting-ready datasets
-• Implement data quality practices
-• Troubleshoot existing systems
 
-Required Qualifications
-• 3+ years in Analytics Engineering or Data Engineering
-• Strong SQL for transformations and optimization
-• Proficient Python for data manipulation
-• Experience with version control (GitHub/GitLab)
-• Understanding of data warehouse/lakehouse principles and cloud platforms, preferably Databricks
-• Knowledge of Apache Spark and distributed processing concepts
+Create, maintain, and optimize scalable ETL/ELT pipelines to efficiently process and exchange data across our analytics ecosystem.
 
-Preferred Qualifications
-• Workflow orchestration experience (Apache Airflow, Dagster)
-• Data quality frameworks and pipeline monitoring expertise
-• Problem-solving orientation with ownership mindset
-• Ability to work independently and communicate across technical/non-technical teams
+Build and maintain robust transformations in Azure Databricks, ensuring pipelines can handle large workloads, complex business logic, and integrations.
 
-Benefits
-Competitive compensation, health insurance, equipment, career development, shuttle services, gym access, international team environment.
+Partner with Data Analysts and BI Analysts to deliver analytics-ready datasets that meet reporting, KPI, and visualization needs (Tableau/Looker/Power BI or equivalent).
+
+Continuously evaluate and enhance the BI/data platform with a focus on reliability, scalability, efficiency, monitoring, and cost-awareness.
+
+Implement and promote data quality practices (validation checks, reconciliation, testing patterns) to improve trust in reporting and decision-making.
+
+Troubleshoot and maintain existing pipelines, datasets, and related business processes; perform root-cause analysis and implement long-term fixes.
+
+Contribute to a culture of continuous improvement and knowledge sharing, including documentation, best practices, and reusable components.
+
+What you bring
+
+3+ years of experience in Analytics Engineering, Data Engineering, or a related field.
+
+Strong SQL skills for data transformation, modeling, and performance optimization.
+
+Strong Python skills for data manipulation, automation, and pipeline support.
+
+Hands-on experience with version control and collaborative development workflows (e.g., GitHub / GitLab).
+
+Understanding of modern data warehouse/lakehouse principles and cloud-based analytics platforms (preferable Databricks).
+
+Familiarity with Apache Spark / distributed data processing concepts (PySpark is a plus).
+
+Proactiveness, solution-oriented mindset with a passion for tackling complex challenges and delivering impactful data solutions.
+
+Ability to design and implement solutions from the ground up, with strong ownership and attention to detail.
+
+Strong analytical and problem-solving abilities, with the confidence to challenge assumptions and improve existing processes.
+
+Familiarity with working independently and collaboratively in a fast-paced environment, communicating clearly with technical and non-technical stakeholders.
+
+Nice to have
+
+Exposure to workflow orchestration tools such as Apache Airflow or Dagster.
+
+Experience with data quality/testing frameworks, pipeline monitoring, and alerting (e.g., expectations-style checks, logging, SLAs).
+
+What we offer
+
+We truly value our people at Novibet! Within our vibrant, dynamic, and fast-paced environment, we encourage everyone to reach their full potential while enjoying every step of the journey. Here's how we make that happen:
+
+💰Competitive Compensation: Attractive salary and bonus scheme
+
+🧑 ⚕️Health insurance: Group health & medical insurance package
+
+💻Top-Notch Equipment: All the tools you need for your role
+
+🚀Career Growth: Focused career development, performance management, and training opportunities
+
+🚗Alternative Transportation: Shuttle buses & Carpooling options
+
+🏋️Free access to our in-house gym to keep you energized
+
+🌍Inclusive Environment: A welcoming, international, and multicultural team
+
+🎉Engaging Activities: Exciting events, sports, and team-building activities
+
+At Novibet we value diversity and are committed to an inclusive and equitable workplace. All decisions regarding recruitment, hiring, promotion, compensation, employee training and development, and all other terms and conditions of employment, are made without regard to race, religious beliefs, color, gender identity, sexual orientation, marital status, disability or chronic disease, age, ancestry or place of origin.

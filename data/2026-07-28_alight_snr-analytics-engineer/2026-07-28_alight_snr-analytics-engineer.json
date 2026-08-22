@@ -8,6 +8,7 @@
   "salary_min": null,
   "salary_max": null,
   "salary_currency": null,
+  "salary_period": null,
   "jd_authorship": "hiring_manager",
   "stakeholder_orientation": "internal_data",
   "autonomy_level": "mixed",
@@ -52,6 +53,11 @@
   "has_metabase": false,
   "has_great_expectations": false,
   "has_soda": false,
+  "required_tools": [
+    "SQL",
+    "Redshift"
+  ],
+  "preferred_tools": [],
   "source_url": "https://careers.alight.com/us/en/job/ALIGUSR37611EXTERNALENUS",
   "evidence": {
     "velocity_vs_rigour": "The role focuses on designing robust analytics datasets, mentoring junior engineers, and driving BI solutions with a strong focus on performance, scalability, and governance",
@@ -75,7 +81,7 @@
     "loss_aversion_framing_explanation": "Moderate: data governance and access-control security are stated concerns but there is no explicit compliance/regulatory or stakeholder-trust framing beyond internal best practices.",
     "greenfield_vs_fix": "Work alongside Data Engineers to understand the ETL/ELT pipelines... Handle large-scale analytical workloads",
     "greenfield_vs_fix_explanation": "The dominant verbs (optimize, tune, standardize, support) apply to existing enterprise analytics platforms rather than building new infrastructure from scratch.",
-    "language_gate": "Not stated in JD",
+    "language_gate": "Not stated in JD.",
     "urgency": "No urgency signals present.",
     "work_arrangement": "Not stated in JD.",
     "loss_aversion": "Implement advanced RLS/CLS models... Define best practices for BI and data usage — reflects a moderate concern for data governance and access security rather than explicit regulatory risk.",

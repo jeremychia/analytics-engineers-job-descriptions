@@ -1,40 +1,35 @@
 **URL:** https://www.cartiere.be/jobs/analytics-engineer/
 
-Analytics Engineer - Cartière
+BEDRIJF:
 
-Job Title: Analytics Engineer
-Company: A project-based consultancy firm specializing in data solutions
-Location: Antwerpen Province, Belgium
-Contract Type: RAAS (Recruitment as a Service)
-Salary: Not specified
+Dit projecthuis kent een zeer sterke ondernemerscultuur. Met een no-nonsense benadering helpen ze klanten om data driven te worden. Ze hanteren een A tot Z aanpak waarbij ze zich hoofdzakelijk richten op langlopende projecten. Dit betekent dat je bij elk project betrokken raakt bij data-engineering, data-analyse, data science en data governance, om samen tot een alomvattende oplossing te komen. Bij elk project werk je nauw samen met het team van het projecthuis zelf, dat meer dan 100 leden telt. Bij dit bedrijf stap je binnen in een dynamische werkomgeving waar een sterk gevoel van kameraadschap heerst, er volop mogelijkheden zijn om te leren, en waar je actief kan bijdragen aan de groei van het bedrijf.
 
-Responsibilities
-The role involves translating client needs into data solutions through collaboration with data scientists, BI specialists, and business stakeholders. Key duties include:
-- Working with clients to identify needs and brainstorm solutions
-- Developing datamodels aligned with business requirements
-- Collaborating with the internal team (100+ members) and clients throughout projects
-- Contributing to comprehensive data solutions covering engineering, analytics, science, and governance
+JOBOMSCHRIJVING:
 
-Requirements
+Je vertaalt de noden van klanten naar data-oplossingen door nauw samen te werken met de data scientist, de BI specialisten en de business profielen. Je zit samen met de business om hun noden in kaart te brengen en samen te brainstormen naar een oplossing. Vervolgens ontwikkel je in samenwerking met jouw team en de klant datamodellen die passen bij hun business noden. Om deze reden is het belangrijk dat je een sterke kennis hebt van SQL en bij voorkeur van DBT.
 
-Education & Experience:
-- Bachelor's or Master's degree
-- Minimum two years of work experience
-- Consultancy background preferred
+PROFIEL:
 
-Technical Skills:
-- Strong SQL knowledge (mandatory)
-- API experience
-- DBT proficiency (preferred)
-- Docker and PySpark experience (advantageous)
+-    Je hebt een master of bachelor.
 
-Soft Skills:
-- Strong communication abilities
-- Consultancy experience valued
+-    Je hebt minimum twee jaar werkervaring.
 
-Languages:
-- Fluent Dutch and/or French
-- Good English proficiency
+-    Je hebt een goede kennis van SQL en API's, DBT vormt een plus.
 
-Benefits
-The company offers competitive compensation and opportunities for development in technical, management, and professional areas within a dynamic, entrepreneurial environment with short decision-making lines.
+-    Je bent communicatief vaardig.
+
+-    Je hebt consultancy ervaring.
+
+-    Ervaring met Docker en PySpark is een plus.
+
+-    Je spreekt vloeiend Nederlands en/of Frans met een goede kennis van het Engels.
+
+AANBOD:
+
+Je komt terecht in een gedreven en ondernemende organisatie waar de beslissingslijnen kort zijn. Naast een mooi salarispakket krijg je de mogelijkheid om je verder te ontwikkelen op technisch, management en professioneel niveau.
+
+Herken jij jou in deze functie?
+
+Stuur nu jouw CV naar delphine@cartiere.be en bel +32 33 43 94 92 voor meer informatie.
+
+Bekijk onze website www.cartiere.be voor meer BI vacatures.
