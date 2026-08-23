@@ -343,7 +343,7 @@ Each of the 15 responsibility themes is a binary per-JD indicator (matched at le
 
 | Theme | Dimension | V | p | n |
 |---|---|---|---|---|
-| AI & Agentic Workflows | ai_role | 0.62 | p<0.0001 | 464 |
+| AI & Agentic Workflows | ai_role | 0.66 | p<0.0001 | 464 |
 | Data Quality & Testing | testing_framing | 0.44 | p<0.0001 | 464 |
 | Security, Privacy & Risk | loss_aversion_framing | 0.33 | p<0.0001 | 464 |
 | Data Modeling & Transformation | has_dbt | 0.28 | p<0.0001 | 464 |
@@ -378,7 +378,7 @@ Ranked by effect size. These are exploratory — no multiple-comparison correcti
 | Governance & Documentation | has_dbt | 0.18 | p<0.001 | 464 |
 | Data Ownership (end-to-end) | jd_authorship | 0.18 | p<0.001 | 464 |
 | Data Infrastructure & Warehouse Ops | stakeholder_orientation | 0.17 | p=0.007 | 464 |
-| Data Ownership (end-to-end) | ai_role | 0.17 | p<0.001 | 464 |
+| Data Ownership (end-to-end) | ai_role | 0.17 | p=0.001 | 464 |
 | Data Infrastructure & Warehouse Ops | has_dbt | 0.17 | p<0.001 | 464 |
 
 ### Featured relationships, stratification-checked

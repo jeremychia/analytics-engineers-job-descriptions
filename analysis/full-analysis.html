@@ -644,8 +644,12 @@ let ALL_DATA = [], activeData = [];
 let charts = {}, sortedTools = [];
 
 // ── Persona (job seeker vs hiring manager): same data, different questions ──
+// Reads 'aeProfile' first (this page's own key) and falls back to index.html's
+// 'aeMode' key so a mode picked there carries over on "see the data" links —
+// they were previously two unlinked keys and a manager clicking through from
+// index.html's manager mode would silently land here in seeker framing.
 let persona = null;
-try { persona = localStorage.getItem('aeProfile'); } catch (e) {}
+try { persona = localStorage.getItem('aeProfile') || localStorage.getItem('aeMode'); } catch (e) {}
 function P() { return persona === 'manager' ? 'manager' : 'seeker'; }
 const TIP_LABEL = { seeker: 'Apply this', manager: 'For your JD' };
 
@@ -745,7 +749,7 @@ const COPY = {
 
 function setPersona(p) {
   persona = p;
-  try { localStorage.setItem('aeProfile', p); } catch (e) {}
+  try { localStorage.setItem('aeProfile', p); localStorage.setItem('aeMode', p); } catch (e) {}
   document.getElementById('personaOverlay').classList.add('hidden');
   applyPersona();
 }
