@@ -437,7 +437,7 @@ Both `ai_enabler` and `ai_user` roles show meaningfully more greenfield work (26
 |---|---|---|---|---|
 | velocity_vs_rigour × domain_risk (Prediction 1) | χ² | <0.0001 | 0.16 | Stable at n=510 AE/BI (was p<0.0001, V=0.17 at n=486) — small real effect, high-risk roles more rigour-dominant |
 | velocity_vs_rigour × has_dbt (Prediction 1 comparator) | χ² | 0.0084 | 0.14 | **Significant at n=510 AE/BI, fourth consecutive corpus update** (was p=0.0096, V=0.14 at n=486) — a borderline effect that keeps holding at essentially the same margin; see §4.0 |
-| ai_role × stakeholder_orientation (Prediction 2) | χ² | 0.058 | 0.12 | Still not significant at n=527 (was p=0.065 at n=502) — closer to the threshold than the prior reading, but a stable non-result |
+| ai_role × stakeholder_orientation (Prediction 2) | χ² | 0.137 | 0.11 | Still not significant at n=527 (was p=0.058 before the §9.16 evidence-quality audit) — the audit's relabeling moved this further from the threshold, not closer; a stable non-result |
 | domain_risk × stakeholder_orientation | χ² | <0.0001 | 0.36 | Strongest relationship: finance concentrates high-risk, low-risk concentrates internal_data |
 | data_team_maturity × greenfield_vs_fix | χ² | <0.0001 | 0.49 | Near-deterministic and stable: early=greenfield, mature=fix/scale |
 | domain_risk × greenfield_vs_fix | χ² | 0.324 | 0.07 | **Still not significant at n=527** (was p=0.176, V=0.08 at n=502) — this relationship has crossed the threshold in both directions across earlier snapshots and remains null; read as a marginal effect this corpus size can't reliably detect either way, not a reversal (§4.9 Finding B) |
@@ -460,8 +460,8 @@ Both `ai_enabler` and `ai_user` roles show meaningfully more greenfield work (26
 | loss_aversion_framing × velocity_vs_rigour | χ² | <0.0001 | 0.37 | Cleaner than domain_risk's own link to rigour — 98% of high-loss-aversion JDs are rigour-framed (Finding I) |
 | testing_framing × has_dbt | χ² | <0.0001 | 0.34 | dbt JDs 75% likely to frame testing as owned responsibility vs. 36% without dbt (Finding I) |
 | testing_framing × jd_authorship | χ² | <0.0001 | 0.22 | Hiring-manager JDs skew toward `responsibility`/`tool_listed`, recruiter JDs toward `absent` (Finding I) |
-| ai_role × autonomy_level | χ² | <0.0001 | 0.21 | Unexpected direction, stable: `ai_user` (51%) and `ai_enabler` (47%) roles are both markedly more strategic-leaning than `none` (23%) (Finding I) |
-| ai_role × greenfield_vs_fix | χ² | <0.0001 | 0.17 | `ai_enabler`/`ai_user` roles carry meaningfully more greenfield work than `none` roles (Finding I) |
+| ai_role × autonomy_level | χ² | <0.0001 | 0.22 | Unexpected direction, stable: `ai_user` and `ai_enabler` roles (both 49%) are markedly more strategic-leaning than `none` (23%) (Finding I) |
+| ai_role × greenfield_vs_fix | χ² | <0.0001 | 0.18 | `ai_enabler`/`ai_user` roles carry meaningfully more greenfield work than `none` roles (Finding I) |
 
 ---
 
