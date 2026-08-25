@@ -7065,5 +7065,298 @@
   "jd_id": "2026-08-20_vivid-housing_analytics-engineer",
   "bullets": [],
   "source": "regex"
+ },
+ {
+  "jd_id": "2026-08-25_cedar_analytics-bi-lead",
+  "bullets": [
+   "Take ownership of the approach to analytics and business intelligence",
+   "Review existing reporting and identify opportunities to improve how data and insight are used",
+   "Define and embed best practice across analytics, reporting, dashboards and data visualisation",
+   "Partner with stakeholders to understand business challenges and translate them into effective analytical solutions",
+   "Develop and improve KPI frameworks, helping ensure the organisation is measuring what matters"
+  ],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-08-25_checkout-com_senior-analytics-engineer",
+  "bullets": [
+   "Design and implement high-performance, reusable, and scalable data models for our data warehouse using dbt and Snowflake",
+   "Design and implement Looker structures (explores, views, etc) which will enable users across the organization to self-serve analytics",
+   "Work closely with data analysts and business teams to understand business requirements and provide data ready for analysis and reporting",
+   "Continuously discover, transform, test, deploy and document data sources and data models",
+   "Apply, help define, and champion data warehouse governance: data quality, testing, documentation, coding best practices and peer reviews",
+   "Take initiative to improve and optimise analytics engineering workflows and platforms"
+  ],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-08-25_eden-scott_senior-analytics-engineer",
+  "bullets": [
+   "Own the Semantic Layer",
+   "Design, build and maintain governed semantic models and datasets",
+   "Create reusable business-ready data models built on Kimball and star-schema principles",
+   "Ensure data definitions are consistent, trusted and scalable across reporting, analytics and AI use cases"
+  ],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-08-25_eraneos_senior-analytics-engineer",
+  "bullets": [],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-08-25_floq_senior-analytics-engineer",
+  "bullets": [
+   "As our Senior Analytics Engineer, you will own the layer between raw data and every number this company makes decisions on. We operate in digital assets, and our data warehouse already runs well over a hundred production pipelines covering every trade, deposit, withdrawal, hedge and customer verification we process. The foundation is built. What it needs now is someone to own the layer on top of it.",
+   "This role asks for a rare combination: the modelling rigour to design dimensional schemas that survive contact with financial reality, and the engineering discipline to ship and operate the pipelines that populate them. You will not be handed clean data and a ticket queue. You will own the problem from source system through to the dashboard a director opens on Monday morning.",
+   "You will join a small, senior data team. There is no analyst layer between you and the stakeholder, and no ticket-pusher between you and production. Your mission is to make the warehouse the single source of truth for Finance, Compliance, Growth, Support and the executive team, so that one metric means one thing everywhere, and everyone trusts it enough to stop keeping their own spreadsheet.",
+   "Dimensional Modelling: Design, build and maintain the warehouse's core models. This covers SCD dimensions such as customers and verification profiles, partitioned fact tables for trades, payments, hedging and balances, and the analytics marts that sit on top of them for finance, product and leadership.",
+   "Transformation Pipelines: Own analytics pipelines end to end, from schedule and upstream dependencies through to the transformation logic and the target table. Every model you write must be safe to rerun and safe to backfill by construction rather than by convention.",
+   "Metric Definition Ownership: Be the authority on how a metric is calculated, covering active users, assets under management, take rate, revenue, funnel conversion and acquisition cost. Drive cross-team alignment to a written, versioned definition, then build the dashboards that make the parallel spreadsheets redundant.",
+   "Data Ingestion: Build and maintain extractors against REST and GraphQL sources, including exchange platforms, custody providers, payment gateways, support systems and external price feeds. Handle pagination, retries and error states properly.",
+   "Data Quality Contracts: Declare quality checks alongside every model, covering completeness, uniqueness, consistency, validity, timeliness and accuracy, with thresholds you can defend when they fire at 3am. Investigate discrepancies against source systems and close them with a written root cause rather than a nudge to the numbers.",
+   "Cost Guardrails: Design for what a query costs. Warehouse compute, scanned data volume and storage growth are all measurable, and we expect you to weigh them and choose the cheaper option when two designs solve the same problem."
+  ],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-08-25_gogoro_business-intelligence-analyst",
+  "bullets": [
+   "\u2022 End-to-End BI Solutions: Design, build, and maintain scalable BI solutions, from data ingestion (ETL) to visualization (Dashboards/Reports).",
+   "\u2022 Data Modeling & Warehousing: Develop robust data models and schemas using ETL tools to support self-service analytics.",
+   "\u2022 Actionable Insights: Partner with stakeholders to translate business questions into analytical requirements, utilizing statistical methods where necessary to validate findings.",
+   "\u2022 Visualization: Proficiency in industry-standard BI tools such as Tableau, Power BI, or Looker Studio.",
+   "\u2022 Data Quality & Governance: Understanding the best practice of data governance, troubleshoot data discrepancies, optimize query performance, and ensure a \"single source of truth\" across the organization."
+  ],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-08-25_infoplus-technologies_analytics-engineer",
+  "bullets": [
+   "Build, maintain, and enhance data pipelines and transformation workflows using dbt and python DAG in Airflow.",
+   "Develop clean, reliable, and reusable data models for analytics and reporting.",
+   "Work with SQL and data warehouse platforms to investigate data, troubleshoot issues, and implement transformations.",
+   "Develop and maintain Power BI dashboards, reports, semantic models, and DAX measures.",
+   "Translate business requirements into appropriate data models and reporting solutions.",
+   "Perform data analysis, validation, reconciliation, and data quality checks.",
+   "Troubleshoot data issues across the pipeline, from source through transformation to reporting.",
+   "Take ownership of assigned tasks and independently drive them through development, testing, and completion.",
+   "Work closely with business, analytics, and engineering teams to deliver production-ready solutions.",
+   "AI Forward - Understand how to marry AI tools to enhance productivity on tasks"
+  ],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-08-25_insulet_senior-analytics-engineer",
+  "bullets": [
+   "Ownership, development, and maintenance of the Data Science & Analytics COE data products portfolio",
+   "Identify and deliver actionable insights and recommendations to key stakeholders across the organization",
+   "Own and develop analytics tools and processes that promote data driven decision making throughout the company",
+   "Lead dashboard, application, dataset, and tool validation and documentation initiatives",
+   "Partner with stakeholders to build queries and data visualizations for ad-hoc requests and existing dashboards/reports",
+   "Work with IT and cross functional teams to identify data sources, determine data collection and design aggregation mechanisms",
+   "Serve as liaison between the data teams and upstream engineering teams and participate in data governance activities as a key contributor"
+  ],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-08-25_ite-singapore_data-analytics-engineer",
+  "bullets": [
+   "Partner teaching and learning faculty from the colleges to design, develop and implement analytics solutions based on structured and unstructured data",
+   "Build scripts to extract, prepare, transform and load data into an analytics software",
+   "Build AI models with clustering and predictive capabilities",
+   "Work closely with our team to gather user requirement and translate them into data requirement and insights",
+   "Explore data, design data models, apply statistics, machine learning models for descriptive and diagnostic analysis",
+   "Create, test, and implement visual dashboards that are relevant to different groups of college stakeholders",
+   "Support analysis of learning and leaner profile data to help lecturers and stakeholders gain insights into students' learning behavior during term time",
+   "Provide training and consultancy to lecturers on how to use the dashboards",
+   "Conduct knowledge transfer on data analytics and modelling to staff"
+  ],
+  "source": "llm_interpreted"
+ },
+ {
+  "jd_id": "2026-08-25_ktm-ag_data-analytics-engineer",
+  "bullets": [],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-08-25_la-fosse_analytics-engineer",
+  "bullets": [
+   "You will have responsibility over the entire data lifecycle, working closely with the Head of Data and other business stakeholders to drive innovation",
+   "Full stack data ownership",
+   "Pipeline Orchestration"
+  ],
+  "source": "llm_interpreted"
+ },
+ {
+  "jd_id": "2026-08-25_lyka_data-analytics-engineer",
+  "bullets": [
+   "As a Data Analytics Engineer in Lyka's Data team, you'll be instrumental in enabling data driven decision-making across the business and uplifting our data capabilities. While you'll partner closely with Analyst, this role will collaborate closely with Product and Engineering teams to build scalable data products, and empower teams with reliable, self-service access to data by building on the semantic layer.",
+   "This is a hands-on, high-impact role where you'll bridge the gap between data engineering and analytics \u2014 enabling fast, trustworthy insights through well-modelled data, intuitive tools, and robust pipelines.",
+   "Collaborate with Data Analysts, Product Managers, and Engineers to design and implement analytics-ready data models that enables data capabilities and decision-making.",
+   "Build and maintain robust, scalable data pipelines using tools like dbt, Airflow, and Python to transform raw data into clean, reliable datasets.",
+   "Develop and optimise semantic layers and metrics definitions to support consistent reporting across BI and Analytic tools.",
+   "Ensure data quality, reliability, and performance across analytics workflows, proactively identifying and resolving issues."
+  ],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-08-25_maya_analytics-engineer",
+  "bullets": [
+   "Work with our Data Scientists to design datasets that are useful for creating statistical and machine-learning models",
+   "Design, develop and maintain feature stores as well as the accompanying feature pipelines that will be used in creating training data as well as real-time inference features",
+   "Implement data quality and integrity checks and ensure the quality and availability of data sources in accordance with their SLAs",
+   "Align with Data Engineering and Data Governance team to achieve maturity in the data",
+   "Create and maintain software packages for use by our Data Scientists to help improve their model development workflow",
+   "Build CI/CD pipelines and microservices, to improve time to deployment and proactively catch issues before they hit production",
+   "Provide guidance on best practices for code and architecture of data pipelines and microservices, and do code and architecture reviews to ensure adherence to best practices",
+   "Communicate technical architecture and solutions, as well as explain the competitive advantage of various technologies to a broad audience",
+   "Create and maintain architecture and systems documentation"
+  ],
+  "source": "llm_interpreted"
+ },
+ {
+  "jd_id": "2026-08-25_mercedes-benz-bank_senior-analytics-engineer",
+  "bullets": [],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-08-25_microsourcing_senior-analytics-engineer",
+  "bullets": [
+   "Conduct industry benchmarking studies using platform and external data to generate actionable insights.",
+   "Develop customer-specific analyses covering performance trends, competitive positioning, visibility patterns, and account health indicators.",
+   "Build, maintain, and improve reporting infrastructure, including data pipelines, automated reports, and internal dashboards.",
+   "Develop capacity models to support workload forecasting, resource planning, and operational decisions.",
+   "Integrate data from internal and third-party APIs into reliable, unified datasets.",
+   "Write SQL queries, Python scripts, and automation to clean, transform, and analyze complex datasets.",
+   "Apply AI tools to support research, analysis, documentation, and process improvement while validating outputs for accuracy.",
+   "Partner with Professional Services and Customer Success teams to turn ad hoc requests into structured, repeatable analyses.",
+   "Support customer health, renewal, and retention analysis by identifying trends and potential risk signals.",
+   "Identify and resolve data quality issues while documenting data sources, definitions, and methodologies.",
+   "Present insights and recommendations clearly to technical and non-technical stakeholders.",
+   "Identify opportunities to standardize and automate recurring reporting and analytical processes.",
+   "Support team onboarding and training on data tools, processes, and best practices."
+  ],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-08-25_momo_senior-analytics-engineer",
+  "bullets": [
+   "Apply system-level thinking to design and own a company-wide data certification framework, working with Data Engineering and Data Governance to translate requirements into implementable specifications",
+   "Continuously evolve the framework as a living system by improving its effectiveness, coverage, adoption, and data trust signals",
+   "Define and drive analytics engineering standards across the organization, including data modeling, semantic layers, documentation, and data quality practices, and mentor Data Analysts and Analytics Engineers to ensure consistent adoption",
+   "Enable trusted, discoverable, and AI-ready data assets by improving data reliability through automated quality checks, monitoring, and contributing to the evolution of the company's data foundation and self-service analytics platform"
+  ],
+  "source": "llm_interpreted"
+ },
+ {
+  "jd_id": "2026-08-25_netapp_data-analytics-engineer",
+  "bullets": [
+   "Develop and maintain Power BI semantic models, dashboards, and reports",
+   "Perform data extraction, cleansing, transformation, validation, and analysis",
+   "Build and support data pipelines, integrations, and ETL/ELT processes across enterprise platforms",
+   "Assist in developing AI-enabled solutions leveraging LLMs, Generative AI, machine learning, and intelligent automation",
+   "Support the development of AI agents, conversational analytics, and agentic workflows that improve productivity and decision-making",
+   "Ensure data quality, governance, reliability, and consistency across analytics solutions",
+   "Collaborate with business stakeholders to gather requirements and translate them into scalable analytics solutions",
+   "Document business processes, data flows, technical specifications, and solution designs",
+   "Explore emerging technologies in Data Engineering, GenAI, Agentic AI, ML, and Cloud Analytics to identify business use cases",
+   "Contribute to building reusable analytics, automation, and AI assets for enterprise-wide adoption"
+  ],
+  "source": "llm_interpreted"
+ },
+ {
+  "jd_id": "2026-08-25_new-york-technology-partners_analytics-engineer",
+  "bullets": [
+   "Build and maintain scalable data pipelines across marketing, Salesforce, API, and enterprise data sources.",
+   "Develop data transformations and models for analytics, dashboards, reporting, and advanced modeling.",
+   "Build API integrations and Python-based ingestion solutions.",
+   "Ensure data quality through testing, monitoring, and troubleshooting.",
+   "Maintain technical documentation, metadata, and data lineage.",
+   "Use modern AI tools to support development, testing, troubleshooting, and documentation."
+  ],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-08-25_perk_senior-analytics-engineer",
+  "bullets": [
+   "Develop and Maintain Transformation best practices in ELT Pipelines: Design, develop, and maintain efficient and scalable workflows using tools like dbt to transform raw data loaded into our data warehouse (Snowflake) into clean, ready-to-use data models.",
+   "Data Modelling: Implement best-practice data modelling and software engineering techniques to ensure data structures are optimised for performance, accuracy, and ease of use in reporting and analytical applications (e.g. CI/CD, testing, lineage).",
+   "Data Quality and Testing: Write comprehensive data quality checks, tests, and monitoring scripts to ensure the accuracy, completeness, and reliability of all transformed data assets. Establish and maintain documentation for all data transformations and models.",
+   "Collaboration: Work closely with Data Analysts and business users to understand their reporting needs and optimise data models to support their analytical use cases. Collaborate with Data Engineers on data ingestion strategies and platform optimisation.",
+   "Performance Optimisation: Tune and optimise SQL queries and data models to reduce latency and improve the performance of our data warehouse and downstream applications.",
+   "Tool Adoption: Champion the adoption of modern data stack tools and practices (e.g. Git, CI/CD).",
+   "Build scalable, compelling data visualisations in Looker that can be used by large teams."
+  ],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-08-25_pluxee_hub-analytics-engineer",
+  "bullets": [
+   "Develop and maintain robust, cost efficient, high-performance data pipelines, end-to-end, mixing several technologies like Azure Data Factory pipelines, Pyspark, Python, Rest API, SQL & NoSQL databases",
+   "Orchestrate jobs following DAG principles",
+   "Ensure that data flows are reliable, documented, and easy to maintain",
+   "Design optimized tables (choosing the right distribution, indexing types) to ensure maximum performance",
+   "Implement proven patterns such as Slowly Changing Dimensions (SCD) or Data Vault to address needs related to data historization or flexibility",
+   "Adopt established designs like Star Schema or relational models to facilitate analysis and reporting",
+   "Document transformations and models comprehensively to ensure traceability and understanding by stakeholders",
+   "Proficiency with Business Intelligence tools (Power BI) to ensure consistency between models and reporting",
+   "Actively participate in discussions with business teams to understand their specific data needs and decision-making processes",
+   "Translate these requirements into concrete solutions, ensuring that the models delivered meet business objectives",
+   "Conduct thorough data exploration to understand the relationships between different tables and identify relevant data sources to design data model structured correctly to support business goals",
+   "Validate data quality and consistency against the provided business information by testing and auditing data to ensure it meets business rules and expectations for reliability",
+   "Understand the data platform architecture and the purpose of each Azure resources",
+   "Ensure compliance with data protection law (PII encryption)",
+   "Monitor data ingestion jobs",
+   "Develop, test, and deploy code and jobs within a DevOps framework, expertly managing branches, pull requests, and test environments",
+   "Collaborate with other Analytics Engineers and Data Engineers and follow the guidelines set by the Hub team, ensuring alignment with our highest standards and best practices"
+  ],
+  "source": "llm_interpreted"
+ },
+ {
+  "jd_id": "2026-08-25_rockstar-games_senior-analytics-engineer",
+  "bullets": [
+   "Partner with Data Scientists and business stakeholders to understand analytical needs and translate them into robust data infrastructure and workflows for the global Analytics team.",
+   "Collaborate with the Data Engineering team to design, develop and maintain scalable data models and pipelines.",
+   "Monitor performance and optimize data systems for high performance and reliability.",
+   "Collaborate with the Data Integrity team to build a Data Quality Framework that ensures production data meets SLAs for key stakeholders and business processes.",
+   "Perform timely Root Cause Analysis to troubleshoot data-related issues; assist in implementation of code and process fixes.",
+   "Provide thought leadership and collaborate with other team members to continue to scale our architecture to evolve for the needs of tomorrow.",
+   "Contribute to the establishment of best practices including code standards, version control, documentation, testing, and review processes.",
+   "Develop and support CI/CD processes using Terraform, Github, TeamCity, Octopus, etc.",
+   "Define and implement monitoring and alerting policies for data solutions."
+  ],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-08-25_statista_data-analytics-engineer",
+  "bullets": [
+   "Design, implement, and maintain backend services in Python that power our data access and distribution layer",
+   "Build and operate automated build, test, and deployment pipelines following CI/CD and GitOps practices, running on AWS and Kubernetes",
+   "Design and maintain data models and schemas (Avro, SQL) for our data pipelines and services, and publish them to downstream consumers via our Kafka-based distribution platform and schema registry",
+   "Build access-layer data models in our analytics environment (e.g., Snowflake) so applications can work with the data directly, including via API",
+   "Act as the coordination interface between the Data and Tech divisions, aligning priorities, schemas, and timelines across upstream and downstream teams"
+  ],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-08-25_us-mobile_analytics-engineer",
+  "bullets": [
+   "Work closely with engineering teams to design and develop data structures that enable deeper analysis",
+   "Demonstrate expertise in the analytics engineering development cycle, including data modeling, version control, documentation, testing, and ensuring codebase best practices",
+   "Build visually compelling, high-performance reporting and dashboards using tools like Tableau, Looker, or similar BI platforms to provide valuable insights from large datasets",
+   "Create and optimize data models and schemas to support self-serve analytics and ensure data integrity",
+   "Collaborate with business stakeholders to influence data-driven decision-making, proactively uncovering meaningful patterns and insights"
+  ],
+  "source": "llm_interpreted"
+ },
+ {
+  "jd_id": "2026-08-25_we-are-meta_data-analytics-engineer",
+  "bullets": [
+   "Experience with Google Analytics or Adobe Analytics and Google Tag Manager",
+   "Proficiency in JavaScript and front-end concepts to implement and troubleshoot tracking solutions end-to-end",
+   "Strong communicator who bridges technical and business teams, manages multiple projects simultaneously, and turns behavioral data into actionable insights"
+  ],
+  "source": "llm_interpreted"
  }
 ]
