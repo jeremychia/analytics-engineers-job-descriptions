@@ -7358,5 +7358,104 @@
    "Strong communicator who bridges technical and business teams, manages multiple projects simultaneously, and turns behavioral data into actionable insights"
   ],
   "source": "llm_interpreted"
+ },
+ {
+  "jd_id": "2026-08-26_dispensed_senior-analytics-engineer",
+  "bullets": [
+   "Design, build and maintain scalable data models and transformation pipelines in dbt and BigQuery, including pipeline orchestration and scheduling, to support reporting, experimentation and self-service analytics across the business.",
+   "Lead end-to-end delivery of complex data initiatives, from understanding business requirements through to designing data models, building pipelines, validating outputs and delivering insights.",
+   "Partner with Product, Clinical, Commercial and Engineering teams to understand the decisions they are trying to make, challenge assumptions where appropriate, and translate business problems into robust analytical solutions.",
+   "Design and review the data models and measurement frameworks required for A/B tests, pilots and new product initiatives, ensuring experiments are measurable, statistically sound and actionable.",
+   "Identify and resolve systemic data quality, modelling and pipeline issues, implementing testing, monitoring and documentation that improves trust in the data platform.",
+   "Develop semantic models and metrics that provide consistent definitions across the business and reduce duplicated analytical effort.",
+   "Communicate complex technical and analytical findings to senior and non-technical stakeholders, clearly explaining recommendations, trade-offs, limitations and uncertainty.",
+   "Mentor analysts and engineers on SQL, dbt, BigQuery, data modelling and analytical best practices while contributing to shared standards, documentation and code review.",
+   "Proactively identify the highest-value opportunities for improving Dispensed's data platform and analytical capability, ensuring work aligns with strategic priorities across all markets."
+  ],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-08-26_endowus_analytics-engineer",
+  "bullets": [
+   "Model the data. Build and maintain dbt models end-to-end, collaborating with Data Engineering and software engineers to transform source data into clean, intuitive models for business teams.",
+   "Make it trustworthy. Implement automated testing, freshness monitoring, and dbt documentation so model changes are traceable, tested, and reliable.",
+   "Govern the metrics. Partner with business stakeholders and analysts to standardise core metric definitions, establishing a canonical source of truth for key business numbers.",
+   "Enable self-serve. Support our transition to a dbt-native BI layer, designing data models and semantic definitions that make independent querying intuitive for cross-functional teams."
+  ],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-08-26_hcltech_lead-analytics-engineer",
+  "bullets": [
+   "Build and maintain scalable modular data models using dbt inside Snowflake.",
+   "Transition complex, unoptimised Teradata views into high-performance Snowflake tables.",
+   "Implement data quality testing, version control (Git), and CI/CD pipelines for analytics code.",
+   "Manage Snowflake warehouse optimization, access controls (ABAC), and query performance tuning."
+  ],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-08-26_hubspot_staff-analytics-engineer",
+  "bullets": [
+   "Build and optimize the performance of data pipelines and analytical tools for scale",
+   "Own and evolve core platform assets, AE tooling, reusable patterns, and automation that raise the floor for every AE on the team",
+   "Contribute to our composable agentic AE delivery system, a pipeline of AI-powered skills that automates the full delivery lifecycle from context to merged PR",
+   "Design and maintain semantic models that serve as the trusted, reusable foundation for analytics and AI consumption across the organization",
+   "Build internal AI agents and data-grounded tools, integrating RPC-based capabilities via MCP servers",
+   "Design and implement cost strategies for shared data assets, pipelines, and compute usage",
+   "Define and deploy scalable data ingestion, replication, and transfer patterns across systems",
+   "Foster innovation with emerging technologies and by staying current with industry trends",
+   "Guide professional development of the team through technical leadership",
+   "Partner with stakeholders to solve business problems with technical solutions",
+   "Build out scalable data models to analyze key parts of the HubSpot business",
+   "Expand our suite of dbt patterns and macros to enable flexible and easily extensible data structures",
+   "Drive data observability and pipeline reliability using tools like Monte Carlo",
+   "Establish scalable patterns and standards for analytical application development in Hex",
+   "Lead working groups, scope requirements, and usher projects through the entire lifecycle",
+   "Maintain detailed documentation of data pipelines, processes, and best practices"
+  ],
+  "source": "llm_interpreted"
+ },
+ {
+  "jd_id": "2026-08-26_keskeny-nyomda_analytics-engineer",
+  "bullets": [
+   "Manufacturing, production, financial and controlling reports, KPI reports creation and development in Power BI, presentation to management and partner departments",
+   "Mapping and documenting the data structure of source systems",
+   "Building a unified data model described with business concepts - fact tables, dimensions, data loading processes",
+   "Uniform definition and maintenance of company indicators so that every report shows the same number",
+   "Professional preparation and design of the corporate data warehouse: platform proposal, timeline, implementation - involving an external expert in laying the foundations, directing their work and taking over the solution",
+   "Maintaining data quality: correcting erroneous data, automating checks",
+   "Professional support for internal and external colleagues involved in report preparation"
+  ],
+  "source": "llm_interpreted"
+ },
+ {
+  "jd_id": "2026-08-26_mantel-group_principal-analytics-engineer",
+  "bullets": [
+   "Project Delivery & Technical Strategy",
+   "Lead the architectural vision for complex, concurrent data projects, ensuring analytics frameworks are scalable, robust, and aligned with client business outcomes.",
+   "Act as the SME for Analytics Engineering, defining the standards for DataOps, modeling patterns, and semantic layer design across the business.",
+   "Architect the roadmap for next-generation AI capabilities, ensuring data structures are optimised for Agentic AI and LLM integration.",
+   "Quickly identify pain points in challenging projects and implement strategic course corrections to get them back on track."
+  ],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-08-26_marktlink-capital_analytics-engineer",
+  "bullets": [
+   "As an Analytics Engineer, you will build the foundation for how Marktlink Capital uses data. Within the Data & Technology team, we ensure that colleagues across the organisation, as well as our investors, have access to accurate, timely financial and operational information. You will take data from our core systems, bring it into a governed data platform and turn it into reliable models, dashboards and data products that management and teams across the firm use every day.",
+   "This is a genuine build role. We are establishing our analytics platform from the ground up using Fivetran, Snowflake and dbt. You will play a central role in designing, building and maintaining it. As Marktlink Capital scales, new systems, entities and definitions will continuously need to be integrated. This is not a one-off implementation project: you will build a platform that evolves with the business and ensures the right data and insights reach the right people at the right time.",
+   "You will work in a compact team with short communication lines, significant ownership and active encouragement to bring forward ideas. The role is based in our Amsterdam office. You will own the development of a scalable, reliable and well-governed analytics platform."
+  ],
+  "source": "regex"
+ },
+ {
+  "jd_id": "2026-08-26_pri-technology_analytics-engineer",
+  "bullets": [
+   "The Analytics Engineer is a highly technical, business-facing role responsible for delivering deep analytical insights, rapid analytics solutions, and advanced data products in support of discovery and research teams. This role bridges analytics, data engineering, and applied data science, transforming complex and ambiguous business questions into high-quality analyses, dashboards, and data-driven recommendations.",
+   "The Analytics Engineer operates with a high degree of independence, demonstrates strong ownership of outcomes, and is expected to rapidly acquire domain knowledge.",
+   "The role emphasizes advanced SQL and Python proficiency, exploratory analysis, and an active interest in data science and AI-driven solutions across;"
+  ],
+  "source": "regex"
  }
 ]
