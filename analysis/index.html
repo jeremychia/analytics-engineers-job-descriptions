@@ -240,7 +240,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 
 <!-- HERO / MODE PICKER -->
 <section class="hero" id="hero">
-  <div class="hero-eyebrow">AE/BI job market · 617 JDs classified</div>
+  <div class="hero-eyebrow">AE/BI job market · 636 JDs classified</div>
   <h1>What are you actually trying to get out of this data?</h1>
   <p class="hero-sub">Same dataset, two different questions - and they don't share an answer. Pick the one that's yours. Everything below is built around it, not around the statistics.</p>
   <div class="mode-cards">
@@ -266,7 +266,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 
   <section class="snapshot-section" id="snapshotSection">
     <div class="section-eyebrow">The corpus behind this page</div>
-    <h2 class="section-title" style="font-size:1.05rem" id="snapshotTitle">617 job descriptions, classified - not surveyed</h2>
+    <h2 class="section-title" style="font-size:1.05rem" id="snapshotTitle">636 job descriptions, classified - not surveyed</h2>
     <p class="section-intro" style="margin-bottom:0">Every stat and checklist item below is computed live from this dataset. Use the region filter (top-left) to narrow it — most numbers move once you do, and some cells get too small to trust.</p>
     <div class="snapshot-grid" id="snapshotGrid"></div>
   </section>
@@ -313,7 +313,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 
   <section class="section">
     <div class="full-analysis-cta">
-      <p>Everything above is a synthesis of statistical findings across 617 classified job descriptions - chi-square tests, effect sizes, sparse-cell caveats, and the relationships that didn't hold up.</p>
+      <p>Everything above is a synthesis of statistical findings across 636 classified job descriptions - chi-square tests, effect sizes, sparse-cell caveats, and the relationships that didn't hold up.</p>
       <a href="full-analysis.html">See the full statistical analysis →</a>
     </div>
   </section>
@@ -609,7 +609,7 @@ const MOTIVATORS = [
     key: 'quality', icon: '🔬', name: 'Quality ownership, not just "quality talk"',
     desc: 'You want data quality to be your named job, not a vibe everyone claims to share.',
     items: [
-      { badge: 'caution', text: `"Rigour" language is close to universal (63%+ of JDs in every risk tier). It tells you the team values correctness, not whether YOU personally own it. Check testing framing separately: <b>owns it</b> - "own the quality," "you will define testing standards," "data contracts" as a named responsibility - versus <b>tool listed</b> - "Great Expectations," "Soda," "dbt tests" in a skills list with no ownership verb - versus <b>absent</b> entirely.`, link: 'full-analysis.html#rel-testing-rigour' },
+      { badge: 'caution', text: `"Rigour" language is the majority framing in every risk tier, but it is not uniform - it runs 84% in high-risk domains, 64% in moderate, and 50% in low-risk. Either way it tells you the team values correctness, not whether YOU personally own it. Check testing framing separately: <b>owns it</b> - "own the quality," "you will define testing standards," "data contracts" as a named responsibility - versus <b>tool listed</b> - "Great Expectations," "Soda," "dbt tests" in a skills list with no ownership verb - versus <b>absent</b> entirely.`, link: 'full-analysis.html#rel-testing-rigour' },
       { badge: 'flag', text: `"You own quality" almost always travels with a named fear - look for "regulatory," "compliance," "audit," "SLOs," "production reliability," "data accuracy has direct business impact." A JD claiming quality ownership with zero risk context is unusual. Ask directly what "quality" is protecting against.`, link: 'full-analysis.html#rel-testing-fear' },
     ],
   },
@@ -626,7 +626,7 @@ const MOTIVATORS = [
     desc: 'You want to work with a current stack and real AI-assisted workflows, not legacy tooling.',
     items: [
       { badge: 'look', text: `Look for named tools, not vague "AI-first mindset" language: "GitHub Copilot," "Cursor," "Claude Code," "AI-assisted coding," "coding agents." These correlate with more strategic-scoped roles in this market, not less. Treat a named tool as a positive signal, not a junior checkbox.`, link: 'full-analysis.html#rel-ai-autonomy' },
-      { badge: 'caution', text: `dbt is strong but not universal - around 65% require it. A JD that doesn't name it doesn't mean the team skips it, especially if the JD reads as recruiter-templated (generic "collaborate," "team player" language) rather than engineer-written (specific tools, real scale numbers).`, link: 'full-analysis.html#rel-authorship-dbt' },
+      { badge: 'caution', text: `dbt is strong but not universal - around 63% name it. A JD that doesn't name it doesn't mean the team skips it, especially if the JD reads as recruiter-templated (generic "collaborate," "team player" language) rather than engineer-written (specific tools, real scale numbers).`, link: 'full-analysis.html#rel-authorship-dbt' },
     ],
   },
 ];
