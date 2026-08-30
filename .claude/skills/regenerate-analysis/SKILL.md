@@ -18,7 +18,11 @@ Regenerate the analysis pipeline after new JDs are added to the corpus.
 
 1. **Compiles all individual JD JSON files** from `data/{jd_id}/{jd_id}.json` into a single `analysis/data.json`
 2. **Analyzes all Layer B dimensions** across the analytical cohort (rigour, domain risk, team maturity, autonomy, AI role, testing framing, loss aversion)
-3. **Regenerates the responsibility-theme classification** (`python3 analysis/responsibility_taxonomy.py`) — parses each JD's responsibilities section into bullets, classifies them against the 15-theme taxonomy, and recomputes every theme × Layer B dimension relationship (construct-overlap screen, clean-findings list, featured/stratification-checked relationships) fresh against the current corpus
+3. **Regenerates the responsibility-theme classification** (`./.venv/bin/python analysis/responsibility_taxonomy.py`) — reads each JD's `responsibilities` bullets (captured at classification time and stored per-JD, reaching the script via `data.json`), classifies them against the 16-theme taxonomy, and recomputes every theme × Layer B dimension relationship (construct-overlap screen, clean-findings list, featured/stratification-checked relationships) fresh against the current corpus
+
+   **This script needs scipy** — it is the pipeline's only third-party dependency. Set up once with `python3 -m venv .venv && ./.venv/bin/pip install -r requirements.txt`, then invoke it as `./.venv/bin/python`, not bare `python3`. A bare `python3` run dies on `ModuleNotFoundError: No module named 'scipy'`, and if you have piped its output through `grep` you will see an empty result rather than the error — check the exit code, don't assume a silent run succeeded.
+
+   The script prints which path each JD's bullets came from, e.g. `(bullet sources: 636 captured at classification, 0 regex-extracted, 0 from LLM-interpreted fallback)`. **`captured` should be the whole corpus.** Any JD falling through to `regex` or `llm_interpreted` is one whose record predates the `responsibilities` field — re-run `/classify-jd` on it or backfill it, rather than letting it ride. Mixed extraction methods make method correlate with corpus vintage, which contaminates the §4.13 trend claims.
 4. **Prints summary statistics** ready for copying into `analysis/report.md`
 5. **Updates `index.html` and `full-analysis.html` automatically** for everything sourced from `data.json` (no code changes needed — both dashboards auto-fetch it); `full-analysis.html`'s "Responsibility language" relationship panels additionally auto-fetch `responsibility_classification.json` and recompute live, but only if step 3 ran first
 
@@ -32,20 +36,22 @@ After you:
 **The pipeline:**
 
 ```
-data/{jd_id}/{jd_id}.json (individual JD records)
-           ↓
+data/{jd_id}/{jd_id}.json (individual JD records — Layer B codes
+           ↓               AND verbatim `responsibilities` bullets)
 scripts/regenerate_report.py
            ↓
 analysis/data.json (single compiled source)
            ↓                              ↘
 analysis/full-analysis.html (auto-fetches)    analysis/responsibility_taxonomy.py
-index.html (auto-fetches)                     ↓ (reads data/*/jd_archive.md + data.json)
-           ↓                              responsibility_classification.json
+index.html (auto-fetches)                     ↓ (reads bullets from data.json,
+           ↓                                     classifies them into themes)
 Interactive browser dashboards ✨              ↓
                               full-analysis.html "Responsibility language" panels
                               (auto-fetched separately, client-side merge —
                                see RT_THEME_FIELDS in full-analysis.html)
 ```
+
+**The architectural rule this encodes:** anything requiring comprehension of the JD is captured **once, per-JD, next to its archive** — Layer B codes and responsibility bullets alike, both written by `/classify-jd`, never machine-overwritten. Anything **computable** from those captures is derived centrally and is disposable — `data.json`, the theme tags, the relationship stats. Deleting every generated file in `analysis/` must always be safe and fully recoverable by re-running this pipeline. If you are ever tempted to add a hand-authored input under `analysis/`, it belongs in `data/{jd_id}/` instead — that is exactly how `responsibility_bullets_llm.json` became an unreproducible input nothing could rebuild.
 
 **After regeneration:**
 
@@ -63,7 +69,7 @@ Interactive browser dashboards ✨              ↓
    - This recomputes every theme × Layer B dimension relationship fresh (`responsibility_taxonomy.md`'s "Responsibility themes vs. Layer B dimensions" section, `responsibility_classification.json`'s `dimension_relationships` key) — construct-overlap screen, clean-findings list, and the hardcoded "featured" relationships in `compute_dimension_relationships()`.
    - **Auto-correlation / construct-overlap check runs automatically** (`OVERLAP_PAIRS` in the script) — but if new dimensions or themes are added, re-examine whether any new pairing shares trigger vocabulary with an existing theme's regex or a dimension's coding rubric, and add it to `OVERLAP_PAIRS` if so. A pairing that "just barely" avoids sharing exact words but clearly detects the same underlying textual phenomenon (e.g. two different words both describing testing) should still be flagged — the test is "would these plausibly move together mechanically, because of how they're coded, independent of the corpus," not "do the regex strings literally match."
    - **The three "featured" relationships in `compute_dimension_relationships()` are hardcoded, not auto-selected** — re-picking which relationships to feature after a corpus update is a judgment call, same as picking which chi-square panels go in `report.md` §4.9. If a previously-featured relationship's effect size collapses or its p-value crosses back above 0.01 (same "significance is not permanent" rule as the rest of this document), demote it to the debunked-example slot or drop it, following the wording rule below (don't write "no longer holds" — restate the current finding plainly, or if it becomes a null result, move it into the report's negative-results framing). If a new relationship in the clean-findings list looks like a stronger candidate than an existing featured one (larger V, survives its own stratification check), it's fair to promote it — but re-run at least one stratification check before featuring anything new; the debunked architecture/work_arrangement example exists specifically because the clean-findings screen alone isn't sufficient evidence.
-   - `responsibility_bullets_llm.json` (the hand/agent-curated fallback for JDs the regex parser can't handle) is not regenerated by this script — if new unparseable JDs show up in a batch, extend it manually (or via an agent) using the same jd_id keys before running the script, or those JDs will simply have no theme classification (which is the correct fallback behavior, not an error).
+   - **Do not hand-edit `responsibility_bullets_llm.json`, and do not add new keys to it.** It is a retired migration artifact, kept only so records predating the `responsibilities` field still classify. Bullets now come from each JD's own record, captured by `/classify-jd` and verbatim-checked by `scripts/write_jd.py`. A JD missing bullets is fixed by backfilling **its** record, never by adding to the central file — putting captured judgment back in `analysis/` is the exact problem this architecture removed. The regex extractor in `responsibility_taxonomy.py` is likewise frozen: do not add alternations to `START_RE` when a new batch's heading phrasing isn't matched. It is a compatibility fallback, not the extraction path, and its known failure is silent under-extraction on postings that split responsibilities across two headings.
 4. **Re-test every relationship panel and null-result entry against the new n — significance is not permanent:**
    - Recompute χ² / Cramér's V (or the relevant test) for every panel in `relGrid` and `nullGrid`, and for every claim in `report.md` §4.9's "Summary of relationships tested", against the current corpus.
    - **If a panel that was previously significant drops below p<0.05 (or its effect size falls below the floor already used elsewhere on the page, e.g. Cramér's V≈0.1), remove it — don't keep it on the page reframed as "retracted," "revised," or "a finding that dissolved."** The dashboard and report describe the current state of the evidence, not the page's own edit history. A reader has no access to — and no reason to care about — an earlier draft they never saw.
@@ -121,8 +127,10 @@ STEP 2: Analyze dimensions
 - `scripts/regenerate_report.py` — main regeneration script (data.json compile)
 - `scripts/compile_data.py` — helper that aggregates JSON files
 - `analysis/data.json` — output (consumed by `index.html`)
-- `analysis/responsibility_taxonomy.py` — responsibility-theme classification + theme×dimension relationship analysis; run separately, after `data.json` is current
-- `analysis/responsibility_bullets_llm.json` — hand/agent-curated input, not regenerated by the script; extend manually for newly-unparseable JDs
+- `data/{jd_id}/{jd_id}.json` — **source of truth.** Layer B codes *and* the verbatim `responsibilities` bullets. Hand/agent-authored via `/classify-jd`; never machine-overwritten by this pipeline
+- `requirements.txt` / `.venv/` — scipy, the pipeline's only third-party dependency (see step 3)
+- `analysis/responsibility_taxonomy.py` — responsibility-theme classification + theme×dimension relationship analysis; run separately, after `data.json` is current. Needs `./.venv/bin/python`
+- `analysis/responsibility_bullets_llm.json` — **retired migration artifact.** Do not edit or extend; see step 3
 - `analysis/responsibility_bullets.json`, `analysis/responsibility_classification.json`, `analysis/responsibility_taxonomy.md` — outputs of `responsibility_taxonomy.py`, fully regenerated (not hand-edited) on every run
 - `analysis/report.md` — output (manual table updates from printed stats; §4.13 draws from `responsibility_taxonomy.md`)
 - `analysis/full-analysis.html` — no edit needed for `data.json`-sourced content (auto-fetches); its "Responsibility language" relationship panels additionally auto-fetch `responsibility_classification.json` and merge client-side (`RT_THEME_FIELDS`) — edit this file directly only if adding/removing which themes get a dashboard panel, not to update numbers

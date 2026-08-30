@@ -247,6 +247,14 @@ Also populate (additive, does not replace `has_*`):
 - A tool can appear in at most one of `required_tools` / `preferred_tools` per JD — if a JD both requires and separately praises deeper expertise in the same tool, use the stronger (required) framing only. A tool mentioned only in a generic "tech stack" list with no required/preferred framing anywhere in the JD goes into neither array (it's still captured by the corresponding `has_*` flag).
 
 Also extract:
+- **responsibilities**: array of the JD's responsibility bullets, **copied verbatim** from `jd_text`. This is an extraction field with the same discipline as `salary_min` — every string must appear literally in the archived text, and `scripts/write_jd.py` enforces it (see below).
+  - **Capture every responsibilities section, not just the first.** Postings routinely split them across two headings — "The impact you'll make" followed by "What you'll do", "Your mission" followed by "Day-to-day" — and both belong in the array. (This is the specific failure of the regex extractor this field replaces: on Parfumado it captured 4 of 14 bullets and reported success.)
+  - Strip the bullet marker (`-`, `•`, `*`) and surrounding whitespace; **change nothing else** — not the wording, not the punctuation, not odd artefacts from the scrape (Ashby's `dbt- design` mangling stays as-is). Do not translate: a French JD's bullets stay French, same rule as `jd_text`.
+  - Do **not** include requirements, qualifications, benefits, or the section's own sub-headings (a label like "Qualité, gouvernance & monitoring" grouping three task lines is a heading, not a responsibility).
+  - Empty array if the JD genuinely has no responsibilities content.
+- **responsibilities_source**: `jd_section` | `inferred_from_prose`
+  - `jd_section` — bullets copied from a recognisable responsibilities section. **This is the normal case**, and `write_jd.py` will refuse to write the record if any bullet is not a literal substring of `jd_text`.
+  - `inferred_from_prose` — the JD describes the role only in running prose with no list to copy, so the bullets are your paraphrase. This bypasses the verbatim gate, so use it **only** when there is genuinely nothing to copy — never to get an almost-verbatim bullet past a failing check. If the gate rejects a bullet, the fix is to re-copy it exactly, not to relabel the source.
 - **urgency**: `urgent` if JD validity ≤30 days, "immediately", "ASAP", "critical hire", or re-post signal. Otherwise `standard`.
 - **greenfield_vs_fix**: `greenfield` | `fix_scale` | `mixed` — dominant verb signal across infrastructure tasks.
 - **language_gate_type**: `none` | `soft` | `hard` (`hard` = "required"/"fluent"/"C1/C2"/"must speak"; `soft` = "plus"/"nice to have"/"advantage")
@@ -324,6 +332,8 @@ python3 scripts/write_jd.py <<'EOF'
   "has_soda": false,
   "required_tools": [],
   "preferred_tools": [],
+  "responsibilities": ["{verbatim bullet, marker stripped — every responsibilities section, not just the first}"],
+  "responsibilities_source": "{jd_section|inferred_from_prose}",
   "evidence": {
     "velocity_vs_rigour": "{verbatim quote driving the classification}",
     "velocity_vs_rigour_explanation": "{one sentence explaining the classification, quoting the decisive phrase}",

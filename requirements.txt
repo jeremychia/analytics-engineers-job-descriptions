@@ -1,0 +1,9 @@
+# Python dependencies for the analysis pipeline.
+#
+#   python3 -m venv .venv && ./.venv/bin/pip install -r requirements.txt
+#   ./.venv/bin/python analysis/responsibility_taxonomy.py
+#
+# Only analysis/responsibility_taxonomy.py needs a third-party package
+# (scipy.stats.chi2_contingency, for the theme x dimension relationship tests).
+# Everything under scripts/ is stdlib-only and runs on a bare python3.
+scipy>=1.11        # tested against 1.18.1
