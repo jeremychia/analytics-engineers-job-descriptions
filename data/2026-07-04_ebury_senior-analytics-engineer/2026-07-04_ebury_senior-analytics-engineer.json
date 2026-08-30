@@ -93,5 +93,15 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "own a domain's data warehouse",
+    "establish standards, patterns, and practices governing data modeling, structure, and consumption",
+    "partner with business stakeholders",
+    "lead data projects",
+    "monitor data quality",
+    "build models using modern engineering practices",
+    "orchestrate pipelines with Airflow"
+  ],
+  "responsibilities_source": "jd_section"
 }

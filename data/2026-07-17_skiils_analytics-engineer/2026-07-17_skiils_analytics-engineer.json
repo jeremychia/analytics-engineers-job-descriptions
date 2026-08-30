@@ -96,5 +96,16 @@
   "has_postgres": false,
   "has_airbyte": false,
   "has_glue": false,
-  "salary_period": null
+  "salary_period": null,
+  "responsibilities": [
+    "Concevoir l'architecture de données : implémenter l'approche médaillon (Bronze/Staging, Silver/Intermediate, Gold/Mart) pour structurer les données de bout en bout.",
+    "Construire le modèle sémantique : créer et déployer le modèle sémantique principalement via dbt, avec une couche Gold connectée à Looker.",
+    "Développer en LookML : concevoir les modèles et explores dans Looker à partir de la couche Gold.",
+    "Enrichir et fiabiliser la donnée : nettoyer et enrichir les datasets directement dans Looker.",
+    "Documenter l'ensemble des datasets : garantir une documentation claire et exploitable pour les équipes qui prendront le relais.",
+    "Gérer le code et les déploiements : versionner via Git, déployer sur GCP et mettre en place les pipelines CI/CD via GitLab.",
+    "Créer les premiers livrables métier : produire les premiers rapports et dashboards attendus, avant la bascule vers un modèle de Self Service BI porté par les Data Analysts.",
+    "Structurer la scalabilité du chantier : proposer les bonnes pratiques dbt / Looker permettant de cadrer et scaler rapidement le projet."
+  ],
+  "responsibilities_source": "jd_section"
 }

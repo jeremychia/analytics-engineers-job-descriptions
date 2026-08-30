@@ -94,5 +94,15 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Owning and improving the data models that support lending decisions, pricing, portfolio analysis, and investor reporting.",
+    "Driving the development of our dbt models and transformation layer, working with analysts and stakeholders to improve the speed and quality of insight generation.",
+    "Helping define good modelling patterns, architecture, and implementation standards across the analytics engineering layer.",
+    "Supporting and mentoring analysts at different technical levels, helping them build stronger engineering habits and become more effective with data.",
+    "Acting as a bridge between analysts, backend engineers, product teams, and the data platform team to make sure data is generated, modelled, and used effectively.",
+    "Identifying opportunities to improve the efficiency, reliability, and cost-effectiveness of our transformation pipeline over time.",
+    "Scaling our data infrastructure to proactively support the requirements of a rapidly growing business."
+  ],
+  "responsibilities_source": "jd_section"
 }

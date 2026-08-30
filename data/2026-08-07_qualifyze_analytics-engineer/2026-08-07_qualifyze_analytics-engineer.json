@@ -102,5 +102,16 @@
       "Marts",
       "Gold layer"
     ]
-  }
+  },
+  "responsibilities": [
+    "Map, document, and evaluate current data models, metrics, and reporting flows. Critically evaluate existing definitions and assumptions, identify inconsistencies, and propose improvements that enable scalability and self-service analytics.",
+    "Build and maintain metrics for Investor Reporting using dbt metrics, ensuring they are accurate, well-documented, and aligned with agreed business definitions.",
+    "Support the modeling and maintenance of Marts and the last-mile Gold layer, contributing to a robust and scalable semantic layer that serves both operational and analytical use cases.",
+    "Ensure consistency between metrics in Investor Reporting and in Looker, performing regular cross-checks and validations to guarantee a single source of truth.",
+    "Perform data sanity checks from a business logic perspective to validate new data structures before they reach production, catching issues early and reducing downstream errors.",
+    "Conduct ad-hoc analyses to support decision-making, unblock stakeholders, and surface actionable insights when needed.",
+    "Help define and document business definitions, KPIs, and data processes to ensure a shared understanding across business and technical teams.",
+    "Participating in projects involving agentic technologies applied to BI, including multi-agent implementations built with Claude and similar frameworks, innovate and expand what agentic analytics can deliver."
+  ],
+  "responsibilities_source": "jd_section"
 }

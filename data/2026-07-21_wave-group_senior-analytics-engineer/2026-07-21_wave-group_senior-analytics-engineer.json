@@ -92,5 +92,13 @@
   "has_postgres": true,
   "has_airbyte": false,
   "has_glue": false,
-  "salary_period": "annual"
+  "salary_period": "annual",
+  "responsibilities": [
+    "Design the data foundations that power real-time operational decisions",
+    "Build core data models for analytics and AI workflows",
+    "Own the data inputs for AI systems",
+    "Implement quality controls through testing and monitoring",
+    "Establish analytics engineering best practices during company expansion"
+  ],
+  "responsibilities_source": "inferred_from_prose"
 }

@@ -94,5 +94,12 @@
   "has_postgres": true,
   "has_airbyte": false,
   "has_glue": false,
-  "salary_period": null
+  "salary_period": null,
+  "responsibilities": [
+    "Take ownership of our dbt pipeline, improving our data models so they're reliable, well-tested, and easy to build on.",
+    "Maintain and extend our Looker setup, and ship new dashboards and reports that customers and other stakeholders depend on.",
+    "Strengthen our data pipeline from Postgres to BigQuery, and build custom Python scripts to automate the flows that keep our warehouse fresh.",
+    "Integrate our data warehouse with external tools like Salesforce or ActiveCampaign, so the right data reaches the teams that need it."
+  ],
+  "responsibilities_source": "jd_section"
 }

@@ -93,5 +93,18 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Design and operate SSOT marts for assigned domains based on DW standards",
+    "Apply normalization principles and DW characteristics (Subject-Oriented, Integrated, Non-Volatile, Time-Variant)",
+    "Build data consistency validation logic and DQ monitoring automation",
+    "Detect domain-specific anomalies (contract errors, fee mismatches, duplicates)",
+    "Maintain metadata documentation",
+    "Develop and operate Airflow-based batch pipelines",
+    "Implement PII masking and access controls",
+    "Support regulatory reporting and IFRS accounting standards",
+    "Partner with developers on log design and data models",
+    "Work with analysts and business teams on metrics and data requests"
+  ],
+  "responsibilities_source": "jd_section"
 }

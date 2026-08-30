@@ -93,5 +93,16 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Own the monetization measurement stack",
+    "Build scalable dbt models and Tableau dashboards",
+    "Develop predictive models for player lifetime value and conversion rates",
+    "Partner with game balancing teams to evaluate in-game economies",
+    "Communicate findings to senior leadership",
+    "Design A/B tests for pricing and offers",
+    "Manage data collection specifications",
+    "Conduct payer segmentation analysis"
+  ],
+  "responsibilities_source": "inferred_from_prose"
 }

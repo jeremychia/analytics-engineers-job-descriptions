@@ -93,5 +93,11 @@
       "fiscalité immobilière"
     ]
   },
-  "salary_period": null
+  "salary_period": null,
+  "responsibilities": [
+    "Rendre la donnée disponible, fiable et actionnable pour l'ensemble des équipes (Marketing, Sales, Finance), en rattachement direct au Head of Data & Performance",
+    "Data Engineering (50%) : construire et maintenir les flux de données sur la stack Snowflake, Airbyte et dbt Cloud",
+    "Business Intelligence (50%) : modéliser les données et produire les restitutions et tableaux de bord sous Metabase"
+  ],
+  "responsibilities_source": "inferred_from_prose"
 }

@@ -78,5 +78,16 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Design, build, and maintain dbt models, utilizing advanced Jinja, macros, and testing frameworks",
+    "Deliver high-performance, cost-optimized SQL queries designed for multi-billion row datasets",
+    "Independently lead the Discovery-to-Delivery cycle for medium to highly complex tasks",
+    "Support the growth of junior analysts through code reviews, coaching, and documentation",
+    "Explain complex technical concepts to non-technical audiences",
+    "Own the data pipeline from architecting dbt models to enabling self-service in Looker",
+    "Act as translator between engineering and business stakeholders",
+    "Provide mentorship and maintain data culture quality"
+  ],
+  "responsibilities_source": "jd_section"
 }

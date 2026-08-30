@@ -104,5 +104,15 @@
       "premier membre de notre pôle Data",
       "Data Engineering"
     ]
-  }
+  },
+  "responsibilities": [
+    "En tant que premier recrutement Data, vous êtes en charge de faire évoluer notre infrastructure data récemment mis en place (BigQuery, dbt, Lightdash) et en démocratiser l'usage auprès des équipes métier.",
+    "Vous prenez en main une stack data existante (BigQuery comme entrepôt, dbt pour la modélisation, Lightdash pour la dataviz, complétés par dlt, GitHub Actions et Pulumi) et travaillez à partir des premières sources déjà intégrées (réservations, statistiques de jeu, données de caisse).",
+    "Vous développez de nouveaux cas d'usage en collaboration avec l'ensemble des équipes métier EVA (Equipes Network, Equipe marketing...), en recueillant leurs besoins et en itérant avec elles sur les livrables.",
+    "Vous intégrez de nouvelles sources de données dans le pipeline, de l'extraction (dlt) jusqu'à la modélisation dbt, en garantissant la qualité et la fiabilité des données.",
+    "Vous concevez et développez de nouveaux dashboards sous Lightdash, et faites évoluer les dashboards existants avec les équipes métiers sur la base de leurs retours.",
+    "Vous participez au maintien et à l'évolution de l'infrastructure data (orchestration via GitHub Actions, gestion de l'infra via Pulumi).",
+    "Le tout en ouvrant la voie à des cas d’usage ML / IA et en lien avec nos équipes : Game Studio, Marketing, Réseau, etc."
+  ],
+  "responsibilities_source": "jd_section"
 }

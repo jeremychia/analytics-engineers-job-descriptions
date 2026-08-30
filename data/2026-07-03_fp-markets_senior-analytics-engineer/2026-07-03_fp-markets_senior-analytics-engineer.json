@@ -94,5 +94,18 @@
   "has_metabase": true,
   "has_postgres": true,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Own the full delivery cycle for each business request",
+    "Collect requirements directly from business stakeholders — Finance, Risk, Operations, Product, Business Development. Translate vague asks into precise, testable specifications",
+    "Investigate source systems even when documentation is missing or incomplete — read code, query raw tables, talk to system owners",
+    "Specify upstream needs for the Data Engineer when new sources or pipelines are required. Clear, well-formed tickets — not \"please get me the trading data.\"",
+    "Build dbt models from raw / staging into marts. Own the semantic layer, the tests, the documentation, the lineage",
+    "Build Superset dashboards that business users actually use. RLS, RBAC, semantic layer in Superset — all configured by you",
+    "Validate the numbers. Every chart has a known-good ground truth. You can defend any number on any dashboard, with reasoning and reproducible queries",
+    "Document the work in a way that lets the next person continue from where you stopped — knowledge stays inside the team",
+    "Stakeholder acceptance — walk them through, get sign-off, move on",
+    "Use AI-assisted development workflows for SQL generation, documentation, validation, and analytics engineering tasks"
+  ],
+  "responsibilities_source": "jd_section"
 }

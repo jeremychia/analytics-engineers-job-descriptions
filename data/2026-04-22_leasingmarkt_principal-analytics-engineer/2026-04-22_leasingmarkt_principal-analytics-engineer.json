@@ -78,5 +78,18 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": true
+  "has_glue": true,
+  "responsibilities": [
+    "Define and evolve the architecture for enterprise analytical models with a strong focus on scalability, clarity and long-term robustness",
+    "Design and maintain advanced semantic layers to unify KPIs and analytical logic across business domains",
+    "Set technical direction and drive adoption of modern modeling practices across the organization",
+    "Lead the definition and implementation of AI-driven analytical capabilities, including text-to-SQL, automated insights, semantic modeling for AI and conversational analytical interfaces",
+    "Develop modeling patterns, documentation standards, and workflows for analytical efficiency",
+    "Partner with data platform, engineering, and analytics teams on high-performance pipelines",
+    "Optimise AWS cloud-native services (Glue, Athena, S3, MWAA) to support scalable analytical and AI workloads",
+    "Enhance modeling patterns, performance, and development processes",
+    "Mentor analytics engineers and analysts on modeling skills and technical standards",
+    "Deliver high-quality semantic assets that fuel self-service analytics, reporting and AI-powered insights"
+  ],
+  "responsibilities_source": "jd_section"
 }

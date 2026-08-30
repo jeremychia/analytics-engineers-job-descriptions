@@ -95,5 +95,14 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Create trusted, self-serve datasets and reporting layers in Omni that power Marketing performance reviews, campaign reporting, attribution analysis, funnel health monitoring, and investment decision-making.",
+    "Proactively identify and resolve data quality issues across Marketing and GTM systems, including source tracking, campaign metadata, funnel stage completeness, attribution coverage, and spend data.",
+    "Add comprehensive metadata to datasets, including documentation, lineage, ownership, definitions, data quality checks, and sensitive data masking.",
+    "Partner with Marketing stakeholders to translate business questions into robust data products, dashboards, analyses, and decision-ready insights.",
+    "Enable Marketing teams to confidently use Omni and core GTM datasets through documentation, training, office hours, and self-serve resources.",
+    "Activate data from Snowflake into operational tools where needed, supporting audience segmentation, lifecycle programmes, campaign optimisation, or GTM workflows."
+  ],
+  "responsibilities_source": "jd_section"
 }

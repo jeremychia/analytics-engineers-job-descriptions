@@ -98,5 +98,19 @@
       "merchant data",
       "fintech"
     ]
-  }
+  },
+  "responsibilities": [
+    "Designs the merchant data foundation and model while it's still taking shape, builds analytics from scratch, and owns things end-to-end on a small, high-impact team",
+    "Goes deep into datasets, shapes infrastructure, and sees your work drive the business directly in a fast-moving environment",
+    "Operates across the full spectrum of data engineering (~10%), analytics engineering (~80%), and business intelligence (~10%), and serves as a core technical point of contact for business stakeholders",
+    "Handles regular and evolving ad hoc requests - often from senior management with imperfect data",
+    "Turns high level requirements and business needs into reliable pipelines that make analytics frictionless for downstream users",
+    "Does dimensional/semantic data modeling, performance tuning, and creates clean, consumable datasets",
+    "Designs, builds, and operates analytics pipelines with testing and monitoring built in",
+    "Builds analytics from the ground up while the underlying data model is still being defined, and helps define it",
+    "Discovers, evaluates, and onboards new datasets; manages connectors and ingestion methods",
+    "Integrates source systems into our central Snowflake platform and troubleshoots failures, latency, and data quality issues",
+    "Handles unpredictable, deep ad hoc requests in a high paced environment with imperfect data"
+  ],
+  "responsibilities_source": "jd_section"
 }

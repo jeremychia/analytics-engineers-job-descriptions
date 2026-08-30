@@ -102,5 +102,14 @@
       "data infrastructure",
       "RevOps"
     ]
-  }
+  },
+  "responsibilities": [
+    "Design and build the foundational GTM data infrastructure in BigQuery — ingesting, organizing, and modeling data from Salesforce, Gong, Outreach, and other GTM systems into a reliable data lake",
+    "Write and maintain models that transform raw CRM and GTM tool data into clean, trusted tables for pipeline, forecasting, segmentation, comp, and territory reporting",
+    "Partner with sales leadership and cross-functional partners to translate ambiguous, ad hoc reporting requests into durable, well-documented data models rather than one-off queries",
+    "Build and maintain data pipelines that keep GTM data fresh, accurate, and consistent as new tools and data sources get added",
+    "Own data quality end-to-end — establishing testing, validation, and monitoring so the numbers in Hex are numbers people trust",
+    "Set technical standards and best practices for GTM data modeling as the function scales"
+  ],
+  "responsibilities_source": "jd_section"
 }

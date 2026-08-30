@@ -95,5 +95,16 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Build and maintain core data models using dbt for critical reporting",
+    "Partner with stakeholders, Data Engineers, and Analysts on requirements",
+    "Work collaboratively across technical and non-technical teams",
+    "Contribute to the semantic layer (LookML) for consistent reporting",
+    "Ensure data quality through testing, monitoring, and documentation",
+    "Support reliable data workflows using orchestration tools like Airflow",
+    "Uphold analytics engineering practices including code reviews",
+    "Balance work across multiple data domains with adaptability"
+  ],
+  "responsibilities_source": "jd_section"
 }

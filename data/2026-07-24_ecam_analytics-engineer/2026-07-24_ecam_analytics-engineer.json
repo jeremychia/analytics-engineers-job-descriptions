@@ -91,5 +91,17 @@
       "data contracts",
       "Global Business Intelligence standards"
     ]
-  }
+  },
+  "responsibilities": [
+    "End-to-end pipeline: ingestion → extraction → structuring → delivery (via search interfaces, dashboards, agents, or other mechanisms that guide users to insights)",
+    "Full responsibility for reliability, data quality, and operational support",
+    "Autonomous decisions on architecture tradeoffs: extraction depth, indexing strategy, refresh cadence",
+    "Ownership of extraction patterns and data frameworks that inform future platform expansion",
+    "Partnership with CSC business users to surface needs, design delivery mechanisms that work for their workflows, and evolve data products based on feedback",
+    "Data Pipeline & Operations: Design and maintain incremental ingestion for continuous data updates; handle multi-format content (PDFs, audio, video, images); build extraction and validation workflows that scale; establish data governance aligned with existing organizational security and compliance controls",
+    "Insight & Delivery Infrastructure: Design and build semantic layers, search indices, and query patterns that enable CSC users to find and extract insights; own the design and build of user interfaces (dashboards, reports, search tools) that make data accessible and guide users toward actionable intelligence; support multiple delivery mechanisms depending on use case and audience",
+    "Business Partnership & Delivery: Collaborate with CSC stakeholders to understand operational priorities and workflows; translate requirements into data products and interfaces; enable self-serve access where feasible; document learnings and reusable patterns",
+    "Global Business Intelligence Framework Alignment: Adopt Global Business Intelligence standards: version control, testing, documentation, data governance, monitoring, and lineage; establish data contracts and codify patterns that set precedent for other Global Business Intelligence domains"
+  ],
+  "responsibilities_source": "jd_section"
 }

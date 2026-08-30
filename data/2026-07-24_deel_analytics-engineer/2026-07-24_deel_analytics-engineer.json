@@ -92,5 +92,14 @@
   "has_postgres": false,
   "has_airbyte": false,
   "has_glue": false,
-  "salary_period": null
+  "salary_period": null,
+  "responsibilities": [
+    "Design, develop, and maintain data models (e.g., in dbt) that align with the overall data architecture and business requirements.",
+    "Manage data pipelines end-to-end, from data extraction to transformation and loading, to provide timely and correct data for analysis.",
+    "Utilize complex SQL queries and macros to transform data efficiently, optimizing queries for performance as needed.",
+    "Incorporate data quality checks and cleansing routines to ensure datasets are reliable and accurate.",
+    "Work closely with data analysts and other analytics engineers to ensure consistency and accuracy in metrics and definitions across the team.",
+    "Contribute to team processes by occasionally leading portions of meetings or sharing improvements to analytics workflows."
+  ],
+  "responsibilities_source": "jd_section"
 }

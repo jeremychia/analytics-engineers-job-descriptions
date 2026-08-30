@@ -78,5 +78,13 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": true
+  "has_glue": true,
+  "responsibilities": [
+    "Data Modeling: Design, build, test, and own end-to-end data models within our dbt-powered \"Unified Data Model.\" You will ensure models are reliable, well-documented, and aligned with business logic.",
+    "Business Partnership: Act as a consultant to product and go-to-market teams, moving from reactive data support to proactive strategic insights. You will help teams understand and leverage data effectively.",
+    "Self-Service Analytics: Drive adoption of self-serve solutions in Omni while mentoring stakeholders to become more data-literate and independent in their analytics workflows.",
+    "AI & Automation: Implement AI data agents and the necessary underlying foundations to automate reporting and alerting, pushing the frontier of what analytics engineering looks like in an AI-first world.",
+    "Data Governance: Establish quality tests and governance practices while mentoring junior engineers in analytics engineering best practices."
+  ],
+  "responsibilities_source": "jd_section"
 }

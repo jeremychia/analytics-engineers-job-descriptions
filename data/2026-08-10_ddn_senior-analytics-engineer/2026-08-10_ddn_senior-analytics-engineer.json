@@ -103,5 +103,12 @@
       "data quality",
       "semantic layer"
     ]
-  }
+  },
+  "responsibilities": [
+    "Data modeling — design, build, and maintain dbt models that transform raw data into clean, reliable datasets for analytics and reporting",
+    "Data quality — implement and maintain testing, monitoring, and documentation so stakeholders can trust what they're looking at",
+    "BI & semantic layer — build and maintain Sigma data models and workbooks that give business users self-serve access to data",
+    "Collaboration — partner with business stakeholders to understand their analytical needs and translate them into scalable, maintainable data models; work with data engineers on source data requirements"
+  ],
+  "responsibilities_source": "jd_section"
 }

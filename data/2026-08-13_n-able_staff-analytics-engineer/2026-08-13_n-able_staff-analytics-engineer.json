@@ -106,5 +106,15 @@
       "data governance",
       "Python"
     ]
-  }
+  },
+  "responsibilities": [
+    "Design and build governed Snowflake Semantic Views (logical tables, relationships, facts, dimensions, metrics, synonyms) as the shared vocabulary AI agents use to answer business questions.",
+    "Stand up the evaluation harness for the semantic and agentic layer, including golden-question datasets, LLM-as-a-judge scoring, and side-by-side runs that gate every release.",
+    "Build logging, monitoring, and lineage across the layer; partner with data engineering and governance team members on observability for upstream pipelines and data products.",
+    "Curate a verified query repository and custom instructions that raise answer accuracy over time.",
+    "Ship dynamic Streamlit apps and lightweight data products on top of the semantic layer using AI-assisted coding, modernizing legacy Tableau and Power BI dashboards into faster, interactive experiences.",
+    "Crosstrain BI analysts in each domain to tune, extend and maintain their domain models, building the hub-and-spoke that scales this beyond a single team.",
+    "Embed governance and data quality by default, partnering with the Data Governance team members to meet certification, stewardship, and CDE requirements."
+  ],
+  "responsibilities_source": "jd_section"
 }

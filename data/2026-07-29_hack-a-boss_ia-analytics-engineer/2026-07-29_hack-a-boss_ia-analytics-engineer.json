@@ -93,5 +93,17 @@
       "Cube.js",
       "dbt"
     ]
-  }
+  },
+  "responsibilities": [
+    "Designing high-performance analytical models on modern OLAP databases (ClickHouse or similar)",
+    "Building AI-powered analytics experiences, including:",
+    "Text-to-SQL",
+    "Conversational BI",
+    "RAG over structured data",
+    "Semantic layers for governed analytics",
+    "Creating semantic models from the ground up, defining measures, dimensions, joins, and pre-aggregations that power reliable business insights.",
+    "Developing APIs and backend tooling using TypeScript (and collaborating with Ruby on Rails services).",
+    "Designing real-time analytical pipelines with streaming technologies such as Kafka and ClickHouse ingestion."
+  ],
+  "responsibilities_source": "jd_section"
 }

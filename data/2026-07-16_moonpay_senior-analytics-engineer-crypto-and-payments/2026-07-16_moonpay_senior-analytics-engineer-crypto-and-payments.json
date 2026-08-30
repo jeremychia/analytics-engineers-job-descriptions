@@ -90,5 +90,14 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Construct data models downstream of backend systems and external data sources for reconciliation and reporting",
+    "Develop \"The Ledger\" system tracking crypto and fiat movements from wallet and exchange data",
+    "Design MoonPay-wide reconciliation approaches for cash, crypto, and payments using internal and external sources",
+    "Perform analysis and build solutions for product flows, inventory tracking, and cost basis reporting",
+    "Investigate issues related to crypto delivery timing and payment reconciliation with finance and engineering teams",
+    "Partner with accounting to create custom reporting and data tables"
+  ],
+  "responsibilities_source": "jd_section"
 }

@@ -94,5 +94,11 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Data Modelling & Product Development (50%): Design, build and maintain scalable, reusable, well-documented data models for analytics, BI, product and data science use cases. Transform complex raw and intermediate data into curated datasets aligned to business needs, and develop reusable semantic layers, metrics and core entities, working with Data Engineering to ensure source structures support high-quality outputs.",
+    "Data Quality, Testing & Documentation (25%): Build automated checks for freshness, completeness, consistency and accuracy, and establish testing standards including schema, business rule and metric validation. Maintain clear documentation so users understand datasets, definitions and intended use, improving discoverability and usability across Global.",
+    "Business Partnership & Metric Definition (25%): Partner with Analytics, Product, Data Science and commercial stakeholders to translate requirements into robust data models. Align stakeholders on common definitions, KPIs and business logic across audience, campaign and measurement use cases, and identify where analytics engineering can improve insight, consistency and speed to value."
+  ],
+  "responsibilities_source": "jd_section"
 }

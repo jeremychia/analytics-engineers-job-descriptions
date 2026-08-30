@@ -89,5 +89,14 @@
       "threat detection",
       "AI-ready data infrastructure"
     ]
-  }
+  },
+  "responsibilities": [
+    "Powering real-time threat detection by building resilient, high-throughput pipelines that turn massive, high-velocity security log streams into signals our detection and response capability can act on in near real time - so threats are surfaced and responded to faster.",
+    "Building AI-ready data infrastructure on the semantic layer - designing clean, well-modelled, governed datasets in our Snowflake warehouse and semantic layer that act as a single, trustworthy source of truth for security metrics. This is the foundation that downstream analytics, board-level security reporting and AI-powered tooling are built on, so reliability and clear definitions matter enormously.",
+    "Enabling security teams to make informed decisions with data - partnering with Security Engineers, Platform and Product to build data solutions that go beyond traditional BI dashboards, unlocking advanced use cases like UGC entitlement and access patterns, and giving teams the right insight at the right time to drive strategic decisions and incident response.",
+    "Engineering at scale - implementing streaming and batch processing architectures that handle petabyte-scale security data while maintaining the query performance critical security workflows depend on.",
+    "Championing reliability and efficiency through comprehensive monitoring, automated data quality checks, alerting on data SLAs, and cost-performance optimisation.",
+    "Building leverage, including with AI - creating self-service capabilities so engineering teams can independently generate security insights, and using modern AI tooling to build data pipelines and ingestion tools faster, while bringing deep technical expertise to the complex security data problems that don't have an off-the-shelf answer."
+  ],
+  "responsibilities_source": "jd_section"
 }

@@ -104,5 +104,13 @@
       "AI analytics agent",
       "data catalog"
     ]
-  }
+  },
+  "responsibilities": [
+    "Design, build, and maintain dbt models and data marts in Snowflake / BigQuery — architecture, refactoring, testing, documentation.",
+    "Prepare the data infrastructure for an AI analytics agent: maintain a data catalog and semantic layer (table/column descriptions, metric definitions, entity relationships), enforce consistent naming and documentation across dbt models, set up read-only interfaces for automated queries.",
+    "Own pipelines from requirements to production. That means talking to stakeholders, building the thing, and then making sure it actually works reliably every day — not handing it off and moving on.",
+    "Own data quality: validation, anomaly monitoring, data contracts.",
+    "Proactively find and fix bottlenecks in the infrastructure — cost, speed, reliability."
+  ],
+  "responsibilities_source": "jd_section"
 }

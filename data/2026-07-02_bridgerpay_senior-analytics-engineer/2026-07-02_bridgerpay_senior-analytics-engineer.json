@@ -93,5 +93,18 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Optimize batch infrastructure and establish Git version control",
+    "Implement CI/CD practices using fully managed GCP services",
+    "Build and scale data warehouse core and pipelines utilizing BigQuery and managed cloud services",
+    "Prepare data ecosystem for real-time AI modeling",
+    "Own the semantic layer, writing production-grade LookML",
+    "Build complex data models serving clean data to AI models, routing engines, and BI tools",
+    "Maintain Looker and business intelligence layer with full ownership",
+    "Introduce robust CI/CD frameworks, unit testing, and security protocols",
+    "Ensure PCI-DSS/SOC2 compliance while optimizing costs",
+    "Handle confidential data per organizational security policies"
+  ],
+  "responsibilities_source": "jd_section"
 }

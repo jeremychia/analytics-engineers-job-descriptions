@@ -80,5 +80,15 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Be the first point of contact for administration topics around the reporting platform, e.g. architecture questions, permission management and specific reporting issues.",
+    "Analyze reporting usage and help identify opportunities for optimization and cleanup.",
+    "Increase transparency around data sources, KPI definitions, and report ownership.",
+    "Support documentation and governance efforts to improve maintainability and trust in reporting assets.",
+    "Support the ongoing modernization of the BI stack, including evaluating and testing alternative analytics and visualization tools.",
+    "Improve consistency and usability of reports through establishing shared standards, templates, and best practices.",
+    "Design, develop, and deploy reports and dashboards powered by our Data Warehouse."
+  ],
+  "responsibilities_source": "jd_section"
 }

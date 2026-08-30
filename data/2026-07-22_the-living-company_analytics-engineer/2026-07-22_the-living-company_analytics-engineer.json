@@ -93,5 +93,18 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Contributing to the Snowflake data platform deployment, building out infrastructure from the ground up",
+    "Migrating legacy data infrastructure into Snowflake across multiple business domains",
+    "Building and maintaining dbt models across bronze, silver, gold and platinum layers, writing clean, tested and well-documented SQL",
+    "Building and maintaining data ingestion into Snowflake via Fivetran and Snowpark-based pipelines",
+    "Turning raw source data into trusted, analytics-ready data products the business can rely on",
+    "Working directly with Finance, CRM and operational teams to gather and refine data requirements",
+    "Translating business problems and ambiguous requirements into clear, scalable data solutions",
+    "Monitoring and maintaining data pipeline health, troubleshooting issues and ensuring reliability",
+    "Contributing to emerging AI data initiatives as the platform matures",
+    "Staying close to evolving best practice in the modern data stack (Snowflake, dbt, Fivetran) and bringing new ideas back to the team"
+  ],
+  "responsibilities_source": "jd_section"
 }

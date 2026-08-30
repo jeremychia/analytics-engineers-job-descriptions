@@ -93,5 +93,20 @@
       "Segment",
       "insurance"
     ]
-  }
+  },
+  "responsibilities": [
+    "Work with stakeholders to understand business needs and translate them into clear, well-scoped requirements",
+    "Build and maintain robust data models and exposures in dbt, Snowflake, and Looker — using AI-assisted development to move faster, spending less time hand-writing boilerplate and more time specifying intent, reviewing, and refining",
+    "Read, debug, and critically review SQL (including AI-generated code), so we ship models we can trust",
+    "Document modelling decisions, trade-offs, and outcomes clearly",
+    "Wrangle and integrate data from multiple third-party sources (e.g. Amplitude, Segment, Google Ads)",
+    "Help build and maintain the \"trust infrastructure\" — tests, data contracts, and observability — that lets the business depend on our models",
+    "Ensure quality, reliability, and stability across data models and pipelines",
+    "Create secure, efficient data shares for external partners (e.g. S3, SFTP, Snowflake Data Sharing)",
+    "Contribute to the continuous improvement of our data platform, tooling, and ways of working — including how we use AI in our workflows",
+    "Support business users across the company to promote a culture of data-driven decision-making",
+    "Help translate business questions into well-designed data solutions and metrics",
+    "Help enable and maintain self-service capabilities within our BI tools"
+  ],
+  "responsibilities_source": "jd_section"
 }

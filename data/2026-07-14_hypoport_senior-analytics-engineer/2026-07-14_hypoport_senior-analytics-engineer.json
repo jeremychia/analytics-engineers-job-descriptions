@@ -76,5 +76,21 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Du betreibst und stabilisierst unsere bestehenden\nELT-Pipelines\nauf Basis von\nSnowflake, dbt und Airflow\n- eigenverantwortlich und mit hohem Qualitätsanspruch.",
+    "Du entwickelst und pflegst\nwartbare Datenmodelle\nin dbt, inkl. inkrementeller Logik, Tests und Dokumentation.",
+    "Du integrierst heterogene Datenquellen, u.a.\nSharePoint\n, in konsistente, belastbare Datensätze.",
+    "Du baust und Python‑basierte Ladeprozesse und verantwortest sie end‑to‑end:\nAuthentifizierung, Connectoren, Lademodi und Fehlerhandling\n.",
+    "Du implementierst\nQualitätsprüfungen, Tests und Monitoring\nentlang der gesamten Pipeline – proaktiv, nicht reaktiv.",
+    "Du erkennst Anomalien frühzeitig, analysierst Ursachen eigenständig und löst Probleme nachhaltig.",
+    "Du dokumentierst\nDatenflüsse und Qualitätsstandards\nnachvollziehbar und nachvollziehbar.",
+    "Du entwickelst, pflegst und optimierst\nPower-BI-Dashboards\nund\n-Reports\nfür verschiedene Fachbereiche.",
+    "Du nimmst Anforderungen von Stakeholdern auf, übersetzt sie technisch sauber und erklärst komplexe Zusammenhänge verständlich.",
+    "Du schaffst\nDatentransparenz\nund baust Self-Service-Strukturen auf, die im Alltag genutzt werden.",
+    "Du agierst als\nSparringspartner\nfür deinen Teamlead bei Architektur‑, Tool‑ und Prozessentscheidungen.",
+    "Bei sicherheitsrelevanten Themen entscheidest du\neigenständig\n, weil du den größeren Sachverstand mitbringst.",
+    "Du gestaltest technische Standards aktiv mit und vertrittst deine Positionen klar, auch wenn es unbequem ist."
+  ],
+  "responsibilities_source": "jd_section"
 }

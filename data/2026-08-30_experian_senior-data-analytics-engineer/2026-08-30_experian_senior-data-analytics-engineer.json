@@ -101,5 +101,15 @@
       "Glue",
       "Athena"
     ]
-  }
+  },
+  "responsibilities": [
+    "Identify, integrate, and operationalise new data sources into the GIA Data Analytics environment",
+    "Run data input quality checks to ensure completeness and accuracy",
+    "Develop scheduled data preparation routines to transform raw inputs into curated datasets with time-stamping for historical accuracy",
+    "Document data integration processes and train others to eliminate single points of failure",
+    "Maintain an organised data analytics library including field definitions, data limitations, and provenance details",
+    "Maintain the GIA Data Analytics AWS platform. Manage vulnerabilities, patching, data and code backups.",
+    "Mentor Data Analysts and Internal Audit teams on the use of available data"
+  ],
+  "responsibilities_source": "jd_section"
 }

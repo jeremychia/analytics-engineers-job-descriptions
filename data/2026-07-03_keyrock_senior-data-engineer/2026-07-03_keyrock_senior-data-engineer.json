@@ -94,5 +94,17 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Build streaming and batch pipelines that ingest, normalise, and distribute market, trading, and portfolio data, resilient to feed and exchange failures.",
+    "Build the self-serve tooling (SDKs, patterns, templates, AI agents) so other teams publish, consume, and build on data products without waiting on us.",
+    "Own data contracts and schema evolution. Keep schema changes from turning into multi-team coordination events.",
+    "Design the lakehouse and time-series layer around consumer query patterns.",
+    "Build and evolve the Data Governance and Data Quality Framework: stale-feed detection, schema validation, range checks, idempotent writes, lineage, ownership, self-healing.",
+    "Build the derived analytics the business runs on: cross-exchange spreads, VWAP at depth, order book microstructure for the desks; portfolio views, exposure, performance for wealth and asset management.",
+    "Make observability, cost, and performance first-class from day one.",
+    "Treat infrastructure as code (Docker, Terraform, CI/CD) alongside our Central Infrastructure Team.",
+    "Work in the open: write things down, partner closely with Architecture, Infrastructure, Platform, and the rest of the teams."
+  ],
+  "responsibilities_source": "jd_section"
 }

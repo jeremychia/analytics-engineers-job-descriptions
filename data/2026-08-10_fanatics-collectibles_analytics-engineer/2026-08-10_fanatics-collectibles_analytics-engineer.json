@@ -103,5 +103,17 @@
       "Finance",
       "data quality"
     ]
-  }
+  },
+  "responsibilities": [
+    "Build and maintain data pipelines that bring data from source systems into Snowflake, with a focus on reliability, observability, and maintainability",
+    "Implement and manage orchestration flows using Airflow or Dagster",
+    "Build transformation layers using dbt, including data modeling, testing, and documentation standards",
+    "Design and maintain Sigma dashboards that serve as the primary reporting surface for our business stakeholders",
+    "Ensure data quality and consistency across reporting surfaces, establishing validation practices and source-of-truth definitions",
+    "Partner with Commercial, Sales, Strategy, and Finance stakeholders, product manager and engineering leads to understand data and reporting needs, surface gaps, and build the tools necessary to support",
+    "Translate business requirements into clear data specs and prioritized work, often without a fully formed brief to start from",
+    "Communicate proactively with partners explaining tradeoffs, setting expectations, and making complex data concepts accessible",
+    "Tag into broader engineering work on the Sales & Finance team as needed this could mean contributing to data-oriented product features, reviewing code, or supporting integrations that touch our data layer"
+  ],
+  "responsibilities_source": "jd_section"
 }

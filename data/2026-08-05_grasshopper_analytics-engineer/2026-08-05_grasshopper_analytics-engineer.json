@@ -102,5 +102,14 @@
       "ClickHouse",
       "LookML"
     ]
-  }
+  },
+  "responsibilities": [
+    "Build and own production data pipelines on the platform built with Prefect, dbt, BigQuery and Looker, keeping it fast, correct and trusted",
+    "Maintain the ingestion framework for the hundreds of data files that arrive every day from brokers and vendors",
+    "Build and run pipelines that keep reference data in sync with third-party sources",
+    "Build and maintain the treasury reporting and reconciliation dashboards the business relies on",
+    "Work directly with traders, risk managers and financial controllers to define problems, turn them into data products and get them adopted",
+    "Help put AI to work for the teams the data platform serves, working towards a platform where anyone can ask a question and trust the answer"
+  ],
+  "responsibilities_source": "inferred_from_prose"
 }

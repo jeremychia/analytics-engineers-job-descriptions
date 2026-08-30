@@ -102,5 +102,15 @@
       "CI",
       "observability"
     ]
-  }
+  },
+  "responsibilities": [
+    "Evolve our dbt project toward modular, documented and tested data models organized in clear layers, from raw sources to marts",
+    "Shape our semantic layer from its early stages: define how metrics are modeled and governed, and drive its adoption",
+    "Shape the data modeling standards and conventions for the Business Analytics team, and uphold them through code review, pairing, and documentation",
+    "Partner with Data Scientists and Data Analysts to design the datasets their analyses, dashboards, and ML models are built on",
+    "Build out our data testing practices and enforce them in CI, implement observability over our data",
+    "Diagnose upstream data issues and drive them to resolution by partnering with Data Engineering and Enterprise Systems teams",
+    "Build and maintain the Prefect workflows that put our data and models to work"
+  ],
+  "responsibilities_source": "jd_section"
 }

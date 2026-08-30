@@ -93,5 +93,14 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Developing data warehouse core models that transform Kafka topics into documented, easy-to-use data products",
+    "Collaborating with data engineers on streaming ETL framework development",
+    "Contributing to OpenMetadata data catalog features and maintenance",
+    "Implementing data quality and governance processes",
+    "Supporting data consumers (ML engineers, analysts, stakeholders) with requirements translation — partner with data consumers across the business, supporting their daily data needs and turning requirements into reliable, well-documented data products",
+    "Addressing platform-building challenges from inception"
+  ],
+  "responsibilities_source": "jd_section"
 }

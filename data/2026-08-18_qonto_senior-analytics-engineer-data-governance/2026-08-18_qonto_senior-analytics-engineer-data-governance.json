@@ -101,5 +101,13 @@
       "referential integrity",
       "AI automation"
     ]
-  }
+  },
+  "responsibilities": [
+    "Build and operate the Data Governance framework — establish data quality rules, standards, and controls across the company's critical datasets, with a clear focus on banking compliance requirements (audits, regulatory reporting)",
+    "Implement and maintain data quality checks — design and ship dbt tests and source-level controls (e.g. postcode validity, age ranges, referential integrity) that catch issues before they reach compliance reports",
+    "Own the monitoring & remediation loop — produce regular data quality reporting for data owners and stewards, run cadenced follow-up rituals with stakeholders, and ensure action plans are executed — without being annoying about it",
+    "Drive adoption of Data Governance tooling — own Data governance tools as the source of truth for the data catalogue and quality controls; clarify ownership, build the operating model, and keep it alive",
+    "Scale the program through AI and automation — actively reduce manual work by building/configuring automated checks, monitoring pipelines, follow-up workflows, and reporting logic; this role is highly automatable and we expect you to leverage that"
+  ],
+  "responsibilities_source": "jd_section"
 }

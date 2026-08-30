@@ -89,5 +89,14 @@
       "BI data catalogs",
       "CI/CD pipelines"
     ]
-  }
+  },
+  "responsibilities": [
+    "Develop and maintain scalable data models using dbt / Coalesce to transform raw data into clean, documented, and production-ready schemas.",
+    "Collaborate with Data Engineering and Data Analytics to ensure technical architecture supports business logic and reporting requirements.",
+    "Implement automated testing, data documentation, and observability frameworks to ensure a \"single source of truth.\"",
+    "Optimize SQL queries and warehouse configurations to improve performance and manage compute costs.",
+    "Maintain version control workflows, CI/CD pipelines, and coding standards across the data team.",
+    "Support the semantic layer and BI data catalogs to enable self-service exploration."
+  ],
+  "responsibilities_source": "jd_section"
 }

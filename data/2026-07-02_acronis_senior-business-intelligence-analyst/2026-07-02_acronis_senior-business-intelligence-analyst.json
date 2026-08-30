@@ -95,5 +95,14 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Own end-to-end BI delivery (requirements, modeling, reporting) for prioritized business outcomes",
+    "Define and maintain KPI/metric definitions, lineage, and reporting standards so stakeholders trust the numbers",
+    "Build scalable semantic models and datasets, enabling self-service dashboards and ad-hoc analysis in Power BI",
+    "Improve data quality and reliability through validation, monitoring, incident triage, and clear runbooks",
+    "Lead and develop a team of 2 direct reports (prioritization, coaching, performance management, hiring/onboarding support)",
+    "Drive modernization and Microsoft Fabric adoption, balancing delivery speed with reliability and operational excellence"
+  ],
+  "responsibilities_source": "jd_section"
 }

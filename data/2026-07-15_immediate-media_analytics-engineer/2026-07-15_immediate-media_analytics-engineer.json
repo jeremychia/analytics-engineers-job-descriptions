@@ -93,5 +93,18 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Provide subject matter expertise to help shape and guide the overall data modelling strategy across our data domains.",
+    "Design and implement dbt models on Databricks to support a comprehensive and unified view of subscriptions and content data.",
+    "Build data products, not just reports—well-modelled, reusable data sets that power dashboards, self-serve querying and conversational analytics tools, with clear lineage back to source.",
+    "Contribute to the ongoing evolution of our data platform by identifying and delivering improvements to data quality, coverage, and performance.",
+    "Serve as a subject matter expert on data modelling, supporting analysts and stakeholders in understanding and using our data assets effectively.",
+    "Create and maintain a suite of dbt tests to ensure data quality, consistency, and trustworthiness.",
+    "Collaborate with data analysts, engineers, and business stakeholders to develop and maintain reporting marts that meet evolving analytical needs.",
+    "Support the build-out of self-serve and conversational analytics capability, helping design data structures that natural language query tools can reliably and accurately query.",
+    "Provide guidance on data modelling best practices, performance optimisation, and modular design in dbt.",
+    "Participate in code reviews and knowledge-sharing sessions to uplift team capability."
+  ],
+  "responsibilities_source": "jd_section"
 }

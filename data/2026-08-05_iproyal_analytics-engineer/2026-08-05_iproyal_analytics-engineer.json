@@ -102,5 +102,12 @@
       "Redshift",
       "Lightdash"
     ]
-  }
+  },
+  "responsibilities": [
+    "Own and develop dbt models across staging, intermediate, and mart layers following dimensional modeling best practices (star/snowflake schemas, slowly changing dimensions);",
+    "Act as the bridge between Data Engineers and Data Analysts - translate infrastructure capabilities into analyst-friendly models, and analyst requirements into clean data transformations;",
+    "Enforce data governance within the transformation layer - documentation, naming conventions, dbt tests, and data contracts;",
+    "Contribute to dbt project standards - macros, packages, PR reviews practices."
+  ],
+  "responsibilities_source": "jd_section"
 }

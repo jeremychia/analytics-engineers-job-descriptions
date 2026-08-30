@@ -78,5 +78,15 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Lead the architecture, design, and evolution of complex data models ensuring clarity, accessibility, scalability, and reliability.",
+    "Develop and optimize sophisticated ETL/ELT pipelines, enhancing performance and scalability within our multi-terabyte data ecosystem.",
+    "Own and enhance our BI layer (Looker via LookML), ensuring intuitive, performant, and scalable self-service analytics.",
+    "Provide technical leadership in collaboration with data science teams to optimize analytical workflows, reduce redundancy, and enforce robust data governance.",
+    "Champion engineering best practices, including advanced version control, CI/CD pipelines for analytics, and rigorous automated data quality monitoring.",
+    "Drive initiatives ensuring data reliability, cleanliness, accuracy, and comprehensive documentation for critical business decision-making.",
+    "Strategically influence and drive company-wide data strategies supporting rapid product growth, sophisticated experimentation, and large-scale personalization initiatives."
+  ],
+  "responsibilities_source": "jd_section"
 }

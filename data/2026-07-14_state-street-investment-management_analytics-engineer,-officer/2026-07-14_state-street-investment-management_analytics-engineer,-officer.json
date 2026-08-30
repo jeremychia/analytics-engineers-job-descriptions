@@ -78,5 +78,14 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Contribute to the development and maintenance of analytical products across the full analytics lifecycle, including data preparation, data modelling, dashboard development, reporting and stakeholder delivery",
+    "Support the design, implementation and ongoing maintenance of ETL pipelines as we build out a single source of truth, helping to centralize, integrate and validate datasets within a scalable analytical infrastructure",
+    "Partner with business and sales teams to understand analytical requirements and develop reporting solutions that support commercial priorities, strategic planning and management decision-making",
+    "Develop, enhance and maintain Tableau dashboards that present business trends, performance drivers and key insights in a clear, accurate and user-friendly manner that enables decisioning",
+    "Perform data quality checks, validate transformation logic and support improvements to the analytical layer, escalating issues as appropriate and collaborating with upstream teams to support timely resolution",
+    "Document data definitions, assumptions, workflow logic and reporting methodologies to support consistency, transparency and repeatability across analytical outputs"
+  ],
+  "responsibilities_source": "jd_section"
 }

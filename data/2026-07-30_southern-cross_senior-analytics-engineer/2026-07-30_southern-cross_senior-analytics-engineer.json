@@ -93,5 +93,16 @@
       "data lineage",
       "code review"
     ]
-  }
+  },
+  "responsibilities": [
+    "Build, test and maintain dbt models that turn raw data into trusted, analytics-ready datasets",
+    "Design and improve data marts and semantic layers that power self-service analytics, data products and agentic agents",
+    "Optimise query performance and efficiency across Snowflake and dbt",
+    "Investigate and resolve data quality issues, and build the automated checks that catch them earlier next time",
+    "Partner with analysts, product managers and stakeholders to align business definitions with technical implementation",
+    "Write and maintain automated tests, documentation and data lineage so the model can be trusted and traced",
+    "Participate in code reviews and help set the engineering standards for the analytics codebase",
+    "Look for opportunities to simplify complex models and remove redundancy as the platform scales"
+  ],
+  "responsibilities_source": "jd_section"
 }

@@ -78,5 +78,17 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Build data pipeline engineering, orchestration, and monitoring to deliver high-quality data products centred around one of our three Commercial Domain pillars.",
+    "Ensure Data Products follow CI/CD best practice, adhere to data quality frameworks; include assertion checks and have performance & cost optimisation applied.",
+    "Build and maintain semantic layer infrastructure including metric view pipelines, materialisation and optimisation",
+    "Drive Unity Catalog governance (schemas, access, metadata tagging) to improve data accessibility in highly controlled compliant environment",
+    "Collaborate closely with the Analytics Interface, Commercial Analytics and business teams to turn business requirements into productionised AI-enabling data products.",
+    "Enable Markets & Channels specific data understanding and champion data literacy via guidelines, training, drop-in sessions, documentation, and knowledge sharing.",
+    "Partner with the Analytics Innovation & Automation and Data Office Product teams to prototype & deliver cutting edge features across the Data Platform; ensure platforms, tools & processes meet business needs",
+    "Collaborate with Shopper & Partner (D2C & B2B) digital product teams to ensure high-quality data is collected and published to LEGO Data Platform (Databricks) to a standard fit for purpose for downstream delivery of data products.",
+    "Consistently champion best practices in data product development within the team, across Markets & Channels and with the broader analytics community, helping ensure data integrity, -quality, and -scalability of overall data products on the LEGO Data Platform."
+  ],
+  "responsibilities_source": "jd_section"
 }

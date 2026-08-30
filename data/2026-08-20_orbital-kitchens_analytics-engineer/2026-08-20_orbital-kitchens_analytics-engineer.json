@@ -103,5 +103,16 @@
       "data quality",
       "BI reporting"
     ]
-  }
+  },
+  "responsibilities": [
+    "Build and maintain intuitive, reliable dashboards in Sigma that support finance, marketing, kitchen ops, culinary development, and executive decision-making — this is the core of the role.",
+    "Translate complex business challenges into clear metrics, KPIs, and analytical frameworks, and communicate findings clearly in writing to a distributed, primarily NYC-based team.",
+    "Maintain and evolve the gold layer of our Snowflake warehouse, primarily using SQL and Python to transform, model, and validate data.",
+    "Monitor and maintain our existing ETL jobs and Airflow orchestration, troubleshooting pipeline failures and making incremental improvements as our data needs evolve.",
+    "Ensure high data quality, reliability, and consistency across our analytics ecosystem.",
+    "Partner async with stakeholders across operations, finance, marketing, and engineering to understand workflows and identify where data can unlock insights.",
+    "Support and extend our AI-powered chatbot, which uses semantic views on top of our warehouse — including refining semantic layers and natural-language interfaces for internal tooling.",
+    "As capacity allows, help extend observability into our internal software tools alongside the software engineering team."
+  ],
+  "responsibilities_source": "jd_section"
 }

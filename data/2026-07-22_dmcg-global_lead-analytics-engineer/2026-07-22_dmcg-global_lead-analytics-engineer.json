@@ -94,5 +94,14 @@
   "has_postgres": false,
   "has_airbyte": false,
   "has_glue": false,
-  "salary_period": "annual"
+  "salary_period": "annual",
+  "responsibilities": [
+    "Owning the dbt models, semantic layer and warehouse design",
+    "Leading the move away from legacy ETL onto dbt",
+    "Setting standards for testing, documentation and CI/CD",
+    "Coaching engineers and analysts on modern engineering practice",
+    "Building out sign and mend data quality checks and monitoring",
+    "Taking on the hardest technical problems when the team gets stuck"
+  ],
+  "responsibilities_source": "jd_section"
 }

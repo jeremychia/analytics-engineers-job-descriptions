@@ -95,5 +95,14 @@
   "has_postgres": false,
   "has_airbyte": false,
   "has_glue": false,
-  "salary_period": "annual"
+  "salary_period": "annual",
+  "responsibilities": [
+    "Lead Design Data Architecture – Drive the development of the Data Mesh layer by designing robust data models and building pipelines that integrate into the company's federated data strategy, ensuring scalable and governed data ownership.",
+    "Define AI Agentic Workflows – Design and implement AI-powered agentic workflows for data transformation and exploration, accelerating analytical capabilities and enabling self-service for key stakeholders.",
+    "Build High-Impact Visualisation Tools – Define key metrics and develop dashboards and reports (using tools like Hex or Looker) that communicate analytical insights effectively.",
+    "Drive Decision-Making Through Data – Analyse complex datasets to identify patterns impacting the consumer funnel (Acquisition, Engagement, Retention, Monetisation) and partner with Marketing Managers to maximise ROI.",
+    "Partner with Key Stakeholders – Act as a strategic partner for Marketing, Finance, Operations, and Product, bridging the gap between technical data and business goals.",
+    "Drive Testing Initiatives – Own the end-to-end testing pipeline, from opportunity identification to experiment design and recommendation delivery."
+  ],
+  "responsibilities_source": "jd_section"
 }

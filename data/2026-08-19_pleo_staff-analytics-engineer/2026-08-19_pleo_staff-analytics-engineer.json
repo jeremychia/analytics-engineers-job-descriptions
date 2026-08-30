@@ -100,5 +100,16 @@
       "community of practice",
       "AI-ready data"
     ]
-  }
+  },
+  "responsibilities": [
+    "Own the semantic layer: define what a metric definition is, how it's structured, where it lives, and how it's enforced. The goal is one canonical definition of Monthly recurring revenue (MRR), churn, transaction, customer - used by analysts, BI tools, and AI tools without divergence. You make that real, not aspirational.",
+    "Set data modelling standards for the function: what clean, layered, well-tested dbt architecture looks like across all domains, at all levels of complexity.",
+    "Build and run the Analytics Engineering community of practice including code reviews, shared patterns, documentation, onboarding etc. The goal is to create a social infrastructure that makes standards stick.",
+    "Own the AI-native development practice. Use AI coding tools as a native part of how you write, review, and migrate data models (not as a demonstration, but as your actual workflow). Evaluate what works in a governed data engineering context, what introduces risk, and shape how the Analytics Engineering community adopts it.",
+    "Lead responsible AI-augmented migration work using AI tooling to accelerate data modelling and migrations across the Analytics Warehouse and Operational Data Platform.",
+    "Design data models and metric definitions in a documented and structured manner enabling reliable consumption by AI services without human intervention.",
+    "Engage upstream with backend and product engineers to drive data contract discipline and schema ownership upstream, rather than managing inconsistency downstream.",
+    "Contribute to Data & AI Products for external customer-facing analytics where data modelling patterns and conversational analytics needs and capabilities grow."
+  ],
+  "responsibilities_source": "jd_section"
 }

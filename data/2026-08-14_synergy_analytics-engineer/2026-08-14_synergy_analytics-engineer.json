@@ -103,5 +103,13 @@
       "data quality",
       "machine learning"
     ]
-  }
+  },
+  "responsibilities": [
+    "Design, develop, and maintain data pipelines and ETL/ELT workflows to ingest, transform, and integrate data from OT/SCADA, BMS, databases, metering, and third-party platforms (e.g., Third Party Vendors, AEMO) into structured analytical environments.",
+    "Build and maintain data models and schemas that support asset performance monitoring, predictive analytics, and regulatory reporting across BESS, solar, wind, VPP, and broader DER assets.",
+    "Develop and manage dashboards, reports, and self-service analytics tools (e.g., Power BI, Databricks notebooks) that surface fleet-level and asset-level performance insights to operational and executive stakeholders.",
+    "Collaborate with the Data Scientist to operationalise machine learning models – ensuring models are deployed into production-ready pipelines with appropriate monitoring, versioning, and data quality controls.  You will need to work with the Senior Asset Engineer to translate engineering requirements into data specifications, ensuring analytical outputs align with asset management and ISO 55001 frameworks.",
+    "Contribute to the DER Reporting, Analytics & Digital Roadmap, identifying opportunities to improve digital maturity and analytical capability across the portfolio."
+  ],
+  "responsibilities_source": "jd_section"
 }

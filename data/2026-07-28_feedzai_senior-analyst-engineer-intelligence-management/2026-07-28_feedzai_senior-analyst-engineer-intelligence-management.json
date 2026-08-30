@@ -91,5 +91,19 @@
       "Looker",
       "governance over guesswork"
     ]
-  }
+  },
+  "responsibilities": [
+    "Design, build, and operate the signals, dashboards, and automated insights that leaders consume directly — without routing a request through an analyst or ops person.",
+    "Own data quality and trust: every number is accurate and traceable, with documented calculation logic. The intelligence layer is only as credible as the data beneath it.",
+    "Make monitoring self-serviceable — roadmap progress, goal execution, and risk emergence surfaced by default, with human oversight reserved for genuinely complex cases.",
+    "Pair closely with Engineering on upstream instrumentation, defining what data matters and what problems it must solve.",
+    "Translate operational data into decision-ready narratives for senior leadership forums: what is happening, what it means, and what decision it calls for.",
+    "Challenge Product Managers, Engineering Managers, and Senior Leadership with evidence when the data contradicts intuition, acting as a neutral third party in the debate.",
+    "Map and provide the insights that support investment and capacity trade-offs, using historical productivity and capacity data as reference.",
+    "Partner with Delivery Operations and Organizational Effectiveness so intelligence flows into the operating rhythm and the leadership narrative, rather than sitting in a dashboard.",
+    "Roll out AI and agentic workflows that trigger alerts and action requests to the right individuals, plus push/pull context systems filtered by audience.",
+    "Automate governance and reporting workflows with measurable ROI in hours reclaimed.",
+    "Set standards and best practices for AI-assisted analytical work, modelling AI-first ways of working for the wider team to follow."
+  ],
+  "responsibilities_source": "jd_section"
 }

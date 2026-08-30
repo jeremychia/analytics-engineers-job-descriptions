@@ -91,5 +91,11 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": true,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Data infrastructure work including integrating new sources and maintaining warehouse health",
+    "Designing dbt data models ensuring consistency and documentation",
+    "Managing end-to-end projects by gathering stakeholder requirements and translating business needs into technical solutions"
+  ],
+  "responsibilities_source": "jd_section"
 }

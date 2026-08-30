@@ -93,5 +93,17 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Extract, transform, and integrate financial and operational data from multiple sources",
+    "Deliver end-to-end analytics and reporting solutions, including KPI definition, backend data preparation, and visualization dashboards",
+    "Design, build, and maintain automated and reusable data pipelines to support analytics and reporting",
+    "Write and optimize complex SQL queries to support analytical use cases",
+    "Use data preparation and automation tools (e.g., Alteryx) to streamline transformations",
+    "Work with enterprise data platforms including Microsoft Fabric, Azure, and Snowflake",
+    "Collaborate with business and functional stakeholders to understand reporting needs and translate them into data solutions",
+    "Apply financial and business context to ensure analytics outputs are accurate, consistent, and meaningful",
+    "Communicate insights, trends, and drivers clearly through dashboards and stakeholder discussions"
+  ],
+  "responsibilities_source": "jd_section"
 }

@@ -76,5 +76,15 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Design, build, and maintain scalable data models.",
+    "Transform raw data into clean, reliable datasets for business stakeholders.",
+    "Implement automated data quality tests to ensure trust and reliability.",
+    "Build and maintain interactive dashboards to visualize key business metrics.",
+    "Translate business needs from non-technical stakeholders (e.g., Retail, Finance) into robust technical requirements.",
+    "Apply software engineering best practices to analytics code (e.g., version control, CI/CD).",
+    "Write clear technical documentation for data lineages and metrics."
+  ],
+  "responsibilities_source": "jd_section"
 }

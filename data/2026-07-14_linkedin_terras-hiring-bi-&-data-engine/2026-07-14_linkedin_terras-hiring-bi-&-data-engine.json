@@ -76,5 +76,18 @@
   "has_metabase": true,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Aufbau und Pflege von Datenpipelines und Datenmodellen in Snowflake (ELT mit Airflow)",
+    "Konzeption der ersten TU-Datenanbindung: Finanzdaten und Projektdaten aus den ERPs der Tochtergesellschaften (BRZ, RIB iTwo, BPS, Sage) in Snowflake integrieren",
+    "Datenqualitätssicherung, Dokumentation von Datenflüssen und Aufbau eines DataGovernance-Frameworks",
+    "Konzeption und Umsetzung von Dashboards und KPI-Reportings in Power BI / Loyos für Geschäftsführung, Investoren und Tochtergesellschaften",
+    "Ad-hoc-Analysen und datenbasierte Handlungsempfehlungen für Management und Fachabteilungen",
+    "Marktintelligenz: Regionale Marktvolumen-Dashboards auf Basis von Ausschreibungsdaten (Zusammenarbeit mit Gemma Analytics)",
+    "Enger Austausch mit Fachabteilungen der 20+ Tochtergesellschaften, um Datenanforderungen und Use Cases zu identifizieren",
+    "Steuerung externer Partner (Gemma Analytics, CommaSoft) bei Data-Engineering und Softwareprojekten",
+    "Präsentation von Ergebnissen und Handlungsempfehlungen an Stakeholder und Geschäftsführung",
+    "Gelegentliche Besuche bei Tochtergesellschaften vor Ort"
+  ],
+  "responsibilities_source": "jd_section"
 }

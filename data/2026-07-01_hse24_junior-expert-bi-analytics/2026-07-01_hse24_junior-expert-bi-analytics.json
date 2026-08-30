@@ -96,5 +96,15 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Conceptualise and optimise BI solutions and create KPIs, semantic models, reports, and dashboards",
+    "Translate business requirements into analytics deliverables",
+    "Develop automated self-service BI solutions with consistent KPI definitions",
+    "Build and maintain data models with DBT and Snowflake using dimensional modelling",
+    "Apply modern development standards including clean code and test-driven development",
+    "Manage code via Git with structured branching strategies and support CI/CD processes",
+    "Collaborate with data platform teams and business units on optimisation"
+  ],
+  "responsibilities_source": "jd_section"
 }

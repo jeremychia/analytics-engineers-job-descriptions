@@ -69,7 +69,7 @@
     "domain_risk_explanation": "The role touches billing/revenue-adjacent dashboards for a SaaS logistics platform but there is no financial-reporting, audit, or regulatory-compliance language, so this is moderate rather than high.",
     "collaboration_width": "product; engineering; sales; account management; finance; customer onboarding",
     "data_team_maturity": "help scale our data infrastructure, and support the continued growth of our analytics capabilities",
-    "data_team_maturity_explanation": "The role maintains and extends existing dashboards (Lightdash, internal BI, account management dashboards) rather than building from zero, indicating a growing but not yet large/specialised function \u2014 mid.",
+    "data_team_maturity_explanation": "The role maintains and extends existing dashboards (Lightdash, internal BI, account management dashboards) rather than building from zero, indicating a growing but not yet large/specialised function — mid.",
     "jd_authorship": "Maintain, extend and optimise our in-app Lightdash dashboards, including operational, financial, and performance insights.",
     "jd_authorship_explanation": "Bullets name specific tools (Lightdash, Mixpanel) and precise use cases (billing/cost-analysis dashboards, API call cost allocation, tenant-level breakdowns), giving a clear picture of day-to-day work.",
     "stakeholder_orientation": "collaborate with product, engineering, sales, account management, finance, and customer onboarding teams",
@@ -102,5 +102,16 @@
       "data quality",
       "scale-up"
     ]
-  }
+  },
+  "responsibilities": [
+    "Build, maintain and improve Qargo's data models and data pipelines, ensuring reliable and high-quality data.",
+    "Maintain, extend and optimise our in-app Lightdash dashboards, including operational, financial, and performance insights.",
+    "Build and refine internal BI dashboards to support data-driven decision-making across departments.",
+    "Develop account management dashboards that reveal feature adoption, revenue insights, and upsell opportunities.",
+    "Create product and engineering analytics, including feature usage dashboards using Mixpanel or custom-built tracking solutions.",
+    "Support integration-related reporting by building dashboards that provide visibility into integration health, tenant usage, and performance.",
+    "Build billing and cost-analysis dashboards, including API call cost allocation and tenant-level breakdowns.",
+    "Continuously improve our analytics environment by identifying opportunities to optimise data quality, reporting, and processes."
+  ],
+  "responsibilities_source": "jd_section"
 }

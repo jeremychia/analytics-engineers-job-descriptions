@@ -106,5 +106,14 @@
       "reconciliation",
       "financial reporting"
     ]
-  }
+  },
+  "responsibilities": [
+    "Dimensional Modelling: Design, build and maintain the warehouse's core models. This covers SCD dimensions such as customers and verification profiles, partitioned fact tables for trades, payments, hedging and balances, and the analytics marts that sit on top of them for finance, product and leadership.",
+    "Transformation Pipelines: Own analytics pipelines end to end, from schedule and upstream dependencies through to the transformation logic and the target table. Every model you write must be safe to rerun and safe to backfill by construction rather than by convention.",
+    "Metric Definition Ownership: Be the authority on how a metric is calculated, covering active users, assets under management, take rate, revenue, funnel conversion and acquisition cost. Drive cross-team alignment to a written, versioned definition, then build the dashboards that make the parallel spreadsheets redundant.",
+    "Data Ingestion: Build and maintain extractors against REST and GraphQL sources, including exchange platforms, custody providers, payment gateways, support systems and external price feeds. Handle pagination, retries and error states properly.",
+    "Data Quality Contracts: Declare quality checks alongside every model, covering completeness, uniqueness, consistency, validity, timeliness and accuracy, with thresholds you can defend when they fire at 3am. Investigate discrepancies against source systems and close them with a written root cause rather than a nudge to the numbers.",
+    "Cost Guardrails: Design for what a query costs. Warehouse compute, scanned data volume and storage growth are all measurable, and we expect you to weigh them and choose the cheaper option when two designs solve the same problem."
+  ],
+  "responsibilities_source": "jd_section"
 }

@@ -93,5 +93,18 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Design, build, and maintain scalable data pipelines using Python, dbt, Airflow, and/or Spark",
+    "Develop curated datasets with well-defined metrics",
+    "Ensure data quality through testing frameworks and monitoring",
+    "Design and develop user-centric, interactive web applications using open-source frameworks such as Plotly Dash, Panel, or FastAPI",
+    "Build modular, reusable components for visualizations and workflows",
+    "Deliver scalable full-stack Python solutions",
+    "Integrate applications with Snowflake, S3, Smartsheet, and REST APIs",
+    "Support CI/CD pipelines, version control, and containerized deployments (Docker)",
+    "Partner with supply chain, operations, and analytics teams",
+    "Mentor junior engineers and promote best practices"
+  ],
+  "responsibilities_source": "jd_section"
 }

@@ -79,5 +79,15 @@
   "has_postgres": false,
   "has_airbyte": false,
   "has_glue": false,
-  "salary_period": null
+  "salary_period": null,
+  "responsibilities": [
+    "Design, build, and maintain clean, scalable, and performance-optimised data models using SQL and dbt.",
+    "Apply software engineering practices to analytics code, including version control, testing, and continuous integration.",
+    "Automate and streamline data validation, testing, and reporting processes.",
+    "Take ownership of data analysis for a designated domain, collaborating closely with Product Analysts, Data Scientists, and Business Stakeholders to meet their analytical and reporting needs.",
+    "Proactively monitor data integrity, identify issues, and perform root cause analysis.",
+    "Maintain comprehensive data documentation and definitions for easy reference and understanding.",
+    "Train business users on utilising the data platform and data visualisation tools effectively."
+  ],
+  "responsibilities_source": "jd_section"
 }

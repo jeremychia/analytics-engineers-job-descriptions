@@ -93,5 +93,15 @@
       "data-extractie"
     ]
   },
-  "salary_period": "annual"
+  "salary_period": "annual",
+  "responsibilities": [
+    "Bouwen en onderhouden van schaalbare datamodellen en pipelines in dbt en Snowflake op basis van de Medallion architectuur (Bronze, Silver, Gold)",
+    "Definiëren van de semantische laag: KPI's, metrics en bedrijfslogica eenmalig en consistent vastleggen in code",
+    "Opleveren van schone Gold-laag datasets als databron voor o.a. Tableau, Sigma Computing en Power BI",
+    "Schrijven van (complexe) SQL en Python voor data-extractie, transformatie en kwaliteitsborging",
+    "Actief inzetten van AI-tools (Claude, GitHub Copilot) om sneller en beter te werken",
+    "Samenwerken met business analisten en klanten om databehoefte te vertalen naar technische oplossingen",
+    "Opbouwen van domeinkennis bij klanten zodat je datamodellen altijd aansluiten op de bedrijfspraktijk"
+  ],
+  "responsibilities_source": "jd_section"
 }

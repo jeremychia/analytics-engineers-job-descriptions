@@ -81,5 +81,12 @@
   "has_postgres": false,
   "has_airbyte": false,
   "has_glue": false,
-  "salary_period": null
+  "salary_period": null,
+  "responsibilities": [
+    "Analyse des besoins d'accès aux données, en collaboration avec les utilisateurs business, data analysts et dataviz engineers",
+    "Mise en place des flux et modèles de données, en se basant sur des stacks data modernes (SQL, DBT, outils ELTs, GCP/Azure/AWS/Snowflake, …)",
+    "Exposition des données dans les outils BI & visualisation",
+    "Maintenance des pipelines et mise en place d'alertes & tests de qualité de données"
+  ],
+  "responsibilities_source": "jd_section"
 }

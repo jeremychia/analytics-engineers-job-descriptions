@@ -72,15 +72,15 @@
     "domain_risk_explanation": "Errors affect business/editorial decision-making at a media company but no financial-reporting, regulatory, or audit language is used, so this is moderate rather than high.",
     "collaboration_width": "BI teams; data science teams; engineering teams; business teams",
     "data_team_maturity": "help build and scale a modern data platform",
-    "data_team_maturity_explanation": "The platform is being scaled and standardized with named tools already in production use (Airflow, dbt, BigQuery), and supports BI/analytics/data science teams, indicating a growing but not yet fully mature function \u2014 mid.",
+    "data_team_maturity_explanation": "The platform is being scaled and standardized with named tools already in production use (Airflow, dbt, BigQuery), and supports BI/analytics/data science teams, indicating a growing but not yet fully mature function — mid.",
     "jd_authorship": "Configure and optimize datasets in BigQuery for analytical workloads.",
     "jd_authorship_explanation": "Bullets name specific tools and precise application context (Airflow orchestration, dbt curated/serving-layer models, BigQuery datasets, KPI logic), giving a clear picture of day-to-day work.",
     "stakeholder_orientation": "Support BI, analytics, and data science teams with trusted datasets and reusable data assets.",
-    "stakeholder_orientation_explanation": "The primary audience is the internal data function itself \u2014 BI, analytics, and data science teams consuming trusted datasets \u2014 rather than a specific external business unit.",
+    "stakeholder_orientation_explanation": "The primary audience is the internal data function itself — BI, analytics, and data science teams consuming trusted datasets — rather than a specific external business unit.",
     "autonomy_level": "establish quality and governance standards that enable trusted analytics and downstream AI/ML use cases",
     "autonomy_level_explanation": "Strategic verbs dominate ('design and orchestrate', 'define and maintain KPI definitions', 'establish... standards'), consistent with a Lead-level direction-setting role.",
     "ai_role": "establish quality and governance standards that enable trusted analytics and downstream AI/ML use cases",
-    "ai_role_explanation": "The candidate builds governed, trusted data infrastructure that downstream AI/ML use cases consume \u2014 AI is downstream of the candidate's output, so ai_enabler.",
+    "ai_role_explanation": "The candidate builds governed, trusted data infrastructure that downstream AI/ML use cases consume — AI is downstream of the candidate's output, so ai_enabler.",
     "testing_framing": "Establish and improve end-to-end testing frameworks for pipelines and transformations.",
     "testing_framing_explanation": "Testing and quality frameworks are framed as something the candidate owns and establishes, using explicit ownership verbs, so this is responsibility.",
     "loss_aversion_framing": "Implement data quality and governance controls, including automated tests, lineage validation, and metadata standards.",
@@ -90,7 +90,7 @@
     "language_gate": "Not stated in JD.",
     "urgency": "No urgency signals present.",
     "work_arrangement": "Not stated in JD.",
-    "loss_aversion": "Implement data quality and governance controls, including automated tests, lineage validation, and metadata standards \u2014 establishing quality and governance standards that enable trusted analytics and downstream AI/ML use cases.",
+    "loss_aversion": "Implement data quality and governance controls, including automated tests, lineage validation, and metadata standards — establishing quality and governance standards that enable trusted analytics and downstream AI/ML use cases.",
     "ats_keywords": [
       "Lead Analytics Engineer",
       "data platform",
@@ -105,5 +105,18 @@
       "semantic consistency",
       "AI/ML use cases"
     ]
-  }
+  },
+  "responsibilities": [
+    "Design, build, and maintain orchestration workflows using Airflow.",
+    "Develop and optimize curated and serving-layer models using dbt.",
+    "Implement data transformations such as cleaning, deduplication, patterns, and schema harmonization.",
+    "Build dimensional models, marts, and KPI logic for reporting and advanced analytics.",
+    "Define and maintain KPI definitions, business glossary standards, and semantic consistency across data products.",
+    "Configure and optimize datasets in BigQuery for analytical workloads.",
+    "Implement data quality and governance controls, including automated tests, lineage validation, and metadata standards.",
+    "Establish and improve end-to-end testing frameworks for pipelines and transformations.",
+    "Partner with upstream and downstream teams to ensure reliable, well-documented, high-quality data delivery.",
+    "Support BI, analytics, and data science teams with trusted datasets and reusable data assets."
+  ],
+  "responsibilities_source": "jd_section"
 }

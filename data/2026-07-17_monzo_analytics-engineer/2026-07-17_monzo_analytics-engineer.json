@@ -93,5 +93,12 @@
   "has_postgres": false,
   "has_airbyte": false,
   "has_glue": false,
-  "salary_period": null
+  "salary_period": null,
+  "responsibilities": [
+    "Building \"robust pipelines and data models downstream of backend services (mostly in BigQuery)\" supporting reporting and financial use cases",
+    "Optimizing data warehouse architecture to reduce complexity and costs",
+    "Establishing standards for data modeling, testing, and metadata management",
+    "Collaborating with colleagues to monitor and enhance data quality"
+  ],
+  "responsibilities_source": "jd_section"
 }

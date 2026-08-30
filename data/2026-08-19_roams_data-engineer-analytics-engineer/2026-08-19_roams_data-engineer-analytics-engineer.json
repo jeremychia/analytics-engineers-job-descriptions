@@ -104,5 +104,16 @@
       "Delta Lake",
       "AWS Lake Formation"
     ]
-  }
+  },
+  "responsibilities": [
+    "Liderar técnicamente el desarrollo de nuestro nuevo Data Lake corporativo.",
+    "Diseñar y desplegar la infraestructura en AWS utilizando Terraform (Infrastructure as Code).",
+    "Implementar pipelines de ingesta (CDC) desde múltiples fuentes de datos.",
+    "Diseñar y desarrollar modelos de datos siguiendo arquitectura Medallion (Raw, Clean y Marts).",
+    "Construir transformaciones mediante dbt y modelado dimensional (SCD2).",
+    "Garantizar la calidad, trazabilidad y gobierno del dato mediante tests y reconciliaciones.",
+    "Colaborar con los equipos de Producto, Tecnología y Analítica para convertir los datos en una ventaja competitiva.",
+    "Participar en las decisiones de arquitectura para construir una plataforma escalable, mantenible y preparada para el futuro."
+  ],
+  "responsibilities_source": "jd_section"
 }

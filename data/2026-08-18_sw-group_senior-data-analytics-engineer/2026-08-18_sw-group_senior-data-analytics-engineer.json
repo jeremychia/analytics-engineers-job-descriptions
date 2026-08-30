@@ -101,5 +101,14 @@
       "dimensional modelling",
       "semantic models"
     ]
-  }
+  },
+  "responsibilities": [
+    "Architect and maintain scalable ETL/ELT pipelines, optimising for performance, reliability, cost, and data quality across multiple data sources",
+    "Maintain and troubleshoot medallion architecture and dimensional modelling (star schemas) to support enterprise reporting, KPIs, and Power BI semantic models",
+    "Design, implement, and maintain Lakehouse and Warehouse structures in Microsoft Fabric, including data modelling standards and semantic layers",
+    "Provide operational support, monitoring, troubleshooting, and performance tuning for Microsoft Fabric ingestion, dataflows, and transformation workloads",
+    "Identify, resolve, and prevent data quality issues through validation rules, monitoring, alerting, and root‑cause analysis with source system owners",
+    "Design, build, and maintain enterprise‑standard Power BI reports and dashboards, aligned to agreed data models, governance, and reporting standards"
+  ],
+  "responsibilities_source": "jd_section"
 }

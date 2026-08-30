@@ -103,5 +103,14 @@
       "AI-assisted reporting",
       "financial data foundation"
     ]
-  }
+  },
+  "responsibilities": [
+    "Design and build scalable data models and pipelines using dbt to transform raw data into clean, reliable assets that power company-wide financial analytics and decision-making.",
+    "Define and implement a robust semantic layer (e.g. LookML/Omni/Other) that standardizes financial and operating metrics, including revenue, retention, customer growth, usage, margin, and forecast inputs.",
+    "Partner cross-functionally with Product, Finance, and the Exec Team to deliver intuitive, consistent dashboards and analytical tools that surface business health metrics (ARR, NRR).",
+    "Establish and champion data modeling standards and best practices, guiding the organization in how to model data for accuracy, performance, usability, and long-term maintainability.",
+    "Lead data governance initiatives, ensuring high standards of data quality, consistency, documentation, and access control across the analytics ecosystem.",
+    "Structure financial metric definitions, business logic, and accounting context in ways that can support AI-assisted reporting, natural language analytics, and automated anomaly detection."
+  ],
+  "responsibilities_source": "jd_section"
 }

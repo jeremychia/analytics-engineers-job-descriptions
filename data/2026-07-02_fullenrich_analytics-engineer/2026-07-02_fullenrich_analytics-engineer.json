@@ -93,5 +93,14 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": true,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Maintain and enhance the existing dbt/BigQuery data stack",
+    "Design data models ensuring reliable access to the metrics across Finance, Marketing, RevOps, Sales, and Support teams",
+    "Create self-serve dashboards using Basedash for metric consumption",
+    "Conduct analytical work addressing business problems including provider cost/margin analysis, activation scoring, credit consumption pattern analysis",
+    "Implement reverse ETL pipelines pushing operational data to systems like Intercom and HubSpot",
+    "Write tests and maintain documentation standards"
+  ],
+  "responsibilities_source": "jd_section"
 }

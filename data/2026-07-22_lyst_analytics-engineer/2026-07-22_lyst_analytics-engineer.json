@@ -93,5 +93,23 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Building data models and transformation pipelines across the breadth of Lyst data",
+    "Optimising our Snowflake warehouse for cost, complexity and speed to answer",
+    "Migrating our BI stack from Looker to Omni and helping teams get real value from it",
+    "Getting our data ready for AI, so both stakeholders and AI tools can query it reliably",
+    "Automating repetitive analysis and reporting, including with AI tooling",
+    "Keeping data quality high and holding the line on our data contracts",
+    "Building and maintaining well-modelled data pipelines across the breadth of Lyst data and use cases",
+    "Partnering with your squad in the customer experience tribe to model the data behind their features and show how those features perform",
+    "Working with engineers and our data platform engineer to raise data quality and testing standards",
+    "Maintaining and optimising our warehouse and BI tooling, spotting opportunities to reduce complexity, cost and time to answer",
+    "Building the models and semantic layer that let stakeholders and AI tools get trustworthy answers on their own",
+    "Developing and implementing best practice, including guidelines, automation, testing, metadata and data design",
+    "Reviewing code and supporting other teams on data ingestion and modelling, providing rich data outputs for end users",
+    "Helping deliver our wider data strategy, including the shift toward AI in the data platform",
+    "Bridging the gap between how data is created and how it gets used, and supporting stakeholders on data definitions and relationships"
+  ],
+  "responsibilities_source": "jd_section"
 }

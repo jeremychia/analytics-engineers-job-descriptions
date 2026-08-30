@@ -111,5 +111,18 @@
       "RAG",
       "financial services"
     ]
-  }
+  },
+  "responsibilities": [
+    "Warehouse changes ship safely and predictably: you help build and run the release process, with branch protection, CI standards, code review, and healthy orchestration, and help harden it so it holds up without leaning on any single reviewer.",
+    "The warehouse-AI connection stays secure and cost-controlled: you configure and maintain the guardrails for the enterprise AI platform connection, covering access controls, cost monitoring, and security configuration.",
+    "Upstream changes never blindside downstream AI tools: with the change management rhythm you build with data engineering, the impact of a model change is understood before it ships.",
+    "Data models meet a consistent quality bar: the documentation requirements, test coverage, and PR gates you maintain mean analysts stop wondering which tables they can trust.",
+    "Pipeline failures surface before they reach production, not after: the validation you build into orchestration means the team hears about problems from the system, not from a stakeholder with a broken report.",
+    "A trusted AI knowledge platform you help to build: warehouse connectivity, working with our engineers and domain analysts to build data and document ingestion pipelines",
+    "Business context flows into AI workspaces without manual effort: the ingestion pipelines you build keep institutional knowledge current on a steady cadence, with no manual steps left for analysts.",
+    "Analysts and business teams get an in-house text-to-SQL agent: you build it with our engineering team on an architecture that is documented and can be extended later as needs are agreed.",
+    "AI outputs are checked before they go live: you put accuracy checks in place with the domain analysts, so a workspace is signed off against a known standard before teams rely on it.",
+    "Automated reporting reaches production quality: working with domain analysts, you take reporting from proof-of-concept to production, with data freshness checks, failure detection, and error handling built in."
+  ],
+  "responsibilities_source": "jd_section"
 }

@@ -93,5 +93,22 @@
       "AI-generated code",
       "self-service BI"
     ]
-  }
+  },
+  "responsibilities": [
+    "Partner with stakeholders to understand business needs and translate ambiguous problems into clear, well-scoped requirements",
+    "Own the design of robust, scalable data models and exposures in dbt, Snowflake, and Looker — and set the patterns and conventions the wider team reuses",
+    "Make and document the architectural decisions and trade-offs that shape our data platform",
+    "Use AI-assisted development to move faster — spending less time hand-writing boilerplate and more time specifying intent, reviewing, and refining — and help define how the team gets the best out of these tools",
+    "Read, debug, and critically review SQL (including AI-generated code), so we ship models we can trust",
+    "Wrangle and integrate data from multiple third-party sources (e.g. Amplitude, Segment, Google Ads)",
+    "Define and champion the \"trust infrastructure\" — the testing, data-contract, and observability standards the team works to — that lets the business depend on our models",
+    "Own quality, reliability, and stability across data models and pipelines",
+    "Create secure, efficient data shares for external partners (e.g. S3, SFTP, Snowflake Data Sharing)",
+    "Drive the continuous improvement of our data platform, tooling, and ways of working — including how we use AI",
+    "Act as a technical anchor for the team — raising the bar through code review, mentoring, and pairing",
+    "Support business users across the company to promote a culture of data-driven decision-making",
+    "Translate complex business questions into well-designed data solutions and metrics",
+    "Enable and maintain self-service capabilities within our BI tools"
+  ],
+  "responsibilities_source": "jd_section"
 }

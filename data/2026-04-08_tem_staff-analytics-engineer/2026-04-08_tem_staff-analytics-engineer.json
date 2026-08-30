@@ -79,5 +79,14 @@
   "has_postgres": false,
   "has_airbyte": false,
   "has_glue": false,
-  "salary_period": "annual"
+  "salary_period": "annual",
+  "responsibilities": [
+    "Design and maintain core dbt models representing business areas like customers, revenue, and operations.",
+    "Define and implement company metrics in Omni for self-serve analytics.",
+    "Lead cross-domain analytics projects spanning multiple teams.",
+    "Balance speed, accuracy, and maintainability in data modeling decisions.",
+    "Establish data quality standards using tests, CI/CD, and documentation.",
+    "Partner with Data Engineering to diagnose issues and optimize warehouse performance."
+  ],
+  "responsibilities_source": "jd_section"
 }

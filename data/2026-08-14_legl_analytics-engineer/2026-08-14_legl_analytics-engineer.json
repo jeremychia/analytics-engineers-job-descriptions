@@ -104,5 +104,15 @@
       "data quality",
       "observability"
     ]
-  }
+  },
+  "responsibilities": [
+    "Model the warehouse\n. Design and maintain dbt models, sources, tests and documentation across our layered architecture, and keep naming and structure coherent as it grows.",
+    "Work with Product as features ship. \nGet involved early enough to know what a new feature will emit, so it lands in the models correctly the first time rather than being retrofitted once someone notices a number looks wrong.",
+    "Define metrics, and contribute to the semantic layer.\n Get definitions agreed and codified so a KPI means the same thing in a board pack, a dashboard and an AI answer.",
+    "Build for self-serve.\n Design models that people can actually use themselves, whether they reach them through a semantic layer or a BI tool, and retire what nobody uses.",
+    "Data quality and observability.\n Extend our test suite, tune alerting so failures mean something, and keep the nightly pipeline honest.",
+    "Consolidate rather than accumulate.\n Extend and reshape what exists before adding to it, and retire what is no longer load-bearing. A smaller, clearer estate is where we want to get to, and this is a role that helps take us there.",
+    "Governance and privacy.\n We model how law firms use Legl. We do not model the personal data of the clients those firms serve, which stays inside the product and out of the warehouse. Keeping that boundary intact is a live decision every time we bring in a new source."
+  ],
+  "responsibilities_source": "jd_section"
 }

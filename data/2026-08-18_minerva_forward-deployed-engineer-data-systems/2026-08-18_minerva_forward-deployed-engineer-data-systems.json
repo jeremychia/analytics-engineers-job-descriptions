@@ -102,5 +102,14 @@
       "Cursor",
       "marketing attribution"
     ]
-  }
+  },
+  "responsibilities": [
+    "Own onboarding end to end, from first POC to production. Quickly grok the company's pain points and generate immediate impact for their marketing team.",
+    "Steer our Agentic Data Engineer to build and standardize the brand's data models. Map source integrations onto Minerva's golden model contracts, handle common data quality failure modes, and write validations to ensure data accuracy before a CMO sees a dashboard.",
+    "Expand the connectivity between the customer's first party data and our third party data. Identify entities, attributes, events, and behaviors not yet represented, building pipes for key marketing product features e.g. Attribution, Personalization, Conversion Rate Optimization. Work with other data engineers to ensure systems become robust and battle-tested.",
+    "Systemize custom workflows for a given customer into repeatable, agentically-generated pipelines within our orchestration framework.",
+    "Sell the value and vision. Run discovery that doubles as a commercial conversation, make the case to a CMO or RevOps leader for what's worth building, demonstrate ROI, and drive land and expand within strategic accounts.",
+    "Be the last line of technical defense. Debug production integrations, investigate data freshness and match rate issues, and resolve them quickly."
+  ],
+  "responsibilities_source": "jd_section"
 }

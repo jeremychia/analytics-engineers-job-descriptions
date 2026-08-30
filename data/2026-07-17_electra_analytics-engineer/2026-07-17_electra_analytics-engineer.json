@@ -93,5 +93,14 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Design and maintain data models using dbt across business domains",
+    "Extend governance of metric definitions and semantic layers",
+    "Shape data infrastructure to support LLM-powered analytics tools",
+    "Onboard new data sources like SAP and electricity costs into structured models",
+    "Implement monitoring, alerting, and anomaly detection systems",
+    "Contribute to orchestration and data ingestion infrastructure"
+  ],
+  "responsibilities_source": "jd_section"
 }

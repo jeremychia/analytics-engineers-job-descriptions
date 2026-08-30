@@ -91,5 +91,17 @@
       "root causes",
       "governance frameworks"
     ]
-  }
+  },
+  "responsibilities": [
+    "Design, build, and maintain dbt models on BigQuery, following modular and tested transformation patterns (staging → intermediate → marts)",
+    "Take end-to-end ownership of assigned data domains — including the projects built on top of them, their data quality, documentation, and the trust stakeholders place in them",
+    "Treat data quality as non-negotiable: investigate anomalies, follow up persistently with data engineers and source system owners to resolve root causes rather than apply patches, and advocate for fixes upstream when needed",
+    "Partner with analysts, PMs, and business stakeholders to translate requirements into well-modeled datasets and clear metric definitions",
+    "Contribute to the team's governance frameworks — access control via taxonomy tags, naming conventions, model ownership, and CI/CD for dbt",
+    "Optimize BigQuery cost and performance (partitioning, clustering, incremental models, query patterns)",
+    "Collaborate with data engineers on upstream pipelines (CDC, streaming, batch ingestion) to ensure source data fits downstream modeling needs",
+    "Proactively identify gaps and propose new AE initiatives — better testing frameworks, semantic layers, metric stores, internal tooling, automation — when current work feels routine. We want someone who gets restless and turns that into innovation, not someone who waits for tickets",
+    "Mentor junior analytics engineers and review PRs"
+  ],
+  "responsibilities_source": "jd_section"
 }

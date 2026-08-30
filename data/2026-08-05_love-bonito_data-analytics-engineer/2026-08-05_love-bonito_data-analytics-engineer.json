@@ -103,5 +103,22 @@
       "customer segmentation",
       "market basket analysis"
     ]
-  }
+  },
+  "responsibilities": [
+    "Design, optimize, and maintain performance dashboards that enable stakeholders to explore data independently",
+    "Define and own the metrics layer (clear, documented definitions) so numbers don't silently diverge across teams",
+    "Set and enforce dashboarding best practices (design standards, naming conventions, template library) across the analytics function",
+    "Document SOPs for dashboard build, refresh, and handover so ownership can transfer without loss of context",
+    "Build and ship production-grade forecasting models for run-rate and sales-event performance, tracked against actuals",
+    "Use forecasting output to inform campaign mechanics",
+    "Build and maintain customer segmentation and market basket analyses to uncover cross-sell opportunities",
+    "Deliver reusable, scalable analytical frameworks, not one-off answers to one-off questions",
+    "Own model documentation: assumptions, limitations and decision boundaries for any model that influences spend decisions",
+    "Evaluate and optimise aggregation tables for performance and scalability",
+    "Automate recurring workflows to reduce manual effort and reduce time-to-insight",
+    "Design table structures (fact/dimension modeling, partition strategy) for scalability and query performance - architecting new tables, not just tuning existing one",
+    "Own orchestration and scheduling of recurring pipelines (e.g. Airflow, dbt, Databricks Workflows) including failure monitoring and data-freshness SLAs",
+    "Document data models and business logic so solutions are maintainable by other team members and usable as context by internal AI tooling"
+  ],
+  "responsibilities_source": "jd_section"
 }

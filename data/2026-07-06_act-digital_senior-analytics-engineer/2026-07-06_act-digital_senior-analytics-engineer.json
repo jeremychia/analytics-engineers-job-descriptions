@@ -97,5 +97,14 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "\"Model and transform data into consistent analytical structures\"",
+    "\"Build and optimize ELT pipelines and quality tests\"",
+    "\"Ensure clear documentation (business rules, lineage, transformation logic)\"",
+    "\"Monitor datasets, quality, SLAs, and performance\"",
+    "Support data scientists, BI teams, and ML engineers with dependable data infrastructure",
+    "Work collaboratively across data engineering, science, machine learning, and product teams"
+  ],
+  "responsibilities_source": "jd_section"
 }

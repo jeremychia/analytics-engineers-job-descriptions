@@ -80,5 +80,20 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Support franchise partners' decisions regarding stock, supply chain, and pricing",
+    "Identify trends and anomalies; translate findings into \"clear, actionable recommendations\"",
+    "Design and maintain dashboards for franchisees and internal teams",
+    "Adapt existing dashboards from other business domains",
+    "Implement row-level security",
+    "Build data marts and business layers using dbt on Databricks",
+    "Code complex business logic (royalties, taxable turnover, margins)",
+    "Negotiate access to internal data sources",
+    "Support franchisees in interpreting KPIs",
+    "Gather feedback for product improvement",
+    "Promote data-driven decision-making",
+    "Document KPI definitions and business rules"
+  ],
+  "responsibilities_source": "jd_section"
 }

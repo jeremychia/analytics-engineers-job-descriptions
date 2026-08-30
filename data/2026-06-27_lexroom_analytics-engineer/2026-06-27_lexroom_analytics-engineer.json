@@ -81,5 +81,16 @@
   "has_postgres": false,
   "has_airbyte": false,
   "has_glue": false,
-  "salary_period": "annual"
+  "salary_period": "annual",
+  "responsibilities": [
+    "Own the data transformation layer from raw sources to trusted, documented datasets—designing and maintaining a dbt project on BigQuery with staging, intermediate, and mart layers.",
+    "Model product analytics events (user interactions, feature adoption, feedback signals), engineering metrics, and business KPIs into reliable, self-service data models.",
+    "Build and maintain the data foundations powering our dashboards, decisions, and team health metrics.",
+    "Implement data quality frameworks: tests, freshness checks, anomaly detection, and clear ownership and SLAs on key datasets.",
+    "Collaborate with engineers to improve event tracking and data contracts at the source (Pub/Sub, application events).",
+    "Create and curate dashboards and semantic layers that Product, CS, and Sales teams can query directly—enabling true self-service analytics.",
+    "Partner with the AI & Search Platform team to instrument and measure model performance, feedback loops, and benchmark results.",
+    "Support Product teams with ad-hoc analysis: feature impact, user segmentation, satisfaction trends, and power-user behavior."
+  ],
+  "responsibilities_source": "jd_section"
 }

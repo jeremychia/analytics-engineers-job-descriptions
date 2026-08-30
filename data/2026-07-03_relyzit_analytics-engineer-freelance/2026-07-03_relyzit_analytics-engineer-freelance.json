@@ -96,5 +96,17 @@
   "has_metabase": true,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Transforming raw, multi-source data into structured, actionable datasets for analytics and visualization",
+    "Designing and implementing robust data models to support business intelligence and reporting needs",
+    "Collaborating closely with data engineers and analysts as the vital link between technical and business teams",
+    "Optimizing datasets for visualization tools and ensuring seamless integration of new data sources",
+    "Conducting automated data quality checks using tools such as Great Expectations",
+    "Documenting data processes and transformations thoroughly to ensure transparency and reproducibility",
+    "Translating business requirements into effective data solutions and transformations",
+    "Proactively identifying opportunities for new insights and efficiencies within the data ecosystem",
+    "Supporting the Data & AI team in solving complex data challenges across the organization"
+  ],
+  "responsibilities_source": "jd_section"
 }

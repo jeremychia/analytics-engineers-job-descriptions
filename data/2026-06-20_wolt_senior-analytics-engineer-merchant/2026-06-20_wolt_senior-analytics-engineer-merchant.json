@@ -78,5 +78,15 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Enhancing reporting and metrics quality as a whole, from understanding the needs of the business to providing easily understandable and actionable data",
+    "Working on centrally maintained data integrations and data pipelines",
+    "Design and implement complex data pipelines with dependency control and orchestration",
+    "Develop a self-service data modelling strategy",
+    "Increase data literacy across the domain through training and documentation",
+    "Lead, mentor, and guide more junior team members",
+    "Managing data integrations, pipelines, models, and dashboards using modern tools (Snowflake, SQL, Looker, Airflow, Dagster, GitHub)"
+  ],
+  "responsibilities_source": "jd_section"
 }

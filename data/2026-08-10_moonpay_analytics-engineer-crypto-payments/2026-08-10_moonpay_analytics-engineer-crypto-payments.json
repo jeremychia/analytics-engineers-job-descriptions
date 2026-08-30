@@ -96,5 +96,14 @@
       "financial reporting",
       "The Ledger"
     ]
-  }
+  },
+  "responsibilities": [
+    "Build robust data models and infrastructure downstream of backend services and external data sources, which support reconciliation, internal reporting, and ad-hoc analysis.",
+    "Develop \"The Ledger\", which tracks all our crypto and fiat movements from wallet and exchange data sources.",
+    "Design, build, and scale a MoonPay-wide approach to reconciliation for cash, crypto, and payments data using both internal and external data sources.",
+    "Conduct specific analysis and build data solutions for new product flow of funds, crypto inventory balances, or cost basis reporting.",
+    "Collaborate with the finance team and the crypto engineering team to conduct investigations into issues, such as crypto delivery timing, or payments reconciliation.",
+    "Work closely with accounting and finance to understand their needs, and build custom tables and reporting to support their efforts"
+  ],
+  "responsibilities_source": "jd_section"
 }

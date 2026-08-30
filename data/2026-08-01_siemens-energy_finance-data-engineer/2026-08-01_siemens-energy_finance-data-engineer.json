@@ -93,5 +93,16 @@
       "Python",
       "Flask/FastAPI"
     ]
-  }
+  },
+  "responsibilities": [
+    "Design, build, and optimize data models and ETL/ELT pipelines, with a focus on Snowflake for financial data.",
+    "Develop and maintain scalable data models that capture and track historical data for key financial performance indicators (KPIs).",
+    "Harmonize and transform historical SAP finance data into analytical-ready formats using defined business logic and mapping.",
+    "Develop and maintain APIs (e.g., using Flask/FastAPI) to enable secure and efficient data consumption by other applications and analytical services.",
+    "Implement and manage data quality frameworks, including automated monitoring, alerting, and remediation workflows to ensure data accuracy and reliability.",
+    "Maintain comprehensive data documentation, including data lineage, metadata catalogs, and schema definitions.",
+    "Ensure the production-readiness of all data solutions by implementing CI/CD practices, automated testing, and system observability.",
+    "Collaborate with data analysts, data scientists, and business stakeholders to define data requirements, access patterns, and governance standards."
+  ],
+  "responsibilities_source": "jd_section"
 }

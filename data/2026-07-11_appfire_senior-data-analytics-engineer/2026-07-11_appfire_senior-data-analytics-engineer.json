@@ -90,5 +90,12 @@
   "has_postgres": false,
   "has_airbyte": false,
   "has_glue": false,
-  "salary_period": "annual"
+  "salary_period": "annual",
+  "responsibilities": [
+    "Collaborating with stakeholders to integrate and build data metrics in Snowflake",
+    "Architecting reliable data models and pipelines using DBT and Snowflake",
+    "Designing metrics and dimensions for self-service analytics",
+    "Establishing best practices for metric and data model development"
+  ],
+  "responsibilities_source": "jd_section"
 }

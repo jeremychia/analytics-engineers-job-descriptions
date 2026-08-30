@@ -76,5 +76,20 @@
   "has_metabase": true,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Design and maintain the models and pipelines that feed every report on the platform. Get the data right, keep it fast.",
+    "Build dashboards in Metabase that are pixel-perfect, fast, and genuinely useful. Treat analytics as a product surface, not a side artifact.",
+    "Work daily with product (on what each module should report on) and engineering (on how the source data should look). Connect \"what the user needs to see\" with \"what the database can deliver.\"",
+    "Build new reports for module releases, working with PMs on the brief and engineering on the source data",
+    "Refactor existing reports to a common standard for layout, performance, and UX",
+    "Tune slow queries and dashboards; fix bottlenecks at the SQL, schema, or aggregation layer",
+    "Maintain the modeling / semantic layer in Metabase so non-technical users can self-serve where appropriate",
+    "Define and apply naming, formatting, and visual standards for reports across the platform",
+    "Partner with engineering on schema and event design so the data needed for reporting exists at the source",
+    "Build reusable report templates that help our implementation team deliver faster on customer-specific requests",
+    "Track usage and feedback on reports; double down on what matters, retire what doesn't",
+    "Support AI and ML initiatives by preparing and maintaining high-quality datasets the AI features on our platform can build on"
+  ],
+  "responsibilities_source": "jd_section"
 }

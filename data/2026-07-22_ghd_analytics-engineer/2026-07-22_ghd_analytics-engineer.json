@@ -93,5 +93,13 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Design, build, and maintain data models and Power BI semantic models across the bronze, silver, and gold layers in Microsoft Fabric, using SQL (dbt) and notebooks",
+    "Write tests to check data quality and integrity, and fix data problems",
+    "Collaborate with data scientists, data analysts, and business analysts to understand data requirements and transform raw data into actionable insights",
+    "Take part in code reviews and contribute to the continuous improvement of engineering standards and best practices",
+    "Optimize performance to support efficient, scalable, and reliable data pipelines"
+  ],
+  "responsibilities_source": "jd_section"
 }

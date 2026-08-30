@@ -92,5 +92,14 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Work closely with people analysts, people business partners, finance, and adjacent stakeholders to prioritise and align the analytics engineering roadmap, ensuring solutions meet both reporting and AI-readiness requirements.",
+    "Build, expand, and maintain reusable data models and metrics in source of truth semantic layer (currently in dbt) covering the full employee lifecycle — headcount, hiring funnel, attrition, absence, and compensation — modelled with the consistency and documentation that LLM-based tools require to reason over data reliably. Implement data quality monitoring and alerting so issues are caught before they surface in dashboards or AI tools.",
+    "Set up and manage the architecture, documentation, and key data transformations for people data source systems within our Databricks and S3-based data lake; identify and resolve gaps where data is missing, unreliable, or structurally unusable.",
+    "Own and evolve the BI tool (currently Looker) semantic layer (ML models, explores, derived tables) as the single source of truth for people metrics — and as a key component of our conversational analytics setup.",
+    "Co-build and extend our people data plugin for AI tools such as Claude and Cursor; work with the analytics engineering function and data platform team to establish standards and best practices for AI-ready data — including naming conventions, metric glossaries, lineage documentation, and data catalogue maintenance.",
+    "Follow system design and architectural best practices and closely collaborate with Data Engineering, People Tech, and Internal Products to ensure data integrity and efficiency across all processes."
+  ],
+  "responsibilities_source": "jd_section"
 }

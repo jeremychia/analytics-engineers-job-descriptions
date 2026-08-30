@@ -81,5 +81,20 @@
   "has_postgres": false,
   "has_airbyte": false,
   "has_glue": false,
-  "salary_period": null
+  "salary_period": null,
+  "responsibilities": [
+    "Concevoir et déployer des architectures data complètes adaptées aux besoins clients.",
+    "Mettre en place les flux de collecte, transformation, consolidation et stockage des données.",
+    "Structurer les modèles de données pour garantir leur lisibilité, leur performance et leur maintenabilité.",
+    "Développer les pipelines de transformation et les modèles analytiques.",
+    "Concevoir des dashboards décisionnels clairs et actionnables.",
+    "Participer à l'activation des données pour les équipes métiers (marketing, produit, direction…).",
+    "Mettre en place des dispositifs de contrôle de qualité des données et d'alerting.",
+    "Structurer la gouvernance data : ownership, accès, documentation, règles d'usage.",
+    "Construire des semantic layers facilitant l'exploitation des données par les équipes.",
+    "Concevoir de petits produits data à forte valeur ajoutée (interfaces, outils internes, automatisations).",
+    "Participer à des projets intégrant des briques IA ou d'analyse avancée.",
+    "Proposer des améliorations techniques et méthodologiques sur les stacks clients."
+  ],
+  "responsibilities_source": "jd_section"
 }

@@ -102,5 +102,26 @@
       "ETL/ELT",
       "machine learning"
     ]
-  }
+  },
+  "responsibilities": [
+    "Partner closely with Data Scientists to design, develop, and maintain datasets that support statistical analysis, machine learning models, experimentation, and business insights.",
+    "Design, build, and optimize scalable data models using dbt (Data Build Tool) following industry best practices for modularity, testing, documentation, and maintainability.",
+    "Develop and manage transformation pipelines that convert raw data into trusted, analytics-ready datasets.",
+    "Establish and maintain data lineage, governance, and documentation across analytical data assets.",
+    "Design, develop, and maintain feature stores and accompanying feature pipelines used for model training, feature serving, and batch inference.",
+    "Implement reusable feature engineering frameworks that accelerate machine learning development and improve feature consistency.",
+    "Collaborate with Data Scientists and Machine Learning Engineers to ensure feature reusability and production readiness.",
+    "Support the design and maintenance of real-time and batch feature pipelines.",
+    "Implement automated data validation, monitoring, and testing frameworks to ensure data quality and reliability.",
+    "Establish data quality checks, SLAs, observability metrics, and monitoring processes across critical datasets and pipelines.",
+    "Partner closely with Data Engineering and Data Governance teams to improve data maturity, accessibility, and trustworthiness.",
+    "Serve as a subject matter expert across assigned business and data domains.",
+    "Build CI/CD pipelines that accelerate deployment and proactively detect issues before production release.",
+    "Create and maintain reusable software packages, tools, and frameworks that improve Data Science productivity.",
+    "Establish best practices for data modeling, transformation, testing, deployment, and architecture.",
+    "Conduct code reviews and architectural reviews to ensure adherence to engineering standards.",
+    "Communicate technical architectures, trade-offs, and solutions to both technical and non-technical stakeholders.",
+    "Maintain architecture diagrams, technical documentation, and platform standards."
+  ],
+  "responsibilities_source": "jd_section"
 }

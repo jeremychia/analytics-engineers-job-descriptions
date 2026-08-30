@@ -94,5 +94,16 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": true
+  "has_glue": true,
+  "responsibilities": [
+    "Pipeline Development: Builds and maintains data ingestion, transformation, and orchestration pipelines on Snowflake, dbt and Dagster (or Airflow/equivalent) under established team standards, ensuring data is delivered on time and to agreed quality.",
+    "Data Modeling on Snowflake: Implements dimensional data models on Snowflake based on requirements gathered by Business Analysts and Product, following team conventions for naming, layering, and documentation; exposure to other modeling approaches (e.g. Data Vault) is a plus.",
+    "Python for Data Analytics Engineering: Writes clean, testable Python—including object-oriented code—for Dagster assets, sensors and IO managers, as well as for general Data Analytics Engineering tasks.",
+    "Source Integration: Integrates data from a wide variety of sources (ERPs, transactional systems, SaaS tools, flat files, spreadsheets, etc.), with awareness of the relevant business semantics.",
+    "Quality, Testing & Monitoring: Writes tests (dbt tests, custom checks), implements basic data quality monitoring, and proactively investigates anomalies for the pipelines they own.",
+    "Operational Excellence (Awareness Level): Works within the team's CI/CD, Git, Docker, and Terraform setup with growing independence; contributes to infrastructure-as-code and DataOps practices under guidance of senior peers.",
+    "Collaboration: Partners daily with other Data Analytics Engineers, the Reporting team, Business Analysts and the Product Manager to translate requirements into pragmatic technical solutions, escalating ambiguity early.",
+    "Documentation & Knowledge Sharing: Documents the pipelines, models, and decisions they own and shares learnings with the team through code reviews and informal knowledge sessions."
+  ],
+  "responsibilities_source": "jd_section"
 }

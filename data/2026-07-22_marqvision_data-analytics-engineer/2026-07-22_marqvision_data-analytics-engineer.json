@@ -93,5 +93,12 @@
   "has_metabase": false,
   "has_postgres": true,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Develop and maintain scalable data pipelines supporting service growth",
+    "Address data consistency issues across RDB and NoSQL sources",
+    "Design data marts for company metrics and automated ad-hoc analysis",
+    "Lead initial architecture design for new analytics platform implementation"
+  ],
+  "responsibilities_source": "jd_section"
 }

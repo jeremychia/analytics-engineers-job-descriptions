@@ -91,5 +91,18 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Načrtovanje, razvoj in vzdrževanje orkestracijskih workflow-ov z uporabo Airflow (planning, development, and maintenance of orchestration workflows using Airflow)",
+    "Development and optimization of curated and serving-layer models with dbt",
+    "Implementation of data transformations including cleaning, deduplication, and standardization",
+    "Building dimensional models, data marts, and KPI logic for reporting",
+    "Defining and maintaining KPI definitions and business glossaries",
+    "Configuration and optimization of BigQuery datasets",
+    "Implementation of quality controls and data governance with automated testing",
+    "Establishing end-to-end testing frameworks for pipelines",
+    "Collaboration with upstream and downstream teams",
+    "Supporting BI, analytics, and data science teams with reliable data products"
+  ],
+  "responsibilities_source": "jd_section"
 }

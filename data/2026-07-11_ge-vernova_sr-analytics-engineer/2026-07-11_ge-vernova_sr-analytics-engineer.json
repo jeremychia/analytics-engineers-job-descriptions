@@ -90,5 +90,16 @@
   "has_metabase": false,
   "has_postgres": true,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Architecture design for database schemas and data models on Steam Datalake",
+    "Construction and optimization of reliable data pipelines for ingestion, cleaning, and transformation",
+    "Internal and external data source integrations via APIs",
+    "Data quality assurance and governance compliance",
+    "Dashboard creation using Tableau or Power BI",
+    "Cross-functional collaboration with data science, automation, cloud, and infrastructure teams",
+    "Exploratory data analysis and proactive quality issue identification",
+    "Technology debt reduction initiatives"
+  ],
+  "responsibilities_source": "jd_section"
 }

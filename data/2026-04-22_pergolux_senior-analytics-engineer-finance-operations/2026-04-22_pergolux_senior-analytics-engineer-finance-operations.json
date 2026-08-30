@@ -79,5 +79,13 @@
   "has_postgres": false,
   "has_airbyte": true,
   "has_glue": false,
-  "salary_period": "annual"
+  "salary_period": "annual",
+  "responsibilities": [
+    "Leading ERP data integration into the data warehouse and establishing the foundation for all financial reporting",
+    "Creating and maintaining a \"Finance Single Source of Truth\" covering revenue, COGS, logistics costs, and EBITDA",
+    "Designing demand and revenue forecasting models for company-wide planning",
+    "Developing product profitability models by combining purchasing, operational, and financial data",
+    "Collaborating with finance, operations, and leadership teams to align on metrics and embed data in decision-making"
+  ],
+  "responsibilities_source": "jd_section"
 }

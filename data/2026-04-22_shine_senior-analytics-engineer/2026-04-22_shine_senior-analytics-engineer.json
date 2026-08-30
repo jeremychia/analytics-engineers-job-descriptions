@@ -78,5 +78,14 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Build and maintain scalable dbt models on Snowflake for cross-entity analytics",
+    "Enable Data Analysts to deliver insights through reliable, documented dbt models",
+    "Establish data governance, testing, and quality frameworks",
+    "Drive AI-assisted workflows, including GitHub Copilot integration",
+    "Collaborate with Data Engineering and Analytics teams on pipelines and requirements",
+    "Define SQL styling standards and peer review processes"
+  ],
+  "responsibilities_source": "jd_section"
 }

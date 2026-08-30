@@ -93,5 +93,15 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Developing data quality checks and validation processes across pipelines",
+    "Performing sanity checks to identify inconsistencies, duplicates, and missing values",
+    "Transforming raw data from the data lakehouse into clean, validated datasets",
+    "Documenting data quality issues and root causes",
+    "Supporting analysts with reliable, prepared datasets",
+    "Contributing to data workflow design and automation",
+    "Collaborating with data engineers, domain leads, and analysts"
+  ],
+  "responsibilities_source": "jd_section"
 }

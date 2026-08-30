@@ -78,5 +78,13 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Partner with squads across the tribe on event design and data contracts, maintaining staging pipelines, applying modelling conventions, and keeping domain outputs consistent, tested, and discoverable",
+    "Model key business domains, including merchant activity, product adoption, lifecycle events, and risk scoring, building well-documented, quality-assured data products",
+    "Build and maintain the insights layer on top of governed domains, producing reusable KPI models, funnels, cohorts, and segmentations",
+    "Implement technical improvements including incremental processing strategies, performance optimisations, and scalable data architecture",
+    "Contribute to SumUp's broader data domain strategy, helping establish durable ownership, consistent definitions, and a shared catalogue of data products"
+  ],
+  "responsibilities_source": "jd_section"
 }

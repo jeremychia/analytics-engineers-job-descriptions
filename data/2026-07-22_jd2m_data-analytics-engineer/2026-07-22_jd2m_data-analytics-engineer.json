@@ -93,5 +93,15 @@
   "has_postgres": false,
   "has_airbyte": true,
   "has_glue": false,
-  "salary_period": null
+  "salary_period": null,
+  "responsibilities": [
+    "Améliorer et pérenniser nos pipelines ELT",
+    "Concevoir et enrichir des tables de données dans notre datawarehouse pour répondre aux besoins métiers et anticiper les évolutions.",
+    "Intégrer de nouvelles sources de données",
+    "Monitorer la qualité des données (complétude, cohérence, fiabilité, disponibilité, etc…)",
+    "Créer des dashboards dans Metabase pour fournir des insights clairs, précis et actionnables à nos équipes métiers.",
+    "Accompagner les équipes dans la compréhension et l'exploitation des données, afin de les aider à prendre des décisions éclairées grâce à des analyses visuelles percutantes.",
+    "Réaliser des analyses ad hoc pour répondre à des problématiques spécifiques"
+  ],
+  "responsibilities_source": "jd_section"
 }

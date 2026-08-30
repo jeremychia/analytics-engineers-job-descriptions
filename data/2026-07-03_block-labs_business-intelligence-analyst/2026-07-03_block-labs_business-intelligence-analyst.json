@@ -95,5 +95,18 @@
   "has_metabase": true,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Drive the business forward through proactive analytics - spot anomalies, frame the right question yourself, and bring actionable recommendations to Product / CRM / Risk before they have to ask.",
+    "Build, maintain, and iterate dashboards surfacing KPIs (GGR/NGR, ARPU, LTV, churn, deposit→wager conversion, fraud loss rate).",
+    "Write production-grade SQL (CTEs, window functions, incremental models) to model clean datasets from Clickhouse and on-chain tables.",
+    "Build and maintain AI-agent workflows that automate recurring analytics - anomaly investigation, root-cause loops etc.",
+    "Use Python (pandas, seaborn, sklearn, scipy) for analysis, data quality checks, lightweight ETL/backfills, API pulls (e.g., blockchain providers), and automation.",
+    "Work with on-chain data: parse EVM logs, token transfers (ERC-20/721), join labeled address datasets, analyze exchange/bridge flows, gas/fee dynamics, and wallet clustering.",
+    "Partner with Product, Marketing/CRM, Risk/Compliance, and Engineering to define event schemas and tracking plans; ensure data quality, lineage, and documentation.",
+    "Design and analyze experiments, cohort analyses, and attribution within iGaming and regional compliance constraints.",
+    "Investigate anomalies (bonus abuse, botting, arbitrage, suspicious wallet rings) and recommend mitigations.",
+    "Automate recurring reporting and alerting for KPI movements."
+  ],
+  "responsibilities_source": "jd_section"
 }

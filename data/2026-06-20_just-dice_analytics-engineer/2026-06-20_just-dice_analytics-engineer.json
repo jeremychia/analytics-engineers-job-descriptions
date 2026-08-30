@@ -78,5 +78,16 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Design, construct, and enhance data pipelines utilizing SQL, Python, dbt, git, and AWS services.",
+    "Create and maintain data architecture and data models for various business domains.",
+    "Implement data quality and validation processes to guarantee data accuracy and consistency.",
+    "Automate and streamline data integration, ETL, and ELT processes to improve efficiency.",
+    "Establish and implement data requirements and analytics solutions with our tech and product teams.",
+    "Plan, execute, and evaluate experiments with our marketing and product teams.",
+    "Establish the KPIs and metrics that will be used by the business. Develop appropriate monitoring tools for these indicators.",
+    "Convey the message using visualization tools (Tableau)"
+  ],
+  "responsibilities_source": "jd_section"
 }

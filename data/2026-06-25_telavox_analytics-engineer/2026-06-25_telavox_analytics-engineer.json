@@ -80,5 +80,13 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Own the dbt project, transforming raw data into staged, modeled, documented, and tested tables across bronze, silver, and gold layers",
+    "Design and evolve data marts encoding Telavox business logic",
+    "Operate CDC pipelines, monitor health, manage failures, and optimize BigQuery costs and performance",
+    "Build and maintain semantic layers powering self-service and agentic analytics",
+    "Partner with analysts and stakeholders to create durable data products"
+  ],
+  "responsibilities_source": "jd_section"
 }

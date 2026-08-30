@@ -93,5 +93,38 @@
       "GDPR",
       "cost optimisation"
     ]
-  }
+  },
+  "responsibilities": [
+    "Implement dbt models across the medallion architecture applying the right materialisation strategy for each layer and use case — incremental, full refresh or snapshots — with consistent naming conventions, YAML documentation, metadata tagging, unit tests to validate critical business logic, and reusable macros for common transformation and data replication patterns",
+    "Build and refactor models for different business areas of the company, including for example marketing performance, product metrics, C2C transactions, monetisation, vibrancy, and trust & safety",
+    "Author reusable macros and apply consistent naming conventions, YAML documentation, and metadata tagging (billed, retention, gdpr)",
+    "Design data models that are homogeneous with the existing stack, built at the right grain for the use case, cost-effective to run, and self-discoverable without needing the author to explain them",
+    "Perform cost-aware modelling: clustering strategies, warehouse sizing, incremental scan reduction, and pre-aggregation layers",
+    "Build and maintain Airflow DAGs using Python operators, designing DAG topology deliberately by choosing execution patterns, dependency structures, and sensor logic that match the operational requirements of each pipeline",
+    "Design sensor logic for pipeline dependencies, including intraday vs daily completeness checks and DST-aware temporal handling",
+    "Operate Cosmos dbt task groups within Airflow, including DAG splitting, warehouse selection, and Cosmos version upgrades",
+    "Integrate new data sources end-to-end by building reliable, fault-tolerant connections across heterogeneous endpoint types including REST APIs, event streams, database connectors and file-based sources, with error handling, retry logic, and security patterns that make each integration production-safe from day one, unit testing every operator and transformation component where possible, and defining SLAs and SLOs that set clear expectations on data freshness, completeness, and availability for downstream consumers",
+    "Work with data in the right format for each layer: Avro for event-driven ingestion schemas, Parquet for efficient columnar storage, and Delta for ACID-compliant lakehouse tables with time travel and schema evolution",
+    "Write dbt tests (not_null, unique, accepted_values) and semantic row-count checks to catch data quality issues before they reach consumers",
+    "Author unit tests for critical business logic using dbt's unit test framework",
+    "Own data quality across the full lifecycle: design and maintain quality check pipelines combining dbt tests, semantic validation and custom logic, monitor pipeline health proactively before issues reach downstream consumers, diagnose and resolve root causes across schema drift, silent failures, duplicate data and idempotency issues, and plan and execute backfills safely with pre-validation, before and after checks and documented rollback criteria",
+    "Apply governance standards consistently across every pipeline and data asset you own, ensuring compliance requirements, data classification, retention policies and ownership accountability are traceable and maintained as the platform evolves",
+    "Contribute to the reliability of the platform beyond your own work, flagging systemic issues, improving shared patterns, and leaving every codebase and dataset in better shape than you found it",
+    "Identify and implement cost reduction opportunities: warehouse downsizing, incremental model rewrites, DAG consolidation, unused table deprecation",
+    "Ensure governance rules for compliance and cost ownership are applied consistently across pipelines and data assets — including tagging standards (business_unit, business_area, team) in Airflow and dbt",
+    "Evaluate and act on compute cost signals from Databricks query cost tables",
+    "Partner with analysts, product managers and domain teams to translate business requirements into accurate, reusable data models, and enable them to build and own their own data assets through patterns, templates, PR reviews and pair programming",
+    "Provide consultancy and training to product teams on data ingestion and transformation patterns",
+    "Support analysts in adopting dbt for report-layer development, including onboarding, PR review, and pair programming",
+    "Enable teams to build their own data products: provide patterns, templates, and consultancy so analysts and product teams can develop and own report-layer assets independently",
+    "Define and document reusable metrics, dimensions and business logic in the semantic layer, and capture institutional knowledge including domain assumptions, architectural decisions and data lineage context so it lives in the codebase and not in people's heads",
+    "Participate in cross-team alignment on data model standards, shared definitions and platform evolution, representing the data engineering perspective in decisions that affect multiple domains",
+    "Review and verify all AI-generated code before submitting for peer review — you own correctness, not the AI",
+    "Maintain machine-readable context files (CLAUDE.md) in repositories you own, capturing architectural constraints, naming conventions, and domain-specific rules for AI agents",
+    "Use AI tooling as a force multiplier: author intent specifications, verify AI-generated outputs with full ownership of correctness, contribute to shared skills and context files, and use automation to raise quality standards across the team",
+    "Build and iterate on Claude agents for scoped engineering tasks (e.g. report-layer model extension, documentation generation, comparison notebooks)",
+    "Orchestrate multi-agent workflows for complex tasks (large-scale migrations, documentation backfills, cross-domain refactors) while verifying outcomes",
+    "Contribute to the team's AI Skill Library: dbt patterns, ingestion templates, data quality check agents"
+  ],
+  "responsibilities_source": "jd_section"
 }

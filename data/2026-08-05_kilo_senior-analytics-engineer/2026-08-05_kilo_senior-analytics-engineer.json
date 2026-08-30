@@ -102,5 +102,15 @@
       "tracking",
       "experimentation"
     ]
-  }
+  },
+  "responsibilities": [
+    "Build and maintain a scalable analytics engineering layer in dbt, including clean models, marts, shared dimensions, and metric-ready tables",
+    "Improve tracking and instrumentation across domains, and identify new opportunities where data can add value.",
+    "Implement and monitor data quality to ensure accuracy, completeness, and consistency",
+    "Build data products when needed (e.g., marketing performance datasets, customer lifecycle models, cohorting, experimentation-ready tables)",
+    "Continuously improve workflows with best practices (naming conventions, data modeling standards, data quality testing, templates, and CI/CD)",
+    "Communicate clearly with cross-functional teams and non-technical stakeholders",
+    "Support team members in designing, developing, and implementing data warehousing, reporting, and analytics solutions"
+  ],
+  "responsibilities_source": "jd_section"
 }

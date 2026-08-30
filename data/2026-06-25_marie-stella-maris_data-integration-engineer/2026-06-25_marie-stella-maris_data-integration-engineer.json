@@ -80,5 +80,22 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Design and maintain pipelines between core systems (POS, e-commerce, ERP, OMS, CRM, BI)",
+    "Ensure data quality, consistency, and availability",
+    "Support and develop analytics data models",
+    "Monitor and resolve data flow issues",
+    "Build integrations using APIs and Celigo middleware",
+    "Develop data lake and BI environments (Fivetran, Databricks, dbt)",
+    "Ensure robust, scalable integrations",
+    "Support implementations and automation",
+    "Work with Data Analysts, Product Owners, and operations teams",
+    "Translate business requirements into technical solutions",
+    "Support vendor partnerships and system rollouts",
+    "Identify opportunities to simplify integration landscape",
+    "Enhance performance and maintainability",
+    "Establish standards and best practices"
+  ],
+  "responsibilities_source": "jd_section"
 }

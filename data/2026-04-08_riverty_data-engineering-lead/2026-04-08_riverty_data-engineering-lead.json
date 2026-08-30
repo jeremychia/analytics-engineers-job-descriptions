@@ -78,5 +78,27 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Define and execute the data engineering vision and roadmap aligned with the overall Data, AI & Analytics strategy.",
+    "Establish and continuously improve the operating model for data engineers within agile data product teams, ensuring clear accountability for delivery outcomes (timeliness, quality, completeness, compliance).",
+    "Champion the adoption of modern data engineering and agile delivery practices, fostering close collaboration with product owners, BI, data analysis, data science, data platform, and tech teams.",
+    "Oversee the development of robust ETL/ELT pipelines to ingest and transform data from multiple internal and external sources.",
+    "Ensure that agile data product teams deliver fit-for-purpose data models that meet the needs of analytics, AI, and regulatory reporting.",
+    "Drive excellence in data modeling and pipeline design, ensuring solutions are efficient, maintainable, and well-documented.",
+    "Implement data quality frameworks and automation across pipelines owned by agile teams.",
+    "Define and monitor data SLAs and SLOs, ensuring that product teams deliver data that meets business needs in terms of timeliness, accuracy, and availability.",
+    "Promote proactive data reliability engineering, enabling teams to detect and resolve issues early.",
+    "Collaborate closely with Data Product Owners to prioritize and deliver data engineering work in alignment with business priorities.",
+    "Partner with Platform Engineering teams to ensure smooth operation of data pipelines within the shared core data platform.",
+    "Collaborate with the Business IT teams to create reliable and robust interfaces to the source systems.",
+    "Work hand-in-hand with Data Governance and Data Architecture to ensure alignment on metadata, lineage, and data ownership.",
+    "Lead, mentor, and grow a high-performing team of data engineers working across multiple agile data product teams.",
+    "Ensure consistent technical standards, delivery practices, and performance management across the discipline, even within decentralized team setups.",
+    "Cultivate a culture of ownership, accountability, and collaboration within and across agile data product teams.",
+    "Promote automation, CI/CD for data, and observability across all data engineering workstreams, including AI-based productivity increases.",
+    "Establish KPIs for engineering productivity, pipeline performance, and data delivery quality within product teams.",
+    "Contribute to the evolution of our data-as-a-product approach, ensuring data products are discoverable, well-documented, and reusable."
+  ],
+  "responsibilities_source": "jd_section"
 }

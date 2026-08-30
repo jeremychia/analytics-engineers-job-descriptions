@@ -92,5 +92,14 @@
       "Online Serving",
       "ML"
     ]
-  }
+  },
+  "responsibilities": [
+    "전사 Feature(ML 모델 입력값, ES 인덱스, Redis, API 응답 등)의 생성 파이프라인을 설계하고 구축해요.",
+    "Feature의 품질 관리(Retention Policy, Data Quality 유지) 체계를 설계하고 운영해요.",
+    "전사 단위 공통 영역의 Feature를 직접 개발해요.",
+    "Feature, Model 관련 기존 메타데이터를 확인하고, 부족한 메타데이터를 쌓기 시작해요.",
+    "사제 피처를 탐지하고, Verified Feature로 승격시키는 관리 프로세스를 만들어요.",
+    "데이터가 흘러서 서빙 되는 Online Serving / ML 영역의 데이터 품질과 영향도를 체계적으로 관리해요."
+  ],
+  "responsibilities_source": "jd_section"
 }

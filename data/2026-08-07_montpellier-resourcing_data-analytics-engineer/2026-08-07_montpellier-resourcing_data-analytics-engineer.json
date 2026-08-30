@@ -107,5 +107,17 @@
       "Salesforce",
       "semantic layer"
     ]
-  }
+  },
+  "responsibilities": [
+    "Data Warehouse Delivery: Lead the design and build of a cloud data warehouse (e.g. Snowflake or BigQuery), from source mapping through to governed, business-ready data.",
+    "Source System Integration: Audit and reconcile data from core systems including CRM, finance/ERP, and platform usage sources into a single, coherent data model.",
+    "Pipelines & Governance: Define ETL/ELT pipelines and establish data governance standards - ownership, data dictionaries, quality checks, and access controls appropriate to a regulated environment.",
+    "Semantic Layer: Build and maintain a reporting layer (e.g. dbt) that ensures consistent metric definitions across the business, such as revenue, retention, and engagement metrics.",
+    "BI Platform Ownership: Lead the selection and implementation of a BI platform (Power BI preferred), taking it from setup through to embedded, business-wide adoption.",
+    "Dashboard Delivery: Design and build core reporting covering pipeline, renewals, product usage, and financial performance, agreed jointly with business stakeholders.",
+    "AI-Enabled Reporting: Establish best practice for using AI tools to support the build and maintenance of dashboards, while ensuring figures remain accurate and auditable.",
+    "Data Arbitration: Act as the trusted source when figures from different systems conflict, resolving discrepancies and embedding the agreed logic into the reporting layer.",
+    "Stakeholder Enablement: Train Finance, Operations, and Revenue teams to self-serve from the BI environment, and translate technical constraints into plain language for non-technical stakeholders."
+  ],
+  "responsibilities_source": "jd_section"
 }

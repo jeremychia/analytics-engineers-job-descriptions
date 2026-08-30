@@ -93,5 +93,17 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Architect, construct, and oversee data models within our Snowflake warehouse utilizing dbt.",
+    "Take ownership of the transformation layer, converting raw source data into sets ready for advanced analytics.",
+    "Collaborate with analysts and business stakeholders to identify requirements and develop scalable data models.",
+    "Execute data quality assessments, monitoring, and documentation to maintain a high level of trust in our data.",
+    "Establish and manage essential business metrics within a unified semantic layer.",
+    "Enhance query efficiency and manage warehouse expenditure through optimization.",
+    "Define and promote best practices for version control, CI/CD, and peer reviews for all analytics code.",
+    "Provide mentorship to analysts regarding SQL best practices and core dimensional modeling principles.",
+    "Play a contributing role in the refinement of our overarching data strategy and architectural framework."
+  ],
+  "responsibilities_source": "jd_section"
 }

@@ -103,5 +103,16 @@
       "data pipelines",
       "SQL"
     ]
-  }
+  },
+  "responsibilities": [
+    "Develop and implement processes to extract, clean, and transform data from various sources to ensure it is ready for consumption/analysis.",
+    "Collaborate with data scientists and analysts to understand their data needs and provide them with reliable datasets / data marts.",
+    "Design and implement data models using industry best practices that capture a complete ecosystem view of in- and out-of-game experiences (major game analytics KPI's, user profile/history) - while ensuring accuracy, compliance, scalability, and long-term usability.",
+    "Create and maintain comprehensive data documentation, including data dictionaries, schemas, and metadata. Ensure that data definitions are consistent and easily accessible to all stakeholders.",
+    "Monitor data pipelines and systems to ensure high availability and performance alongside our data engineer ; implement automated data quality checks, validation processes and alerts ensuring the accuracy and reliability of data.",
+    "Write efficient, maintainable, and scalable code using best practices.",
+    "Conduct code and SQL reviews and provide feedback to ensure high standards of code quality within the team.",
+    "Stay updated with the latest trends, technologies and best practices in data engineering and analytics and share knowledge with the team."
+  ],
+  "responsibilities_source": "jd_section"
 }

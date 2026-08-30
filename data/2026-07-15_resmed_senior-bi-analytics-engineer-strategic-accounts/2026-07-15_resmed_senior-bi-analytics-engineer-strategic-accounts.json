@@ -90,5 +90,16 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Data sourcing and integration. Build pipelines from cluster CRM, ERP, order-billing and pricing systems (and device-adherence data where used) into a common layer, reconciling differing system instances, currencies, fiscal calendars and product / customer codes.",
+    "Account master and entity resolution. Implement the governed Top-10 account hierarchy, survivorship rules and M&A re-parenting, per the Lead's business rules.",
+    "Data model. Build and maintain the dimensional single source of truth — fact tables (revenue, units, resupply, pipeline, contracts) across account-hierarchy, product (mask / device), cluster, time and currency dimensions.",
+    "Metrics. Implement and validate the measures specified by the Lead (share of wallet, resupply / churn, baseline vs. ambition, gap-to-plan, forecast accuracy / bias, price realisation, contract compliance).",
+    "Data quality, security and lineage. Maintain data-quality monitoring, row-level security, GDPR controls on any adherence data, and audit / lineage so numbers hold up in the CMR and MBR.",
+    "Dashboards. Build internal strategic-account views and customer-facing performance dashboards, including external-sharing capability with InfoSec and legal sign-off.",
+    "IBP data feed. Build the extract that maps the account demand plan and assumptions into the IBP structure as a reconciliation dimension, supporting the monthly cycle.",
+    "Run and maintain. Own ongoing monitoring, refresh, change requests, new-account onboarding and hierarchy updates. As the build matures, the lighter run may transfer to Sales Operations."
+  ],
+  "responsibilities_source": "jd_section"
 }

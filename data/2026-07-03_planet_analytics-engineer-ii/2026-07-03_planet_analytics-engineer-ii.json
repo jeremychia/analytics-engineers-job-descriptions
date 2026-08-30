@@ -92,5 +92,29 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Independently develop Bronze → Silver dbt models following established standards.",
+    "Contribute to Gold‑layer models and analytics outputs under guidance.",
+    "Apply dimensional modeling concepts (facts, dimensions) to support analytics and BI use cases.",
+    "Use dbt to build, test, and document analytics models.",
+    "Refactor existing models to improve clarity, performance, or consistency.",
+    "Apply reusable patterns and macros where appropriate.",
+    "Implement appropriate dbt tests (e.g. not null, uniqueness, accepted values) for all owned models.",
+    "Validate data outputs against business logic and expected behaviour.",
+    "Identify potential data quality issues early and work with peers to resolve them.",
+    "Be mindful of model performance and warehouse costs.",
+    "Apply basic optimisation techniques (e.g. filtering, incremental models) with guidance.",
+    "Monitor model runs and respond to failures or anomalies.",
+    "Work closely with analysts to understand reporting and data requirements.",
+    "Support analytics use cases by ensuring data is well‑structured and clearly defined.",
+    "Communicate progress, risks, and blockers proactively.",
+    "Own documentation for delivered models and columns using dbt.",
+    "Write clear, business‑friendly definitions aligned with shared terminology.",
+    "Contribute to shared team documentation, standards, or playbooks.",
+    "Suggest improvements to existing models, tests, or workflows.",
+    "Learn and apply analytics engineering best practices.",
+    "Begin supporting junior engineers through knowledge sharing or informal guidance."
+  ],
+  "responsibilities_source": "jd_section"
 }

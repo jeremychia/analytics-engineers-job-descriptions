@@ -104,5 +104,17 @@
       "Epic Cogito",
       "Epic Clarity"
     ]
-  }
+  },
+  "responsibilities": [
+    "Understand customer requirements, current processes, workflows and business logic.",
+    "Identify the data required to stand up a customer workspace, and review customer source-of-truth financial and clinical data models — potentially on-site with customers to capture business logic firsthand.",
+    "Reverse-engineer and codify customer-specific business rules, from payer contract logic to chart-of-accounts idiosyncrasies.",
+    "Build and validate transformations that map customer data into Translucent's unified ontology and semantic layer, using SQL within our managed data pipeline.",
+    "Own testing and validation rigor for every transformation you ship — you are the last line of defense on data correctness.",
+    "Partner with our data platforming team when transformation needs surface pipeline or platform constraints, without owning that infrastructure yourself.",
+    "Interact directly with customers to confirm data access and validate your understanding of their source systems and business logic.",
+    "Work with our platform team to identify expansion opportunities for core infrastructure and shared services, based on patterns you see across customer engagements.",
+    "Partner with our insights and product engineering teams to understand and expand our data ontology as new customer needs and data sources emerge."
+  ],
+  "responsibilities_source": "jd_section"
 }

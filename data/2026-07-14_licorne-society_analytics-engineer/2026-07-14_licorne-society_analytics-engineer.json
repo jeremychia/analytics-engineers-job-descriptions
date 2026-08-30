@@ -94,5 +94,10 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": true,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Piloter et scaler la stack (les 6 premiers mois) : Structurer les couches de données, pousser plus loin les modèles dbt et automatiser pour que chaque équipe (Sales, Marketing, Finance, Product) soit en autonomie complète via Basedash.",
+    "Devenir un(e) partenaire hautement stratégique : Aller au-delà des tableaux de bord pour mener des analyses complexes qui feront pivoter le business (calcul de l'économie unitaire/marges par fournisseur de données, scoring d'activation produit, prédiction du churn)."
+  ],
+  "responsibilities_source": "jd_section"
 }

@@ -104,5 +104,13 @@
       "e-commerce",
       "Airflow"
     ]
-  }
+  },
+  "responsibilities": [
+    "Data Modeling and Transformation: Collaborate with stakeholders to understand their analytical needs and translate these requirements into well-structured data models using dbt. Create tests for dbt models to ensure data quality and manage our daily dbt runs (via dbt Cloud).",
+    "Pipeline and Model Maintenance: Monitor our pipeline and data model refresh jobs and triage issues if jobs fail. Help establish new pipelines (via a variety of tools including Portable, Fivetran, and airflow) when we need to ingest new sources of data.",
+    "BI Development: Develop Omni views and topics, allowing stakeholders to build dashboards, reports, and data visualizations. Create a BI environment that empowers stakeholders to access and interpret data easily. Implement best practices for Omni development to ensure consistency and standardization across the platform.",
+    "Cross-Functional Collaboration: Partner with business and tech teams to identify data needs, translate business requirements into technical solutions, provide timeline expectations, and deliver actionable insights.",
+    "Documentation: Document dbt models, pipelines, and analytics queries to facilitate knowledge sharing and maintain an organized and accessible data ecosystem."
+  ],
+  "responsibilities_source": "jd_section"
 }

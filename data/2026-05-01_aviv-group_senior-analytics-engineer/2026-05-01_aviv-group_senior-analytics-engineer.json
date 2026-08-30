@@ -78,5 +78,13 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Developing and maintaining dbt models transforming raw data into analytics-ready datasets in Snowflake",
+    "Defining data contracts, metrics, and semantic models across business domains",
+    "Collaborating with analysts, data scientists, and business stakeholders on reliable data delivery",
+    "Applying testing, documentation, and version control best practices",
+    "Contributing to data platform architecture including \"bronze/silver/gold layers, CI/CD pipelines, data governance, and monitoring\""
+  ],
+  "responsibilities_source": "jd_section"
 }

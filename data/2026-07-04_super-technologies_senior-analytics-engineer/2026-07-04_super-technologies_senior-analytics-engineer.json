@@ -101,5 +101,18 @@
       "data quality",
       "Data Engineering squads"
     ]
-  }
+  },
+  "responsibilities": [
+    "Design and build curated analytical datasets, metric implementations, and semantic models that enable consistent self-service analytics across the company.",
+    "Work hands-on with data warehouse modelling to turn evolving product and business needs into scalable, reusable data structures.",
+    "Partner closely with product, data scientists, and business stakeholders to clarify requirements and translate them into reliable data models and reporting-ready outputs.",
+    "Build and own production dashboards (Tableau) on top of curated datasets and metric definitions, ensuring correctness, performance, and a consistent single source of truth.",
+    "Contribute to data quality, observability, lineage, and documentation practices to increase trust and reduce firefighting.",
+    "Promote reuse over reinvention — identify ad-hoc logic in reporting views or custom SQL and refactor it into curated, high-quality models that multiple teams can rely on.",
+    "Raise the engineering bar through reviews, testing, automation, and pragmatic architectural improvements.",
+    "Apply engineering rigour to analytics — treat semantics as code, utilising version control, testing, automation, and CI/CD practices to manage the lifecycle of business logic.",
+    "Drive self-service adoption by creating foundations that allow analysts and business users to explore data safely and independently.",
+    "Work embedded within Data Engineering squads, collaborating daily with data engineers and analysts on shared foundations and end-to-end delivery."
+  ],
+  "responsibilities_source": "jd_section"
 }

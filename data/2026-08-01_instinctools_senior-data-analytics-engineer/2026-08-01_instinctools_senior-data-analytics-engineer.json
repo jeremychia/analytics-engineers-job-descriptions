@@ -95,5 +95,18 @@
       "audit readiness",
       "data governance"
     ]
-  }
+  },
+  "responsibilities": [
+    "Gather and clarify requirements from analytics and finance stakeholders",
+    "Design and evolve DWH architecture (ODS / Data Marts) with audit requirements in mind",
+    "Develop and maintain financial data pipelines",
+    "Design, implement, and support incremental data pipelines",
+    "Develop and optimize data marts in BigQuery (dbt, Dataform)",
+    "Analyze source systems and build data flows from source to consumption",
+    "Maintain and develop workflows in Airflow",
+    "Participate in testing, data validation, and release processes",
+    "Investigate data quality issues and financial discrepancies",
+    "Maintain technical documentation required for audit and data governance"
+  ],
+  "responsibilities_source": "jd_section"
 }

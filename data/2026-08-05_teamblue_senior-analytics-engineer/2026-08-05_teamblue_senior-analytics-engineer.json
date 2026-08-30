@@ -103,5 +103,19 @@
       "SQL",
       "presentation layer"
     ]
-  }
+  },
+  "responsibilities": [
+    "Design and build robust dbt models on Databricks that transform raw, ingested data into clean, conformed, and analytics-ready datasets.",
+    "Define and implement KPI logic in collaboration with business and analytics stakeholders, ensuring consistent definitions across domains.",
+    "Maintain and evolve the semantic/presentation layer, ensuring data products are reliable, tested, documented, and performant.",
+    "Apply software engineering best practices to analytics code: version control, testing, CI/CD, and documentation.",
+    "Independently onboard new data domains (e.g. marketing attribution, product usage, customer care, subscription data) with limited guidance — exploring the data, understanding its structure and meaning, and deciding how to best model it.",
+    "Proactively engage business partners and domain owners to understand context, validate assumptions, and align on KPI definitions.",
+    "Identify data quality issues early and work with the Data Management team to resolve them at source.",
+    "Act as the connective tissue between data engineers and analysts: translating analytical needs into engineering tasks, and surfacing data realities back to the business.",
+    "Work with the Analytics team to ensure the presentation layer meets reporting and self-service needs.",
+    "Contribute to data governance: naming conventions, lineage documentation, and model cataloguing.",
+    "Support the broader team in extending analytics coverage to new brands and domains over time."
+  ],
+  "responsibilities_source": "jd_section"
 }

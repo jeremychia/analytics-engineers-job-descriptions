@@ -78,5 +78,16 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Own the Data roadmap and deliver it: Set a clear quarterly plan aligned to our biggest company goals (GCSE expansion, impact evidence, responsible AI), and ship meaningful improvements every month with a small, AI-powered team.",
+    "Strengthen use of measurement in product processes: Embed \"instrumentation before shipping\" so every major release launches with the right KPIs, tracking, dashboards, and alerts - enabling fast learning, quick diagnosis, and confident iteration.",
+    "Level up our metric system and decision-making: Build on our use of KPIs so teams (and leadership) have an accurate view of performance across Product, Commercial, and Operations.",
+    "Lead our next 'Measuring Learning' impact evaluation: Design and run a credible evaluation of learning impact, and translate findings into clear product/content priorities and school-ready evidence.",
+    "Own responsible AI for learner data: Put in place pragmatic governance and monitoring for AI features that touch learner responses and scoring - so we can innovate and keep trust high.",
+    "Take ownership of data privacy & school assurance: Become our day-to-day lead for data privacy and school-facing data assurance - supporting data sharing agreements and DPIAs, and ensuring our practices around children's data are robust and consistently applied.",
+    "Improve GTM and business insight: Build clearer visibility into funnel performance and ROI (channel → conversion → retention) so we can double down on what works and stop what doesn't.",
+    "Build a high-performance, pragmatic team: Coach and develop our data team, raise quality where it matters, and keep our warehouse/dbt/Lightdash stack reliable and scalable - without slowing the business down."
+  ],
+  "responsibilities_source": "jd_section"
 }

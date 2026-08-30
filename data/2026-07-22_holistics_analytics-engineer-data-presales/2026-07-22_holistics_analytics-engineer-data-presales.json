@@ -91,5 +91,17 @@
       "semantic layer",
       "reverse-ETL"
     ]
-  }
+  },
+  "responsibilities": [
+    "Contribute to our internal data pipeline: Help maintain our ingestion, transformation, and reporting pipeline so internal stakeholders (finance, product, support ops) get timely, correct data. Doing this hands-on keeps you fluent in the product and feeds real feedback to our product team.",
+    "Build best-practice data models: Develop and refactor internal models in dbt using dimensional modelling (Kimball/Inmon, star/snowflake) — these double as real-world examples for customers.",
+    "Keep data trustworthy: Add tests and validation so internal metrics are correct, and translate those practices into customer-facing guidance.",
+    "Build with coding agents & dogfood: Develop our internal models and dashboards using AI coding agents (Development Copilot, or Claude Code / Cursor in your IDE) on our analytics-as-code layer — then feed what you learn back to product and marketing, and test-drive emerging tools that could sharpen our stack or demos.",
+    "Craft killer demos: Slice a public dataset, model it in Holistics' analytics-as-code layer, and polish a dashboard that makes prospects say \"aha!\" during a live call.",
+    "Run technical POCs: Work hands-on with prospects on their own data to prove Holistics solves their problem — schema reviews, modelling, and answering deep technical questions.",
+    "Support RFPs & technical Q&A: Pair with Sales to answer deep questions (performance, workload isolation, modelling approach), then drop polished answers into our reusable library.",
+    "Partner with the sales reps: Join solutioning calls alongside reps; you own the technical/data substance, they drive the commercial relationship.",
+    "Build enablement assets: Turn recurring prospect/customer questions into demo warehouses, sample repos, step-by-step guides, and short videos so the next deal moves faster."
+  ],
+  "responsibilities_source": "jd_section"
 }

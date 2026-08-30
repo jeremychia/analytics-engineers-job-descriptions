@@ -108,5 +108,21 @@
       "GDPR",
       "investor reporting"
     ]
-  }
+  },
+  "responsibilities": [
+    "You own the layer between raw data and decisions. You model our data in dbt on BigQuery — from staging through core to the marts — keep the models reliable through tests, reviews and documentation, and keep an eye on run times and cost.",
+    "Upstream you work with Data Engineering on ingestion, data quality and clear interfaces. Downstream you work with BI and the business functions: you turn business logic into certified, documented models with unambiguous definitions. The point is not that you build every request yourself, it is that analysts and business teams can answer their own questions on your models instead of queuing for analytics capacity.",
+    "You know our dbt project and our data landscape — source systems in Sales, Marketing, Product and Customer Support, BigQuery, Metabase — and can trace every key metric from the source to the report.",
+    "Your first models are running in production: via branch, review and test, documented in dbt and our knowledge base.",
+    "You have named the biggest weaknesses in the existing setup — duplicated logic, untested models, expensive queries — and delivered a prioritised proposal for fixing them.",
+    "You own the model layers for one core domain end-to-end — e.g. Customer & Product: naming conventions, tests, documentation and definitions sit with you.",
+    "Core models are covered by tests (uniqueness, freshness, references); errors surface in CI rather than in a management meeting.",
+    "Business logic lives in dbt rather than in individual Metabase questions and Excel files; duplicated definitions have been removed.",
+    "Cost per model is transparent, and you have measurably reduced the biggest cost drivers in BigQuery.",
+    "There is one shared, reliable model base for the company's key metrics — versioned, tested, documented, with clear ownership of the definitions.",
+    "Self-service works: analysts and business functions build their analyses on certified models; around 90% of recurring reporting runs through the warehouse and Metabase instead of Excel.",
+    "Releases are routine: CI/CD, automated tests and traceable lineage — changes go live without firefighting.",
+    "Board and investor metrics (churn and retention, cohorts, unit economics) can be reproduced from versioned models at any time."
+  ],
+  "responsibilities_source": "jd_section"
 }

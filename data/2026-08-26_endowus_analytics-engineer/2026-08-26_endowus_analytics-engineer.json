@@ -106,5 +106,12 @@
       "fintech",
       "AI-assisted workflows"
     ]
-  }
+  },
+  "responsibilities": [
+    "Model the data. Build and maintain dbt models end-to-end, collaborating with Data Engineering and software engineers to transform source data into clean, intuitive models for business teams.",
+    "Make it trustworthy. Implement automated testing, freshness monitoring, and dbt documentation so model changes are traceable, tested, and reliable.",
+    "Govern the metrics. Partner with business stakeholders and analysts to standardise core metric definitions, establishing a canonical source of truth for key business numbers.",
+    "Enable self-serve. Support our transition to a dbt-native BI layer, designing data models and semantic definitions that make independent querying intuitive for cross-functional teams."
+  ],
+  "responsibilities_source": "jd_section"
 }

@@ -100,5 +100,39 @@
       "Customer Acquisition Cost",
       "metric accuracy"
     ]
-  }
+  },
+  "responsibilities": [
+    "Design, build, and maintain a scalable enterprise data warehouse.",
+    "Develop reusable data models and data marts that support recurring business needs.",
+    "Continuously improve warehouse architecture as new business requirements emerge.",
+    "Ensure data quality, consistency, and long-term maintainability across reporting environments.",
+    "Write, optimize, and maintain complex SQL queries to support reporting and analytics.",
+    "Develop and maintain production stored procedures and views while ensuring downstream reports and applications remain stable.",
+    "Translate complex business logic into scalable SQL solutions.",
+    "Optimize query performance and identify opportunities to improve efficiency.",
+    "Integrate and analyze data from Amazon Seller Central, SP-API, and Amazon Ads API.",
+    "Understand the strengths and limitations of Amazon reporting sources and recommend the appropriate data source for each business need.",
+    "Develop reporting and insights around key ecommerce metrics, including:",
+    "Own the accuracy of business metrics across all reporting environments.",
+    "Define and document metric logic so definitions stay consistent and transparent across teams.",
+    "Reconcile results against Amazon Seller Central, SP-API, Amazon Ads API, and other source systems to confirm they agree.",
+    "Identify and investigate discrepancies between sources, and resolve the root cause rather than the symptom.",
+    "Verify that reported numbers represent business reality, not just technically correct query output.",
+    "Explain what is driving the results, not just what the numbers say.",
+    "Surface risks and opportunities in the data proactively, before being asked.",
+    "Propose concrete, evidence-based actions tied to business outcomes.",
+    "Translate findings into recommendations that both technical and non-technical stakeholders can act on.",
+    "Partner directly with business stakeholders to understand goals, define requirements, and recommend scalable data solutions.",
+    "Challenge requests when a different analytical approach will better solve the underlying business problem.",
+    "Present findings and recommendations in a clear, actionable manner to both technical and non-technical audiences.",
+    "Serve as a trusted partner across leadership, operations, marketing, and engineering.",
+    "Build scalable dashboards, reporting solutions, and automated data workflows.",
+    "Replace repetitive ad hoc reporting with reusable reporting frameworks.",
+    "Identify opportunities to automate manual processes and improve data accessibility.",
+    "Maintain clear documentation for reporting logic, warehouse architecture, and data definitions.",
+    "Work closely with software engineers to support data pipelines and internal applications.",
+    "Participate in technical discussions around architecture, integrations, and system improvements.",
+    "Contribute to projects that improve the organization's overall data capabilities."
+  ],
+  "responsibilities_source": "jd_section"
 }

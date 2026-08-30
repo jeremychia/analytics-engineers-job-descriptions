@@ -92,5 +92,18 @@
   "has_metabase": false,
   "has_postgres": true,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Design, develop, and maintain dbt (Data Build Tool) transformations to ensure clean, well-structured, and efficient data models.",
+    "Collaborate with data engineers to optimize data pipelines and enhance data quality.",
+    "Develop and optimize SQL-based transformations and queries for performance and efficiency.",
+    "Support the processing of high-volume and streaming data using tools such as Apache Spark and Kafka.",
+    "Build and maintain BI-ready datasets that support data analysts and business stakeholders.",
+    "Work closely with business teams to translate requirements into data models and transformations.",
+    "Build and iterate on AI/ML models such as churn prediction and forecasting, from feature preparation through to deployment.",
+    "Provide support and guidance on data visualization tools and ensure business users have access to trusted data sources.",
+    "Ensure data accuracy, integrity, and consistency across all reporting layers.",
+    "Maintain comprehensive documentation of data transformations, models, and governance practices to support workflow automation and trusted data access."
+  ],
+  "responsibilities_source": "jd_section"
 }

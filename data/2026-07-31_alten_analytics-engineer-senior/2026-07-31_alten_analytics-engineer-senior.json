@@ -96,5 +96,17 @@
       "Azure DevOps"
     ]
   },
-  "salary_period": "annual"
+  "salary_period": "annual",
+  "responsibilities": [
+    "Concevoir, développer et optimiser les architectures de données de type Lakehouse (Databricks) pour répondre aux besoins analytiques complexes.",
+    "Mettre en œuvre et diffuser les meilleures pratiques de modélisation de données (Kimball, Data Vault, ou dbt Cloud/Core) pour structurer les couches Silver et Gold.",
+    "Garantir la performance des requêtes, la scalabilité des pipelines et l'optimisation des coûts de calcul sur Databricks (Delta Lake, Photon).",
+    "Traduire les problématiques business de nos clients Retail (parcours client, supply chain, churn, prévisions de ventes) et Énergie (données de compteurs, maintenance prédictive, séries temporelles de consommation) en modèles de données robustes et scalables.",
+    "Collaborer étroitement avec les Data Analysts, Data Engineers et Data Scientists pour leur mettre à disposition des jeux de données propres, documentés et prêts à l'analyse.",
+    "Être le garant de la qualité de la donnée, de la mise en place de tests automatisés (via dbt, Great Expectations) et de la documentation (data catalog, lineage).",
+    "Participer à l'industrialisation et à l'automatisation des workflows de transformation (CI/CD, Git, Azure DevOps, et orchestrateurs comme Airflow, Prefect ou dbt Cloud).",
+    "Travailler en étroite collaboration avec les directions métiers et les équipes techniques pour aligner la technique sur la valeur business.",
+    "Participer à la veille technologique autour de l'écosystème moderne de la data (Modern Data Stack) et accompagner la montée en compétences des profils plus juniors."
+  ],
+  "responsibilities_source": "jd_section"
 }

@@ -103,5 +103,12 @@
       "CI/CD",
       "data quality"
     ]
-  }
+  },
+  "responsibilities": [
+    "Partner with analysts to define and maintain the global view of company metrics, participating in discussions to support crucial commercial decisions;",
+    "Push the limits of dbt by developing scalable data models and writing custom macros to handle complex business logic, ensuring our code remains DRY and efficient;",
+    "Build end-to-end automations (using Python and Airflow) to handle API integrations and reverse ETL processes that sync data back to operational systems;",
+    "Manage data pipelines by implementing rigorous monitoring and data quality tests to guarantee trust in the numbers."
+  ],
+  "responsibilities_source": "jd_section"
 }

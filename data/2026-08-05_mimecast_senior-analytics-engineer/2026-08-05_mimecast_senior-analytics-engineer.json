@@ -104,5 +104,15 @@
       "executive reporting",
       "data governance"
     ]
-  }
+  },
+  "responsibilities": [
+    "Own the definition, modeling, and stewardship of Mimecast’s core product and commercial KPIs, including utilization, adoption, ARR, ARPU, NRR, and churn. Establish a single source of truth in the semantic layer, reconcile competing definitions across functions, and govern metric changes through a clear review and versioning process.",
+    "Partner directly with the Director of Product Analytics, VP and C-level stakeholders to design the reporting that runs the business, board decks, QBRs, weekly product reviews, and executive dashboards. Translate ambiguous strategic questions into defensible analyses backed by well-modeled data.",
+    "Architect and evolve the dbt project on Snowflake, including staging, intermediate, mart, and exposure layers. Set conventions for naming, testing, documentation, and CI/CD, and drive performance and cost optimization across the warehouse. Own integration patterns from Salesforce, product telemetry, and finance systems into the analytics layer.",
+    "Define and enforce the data quality bar: tests, freshness SLAs, lineage, incident response, and stakeholder communication when things break. Build the trust that allows executives to act on the numbers without second-guessing them.",
+    "Act as the technical lead for the Analytics Engineering function. Mentor Analytics Engineer II’s through code review, pairing, and design feedback. Raise the bar in hiring, onboarding, and career development. Set the standards the rest of the team grows into.",
+    "Operate as a peer to senior leaders in Product, GTM, Finance, and Customer Success. Identify analytics gaps before stakeholders ask, propose the roadmap to close them, and influence prioritization across teams. Represent analytics in roadmap and planning conversations.",
+    "Design Tableau and semantic-layer experiences that scale insight beyond the analytics team clear, well-governed, and trusted enough that PMs, CSMs, and finance partners can answer their own questions confidently."
+  ],
+  "responsibilities_source": "jd_section"
 }

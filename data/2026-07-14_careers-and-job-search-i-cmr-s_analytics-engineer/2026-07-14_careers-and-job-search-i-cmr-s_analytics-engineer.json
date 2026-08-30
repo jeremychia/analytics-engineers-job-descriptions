@@ -90,5 +90,15 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Take ambiguous, open-ended business questions from stakeholders across the business, and turn them into clear, well-evidenced answers.",
+    "Explore unfamiliar or imperfect datasets to figure out what's actually there, and sanity-check your own findings before you report them.",
+    "Decide what's signal and what's noise, and be honest about uncertainty rather than forcing a clean answer that isn't there.",
+    "Communicate findings clearly to non-technical audiences, translating analysis into a story stakeholders can act on.",
+    "Use SQL and Python to explore data directly, without depending on someone else to build the query for you.",
+    "Turn an answer into something people actually use to get their work done, a clean spreadsheet, a simple dashboard, a repeatable view, a notebook, not just a one-off finding in a doc or a Teams message.",
+    "We'd expect you to be willing to turn your hand to anything within the data teams remit that helps the team deliver its objectives."
+  ],
+  "responsibilities_source": "jd_section"
 }

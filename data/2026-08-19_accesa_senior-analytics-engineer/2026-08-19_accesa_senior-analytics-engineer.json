@@ -105,5 +105,18 @@
       "AI tools",
       "data quality"
     ]
-  }
+  },
+  "responsibilities": [
+    "Build and maintain data pipelines: Design, develop, and optimize scalable data transformation pipelines in BigQuery using Dataform and SQL, ensuring reliability and performance.",
+    "Drive data warehouse migration: Support the transition from Teradata to BigQuery by analyzing, translating, and validating existing data models and logic.",
+    "Own the Common Data Model: Discover, document, and manage the CDM hub, ensuring consistency, governance, and seamless data consumption across teams.",
+    "Enable data platform adoption: Support the onboarding of new CDM consumers, providing guidance on data model usage and integration best practices.",
+    "Align data with business goals: Analyze business KPIs and ensure their definitions, calculations, and usage are accurately reflected in the data model.",
+    "Act as a data model expert: Maintain deep knowledge of data structures, lineage, and semantics, serving as a key reference point for stakeholders.",
+    "Ensure data quality and trust: Drive testing, validation, and reconciliation activities across Teradata and BigQuery environments to guarantee data accuracy.",
+    "Optimize platform performance: Improve BigQuery workloads for performance, cost efficiency, and long-term maintainability.",
+    "Promote engineering standards: Contribute to documentation, modeling standards, and best practices that strengthen the overall data platform.",
+    "Collaborate across teams: Partner with engineers, analysts, architects, and business stakeholders to deliver trusted and well-understood data products."
+  ],
+  "responsibilities_source": "jd_section"
 }

@@ -109,5 +109,18 @@
       "semantic layer",
       "architectural standards"
     ]
-  }
+  },
+  "responsibilities": [
+    "Set the long-term technical direction for analytics engineering across the Revenue, Purchase, and Orders domains.",
+    "Identify key intersections across Revenue, Purchase, and Orders, ensuring they are reflected consistently in data models and architecture.",
+    "Own architectural integrity, data modeling standards, reliability, and operational quality across the area.",
+    "Act as a central technical point of contact for cross-domain initiatives, helping teams align on technical decisions and priorities.",
+    "Create reusable patterns, shared standards, and a common design language for analytics engineering across domains.",
+    "Drive DSA-wide improvements in data product quality, maintainability, documentation, ownership, observability, and operational excellence.",
+    "Reduce and govern technical debt to enable sustainable, predictable evolution of data products and pipelines.",
+    "Translate ambiguous business and technical challenges into clear technical direction, trade-offs, and actionable next steps.",
+    "Mentor Analytics Engineers and other ICs through technical guidance, design reviews, code reviews, and architectural feedback.",
+    "Communicate architectural decisions, standards, and long-term implications clearly to technical and non-technical stakeholders."
+  ],
+  "responsibilities_source": "jd_section"
 }

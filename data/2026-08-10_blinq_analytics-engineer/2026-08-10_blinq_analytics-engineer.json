@@ -103,5 +103,18 @@
       "A/B testing",
       "data governance"
     ]
-  }
+  },
+  "responsibilities": [
+    "Own and evolve Blinq's analytics layer, building clean, reusable data models that turn raw product and business data into trusted datasets.",
+    "Partner with Product, Growth, Revenue, Finance, and Engineering to translate ambiguous questions into clear metrics, analysis, and data products.",
+    "Build and maintain scalable ELT workflows using SQL, dbt, and modern cloud data tools.",
+    "Define canonical metrics and semantic models so teams work from consistent definitions across dashboards and decision-making.",
+    "Develop high-quality dashboards and self-serve reporting that help teams move quickly without relying on one-off analysis.",
+    "Support product analytics and experimentation, including funnel analysis, cohorts, retention, activation, monetisation, and A/B testing.",
+    "Improve data quality and trust through testing, documentation, lineage, monitoring, and clear ownership.",
+    "Investigate complex questions, surface the \"why\" behind performance, and turn insights into practical recommendations.",
+    "Work with data and software engineers to improve instrumentation, event tracking, and the reliability of data flowing from source systems.",
+    "Raise the bar for how Blinq uses data by improving standards, tooling, and analytics practices as the company scales."
+  ],
+  "responsibilities_source": "jd_section"
 }

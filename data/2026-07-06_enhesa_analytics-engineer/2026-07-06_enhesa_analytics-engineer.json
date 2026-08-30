@@ -93,5 +93,16 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Owning transformations from Silver-to-Gold layers, defining requirements and delivering production datasets",
+    "Creating SQL and PySpark transformations with incremental processing and recovery patterns",
+    "Designing dimensional models using fact tables, dimensions, and slowly changing dimensions",
+    "Optimizing schemas for Power BI semantic models and self-service analytics",
+    "Implementing quality controls through validation checks, automated testing, and monitoring",
+    "Collaborating with Data Engineers and BI Engineers on data architecture",
+    "Applying engineering practices: Git workflows, CI/CD, environment promotions, and access governance",
+    "Managing stakeholder expectations regarding risks, scope, and timelines"
+  ],
+  "responsibilities_source": "jd_section"
 }

@@ -106,5 +106,14 @@
       "data quality",
       "Airflow"
     ]
-  }
+  },
+  "responsibilities": [
+    "Design and maintain robust data models: You'll build and validate data models that support regulatory market communication, device operations, and forecasting use cases.",
+    "Ensure data quality and process reliability: You'll analyze data quality, detect anomalies, and propose improvements across our metering and backend processes.",
+    "Translate and operationalize complex rules: You'll convert regulatory and operational requirements into precise, maintainable, and auditable decision logic within our data platform.",
+    "Structure and validate business requirements: You'll transform ambiguous needs into clear, testable rule definitions (e.g., decision tables, condition trees, pseudocode) with strong traceability.",
+    "Implement and optimize rule-driven logic: You'll develop, test, and refine logic using SQL and Python within our current tech stack (Snowflake, Azure), ensuring performance and scalability.",
+    "Collaborate and document: You'll work closely with product, engineering, and operations teams, while maintaining clear documentation of rule behavior, dependencies, and change history."
+  ],
+  "responsibilities_source": "jd_section"
 }

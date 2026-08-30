@@ -93,5 +93,16 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Provide business context for the mart layers of our data architecture",
+    "Establish a single source of truth for business metric definitions",
+    "Partner with Data Engineering teams",
+    "Collaborate with BI Developers and Insight Analysts",
+    "Design data marts with self-serve usage in mind",
+    "Coach BI Developers in Analytics Engineering best practices",
+    "Create documentation enabling independent contributions",
+    "Translate ambiguous business requirements into clear, well-documented data definitions"
+  ],
+  "responsibilities_source": "jd_section"
 }

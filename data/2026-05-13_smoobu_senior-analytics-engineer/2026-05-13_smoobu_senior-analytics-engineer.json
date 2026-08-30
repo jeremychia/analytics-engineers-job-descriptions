@@ -78,5 +78,12 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": true,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Oversee data ingestion pipelines using Airbyte and Snowplow for event tracking",
+    "Design and maintain complex DAGs, implementing robust alerting mechanisms",
+    "Create modeling principles and domain-level data models (marketing, sales)",
+    "Connect engineering and business teams; manage reverse-ETL via Hightouch"
+  ],
+  "responsibilities_source": "jd_section"
 }

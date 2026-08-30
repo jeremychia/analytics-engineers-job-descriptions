@@ -77,5 +77,23 @@
   "has_postgres": false,
   "has_airbyte": false,
   "has_glue": false,
-  "salary_period": null
+  "salary_period": null,
+  "responsibilities": [
+    "Leading dimensional design to structure Wave’s analytics data in ways that are helpful for human and AI end users.",
+    "Building out facts, dimensions and One Big Tables (OBTs) as appropriate for a focus area at Wave. This involves working closely with domain partners to understand what’s useful to them and what’s not.",
+    "Standardizing metric creation and usage.",
+    "Building out ways to make it easy to add context for LLMs to data models.",
+    "Managing our extensive snowflake estate with a strong analytical mindset.",
+    "Finding patterns that are repeated frequently and optimizing them.",
+    "Building tools to identify and turn off stale/unused models.",
+    "Evaluating the impact of an optimization on costs and performance.",
+    "Building tools to improve the analytics development experience.",
+    "Creating helpful dbt macros.",
+    "CI/CD checks that catch possibly exploding joins.",
+    "Reducing the pain of iterating on metric design.",
+    "Be responsible for the design, build and health of all of our ETL pipelines. Part of the role includes being ‘on-duty’. On duty responsibilities require that you have a working understanding of most parts of the stack.",
+    "Champion best practice across data.",
+    "Be a key partner in the road map of the data platform team."
+  ],
+  "responsibilities_source": "jd_section"
 }

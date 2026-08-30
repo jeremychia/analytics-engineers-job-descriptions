@@ -95,5 +95,17 @@
       "natural language query tools",
       "metrics layer"
     ]
-  }
+  },
+  "responsibilities": [
+    "Define and execute BeReal's product analytics roadmap, aligning modeling, observability, and tooling with product priorities.",
+    "Partner closely with Product Managers to translate product loops, retention mechanics, and experimentation needs into scalable data models.",
+    "Build and deploy AI-powered internal analytics tools that enable stakeholders to query data in natural language.",
+    "Own the integration between BigQuery, Amplitude, and our experimentation framework to ensure a single source of truth for metrics.",
+    "Design and maintain a self-service metrics layer that enables PMs to independently analyze funnels and experiments.",
+    "Write production-grade dbt models and optimize SQL transformations for reliability, performance, and scalability.",
+    "Lead technical reviews and establish best practices for analytics engineering.",
+    "Collaborate with Backend and Mobile teams to ensure analytics instrumentation is robust and analytics-ready from day one.",
+    "Monitor data quality and observability to guarantee trust in product metrics and reporting."
+  ],
+  "responsibilities_source": "jd_section"
 }

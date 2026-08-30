@@ -94,5 +94,15 @@
   "has_metabase": true,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Define and govern event taxonomy for marketing touchpoints (UTMs, referrals, conversions, campaign interactions)",
+    "Partner with product engineering to instrument and validate tracking across web, app, and lifecycle channels",
+    "Build and maintain dimensional models (SQLMesh) for attribution, channel performance, and customer journey analysis",
+    "Create foundational tables for attribution windows, touchpoint sequences, cohort definitions, and channel mapping",
+    "Manage ingestion pipelines for marketing data sources (ad platforms, affiliate networks, influencer tools)",
+    "Monitor data quality, latency, and completeness across the marketing data pipeline",
+    "Work closely with our Marketing Analyst to translate analytical needs into robust, performant data models"
+  ],
+  "responsibilities_source": "jd_section"
 }

@@ -94,5 +94,15 @@
   "has_postgres": false,
   "has_airbyte": false,
   "has_glue": false,
-  "salary_period": "annual"
+  "salary_period": "annual",
+  "responsibilities": [
+    "Design and maintain analytical data models in dbt with focus on traceability and quality",
+    "Build and optimise complex SQL queries in BigQuery",
+    "Manage table creation, views, routines, and scheduled queries",
+    "Define, standardise, and document metrics and KPIs",
+    "Develop dashboards in Metabase and Tableau",
+    "Implement testing and data validation processes within dbt",
+    "Collaborate with non-technical teams to translate business needs into scalable solutions"
+  ],
+  "responsibilities_source": "jd_section"
 }

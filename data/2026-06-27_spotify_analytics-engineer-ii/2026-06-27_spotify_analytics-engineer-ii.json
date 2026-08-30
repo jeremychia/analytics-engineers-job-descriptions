@@ -78,5 +78,16 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Build and maintain analytical data models using dbt (or similar SQL-based transformation frameworks) in BigQuery for a broad set of stakeholders",
+    "Build and operate reliable data pipelines using SQL, with a focus on testing, observability, and CI/CD",
+    "Help define and evolve key metrics for platform health, developer productivity, and ML/AI platform adoption",
+    "Partner with Data Engineers on upstream pipelines and collaborate with Product, Engineering, and Data Science to scope and deliver insights",
+    "Improve data quality, performance, and cost efficiency across pipelines and models, including troubleshooting and backfills",
+    "Contribute to dashboards and self-serve data products that enable better decision-making across teams",
+    "Follow and contribute to data quality, testing, and documentation practices across the analytics layer",
+    "Participate in a fair support rotation for key datasets, pipelines, and analytical products"
+  ],
+  "responsibilities_source": "jd_section"
 }

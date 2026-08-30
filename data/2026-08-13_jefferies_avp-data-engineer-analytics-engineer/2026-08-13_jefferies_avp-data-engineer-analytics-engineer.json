@@ -103,5 +103,18 @@
       "dimensional modeling",
       "reconciliation"
     ]
-  }
+  },
+  "responsibilities": [
+    "Build and maintain modular modules and transformation pipeline in Snowflake to support sub-ledger and financial reporting use cases.",
+    "Work closely with analysts, finance partners, and engineers to understand requirements.",
+    "Develop transformation logic to convert raw transactional data into clean, well-structured fact and dimension tables.",
+    "Enforce data quality through rigorous testing, documentation, and version control following DevOps processes.",
+    "Participate in Agile ceremonies (e.g., stand-ups, sprint planning) and manage tasks using Jira.",
+    "Optimize Snowflake performance (Clustering, Warehouses, Query tuning).",
+    "Implement and follow data access controls and security practices for regulated financial data.",
+    "Help automate workflows using Airflow, Snowflake Tasks or TWS.",
+    "Monitor pipeline executions, investigate failures, and support issue resolution.",
+    "Support end users and downstream data consumers"
+  ],
+  "responsibilities_source": "jd_section"
 }

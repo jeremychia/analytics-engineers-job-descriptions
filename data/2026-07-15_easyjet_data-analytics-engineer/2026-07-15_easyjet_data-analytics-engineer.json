@@ -93,5 +93,15 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": true
+  "has_glue": true,
+  "responsibilities": [
+    "Building and maintaining Liveboards and AI Agents using Thoughtspot and Redshift, turning business requirements into clear, accurate visualisations",
+    "Developing Python and SQL based data pipelines within the Dagster and AWS ecosystem, documenting and testing data models through dbt",
+    "Contributing to the DataOps framework and tooling, improving patterns where you can",
+    "Making sure governance and compliance across the data estate meets regulatory requirements",
+    "Mentoring and coaching other Analytics Engineers, Data Engineers and Data Scientists, including supplier based team members",
+    "Carrying out ad hoc analysis and model development as needed",
+    "Working with stakeholders across the business to find new ways to use data, while helping the wider data community build their skills"
+  ],
+  "responsibilities_source": "jd_section"
 }

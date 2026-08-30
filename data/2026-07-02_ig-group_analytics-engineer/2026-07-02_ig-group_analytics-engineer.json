@@ -93,5 +93,15 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Build and maintain scalable, well-documented data models in dbt that enable self-service analytics for business users across IG",
+    "Deliver the migration of business-critical dashboards to Looker, rebuilding and modelling in LookML to ensure a clean, reliable transition",
+    "Translate business requirements from stakeholders across functions into efficient, trusted data models",
+    "Contribute to the development of AI agents, co-pilots, and automated insights that surface data directly to users",
+    "Safeguard data integrity through robust testing frameworks, documentation, and data quality practices",
+    "Partner with data engineering to optimise the underlying data pipeline architecture",
+    "Share modelling best practice with peers across the Analytics Engineering Chapter"
+  ],
+  "responsibilities_source": "jd_section"
 }

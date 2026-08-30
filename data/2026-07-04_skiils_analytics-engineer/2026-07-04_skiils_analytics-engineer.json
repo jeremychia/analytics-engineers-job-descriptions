@@ -94,5 +94,15 @@
   "has_postgres": false,
   "has_airbyte": false,
   "has_glue": false,
-  "salary_period": null
+  "salary_period": null,
+  "responsibilities": [
+    "**Construire et industrialiser les pipelines de transformation de données :** Concevoir des pipelines fiables et automatisés alimentant les tableaux de bord, les analyses métier et les modèles d'intelligence artificielle.",
+    "**Concevoir les modèles de données métiers :** Développer et maintenir une couche sémantique performante afin de rendre la donnée accessible, cohérente et exploitable par les équipes métier.",
+    "**Garantir la qualité des données :** Mettre en place les bonnes pratiques de modélisation, de validation et de contrôle qualité afin d'assurer la fiabilité des données mises à disposition.",
+    "**Faire évoluer les datasets analytiques :** Maintenir et enrichir les modèles existants pour répondre à de nouveaux besoins fonctionnels et accompagner les évolutions des usages.",
+    "**Contribuer à la stratégie Data :** Participer aux choix techniques autour de la Modern Data Stack et promouvoir les bonnes pratiques d'Analytics Engineering.",
+    "**Collaborer avec les équipes Data :** Travailler en étroite collaboration avec les Data Engineers, Data Analysts, Data Scientists et les équipes Produit afin de développer des solutions répondant aux enjeux métiers.",
+    "**Participer à l'amélioration continue :** Être moteur dans l'évolution des standards, de la documentation, de la gouvernance des données et des pratiques de développement."
+  ],
+  "responsibilities_source": "jd_section"
 }

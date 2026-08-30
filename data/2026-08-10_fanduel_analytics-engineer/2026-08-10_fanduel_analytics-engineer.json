@@ -100,5 +100,14 @@
       "AWS S3",
       "Sports Modeling"
     ]
-  }
+  },
+  "responsibilities": [
+    "Developing pipelines to ensure fast (sometimes real time) ingestion of data into properly thought-out databases (SQL, Delta Lakes, etc.)",
+    "Maintaining validation pipelines that flag bad or missing data and iterating on these pipelines when new databases are created",
+    "Manage existing data transformation jobs for the Sports Modeling and Innovation team, help optimize code across our code bases, and troubleshoot any issues",
+    "Database management – automate data cleaning projects on large data sets",
+    "Make decisions between memory and speed tradeoffs to best optimize team's project needs - help reduce query execution times where possible and remove unnecessary/unused metrics",
+    "Create and own a backlog of prioritized Tableau dashboard / Rshiny app additions"
+  ],
+  "responsibilities_source": "jd_section"
 }

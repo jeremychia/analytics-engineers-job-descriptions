@@ -78,5 +78,15 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Architect the data foundations that enable both internal teams and global partners to turn raw data into trusted insights powering real business decisions.",
+    "Champion dimensional modelling principles, ensuring our medallion architecture scales efficiently with increasing data volume, variety, and complexity.",
+    "Design, standardise, and evolve our data modelling (dbt) frameworks to transform raw data into self-explanatory, performant, and reusable datasets for analytics and reporting.",
+    "Empower analysts, engineers, and business teams with high-quality semantic layers and data models that serve as a single source of truth across Ascenda and our partner ecosystem.",
+    "Drive excellence in our modern data stack — AWS Redshift, dbt, Airflow, Meltano, Python (Pandas, Jupyter) — ensuring performance, scalability, and maintainability.",
+    "Mentor analytics engineers, define best practices, and embed data quality, governance, and observability throughout our data stack.",
+    "Work closely with data engineers, scientists, and AI engineers to power machine learning workflows and predictive models."
+  ],
+  "responsibilities_source": "jd_section"
 }

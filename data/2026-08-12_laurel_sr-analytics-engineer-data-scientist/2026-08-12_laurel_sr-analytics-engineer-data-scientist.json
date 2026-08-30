@@ -108,5 +108,16 @@
       "ROI analysis",
       "machine learning"
     ]
-  }
+  },
+  "responsibilities": [
+    "Run recurring ROI analyses (Business Impact Reports). Write performant SQL and pandas; productionize repeatable jobs (scheduling, alerts, anomaly checks) with orchestration (e.g., Airflow).",
+    "Own metric definitions (e.g., True Time vs. Released), create reusable SQL Data Models that serve as the analytics source of truth.",
+    "Quantify and communicate Laurel's impact, prepare exec-ready materials, and join customer-facing presentations—translating for both non-technical and technical stakeholders.",
+    "Deliver customer-facing ThoughtSpot dashboards and turn findings into concise actionable insights",
+    "Add validation tests and monitoring, triage data issues quickly, and collaborate with Product/Engineering to improve data quality.",
+    "Design, build, and maintain Laurel's Analytics Data Warehouse as the single source of truth for analytics and reporting needs.",
+    "Create scalable ETL pipelines to ingest, process, and organize data from diverse sources (PMS, Web Analytics, WebApp).",
+    "Deploy and maintain Business Intelligence tools to provide analytics and reporting capabilities."
+  ],
+  "responsibilities_source": "jd_section"
 }

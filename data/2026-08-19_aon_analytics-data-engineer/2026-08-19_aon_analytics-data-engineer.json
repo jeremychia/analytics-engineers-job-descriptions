@@ -102,5 +102,16 @@
       "ETL/ELT",
       "Delta tables"
     ]
-  }
+  },
+  "responsibilities": [
+    "Work with business, actuarial, analytical, and technical stakeholders to understand the intended analytics methodology, data inputs, business rules, and expected outputs.",
+    "Build and/or apply analytics methodology on top of structured and semi-structured datasets using SQL, Python, and Databricks-based workflows.",
+    "Design derived tables, views, and curated data layers that align with analytical methodology and are suitable for consumption by front-end applications, dashboards, reports, and downstream users.",
+    "Perform statistical analysis, data profiling, exploratory analysis, and result interpretation to support methodology design and validation.",
+    "Test methodology implementation and analytical outputs, including reconciliation, edge-case testing, data quality checks, and comparison against expected business or statistical results.",
+    "Support the design, development, maintenance, and optimization of modern data pipelines and transformation logic using Databricks, SQL, Python, and lakehouse patterns.",
+    "Document data mappings, transformation logic, assumptions, methodology rules, validation steps, and known limitations so that outputs are transparent and maintainable.",
+    "Assist in support, enhancements, troubleshooting, and continuous improvement of existing data pipelines, analytical datasets, and methodology implementations."
+  ],
+  "responsibilities_source": "jd_section"
 }

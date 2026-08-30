@@ -78,5 +78,15 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Own the transformation layer in dbt- design, build, and maintain modular, well-tested data models that define how data is structured and consumed across the company.",
+    "Define and implement core business metrics (e.g. activation, engagement, retention) as reusable, versioned data assets- ensuring consistent definitions across analytics, product, and AI use cases.",
+    "Model complex SaaS data by integrating product events, CRM (Salesforce), and support data into clean, well-defined fact and dimension models.",
+    "Build and evolve our semantic layer- creating a reliable abstraction over our data that enables consistent KPI definitions and supports downstream consumers, including LLM-based analytics agents.",
+    "Collaborate with Data Engineers on upstream data contracts and event schemas- ensuring raw data is structured in a way that supports scalable, reliable analytics.",
+    "Establish and enforce best practices in testing, documentation, and data quality- making these part of the standard development lifecycle.",
+    "Document models, metrics, and lineage clearly- enabling self-service and reducing ambiguity across teams."
+  ],
+  "responsibilities_source": "jd_section"
 }

@@ -78,5 +78,15 @@
   "has_metabase": true,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Develop and sustain dimensional models using SQLMesh for revenue recognition and subscription metrics",
+    "Establish foundational tables for monthly/annual recurring revenue, churn analysis, and revenue patterns",
+    "Oversee data ingestion from Stripe, billing platforms, and payment processors",
+    "Verify data consistency across systems and reporting layers",
+    "Document business logic for financial metrics including revenue recognition and deferred income",
+    "Implement quality assurance protocols for financial data",
+    "Collaborate with Finance to convert requirements into structured data solutions"
+  ],
+  "responsibilities_source": "jd_section"
 }

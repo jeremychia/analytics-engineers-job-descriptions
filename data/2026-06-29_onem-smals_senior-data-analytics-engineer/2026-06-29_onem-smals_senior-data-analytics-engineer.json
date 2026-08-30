@@ -95,5 +95,14 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Developing stratified transformation logic with dbt, focused on maintainability, performance and profitability",
+    "Implementing data orchestration via Dagster for reliable delivery",
+    "Designing dimensional data models following Kimball methodology",
+    "Conducting data validation to ensure quality and usability",
+    "Optimizing reporting models and Power BI queries",
+    "Managing code through Git and CI/CD pipelines"
+  ],
+  "responsibilities_source": "jd_section"
 }

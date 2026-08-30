@@ -107,5 +107,13 @@
       "Kubernetes",
       "AI-assisted development"
     ]
-  }
+  },
+  "responsibilities": [
+    "Design, implement, and maintain backend services in Python that power our data access and distribution layer",
+    "Build and operate automated build, test, and deployment pipelines following CI/CD and GitOps practices, running on AWS and Kubernetes",
+    "Design and maintain data models and schemas (Avro, SQL) for our data pipelines and services, and publish them to downstream consumers via our Kafka-based distribution platform and schema registry",
+    "Build access-layer data models in our analytics environment (e.g., Snowflake) so applications can work with the data directly, including via API",
+    "Act as the coordination interface between the Data and Tech divisions, aligning priorities, schemas, and timelines across upstream and downstream teams"
+  ],
+  "responsibilities_source": "jd_section"
 }

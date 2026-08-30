@@ -104,5 +104,24 @@
       "Power BI",
       "Sigma"
     ]
-  }
+  },
+  "responsibilities": [
+    "Your mission is to design, build, and evolve the data platform that powers decision-making across the business. You will help develop core components of our modern analytics stack, from data ingestion and transformation to governance and semantic modelling, ensuring that data is scalable, trustworthy, and accessible.",
+    "Beyond maintaining existing systems, you will contribute to the continuous improvement of our data platform, engineering standards, and analytics capabilities. Working closely with the wider data team, you will help create the foundations that enable self-service analytics and support the business as it grows.",
+    "Design, develop, and maintain modular, scalable dbt models across staging, intermediate, and mart layers.",
+    "Contribute to the structure and maintainability of our dbt project through testing, documentation, and CI/CD best practices.",
+    "Continuously improve data quality, consistency, and reliability across our transformation layer.",
+    "Work with and optimise our Snowflake environment, including data modelling, query performance, cost awareness, and access management.",
+    "Help ensure that our data platform remains scalable, reliable, and easy to work with.",
+    "Support the implementation of governance and semantic layer initiatives as our platform evolves.",
+    "Work with Fivetran-managed data sources and support the onboarding of new systems.",
+    "Contribute to pipeline monitoring, schema management, testing, and overall data reliability.",
+    "Help identify and resolve issues across the ingestion and transformation lifecycle.",
+    "Build trusted and well-documented data models that enable analysts and business stakeholders to work confidently with data.",
+    "Collaborate with the wider data team to translate business requirements into scalable and maintainable data solutions.",
+    "Ensure consistency across key business metrics and reporting foundations.",
+    "Contribute to metadata management, lineage tracking, and governance practices across the data platform.",
+    "Use dbt as a primary source of truth for documentation, testing, and model discoverability."
+  ],
+  "responsibilities_source": "jd_section"
 }

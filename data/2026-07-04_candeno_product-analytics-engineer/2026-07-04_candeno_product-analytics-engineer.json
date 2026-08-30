@@ -98,5 +98,17 @@
       "Aarhus",
       "regulatory requirements"
     ]
-  }
+  },
+  "responsibilities": [
+    "Work with product people and customers to understand what a dashboard or a data model actually needs to answer, before you build it. AI helps us move fast, so the harder work is knowing what is worth measuring.",
+    "Model the data. Decide access patterns and weigh the tradeoffs between flexibility and control, with architecture direction from our Lead Architect.",
+    "Build and maintain the data warehouse, data pipelines, and ETL or ELT flows between Candeno's platform and the warehouse.",
+    "Build and maintain internal and customer-facing dashboards, so the right data reaches the right audience in a form that drives decisions.",
+    "Instrument our AI chats, agents, and product usage so requests and usage signals become structured, first-class data, and work with engineers to keep it accessible for AI and ML use.",
+    "Write clean, maintainable code, using AI tools where they help and applying judgement to what they produce.",
+    "Keep data trustworthy. Care about data quality and make it something the team can rely on.",
+    "Meet regulatory requirements in a data-sensitive sector, with guidance from our legal advisor.",
+    "Share what you know and help raise data competence across the team. This is knowledge-sharing, not people management."
+  ],
+  "responsibilities_source": "jd_section"
 }

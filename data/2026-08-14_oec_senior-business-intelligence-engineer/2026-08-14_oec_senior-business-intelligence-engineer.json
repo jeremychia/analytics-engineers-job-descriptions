@@ -106,5 +106,17 @@
       "GitHub",
       "CI/CD"
     ]
-  }
+  },
+  "responsibilities": [
+    "Design and implement end-to-end data engineering pipelines using Microsoft Fabric (Data Factory, Lakehouse, Notebooks, Warehouse).",
+    "Build and maintain Delta Lake–based data models stored in OneLake , ensuring data quality, ACID compliance, and schema governance.",
+    "Develop and optimize T-SQL queries, stored procedures, and SQL analytics endpoints against Fabric Data Warehouse.",
+    "Implement ETL/ELT processes using Fabric Pipelines, Dataflows Gen2, and PySpark Notebooks .",
+    "Design and develop Power BI semantic models, interactive dashboards, and reports.",
+    "Contribute to the development of AI-powered analytics agents embedded in OEC products to support clients in data analysis.",
+    "Own design, development, and maintenance of ongoing metrics, reports, analyses, and dashboards driving key business decisions.",
+    "Provide technical guidance and mentoring to mid and junior engineers.",
+    "Create and maintain documentation of processes, data models, and procedures."
+  ],
+  "responsibilities_source": "jd_section"
 }

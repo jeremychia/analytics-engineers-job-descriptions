@@ -93,5 +93,17 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Extract and analyze large datasets from Snowflake using SQL to generate meaningful insights",
+    "Design and maintain dbt models for the analytics semantic layer",
+    "Build scalable dashboards and reporting solutions",
+    "Translate business questions into structured analysis",
+    "Deliver ad-hoc analysis to support decision-making",
+    "Contribute to self-serve analytics capabilities",
+    "Apply version control practices using Git",
+    "Support team members in dbt and data modeling",
+    "Collaborate with Data Engineering to improve data quality"
+  ],
+  "responsibilities_source": "jd_section"
 }

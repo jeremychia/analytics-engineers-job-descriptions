@@ -79,5 +79,11 @@
   "has_postgres": false,
   "has_airbyte": false,
   "has_glue": false,
-  "salary_period": "annual"
+  "salary_period": "annual",
+  "responsibilities": [
+    "Build, maintain, and drive the transition to our new DataPlatform (Dagster, dbt, AWS ECS, and GCP BigQuery). This involves creating foundational tools and monitoring systems for other data teams.",
+    "Oversee the company's largest data movement operations, handling terabyte-scale transfers from MySQL in AWS to BigQuery nightly while maintaining source system performance.",
+    "Own the most important company reports that inform executive decisions and serve other departments."
+  ],
+  "responsibilities_source": "jd_section"
 }

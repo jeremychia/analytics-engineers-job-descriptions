@@ -78,5 +78,15 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Develop and Maintain Transformation best practices in ELT Pipelines: Design, develop, and maintain efficient and scalable workflows using tools like dbt to transform raw data loaded into our data warehouse (Snowflake) into clean, ready-to-use data models.",
+    "Data Modelling: Implement best-practice data modelling and software engineering techniques to ensure data structures are optimised for performance, accuracy, and ease of use in reporting and analytical applications (e.g. CI/CD, testing, lineage).",
+    "Data Quality and Testing: Write comprehensive data quality checks, tests, and monitoring scripts to ensure the accuracy, completeness, and reliability of all transformed data assets. Establish and maintain documentation for all data transformations and models.",
+    "Collaboration: Work closely with Data Analysts and business users to understand their reporting needs and optimise data models to support their analytical use cases. Collaborate with Data Engineers on data ingestion strategies and platform optimisation.",
+    "Performance Optimisation: Tune and optimise SQL queries and data models to reduce latency and improve the performance of our data warehouse and downstream applications.",
+    "Tool Adoption: Champion the adoption of modern data stack tools and practices (e.g. Git, CI/CD).",
+    "Build scalable, compelling data visualisations in Looker that can be used by large teams."
+  ],
+  "responsibilities_source": "jd_section"
 }

@@ -111,5 +111,16 @@
       "semantic layer",
       "reconciliation"
     ]
-  }
+  },
+  "responsibilities": [
+    "Design, develop, and maintain data models and transformations (dbt) that turn raw lakehouse data into clean, validated datasets across bronze/silver/gold layers.",
+    "Develop, implement, and maintain automated data quality checks, tests, and validation processes across data pipelines.",
+    "Collaborate closely with data engineers, domain team leads, and analysts to translate business requirements into well-defined data models and metrics.",
+    "Perform sanity and reconciliation checks to identify and resolve data inconsistencies, duplicates, and missing values.",
+    "Contribute to the semantic layer: define and maintain consistent, well-documented metrics and dimensions used across BI and reporting.",
+    "Document data models, quality issues, root causes, and resolutions to improve overall data governance and discoverability.",
+    "Support analysts by providing reliable, well-prepared datasets, reducing their need to work directly with raw data.",
+    "Contribute to the design and improvement of data workflows, orchestration, and automation around data quality and transformations."
+  ],
+  "responsibilities_source": "jd_section"
 }

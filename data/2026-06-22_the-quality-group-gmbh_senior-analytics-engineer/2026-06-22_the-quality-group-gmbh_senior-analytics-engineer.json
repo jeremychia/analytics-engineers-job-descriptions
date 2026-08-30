@@ -80,5 +80,16 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Build and evolve data models and marts using tools like dbt for scalable analytics",
+    "Translate business requirements into clean, reusable data structures",
+    "Implement and maintain KPI logic in collaboration with Analytics Consulting",
+    "Ensure data quality through testing, validation, and monitoring",
+    "Define and enforce modeling standards and best practices",
+    "Transform DWH data into business-ready datasets",
+    "Support ad-hoc analytical requests requiring data modeling",
+    "Serve as interface between stakeholders, Analytics Consulting, and the DWH team"
+  ],
+  "responsibilities_source": "jd_section"
 }

@@ -102,5 +102,13 @@
       "data quality",
       "modelling layer"
     ]
-  }
+  },
+  "responsibilities": [
+    "Own the dbt modelling layer. Design and build our core, mission-critical models and the standards, tests, and documentation that keep them reliable and performant as we scale.",
+    "Treat data as a product. Evolve our models and semantic layer so teams across product, marketing, content, and finance can reliably self-serve from high-quality, well-governed data.",
+    "Set the technical direction. Establish and champion best practices for analytical pipelines: review code, define the patterns others adopt, and raise the data-quality bar across the team.",
+    "Partner with stakeholders. Work directly with teams across the business to understand what they need from data and translate that into well-designed data products and dashboards that drive decisions.",
+    "Put AI to work across the modelling lifecycle. Use AI tools and agents to accelerate dbt development and improve data quality, and help the team do the same."
+  ],
+  "responsibilities_source": "jd_section"
 }

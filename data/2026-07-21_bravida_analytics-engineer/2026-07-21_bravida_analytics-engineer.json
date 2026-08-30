@@ -91,5 +91,15 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Architect and own data models in dbt on Snowflake as the primary deliverable",
+    "Define and enforce modelling standards, documentation, and data contracts across domains",
+    "Build and manage pipelines in Dagster",
+    "Work with AI tooling actively to accelerate your own output and enable smarter self-service for the business",
+    "Drive our move toward generative analytics, shaping how business users query and interpret data through natural language",
+    "Work directly with operations, procurement, and finance to model their domains properly",
+    "Lead analytics data quality and reliability improvements across the stack"
+  ],
+  "responsibilities_source": "jd_section"
 }

@@ -94,5 +94,12 @@
       "data products"
     ]
   },
-  "salary_period": "annual"
+  "salary_period": "annual",
+  "responsibilities": [
+    "Architect and build scalable and reliable data models and pipelines in dbt, BigQuery, and Looker that turn internal and external source data into datasets and dashboards used for reporting, forecasting, and analyses.",
+    "Implement data quality checks, tests, and controls to improve the reliability and trustworthiness of our data.",
+    "Translate stakeholder needs into technical delivery by gathering requirements, aligning metric definitions, and turning them into well-documented models and metrics.",
+    "Create and enable data products that help stakeholders understand marketplace and competitor performance and make informed decisions."
+  ],
+  "responsibilities_source": "jd_section"
 }

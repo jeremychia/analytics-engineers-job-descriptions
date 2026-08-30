@@ -100,5 +100,12 @@
       "Git",
       "data quality testing"
     ]
-  }
+  },
+  "responsibilities": [
+    "Build and maintain scalable modular data models using dbt inside Snowflake.",
+    "Transition complex, unoptimised Teradata views into high-performance Snowflake tables.",
+    "Implement data quality testing, version control (Git), and CI/CD pipelines for analytics code.",
+    "Manage Snowflake warehouse optimization, access controls (ABAC), and query performance tuning."
+  ],
+  "responsibilities_source": "jd_section"
 }

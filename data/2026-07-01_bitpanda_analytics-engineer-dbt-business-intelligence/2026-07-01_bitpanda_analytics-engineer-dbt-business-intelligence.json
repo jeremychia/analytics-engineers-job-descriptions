@@ -93,5 +93,13 @@
   "has_metabase": true,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Contributing to the ongoing design of our core data model",
+    "Unifying business intelligence, data engineering, and business stakeholders",
+    "Collaborating with Finance and Operations on reporting needs",
+    "Ensuring high data quality of the core data layer with dbt models",
+    "Enabling analysts and streamlining dashboard creation"
+  ],
+  "responsibilities_source": "jd_section"
 }

@@ -93,5 +93,17 @@
   "has_metabase": false,
   "has_postgres": true,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Design and build scalable data pipelines using Python and SQL across Oracle, SQL Server, PostgreSQL, and OCI environments.",
+    "Develop and optimize ETL/ELT workflows using orchestration tools such as Airflow or OCI Data Integration.",
+    "Build and maintain Power BI dashboards, semantic models, and datasets using DAX, Power Query, and data modeling best practices.",
+    "Collaborate with stakeholders to translate business requirements into data models, KPIs, and visualizations.",
+    "Implement CI/CD pipelines using GitLab and automate deployments using Docker and Kubernetes.",
+    "Ensure data quality, governance, and security (RLS, access control, auditing, compliance).",
+    "Optimize performance across pipelines and dashboards, including query tuning and refresh strategies.",
+    "Monitor pipeline health and automate operational processes using Python scripting and Unix tools.",
+    "Support cloud and on-prem data environments, including migrations and scaling strategies."
+  ],
+  "responsibilities_source": "jd_section"
 }

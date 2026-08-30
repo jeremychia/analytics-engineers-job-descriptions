@@ -106,5 +106,15 @@
       "Segment",
       "self-service BI"
     ]
-  }
+  },
+  "responsibilities": [
+    "Translate business needs into clear, well scoped requirements, so every model you build answers a question someone is actually asking",
+    "Build and maintain robust data models and exposures in dbt, Snowflake and Looker - using AI-assisted development to spend less time on boilerplate and more on specifying intent, reviewing and refining",
+    "Review and debug SQL critically, including AI-generated code, so we ship only models we can trust and document the decisions and trade-offs behind them",
+    "Extend the trust infrastructure of tests, data contracts and observability that keeps our models and pipelines reliable and stable",
+    "Integrate data from third-party sources such as Amplitude, Segment and Google Ads and create secure, efficient data shares for external partners",
+    "Enable self-service in our BI tools, so business users answer their own questions instead of queuing for the data team",
+    "Improve our data platform, tooling and ways of working, including how the team puts AI to work"
+  ],
+  "responsibilities_source": "jd_section"
 }

@@ -104,5 +104,16 @@
       "self-service analytics",
       "context engineering"
     ]
-  }
+  },
+  "responsibilities": [
+    "Data Transformation: Design and maintain transformations that ensure accurate, scalable, and high-quality datasets as the bedrock of our data warehouse.",
+    "dbt Architecture: Serve as the Architect for our dbt project, evolving the architecture, design patterns, and best practices to ensure consistent data definitions and streamlined development.",
+    "Metric Unification: Standardize metrics across our BI tools to drive seamless self-service analytics in Looker and high-accuracy results in AI-powered exploration tools.",
+    "Team Mentorship: Provide guidance and code reviews to analysts and analytics engineers, fostering a culture of collaboration and excellence in dbt and data modeling.",
+    "Workflow Modernization: Integrate AI-assisted workflows (e.g., Claude Code) into the development lifecycle to accelerate code generation, documentation, and testing.",
+    "AI Context Engineering: Architect \"AI-ready\" data by designing enriched metadata and context guides that enable intuitive, natural-language data exploration for business users.",
+    "Stack Collaboration: Partner with Data Engineering to design ingestion and transformation pipelines that are scalable, efficient, and aligned with business needs.",
+    "Data Governance: Champion data privacy and quality by upholding governance processes and compliance measures to maintain the highest standards of integrity."
+  ],
+  "responsibilities_source": "jd_section"
 }

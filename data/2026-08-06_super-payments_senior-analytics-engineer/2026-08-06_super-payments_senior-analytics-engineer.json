@@ -103,5 +103,17 @@
       "AI agents",
       "LLM"
     ]
-  }
+  },
+  "responsibilities": [
+    "Upstream Engineering Collaboration : Collaborate with product engineers to understand event data schemas and translating raw event streams into data models within the data warehouse to create a single source of truth for key metrics.",
+    "Maintainable Data Pipelines : Build well-governed dbt models in Snowflake, including the development of the core data warehouse, data marts, metrics, and reusable datasets.",
+    "Data Modeling : Apply dimensional modeling to ensure clear relationships and performant joins, while strategically utilising OBT (One Big Table) designs to optimise for BI tool performance and ease of end-user access.",
+    "Semantic Layer Ownership: Evolve the semantic layer within Looker to define governed, maintainable approaches to metrics.",
+    "Quality Frameworks: Design and implement robust testing, monitoring, and alerting frameworks for analytics data to proactively identify and resolve pipeline failures.",
+    "Data Quality Governance: Contribute to building a high level of data integrity across the dbt transformation layer, ensuring that SQL logic is robust, maintainable, and accurate.",
+    "Self-Serve Strategy: Help drive the adoption of self-serve analytics through clear technical documentation, training sessions, and enablement strategies for non-technical users.",
+    "AI Readiness: Create high-quality datasets specifically structured to serve as the reliable context for AI agents, ensuring our data models are optimised for automated discovery and LLM-driven productivity.",
+    "Stakeholder Collaboration : Partnering with Finance, Sales and Compliance teams to translate requirements into governed data models that ensure financial datasets remain audit-ready and fully reconciled."
+  ],
+  "responsibilities_source": "jd_section"
 }

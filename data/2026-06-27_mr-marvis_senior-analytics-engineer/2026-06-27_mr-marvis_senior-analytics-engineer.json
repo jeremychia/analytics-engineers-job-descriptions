@@ -78,5 +78,18 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Build robust data pipelines translating complex business logic into scalable dbt models",
+    "Optimize models for performance, cost efficiency, and long-term maintainability",
+    "Work with business stakeholders to translate analytical needs into structured data solutions",
+    "Drive alignment around consistent metric definitions and reporting standards",
+    "Enable governed self-serve analytics by simplifying access to trusted data sources",
+    "Support business users in adopting best practices for data exploration",
+    "\"Optimize our data platform - especially the analytics layer - for AI uses cases\"",
+    "Implement testing, monitoring, and data quality checks",
+    "Partner with data engineers on clean ingestion and upstream design",
+    "Optimize warehouse usage through partitioning, clustering, and incremental modeling"
+  ],
+  "responsibilities_source": "jd_section"
 }

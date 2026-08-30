@@ -92,5 +92,20 @@
       "data quality checks",
       "governance standards"
     ]
-  }
+  },
+  "responsibilities": [
+    "Design and develop scalable analytical data models, curated datasets, conformed dimensions, and standardized metrics",
+    "Translate complex business requirements into clear, reliable, and reusable data products that support both executive reporting and day-to-day analytics use cases",
+    "Contribute to designing data models and metadata structures with AI readiness in mind, including column-level descriptions, consistent naming conventions, and well-documented semantic context",
+    "Build and maintain data structures that support discoverability and usability across analytics, BI, and emerging AI/ML use cases",
+    "Follow and contribute to established standards and best practices for SQL development, dbt modeling, testing, documentation, and data quality",
+    "Support the implementation of the semantic layer by ensuring metric definitions and business logic are consistently applied",
+    "Implement and maintain data quality checks, governance standards, and security measures within dbt models and Snowflake",
+    "Help ensure data models are well-tested, documented, and aligned with business definitions",
+    "Partner with data engineers, platform teams, governance, and business stakeholders to gather requirements and deliver data solutions",
+    "Collaborate with team members through code reviews, knowledge sharing, and adoption of best practices",
+    "Contribute to cross-functional initiatives focused on improving standardization, consistency, and reuse of analytics assets",
+    "Identify opportunities to improve processes, enhance automation, and streamline development workflows"
+  ],
+  "responsibilities_source": "jd_section"
 }

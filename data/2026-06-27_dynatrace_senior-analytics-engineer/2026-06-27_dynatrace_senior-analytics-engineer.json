@@ -78,5 +78,20 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Design scalable analytical data models and curated datasets, conformed dimensions, and standardized metrics",
+    "Translate business requirements into reliable, reusable data products",
+    "Design data models with AI readiness in mind, including column-level descriptions",
+    "Build structures supporting discoverability across analytics and AI/ML use cases",
+    "Follow established SQL development and dbt modeling standards",
+    "Support semantic layer implementation with consistent metrics",
+    "Implement data quality checks and governance within dbt and Snowflake",
+    "Maintain well-tested, documented models aligned with business definitions",
+    "Partner with data engineers, platform teams, and stakeholders",
+    "Collaborate through code reviews and knowledge sharing",
+    "Contribute to cross-functional standardization initiatives",
+    "Identify process improvement opportunities"
+  ],
+  "responsibilities_source": "jd_section"
 }

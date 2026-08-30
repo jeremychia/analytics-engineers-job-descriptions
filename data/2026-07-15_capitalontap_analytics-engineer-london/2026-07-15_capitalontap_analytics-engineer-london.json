@@ -93,5 +93,14 @@
   "has_metabase": false,
   "has_postgres": false,
   "has_airbyte": false,
-  "has_glue": false
+  "has_glue": false,
+  "responsibilities": [
+    "Managing the global data stack (Fivetran, Snowflake, dbt, Looker)",
+    "Designing and maintaining data marts using dbt models",
+    "Creating custom data pipelines with Python and Azure",
+    "Building complex datasets for business requirements",
+    "Implementing process improvements via CI/CD and automation",
+    "Collaborating with Executive, Risk, Commercial, and Engineering teams"
+  ],
+  "responsibilities_source": "jd_section"
 }
