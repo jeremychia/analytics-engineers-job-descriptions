@@ -1,35 +1,54 @@
 # Responsibility taxonomy
 
-Extracted from 545 of 617 JDs with an archived JD text file (one JD in the corpus has a classification record but no archived raw text, so it's excluded from this denominator entirely): 428 parsed directly (markdown headings, plain-text sections, or condensed paragraph summaries), 117 recovered via LLM interpretation of prose that had no cleanly-parseable structure (see responsibility_bullets_llm.json). 72 JDs have no extractable responsibilities at all — the source scrape is a thin listing stub with zero role-content (verified by direct read, not assumed). Regenerate with `python3 analysis/responsibility_taxonomy.py`.
+Bullets come from 631 of 636 JDs with an archived JD text file. They are captured when each JD is classified — a model reads the posting and copies its responsibilities section out verbatim — and stored per-JD in `data/<jd_id>/<jd_id>.json` under `responsibilities`. 620 JDs are verbatim copies, enforced by `scripts/write_jd.py`, which refuses to write a record unless every bullet is a literal substring of the archived text; the other 11 describe the role only in flowing prose with no list to copy, and are marked `responsibilities_source: inferred_from_prose`. 5 JDs have no responsibilities content at all — the source scrape is a listing stub or a mis-scraped careers page (verified by direct read, not assumed) — and carry an explicit empty list rather than a silent absence. Regenerate with `./.venv/bin/python analysis/responsibility_taxonomy.py`.
 
-Classification is rule-based keyword matching (see `responsibility_taxonomy.py::TAXONOMY`), not per-line LLM judgment — treat this as a directional map, not a precise census. Of 3829 extracted bullets, 3315 (86.6%) matched at least one theme; 514 (13.4%) matched none (miscellaneous duties too specific/rare to warrant their own theme — not a sign of missing bullets). A bullet can match more than one theme, so theme percentages sum to well over 100%. Each bullet's extraction source (`regex` vs `llm_interpreted`) is recorded per-JD in responsibility_bullets.json.
+Classification is rule-based keyword matching (see `responsibility_taxonomy.py::TAXONOMY`), not per-line LLM judgment — treat this as a directional map, not a precise census. Of 5163 extracted bullets, 4284 (83.0%) matched at least one theme; 879 (17.0%) matched none (miscellaneous duties too specific/rare to warrant their own theme — not a sign of missing bullets). A bullet can match more than one theme, so theme percentages sum to well over 100%. Note the split of responsibility: the *bullets* are read out of the posting by a model, the *themes* applied to them are keyword rules — so a missing theme means the vocabulary didn't match, not that the bullet was missed.
 
-The corpus was deduplicated at the source (data/ directories, keyed on normalized job-posting URL — same company+role text alone was not treated as sufficient evidence, since several pairs turned out to be genuinely distinct openings at different locations). A residual same-company+role-text signature check against the current corpus (a cruder heuristic than the URL-based dedup actually applied) still shows a spread of at most 0.4 percentage points per theme, confirming no further collapsing would change the ranking.
+The corpus was deduplicated at the source (data/ directories, keyed on normalized job-posting URL — same company+role text alone was not treated as sufficient evidence, since several pairs turned out to be genuinely distinct openings at different locations). A residual same-company+role-text signature check against the current corpus (a cruder heuristic than the URL-based dedup actually applied) still shows a spread of at most 0.8 percentage points per theme, confirming no further collapsing would change the ranking.
 
 ## Themes, ranked by share of JDs
 
 | Theme | % of JDs | # JDs | # bullets |
 |---|---|---|---|
-| Data Modeling & Transformation | 77.4% | 422 | 935 |
-| Stakeholder Collaboration & Requirements | 77.4% | 422 | 793 |
-| BI & Reporting/Dashboards | 68.6% | 374 | 787 |
-| Data Quality & Testing | 67.7% | 369 | 627 |
-| Governance & Documentation | 60.0% | 327 | 510 |
-| Pipeline Engineering & Orchestration | 58.3% | 318 | 478 |
-| Data Infrastructure & Warehouse Ops | 52.3% | 285 | 455 |
-| Business Analysis & Insight Generation | 51.7% | 282 | 500 |
-| Architecture & Platform Strategy | 48.4% | 264 | 406 |
-| Performance & Cost Optimization | 46.8% | 255 | 377 |
-| Self-Service Enablement & Data Literacy | 34.5% | 188 | 242 |
-| Data Ownership (end-to-end) | 33.2% | 181 | 235 |
-| AI & Agentic Workflows | 30.8% | 168 | 244 |
-| Mentorship & Leadership | 13.2% | 72 | 83 |
-| Security, Privacy & Risk | 12.7% | 69 | 84 |
-| Vendor & Tooling Evaluation | 3.3% | 18 | 20 |
+| Stakeholder Collaboration & Requirements | 77.5% | 489 | 972 |
+| Data Modeling & Transformation | 75.6% | 477 | 1101 |
+| Data Quality & Testing | 71.6% | 452 | 835 |
+| BI & Reporting/Dashboards | 69.9% | 441 | 977 |
+| Governance & Documentation | 65.1% | 411 | 696 |
+| Pipeline Engineering & Orchestration | 60.7% | 383 | 576 |
+| Business Analysis & Insight Generation | 54.7% | 345 | 627 |
+| Data Infrastructure & Warehouse Ops | 53.6% | 338 | 538 |
+| Performance & Cost Optimization | 48.0% | 303 | 470 |
+| Architecture & Platform Strategy | 44.1% | 278 | 434 |
+| Self-Service Enablement & Data Literacy | 36.9% | 233 | 309 |
+| Data Ownership (end-to-end) | 33.3% | 210 | 290 |
+| AI & Agentic Workflows | 30.9% | 195 | 308 |
+| Mentorship & Leadership | 16.2% | 102 | 110 |
+| Security, Privacy & Risk | 14.1% | 89 | 115 |
+| Vendor & Tooling Evaluation | 4.0% | 25 | 26 |
 
 ## What each theme looks like
 
-### Data Modeling & Transformation — 77.4% of JDs
+### Stakeholder Collaboration & Requirements — 77.5% of JDs
+
+Partnering with business/analyst/engineering stakeholders, translating requirements, cross-functional alignment.
+
+Keyword pattern: `\b(stakeholder|collaborat|partner with|cross-functional|business (needs|requirements|users)|translate|liais|bridg(e|ing)|link between|align(ment)?|requirements gathering|work(ing)? closely with|works? with (customer|end.user)s?)`
+
+Example bullets, verbatim from postings:
+
+- Collaborate closely with the Analytics Interface, Commercial Analytics and business teams to turn business requirements into productionised AI-enabling data products.
+- Partner with the Analytics Innovation & Automation and Data Office product teams to prototype & deliver innovative features across the Data Platform; ensure platforms, tools & processes meet business needs.
+- Collaborate with Shopper & Partner (D2C & B2B) digital product teams to ensure high quality data is collected and published to LEGO Data Platform (Databricks) to a standard fit for purpose for downstream delivery of data products.
+- Translate business questions into practical data solutions and insightful dashboards
+- Collaborate across departments (Marketing, Finance, Operations) to connect data needs to solutions
+- Define and execute the data engineering vision and roadmap aligned with the overall Data, AI & Analytics strategy.
+- Champion the adoption of modern data engineering and agile delivery practices, fostering close collaboration with product owners, BI, data analysis, data science, data platform, and tech teams.
+- Define and monitor data SLAs and SLOs, ensuring that product teams deliver data that meets business needs in terms of timeliness, accuracy, and availability.
+- Collaborate closely with Data Product Owners to prioritize and deliver data engineering work in alignment with business priorities.
+- Partner with Platform Engineering teams to ensure smooth operation of data pipelines within the shared core data platform.
+
+### Data Modeling & Transformation — 75.6% of JDs
 
 Building/maintaining dbt models, semantic layers, metrics definitions, dimensional models — turning raw data into trusted, reusable structures.
 
@@ -43,50 +62,12 @@ Example bullets, verbatim from postings:
 - Collaborate closely with the Analytics Interface, Commercial Analytics and business teams to turn business requirements into productionised AI-enabling data products.
 - Collaborate with Shopper & Partner (D2C & B2B) digital product teams to ensure high quality data is collected and published to LEGO Data Platform (Databricks) to a standard fit for purpose for downstream delivery of data products.
 - Consistently champion best practices in data product development within the team, across Markets & Channels and with the broader analytics community, helping ensure data integrity, quality, and scalability of overall data products on the LEGO Data Platform.
-- The Data Engineering Lead leads the design, development, and delivery of high-quality data pipelines and data products that power analytics, BI, and AI across the fintech ecosystem in payments, dunning, invoicing, and collections. This leader will build and scale a high-performing data engineering team focused on transforming raw data into trusted, accessible, and reusable assets — ensuring that the broader organization can make faster and smarter decisions.
-- Working in an agile, cross-functional data product model, this role is accountable for the results and contributions of the data engineering discipline — ensuring that the data engineers deliver trusted, timely, and high-quality data to enable business and analytical outcomes.
+- Design and optimise scalable data models in Snowflake and dbt
+- Build and maintain marketing attribution models across paid channels (Meta, Google, TikTok, affiliate)
 - Establish and continuously improve the operating model for data engineers within agile data product teams, ensuring clear accountability for delivery outcomes (timeliness, quality, completeness, compliance).
 - Oversee the development of robust ETL/ELT pipelines to ingest and transform data from multiple internal and external sources.
 
-### Stakeholder Collaboration & Requirements — 77.4% of JDs
-
-Partnering with business/analyst/engineering stakeholders, translating requirements, cross-functional alignment.
-
-Keyword pattern: `\b(stakeholder|collaborat|partner with|cross-functional|business (needs|requirements|users)|translate|liais|bridg(e|ing)|link between|align(ment)?|requirements gathering|work(ing)? closely with|works? with (customer|end.user)s?)`
-
-Example bullets, verbatim from postings:
-
-- Collaborate closely with the Analytics Interface, Commercial Analytics and business teams to turn business requirements into productionised AI-enabling data products.
-- Partner with the Analytics Innovation & Automation and Data Office product teams to prototype & deliver innovative features across the Data Platform; ensure platforms, tools & processes meet business needs.
-- Collaborate with Shopper & Partner (D2C & B2B) digital product teams to ensure high quality data is collected and published to LEGO Data Platform (Databricks) to a standard fit for purpose for downstream delivery of data products.
-- Working in an agile, cross-functional data product model, this role is accountable for the results and contributions of the data engineering discipline — ensuring that the data engineers deliver trusted, timely, and high-quality data to enable business and analytical outcomes.
-- Define and execute the data engineering vision and roadmap aligned with the overall Data, AI & Analytics strategy.
-- Champion the adoption of modern data engineering and agile delivery practices, fostering close collaboration with product owners, BI, data analysis, data science, data platform, and tech teams.
-- Define and monitor data SLAs and SLOs, ensuring that product teams deliver data that meets business needs in terms of timeliness, accuracy, and availability.
-- Collaborate closely with Data Product Owners to prioritize and deliver data engineering work in alignment with business priorities.
-- Partner with Platform Engineering teams to ensure smooth operation of data pipelines within the shared core data platform.
-- Collaborate with the Business IT teams to create reliable and robust interfaces to the source systems.
-
-### BI & Reporting/Dashboards — 68.6% of JDs
-
-Dashboards, reporting, visualization tools (Looker, Tableau, Power BI, Grafana), self-service BI.
-
-Keyword pattern: `\b(dashboard|report(ing|s)?\b|visuali[sz]ation|Looker\b|Tableau\b|Power ?BI|Grafana|BI (tool|layer|developer)|self-service (analytics|reporting)?)`
-
-Example bullets, verbatim from postings:
-
-- Ensure that agile data product teams deliver fit-for-purpose data models that meet the needs of analytics, AI, and regulatory reporting.
-- Verify data consistency across systems and reporting layers
-- Create Power BI dashboards and reports for monitoring and decision-making
-- Gather requirements and translate them into effective reporting and analytics solutions
-- Design and maintain dashboards for franchisees and internal teams
-- Adapt existing dashboards from other business domains
-- Own the most important company reports that inform executive decisions and serve other departments.
-- Build new Looker dashboards from scratch within tight deadlines
-- Identify and propose enhancements to reporting systems for better clarity and faster creation
-- Deliver high-quality semantic assets that fuel self-service analytics, reporting and AI-powered insights
-
-### Data Quality & Testing — 67.7% of JDs
+### Data Quality & Testing — 71.6% of JDs
 
 Tests, validation, monitoring, anomaly detection, data trust/observability.
 
@@ -97,15 +78,34 @@ Example bullets, verbatim from postings:
 - Build data pipeline engineering, orchestration, and monitoring to deliver high-quality data products centered around Retail Execution Commercial pillar.
 - Ensure Data Products follow CI/CD standards, adhere to data quality frameworks; include assertion checks and have performance & cost optimization applied.
 - Maintain and develop our data architecture to ensure reliability and performance
+- Monitor data quality and proactively fix issues before they impact teams
 - Implement data quality frameworks and automation across pipelines owned by agile teams.
 - Define and monitor data SLAs and SLOs, ensuring that product teams deliver data that meets business needs in terms of timeliness, accuracy, and availability.
 - Promote proactive data reliability engineering, enabling teams to detect and resolve issues early.
 - Promote automation, CI/CD for data, and observability across all data engineering workstreams, including AI-based productivity increases.
 - Balance speed, accuracy, and maintainability in data modeling decisions.
 - Establish data quality standards using tests, CI/CD, and documentation.
-- Create Power BI dashboards and reports for monitoring and decision-making
 
-### Governance & Documentation — 60.0% of JDs
+### BI & Reporting/Dashboards — 69.9% of JDs
+
+Dashboards, reporting, visualization tools (Looker, Tableau, Power BI, Grafana), self-service BI.
+
+Keyword pattern: `\b(dashboard|report(ing|s)?\b|visuali[sz]ation|Looker\b|Tableau\b|Power ?BI|Grafana|BI (tool|layer|developer)|self-service (analytics|reporting)?)`
+
+Example bullets, verbatim from postings:
+
+- Translate business questions into practical data solutions and insightful dashboards
+- Ensure that agile data product teams deliver fit-for-purpose data models that meet the needs of analytics, AI, and regulatory reporting.
+- Verify data consistency across systems and reporting layers
+- Create Power BI dashboards and reports for monitoring and decision-making
+- Gather requirements and translate them into effective reporting and analytics solutions
+- Design and maintain dashboards for franchisees and internal teams
+- Adapt existing dashboards from other business domains
+- Own the most important company reports that inform executive decisions and serve other departments.
+- Build new Looker dashboards from scratch within tight deadlines
+- Identify and propose enhancements to reporting systems for better clarity and faster creation
+
+### Governance & Documentation — 65.1% of JDs
 
 Cataloging, metadata, access control, lineage, documentation, standards, compliance frameworks.
 
@@ -117,14 +117,14 @@ Example bullets, verbatim from postings:
 - Drive Unity Catalog governance (schemas, access, metadata tagging) to improve data accessibility in highly controlled compliant environment.
 - Enable Markets & Channels specific data understanding and champion data literacy via guidelines, training, drop-in sessions, documentation, and knowledge sharing.
 - Collaborate with Shopper & Partner (D2C & B2B) digital product teams to ensure high quality data is collected and published to LEGO Data Platform (Databricks) to a standard fit for purpose for downstream delivery of data products.
+- Support a data-driven culture by improving documentation and making data more accessible
 - Establish and continuously improve the operating model for data engineers within agile data product teams, ensuring clear accountability for delivery outcomes (timeliness, quality, completeness, compliance).
 - Work hand-in-hand with Data Governance and Data Architecture to ensure alignment on metadata, lineage, and data ownership.
 - Ensure consistent technical standards, delivery practices, and performance management across the discipline, even within decentralized team setups.
 - Establish data quality standards using tests, CI/CD, and documentation.
 - Document business logic for financial metrics including revenue recognition and deferred income
-- Document KPI definitions and business rules
 
-### Pipeline Engineering & Orchestration — 58.3% of JDs
+### Pipeline Engineering & Orchestration — 60.7% of JDs
 
 ETL/ELT pipelines, ingestion, orchestration tooling (Airflow/Dagster/Prefect), moving data end to end.
 
@@ -134,7 +134,7 @@ Example bullets, verbatim from postings:
 
 - Build data pipeline engineering, orchestration, and monitoring to deliver high-quality data products centered around Retail Execution Commercial pillar.
 - Build and maintain semantic layer infrastructure including metric view pipelines, materialization and optimization.
-- The Data Engineering Lead leads the design, development, and delivery of high-quality data pipelines and data products that power analytics, BI, and AI across the fintech ecosystem in payments, dunning, invoicing, and collections. This leader will build and scale a high-performing data engineering team focused on transforming raw data into trusted, accessible, and reusable assets — ensuring that the broader organization can make faster and smarter decisions.
+- Build and manage ETL/ELT pipelines using tools like Fivetran or custom Python code
 - Oversee the development of robust ETL/ELT pipelines to ingest and transform data from multiple internal and external sources.
 - Drive excellence in data modeling and pipeline design, ensuring solutions are efficient, maintainable, and well-documented.
 - Implement data quality frameworks and automation across pipelines owned by agile teams.
@@ -143,7 +143,26 @@ Example bullets, verbatim from postings:
 - Owning ETL and ELT pipeline development using Python and low-code platforms such as RapidMiner
 - Collaborating with OEM partners and external developers to productionise pipelines at pace
 
-### Data Infrastructure & Warehouse Ops — 52.3% of JDs
+### Business Analysis & Insight Generation — 54.7% of JDs
+
+Generating insight, supporting decisions, forecasting, experimentation/A-B testing, KPI definition.
+
+Keyword pattern: `\b(insight|analy[sz]e|analytics? (to support|for)|decision.making|forecast|experiment(ation)?|A/B test|KPI|metrics? (tracking|definition)|business (impact|problems|decisions))`
+
+Example bullets, verbatim from postings:
+
+- Translate business questions into practical data solutions and insightful dashboards
+- Establish KPIs for engineering productivity, pipeline performance, and data delivery quality within product teams.
+- Create Power BI dashboards and reports for monitoring and decision-making
+- Support franchisees in interpreting KPIs
+- Promote data-driven decision-making
+- Document KPI definitions and business rules
+- Design and maintain advanced semantic layers to unify KPIs and analytical logic across business domains
+- Lead the definition and implementation of AI-driven analytical capabilities, including text-to-SQL, automated insights, semantic modeling for AI and conversational analytical interfaces
+- Deliver high-quality semantic assets that fuel self-service analytics, reporting and AI-powered insights
+- Designing demand and revenue forecasting models for company-wide planning
+
+### Data Infrastructure & Warehouse Ops — 53.6% of JDs
 
 Warehouse platform work (Snowflake/BigQuery/Redshift/Databricks), CI/CD, cloud infra, Terraform.
 
@@ -154,34 +173,34 @@ Example bullets, verbatim from postings:
 - Ensure Data Products follow CI/CD standards, adhere to data quality frameworks; include assertion checks and have performance & cost optimization applied.
 - Build and maintain semantic layer infrastructure including metric view pipelines, materialization and optimization.
 - Collaborate with Shopper & Partner (D2C & B2B) digital product teams to ensure high quality data is collected and published to LEGO Data Platform (Databricks) to a standard fit for purpose for downstream delivery of data products.
+- Design and optimise scalable data models in Snowflake and dbt
 - Promote automation, CI/CD for data, and observability across all data engineering workstreams, including AI-based productivity increases.
 - Establish data quality standards using tests, CI/CD, and documentation.
 - Partner with Data Engineering to diagnose issues and optimize warehouse performance.
 - Building infrastructure that powers "AI-driven pricing, payments, and financial decisioning across connected vehicle ecosystems"
 - Build data marts and business layers using dbt on Databricks
 - Build, maintain, and drive the transition to our new DataPlatform (Dagster, dbt, AWS ECS, and GCP BigQuery). This involves creating foundational tools and monitoring systems for other data teams.
-- Oversee the company's largest data movement operations, handling terabyte-scale transfers from MySQL in AWS to BigQuery nightly while maintaining source system performance.
 
-### Business Analysis & Insight Generation — 51.7% of JDs
+### Performance & Cost Optimization — 48.0% of JDs
 
-Generating insight, supporting decisions, forecasting, experimentation/A-B testing, KPI definition.
+Improving query/pipeline performance, cost efficiency, resource optimization.
 
-Keyword pattern: `\b(insight|analy[sz]e|analytics? (to support|for)|decision.making|forecast|experiment(ation)?|A/B test|KPI|metrics? (tracking|definition)|business (impact|problems|decisions))`
+Keyword pattern: `\b(performance|cost (optimi[sz]ation|efficiency|reduction)|efficien(cy|t)|optimi[sz]e)`
 
 Example bullets, verbatim from postings:
 
+- Ensure Data Products follow CI/CD standards, adhere to data quality frameworks; include assertion checks and have performance & cost optimization applied.
+- Maintain and develop our data architecture to ensure reliability and performance
+- Design and optimise scalable data models in Snowflake and dbt
+- Drive excellence in data modeling and pipeline design, ensuring solutions are efficient, maintainable, and well-documented.
+- Ensure consistent technical standards, delivery practices, and performance management across the discipline, even within decentralized team setups.
 - Establish KPIs for engineering productivity, pipeline performance, and data delivery quality within product teams.
-- Create Power BI dashboards and reports for monitoring and decision-making
-- Support franchisees in interpreting KPIs
-- Promote data-driven decision-making
-- Document KPI definitions and business rules
-- Design and maintain advanced semantic layers to unify KPIs and analytical logic across business domains
-- Lead the definition and implementation of AI-driven analytical capabilities, including text-to-SQL, automated insights, semantic modeling for AI and conversational analytical interfaces
-- Deliver high-quality semantic assets that fuel self-service analytics, reporting and AI-powered insights
-- Designing demand and revenue forecasting models for company-wide planning
-- Collaborating with finance, operations, and leadership teams to align on metrics and embed data in decision-making
+- Partner with Data Engineering to diagnose issues and optimize warehouse performance.
+- Oversee the company's largest data movement operations, handling terabyte-scale transfers from MySQL in AWS to BigQuery nightly while maintaining source system performance.
+- Develop modeling patterns, documentation standards, and workflows for analytical efficiency
+- Partner with data platform, engineering, and analytics teams on high-performance pipelines
 
-### Architecture & Platform Strategy — 48.4% of JDs
+### Architecture & Platform Strategy — 44.1% of JDs
 
 System/data architecture, platform design, scalability, tech-stack decisions, roadmap/strategy.
 
@@ -195,31 +214,12 @@ Example bullets, verbatim from postings:
 - Consistently champion best practices in data product development within the team, across Markets & Channels and with the broader analytics community, helping ensure data integrity, quality, and scalability of overall data products on the LEGO Data Platform.
 - You'll own and improve our data platform, keeping it fast, scalable, and trustworthy
 - Maintain and develop our data architecture to ensure reliability and performance
+- Design and optimise scalable data models in Snowflake and dbt
 - Define and execute the data engineering vision and roadmap aligned with the overall Data, AI & Analytics strategy.
 - Champion the adoption of modern data engineering and agile delivery practices, fostering close collaboration with product owners, BI, data analysis, data science, data platform, and tech teams.
 - Partner with Platform Engineering teams to ensure smooth operation of data pipelines within the shared core data platform.
-- Work hand-in-hand with Data Governance and Data Architecture to ensure alignment on metadata, lineage, and data ownership.
 
-### Performance & Cost Optimization — 46.8% of JDs
-
-Improving query/pipeline performance, cost efficiency, resource optimization.
-
-Keyword pattern: `\b(performance|cost (optimi[sz]ation|efficiency|reduction)|efficien(cy|t)|optimi[sz]e)`
-
-Example bullets, verbatim from postings:
-
-- Ensure Data Products follow CI/CD standards, adhere to data quality frameworks; include assertion checks and have performance & cost optimization applied.
-- Maintain and develop our data architecture to ensure reliability and performance
-- Drive excellence in data modeling and pipeline design, ensuring solutions are efficient, maintainable, and well-documented.
-- Ensure consistent technical standards, delivery practices, and performance management across the discipline, even within decentralized team setups.
-- Establish KPIs for engineering productivity, pipeline performance, and data delivery quality within product teams.
-- Partner with Data Engineering to diagnose issues and optimize warehouse performance.
-- Oversee the company's largest data movement operations, handling terabyte-scale transfers from MySQL in AWS to BigQuery nightly while maintaining source system performance.
-- Develop modeling patterns, documentation standards, and workflows for analytical efficiency
-- Partner with data platform, engineering, and analytics teams on high-performance pipelines
-- Optimise AWS cloud-native services (Glue, Athena, S3, MWAA) to support scalable analytical and AI workloads
-
-### Self-Service Enablement & Data Literacy — 34.5% of JDs
+### Self-Service Enablement & Data Literacy — 36.9% of JDs
 
 Enabling others to self-serve, training, data literacy programs, knowledge-sharing.
 
@@ -229,7 +229,6 @@ Example bullets, verbatim from postings:
 
 - Enable Markets & Channels specific data understanding and champion data literacy via guidelines, training, drop-in sessions, documentation, and knowledge sharing.
 - Consistently champion best practices in data product development within the team, across Markets & Channels and with the broader analytics community, helping ensure data integrity, quality, and scalability of overall data products on the LEGO Data Platform.
-- Working in an agile, cross-functional data product model, this role is accountable for the results and contributions of the data engineering discipline — ensuring that the data engineers deliver trusted, timely, and high-quality data to enable business and analytical outcomes.
 - Champion the adoption of modern data engineering and agile delivery practices, fostering close collaboration with product owners, BI, data analysis, data science, data platform, and tech teams.
 - Define and implement company metrics in Omni for self-serve analytics.
 - Deliver high-quality semantic assets that fuel self-service analytics, reporting and AI-powered insights
@@ -237,8 +236,9 @@ Example bullets, verbatim from postings:
 - Enable Data Analysts to deliver insights through reliable, documented dbt models
 - Own the data pipeline from architecting dbt models to enabling self-service in Looker
 - Develop and execute strategies to grow and engage the analytics engineering community around Lightdash. This includes cultivating relationships with community members, identifying product champions, and creating spaces for knowledge sharing and collaboration around modern analytics practices.
+- Contribute to team planning, code reviews, and knowledge sharing
 
-### Data Ownership (end-to-end) — 33.2% of JDs
+### Data Ownership (end-to-end) — 33.3% of JDs
 
 Explicit end-to-end/full-stack ownership language, independent of which stage.
 
@@ -249,15 +249,15 @@ Example bullets, verbatim from postings:
 - You'll own and improve our data platform, keeping it fast, scalable, and trustworthy
 - Work hand-in-hand with Data Governance and Data Architecture to ensure alignment on metadata, lineage, and data ownership.
 - Cultivate a culture of ownership, accountability, and collaboration within and across agile data product teams.
-- This hands-on, individual contributor position focuses on building the analytics foundation. You'll work end-to-end on the analytics layer, using dbt for transformations and Omni as the semantic layer. The role involves partnering with Marketing, Finance, Operations, and Data Engineering teams.
 - Own the most important company reports that inform executive decisions and serve other departments.
 - Design, own, and evolve core data models and the modelling architecture
 - Increase transparency around data sources, KPI definitions, and report ownership.
 - Own and evolve core business metrics - from definition to tracking and operationalisation
 - Own the data pipeline from architecting dbt models to enabling self-service in Looker
 - You'll be the go-to Lightdash pro, both internally and in the community. You'll stay current with our latest features, including our evolving AI capabilities (using Lightdash for our own analytics and demos), understand how they fit into broader BI and analytics engineering workflows, and share this knowledge widely. You'll represent Lightdash at community events, conferences, and meetups with curiosity and enthusiasm, showcasing how AI is transforming analytics workflows.
+- Build end-to-end data solutions independently: Deliver reliable, high-quality datasets/pipelines
 
-### AI & Agentic Workflows — 30.8% of JDs
+### AI & Agentic Workflows — 30.9% of JDs
 
 Using AI/agentic tools to accelerate the candidate's own work (Claude Code, Cursor, Copilot), or building data infrastructure that AI/ML systems consume or run on — the bullet-level counterpart to the `ai_role` Layer B dimension.
 
@@ -266,7 +266,6 @@ Keyword pattern: `\b(AI|ML|machine learning|LLM|GenAI|generative AI|agentic|AI a
 Example bullets, verbatim from postings:
 
 - Collaborate closely with the Analytics Interface, Commercial Analytics and business teams to turn business requirements into productionised AI-enabling data products.
-- The Data Engineering Lead leads the design, development, and delivery of high-quality data pipelines and data products that power analytics, BI, and AI across the fintech ecosystem in payments, dunning, invoicing, and collections. This leader will build and scale a high-performing data engineering team focused on transforming raw data into trusted, accessible, and reusable assets — ensuring that the broader organization can make faster and smarter decisions.
 - Define and execute the data engineering vision and roadmap aligned with the overall Data, AI & Analytics strategy.
 - Ensure that agile data product teams deliver fit-for-purpose data models that meet the needs of analytics, AI, and regulatory reporting.
 - Promote automation, CI/CD for data, and observability across all data engineering workstreams, including AI-based productivity increases.
@@ -275,8 +274,9 @@ Example bullets, verbatim from postings:
 - Optimise AWS cloud-native services (Glue, Athena, S3, MWAA) to support scalable analytical and AI workloads
 - Deliver high-quality semantic assets that fuel self-service analytics, reporting and AI-powered insights
 - Contribute strategic input around data modeling, BI tooling, and AI-assisted analytics
+- Explore forecasting, modeling, and machine learning opportunities
 
-### Mentorship & Leadership — 13.2% of JDs
+### Mentorship & Leadership — 16.2% of JDs
 
 Mentoring, leading a team, hiring, coaching, people management.
 
@@ -284,18 +284,18 @@ Keyword pattern: `\b(mentor|lead(ing|ership)?\b\s*(,|and)?\s*(mentor|develop|gro
 
 Example bullets, verbatim from postings:
 
+- Mentor a junior Data Analyst
 - Lead, mentor, and grow a high-performing team of data engineers working across multiple agile data product teams.
 - Growing and mentoring a data engineering team and contributing to hiring decisions
 - Mentor analytics engineers and analysts on modeling skills and technical standards
 - Leading a team of two Analytics Engineers, providing direction and fostering their professional growth
 - Support the growth of junior analysts through code reviews, coaching, and documentation
 - Provide mentorship and maintain data culture quality
-- Mentor Junior Talent
 - Mentor junior data analysts and engineers
 - Mentor engineers through code reviews and pair programming
 - Lead, mentor, and guide more junior team members
 
-### Security, Privacy & Risk — 12.7% of JDs
+### Security, Privacy & Risk — 14.1% of JDs
 
 Data privacy, security, PII/GDPR handling, risk management.
 
@@ -312,9 +312,9 @@ Example bullets, verbatim from postings:
 - Drive Unity Catalog governance (schemas, access, metadata tagging) to improve data accessibility in highly controlled compliant environment
 - Implement risk models (ICAAP, capital ratios) into production Python solutions
 - Design and implement data models using industry best practices that capture a complete ecosystem view of in- and out-of-game experiences (major game analytics KPI's, user profile/history) - while ensuring accuracy, compliance, scalability, and long-term usability.
-- Ensure data quality, governance, and security standards
+- Support multi-tenant architecture and security governance
 
-### Vendor & Tooling Evaluation — 3.3% of JDs
+### Vendor & Tooling Evaluation — 4.0% of JDs
 
 Evaluating/selecting third-party tools and vendors.
 
@@ -325,34 +325,34 @@ Example bullets, verbatim from postings:
 - Mentor other engineers while leading tool selection, technology evaluation, and architectural roadmap development.
 - Support vendor partnerships and system rollouts
 - Set up and manage the architecture, documentation, and key data transformations for in-house and third-party data.
-- Build client relationships, collaborate with vendors and technology partners, and communicate results to colleagues and clients
+- Support the use of our data by third party products (CRM, website, AI assistant…)
+- In base alla tua esperienza, potrai anche dimostrare e costruire relazioni con i clienti, collaborare con vendor e partner tecnologici e comunicare i tuoi risultati in modo efficace a colleghi e clienti.
+- Reverse-engineer vendor-built BI solution
 - Contributing to AI-driven tooling adoption
 - Support the use of our data by third party products (CRM, website, AI assistant…)
-- Become the go-to expert for new tooling like dbt and AI applications, leading its adoption and rollout
-- Stay pragmatic with technology: Build with our proven stack—dbt, BigQuery, LlamaIndex, ADK, and n8n—while thoughtfully evaluating new tools that add real value. Lead with both technical depth and business judgment.
-- Challenge Product Managers, Engineering Managers, and Senior Leadership with evidence when the data contradicts intuition, acting as a neutral third party in the debate.
-- Wrangle and integrate data from multiple third-party sources (e.g. Amplitude, Segment, Google Ads)
+- Tooling Evangelist : Become the go-to expert for new tooling like dbt & AI applications, leading its adoption and successful rollout across the organization.
+- Develop evaluation tools to measure and monitor metrics effectiveness.
 
 ## Responsibility themes vs. Layer B dimensions
 
 Each of the 15 responsibility themes is a binary per-JD indicator (matched at least one bullet, or didn't), so it can be crossed against any single-valued Layer B dimension as a standard 2×k contingency table (χ², Cramér's V) — this is valid even though a JD can match several themes at once, because each such test only looks at one theme's indicator in isolation, independent of which other themes also matched the same JD. Scoped to the analytical cohort (AE/BI + team_lead), same as every other Layer B finding in report.md — `data_engineering`/`other` role types are excluded here too.
 
-**The auto-correlation risk, and how it's handled:** several theme/dimension pairs are excluded from the findings below not because they're weak, but because they're circular — the theme's regex keywords and the dimension's own LLM coding rubric (or, for tech-stack flags, a literal tool name embedded in the theme's regex) detect the same textual signal. The single strongest pairing found in the entire sweep — "Data Quality & Testing" vs. `testing_framing`, Cramér's V=0.44 — is excluded on exactly this basis: `testing_framing` is coded by looking for testing/quality language in the JD, so crossing it against a theme built from testing/quality keywords mostly measures whether two classification methods agree with each other, not a substantive relationship. See `OVERLAP_PAIRS` in `responsibility_taxonomy.py` for the full list and the reasoning per pair.
+**The auto-correlation risk, and how it's handled:** several theme/dimension pairs are excluded from the findings below not because they're weak, but because they're circular — the theme's regex keywords and the dimension's own LLM coding rubric (or, for tech-stack flags, a literal tool name embedded in the theme's regex) detect the same textual signal. The single strongest pairing found in the entire sweep — "Data Quality & Testing" vs. `testing_framing`, Cramér's V=0.50 — is excluded on exactly this basis: `testing_framing` is coded by looking for testing/quality language in the JD, so crossing it against a theme built from testing/quality keywords mostly measures whether two classification methods agree with each other, not a substantive relationship. See `OVERLAP_PAIRS` in `responsibility_taxonomy.py` for the full list and the reasoning per pair.
 
 ### Construct-overlap pairs (validity checks, not findings)
 
 | Theme | Dimension | V | p | n |
 |---|---|---|---|---|
-| AI & Agentic Workflows | ai_role | 0.65 | p<0.0001 | 492 |
-| Data Quality & Testing | testing_framing | 0.44 | p<0.0001 | 492 |
-| Security, Privacy & Risk | loss_aversion_framing | 0.32 | p<0.0001 | 492 |
-| Data Ownership (end-to-end) | autonomy_level | 0.29 | p<0.0001 | 492 |
-| Data Modeling & Transformation | has_dbt | 0.27 | p<0.0001 | 492 |
-| BI & Reporting/Dashboards | has_power_bi | 0.21 | p<0.0001 | 492 |
-| Security, Privacy & Risk | domain_risk | 0.17 | p<0.001 | 492 |
-| Pipeline Engineering & Orchestration | has_airflow | 0.15 | p<0.001 | 492 |
-| BI & Reporting/Dashboards | has_looker | 0.12 | p=0.007 | 492 |
-| BI & Reporting/Dashboards | has_tableau | 0.10 | p=0.02 | 492 |
+| AI & Agentic Workflows | ai_role | 0.67 | p<0.0001 | 572 |
+| Data Quality & Testing | testing_framing | 0.50 | p<0.0001 | 572 |
+| Security, Privacy & Risk | loss_aversion_framing | 0.29 | p<0.0001 | 572 |
+| Data Ownership (end-to-end) | autonomy_level | 0.27 | p<0.0001 | 572 |
+| BI & Reporting/Dashboards | has_power_bi | 0.25 | p<0.0001 | 572 |
+| Data Modeling & Transformation | has_dbt | 0.20 | p<0.0001 | 572 |
+| Pipeline Engineering & Orchestration | has_airflow | 0.17 | p<0.0001 | 572 |
+| Security, Privacy & Risk | domain_risk | 0.16 | p<0.001 | 572 |
+| BI & Reporting/Dashboards | has_looker | 0.12 | p=0.003 | 572 |
+| BI & Reporting/Dashboards | has_tableau | 0.12 | p=0.006 | 572 |
 
 ### Clean relationships (p<0.01, min expected cell ≥5, no keyword overlap)
 
@@ -360,52 +360,52 @@ Ranked by effect size. These are exploratory — no multiple-comparison correcti
 
 | Theme | Dimension | V | p | n |
 |---|---|---|---|---|
-| Governance & Documentation | testing_framing | 0.34 | p<0.0001 | 492 |
-| Governance & Documentation | loss_aversion_framing | 0.29 | p<0.0001 | 492 |
-| Data Modeling & Transformation | testing_framing | 0.25 | p<0.0001 | 492 |
-| Data Quality & Testing | loss_aversion_framing | 0.25 | p<0.0001 | 492 |
-| Mentorship & Leadership | autonomy_level | 0.24 | p<0.0001 | 492 |
-| Governance & Documentation | velocity_vs_rigour | 0.23 | p<0.0001 | 492 |
-| Self-Service Enablement & Data Literacy | has_looker | 0.22 | p<0.0001 | 492 |
-| Data Infrastructure & Warehouse Ops | jd_authorship | 0.21 | p<0.0001 | 492 |
-| Data Modeling & Transformation | loss_aversion_framing | 0.20 | p<0.0001 | 492 |
-| Governance & Documentation | stakeholder_orientation | 0.20 | p<0.001 | 492 |
-| Data Quality & Testing | stakeholder_orientation | 0.20 | p<0.001 | 492 |
-| AI & Agentic Workflows | autonomy_level | 0.20 | p<0.0001 | 492 |
-| Performance & Cost Optimization | data_team_maturity | 0.19 | p<0.001 | 492 |
-| Data Modeling & Transformation | jd_authorship | 0.18 | p<0.001 | 492 |
-| Data Ownership (end-to-end) | has_power_bi | 0.18 | p<0.0001 | 492 |
-| Data Ownership (end-to-end) | jd_authorship | 0.17 | p<0.001 | 492 |
-| Data Infrastructure & Warehouse Ops | stakeholder_orientation | 0.17 | p=0.007 | 492 |
-| Business Analysis & Insight Generation | has_tableau | 0.17 | p<0.001 | 492 |
-| Data Quality & Testing | jd_authorship | 0.17 | p=0.001 | 492 |
-| Data Infrastructure & Warehouse Ops | testing_framing | 0.17 | p=0.001 | 492 |
+| Governance & Documentation | testing_framing | 0.36 | p<0.0001 | 572 |
+| Governance & Documentation | loss_aversion_framing | 0.33 | p<0.0001 | 572 |
+| Data Quality & Testing | loss_aversion_framing | 0.33 | p<0.0001 | 572 |
+| Governance & Documentation | velocity_vs_rigour | 0.26 | p<0.0001 | 572 |
+| Mentorship & Leadership | autonomy_level | 0.26 | p<0.0001 | 572 |
+| AI & Agentic Workflows | autonomy_level | 0.25 | p<0.0001 | 572 |
+| Data Modeling & Transformation | testing_framing | 0.22 | p<0.0001 | 572 |
+| Data Infrastructure & Warehouse Ops | jd_authorship | 0.22 | p<0.0001 | 572 |
+| BI & Reporting/Dashboards | stakeholder_orientation | 0.21 | p<0.0001 | 572 |
+| Mentorship & Leadership | data_team_maturity | 0.20 | p<0.0001 | 572 |
+| Data Quality & Testing | jd_authorship | 0.20 | p<0.0001 | 572 |
+| AI & Agentic Workflows | greenfield_vs_fix | 0.20 | p<0.0001 | 572 |
+| Data Infrastructure & Warehouse Ops | has_dbt | 0.19 | p<0.0001 | 572 |
+| Data Modeling & Transformation | loss_aversion_framing | 0.19 | p<0.0001 | 572 |
+| Governance & Documentation | stakeholder_orientation | 0.19 | p<0.001 | 572 |
+| Performance & Cost Optimization | data_team_maturity | 0.18 | p<0.0001 | 572 |
+| Data Quality & Testing | stakeholder_orientation | 0.18 | p=0.001 | 572 |
+| Data Ownership (end-to-end) | stakeholder_orientation | 0.17 | p=0.002 | 572 |
+| Data Modeling & Transformation | jd_authorship | 0.17 | p<0.001 | 572 |
+| Self-Service Enablement & Data Literacy | ai_role | 0.17 | p<0.001 | 572 |
 
 ### Featured relationships, stratification-checked
 
 Hand-picked from the clean list above and, for the first one, re-tested within subgroups of a plausible confounder before being written up as a finding — a check the rest of the clean list has *not* individually received, so treat anything not covered by name below as directional only, same as the rest of this document.
 
-**Mentorship & Leadership × autonomy_level** — χ²=28.15, p<0.0001, V=0.239, n=492
+**Mentorship & Leadership × autonomy_level** — χ²=37.67, p<0.0001, V=0.257, n=572
 
-- Overall: execution: 5% (n=134); mixed: 11% (n=194); strategic: 26% (n=164)
-- Within seniority=mid: execution: 2% (n=84); mixed: 7% (n=111); strategic: 10% (n=41)
-- Within seniority=senior: execution: 12% (n=34); mixed: 13% (n=67); strategic: 24% (n=92)
+- Overall: execution: 7% (n=157); mixed: 13% (n=224); strategic: 30% (n=191)
+- Within seniority=mid: execution: 4% (n=96); mixed: 6% (n=125); strategic: 6% (n=49)
+- Within seniority=senior: execution: 10% (n=42); mixed: 22% (n=81); strategic: 31% (n=104)
 - **Verdict:** survives the stratification check — the gradient holds within each stratum, not just across the whole corpus.
 
-**Data Infrastructure & Warehouse Ops × jd_authorship** — χ²=22.76, p<0.0001, V=0.215, n=492
+**Data Infrastructure & Warehouse Ops × jd_authorship** — χ²=27.11, p<0.0001, V=0.218, n=572
 
-- Overall: hiring_manager: 56% (n=378); mixed: 46% (n=83); recruiter: 13% (n=31)
+- Overall: hiring_manager: 57% (n=445); mixed: 46% (n=91); recruiter: 14% (n=36)
 - Not independently stratification-checked beyond the overlap-keyword screen — read as directional.
 
 ### A relationship that looked real and didn't survive scrutiny
 
-**Architecture & Platform Strategy × work_arrangement** — unstratified: χ²=3.86, p=0.28, V=0.089, n=492. Overall: hybrid: 52% (n=228); remote: 46% (n=50); onsite: 41% (n=32); not_stated: 43% (n=182)
+**Architecture & Platform Strategy × work_arrangement** — unstratified: χ²=2.29, p=0.51, V=0.063, n=572. Overall: hybrid: 45% (n=274); remote: 38% (n=55); onsite: 50% (n=36); not_stated: 41% (n=207)
 
 This pairing clears the same p<0.01 / no-overlap screen as the clean findings above, and on its own looks like a headline ("remote roles get less architectural scope"). It doesn't survive a stratification check against `data_team_maturity` — a plausible confounder, since maturity is independently correlated with work arrangement (mature teams skew hybrid) and with this theme:
 
-- Within data_team_maturity=early: hybrid: 39% (n=33); remote: 27% (n=11); onsite: 36% (n=14); not_stated: 50% (n=24)
-- Within data_team_maturity=mid: hybrid: 50% (n=129); remote: 48% (n=33); onsite: 42% (n=12); not_stated: 38% (n=103)
-- Within data_team_maturity=mature: hybrid: 61% (n=66); remote: 67% (n=6); onsite: 50% (n=6); not_stated: 49% (n=55)
+- Within data_team_maturity=early: hybrid: 34% (n=35); remote: 8% (n=12); onsite: 50% (n=16); not_stated: 38% (n=26)
+- Within data_team_maturity=mid: hybrid: 43% (n=155); remote: 44% (n=36); onsite: 46% (n=13); not_stated: 37% (n=118)
+- Within data_team_maturity=mature: hybrid: 55% (n=84); remote: 57% (n=7); onsite: 57% (n=7); not_stated: 48% (n=63)
 
 Once split by maturity tier, `remote` stops being consistently the lowest group — `not_stated` is the consistently-lowest group in every tier instead, and several strata have single-digit cell counts for `remote`/`onsite`, which makes the unstratified comparison mostly noise rather than signal. Kept here as a documented negative result and a worked example of why a stratification check matters, not silently dropped.
 
