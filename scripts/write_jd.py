@@ -156,21 +156,24 @@ def verify_responsibilities(data: dict, jd_text: str) -> list[str]:
 
 
 def write_files(data: dict):
-    jd_id = data["jd_id"]
     jd_text = data.pop("jd_text", "")
-    source_url = data.get("source_url", "")
-    evidence = data.get("evidence", {})
 
-    # Verify before writing anything - a record with fabricated responsibility
-    # bullets, or with a dimension missing outright, should never reach disk:
-    # nothing downstream can detect the first, and the second only shows up as a
-    # warning in a different script, long after the JD text is out of context.
+    # Verify before reading any field off the record - a record with fabricated
+    # responsibility bullets, or with a dimension missing outright, should never
+    # reach disk: nothing downstream can detect the first, and the second only
+    # shows up as a warning in a different script, long after the JD text is out
+    # of context. jd_id is itself a required field, so it is reported here rather
+    # than subscripted first (which raised a bare KeyError instead).
     errors = verify_required_fields(data, jd_text) + verify_responsibilities(data, jd_text)
     if errors:
-        print(f"ERROR: {jd_id} - refusing to write.", file=sys.stderr)
+        print(f"ERROR: {data.get('jd_id', '<no jd_id>')} - refusing to write.", file=sys.stderr)
         for e in errors:
             print(f"  {e}", file=sys.stderr)
         sys.exit(1)
+
+    jd_id = data["jd_id"]
+    source_url = data.get("source_url", "")
+    evidence = data.get("evidence", {})
 
     out_dir = JD_DATA_DIR / jd_id
     out_dir.mkdir(parents=True, exist_ok=True)
