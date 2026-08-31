@@ -118,6 +118,8 @@ python3 scripts/check_duplicate_jd.py "{source_url}"
 - **Exit 0, "NO MATCH"** — proceed to Step 2.
 - **Exit 1, "DUPLICATE OF: {jd_id}"** — do not write a new record. Skip this URL, note it in the batch summary as `{url} — duplicate of {jd_id}`, and move to the next URL. If the existing record's archive looks thinner than what you just fetched (e.g. a truncated/condensed scrape vs. a full one), say so in the summary and let the user decide whether to replace it manually — don't overwrite automatically.
 
+The check reads `data/{jd_id}/{jd_id}.json` directly, not the compiled `analysis/data.json`, so it sees records written earlier in this same batch — you do **not** need to run `/regenerate-analysis` between URLs for it to work.
+
 This check is URL-based, not perfect — it won't catch a genuinely re-posted listing with a brand-new URL for what is otherwise the same role. If something about the JD text feels like a near-duplicate of one you *just* classified in this batch (same company, same responsibilities, different URL), flag it in the summary rather than silently proceeding — the classification will just come out as another near-identical record.
 
 ---
@@ -239,7 +241,7 @@ Set `true` if mentioned anywhere in JD (required or preferred), `false` if not.
 
 `has_dbt_cloud` is distinct from `has_dbt` — set `true` only if "dbt Cloud" is named specifically (not just "dbt"). `has_fabric_synapse` covers Microsoft Fabric or Azure Synapse. `has_postgres` covers Postgres/PostgreSQL. `has_glue` covers AWS Glue.
 
-**Known limitation, deliberately not fixed by the fields below:** the `has_*` flags collapse required and preferred/nice-to-have into a single boolean, and are a closed 26-item vocabulary with no catch-all for tools outside it (Trino, ClickHouse, Mode, Hex, Sigma, etc. are silently dropped). Both are consumed as strict booleans in `scripts/regenerate_report.py`, `analysis/responsibility_taxonomy.py`'s correlation engine, and client-side JS in `analysis/full-analysis.html` (`String(d.has_dbt).toLowerCase() === 'true'` and similar) — do not change the type or meaning of an existing `has_*` field, and do not rename or remove one, or that arithmetic silently breaks across ~395 existing records with no error. `required_tools`/`preferred_tools` below are additive and exist alongside `has_*`, not instead of it.
+**Known limitation, deliberately not fixed by the fields below:** the `has_*` flags collapse required and preferred/nice-to-have into a single boolean, and are a closed 26-item vocabulary with no catch-all for tools outside it (Trino, ClickHouse, Mode, Hex, Sigma, etc. are silently dropped). Both are consumed as strict booleans in `scripts/regenerate_report.py`, `analysis/responsibility_taxonomy.py`'s correlation engine, and client-side JS in `analysis/full-analysis.html` (`String(d.has_dbt).toLowerCase() === 'true'` and similar) — do not change the type or meaning of an existing `has_*` field, and do not rename or remove one, or that arithmetic silently breaks across every existing record (636 as of 2026-08-31) with no error. `required_tools`/`preferred_tools` below are additive and exist alongside `has_*`, not instead of it.
 
 Also populate (additive, does not replace `has_*`):
 - **required_tools**: array of tool names (from the `has_*` vocabulary above, e.g. `"dbt"`, `"Python"`, `"Snowflake"` — strip the `has_` prefix, keep normal capitalization) named in a requirements/qualifications context with hard language ("required", "must have", "X+ years of experience with", listed under "Requirements"/"Must have" headers with no hedging). Empty list if the JD doesn't distinguish required from preferred at all (e.g. a single flat skills list with no qualifying language) — don't force a required/preferred split where the JD doesn't make one.
@@ -268,6 +270,13 @@ Also extract:
 ## Step 4 — Write output files
 
 Produce a single JSON object and pipe it to `write_jd.py`. The script writes both output files (`jd_archive.md`, `{base-name}.json`) in one shot. `jd_archive.md` is prefixed with a `**URL:** {source_url}` line for traceability back to the original posting.
+
+**`write_jd.py` validates before writing anything, and exits 1 without touching disk if it fails.** Two gates, both fatal:
+
+1. **Every field in the template below must be present** — omitting one is an error, not a silent skip. `null` is a fine *value* for a dimension the JD doesn't state (`salary_min`, `interview_stages`), and `[]` for an empty list, but a missing *key* means the dimension was never considered. Only `salary_period`, `required_tools`, and `preferred_tools` may be absent. If you get `N required field(s) absent`, classify the named dimensions and re-run — do not work around it by inventing values.
+2. **Every `responsibilities` bullet must be a literal substring of `jd_text`** (quote/dash/whitespace differences are normalized away, nothing else). If you get `X/Y responsibility bullets are not verbatim in jd_text`, re-copy the offending bullets exactly from the archive text. **Do not relabel `responsibilities_source` to `inferred_from_prose` to get past it** — that flag bypasses the check and exists only for postings with genuinely no bullet list to copy.
+
+Since the whole record is validated in one shot, hold the JD text in context until the write succeeds.
 
 **Important: When user provides pasted JD text**, store the FULL VERBATIM text in jd_archive.md — do NOT rewrite, summarize, or hallucinate. If JD text was pasted by user or appears in conversation (not fetched), copy it exactly as provided into jd_archive.md after the URL line, preserving original formatting and language. This is a historical record and must be faithful to source.
 
@@ -405,7 +414,7 @@ Skipped: {url} — {reason}   ← one line per skipped URL, omit section if none
 
 ## Notes
 
-- Classification only — not an application tool. Use `adapt-resume` if applying.
+- Classification only — not an application tool. It produces corpus records; it does not tailor a CV or draft a cover letter.
 - If raw-HTML extraction is inaccessible or yields suspiciously short content (<200 words), stop and ask for pasted JD text before proceeding — do not classify from the URL slug or company name alone, and do not substitute a WebFetch summary for the verbatim text.
 - WebFetch summarizes/paraphrases by design (it runs page content through a small model) — it is never an acceptable source for `jd_archive.md`/`jd_text`, even when the response looks complete and well-formed. Always extract from raw HTML (Step 1).
 - **A posting can go stale between archiving and re-verification** — the role gets filled/removed and the URL now 404s, redirects to a generic "job not found" page, or (for Ashby) the GraphQL/API query returns `null` for that job ID even though the board itself is still live. This is a different failure mode from a scrape bug: there is no current source to diff against. Do not attempt to reconstruct or guess the original content, and do not check the Wayback Machine unless the user asks for it — report "posting removed/filled since archiving, cannot re-verify" and leave the existing archive as the historical record, flagged as unverifiable rather than confirmed-bad.

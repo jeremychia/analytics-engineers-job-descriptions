@@ -457,12 +457,6 @@ TAXONOMY_DESCRIPTIONS = {
 
 COMPILED = {k: re.compile(v, re.I) for k, v in TAXONOMY.items()}
 
-# Manually-curated fallback for JDs the regex extractor can't parse (prose-only,
-# non-English headings, or thin scrapes) — a jd_id -> [bullets] map produced by
-# reading each file and interpreting it directly. See responsibility_bullets_llm.json.
-# Regenerate this file by hand/agent when new unparseable JDs show up; it is not
-# rebuilt automatically by this script.
-
 
 def compute_dedup_delta(jd_theme_sets, jd_list):
     """The corpus re-scrapes some postings across dates (same company+role,

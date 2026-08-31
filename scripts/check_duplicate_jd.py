@@ -18,6 +18,13 @@ Deliberately does NOT fall back to comparing generic paths with no real id
 produced false positives (different jobs, same boilerplate path) when this
 logic was validated against the corpus in 2026-07.
 
+Reads data/{jd_id}/{jd_id}.json directly rather than analysis/data.json. Those
+agree only right after a regeneration: data.json is a compiled artifact, so
+checking against it made this blind to every record written since the last
+`/regenerate-analysis` run — including earlier URLs in the same batch, which is
+exactly when a duplicate is most likely to be about to be written. Scanning the
+source of truth costs ~40ms on a 636-record corpus.
+
 Usage:
     python3 scripts/check_duplicate_jd.py "<url>"
 
@@ -32,7 +39,7 @@ from pathlib import Path
 from urllib.parse import urlsplit, parse_qsl
 
 ROOT = Path(__file__).parent.parent
-DATA_JSON = ROOT / "analysis" / "data.json"
+DATA_DIR = ROOT / "data"
 
 JUNK_PARAMS = {
     "source", "gh_src", "feedid", "codes", "jobdbpvid",
@@ -58,9 +65,25 @@ def job_id_key(u):
     return (p.netloc, max(digit_runs, key=len))
 
 
+def load_corpus():
+    """Every record on disk, whether or not it has been compiled into data.json yet."""
+    records = []
+    for jd_dir in sorted(DATA_DIR.iterdir()):
+        record_path = jd_dir / f"{jd_dir.name}.json"
+        if not record_path.is_file():
+            continue
+        try:
+            records.append(json.loads(record_path.read_text(encoding="utf-8")))
+        except json.JSONDecodeError:
+            # A malformed record still occupies its jd_id; skipping it here only
+            # costs a missed duplicate, and regenerate_report.py reports it loudly.
+            print(f"warning: skipping unparseable {record_path.name}", file=sys.stderr)
+    return records
+
+
 def find_duplicates(candidate_url, corpus=None):
     if corpus is None:
-        corpus = json.loads(DATA_JSON.read_text(encoding="utf-8"))
+        corpus = load_corpus()
 
     cand_norm = norm_url(candidate_url)
     cand_id = job_id_key(candidate_url)

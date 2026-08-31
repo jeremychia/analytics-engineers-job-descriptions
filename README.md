@@ -14,13 +14,20 @@ analytics-engineers-job-descriptions/
 │   ├── index.html            # Landing page (job seeker / hiring manager toggle)
 │   ├── full-analysis.html    # Full interactive statistics dashboard
 │   ├── report.md             # Full analysis vs dbt Labs reports
-│   ├── data.json             # Compiled classification dataset
+│   ├── data.json             # Compiled classification dataset (generated)
+│   ├── responsibility_taxonomy.py  # Responsibility-theme classification + stats
 │   └── jd_traces/            # 3-run LLM consistency checks
 ├── scripts/                  # Python tools
-│   └── write_jd.py           # Convert classified JD JSON → output files
-├── docs/                     # Documentation
+│   ├── write_jd.py           # Convert classified JD JSON → output files
+│   ├── check_duplicate_jd.py # Pre-scrape duplicate check against data/
+│   ├── regenerate_report.py  # Compile data.json + print summary statistics
+│   └── compile_data.py       # Compile-only helper
+├── REGENERATE.md             # How to regenerate the derived artifacts
 └── README.md                 # This file
 ```
+
+The classification and regeneration procedures live in `.claude/skills/` as the
+`/classify-jd` and `/regenerate-analysis` skills.
 
 ## Quick Start
 

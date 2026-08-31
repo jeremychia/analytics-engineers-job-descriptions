@@ -63,6 +63,20 @@ JSON_FIELD_ORDER = [
 # jd_text. See verify_responsibilities().
 RESPONSIBILITY_SOURCES = ("jd_section", "inferred_from_prose")
 
+# Fields that may legitimately be absent from a record:
+#   salary_period                  - only meaningful when a salary was extracted
+#   required_tools/preferred_tools - empty when the JD draws no required/preferred
+#                                    split; additive fields, added after the corpus
+#                                    was already ~350 records deep
+# Everything else in JSON_FIELD_ORDER is present in every record in the corpus and
+# is assumed present by something downstream, so its absence is a fatal error here
+# rather than a silently-dropped key. A missing `responsibilities` in particular
+# used to write cleanly and only surface much later, as a non-fatal warning from
+# responsibility_taxonomy.py, by which point the bullets can no longer be captured
+# without re-reading the posting.
+OPTIONAL_FIELDS = {"salary_period", "required_tools", "preferred_tools"}
+REQUIRED_FIELDS = [f for f in JSON_FIELD_ORDER if f not in OPTIONAL_FIELDS]
+
 
 def _norm(s: str) -> str:
     """Normalize for substring comparison: unify quotes/dashes, collapse whitespace.
@@ -79,11 +93,39 @@ def _norm(s: str) -> str:
     return re.sub(r"\s+", " ", s).strip()
 
 
+def verify_required_fields(data: dict, jd_text: str) -> list[str]:
+    """Return a list of fatal errors for fields that are absent entirely.
+
+    Checks presence, not value: `null` is a meaningful answer for several of these
+    (salary_min on a JD with no salary, interview_stages when unstated), but a
+    missing key means the classifier never considered the dimension.
+    """
+    errors = []
+    if not jd_text.strip():
+        errors.append("jd_text is empty - jd_archive.md would be written with no JD in it")
+
+    missing = [f for f in REQUIRED_FIELDS if f not in data]
+    if missing:
+        errors.append(f"{len(missing)} required field(s) absent from the record:")
+        errors += [f"    - {f}" for f in missing]
+        errors.append("  Fix: classify the missing dimension(s) and re-run. Use null for a "
+                      "dimension the JD genuinely does not state, [] for an empty list.")
+    return errors
+
+
 def verify_responsibilities(data: dict, jd_text: str) -> list[str]:
     """Return a list of fatal errors; empty means the record is safe to write."""
-    bullets = data.get("responsibilities")
+    if "responsibilities" not in data:
+        return []  # absence is already reported by verify_required_fields
+    bullets = data["responsibilities"]
+    # Unlike the dimensions, null is not a meaningful value here - use [] for a
+    # posting with genuinely no responsibilities content. Null would pass this
+    # check and then read back as "no captured bullets" in
+    # responsibility_taxonomy.py, silently dropping the JD onto the retired
+    # regex extractor - the exact path this capture-at-classification-time
+    # architecture exists to avoid.
     if bullets is None:
-        return []
+        return ["responsibilities is null - use [] if the JD has no responsibilities content"]
     if not isinstance(bullets, list):
         return ["responsibilities must be a list of strings"]
 
@@ -120,8 +162,10 @@ def write_files(data: dict):
     evidence = data.get("evidence", {})
 
     # Verify before writing anything - a record with fabricated responsibility
-    # bullets should never reach disk, since nothing downstream can detect it.
-    errors = verify_responsibilities(data, jd_text)
+    # bullets, or with a dimension missing outright, should never reach disk:
+    # nothing downstream can detect the first, and the second only shows up as a
+    # warning in a different script, long after the JD text is out of context.
+    errors = verify_required_fields(data, jd_text) + verify_responsibilities(data, jd_text)
     if errors:
         print(f"ERROR: {jd_id} - refusing to write.", file=sys.stderr)
         for e in errors:

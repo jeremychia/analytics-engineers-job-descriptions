@@ -93,6 +93,9 @@ Verification complete for all 16. Fix status:
    built from the corrupted text.
 3. After 07-21 is done, continue the same reverse-chronological audit into any earlier
    dates in `data/` that haven't been checked yet (everything before 2026-07-21).
-4. `analysis/data.json` has NOT been regenerated since these fixes started — run the
-   `regenerate-analysis` skill once ALL fixes across all dates are complete, not
-   incrementally (per explicit user instruction earlier in this work).
+4. ~~`analysis/data.json` has NOT been regenerated since these fixes started~~ — no
+   longer true as of 2026-08-31: the corpus has been regenerated repeatedly since this
+   checkpoint was written (most recently against 636 records), so `data.json` is current
+   with whatever is in `data/`. The original instruction — batch the regeneration until
+   all fixes across all dates are done, rather than running it incrementally — still
+   applies to any *remaining* audit work below.

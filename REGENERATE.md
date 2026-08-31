@@ -1,137 +1,62 @@
 # Regenerating Analysis & Reports
 
-When you add new job descriptions to the corpus, use this workflow to update the analysis dashboard and markdown report.
+When you add job descriptions to the corpus, regenerate the derived artifacts.
 
-## Quick Start
+**The authoritative, maintained procedure is the `/regenerate-analysis` skill** —
+[`.claude/skills/regenerate-analysis/SKILL.md`](.claude/skills/regenerate-analysis/SKILL.md).
+Read it there rather than following a summary here. This file used to carry its own
+copy of the steps and silently went stale: it still described a 248-record corpus
+and a two-step pipeline, omitting the responsibility-taxonomy stage, the virtualenv
+it requires, and the hardcoded corpus-size strings in `index.html`.
+
+## Quick start
 
 ```bash
+# 1. compile data/{jd_id}/{jd_id}.json -> analysis/data.json, print summary stats
 python3 scripts/regenerate_report.py
+
+# 2. reclassify responsibility themes + theme x dimension relationships
+#    (needs scipy: python3 -m venv .venv && ./.venv/bin/pip install -r requirements.txt)
+./.venv/bin/python analysis/responsibility_taxonomy.py
 ```
 
-This will:
-1. ✅ Compile all JD JSON files into `analysis/data.json` (248 JDs in current corpus)
-2. ✅ Analyze all Layer B dimensions
-3. ✅ Print summary statistics ready for `report.md`
+Both are idempotent — re-running against an unchanged corpus produces no diff.
 
-## The Pipeline
+Everything after that is judgment work the skill walks through: updating the
+statistics tables in `analysis/report.md`, re-testing every relationship panel
+against the new n (significance is not permanent), and refreshing the hardcoded
+corpus-size strings in `analysis/index.html`.
+
+## The pipeline
 
 ```
-data/{jd_id}/{jd_id}.json (individual JD records)
-           ↓
+data/{jd_id}/{jd_id}.json (source of truth — Layer B codes AND
+           ↓               verbatim `responsibilities` bullets,
+           ↓               both written by /classify-jd)
 scripts/regenerate_report.py
            ↓
-analysis/data.json (single compiled source)
-           ↓
-analysis/full-analysis.html (auto-fetches on page load)
-           ↓
-Interactive browser dashboard ✨
+analysis/data.json (compiled, disposable)
+           ↓                              ↘
+index.html, full-analysis.html               analysis/responsibility_taxonomy.py
+(auto-fetch on page load)                    ↓
+                                             responsibility_classification.json
+                                             (fetched + merged client-side by
+                                              full-analysis.html)
 ```
 
-## What Gets Updated
+**The architectural rule:** anything requiring comprehension of a JD is captured
+once, per-JD, next to its archive, and is never machine-overwritten. Anything
+computable from those captures is derived centrally and is disposable — deleting
+every generated file in `analysis/` must always be recoverable by re-running the
+two commands above.
 
-| File | What | When |
-|------|------|------|
-| `analysis/data.json` | All 248 JD records compiled | Every run (automatic) |
-| `analysis/full-analysis.html` | Dashboard | Auto-refreshes from `data.json` on page load |
-| `analysis/report.md` | Statistics tables | Manual — copy printed tables into report |
+## Source files
 
-## Workflow
-
-### 1. Add new JDs to corpus
-
-Use `/classify-jd` skill to scrape and classify, OR manually add JSON files to `data/{jd_id}/`:
-
-```
-data/2026-07-15_capitalontap_analytics-engineer-london/
-  ├── 2026-07-15_capitalontap_analytics-engineer-london.json
-  └── jd_archive.md
-```
-
-### 2. Regenerate analysis
-
-```bash
-python3 scripts/regenerate_report.py
-```
-
-Output:
-```
-======================================================================
-STEP 1: Compile data.json
-======================================================================
-  ✓ 2026-04-08_lego_senior-analytics-engineer
-  ... (248 JDs total)
-✓ Compiled 248 JDs → analysis/data.json
-
-======================================================================
-STEP 2: Analyze dimensions
-======================================================================
-  velocity_vs_rigour: {'rigour': 170, 'mixed': 52, 'velocity': 6}
-    — rigour: 170/228 (75%)
-  domain_risk: {'moderate': 158, 'high': 57, 'low': 13}
-  data_team_maturity: {'mid': 145, 'mature': 56, 'early': 27}
-  [... more stats ...]
-```
-
-### 3. Update dashboard
-
-Just reload `analysis/full-analysis.html` in your browser — it auto-fetches the new `data.json`.
-
-### 4. Update report.md (optional)
-
-Copy the statistics tables from the script output into `analysis/report.md` where needed. For example:
-
-**Before:**
-```markdown
-| velocity_vs_rigour | n | % (analytical, n=199) |
-|--------------------|---|---|
-| rigour | 150 | 75% |
-| mixed | 43 | 22% |
-| velocity | 6 | 3% |
-```
-
-**After (updated):**
-```markdown
-| velocity_vs_rigour | n | % (analytical, n=228) |
-|--------------------|---|---|
-| rigour | 170 | 75% |
-| mixed | 52 | 23% |
-| velocity | 6 | 3% |
-```
-
-### 5. Commit
-
-```bash
-git add analysis/data.json analysis/report.md
-git commit -m "feat(analysis): regenerate with 12 new JDs from 2026-07-15"
-git push
-```
-
-## Script Options
-
-```bash
-# Full regeneration (compile + analyze)
-python3 scripts/regenerate_report.py
-
-# Just recompile data.json (skip analysis)
-python3 scripts/regenerate_report.py --data-only
-
-# Show help
-python3 scripts/regenerate_report.py --help
-```
-
-## Source Files
-
-- `scripts/regenerate_report.py` — main script (compile + analyze)
-- `scripts/compile_data.py` — helper (compile data.json only)
-- `analysis/data.json` — output data for dashboard
-- `analysis/full-analysis.html` — interactive visualization
-- `analysis/report.md` — static markdown analysis
-
-## Why This Exists
-
-Previously there was no automated way to:
-- Aggregate individual JD files into a single dataset
-- Recompute statistics when new JDs were added
-- Keep the dashboard and report in sync
-
-Now everything flows through a single `data.json` file, making updates fast and reproducible.
+- `scripts/regenerate_report.py` — compile + analyze (`--data-only` skips analyze)
+- `scripts/compile_data.py` — compile-only helper
+- `scripts/write_jd.py` — writes a classified record; validates required fields and
+  verbatim responsibility bullets before anything reaches disk
+- `scripts/check_duplicate_jd.py` — pre-scrape duplicate check against `data/`
+- `analysis/responsibility_taxonomy.py` — theme classification + relationship stats
+- `analysis/data.json`, `analysis/responsibility_classification.json` — generated
+- `analysis/report.md` — statistics tables updated by hand from the printed output
