@@ -1,0 +1,67 @@
+**URL:** https://careers.alintaenergy.com.au/jobs/analytics-engineer-melbourne-vic-australia
+
+- Build trusted data products that shape retail strategy and decisions 
+
+- Use SQL and Databricks to model complex data and modernise reporting 
+
+- Grow into predictive analytics | Hybrid work | Energy discounts 
+
+Alinta Energy is one of Australia’s biggest energy retailers, generators and developers with over 1.1 million customers. Australia’s energy system is undergoing the biggest transformation in its history and we’re right there with it. We’re investing in and developing large-scale renewables and storage projects as part of our ongoing effort to provide our customers with reliable, affordable and sustainable energy.
+
+We understand that flexibility matters when considering your next role. Let us know your requirements, and we’ll carefully consider how we might accommodate them.
+
+Ready to make a real impact?
+
+Join our Retail Insights team and help transform complex data into trusted products that guide business decisions. You’ll model data in Databricks, modernise reporting and work directly with stakeholders, with support to build capability across predictive analytics, customer personalisation and emerging technology. 
+
+Why you’ll love working here
+
+At Alinta Energy, we’re taking real action to deliver reliable and sustainable energy for Australia — and that practical approach runs through everything we do. You’ll get clear direction, genuine flexibility, and the support you need to grow, all while working on projects that make a lasting difference. We’re big enough to create impact, but small enough that your ideas and effort will always be seen.
+
+There are plenty of other great benefits of working for Alinta Energy, including flexible working, energy discounts, an Employee Assistance Program (EAP), a paid volunteer day each year, fully stocked kitchens, and lots more.
+
+What you’ll do
+
+- Meeting with business stakeholders to understand data needs and translate requirements into user stories and technical specifications 
+
+- Modelling complex retail data in Databricks using SQL to create data marts, warehouse structures and reusable data assets 
+
+- Building and contributing to data pipelines, prototype reports and Power BI dashboards that support strategy and decision-making 
+
+- Testing and validating data products, including your own code and work delivered by Data Engineers, to ensure quality and consistency 
+
+- Supporting the migration of legacy reporting while managing risks, change activities and regular stakeholder updates. 
+
+Your experience
+
+- Practical experience in data and analytics, supported by a relevant tertiary qualification or equivalent capability 
+
+- Solid SQL skills and experience designing data models, BI solutions or reporting products 
+
+- Understanding of data warehousing concepts such as star schemas, CDC and SCD 
+
+- Experience engaging stakeholders, clarifying requirements and communicating technical information clearly 
+
+- Exposure to Databricks, dbt, Spark, Python, R, Power BI or Agile delivery is advantageous, but not essential. 
+
+Please note this role requires full working rights within Australia. 
+
+This role is well suited to an Analytics Engineer or data professional with strong SQL foundations who is ready to broaden their experience across modern data platforms, stakeholder engagement and strategic analytics. 
+
+Like what you’re seeing?
+
+If you like the sound of this, and you’ve got experience in a similar role, we’d love to talk to you. Come and discover better together with Alinta Energy.
+
+We are a 2026 Circle Back Initiative Employer – we commit to respond to every applicant.
+
+If your application progresses, we will need to complete background and pre-employment checks, such as immigration checks, reference checks, criminal background checks, qualification checks, and additional checks for roles related to finance.
+
+Our Diversity Commitment
+
+Alinta Energy offers a truly diverse, safe and supportive work environment. As an equal opportunity employer, Alinta Energy encourages applications from any qualified person, including First Nations Australians, members of the LGBTQIA+ community, people of all ages and people living with a disability. We are also proud to be a WORK180 Endorsed Employer and we are committed to advancing women’s careers.
+
+We look forward to hearing from you.
+
+Click ‘Apply’ to submit your application.
+
+#LI-Hybrid:
