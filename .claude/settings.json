@@ -4,6 +4,8 @@
       "Bash(curl:*)",
       "Bash(python3:*)",
       "Bash(python:*)",
+      "Bash(./.venv/bin/python:*)",
+      "Bash(.venv/bin/python:*)",
       "Bash(grep:*)",
       "Bash(rg:*)",
       "Bash(wc:*)",
