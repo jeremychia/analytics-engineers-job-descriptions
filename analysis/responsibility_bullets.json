@@ -10708,5 +10708,106 @@
    "Data and AI driving decisions. Our internal AI tooling already queries the data warehouse for analyses. What\u2019s missing is the core foundation: standardized metric definitions, reusable logic, and pre-computed data models."
   ],
   "source": "captured"
+ },
+ {
+  "jd_id": "2026-09-15_ekkiden_data-analytics-engineer",
+  "bullets": [
+   "Concevoir, d\u00e9velopper et maintenir des pipelines de donn\u00e9es robustes et performants.",
+   "D\u00e9velopper et optimiser des requ\u00eates SQL, notamment sur BigQuery.",
+   "Participer \u00e0 la cr\u00e9ation et \u00e0 l'\u00e9volution des mod\u00e8les de donn\u00e9es.",
+   "Accompagner la d\u00e9finition et la mise en place de nouveaux KPI li\u00e9s aux \u00e9volutions des m\u00e9tiers.",
+   "Contribuer aux projets de transformation des outils et des processus data.",
+   "Collaborer avec les \u00e9quipes techniques et m\u00e9tiers afin de comprendre les besoins et proposer des solutions adapt\u00e9es.",
+   "Participer \u00e0 l'am\u00e9lioration continue des pratiques de d\u00e9veloppement et de l'industrialisation des traitements de donn\u00e9es."
+  ],
+  "source": "captured"
+ },
+ {
+  "jd_id": "2026-09-15_gimo_data-analytics-engineer",
+  "bullets": [
+   "Work closely with relevant business functions to understand business domains, processes, and data structures.",
+   "Contribute to solutions related to data migration, data modeling, data validation, and data governance.",
+   "Coordinate with stakeholders to understand data requirements, including user insights, customer journeys, and business metrics.",
+   "Translate business requirements into meaningful data implementations, analyses, datasets, reports, and dashboards using BI tools.",
+   "Analyze data to identify trends, patterns, and actionable insights that support strategic business planning.",
+   "Collaborate with Data Engineers to develop efficient frameworks and tools for data quality and data lineage.",
+   "Coach and support business users in understanding and effectively using BI reports and dashboards.",
+   "Perform data audits and root-cause analysis to identify and resolve data mismatches across systems when needed."
+  ],
+  "source": "captured"
+ },
+ {
+  "jd_id": "2026-09-15_marlabs_senior-data-engineer-power-bi-developer-databricks",
+  "bullets": [
+   "Transform complex data into scalable, interactive, and actionable business intelligence solutions.",
+   "Manage the full analytics lifecycle, from gathering business requirements and analyzing source data to transforming datasets, developing semantic models, and delivering intuitive dashboards.",
+   "Modernize fragmented reporting environments and reduce reliance on spreadsheets and manual processes.",
+   "Provide stakeholders with trusted insights for operational and strategic decision-making.",
+   "Bridge the gap between business stakeholders and technical teams while taking ownership of data quality, reporting usability, and long-term scalability."
+  ],
+  "source": "captured"
+ },
+ {
+  "jd_id": "2026-09-15_marsh-mclennan_data-and-analytics-engineering-lead-reinsurance",
+  "bullets": [
+   "Lead the design and implementation of enterprise BI architecture, including data models, dashboards, reports, and data gateways, ensuring optimal performance, usability, and security.",
+   "Collaborate with data engineers, analysts, and stakeholders to translate business requirements into scalable BI solutions, including data modeling, DAX calculations, and visualization best practices. Ensure adherence to data governance and compliance standards in data modeling and architecture",
+   "Provide subject matter expertise in the Reinsurance domain for data analytics.",
+   "Architect and oversee the integration of Power BI with various data sources, including Azure Data Lake Storage, Databricks, and other cloud or on-premise data platforms.",
+   "Define analytic solution leveraging Databricks, DBT and Power BI.",
+   "Develop and enforce development standards, governance policies, and best practices to ensure consistency, security, and maintainability across all reports and dashboards.",
+   "Support the deployment of Power BI in enterprise environments, including managing data refresh schedules, security roles, and workspace governance.",
+   "Identify and address performance bottlenecks in data pipelines and queries. Implement strategies to optimize data processing and reduce latency in data delivery",
+   "Optimize Power BI performance by implementing best practices in data modeling, query optimization, and report design.",
+   "Produce comprehensive design documentation, deployment plans, and user guides.",
+   "Stay current with Power BI innovations and industry best practices, recommending improvements to enhance reporting capabilities."
+  ],
+  "source": "captured"
+ },
+ {
+  "jd_id": "2026-09-15_orano_analytics-engineer",
+  "bullets": [
+   "Concevoir pipelines d'ingestion multi-sources",
+   "Automatiser la collecte des donn\u00e9es",
+   "Orchestrer les flux de donn\u00e9es",
+   "Transformer donn\u00e9es brutes en mod\u00e8les de donn\u00e9es exploitables",
+   "Concevoir des architectures optimis\u00e9es",
+   "Impl\u00e9menter une logique m\u00e9tier dans l'exploitation des donn\u00e9es",
+   "Couches s\u00e9mantiques self-service",
+   "Tests automatis\u00e9s",
+   "Monitoring et alerting",
+   "R\u00e9solution incidents",
+   "Documentation technique et fonctionnelle",
+   "Dashboards interactifs",
+   "Interfaces graphiques",
+   "Composants custom (React)"
+  ],
+  "source": "captured"
+ },
+ {
+  "jd_id": "2026-09-15_scrambly_senior-analytics-engineer",
+  "bullets": [
+   "Build and model. Design and maintain analytical pipelines in Dataform on BigQuery, from source data through to the tables that teams and downstream models consume, including the datasets behind new products as we build them.",
+   "Analyse and recommend. Answer commercial questions with data, and design and tune the rules and thresholds that sit behind day-to-day decisions. Turn findings into recommendations non-technical teams can act on.",
+   "Take ownership. Take on established pipelines you did not write \u2014 work out how they behave, document them, and keep them running in production.",
+   "Make the data trustworthy. Build the testing, assertion, and alerting layer on the models that drive commercial decisions, so we find out when something stops working before a stakeholder does. Investigate and fix issues when a number looks wrong.",
+   "Raise the engineering bar. Manage warehouse cost and query performance, reduce duplication and manual work, and help establish good practice for data \u2014 code review, CI, documentation, release conventions.",
+   "Collaborate. Work with the Head of Data on scoping and prioritisation, with Data Scientists on training data and getting models into production, with Backend on event contracts and automating the loop into product systems, and with commercial teams who use these numbers daily."
+  ],
+  "source": "captured"
+ },
+ {
+  "jd_id": "2026-09-15_team-is_analytics-engineer",
+  "bullets": [
+   "Concevoir et impl\u00e9menter des mod\u00e8les de donn\u00e9es efficaces pour servir de \"Single Source of Truth\" \u00e0 l'ensemble de l'entreprise.",
+   "D\u00e9finir et g\u00e9rer le plan de marquage (tracking) pour assurer une couverture compl\u00e8te de toutes les fonctionnalit\u00e9s du produit.",
+   "Assurer la gestion de bout en bout du cycle de vie de la donn\u00e9e : ingestion, transformation et restitution via des outils de visualisation ou de reverse ETL.",
+   "Participer au d\u00e9ploiement de nouvelles solutions pour le self-service analytics et le traitement des donn\u00e9es en temps r\u00e9el.",
+   "Garantir l'excellence de la donn\u00e9e par la mise en place de solutions de qualit\u00e9, de documentation et de versioning.",
+   "Piloter les KPIs strat\u00e9giques (Revenue, ARR, LTV, r\u00e9tention) et r\u00e9aliser des analyses de cohortes granulaires.",
+   "Collaborer \u00e9troitement au sein de squads pluridisciplinaires (Produit, Tech, QA) pour int\u00e9grer la dimension Data d\u00e8s la conception des fonctionnalit\u00e9s.",
+   "Pr\u00e9senter des insights business avanc\u00e9s aux parties prenantes en vous appuyant sur des arguments factuels."
+  ],
+  "source": "captured"
  }
 ]
