@@ -10,26 +10,24 @@
 
 ## 0. Check these four before you say them
 
-I wrote these as if they were facts about you. You never told me they were. Verify or swap each one — a made-up detail is the one thing that would actually damage you here.
+Four personal details in the script are unverified. Confirm or swap each one — a made-up detail is the one thing that would actually damage you here. Every number in §5 is checked against the dataset; only these four aren't.
 
-| In the script | The problem |
+| In the script | What to check |
 |---|---|
-| "Forty tabs open" | I invented the number. Use one you know, or say "a dozen" or just "too many." |
-| "I nearly didn't apply" | I invented this. If you applied confidently, cut it — and then "you're probably more qualified than you think" needs a different lead-in. |
-| "I was the person three months into his first dbt project, quietly sure he was doing it wrong" | Plausible from your history, but I made up the detail. Replace with a real moment: the first months at Tourlane, or coming from accounting into a stack you didn't know. |
-| "It got me publishing. I wouldn't have otherwise." | You spoke at FDC and MDS Fest in 2025. Did the community actually cause that, or did you get there yourself? Say whichever is true. |
-
-Everything numeric in §5 is checked against the dataset. It's only the personal detail I filled in.
+| "Forty tabs open" | Use a number you know, or say "a dozen" or just "too many." |
+| "I nearly didn't apply" | If you applied confidently, cut it — and then "you're probably more qualified than you think" needs a different lead-in. |
+| "I was the person three months into his first dbt project, quietly sure he was doing it wrong" | Swap in a real moment: the first months at Tourlane, or coming from accounting into a stack you didn't know. |
+| "It got me publishing. I wouldn't have otherwise." | You spoke at FDC and MDS Fest in 2025. Did the community cause that, or did you get there yourself? Say whichever is true. |
 
 ---
 
 ## 0b. The why and the how — say both
 
-I got this wrong in an earlier pass. I read "doesn't perform warmth" in your assessments and concluded advocacy wasn't your register. That conflated two different things: how you deliver and what drives you. Being undemonstrative and being driven by fairness go together perfectly well — and in your case the record says they do.
+How you deliver and what drives you are two separate things. Your assessments say you don't perform warmth. That is about delivery. It says nothing about the motive underneath, and being undemonstrative sits perfectly well alongside being driven by fairness — in your case the record says it does.
 
 **The why: closing information gaps.** Your own GitHub README, written long before any of this, says you build data products that "reduce information asymmetry." Three years teaching Python at ReDI School, to migrants and people shut out of tech. A nonprofit board seat, running its finances, mentoring thirty interns. That is not a register you're borrowing. It's the most consistent thing in your file.
 
-And the job market is the most asymmetric market most people ever participate in. The employer knows exactly what they mean; the applicant is guessing from words that turn out to mean 98 different things. **So this project is the purest version of a thing you wrote down years ago.** That connection is the strongest single idea available to you today, and it was missing from every draft. One line carries it:
+And the job market is the most asymmetric market most people ever participate in. The employer knows exactly what they mean; the applicant is guessing from words that turn out to mean 98 different things. **So this project is the purest version of a thing you wrote down years ago.** That connection is the strongest single idea available to you today. One line carries it:
 
 > I've been building things to close information gaps for years. This is just the biggest one I've found.
 
@@ -350,8 +348,6 @@ Then be blunter, and it'll land better than hedging. The survey is published by 
 
 ## 7. The cringe risks, named
 
-You asked. Here they are honestly.
-
 **The biggest one is structural, not any single line.** Nearly every answer here ends on a crafted closing sentence. Eleven of those in a row stops sounding like a conversation and starts sounding like a keynote. So let three of them just stop, flat, with nothing on the end. Unevenness is what makes the good lines sound unplanned rather than queued up.
 
 The three to flatten, specifically:
@@ -362,7 +358,7 @@ The three to flatten, specifically:
 
 Keep the warm-up's last line. It's disarming rather than clever, which is a different thing.
 
-**Say the advocacy point once.** The Champion answer, the language-gate point, and closing option 2 are all the same argument. All three is belabouring, and it's the specific failure you said you wanted to avoid. Pick the one place it lands hardest — probably the language-gate answer, because it has numbers and a personal fact behind it — and let the other two stay light.
+**Say the advocacy point once.** The Champion answer, the language-gate point, and closing option 2 are all the same argument. All three is belabouring. Pick the one place it lands hardest — probably the language-gate answer, because it has numbers and a personal fact behind it — and let the other two stay light.
 
 **Same with "the work is agreed, the power isn't."** Say it once, in the Big Project answer. Don't bring it back later as a callback. Callbacks are a stage technique and they read as one.
 
