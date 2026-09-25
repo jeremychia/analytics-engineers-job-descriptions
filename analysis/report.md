@@ -300,13 +300,13 @@ Mature teams have the widest named-stakeholder count (3.04), mid the narrowest (
 
 This is consistent with dbt's own claim that it has become the field standard, but roughly one in three AE/BI roles run on a stack without it. The prevalence has held essentially flat across the last several snapshots (68%→66%→65%→66%→64%→65%→64%→63%→63%→62%), including through both dedup passes, every subsequent expansion, and the 2026-08-22 audit's re-classification of ~30 records (§9.15). APAC AE/BI roles sit at the corpus average on this (60% vs. 63% for the rest of the corpus, p=0.55, §9.5). This market includes a meaningful share of Databricks SQL, BigQuery-native, and Spark-first stacks. A survey distributed exclusively through dbt's community channels cannot see that portion of the market by construction — this is the self-selection constraint from §2, made concrete. The JD data documents this blind spot directly: roughly one in three roles don't name dbt at all, stable across nineteen consecutive corpus snapshots.
 
-**Tools outside the tracked list.** The 26 `has_*` flags were fixed early and have no catch-all. A keyword search of the archived text of all 766 cohort JDs shows several untracked tools are named more often than most tracked ones. These counts are pattern matches, not classifier reads. They do not separate required from preferred, and loose patterns were checked in context before counting.
+**Tools outside the tracked list.** The 26 classifier-coded `has_*` flags were fixed early and have no catch-all. A keyword search of the archived text of all 766 cohort JDs shows several untracked tools are named more often than most tracked ones. These counts are pattern matches, not classifier reads. They do not separate required from preferred, and loose patterns were checked in context before counting. The first four rows are now compiled into `analysis/data.json` as six keyword-derived fields (`has_version_control`, `has_ci_cd`, `has_aws`, `has_azure`, `has_gcp`, `has_semantic_layer`; patterns in `scripts/tool_mentions.py`), computed the same way for every record.
 
 | Tool or practice | % of cohort JDs | Note |
 |---|---|---|
-| Git / version control | 31% | More common than every tracked tool except SQL, Python, dbt, Power BI, Snowflake and BigQuery |
-| CI/CD | 27% | 33% of the September records, against 24–25% earlier |
-| "Semantic layer" | 25% | Almost always the concept; only 13 JDs name MetricFlow or the dbt Semantic Layer |
+| Version control (Git or named) | 36% | More common than every tracked tool except SQL, Python, dbt, Power BI and Snowflake |
+| CI/CD | 28% | 34% of the September records, against 25–26% earlier |
+| Semantic layer | 25% | Almost always the concept; only 13 JDs name MetricFlow or the dbt Semantic Layer. 30% of September records |
 | AWS / Azure / GCP | 22% / 21% / 15% | AWS is named in 31% of APAC JDs against 19% elsewhere |
 | LLM / GenAI | 12% | 9% of April–July records, 13–15% since |
 | DAX | 9% | A marker of Power BI depth, not just Power BI use |

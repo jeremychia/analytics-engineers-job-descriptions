@@ -1635,8 +1635,11 @@ const TOOLS = [
   {key:'has_fivetran',label:'Fivetran',group:'Ingestion'},{key:'has_airbyte',label:'Airbyte',group:'Ingestion'},
   {key:'has_kafka',label:'Kafka',group:'Streaming'},{key:'has_terraform',label:'Terraform',group:'Infra'},
   {key:'has_great_expectations',label:'Great Expectations',group:'Quality'},{key:'has_soda',label:'Soda',group:'Quality'},
+  // keyword-derived at compile time (scripts/tool_mentions.py), not classifier-coded
+  {key:'has_version_control',label:'Version control',group:'Practice'},{key:'has_ci_cd',label:'CI/CD',group:'Practice'},{key:'has_semantic_layer',label:'Semantic layer',group:'Practice'},
+  {key:'has_aws',label:'AWS',group:'Cloud'},{key:'has_azure',label:'Azure',group:'Cloud'},{key:'has_gcp',label:'GCP',group:'Cloud'},
 ];
-const GC = { Core:'#1d4ed8', Warehouse:'#16a34a', BI:'#d97706', Orchestration:'#7c3aed', Compute:'#ea580c', Ingestion:'#0d9488', Streaming:'#c0392b', Infra:'#6b7280', Quality:'#0891b2' };
+const GC = { Core:'#1d4ed8', Warehouse:'#16a34a', BI:'#d97706', Orchestration:'#7c3aed', Compute:'#ea580c', Ingestion:'#0d9488', Streaming:'#c0392b', Infra:'#6b7280', Quality:'#0891b2', Practice:'#be185d', Cloud:'#4338ca' };
 
 function buildToolCompanyList(tool) {
   const yes = activeData.filter(d => String(d[tool.key]).toLowerCase() === 'true');
@@ -1648,7 +1651,7 @@ function buildToolCompanyList(tool) {
   document.getElementById('toolCompanyPanel').style.display = 'block';
 }
 
-const TOOL_GROUP_ORDER = ['Core','Warehouse','BI','Ingestion','Orchestration','Compute','Streaming','Quality','Infra'];
+const TOOL_GROUP_ORDER = ['Core','Warehouse','Cloud','BI','Ingestion','Orchestration','Compute','Streaming','Quality','Practice','Infra'];
 
 function buildToolChart(data) {
   const n = data.length||1;
