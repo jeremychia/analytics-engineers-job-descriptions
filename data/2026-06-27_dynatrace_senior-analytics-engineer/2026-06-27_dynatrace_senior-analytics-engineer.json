@@ -42,6 +42,12 @@
   "has_power_bi": true,
   "has_great_expectations": false,
   "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": true,
   "source_url": "https://www.dynatrace.com/careers/jobs/1394626100/",
   "evidence": {
     "velocity_vs_rigour": "Implement data quality checks and governance within dbt and Snowflake",

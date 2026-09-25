@@ -20,6 +20,8 @@ import sys
 import unicodedata
 from pathlib import Path
 
+from tool_mentions import TOOL_FIELDS, detect_tool_mentions_in_text
+
 JD_DATA_DIR = Path(__file__).parent.parent / "data"
 
 BOOL_FIELDS = [
@@ -50,7 +52,7 @@ JSON_FIELD_ORDER = [
     "collaboration_width", "data_team_maturity", "urgency", "work_arrangement",
     "language_gate_type", "language_gate_languages",
     "interview_stages", "ats_platform", "ats_job_id",
-] + BOOL_FIELDS + [
+] + BOOL_FIELDS + TOOL_FIELDS + [
     "required_tools", "preferred_tools",
     "responsibilities", "responsibilities_source",
     "source_url", "evidence",
@@ -157,6 +159,8 @@ def verify_responsibilities(data: dict, jd_text: str) -> list[str]:
 
 def write_files(data: dict):
     jd_text = data.pop("jd_text", "")
+    # keyword-derived, never classifier-judged; overrides anything passed in
+    data.update(detect_tool_mentions_in_text(jd_text))
 
     # Verify before reading any field off the record - a record with fabricated
     # responsibility bullets, or with a dimension missing outright, should never

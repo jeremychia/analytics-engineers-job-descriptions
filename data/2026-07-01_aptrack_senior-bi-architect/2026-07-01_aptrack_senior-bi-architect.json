@@ -45,6 +45,12 @@
   "has_power_bi": true,
   "has_great_expectations": false,
   "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": true,
+  "has_gcp": false,
+  "has_semantic_layer": false,
   "source_url": "https://www.aptrack.co/uap/AAAGoQAPZp8B8uZs/",
   "evidence": {
     "velocity_vs_rigour": "ensure data quality, governance, and security standards; define BI architecture standards, principles and best practices; scalability, performance and enterprise alignment",

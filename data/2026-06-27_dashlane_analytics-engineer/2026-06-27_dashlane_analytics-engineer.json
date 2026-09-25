@@ -42,6 +42,12 @@
   "has_power_bi": false,
   "has_great_expectations": false,
   "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": false,
+  "has_aws": true,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
   "source_url": "https://job-boards.greenhouse.io/dashlane/jobs/7988501",
   "evidence": {
     "velocity_vs_rigour": "Design, build, test, and own end-to-end data models within our dbt-powered 'Unified Data Model.' You will ensure models are reliable, well-documented, and aligned with business logic.",

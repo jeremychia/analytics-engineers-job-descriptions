@@ -45,6 +45,12 @@
   "has_power_bi": false,
   "has_great_expectations": false,
   "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": true,
+  "has_aws": true,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": true,
   "source_url": "https://www.bookingholdings-coe.com/bookingholdings-coe/jobs/29261?lang=en-us&iis=LinkedIn&iisn=Linkedin&mode=apply",
   "evidence": {
     "velocity_vs_rigour": "Quality, Testing & Monitoring: Writes tests (dbt tests, custom checks), implements basic data quality monitoring, and proactively investigates anomalies for the pipelines they own.",

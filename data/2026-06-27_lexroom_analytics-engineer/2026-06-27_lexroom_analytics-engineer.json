@@ -44,6 +44,12 @@
   "has_power_bi": false,
   "has_great_expectations": false,
   "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": true,
+  "has_semantic_layer": true,
   "source_url": "https://jobs.ashbyhq.com/lexroom/9963d624-22b2-4dde-9fe0-d98dae51ff21",
   "evidence": {
     "velocity_vs_rigour": "Implement data quality frameworks: tests, freshness checks, anomaly detection, and clear ownership and SLAs on key datasets",

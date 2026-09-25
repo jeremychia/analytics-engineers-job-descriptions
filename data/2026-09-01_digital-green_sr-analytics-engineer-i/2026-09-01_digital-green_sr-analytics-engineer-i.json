@@ -53,6 +53,12 @@
   "has_metabase": false,
   "has_great_expectations": false,
   "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": true,
+  "has_aws": true,
+  "has_azure": true,
+  "has_gcp": true,
+  "has_semantic_layer": false,
   "required_tools": [
     "SQL",
     "Python",

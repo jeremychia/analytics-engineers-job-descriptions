@@ -46,6 +46,12 @@
   "has_power_bi": false,
   "has_great_expectations": false,
   "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
   "evidence": {
     "velocity_vs_rigour": "Mit modernen Tools wie dbt und Airflow stellst du eine hohe Datenqualität, Stabilität und Transparenz unserer Datenlandschaft sicher.",
     "domain_risk": "Du stellst sicher, dass fachliche und regulatorische Änderungen zeitnah in unseren Datenmodellen und Prozessen berücksichtigt werden.",

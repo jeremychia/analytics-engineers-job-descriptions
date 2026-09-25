@@ -43,6 +43,12 @@
   "has_power_bi": false,
   "has_great_expectations": false,
   "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": false,
+  "has_aws": true,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
   "evidence": {
     "velocity_vs_rigour": "Implement data quality and validation processes to guarantee data accuracy and consistency.",
     "domain_risk": "Establish the KPIs and metrics that will be used by the business",

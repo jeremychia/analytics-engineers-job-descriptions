@@ -54,6 +54,12 @@
   "has_metabase": false,
   "has_great_expectations": true,
   "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": true,
+  "has_aws": true,
+  "has_azure": true,
+  "has_gcp": false,
+  "has_semantic_layer": false,
   "source_url": "https://www.linkedin.com/jobs/view/4438479466/",
   "evidence": {
     "velocity_vs_rigour": "Être le garant de la qualité de la donnée, de la mise en place de tests automatisés (via dbt, Great Expectations) et de la documentation (data catalog, lineage)",

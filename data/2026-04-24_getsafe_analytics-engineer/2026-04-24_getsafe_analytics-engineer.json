@@ -43,6 +43,12 @@
   "has_power_bi": false,
   "has_great_expectations": false,
   "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
   "evidence": {
     "velocity_vs_rigour": "Design clean, reliable, and well-documented data models as a single source of truth",
     "domain_risk": "Own and evolve core business metrics - from definition to tracking and operationalisation",

@@ -43,6 +43,12 @@
   "has_power_bi": true,
   "has_great_expectations": false,
   "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
   "evidence": {
     "velocity_vs_rigour": "Enhancing reporting and metrics quality as a whole",
     "domain_risk": "Understanding the needs of the business to providing easily understandable and actionable data",

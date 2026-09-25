@@ -43,6 +43,12 @@
   "has_power_bi": false,
   "has_great_expectations": false,
   "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": true,
+  "has_aws": false,
+  "has_azure": true,
+  "has_gcp": false,
+  "has_semantic_layer": false,
   "evidence": {
     "velocity_vs_rigour": "Define and monitor data SLAs and SLOs, ensuring that product teams deliver data that meets business needs in terms of timeliness, accuracy, and availability.",
     "domain_risk": "fintech ecosystem in payments, dunning, invoicing, and collections",

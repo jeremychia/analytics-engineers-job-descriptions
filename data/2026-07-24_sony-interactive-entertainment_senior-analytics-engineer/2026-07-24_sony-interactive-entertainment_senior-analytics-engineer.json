@@ -52,6 +52,12 @@
   "has_metabase": false,
   "has_great_expectations": false,
   "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": true,
+  "has_aws": true,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": true,
   "source_url": "https://job-boards.greenhouse.io/sonyinteractiveentertainmentglobal/jobs/5985600004?gh_src=sgp49gfz4us",
   "evidence": {
     "velocity_vs_rigour": "Ensure data quality and trust through testing, documentation, and observability within dbt.",

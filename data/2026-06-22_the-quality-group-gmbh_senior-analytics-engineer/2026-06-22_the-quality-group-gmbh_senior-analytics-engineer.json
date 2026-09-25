@@ -45,6 +45,12 @@
   "has_power_bi": false,
   "has_great_expectations": false,
   "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
   "evidence": {
     "velocity_vs_rigour": "Ensure data quality through testing, validation, and monitoring",
     "domain_risk": "Implement and maintain KPI logic in collaboration with Analytics Consulting",

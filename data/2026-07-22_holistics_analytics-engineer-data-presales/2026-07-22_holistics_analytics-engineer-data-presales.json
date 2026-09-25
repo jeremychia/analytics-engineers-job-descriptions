@@ -54,6 +54,12 @@
   "has_metabase": false,
   "has_great_expectations": false,
   "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": true,
   "source_url": "https://careers.holistics.io/job-openings/analytics-engineer",
   "evidence": {
     "velocity_vs_rigour": "Keep data trustworthy: Add tests and validation so internal metrics are correct, and translate those practices into customer-facing guidance.",

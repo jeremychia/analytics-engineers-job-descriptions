@@ -42,6 +42,12 @@
   "has_power_bi": false,
   "has_great_expectations": false,
   "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": true,
+  "has_gcp": false,
+  "has_semantic_layer": false,
   "source_url": "https://apply.workable.com/immediate-media-co/j/6D4A88ACF8",
   "evidence": {
     "velocity_vs_rigour": "Create and maintain a suite of dbt tests to ensure data quality, consistency, and trustworthiness; data quality, modelling best practice",

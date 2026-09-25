@@ -52,6 +52,12 @@
   "has_metabase": false,
   "has_great_expectations": false,
   "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": true,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": true,
+  "has_semantic_layer": false,
   "source_url": "https://careers.loreal.com/en_US/jobs/JobDetail/248118?src=LinkedIn",
   "evidence": {
     "velocity_vs_rigour": "Engineering Excellence: Move analytics beyond \"just scripts\" by applying software engineering principles. This includes using Git for version control, writing data tests to catch upstream changes, and documenting the lineage of datasets.",

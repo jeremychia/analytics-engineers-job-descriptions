@@ -52,6 +52,12 @@
   "has_metabase": false,
   "has_great_expectations": false,
   "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": false,
+  "has_aws": true,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
   "source_url": "https://emeria.teamtailor.com/jobs/8017252-analytics-engineer-h-f",
   "evidence": {
     "velocity_vs_rigour": "pas d'analyses « one shot » ici. Chaque dashboard, chaque extraction est pensée pour être réutilisable et scalable",

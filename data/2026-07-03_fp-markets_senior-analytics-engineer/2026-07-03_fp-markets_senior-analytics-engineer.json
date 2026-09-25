@@ -45,6 +45,12 @@
   "has_power_bi": true,
   "has_great_expectations": false,
   "has_soda": true,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": true,
   "source_url": "https://apply.workable.com/fpmarkets/j/A782B1D6F9",
   "evidence": {
     "velocity_vs_rigour": "Validate the numbers. Every chart has a known-good ground truth. Own the semantic layer, the tests, the documentation, the lineage. Strong SQL including complex queries",

@@ -45,6 +45,12 @@
   "has_power_bi": true,
   "has_great_expectations": false,
   "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": true,
+  "has_semantic_layer": false,
   "evidence": {
     "velocity_vs_rigour": "Take full ownership of the stability of our marketing data pipelines — be the first to respond to incidents and drive resolution",
     "domain_risk": "Partner with marketers to automate and improve marketing processes using data",

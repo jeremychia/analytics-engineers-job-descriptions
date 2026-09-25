@@ -43,6 +43,12 @@
   "has_power_bi": false,
   "has_great_expectations": false,
   "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": true,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": true,
   "evidence": {
     "velocity_vs_rigour": "with a strong focus on scalability, clarity and long-term robustness",
     "domain_risk": "Data privacy, security, and compliance knowledge",
