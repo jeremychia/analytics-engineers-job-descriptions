@@ -1472,11 +1472,11 @@ function buildNulls(data) {
     {
       expect: 'Expected — AI-infrastructure builders should sit closest to platform teams',
       title: 'AI-infrastructure roles cluster in platform teams',
-      takeaway: 'Doesn\'t hold. AI-enabler roles don\'t concentrate in internal-platform audiences the way a "platform teams build AI infra" story would predict.',
+      takeaway: 'Doesn\'t hold for builders. AI-enabler roles serve internal-platform audiences at the same rate as roles with no AI expectation. The overall test can still flag, because AI-tool-user roles lean product-facing.',
       resultFn: () => {
         const enablers = data.filter(d => d.ai_role === 'ai_enabler');
         const inPlatform = enablers.filter(d => d.stakeholder_orientation === 'internal_data').length;
-        return `Roles asking the hire to <em>build</em> AI infrastructure, rather than use AI tools, don't concentrate in internal-platform audiences as cleanly as expected. <strong>${inPlatform} of ${enablers.length} ai-enabler roles currently serve internal data consumers</strong>, and the test doesn't clear significance.`;
+        return `Roles asking the hire to <em>build</em> AI infrastructure, rather than use AI tools, don't concentrate in internal-platform audiences. <strong>${inPlatform} of ${enablers.length} ai-enabler roles serve internal data consumers</strong> (${grpPct(data,'ai_role','ai_enabler','stakeholder_orientation','internal_data')}%), against ${grpPct(data,'ai_role','none','stakeholder_orientation','internal_data')}% of roles with no AI expectation. The badge below tests all three AI roles at once. Where it flags, the difference comes from roles expecting the hire to use AI tools: they are ${grpPct(data,'ai_role','ai_user','stakeholder_orientation','product')}% product-facing, against ${grpPct(data,'ai_role','none','stakeholder_orientation','product')}% for roles with no AI expectation.`;
       },
       testFn: () => chiBadge(data, 'ai_role', 'stakeholder_orientation'),
       apply: {
