@@ -1,425 +1,431 @@
 # Forward Data Conference 2026 — Lightning Talk Plan
 
-**When:** Monday 16 November 2026. Doors 08:30. Programme runs to about 21:30.
-**Where:** Maison Internationale, Cité Internationale Universitaire de Paris, 17 bd Jourdan, 75014.
-**Slot:** Lightning talk, 10 minutes.
-**Track you were accepted into:** Theme 01, *Data Foundations for Humans & AI* → sub-track 02, *Data Quality & Trust in the Agentic Era*.
-**Who runs it:** Hymaïa, a French data consultancy.
-**Still to confirm:** the programme was due out in September 2026. Check that you are on it, which stage, and what time. Also check whether they published your abstract word for word.
-
----
-
-## 1. Who is in the room
+## Overview
 
 | | |
 |---|---|
-| People | About 650 |
-| Speakers | 50+ |
-| Stages | 3, running at the same time |
-| Sessions | 40+ talks and workshops in about 6 hours |
-| Crowd | Mostly the French data and AI community |
-| Language | Talks in French or English. Content level "intermediate to advanced" |
-| Sponsors | Omni, ClickHouse, MotherDuck, Starlake.ai |
+| **Date** | Monday 16 November 2026. Doors 08:30, runs to about 21:30 |
+| **Venue** | Maison Internationale, Cité Internationale Universitaire de Paris, 17 bd Jourdan, 75014 |
+| **Format** | Lightning talk, 10 minutes. Plan for 9 |
+| **Track** | Theme 01, *Data Foundations for Humans & AI* → sub-track 02, *Data Quality & Trust in the Agentic Era* |
+| **Organiser** | Hymaïa, a French data consultancy |
 
-Three stages at once means your room holds roughly 100 to 250 people.
+### To confirm
 
-Group tickets are 20% off for five or more, and the conference asks whole teams to come. So managers often sit with the people who report to them. That matters for a talk about job ads. Some people in the room wrote the ads. Some read them. Both are there, maybe in the same row.
+- [ ] You are on the programme (due out September 2026)
+- [ ] Stage and time slot
+- [ ] Published abstract matches your submission word for word — this decides how far the talk can move from it
+- [ ] Slide format, aspect ratio, submission deadline
+- [ ] Whether talks are recorded — if so, the repo QR code on the last slide must still work later
+- [ ] Whether Christophe Blefari is involved in running the conference ([his post](https://www.blef.fr/forward-data-conference-some-news)) alongside Hymaïa
+- [ ] Freeze all numbers about a week before the talk and re-run the reference table
 
-**Who they are.** The conference recruits data engineers, analytics engineers, data architects and AI engineers. Also platform engineers, ML engineers, software engineers, product engineers, data scientists and analysts. Also heads of data, CDOs, CAIOs, engineering managers, tech leads and CISOs.
+---
 
-Your sub-track names its own audience: data engineers, platform engineers, analytics engineers, tech leads. That is a hands-on crowd. They want something they can use, not a market report.
+## The talk in one line
 
-**What mood they are in.** All four themes this year are about AI. But the conference's own copy is blunt about things not working:
+**A pipeline reported 100% coverage on exactly the group it was reading wrong. Record the thing your rules can't read, alert on the spread between groups, and make bad writes fail instead of watching for them.**
+
+```
+   AGGREGATE LOOKS HEALTHY            SEGMENT IS BROKEN               THE FIX
+   ------------------------          --------------------          ------------------
+   99% of ads match a theme    →     French ads: 8% of bullets  →   1. Record language
+   Whole-corpus error ~1 pt          flagged vs 16% in English      2. Alert on spread
+   French coverage: 100%             Segment error: 23 pts          3. Block, don't watch
+```
+
+---
+
+## Key facts (checked 2026-09-25)
+
+1. **The bug still exists.** The Data Quality keyword pattern is English-only.
+2. **The gap:** the keyword pass finds data-quality language in **50%** of French-language ads vs **73%** of English ones (p=0.011). Per bullet: **8.4% vs 16.4%** (p=0.0006). Use the per-bullet figure if challenged.
+3. **The health metric that lied:** **100%** of French-language ads (30 of 30) matched at least one theme.
+4. **Length isn't the cause.** Median 7 bullets in both languages (p=0.63).
+5. **Employer type isn't the cause.** French-market ads written in English score **82%** (14 of 17).
+6. **The LLM control agrees.** No significant French/English difference on any of 10 dimensions.
+7. **The gated field is clean, the monitored one isn't.** 100% vs 82% of quotes match the source.
+
+---
+
+## The room
+
+| | |
+|---|---|
+| **Size** | About 650 people, 3 stages at once — so about 100–250 in your room |
+| **Who** | Data, analytics and platform engineers; tech leads; heads of data. Your sub-track names data, platform and analytics engineers and tech leads |
+| **Language** | French or English. Level "intermediate to advanced" |
+| **Sponsors** | Omni, ClickHouse, MotherDuck, Starlake.ai |
+| **Seating** | Group tickets are discounted, so managers sit with their teams. People who write job ads and people who read them are in the same row |
+| **Mood** | Sold an agentic future, now checking it. Sceptical of vendors. Want evidence |
+
+The conference's own copy sets the tone:
 
 - "Models stopped being the hard part."
 - "A large share of agent failures are context failures."
-- Agent designs, including "a clear-eyed look at those that should not have been built."
-- Operating models: "what survived the data mesh hype."
+- "A clear-eyed look at those that should not have been built."
+- "What survived the data mesh hype."
 
-So: they were sold an agentic future and are now marking it. Sceptical of vendors. They want evidence.
+### Services companies in the room
 
-**One thing about the French market.** 29% of the French job ads in your corpus come from services companies, against 4% everywhere else.
-
-**ESN** stands for *Entreprise de Services du Numérique* — the standard French term for an IT and engineering services company. It replaced the older term SSII. These firms hire engineers and place them on client projects. It is a normal and large part of how French tech employment works, and there is no English word that maps onto it cleanly, which is part of why it is worth naming on stage.
-
-Ten of the 35 French ads in the corpus come from this kind of employer. Most are genuine ESNs or consultancies — ALTEN, Niji, JEMS, Néosoft, eXalt, Skiils, Size Up Consulting. Two are closer to agencies or talent marketplaces (YURI & NEIL, Licorne Society), so call the group "services companies and staffing intermediaries" if you want to be exact. **The label comes from a rule over company names, so treat 29% as approximate.**
-
-Why this matters for the talk, beyond accuracy: a meaningful share of the room works this way, and the conference organiser is a consultancy itself. So people in that room are building for clients, not for an employer's own data team.
-
-**This changes your pronouns more than anything else in this section.** "Your data team" and "your market" quietly exclude them.
-
-**This changes your pronouns.** Do not say "your data team" or "your market." Say "this market" and "whatever you are building for." Otherwise you talk past the consultants.
+- **ESN** = *Entreprise de Services du Numérique*: an IT services company that places engineers on client projects. No clean English equivalent.
+- **About a third of the French ads** in the corpus come from ESNs, consultancies and staffing intermediaries: 16 of 50 by hand check, 22 if you count four likely ones.
+  - ESNs and consultancies: ALTEN, Aubay, Ekkiden, JEMS, Niji, Néosoft, eXalt, Optimize matter, Skiils, Size Up Consulting.
+  - Closer to agencies: YURI & NEIL, Licorne Society, Socratiz.
+- **No comparable figure exists for other regions yet.** Don't put an "elsewhere" comparison on a slide.
+- **Watch your pronouns.** Many people in the room build for clients, and the organiser is a consultancy. Say "this market" and "whatever you are building for", never "your data team".
 
 ---
 
-## 2. The rule the whole talk depends on
+## The rule the whole talk depends on
 
-Say things about **your tool**. Never about **a country**.
+**Blame the tool, never a group.**
 
-Good: "My English-only classifier cannot see French data-quality language."
-
-Bad: "French companies don't care about data quality."
-
-Both sentences carry the same fact. They are not the same act. The first blames your tool. The second blames the room. And a correction does not undo a vivid claim — that is your own point about stories beating statistics, working against you.
-
-You never published the wrong number. You caught it. So you owe nobody a confession. Calling it one makes the mistake sound worse than it was and hides the thing that actually worked, which was running two tools over the same text.
-
-Also skip any joke about French being hard, or about you not speaking it. It is the easy laugh and the wrong one. It makes the language the problem. Your finding is that the tool was the problem.
-
-### The wider version of the rule: insight, not accusation
-
-The same trap shows up every time the data touches a group of people — a country, ESNs, recruiters, managers, this room. The talk must be interesting about them, never accusing.
-
-The difference is not politeness. It is where the explanation sits.
-
-| Accusing | Insightful |
+| Accusing — never say | Explaining — say this |
 |---|---|
-| "Consultancy ads are vaguer." | "An ESN ad often has to describe a capability, because the client project isn't assigned yet." |
-| "Managers write lazy job ads." | "The job-ad genre has no settled vocabulary for a quality bar, so everyone reaches for the same words." |
-| "Recruiters strip out the technical detail." | "Ads with no technical fingerprint read as execution-only work — whoever typed them." |
 | "French companies don't care about data quality." | "All 16 of my patterns are in English." |
+| "Consultancy ads are vaguer." | "An ESN ad often describes a capability, because the client project isn't assigned yet." |
+| "Managers write lazy job ads." | "Job ads have no settled words for a quality bar, so everyone uses the same ones." |
+| "Recruiters strip out the technical detail." | "Ads with no technical detail read as execution-only work, whoever typed them." |
 
-Every sentence on the right explains a **structure or a mechanism**. Every sentence on the left assigns a **failing to a person**. Same facts. One teaches; the other picks a fight you cannot win from a stage.
+Three habits:
 
-Three habits that keep you on the right side:
+1. **Test a claim about a group, then report the result — especially when it clears them.** "I checked whether services-company ads carry less quality language. They don't."
+2. **Make a tool or a document the subject of the sentence**, never a job title or a country.
+3. **When a number looks bad for a group, look for the structure that produces it** before presenting it. If there is none, suspect the measurement.
 
-1. **Test the hypothesis about a group, then report the result — especially when it clears them.** "I checked whether services-company ads carry less quality language. They don't." That is the most trust-building move available to you, and it costs eight seconds.
-2. **Put the failing on a tool or a document, never on a job title.** Tools and genres cannot be offended, and they are the honest culprits anyway.
-3. **When a number looks unflattering to a group, ask what structural reason would produce it** before you present it. If you cannot find one, you probably have a measurement problem — which is, after all, the whole subject of this talk.
+Also:
 
----
-
-## 3. What the room gains
-
-This is the part the earlier draft got wrong. Every version of this talk so far was about the project. The room does not need to admire a side project. They need something they can act on.
-
-The test for any version: **can someone change something on Monday because they sat through it?** "Be aware of X" fails that test. "Add this column, change this alert" passes.
+- **No confession.** You caught the error before publishing it. Present it as a debugging story, not an apology.
+- **No jokes about French being hard**, or about not speaking it. The tool was the problem, not the language.
 
 ---
 
-## 4. The panel
+## Talk structure
 
-Five reviewers looked at the material from different angles: what a practitioner changes on Monday, what a hiring manager gains, what it says about anyone's career, what the programme is missing, and what story shapes put the audience at the centre. They produced fourteen concepts and ran their own checks on the data. Here is what survived.
+```
+0:00           2:30                        6:15                    9:00
+┌──────────────┬───────────────────────────┬───────────────────────┐
+│ ACT 1        │ ACT 2                     │ ACT 3                 │
+│ Cold open    │ The number                │ LLM control           │
+│ The mirror   │ Three objections, killed  │ Aggregate vs segment  │
+│              │ The pattern reveal        │ Monday change, close  │
+└──────────────┴───────────────────────────┴───────────────────────┘
+```
 
-### The four strongest ideas
-
-**① Aggregate tests pass while a segment is wrong.** This is the best number anyone found, and it is new.
-
-| What a normal pipeline reports | Value |
-|---|---|
-| Job ads matching at least one theme | 624 of 631 = **98.9%** |
-| Bullets matching at least one theme | 4,285 of 5,164 = **83.0%** |
-| French job ads matching at least one theme | **26 of 26 = 100%** |
-| Worst language group, per bullet | 114 of 177 = **64.4%** |
-
-And the payoff:
-
-| Data Quality & Testing prevalence | |
-|---|---|
-| Reported across the whole corpus | 71.6% |
-| What it would be if French were read properly | 72.8% |
-| **Error across the whole corpus** | **+1.2 points** |
-| **Error inside the French segment** | **+28 points** |
-
-The whole-corpus number was off by one point. The segment was off by twenty-eight. And the health metric read **100% in exactly the group that was broken.**
-
-That is the talk. Coverage metrics cannot see this kind of bug, because the bug is an absence.
-
-**② Refuse it, don't watch it.** Your repo already contains a clean natural experiment. Two fields, same model, same run, same documents:
-
-| Field | What protects it | Quotes that match the source |
-|---|---|---|
-| `responsibilities` (5,110 bullets) | `write_jd.py` refuses the write unless every bullet is a literal substring | **99.96%** |
-| `evidence` (5,745 citations) | nothing | **90.9%** |
-
-The only difference is that one field was allowed to refuse to be written.
-
-This is genuinely against the grain of the programme. The whole second theme is evals and observability — watch the agent, trace the agent. Your point is the opposite: for this class of failure, don't watch it, **block it at the write path.**
-
-**③ "Data quality" carries no information.** The phrase appears in 42% of the ads. It does not predict the company's actual risk. `domain_risk × testing_framing` is V=0.086, p=0.077 — and in 200 random half-samples it reaches significance only 22% of the time. High-risk domains say the hire owns quality 70% of the time. Low-risk say it 50% of the time. The gap does not hold.
-
-What does carry information is verbs, not nouns. "own/ownership" appears in 32% of ads and predicts direction-setting work: 51% vs 25% (p=5×10⁻⁹). "Documentation" predicts nothing at all (+0 points, p=1.0). "Scalable" +3. "Best practices" +4.
-
-And what an ad says it is **afraid** of predicts how it runs 2.5× better than what sector it is in: `loss_aversion × rigour` V=0.383 versus `domain_risk × rigour` V=0.152.
-
-**④ Nobody defines the thing they are handing over.** 64% of ads make the hire personally responsible for data quality. Almost none say what that means. Among those 369 ads: 4.3% name an SLA or SLO. 3.8% mention an incident. 3.8% mention a data contract. 0.8% mention on-call. Across all 576, only 19 name a data-quality tool.
-
-The insight here is about the genre, not about the people writing in it. Specificity does not track who wrote the ad at all — 15% / 13% / 11% for manager / mixed / recruiter, p=0.90. Managers write 77% of these ads, and their ads are no more specific than anyone else's. So this is not laziness and not a recruiter problem. **The job-ad genre simply has no settled vocabulary for describing a quality bar**, so everyone reaches for the same handful of words, because those are the words that exist.
-
-Which means the fix is available rather than hard. The 15% who name a consequence read completely differently, and it takes one sentence: Rabot Energy's "errors surface in CI rather than in a management meeting"; Mimecast's "define and enforce the data quality bar: tests, freshness SLAs, lineage, incident response." Nobody needed a better attitude. They needed a more specific sentence.
-
-### The structural fix to the story
-
-One reviewer found the flaw in the old outline, and it is worth stating plainly.
-
-The old cold open said: two tools disagreed by 39 points, which one was wrong? **Every engineer in that room solves that in twenty seconds.** The regex is in English. The ads are in French. There is no mystery.
-
-The real question is not *why did it miss*. It is **why did nothing tell me it missed.** That was buried in the take-home. It belongs in the conflict.
-
-And there is a one-word fix for the speaker-centred middle section. The three hypotheses you ruled out are not *your* hypotheses. They are **the room's objections**. Same slides, same numbers, different owner:
-
-> Old: "Here's how I tried to kill it, in the order I actually tried them."
-> New: "Nobody in this room believes that number, and I know which three reasons you don't."
-
-Zero content lost. The longest stretch of the talk flips from being about you to being about them. And it is closer to the original storytelling advice, not further from it — the stated reason to spend time on failure is that the *audience* learns from it. An audience learns more from having its own objection killed.
+**Time talking about yourself: about 25 seconds, in three places** — provenance (12s), the pattern reveal (8s), the teaser (5s).
 
 ---
 
-## 5. Recommendation
+## Act 1 — The test and the mirror (0:00–2:30)
 
-**Make the room the second instrument. Pay it off with the segment-versus-aggregate numbers. End on "refuse it, don't watch it."**
+### Slide 1: Cold open
 
-Why this one:
+**On screen:** one French job-ad line, full screen, untranslated. Nothing else — no title, no bio.
 
-- The audience is doing the work in the first twenty seconds. That is what "about them, not about you" actually looks like in a structure.
-- The payoff is a Monday change with numbers behind it: record the axis your rules cannot read, and replace one coverage number with a per-group table.
-- "Block it, don't monitor it" is the one thing on this programme nobody else will say.
-- It stays exactly inside the track you were accepted into.
-- It keeps the §2 rule intact. Every claim has a tool as its subject.
+**Say:**
 
-Total time you spend talking about yourself: **about 35 seconds**, in three places (see §6).
-
-**What I would not do.** Don't build the talk on the hiring-manager angle (④) or the career angle (③), even though both are strong. Two reviewers flagged the same problem: `jd_authorship` is coded partly *from* how technical the text sounds, and `testing_framing` is coded from testing language. So "vague ads sound vague about testing" is partly true by definition. `jd_authorship` also has the weakest self-agreement of any dimension you have. Your own report excludes pairs like this elsewhere. Leading with it would be inconsistent.
-
-Keep ③ and ④ as material for a longer slot somewhere else. The AI finding in particular deserves it (see §7).
-
----
-
-## 6. The talk, beat by beat
-
-Budget 9:00. Lightning slots start late and you will talk faster than you rehearse.
-
-### Act 1 — The test, and the mirror (0:00–2:30)
-
-**Cold open.** No title slide. No bio. Ask them to work first.
-
-> "Before I tell you anything about myself, I need six seconds of work from you.
+> Before I tell you anything about myself, I need six seconds of work from you.
 > This is one line from a job ad for an analytics engineer, in this market, this year.
-> *[full screen, untranslated, three full seconds of silence]*
+> *[three seconds of silence]*
 > Decide, in your head: does that line make data quality part of this job? Yes or no.
-> …You all got there in about two seconds. You are the second instrument in this talk. The first one scored that line **zero**."
+> …You all got there in about two seconds. You are the second instrument in this talk. The first one scored that line **zero**.
 
-Use one of these. All three are real, and all three score zero against the live pattern in `responsibility_taxonomy.py`:
+**Line to use** (both score zero against the live pattern):
 
-- **Emeria (Reemia)** — "Garantir la qualité et la fiabilité : tu veilles à ce que chaque chiffre communiqué soit juste. Tu mets en place les bonnes pratiques de gouvernance et de contrôle qualité pour assurer l'intégrité de la donnée dans toute l'entreprise."
-- **YURI & NEIL** — "Mettre en place des dispositifs de contrôle de qualité des données et d'alerting."
-- **Decathlon Digital** — "Définir la stratégie de nos stacks techniques et garantir la qualité, la fiabilité et la pertinence des données exposées."
+- **Emeria (Reemia), preferred:** "Garantir la qualité et la fiabilité : tu veilles à ce que chaque chiffre communiqué soit juste. Tu mets en place les bonnes pratiques de gouvernance et de contrôle qualité pour assurer l'intégrité de la donnée dans toute l'entreprise."
+- **YURI & NEIL:** "Mettre en place des dispositifs de contrôle de qualité des données et d'alerting."
+- Avoid Decathlon Digital's line — a Decathlon employee may be in the room.
 
-Prefer Emeria or YURI & NEIL. A Decathlon employee may well be in the room, and you do not need a named French employer on a slide about a failure, even one where the ad comes out looking good.
+### Slide 2: The pattern
 
-Then show the pattern itself, all fifteen words of it. Admit it is reasonable. They will see instantly why it missed, and that they would have written the same one.
+**On screen:** the real Data Quality pattern from `analysis/responsibility_taxonomy.py`:
 
-**Provenance — 12 seconds, the first of your three.**
+```python
+r'\b(data quality|test(ing|s)?\b|validat|monitor(ing)?|assertion|anomaly|reliability|accura(cy|te)|observability|data trust|Monte Carlo)'
+```
 
-> "I have been reading these ads for a year. Two programs read them for me: a keyword pass over 5,163 responsibility bullets, and an LLM pass over ten behavioural dimensions."
+**Say:** admit it is reasonable. They will see why it missed, and that they would have written the same one.
 
-**The mirror.** 636 ads, 36 from this market. Named on screen: Decathlon, Qonto, BeReal, Welcome to the Jungle, Electra, Orano, Pluxee, Cultura. Three facts:
+### Provenance (12 seconds — first of three)
 
-- **83% name dbt — the highest share of any region in the corpus**
-- **29% come from ESNs and services companies, against 4% elsewhere** — the most distinctive structural feature of this market, and the one with no equivalent in the corpus's other regions
-- **63% are language-gated. 46% hard-require French.**
+> I have been reading these ads for a year. Two programs read them for me: a keyword pass over 6,852 responsibility bullets, and an LLM pass over ten behavioural dimensions.
 
-All three are neutral facts about how this market is shaped. None is a criticism. The dbt number is a genuine compliment — this is the most dbt-fluent hiring market in the corpus — so lead with it.
+### Slide 3: The mirror
 
-Say the language-gate one flat and move on. Do not flag it. It is the cause of the bug and it pays off in Act 2.
+**On screen:** "50 of these were written by people in this building." Names: Decathlon, Qonto, BeReal, Welcome to the Jungle, Electra, Orano, Pluxee, Cultura, Dashlane.
 
-Phrase the whole slide as "36 of these were written by people in this building." Not "36 of them are yours" — for everyone in the room who builds for clients rather than for an in-house team, that is not true.
+| Fact | Figure |
+|---|---|
+| **Name dbt** | **82%** — highest of any region in the corpus. Berlin next at 78%; rest of corpus 58% |
+| **Come from services companies** | **About a third** |
+| **Written in French** | **Two in three** |
+| **Hard-require French** | **26%** — and another 26% hard-require English |
+| Optional: **mention version control / CI/CD** | **52% / 38%**, vs 35% / 27% elsewhere |
 
-### Act 2 — Their objections (2:30–6:15)
+**Say:**
 
-**The number.** Attribute it to the tool. Never say it in your own voice.
-
-> "Across the French-language ads, my keyword pass reports data-quality language in 35% of them, against 74% of the English-language ones. p<0.0001. Twelve of sixteen themes, same shape."
-
-**Two seconds of silence.** Script it. Rehearse it with a timer. Untrained speakers cut it to half a second because it feels like dying on stage. It isn't.
-
-Then hand it to them:
-
-> "Nobody in this room believes that number, and I know exactly which three reasons you don't."
-
-Kill them in their voice. Same sentence shape each time.
-
-**Objection 1 — the French ads are shorter.** Partly true. Median 6.5 bullets versus 7, and that is significant at p=0.019. So control for it. The gap still runs −33 points among short ads, −31 among medium, −37 among long. Per bullet it is 6.7% versus 16.6%, p=0.000003. Length explains none of it.
-
-**Objection 2 — it's the mix of employers, not the language.** This one needs care, because you are saying it in a room where a lot of people work for services companies, at a conference run by one. Do not put it as "maybe consultancy ads are vaguer." That is an accusation, it is the same mistake as blaming a country, and it is not even the interesting hypothesis.
-
-The interesting version is about **how the job is known at the time of writing**, not about who wrote it:
-
-> "29% of the French ads come from services companies, against 4% elsewhere. An ESN ad often describes a role before the client project is assigned — so it has to describe a capability rather than a specific system. That is a real structural difference, and it is a good reason to expect different language. So I checked whether it explains the gap."
-
-Then the answer, which is a point **in their favour** and worth delivering as one:
-
-> "It doesn't. Among non-services employers alone the gap is still −39 points (p<0.0001). And services-company ads carry data-quality language at statistically the same rate as everyone else's — 60% versus 74%, p=0.19, not significant. Whatever is going on, it isn't that."
-
-Same evidence, and the room hears you check a hypothesis about them and clear it, rather than assert one. That is the difference between insight and blame throughout this talk: **describe a structure, test it, report what you found — including when the answer exonerates the group you tested.**
-
-**Objection 3 — the two markets really do emphasise different things.** The reasonable answer, and the one you would be right to hold until you see a second tool.
-
-**Then fire.**
-
-> "63% of these ads are written in French. All 16 of my patterns are in English."
-
-That is your second speaker moment — 8 seconds, and the funniest line in the talk. Let it sit. The broken tool needs a named owner here, or the deficit drifts back onto the market by default.
-
-**The receipt.** Callback to the opening line: "The line you voted on was Emeria's." Then name the villain:
-
-> "A zero means two things. 'It isn't there' and 'I can't read it.' Same zero."
-
-Have a good Q&A answer ready: Skiils' ad *does* match, because the French word "validation" happens to hit the `validat` stem. The misses are lexical accident, not anything systematic.
-
-### Act 3 — Verdict and transfer (6:15–9:00)
-
-**The control run.** Same ads, LLM pass. 9 of 10 dimensions show no significant difference. Testing framing reads 60% vs 65%, **p=0.59**. The idea was fine. The tool wasn't. Volunteer the one dimension that does differ (`domain_risk`, p=0.011). It makes the other nine believable.
-
-Say this once, out loud, so it does not read as an advert for LLMs in a room that distrusts vendors:
-
-> "I am not telling you to swap rules for a model. The model here is a second opinion, not a better one. At this sample size I can detect a 39-point tool error. I cannot detect a real 5-point difference."
-
-**The real conflict.** This is the part nobody guesses:
-
-> "83% of bullets matched something. No error. No null. No alert. Nothing in that pipeline knew."
-
-Then the two numbers that make it a data-quality talk instead of a regex anecdote:
-
-> "Across the whole corpus this bug cost me 1.2 points. Inside the French segment it cost me 28. And per-ad coverage in the broken group was 100%."
-
-**The Monday change.** Three lines:
-
-1. Whatever axis your rules cannot read — language, locale, source system, schema version, extractor version — **record it as a column at ingest.**
-2. Replace your one coverage number with a per-group table. **Alert on the spread, not the mean.**
-3. Size the alarm for small groups. This one was 4% of rows.
-
-Then the honest admission that explains why a careful person misses this:
-
-> "I could not run that check for eight months, because language was not a column in my schema. I had to go back and invent it to find my own bug."
-
-**The inversion.** This is your counter-programming line, and it needs saying plainly:
-
-> "Most of this programme is about watching your systems more closely. For this kind of failure, watching does not help. The fix is to make the write fail, not the dashboard."
-
-Back it with the two fields: gated field 99.96% grounded, monitored field 90.9%. Same model, same run, same documents.
-
-**Close on their work, not yours.**
-
-> "Two hundred of you read one line of French faster and better than the cheap, deterministic, fully auditable tool this industry is currently telling you to prefer. The rules are not the problem. The problem is that a zero means two things, and only one of them shows up on your dashboard."
-
-**Teaser — 5 seconds, your third and last.** The corpus is open. Fifteen other dimensions in it. One says 61% of employers ask for no AI skill at all. QR code. Stop.
-
-### The feeling to end on
-
-Capable, not scolded, and not insulted. The register is **a debugging story you are pleased to have solved** — not a confession. You are handing them a bug report from a system a lot like theirs, plus a cheap fix. The humility is that your favourite tool failed. The competence is that your setup caught it.
-
-One sentence worth stealing, from the panel: **"Nothing I believe about this matters."** It is the cheapest fix for the vanity problem, and it is true.
-
-### What is cut, and why
-
-- **The AI gap (61% vs 72%)** drops to one clause in the teaser. It was a second conflict, and a 10-minute talk holds one. Cut it entirely if you run long.
-- **The job-market findings** survive only as the Act 1 mirror. That still keeps the promise the abstract made — those France facts *are* which-lines-to-trust content.
-- **The dbt Labs comparison, the codebook, maturity-to-mission, the finding that collapsed at n=270** — all out.
-
-### Rehearsal notes
-
-- **Check the subject of every sentence.** Anything about the finding should have a tool as its subject. If a sentence starts "French ads…" and ends in a deficit, rewrite it. Do one pass for this alone.
-- Cut these phrases: "three days", "in the order I actually tried them", "the one I expected to land on", "the one I trusted more". Replace "I didn't believe it" with "nobody in this room believes that number."
-- Rehearse the three objections as a rhythm — kill, kill, reveal. Same shape each time. That is what makes the third one land.
-- The French line must be a big, readable screenshot. Native speakers will read it faster than you can talk. Let them. Say nothing for three seconds.
-- Practise three separate things: the words, the delivery, your body language. Memorise the cold open and the closing lines word for word. Nothing else needs it.
-- Never require hands. "Decide in your head" works with a dead room, and "you all got there in two seconds" is true either way.
-- Do not apologise for the sample size. State it once and never defend it again.
-- Never cut the Monday change. If you are 90 seconds over, cut objection 2 and the `domain_risk` caveat.
-- Test the framing on a French colleague before Paris. Ask one question: "does this feel like it's about his tool, or about us?"
+- Lead with dbt. It is a genuine compliment.
+- Add Conquet's line after the language fact: "En France, 99% sont français" ([DataGen #160](https://datageneration.substack.com/p/quel-est-lepisode-datagen-le-plus)). It makes the language requirement a feature of a domestic talent pool, not a barrier anyone chose.
+- Say the language fact flat. It pays off in Act 2.
+- Say "written by people in this building", not "yours" — many build for clients.
+- Version control and CI/CD come from keyword fields, so say "mention", not "require".
 
 ---
 
-## 7. Numbers you can use
+## Act 2 — Their objections (2:30–6:15)
 
-Checked against `analysis/data.json` on 2026-09-01. Re-run before the talk — the corpus grows.
+### Slide 4: The number (2:30–3:15)
+
+**On screen:**
+- **50% vs 73%** — ads with data-quality language, French vs English
+- **8.4% vs 16.4%** — per bullet
+- Small chart: 14 of 16 themes lower in French
+
+**Say** (the tool is the subject, not you):
+
+> Across the French-language ads, my keyword pass reports data-quality language in half of them, against three quarters of the English-language ones. Per bullet it is 8% against 16%. Fourteen of sixteen themes, same direction.
+> *[two seconds of silence — rehearse with a timer]*
+> Nobody in this room believes that number, and I know exactly which three reasons you don't.
+
+### Slide 5: Objection 1 — "French ads are shorter" (3:15–3:50)
+
+**On screen:**
+
+| | French | English |
+|---|---|---|
+| Median bullets | **7** | **7** (p=0.63) |
+| Data quality per bullet | **8.4%** | **16.4%** (p=0.0006) |
+
+**Say:**
+
+> They aren't. Median seven bullets in both. Per bullet, the gap is the same: 8.4 against 16.4. Same length, half the signal.
+
+### Slide 6: Objection 2 — "It's who is hiring" (3:50–4:55)
+
+**On screen:** three cards.
+
+| French ads, services companies | French ads, everyone else | Same market, written in English |
+|---|---|---|
+| **46%** (6/13) | **53%** (9/17) | **82%** (14/17) |
+
+Caption: *Same market, same employers, different language.*
+
+**Say:**
+
+> About a third of the ads from this market come from services companies. An ESN ad often describes a role before the client project is assigned, so it describes a capability rather than a system. That is a real difference, and a good reason to expect different language. So I checked whether it explains the gap.
+> It doesn't. Among the French-language ads, services companies and everyone else score about the same. And ads from this same market, written in English, score 82%. Same market, different language. Whatever is going on, it isn't who is hiring.
+
+**Notes:**
+- This clears the group you tested. Deliver it as a point in their favour.
+- Don't claim the English ads beat the corpus average. At 17 ads that is noise.
+- Step toward the audience here.
+
+### Slide 7: Objection 3 and the reveal (4:55–6:15)
+
+**On screen:** left, the pattern again. Right:
+
+> **A zero means two things:**
+> 1. It isn't there.
+> 2. I can't read it.
+
+**Say:**
+
+> Third objection: the two markets really do emphasise different things. That is the reasonable answer, and the right one if you trust your pipeline.
+> Two in three of these ads are written in French. All 16 of my patterns are in English.
+> *[pause — second speaker moment, 8 seconds]*
+> The line you voted on was Emeria's. A zero means two things: "it isn't there" and "I can't read it." Same zero.
+
+**Q&A ready:** Skiils' ad *does* match, because "validation" hits the `validat` stem. The misses are chance vocabulary, not a pattern.
+
+---
+
+## Act 3 — Verdict and transfer (6:15–9:00)
+
+### Slide 8: The control run
+
+**On screen:** 10 dimensions, French vs English — all "no significant difference". Highlight testing framing: **70% vs 68%, p=0.95**.
+
+**Say:**
+
+> Same ads, the LLM pass. No difference on any of ten dimensions. The idea was fine. The tool wasn't.
+> I am not telling you to swap rules for a model. The model is a second opinion, not a better one. At this sample size I can detect a 23-point tool error. I cannot detect a real 5-point difference.
+
+### Slide 9: Nothing knew
+
+**On screen:**
+
+| What the pipeline reported | Value |
+|---|---|
+| Bullets matching a theme | **83%** |
+| French-language ads matching a theme | **100%** |
+| Error across the whole corpus | **about 1 point** |
+| Error inside the French segment | **23 points** |
+
+**Say:**
+
+> 83% of bullets matched something. Every French-language ad matched something. No error. No null. No alert. Across the whole corpus this bug cost me about one point. Inside the French segment it cost me twenty-three.
+
+### Slide 10: The Monday change
+
+**On screen:**
+
+1. **Record the thing your rules can't read** — language, locale, source system, schema or extractor version — as a column when data comes in.
+2. **Replace one coverage number with a per-group table.** Alert on the spread, not the mean.
+3. **Size the alarm for small groups.** This one was 4% of rows.
+
+**Say:**
+
+> I could not run that check for eight months, because language was not a column in my schema. I had to go back and add it to find my own bug.
+
+### Slide 11: Block it, don't watch it
+
+**On screen:**
+
+| Field | Protection | Quotes matching the source |
+|---|---|---|
+| `responsibilities` | Write is refused unless every bullet is copied exactly | **100%** (6,785) |
+| `evidence` | None — checked afterwards | **82%** (13,051) |
+
+**Say:**
+
+> Most of this programme is about watching your systems more closely. For this kind of failure, watching does not help. Make the write fail, not the dashboard. Same model, same run, same documents — the only difference is that one field was allowed to refuse.
+
+### Close
+
+> Two hundred of you read one line of French faster and better than the cheap, deterministic, fully auditable tool this industry is telling you to prefer. The rules are not the problem. The problem is that a zero means two things, and only one of them shows up on your dashboard.
+
+### Teaser (5 seconds — third of three)
+
+> The corpus is open. One of its other findings: 59% of employers ask for no AI skill at all — and Indeed's French data puts AI in 3.4% of all ads.
+
+**On screen:** QR code to the repo. Stop.
+
+---
+
+## Delivery checklist
+
+- [ ] One pass of the script checking only sentence subjects. Any sentence starting "French ads…" that ends in a shortfall gets rewritten.
+- [ ] Memorise the cold open and the close word for word. Nothing else needs it.
+- [ ] Rehearse the objections as a rhythm: kill, kill, reveal.
+- [ ] Rehearse both silences with a timer (3 seconds on the cold open, 2 after the number).
+- [ ] Make the French line a large, readable screenshot.
+- [ ] Never ask for hands. "Decide in your head" works with a quiet room.
+- [ ] State the sample size once. Never defend it again.
+- [ ] If 90 seconds over, cut Objection 2. Never cut the Monday change.
+- [ ] Test the framing on a French colleague: "Does this feel like it's about his tool, or about us?"
+- [ ] Practise words, delivery and body language separately.
+
+**The feeling to leave them with:** capable, not scolded. A bug report from a system a lot like theirs, plus a cheap fix.
+
+---
+
+## Reference numbers
+
+Checked against `analysis/data.json` on 2026-09-25. French-language figures use a strict detector; they move with the detector (see Repo actions).
 
 | Figure | Value | Note |
 |---|---|---|
-| Corpus / analytical cohort | 636 / 576 | cohort = AE/BI + team lead |
-| France region | 35 (cohort), 36 (all) | 30 distinct employers |
-| French-language ads | 26 to 55 | **depends on the detector — see §8** |
-| Responsibility bullets | 5,163 across 631 ads | 83.0% matched at least one theme |
-| Keyword pass, Data Quality, FR vs EN | 35% vs 74% | p<0.0001 |
-| LLM pass, testing framing, FR vs EN | 60% vs 65% | p=0.59 |
-| LLM dimensions with no FR/EN difference | 9 of 10 | only `domain_risk` differs (p=0.011) |
-| Whole-corpus error from the bug | +1.2 points | 71.6% reported vs 72.8% corrected |
-| Segment error from the bug | +28 points | |
-| Coverage inside the broken group | 100% (26 of 26 ads) | the health metric that lied |
-| dbt named, France | 83% (30 of 36) | highest of any region; 61% elsewhere |
-| Language-gated, France | 63% (46% hard) | vs 28% elsewhere. UK 4%, NYC 0% |
-| Consultancy/ESN, France | 29% | vs 4% elsewhere, p<0.0001 |
-| `ai_role` = none | 61% (350 of 576) | vs dbt Labs' 72% daily AI use |
-| `testing_framing` = responsibility | 64% (369 of 576) | |
-| Gated field grounded | 99.96% (5,108 of 5,110) | `responsibilities` |
-| Monitored field grounded | 90.9% (of 5,745) | `evidence` |
+| Corpus / analytical cohort | 845 / 766 | Cohort = AE/BI + team lead |
+| France | 50 ads (47 in cohort), 41 employers | |
+| French-language ads | 30 in cohort | Detector-dependent |
+| Responsibility bullets | 6,852 across 840 ads | 82.5% match at least one theme |
+| Data quality, FR vs EN, per ad | 50% vs 73% | p=0.011 |
+| Data quality, FR vs EN, per bullet | 8.4% vs 16.4% | p=0.0006 — the robust figure |
+| Themes lower in French | 14 of 16 | 9 significantly |
+| LLM testing framing, FR vs EN | 70% vs 68% | p=0.95 |
+| LLM dimensions with no FR/EN difference | 10 of 10 | |
+| Whole-corpus error | about 1 point | 71.8% reported vs 72.7% corrected |
+| Segment error | 23 points | 36 with a looser detector |
+| French-language coverage | 100% (30 of 30) | |
+| Median bullets, FR vs EN | 7 vs 7 | p=0.63 |
+| French ads by employer type | services 46% (6/13), others 53% (9/17) | |
+| French-market ads in English | 82% (14/17) | |
+| dbt, France | 82% (41/50) | Berlin 78%, rest 58% |
+| Written in French, France | 66% (33/50) | |
+| Hard-require French, France | 26% (13/50) | Any French requirement 34%; 13 more hard-require English |
+| Any language requirement | France 58%, elsewhere 26% | UK 4%, NYC 0% |
+| Services companies, France | about a third (16–22 of 50) | Hand check |
+| Version control / CI/CD, France | 52% / 38% | vs 35% / 27% elsewhere |
+| Semantic layer mentioned | 25% of cohort | Only 13 ads name a product |
+| No AI expectation | 59% (449/766) | dbt Labs survey: 72% daily AI use |
+| Hire owns data quality | 67% (513/766) | |
+| Gated field matches source | 100% (6,785) | `responsibilities` |
+| Monitored field matches source | 82.0% (10,703 of 13,051) | `evidence` |
 
-### The two objections, in detail
+### Caveats to say once
 
-**Objection 1 — length.** True but insufficient.
-
-| | French-language | English-language |
-|---|---|---|
-| Median / mean bullets | 6.5 / 6.8 | 7.0 / 8.2 (p=0.019) |
-| Data Quality, 1–5 bullets | 19% (3/16) | 52% (64/123) — −33pts, p=0.016 |
-| Data Quality, 6–8 bullets | 44% (7/16) | 75% (170/228) — −31pts, p=0.016 |
-| Data Quality, 9+ bullets | 50% (4/8) | 87% (158/181) — −37pts, p=0.016 |
-| **Per bullet** | **6.7% (18/270)** | **16.6% (726/4,365)** — p=0.000003 |
-
-The band sizes are small (8 to 16 French ads each). **The per-bullet rate is the robust version. Lead with it if challenged.**
-
-**Objection 2 — consultancies.** Dead.
-
-- Non-consultancy employers only: 35% (11/31) vs 74% (380/512), −39 points, p<0.0001. The full gap survives.
-- Consultancy status alone, English ads only: 60% (12/20) vs 74% (380/512), p=0.19. Not significant.
-
-### Say these caveats out loud, briefly
-
-- **The sample is small for France.** Say it once. It supports "here is what these ads look like," not "the French market is X."
-- **The LLM nulls are weak evidence of sameness.** At this sample size you can detect the 30-to-50-point tool errors easily. You cannot rule out a real 5-point difference. The honest claim: the keyword tool was wrong by 30 to 50 points, and the LLM tool's leftover differences are within noise here. Not "the LLM is perfect."
-- **`domain_risk` really does differ** for French-language ads (82% moderate vs 65%). Volunteer it. It makes the other nine nulls credible instead of convenient.
-- **The consultancy figure uses a company-name rule**, and the corpus is opportunistic — collected during a job search, not sampled. Regional splits describe the corpus, not the labour market.
-- **Collection date is not posting date**, so the month-by-month AI trend is not a time series. Do not show it.
-
-### Held back for a longer slot
-
-Two findings the panel verified that are too good to bury and too big for ten minutes:
-
-- **AI expectation comes with quality liability, not without it.** Ads that state any AI expectation make data quality personally owned 76% of the time, versus 57% where they don't (p=5×10⁻⁶, V=0.19). It survives when you look only at manager-written ads (79% vs 64%, p=0.001). `ai_enabler` roles carry the highest compliance-fear framing of any group (31% vs 19%). This inverts the usual "AI is outrunning governance" story. It is the most publishable thing in the corpus.
-- **Fear is the honest signal.** `loss_aversion × domain_risk` is V=0.39, p<0.0001. Of the 129 high-fear ads, 71% are genuinely high-risk and **zero** are low-risk. So the market *can* signal real stakes accurately. It does it by naming what it is afraid of, not by saying "quality matters."
+- **Small sample for France.** It shows what these ads look like, not what the French market is.
+- **The LLM nulls are weak evidence of sameness.** 30 ads can reveal a 23-point tool error, not a real 5-point difference.
+- **Services-company share is a hand check.** The corpus comes from a job search, not a sample.
+- **Collection date is not posting date.** Don't show the month-by-month AI trend.
 
 ---
 
-## 8. Three things to fix in the repo first
+## Findings not in this talk
 
-The panel found these. Two affect what you can honestly say on stage.
-
-**① The French/English gap is not reproducible from `data.json`.** There is no `jd_language` field. Every version of that number is an after-the-fact reconstruction, and it moves a lot depending on how you detect language:
-
-| Detector | French-language ads | Data Quality gap |
+| Finding | Key numbers | Why it's out |
 |---|---|---|
-| Mine | 40 | −39 points |
-| Reviewer 1 (stopword ratio) | 26 | −28 points |
-| Reviewer 4 (stopword density) | 55 | −43 points |
+| **"Data quality" carries little information** | Phrase in 52% of ads. Risk × quality ownership V=0.097 — below the report's effect-size floor. Ownership verbs predict direction-setting work: 52% vs 21% | Second argument; 10 minutes holds one |
+| **Nobody defines the quality they hand over** | Of 513 quality-owning ads: SLA 6.8%, incident 3.3%, data contract 6.0%, on-call 1.0%. 28 of 766 name a data-quality tool | Partly true by definition: authorship and testing are coded from the same text. Keep for Q&A |
+| **AI expectation comes with quality ownership** | 78% vs 59% (p=2×10⁻⁷); manager-written only 80% vs 66%. AI-infrastructure roles carry the most compliance fear (37% vs 21%) | The most publishable finding — save for a longer slot |
+| **Fear is the honest signal** | Of 193 high-fear ads, 68% are high-risk, none low-risk | Longer slot |
+| **The semantic layer has the same shape as data quality** | Mentioned in 25% of ads, product named in 13 | Bridge to the agentic track for a future talk |
 
-The direction is solid across all three. The headline number is not. **§7 previously listed −39 points as verified. It isn't — it is detector-dependent.** Add a `jd_language` field, pick a detector, document it, and freeze the figure before you build a slide on it. Right now you would be quoting a number a curious attendee cannot reproduce from your own repo.
-
-**② `write_jd.py` gates `responsibilities` but not `evidence`.** `verify_responsibilities` refuses a write unless every bullet is a literal substring of the archive. Nothing does that for the `evidence` quotes. Reviewers measured the result two ways and got 90.9% and 80.8% grounded depending on how strictly you match. Two fields fail badly: `collaboration_width` at about 70% and `loss_aversion` at about 91% by one measure. Those were never quotes — they are synthesised lists and paraphrase, sitting in a field the schema calls evidence.
-
-Fix: split `span` from `rationale`. Gate the span. Monitor the rationale. Or stop calling the field evidence.
-
-This is also good material. It is the same bug class as the talk's, in the same repo, one field over.
-
-**③ Two of your own files disagree.** `consistency_report.md` gives `jd_authorship` a mean of 0.43 and `domain_risk` 0.80. Report §3 quotes 0.58 and 0.95. Different runs, presumably. Reconcile them or someone will find it.
+Good one-sentence examples for any of these: Rabot Energy — "errors surface in CI rather than in a management meeting"; Mimecast — "define and enforce the data quality bar: tests, freshness SLAs, lineage, incident response."
 
 ---
 
-## 9. Still to check
+## What the French data community is saying
 
-1. Are you on the programme, and in which slot?
-2. Did they publish your abstract word for word? That decides how far §5 can move from it.
-3. Slide format, aspect ratio, submission deadline.
-4. Will the corpus grow before 16 November? If so, freeze the numbers about a week out and re-run §7.
-5. Recording — if talks go online, the repo link needs to survive as a QR code on the last slide.
-6. Read the Rebecca Williams article yourself. Medium blocks automated fetching, so the "close the loop" advice in this plan came from search extracts, not the full text.
+**Nothing found measures what this corpus measures.** No French source counts the services-company share of data ads, French-language requirements, or whether ads define data quality. Most of what exists supports the talk.
+
+### Voices
+
+| Who | Where | What they said |
+|---|---|---|
+| **Robin Conquet** — DataGen podcast; co-author of [TPC's data jobs study](https://tpc-recrutement.com/ressources/etudes-de-salaires/etude-2026/metier-data) | [DataGen #160, 3 Aug 2026](https://datageneration.substack.com/p/quel-est-lepisode-datagen-le-plus) | "80% des besoins de nos clients sont sur des fondamentaux", while 80% of the podcast is about agentic topics. And: "En France, 99% sont français" in data and AI teams |
+| **Christophe Blefari** — blef.fr newsletter; co-founder of nao | [DataGen #242, 8 Dec 2025](https://shows.acast.com/data-gen/episodes/242-on-decrypte-4-tendances-data-ia-de-2026-avec-blef) | 2026 trends: semantic layer, MCP, "95% of projects are not in production". *Episode description only* |
+| | [DataGen #267, 27 Apr 2026](https://open.spotify.com/episode/5iNqFHkMB0ifuA4QE0Mz1d) | Agentic impact on data roles, "why data catalogs missed the mark". *Search snippet only* |
+| **Véronique Torner** — president of Numeum | [Blog du Modérateur, 4 Jun 2026](https://www.blogdumoderateur.com/emploi-numerique-loin-job-apocalypse-promet/) | "nous sommes loin de la job apocalypse". Junior roles declining |
+
+### Reports
+
+| Source | Claim | Fit with the corpus |
+|---|---|---|
+| [Indeed Hiring Lab France](https://hiringlab.indeed.com/fr/blog/2026/04/01/avril-2026-lia-progresse-dans-un-marche-du-travail-en-recul/), 1 Apr 2026 | AI in 3.4% of French ads — lowest compared (UK 7.5%, US 4.9%, Germany 4.1%) | **Supports** 59% no-AI |
+| [TPC "Métiers Data 2026"](https://tpc-recrutement.com/ressources/etudes-de-salaires/etude-2026/metier-data) | Analytics engineer "le chaînon manquant"; "outil phare : DBT"; data engineers often in "agence, ESN ou cabinet"; junior hiring frozen | **Supports** dbt and services share. *Verify on page* |
+| [APEC 2026](https://corporate.apec.fr/home/nos-etudes/toutes-nos-etudes/les-metiers-cadres-porteurs-edition-2026.html), 19 Feb 2026 | Data engineer offers up 10%; developer offers down 20% | Context. *Via [Le Monde Informatique](https://www.lemondeinformatique.fr/actualites/lire-la-demande-en-developpeurs-et-chefs-de-projets-it-s-erode-en-2025-99488.html)* |
+| [Numeum / KPMG](https://kpmg.com/fr/fr/media/press-releases/2025/10/numeum-kpmg-innovation-numerique-grand-angle-esn-ict-2025.html), 14 Oct 2025 | 81% of services firms see generative AI as their top opportunity | **Contrasts** — firms talk up AI, ads don't ask for it |
+| [LinkedIn Jobs on the Rise France](https://www.rhmatin.com/sirh/gestion-talents/25-metiers-en-croissance-en-france-par-linkedin-l-influence-de-l-ia-se-confirme-en-2026.html) | AI engineer #1; no data or BI role in top 25 | Context |
+| [Jedha](https://www.jedha.co/formation-analyse-donnee/chiffres-sur-le-marche-de-la-data-en-2025) | Top tools Dataiku, Azure, Power BI, AWS — no dbt | **Complicates** dbt. Bootcamp source |
+| [dbt Labs State of AE 2025](https://www.getdbt.com/blog/state-of-analytics-engineering-2025-summary) | 56% name data quality their top problem; 80% use AI at work | Frames both gaps |
+| [Forward Data Conference 2026](https://www.hymaia.com/evenement/forward-data-conference-2026/) | Quality and data contracts are the "infrastructure of trust" for AI | **Contrasts** — 6% of quality-owning ads mention a data contract |
+
+Salary sources, out of scope: [TPC analytics engineer](https://tpc-recrutement.com/ressources/salaires/data/analytics-engineer), [Silkhom](https://www.silkhom.com/les-salaires-informatique-et-electronique/), [Malt](https://www.malt.fr/t/barometre-tarifs).
+
+### How to use it
+
+1. **Language requirement → Conquet's "99% sont français"**, in the Act 1 mirror.
+2. **Fundamentals → Conquet's "80% des besoins… fondamentaux"**, as an epigraph before the teaser or in Q&A. Name him; he may be in the room.
+3. **AI teaser → Indeed's 3.4%.** A large sample closes the "one person's job search" objection.
+4. **"What should employers write?" → the conference's own "infrastructure of trust"** vs 6% mentioning data contracts. Q&A only.
+5. **dbt challenge → Jedha.** Answer: this corpus skews toward scale-ups; corporate BI hiring looks different.
+
+---
+
+## Repo actions before the talk
+
+- [ ] **Add a `jd_language` field.** The French figures are reconstructed with an ad-hoc detector and move with it:
+
+  | Detector | French-language ads | Data quality gap |
+  |---|---|---|
+  | Strict: French-only words | 30 | −23 points |
+  | Loose: common stopwords, also catches German, Swedish, Spanish | 54 | −36 points |
+
+  Pick one, document it, freeze the number. Until then, nobody can reproduce the slide from the repo.
+- [ ] **Gate `evidence` in `write_jd.py`**, the way `responsibilities` is gated. Split the quote from the reasoning; gate the quote, monitor the reasoning. Same bug class as the talk, one field over.
+- [ ] **Reconcile `consistency_report.md` with `report.md`.** One gives `jd_authorship` 0.43 and `domain_risk` 0.80; the other 0.58 and 0.95.
+- [ ] **Hand-check services companies outside France** before comparing regions.
+- [ ] **Verify every quote marked *verify*, *description only* or *snippet only*** on the page itself.
+- [ ] **Find the source of the "close the loop" advice.** It is not in the Rebecca Williams article ([The Science Behind Storytelling](https://rebecca-williams.com/the-science-behind-storytelling-why-its-the-secret-weapon-for-persuasion/)). That article does say: "Only 5% of audiences could remember statistics, 63% could repeat story elements."
