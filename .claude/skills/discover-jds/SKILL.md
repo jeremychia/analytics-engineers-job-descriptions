@@ -24,8 +24,11 @@ python3 scripts/discover_jobs.py list --limit <max>
 ```
 
 - With `--dry-run`, print this list and stop.
-- Skip every entry marked `possible repost of <jd_id>`: the same company and title are already in the corpus under another URL. Mark them `duplicate` (Step 4) and name them in the summary, so the user can classify one deliberately if it is a new opening.
+- Skip every entry marked `possible repost of <jd_id>`: the same company and exact title are already in the corpus under another URL. Mark them `duplicate` (Step 4) and name them in the summary, so the user can classify one deliberately if it is a new opening.
+- Keep entries marked `similar to <jd_id>`, but compare before writing. Fetch the posting and compare its responsibilities with that record's `responsibilities`. Identical bullets mean a relabelled repost: mark it `duplicate`. A different level, team or pay band means a new opening: classify it and name the related record in its evidence.
+- Keep only the first of entries marked `same title as queued <job_id>`. After classifying it, fetch each twin and diff the body text. Identical apart from location means one opening listed twice: mark it `duplicate`. A separate country, pay band or contract means a distinct opening: classify it, reuse the first record's coding where the text is the same, and flag the pair as correlated signal in the summary.
 - Keep everything else, up to `--max`.
+- Run `python3 scripts/discover_jobs.py recheck` after a batch adds records, so postings already queued get compared against them.
 
 ## Step 3 — Classify
 
@@ -55,6 +58,8 @@ Print: postings found, queued, classified, duplicates, failures, and how many re
 - Add or change a region in `discovery/search_config.json`. Take the `geoId` from the region's LinkedIn search URL, and add `distance_miles` for a city.
 - The `seattle` region has no `geo_region` bucket in `scripts/geo_classify.py`, so its records compile into `other`.
 - The search uses LinkedIn's logged-out job search. Keep to the configured regions, keywords and page limits.
+
+- Run every shell loop over job ids with `xargs` or a quoted array. In zsh an unquoted `$ids` stays one word, and `done` then records the whole string as a single bogus id.
 
 ## Worked case
 

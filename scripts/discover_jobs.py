@@ -16,6 +16,7 @@ or block response (HTTP 429 or 999) instead of retrying.
 Usage:
     python3 scripts/discover_jobs.py search [--regions emea,uk] [--days 4] [--max-pages 3]
     python3 scripts/discover_jobs.py list [--limit 20]
+    python3 scripts/discover_jobs.py recheck
     python3 scripts/discover_jobs.py done <job_id> [<job_id> ...] --status classified|duplicate|skipped|failed
 """
 
@@ -58,6 +59,50 @@ def save_json(path, obj):
 
 def norm(s):
     return re.sub(r"[^a-z0-9]+", " ", (s or "").lower()).strip()
+
+
+SENIORITY = {"senior", "sr", "staff", "lead", "principal", "junior", "jr", "i", "ii", "iii", "iv"}
+LEGAL = {"plc", "ab", "gmbh", "ltd", "limited", "inc", "llc", "sa", "bv", "nv", "ag", "co", "kg", "group"}
+
+
+def title_key(title):
+    """Title without seniority words, roman numerals or bracketed suffixes."""
+    t = re.sub(r"\(.*?\)", " ", title or "")
+    return " ".join(w for w in norm(t).split() if w not in SENIORITY)
+
+
+def company_tokens(company):
+    """Company name words, without bracketed notes or legal suffixes."""
+    c = re.sub(r"\(.*?\)", " ", company or "")
+    return [w for w in norm(c).split() if w not in LEGAL]
+
+
+def same_company(a, b):
+    """True when one company's words are a leading run of the other's ("Super" / "Super Technologies")."""
+    ta, tb = company_tokens(a), company_tokens(b)
+    if not ta or not tb:
+        return False
+    short, long_ = sorted((ta, tb), key=len)
+    return long_[: len(short)] == short or "".join(ta) == "".join(tb)
+
+
+def find_repost(card, corpus):
+    """(field, jd_id) for the closest corpus match, or (None, None).
+
+    possible_repost_of: same company and exact title, almost always the same opening.
+    similar_to: same company and title once seniority words are ignored, or a company-name
+    variant. Often a repost with a relabelled title, but sometimes a different-level opening,
+    so it needs a text comparison rather than an automatic skip.
+    """
+    similar = None
+    for r in corpus:
+        if not same_company(card["company"], r.get("company")):
+            continue
+        if norm(r.get("role")) == norm(card["title"]) and norm(r.get("company")) == norm(card["company"]):
+            return "possible_repost_of", r["jd_id"]
+        if similar is None and title_key(r.get("role")) == title_key(card["title"]):
+            similar = r["jd_id"]
+    return ("similar_to", similar) if similar else (None, None)
 
 
 def fetch(params):
@@ -142,7 +187,6 @@ def cmd_search(args):
 
     corpus = load_corpus()
     li_ids = corpus_linkedin_ids(corpus)
-    by_company_title = {(norm(r.get("company")), norm(r.get("role"))): r["jd_id"] for r in corpus}
     queue = load_json(QUEUE_PATH, [])
     seen = load_json(SEEN_PATH, {})
     known = {q["job_id"] for q in queue} | set(seen)
@@ -167,9 +211,14 @@ def cmd_search(args):
             counts["known"] += 1
         else:
             entry = {**c, "url": url, "found_on": today}
-            repost = by_company_title.get((norm(c["company"]), norm(c["title"])))
-            if repost:
-                entry["possible_repost_of"] = repost
+            field, match = find_repost(c, corpus)
+            if field:
+                entry[field] = match
+            if field != "possible_repost_of":
+                twin = next((q for q in queue + added if title_key(q["title"]) == title_key(c["title"])
+                             and same_company(q["company"], c["company"])), None)
+                if twin:
+                    entry["twin_of"] = twin["job_id"]
             added.append(entry)
 
     queue += added
@@ -178,7 +227,7 @@ def cmd_search(args):
           f"{counts['in_corpus']} already in corpus, {counts['known']} already queued or handled")
     print(f"queue now holds {len(queue)} pending posting(s)")
     for e in added:
-        flag = f"  [possible repost of {e['possible_repost_of']}]" if e.get("possible_repost_of") else ""
+        flag = flag_text(e)
         print(f"  {e['region']:10s} {e['company'][:28]:28s} {e['title'][:50]:50s} {e['url']}{flag}")
 
 
@@ -188,9 +237,43 @@ def cmd_list(args):
     li_ids = corpus_linkedin_ids(corpus)
     pending = [q for q in queue if q["job_id"] not in li_ids]
     for e in pending[: args.limit or None]:
-        flag = f" [possible repost of {e['possible_repost_of']}]" if e.get("possible_repost_of") else ""
+        flag = flag_text(e)
         print(f"{e['job_id']}\t{e['region']}\t{e['company']}\t{e['title']}\t{e['url']}{flag}")
     print(f"{len(pending)} pending", file=sys.stderr)
+
+
+def flag_text(e):
+    if e.get("possible_repost_of"):
+        return f"  [possible repost of {e['possible_repost_of']}]"
+    notes = []
+    if e.get("similar_to"):
+        notes.append(f"similar to {e['similar_to']}")
+    if e.get("twin_of"):
+        notes.append(f"same title as queued {e['twin_of']}")
+    return f"  [{'; '.join(notes)}]" if notes else ""
+
+
+def cmd_recheck(args):
+    """Re-apply repost and twin detection to everything already queued."""
+    queue = load_json(QUEUE_PATH, [])
+    corpus = load_corpus()
+    seen_first = []
+    for e in queue:
+        for k in ("possible_repost_of", "similar_to", "twin_of"):
+            e.pop(k, None)
+        field, match = find_repost(e, corpus)
+        if field:
+            e[field] = match
+        if field != "possible_repost_of":
+            twin = next((q for q in seen_first if title_key(q["title"]) == title_key(e["title"])
+                         and same_company(q["company"], e["company"])), None)
+            if twin:
+                e["twin_of"] = twin["job_id"]
+            seen_first.append(e)
+    save_json(QUEUE_PATH, queue)
+    print(f"{sum('possible_repost_of' in e for e in queue)} possible reposts, "
+          f"{sum('similar_to' in e for e in queue)} similar to a corpus record, "
+          f"{sum('twin_of' in e for e in queue)} twins, out of {len(queue)} queued")
 
 
 def cmd_done(args):
@@ -218,11 +301,12 @@ def main():
     s.add_argument("--max-pages", type=int, help="pages of 10 results per region x keyword")
     l = sub.add_parser("list")
     l.add_argument("--limit", type=int)
+    sub.add_parser("recheck")
     d = sub.add_parser("done")
     d.add_argument("job_ids", nargs="+")
     d.add_argument("--status", required=True, choices=STATUSES)
     args = ap.parse_args()
-    {"search": cmd_search, "list": cmd_list, "done": cmd_done}[args.cmd](args)
+    {"search": cmd_search, "list": cmd_list, "recheck": cmd_recheck, "done": cmd_done}[args.cmd](args)
 
 
 if __name__ == "__main__":
