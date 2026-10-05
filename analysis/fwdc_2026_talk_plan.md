@@ -36,13 +36,13 @@
 
 ---
 
-## Key facts (checked 2026-09-25)
+## Key facts (checked 2026-10-05)
 
 1. **The bug still exists.** The Data Quality keyword pattern is English-only.
-2. **The gap:** the keyword pass finds data-quality language in **50%** of French-language ads vs **73%** of English ones (p=0.011). Per bullet: **8.4% vs 16.4%** (p=0.0006). Use the per-bullet figure if challenged.
-3. **The health metric that lied:** **100%** of French-language ads (30 of 30) matched at least one theme.
-4. **Length isn't the cause.** Median 7 bullets in both languages (p=0.63).
-5. **Employer type isn't the cause.** French-market ads written in English score **82%** (14 of 17).
+2. **The gap:** the keyword pass finds data-quality language in **50%** of French-language ads vs **73%** of English ones (p=0.008). Per bullet: **8.5% vs 16.3%** (p=0.0005). Use the per-bullet figure if challenged.
+3. **The health metric that lied:** **100%** of French-language ads (32 of 32) matched at least one theme.
+4. **Length isn't the cause.** Median 7 bullets in both languages (p=0.78).
+5. **Employer type isn't the cause.** French-market ads written in English score **83%** (15 of 18).
 6. **The LLM control agrees.** No significant French/English difference on any of 10 dimensions.
 7. **The gated field is clean, the monitored one isn't.** 100% vs 82% of quotes match the source.
 
@@ -69,7 +69,7 @@ The conference's own copy sets the tone:
 ### Services companies in the room
 
 - **ESN** = *Entreprise de Services du Numérique*: an IT services company that places engineers on client projects. No clean English equivalent.
-- **About a third of the French ads** in the corpus come from ESNs, consultancies and staffing intermediaries: 16 of 50 by hand check, 22 if you count four likely ones.
+- **About a third of the French ads** in the corpus come from ESNs, consultancies and staffing intermediaries: 18 of 52 by hand check, 24 if you count four likely ones.
   - ESNs and consultancies: ALTEN, Aubay, Ekkiden, JEMS, Niji, Néosoft, eXalt, Optimize matter, Skiils, Size Up Consulting.
   - Closer to agencies: YURI & NEIL, Licorne Society, Socratiz.
 - **No comparable figure exists for other regions yet.** Don't put an "elsewhere" comparison on a slide.
@@ -149,19 +149,19 @@ r'\b(data quality|test(ing|s)?\b|validat|monitor(ing)?|assertion|anomaly|reliabi
 
 ### Provenance (12 seconds — first of three)
 
-> I have been reading these ads for a year. Two programs read them for me: a keyword pass over 6,852 responsibility bullets, and an LLM pass over ten behavioural dimensions.
+> I have been reading these ads for a year. Two programs read them for me: a keyword pass over 7,054 responsibility bullets, and an LLM pass over ten behavioural dimensions.
 
 ### Slide 3: The mirror
 
-**On screen:** "50 of these were written by people in this building." Names: Decathlon, Qonto, BeReal, Welcome to the Jungle, Electra, Orano, Pluxee, Cultura, Dashlane.
+**On screen:** "52 of these were written by people in this building." Names: Decathlon, Qonto, BeReal, Welcome to the Jungle, Electra, Orano, Pluxee, Cultura, Dashlane.
 
 | Fact | Figure |
 |---|---|
-| **Name dbt** | **82%** — highest of any region in the corpus. Berlin next at 78%; rest of corpus 58% |
+| **Name dbt** | **83%** — highest of any region in the corpus. Berlin next at 79%; rest of corpus 58% |
 | **Come from services companies** | **About a third** |
 | **Written in French** | **Two in three** |
-| **Hard-require French** | **26%** — and another 26% hard-require English |
-| Optional: **mention version control / CI/CD** | **52% / 38%**, vs 35% / 27% elsewhere |
+| **Hard-require French** | **27%** — and about a quarter more hard-require English |
+| Optional: **mention version control / CI/CD** | **54% / 38%**, vs 36% / 27% elsewhere |
 
 **Say:**
 
@@ -179,12 +179,12 @@ r'\b(data quality|test(ing|s)?\b|validat|monitor(ing)?|assertion|anomaly|reliabi
 
 **On screen:**
 - **50% vs 73%** — ads with data-quality language, French vs English
-- **8.4% vs 16.4%** — per bullet
+- **8.5% vs 16.3%** — per bullet
 - Small chart: 14 of 16 themes lower in French
 
 **Say** (the tool is the subject, not you):
 
-> Across the French-language ads, my keyword pass reports data-quality language in half of them, against three quarters of the English-language ones. Per bullet it is 8% against 16%. Fourteen of sixteen themes, same direction.
+> Across the French-language ads, my keyword pass reports data-quality language in half of them, against three quarters of the English-language ones. Per bullet it is 8.5% against 16%. Fourteen of sixteen themes, same direction.
 > *[two seconds of silence — rehearse with a timer]*
 > Nobody in this room believes that number, and I know exactly which three reasons you don't.
 
@@ -194,12 +194,12 @@ r'\b(data quality|test(ing|s)?\b|validat|monitor(ing)?|assertion|anomaly|reliabi
 
 | | French | English |
 |---|---|---|
-| Median bullets | **7** | **7** (p=0.63) |
-| Data quality per bullet | **8.4%** | **16.4%** (p=0.0006) |
+| Median bullets | **7** | **7** (p=0.78) |
+| Data quality per bullet | **8.5%** | **16.3%** (p=0.0005) |
 
 **Say:**
 
-> They aren't. Median seven bullets in both. Per bullet, the gap is the same: 8.4 against 16.4. Same length, half the signal.
+> They aren't. Median seven bullets in both. Per bullet, the gap is the same: 8.5 against 16.3. Same length, half the signal.
 
 ### Slide 6: Objection 2 — "It's who is hiring" (3:50–4:55)
 
@@ -207,18 +207,18 @@ r'\b(data quality|test(ing|s)?\b|validat|monitor(ing)?|assertion|anomaly|reliabi
 
 | French ads, services companies | French ads, everyone else | Same market, written in English |
 |---|---|---|
-| **46%** (6/13) | **53%** (9/17) | **82%** (14/17) |
+| **47%** (7/15) | **53%** (9/17) | **83%** (15/18) |
 
 Caption: *Same market, same employers, different language.*
 
 **Say:**
 
 > About a third of the ads from this market come from services companies. An ESN ad often describes a role before the client project is assigned, so it describes a capability rather than a system. That is a real difference, and a good reason to expect different language. So I checked whether it explains the gap.
-> It doesn't. Among the French-language ads, services companies and everyone else score about the same. And ads from this same market, written in English, score 82%. Same market, different language. Whatever is going on, it isn't who is hiring.
+> It doesn't. Among the French-language ads, services companies and everyone else score about the same. And ads from this same market, written in English, score 83%. Same market, different language. Whatever is going on, it isn't who is hiring.
 
 **Notes:**
 - This clears the group you tested. Deliver it as a point in their favour.
-- Don't claim the English ads beat the corpus average. At 17 ads that is noise.
+- Don't claim the English ads beat the corpus average. At 18 ads that is noise.
 - Step toward the audience here.
 
 ### Slide 7: Objection 3 and the reveal (4:55–6:15)
@@ -244,7 +244,7 @@ Caption: *Same market, same employers, different language.*
 
 ### Slide 8: The control run
 
-**On screen:** 10 dimensions, French vs English — all "no significant difference". Highlight testing framing: **70% vs 68%, p=0.95**.
+**On screen:** 10 dimensions, French vs English — all "no significant difference". Highlight testing framing: **69% vs 68%, p≈1.0**.
 
 **Say:**
 
@@ -284,8 +284,8 @@ Caption: *Same market, same employers, different language.*
 
 | Field | Protection | Quotes matching the source |
 |---|---|---|
-| `responsibilities` | Write is refused unless every bullet is copied exactly | **100%** (6,785) |
-| `evidence` | None — checked afterwards | **82%** (13,051) |
+| `responsibilities` | Write is refused unless every bullet is copied exactly | **100%** (6,987) |
+| `evidence` | None — checked afterwards | **82%** (13,421) |
 
 **Say:**
 
@@ -297,7 +297,7 @@ Caption: *Same market, same employers, different language.*
 
 ### Teaser (5 seconds — third of three)
 
-> The corpus is open. One of its other findings: 59% of employers ask for no AI skill at all — and Indeed's French data puts AI in 3.4% of all ads.
+> The corpus is open. One of its other findings: 58% of employers ask for no AI skill at all — and Indeed's French data puts AI in 3.4% of all ads.
 
 **On screen:** QR code to the repo. Stop.
 
@@ -322,41 +322,41 @@ Caption: *Same market, same employers, different language.*
 
 ## Reference numbers
 
-Checked against `analysis/data.json` on 2026-09-25. French-language figures use a strict detector; they move with the detector (see Repo actions).
+Checked against `analysis/data.json` on 2026-10-05. French-language figures use a strict detector: an ad counts as French-language when its responsibility bullets contain at least three of *vous, nous, avec, données, équipe, être, vos, notre, nos, dans, une, des, pour*. "English" means every other analytical-cohort ad. Per-ad p-values are Fisher's exact test; theme significance counts use uncorrected chi-square. Figures marked *not re-run* are the 845-JD values, because their exact pattern could not be reproduced.
 
 | Figure | Value | Note |
 |---|---|---|
-| Corpus / analytical cohort | 845 / 766 | Cohort = AE/BI + team lead |
-| France | 50 ads (47 in cohort), 41 employers | |
-| French-language ads | 30 in cohort | Detector-dependent |
-| Responsibility bullets | 6,852 across 840 ads | 82.5% match at least one theme |
-| Data quality, FR vs EN, per ad | 50% vs 73% | p=0.011 |
-| Data quality, FR vs EN, per bullet | 8.4% vs 16.4% | p=0.0006 — the robust figure |
-| Themes lower in French | 14 of 16 | 9 significantly |
-| LLM testing framing, FR vs EN | 70% vs 68% | p=0.95 |
+| Corpus / analytical cohort | 869 / 787 | Cohort = AE/BI + team lead |
+| France | 52 ads (49 in cohort), 42 employers | |
+| French-language ads | 32 in cohort | Detector-dependent |
+| Responsibility bullets | 7,054 across 864 ads | 82.5% match at least one theme |
+| Data quality, FR vs EN, per ad | 50% vs 73% | p=0.008 |
+| Data quality, FR vs EN, per bullet | 8.5% vs 16.3% | p=0.0005 — the robust figure |
+| Themes lower in French | 14 of 16 | 7 significantly |
+| LLM testing framing, FR vs EN | 69% vs 68% | p≈1.0 |
 | LLM dimensions with no FR/EN difference | 10 of 10 | |
 | Whole-corpus error | about 1 point | 71.8% reported vs 72.7% corrected |
-| Segment error | 23 points | 36 with a looser detector |
-| French-language coverage | 100% (30 of 30) | |
-| Median bullets, FR vs EN | 7 vs 7 | p=0.63 |
-| French ads by employer type | services 46% (6/13), others 53% (9/17) | |
-| French-market ads in English | 82% (14/17) | |
-| dbt, France | 82% (41/50) | Berlin 78%, rest 58% |
-| Written in French, France | 66% (33/50) | |
-| Hard-require French, France | 26% (13/50) | Any French requirement 34%; 13 more hard-require English |
-| Any language requirement | France 58%, elsewhere 26% | UK 4%, NYC 0% |
-| Services companies, France | about a third (16–22 of 50) | Hand check |
-| Version control / CI/CD, France | 52% / 38% | vs 35% / 27% elsewhere |
-| Semantic layer mentioned | 25% of cohort | Only 13 ads name a product |
-| No AI expectation | 59% (449/766) | dbt Labs survey: 72% daily AI use |
-| Hire owns data quality | 67% (513/766) | |
-| Gated field matches source | 100% (6,785) | `responsibilities` |
-| Monitored field matches source | 82.0% (10,703 of 13,051) | `evidence` |
+| Segment error | 23 points | 36 with a looser detector (not re-run) |
+| French-language coverage | 100% (32 of 32) | |
+| Median bullets, FR vs EN | 7 vs 7 | p=0.78 |
+| French ads by employer type | services 47% (7/15), others 53% (9/17) | |
+| French-market ads in English | 83% (15/18) | |
+| dbt, France | 83% (43/52) | Berlin 79%, rest 58% |
+| Written in French, France | 65% (34/52) | |
+| Hard-require French, France | 27% (14/52) | Any French requirement 37%; 13 more hard-require English (not re-run) |
+| Any language requirement | France 58%, elsewhere 25% | UK 4%, NYC 0% |
+| Services companies, France | about a third (18–24 of 52) | Hand check |
+| Version control / CI/CD, France | 54% / 38% | vs 36% / 27% elsewhere |
+| Semantic layer mentioned | 25% of cohort | Only 14 ads name a product |
+| No AI expectation | 58% (455/787) | dbt Labs survey: 72% daily AI use |
+| Hire owns data quality | 67% (531/787) | |
+| Gated field matches source | 100% (6,987) | `responsibilities` |
+| Monitored field matches source | 82.3% (11,044 of 13,421) | `evidence` |
 
 ### Caveats to say once
 
 - **Small sample for France.** It shows what these ads look like, not what the French market is.
-- **The LLM nulls are weak evidence of sameness.** 30 ads can reveal a 23-point tool error, not a real 5-point difference.
+- **The LLM nulls are weak evidence of sameness.** 32 ads can reveal a 23-point tool error, not a real 5-point difference.
 - **Services-company share is a hand check.** The corpus comes from a job search, not a sample.
 - **Collection date is not posting date.** Don't show the month-by-month AI trend.
 
@@ -366,11 +366,11 @@ Checked against `analysis/data.json` on 2026-09-25. French-language figures use 
 
 | Finding | Key numbers | Why it's out |
 |---|---|---|
-| **"Data quality" carries little information** | Phrase in 52% of ads. Risk × quality ownership V=0.097 — below the report's effect-size floor. Ownership verbs predict direction-setting work: 52% vs 21% | Second argument; 10 minutes holds one |
-| **Nobody defines the quality they hand over** | Of 513 quality-owning ads: SLA 6.8%, incident 3.3%, data contract 6.0%, on-call 1.0%. 28 of 766 name a data-quality tool | Partly true by definition: authorship and testing are coded from the same text. Keep for Q&A |
-| **AI expectation comes with quality ownership** | 78% vs 59% (p=2×10⁻⁷); manager-written only 80% vs 66%. AI-infrastructure roles carry the most compliance fear (37% vs 21%) | The most publishable finding — save for a longer slot |
-| **Fear is the honest signal** | Of 193 high-fear ads, 68% are high-risk, none low-risk | Longer slot |
-| **The semantic layer has the same shape as data quality** | Mentioned in 25% of ads, product named in 13 | Bridge to the agentic track for a future talk |
+| **"Data quality" carries little information** | Phrase in 52% of ads. Risk × quality ownership V=0.096 — below the report's effect-size floor. Ownership verbs predict direction-setting work: 52% vs 21% (not re-run) | Second argument; 10 minutes holds one |
+| **Nobody defines the quality they hand over** | Of 531 quality-owning ads: incident 3.6%, data contract 6.2%; SLA 6.8% and on-call 1.0% (both not re-run). 28 of 787 name a data-quality tool | Partly true by definition: authorship and testing are coded from the same text. Keep for Q&A |
+| **AI expectation comes with quality ownership** | 78% vs 60% (p=1×10⁻⁷); manager-written only 80% vs 67%. AI-infrastructure roles carry the most compliance fear (39% vs 21%) | The most publishable finding — save for a longer slot |
+| **Fear is the honest signal** | Of 205 high-fear ads, 65% are high-risk, none low-risk | Longer slot |
+| **The semantic layer has the same shape as data quality** | Mentioned in 25% of ads, product named in 14 | Bridge to the agentic track for a future talk |
 
 Good one-sentence examples for any of these: Rabot Energy — "errors surface in CI rather than in a management meeting"; Mimecast — "define and enforce the data quality bar: tests, freshness SLAs, lineage, incident response."
 
@@ -393,7 +393,7 @@ Good one-sentence examples for any of these: Rabot Energy — "errors surface in
 
 | Source | Claim | Fit with the corpus |
 |---|---|---|
-| [Indeed Hiring Lab France](https://hiringlab.indeed.com/fr/blog/2026/04/01/avril-2026-lia-progresse-dans-un-marche-du-travail-en-recul/), 1 Apr 2026 | AI in 3.4% of French ads — lowest compared (UK 7.5%, US 4.9%, Germany 4.1%) | **Supports** 59% no-AI |
+| [Indeed Hiring Lab France](https://hiringlab.indeed.com/fr/blog/2026/04/01/avril-2026-lia-progresse-dans-un-marche-du-travail-en-recul/), 1 Apr 2026 | AI in 3.4% of French ads — lowest compared (UK 7.5%, US 4.9%, Germany 4.1%) | **Supports** 58% no-AI |
 | [TPC "Métiers Data 2026"](https://tpc-recrutement.com/ressources/etudes-de-salaires/etude-2026/metier-data) | Analytics engineer "le chaînon manquant"; "outil phare : DBT"; data engineers often in "agence, ESN ou cabinet"; junior hiring frozen | **Supports** dbt and services share. *Verify on page* |
 | [APEC 2026](https://corporate.apec.fr/home/nos-etudes/toutes-nos-etudes/les-metiers-cadres-porteurs-edition-2026.html), 19 Feb 2026 | Data engineer offers up 10%; developer offers down 20% | Context. *Via [Le Monde Informatique](https://www.lemondeinformatique.fr/actualites/lire-la-demande-en-developpeurs-et-chefs-de-projets-it-s-erode-en-2025-99488.html)* |
 | [Numeum / KPMG](https://kpmg.com/fr/fr/media/press-releases/2025/10/numeum-kpmg-innovation-numerique-grand-angle-esn-ict-2025.html), 14 Oct 2025 | 81% of services firms see generative AI as their top opportunity | **Contrasts** — firms talk up AI, ads don't ask for it |
@@ -420,8 +420,8 @@ Salary sources, out of scope: [TPC analytics engineer](https://tpc-recrutement.c
 
   | Detector | French-language ads | Data quality gap |
   |---|---|---|
-  | Strict: French-only words | 30 | −23 points |
-  | Loose: common stopwords, also catches German, Swedish, Spanish | 54 | −36 points |
+  | Strict: French-only words | 32 | −23 points |
+  | Loose: common stopwords, also catches German, Swedish, Spanish | 54 (845-JD figure, not re-run) | −36 points |
 
   Pick one, document it, freeze the number. Until then, nobody can reproduce the slide from the repo.
 - [ ] **Gate `evidence` in `write_jd.py`**, the way `responsibilities` is gated. Split the quote from the reasoning; gate the quote, monitor the reasoning. Same bug class as the talk, one field over.
