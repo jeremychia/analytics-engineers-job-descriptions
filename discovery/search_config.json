@@ -1,0 +1,13 @@
+{
+  "keywords": ["\"analytics engineer\""],
+  "time_window_days": 7,
+  "max_pages_per_search": 5,
+  "regions": [
+    {"name": "emea", "geo_id": "91000007"},
+    {"name": "uk", "geo_id": "101165590"},
+    {"name": "apac", "geo_id": "91000003"},
+    {"name": "nyc_metro", "geo_id": "90000070"},
+    {"name": "seattle", "geo_id": "104116203", "distance_miles": 50}
+  ],
+  "title_include": "analytics? engineer|analytical engineer|analytics engineering|\\bbi engineer|business intelligence engineer|\\bbi developer|business intelligence developer"
+}
