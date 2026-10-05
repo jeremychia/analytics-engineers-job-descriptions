@@ -1431,17 +1431,17 @@ function buildNulls(data) {
     {
       expect: 'Expected — engineers should write like engineers',
       title: 'Engineer-authored JDs should be more rigour-heavy than recruiter ones',
-      takeaway: 'Flat across all three authorship types. Rigour vocabulary has diffused so thoroughly that recruiter templates produce it at the same rate as engineers.',
+      takeaway: 'Only a small lean. Rigour vocabulary is the majority framing whoever wrote the posting, and the gap stays below this page\'s effect-size floor.',
       resultFn: () => {
         const hm = grpPct(data,'jd_authorship','hiring_manager','velocity_vs_rigour','rigour');
         const mx = grpPct(data,'jd_authorship','mixed','velocity_vs_rigour','rigour');
         const rc = grpPct(data,'jd_authorship','recruiter','velocity_vs_rigour','rigour');
-        return `Flat: <strong>${hm}% / ${mx}% / ${rc}%</strong> rigour-coded for hiring-manager / mixed / recruiter authorship. Rigour vocabulary has diffused so thoroughly that recruiters working from templates produce it at the same rate as the engineers who mean it.`;
+        return `<strong>${hm}% / ${mx}% / ${rc}%</strong> rigour-coded for hiring-manager / mixed / recruiter authorship. Engineer-written postings lean slightly more rigour-heavy, but recruiter templates still produce rigour framing in most postings. The test can clear p&lt;0.05 at this sample size while its effect size (Cramér\'s V) stays below the 0.10 floor used across this page, so it is read as a lean, not a finding. The recruiter group is also small.`;
       },
       testFn: () => chiBadge(data, 'jd_authorship', 'velocity_vs_rigour'),
       apply: {
-        seeker: 'Rigour language in a JD tells you nothing about who wrote it or how the team actually works. Tool specificity is where authorship shows (see the dbt panel). Read the nouns, not the virtues.',
-        manager: 'You can\'t sound your way to credibility. Recruiters working from templates produce rigour vocabulary at the same rate as the engineers who mean it. What candidates actually read as "an engineer wrote this" is specificity: named tools, real scale numbers, concrete systems. Nouns, not virtues.',
+        seeker: 'Rigour language in a JD tells you little about who wrote it or how the team actually works. Tool specificity is where authorship shows (see the dbt panel). Read the nouns, not the virtues.',
+        manager: 'You can\'t sound your way to credibility. Recruiters working from templates produce rigour vocabulary in most postings too. What candidates actually read as "an engineer wrote this" is specificity: named tools, real scale numbers, concrete systems. Nouns, not virtues.',
       },
     },
     {
