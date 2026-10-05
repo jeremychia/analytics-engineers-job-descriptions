@@ -20,6 +20,7 @@ import sys
 import unicodedata
 from pathlib import Path
 
+from language_detect import detect_language
 from tool_mentions import TOOL_FIELDS, detect_tool_mentions_in_text
 
 JD_DATA_DIR = Path(__file__).parent.parent / "data"
@@ -50,7 +51,7 @@ JSON_FIELD_ORDER = [
     "ai_role", "testing_framing", "loss_aversion_framing",
     "greenfield_vs_fix", "velocity_vs_rigour", "domain_risk",
     "collaboration_width", "data_team_maturity", "urgency", "work_arrangement",
-    "language_gate_type", "language_gate_languages",
+    "language_gate_type", "language_gate_languages", "jd_language",
     "interview_stages", "ats_platform", "ats_job_id",
 ] + BOOL_FIELDS + TOOL_FIELDS + [
     "required_tools", "preferred_tools",
@@ -161,6 +162,7 @@ def write_files(data: dict):
     jd_text = data.pop("jd_text", "")
     # keyword-derived, never classifier-judged; overrides anything passed in
     data.update(detect_tool_mentions_in_text(jd_text))
+    data["jd_language"] = detect_language({**data, "jd_text": jd_text})
 
     # Verify before reading any field off the record - a record with fabricated
     # responsibility bullets, or with a dimension missing outright, should never

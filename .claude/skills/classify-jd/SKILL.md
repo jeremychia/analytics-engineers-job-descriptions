@@ -245,6 +245,8 @@ Set `true` if mentioned anywhere in JD (required or preferred), `false` if not.
 
 Leave `has_version_control`, `has_ci_cd`, `has_aws`, `has_azure`, `has_gcp` and `has_semantic_layer` out of the JSON you pipe in. `write_jd.py` derives them from `jd_text` with the patterns in `scripts/tool_mentions.py` and overwrites any value passed. After changing a pattern, run `python3 scripts/backfill_tool_mentions.py`.
 
+Leave `jd_language` out too. `write_jd.py` derives it from the responsibility bullets with `scripts/language_detect.py` and overwrites any value passed. After changing the rule, run `python3 scripts/backfill_language.py`.
+
 Also populate (additive, does not replace `has_*`):
 - **required_tools**: array of tool names (from the `has_*` vocabulary above, e.g. `"dbt"`, `"Python"`, `"Snowflake"` — strip the `has_` prefix, keep normal capitalization) named in a requirements/qualifications context with hard language ("required", "must have", "X+ years of experience with", listed under "Requirements"/"Must have" headers with no hedging). Empty list if the JD doesn't distinguish required from preferred at all (e.g. a single flat skills list with no qualifying language) — don't force a required/preferred split where the JD doesn't make one.
 - **preferred_tools**: array of tool names named with soft/hedged language ("nice to have", "a plus", "bonus points for", "preferred", "ideally", listed under "Nice to have"/"Bonus"/"Preferred" headers). Empty list if none.

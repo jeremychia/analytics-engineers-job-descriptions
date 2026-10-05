@@ -16,6 +16,7 @@ import json
 from pathlib import Path
 
 from geo_classify import classify_geo_region
+from language_detect import detect_language
 from tool_mentions import detect_tool_mentions
 
 DATA_DIR = Path(__file__).parent.parent / "data"
@@ -41,6 +42,7 @@ def main():
                     record["application_id"] = record["jd_id"]
                 record["geo_region"] = classify_geo_region(record.get("job_location", ""))
                 record.update(detect_tool_mentions(jd_folder / "jd_archive.md"))
+                record["jd_language"] = detect_language(record, jd_folder / "jd_archive.md")
                 records.append(record)
                 print(f"✓ {jd_id}")
             except json.JSONDecodeError as e:

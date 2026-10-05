@@ -322,13 +322,13 @@ Caption: *Same market, same employers, different language.*
 
 ## Reference numbers
 
-Checked against `analysis/data.json` on 2026-10-05. French-language figures use a strict detector: an ad counts as French-language when its responsibility bullets contain at least three of *vous, nous, avec, données, équipe, être, vos, notre, nos, dans, une, des, pour*. "English" means every other analytical-cohort ad. Per-ad p-values are Fisher's exact test; theme significance counts use uncorrected chi-square. Figures marked *not re-run* are the 845-JD values, because their exact pattern could not be reproduced.
+Checked against `analysis/data.json` on 2026-10-05. French-language means `jd_language = "fr"`, stored on every record by `scripts/language_detect.py`: an ad counts as French when its responsibility bullets contain at least three of *vous, nous, avec, données, équipe, être, vos, notre, nos, dans, une, des, pour*. "English" means every other analytical-cohort ad. Per-ad p-values are Fisher's exact test; theme significance counts use uncorrected chi-square. Figures marked *not re-run* are the 845-JD values, because their exact pattern could not be reproduced.
 
 | Figure | Value | Note |
 |---|---|---|
 | Corpus / analytical cohort | 869 / 787 | Cohort = AE/BI + team lead |
 | France | 52 ads (49 in cohort), 42 employers | |
-| French-language ads | 32 in cohort | Detector-dependent |
+| French-language ads | 32 in cohort | `jd_language = "fr"` |
 | Responsibility bullets | 7,054 across 864 ads | 82.5% match at least one theme |
 | Data quality, FR vs EN, per ad | 50% vs 73% | p=0.008 |
 | Data quality, FR vs EN, per bullet | 8.5% vs 16.3% | p=0.0005 — the robust figure |
@@ -416,14 +416,7 @@ Salary sources, out of scope: [TPC analytics engineer](https://tpc-recrutement.c
 
 ## Repo actions before the talk
 
-- [ ] **Add a `jd_language` field.** The French figures are reconstructed with an ad-hoc detector and move with it:
-
-  | Detector | French-language ads | Data quality gap |
-  |---|---|---|
-  | Strict: French-only words | 32 | −23 points |
-  | Loose: common stopwords, also catches German, Swedish, Spanish | 54 (845-JD figure, not re-run) | −36 points |
-
-  Pick one, document it, freeze the number. Until then, nobody can reproduce the slide from the repo.
+- [x] **Add a `jd_language` field.** Stored on every record and derived by `scripts/language_detect.py`. French-language now means `jd_language = "fr"`: 32 cohort ads, a 23-point data-quality gap. The looser stopword detector (54 ads, a 36-point gap on the 845-JD corpus) is retired, because it also caught German, Swedish and Spanish ads.
 - [ ] **Gate `evidence` in `write_jd.py`**, the way `responsibilities` is gated. Split the quote from the reasoning; gate the quote, monitor the reasoning. Same bug class as the talk, one field over.
 - [ ] **Reconcile `consistency_report.md` with `report.md`.** One gives `jd_authorship` 0.43 and `domain_risk` 0.80; the other 0.58 and 0.95.
 - [ ] **Hand-check services companies outside France** before comparing regions.
