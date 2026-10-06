@@ -126,7 +126,7 @@ def parse_cards(body):
             continue
         def grab(pattern):
             g = re.search(pattern, chunk, re.S)
-            return html.unescape(re.sub(r"<[^>]+>", "", g.group(1))).strip() if g else ""
+            return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", g.group(1)))).strip() if g else ""
         cards.append({
             "job_id": m.group(1),
             "title": grab(r'base-search-card__title[^>]*>(.*?)</h3>'),
