@@ -107,6 +107,28 @@ Base name: `YYYY-MM-DD_company-slug_job-title-slug`
 
 ---
 
+## Step 1.4 — Resolve a LinkedIn posting to the employer's ATS
+
+When the URL is a LinkedIn job, record the employer's own posting instead. LinkedIn's logged-out page hides the "Apply on company website" link, so look the job up on the ATS boards directly:
+
+```bash
+python3 scripts/resolve_ats.py --company "{company}" --title "{title}" --text-file /path/to/fetched_posting.txt
+```
+
+- **Exit 0** prints JSON with `ats_platform`, `source_url` and `ats_job_id`. The match is verified: the posting's bullet lines appear in the ATS text.
+  - Set `source_url`, `ats_platform` and `ats_job_id` from it.
+  - Put the LinkedIn URL in `linkedin_url`.
+  - Keep the LinkedIn text as `jd_text`. It is the same posting, already verified.
+- **Exit 1** prints `NO VERIFIED ATS MATCH`, sometimes with unverified title matches.
+  - Keep the LinkedIn URL as `source_url`, `linkedin` as `ats_platform` and the LinkedIn job id as `ats_job_id`.
+  - Never take an unverified title match. Titles like "Senior AI Engineer" and "Senior Analytics Engineer" score as similar.
+- The script covers Greenhouse, Lever, Ashby, Workable, SmartRecruiters, Recruitee, Personio and amazon.jobs. For Workday, Teamtailor or a company careers site, keep the LinkedIn URL unless you find the ATS posting another way and its text matches.
+- Expect a miss when the responsibilities are paragraphs rather than `- ` bullet lines. The script verifies only on bullet lines.
+
+Run Step 1.5 on both URLs. A posting can already be in the corpus under its ATS URL.
+
+---
+
 ## Step 1.5 — Duplicate check (mandatory, before writing anything)
 
 The corpus has been re-scraped the same live posting under different dates, different tracking query strings, different job-board mirrors, and even different company labels (agency vs. hiring company) — a company+role-slug check misses most of that. Run:
@@ -289,7 +311,8 @@ python3 scripts/write_jd.py <<'EOF'
 {
   "jd_id": "{base-name}",
   "jd_text": "{full verbatim JD text}",
-  "source_url": "{URL}",
+  "source_url": "{URL — the ATS posting when Step 1.4 resolved one}",
+  "linkedin_url": "{LinkedIn URL — only when Step 1.4 moved source_url to the ATS}",
   "company": "{Company name as in JD}",
   "role": "{Job title as in JD}",
   "job_location": "{location}",

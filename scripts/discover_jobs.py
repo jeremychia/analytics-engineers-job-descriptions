@@ -162,12 +162,12 @@ def corpus_linkedin_ids(corpus):
     """LinkedIn job ids in the corpus, whatever LinkedIn host the URL was saved from."""
     ids = set()
     for r in corpus:
-        u = r.get("source_url") or ""
-        if "linkedin.com" not in u:
-            continue
-        p = urllib.parse.urlsplit(u)
-        ids.update(re.findall(r"\d{9,}", p.path))
-        ids.update(v for k, v in urllib.parse.parse_qsl(p.query) if k == "currentJobId")
+        for u in (r.get("source_url") or "", r.get("linkedin_url") or ""):
+            if "linkedin.com" not in u:
+                continue
+            p = urllib.parse.urlsplit(u)
+            ids.update(re.findall(r"\d{9,}", p.path))
+            ids.update(v for k, v in urllib.parse.parse_qsl(p.query) if k == "currentJobId")
     return ids
 
 

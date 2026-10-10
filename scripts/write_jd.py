@@ -56,7 +56,7 @@ JSON_FIELD_ORDER = [
 ] + BOOL_FIELDS + TOOL_FIELDS + [
     "required_tools", "preferred_tools",
     "responsibilities", "responsibilities_source",
-    "source_url", "evidence",
+    "source_url", "linkedin_url", "evidence",
 ]
 
 # Responsibility bullets are captured at classification time (the model reads the
@@ -68,6 +68,8 @@ RESPONSIBILITY_SOURCES = ("jd_section", "inferred_from_prose")
 
 # Fields that may legitimately be absent from a record:
 #   salary_period                  - only meaningful when a salary was extracted
+#   linkedin_url                   - the LinkedIn posting a record was found through,
+#                                    kept when source_url points at the employer ATS
 #   required_tools/preferred_tools - empty when the JD draws no required/preferred
 #                                    split; additive fields, added after the corpus
 #                                    was already ~350 records deep
@@ -77,7 +79,7 @@ RESPONSIBILITY_SOURCES = ("jd_section", "inferred_from_prose")
 # used to write cleanly and only surface much later, as a non-fatal warning from
 # responsibility_taxonomy.py, by which point the bullets can no longer be captured
 # without re-reading the posting.
-OPTIONAL_FIELDS = {"salary_period", "required_tools", "preferred_tools"}
+OPTIONAL_FIELDS = {"salary_period", "required_tools", "preferred_tools", "linkedin_url"}
 REQUIRED_FIELDS = [f for f in JSON_FIELD_ORDER if f not in OPTIONAL_FIELDS]
 
 

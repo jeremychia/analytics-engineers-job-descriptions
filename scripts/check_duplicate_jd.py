@@ -90,11 +90,10 @@ def find_duplicates(candidate_url, corpus=None):
 
     matches = []
     for j in corpus:
-        u = j.get("source_url")
-        if cand_norm and norm_url(u) == cand_norm:
-            matches.append(j["jd_id"])
-        elif cand_id and job_id_key(u) == cand_id:
-            matches.append(j["jd_id"])
+        for u in (j.get("source_url"), j.get("linkedin_url")):
+            if (cand_norm and norm_url(u) == cand_norm) or (cand_id and job_id_key(u) == cand_id):
+                matches.append(j["jd_id"])
+                break
     return matches
 
 

@@ -34,6 +34,8 @@ python3 scripts/discover_jobs.py list --limit <max>
 
 Invoke the `classify-jd` skill once with the kept URLs, newline-separated, and follow its batch mode to the end. Do not skip its duplicate check: a posting can enter the corpus between the sweep and the classification.
 
+Every URL here is a LinkedIn job, so run classify-jd's Step 1.4 on each one. It looks up the employer's own ATS posting with `scripts/resolve_ats.py`. A verified match becomes `source_url`, and the LinkedIn URL moves to `linkedin_url`. Without a verified match the LinkedIn URL stays as `source_url`. Count resolved and unresolved postings in the summary.
+
 ## Step 4 — Close out each posting
 
 After the batch, record what happened to every posting in it:
@@ -59,6 +61,8 @@ Print: postings found, queued, classified, duplicates, failures, and how many re
 - The `seattle` region has no `geo_region` bucket in `scripts/geo_classify.py`, so its records compile into `other`.
 - The search uses LinkedIn's logged-out job search. Keep to the configured regions, keywords and page limits.
 
+- The sweep and `check_duplicate_jd.py` both read `linkedin_url` as well as `source_url`, so a record moved to its ATS URL is still recognised when LinkedIn shows it again.
+- To move older LinkedIn-sourced records to their ATS URLs, run `python3 scripts/resolve_ats.py --corpus` to preview, then add `--apply`. Only verified matches are changed. Expect many misses: postings close, and Workday, Teamtailor and company sites aren't covered.
 - Run every shell loop over job ids with `xargs` or a quoted array. In zsh an unquoted `$ids` stays one word, and `done` then records the whole string as a single bogus id.
 
 ## Worked case
