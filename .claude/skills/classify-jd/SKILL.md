@@ -177,7 +177,7 @@ Integer count of distinctly named partner teams/functions.
 
 **Does not count**: "various stakeholders", "the business", "cross-functional teams", "key stakeholders", "colleagues", "non-technical partners"; the role holder's own team.
 
-List each named team verbatim in evidence, semicolon-separated.
+List each named team verbatim in evidence, semicolon-separated. If none, use the literal string `"No named partner teams."`.
 
 ### data_team_maturity
 `early` | `mid` | `mature`
@@ -297,10 +297,11 @@ Also extract:
 
 Produce a single JSON object and pipe it to `write_jd.py`. The script writes both output files (`jd_archive.md`, `{base-name}.json`) in one shot. `jd_archive.md` is prefixed with a `**URL:** {source_url}` line for traceability back to the original posting.
 
-**`write_jd.py` validates before writing anything, and exits 1 without touching disk if it fails.** Two gates, both fatal:
+**`write_jd.py` validates before writing anything, and exits 1 without touching disk if it fails.** Three gates, all fatal:
 
 1. **Every field in the template below must be present** — omitting one is an error, not a silent skip. `null` is a fine *value* for a dimension the JD doesn't state (`salary_min`, `interview_stages`), and `[]` for an empty list, but a missing *key* means the dimension was never considered. Only `salary_period`, `required_tools`, and `preferred_tools` may be absent. If you get `N required field(s) absent`, classify the named dimensions and re-run — do not work around it by inventing values.
 2. **Every `responsibilities` bullet must be a literal substring of `jd_text`** (quote/dash/whitespace differences are normalized away, nothing else). If you get `X/Y responsibility bullets are not verbatim in jd_text`, re-copy the offending bullets exactly from the archive text. **Do not relabel `responsibilities_source` to `inferred_from_prose` to get past it** — that flag bypasses the check and exists only for postings with genuinely no bullet list to copy.
+3. **Every evidence quote must be a literal substring of `jd_text`**, ignoring case. This covers each Layer B quote key, each `collaboration_width` team and each `ats_keywords` phrase. Join separate quotes with `...`, and each piece is checked on its own. The `*_explanation` keys and `loss_aversion` are not checked. If you get `N evidence quote(s) are not verbatim in jd_text`, re-copy the quote from the archive text. Never translate or paraphrase it. Put the reasoning in the `*_explanation` key. When there is nothing to quote, use the field's exact "nothing found" string from the template.
 
 Since the whole record is validated in one shot, hold the JD text in context until the write succeeds.
 
@@ -375,7 +376,7 @@ python3 scripts/write_jd.py <<'EOF'
     "velocity_vs_rigour_explanation": "{one sentence explaining the classification, quoting the decisive phrase}",
     "domain_risk": "{verbatim quote driving the classification}",
     "domain_risk_explanation": "{one sentence explaining the classification, quoting the decisive phrase}",
-    "collaboration_width": "{semicolon-separated named teams verbatim from JD}",
+    "collaboration_width": "{semicolon-separated named teams verbatim from JD — use exact string 'No named partner teams.' if none}",
     "data_team_maturity": "{verbatim quote driving the classification}",
     "data_team_maturity_explanation": "{one sentence explaining the classification, quoting the decisive phrase}",
     "jd_authorship": "{verbatim quote from responsibilities section}",
@@ -386,7 +387,7 @@ python3 scripts/write_jd.py <<'EOF'
     "autonomy_level_explanation": "{one sentence explaining the classification, quoting the decisive verb phrase}",
     "ai_role": "{verbatim phrase that placed the classification — or 'No AI skill signal.' if none}",
     "ai_role_explanation": "{one sentence: what the candidate is expected to do with AI, or why none}",
-    "testing_framing": "{verbatim phrase showing ownership/tool/absence of testing practice}",
+    "testing_framing": "{verbatim phrase showing ownership or tool — use exact string 'No testing or data quality signal.' if absent}",
     "testing_framing_explanation": "{one sentence explaining responsibility vs tool_listed vs absent}",
     "loss_aversion_framing": "{verbatim phrase anchoring the risk register — or 'No loss aversion framing.' if none}",
     "loss_aversion_framing_explanation": "{one sentence explaining the level and what fear it reflects}",

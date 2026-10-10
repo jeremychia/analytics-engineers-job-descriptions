@@ -160,6 +160,60 @@ def verify_responsibilities(data: dict, jd_text: str) -> list[str]:
     return []
 
 
+# Evidence keys that must hold a verbatim quote from jd_text. The *_explanation keys and
+# the legacy `loss_aversion` context note are reasoning, not quotes, and are left ungated.
+EVIDENCE_QUOTE_KEYS = (
+    "velocity_vs_rigour", "domain_risk", "collaboration_width", "data_team_maturity",
+    "jd_authorship", "stakeholder_orientation", "autonomy_level", "ai_role",
+    "testing_framing", "loss_aversion_framing", "greenfield_vs_fix",
+    "language_gate", "urgency", "work_arrangement", "ats_keywords",
+)
+
+# The only non-quote values a quote key may hold: the fixed "nothing found" answers.
+EVIDENCE_ABSENCE_VALUES = {
+    "No named partner teams", "No AI skill signal", "No testing or data quality signal",
+    "No loss aversion framing", "No loss aversion framing detected",
+    "Not stated in JD", "No urgency signals present",
+}
+
+
+def _evidence_fragments(key: str, value) -> list[str]:
+    """Split one evidence value into the pieces that must each appear in jd_text."""
+    if isinstance(value, list):
+        return [v for v in value if isinstance(v, str) and v.strip()]
+    if not isinstance(value, str):
+        return []
+    parts = value.split(";") if key == "collaboration_width" else [value]
+    # an ellipsis joins separate quotes from the same posting
+    parts = [f for p in parts for f in re.split(r"\.\.\.|…", p)]
+    return [f.strip() for f in parts if f.strip()]
+
+
+def verify_evidence(data: dict, jd_text: str) -> list[str]:
+    """Return a list of fatal errors for evidence quotes that are not verbatim in jd_text."""
+    evidence = data.get("evidence")
+    if not isinstance(evidence, dict):
+        return ["evidence must be an object"]
+
+    haystack = _norm(jd_text).lower()
+    missing = []
+    for key in EVIDENCE_QUOTE_KEYS:
+        value = evidence.get(key)
+        if isinstance(value, str) and value.strip().rstrip(".") in EVIDENCE_ABSENCE_VALUES:
+            continue
+        missing += [(key, f) for f in _evidence_fragments(key, value)
+                    if _norm(f).lower() not in haystack]
+    if not missing:
+        return []
+    errs = [f"{len(missing)} evidence quote(s) are not verbatim in jd_text:"]
+    errs += [f"    - {k}: {f[:110]}" for k, f in missing[:8]]
+    if len(missing) > 8:
+        errs.append(f"    ... and {len(missing) - 8} more")
+    errs.append("  Fix: copy the quote exactly from the JD (no translation or paraphrase), put "
+                "reasoning in the *_explanation key, or use the field's 'nothing found' string.")
+    return errs
+
+
 def write_files(data: dict):
     jd_text = data.pop("jd_text", "")
     # keyword-derived, never classifier-judged; overrides anything passed in
@@ -172,7 +226,8 @@ def write_files(data: dict):
     # shows up as a warning in a different script, long after the JD text is out
     # of context. jd_id is itself a required field, so it is reported here rather
     # than subscripted first (which raised a bare KeyError instead).
-    errors = verify_required_fields(data, jd_text) + verify_responsibilities(data, jd_text)
+    errors = (verify_required_fields(data, jd_text) + verify_responsibilities(data, jd_text)
+              + verify_evidence(data, jd_text))
     if errors:
         print(f"ERROR: {data.get('jd_id', '<no jd_id>')} - refusing to write.", file=sys.stderr)
         for e in errors:
