@@ -314,8 +314,8 @@ def clean_bullet(b: str) -> str:
 #     enough from the internal-single-employer framing every other theme
 #     assumes — that folding it in would need its own employment-model
 #     handling, not just a regex.
-#   - Non-English bullets are invisible to every theme (regex vocabulary is
-#     English-only) — e.g. 2 Dutch bullets in klimaatroute's JD ("Bewaken en
+#   - Non-English bullets are invisible to every theme except Data Quality &
+#     Testing, which also carries French vocabulary (the rest is English-only) — e.g. 2 Dutch bullets in klimaatroute's JD ("Bewaken en
 #     verbeteren van de prestaties...") land in "uncategorized" purely
 #     because of language, not content. Confirmed as a parser/vocabulary
 #     limitation (1 JD, 2 bullets) rather than a corpus-wide issue worth a
@@ -339,7 +339,9 @@ TAXONOMY = {
     # few words rather than unbounded .* so an unrelated "integration" and an unrelated,
     # distant "data sources" mention in the same long bullet can't falsely pair up.
     "Pipeline Engineering & Orchestration": r'\b(pipeline|ETL|ELT|ingest(ion)?|orchestrat|airflow|dagster|prefect|data flows?|data integration|data sources?\b(?:\W+\w+){0,6}?\W+integrat|integrat\w*(?:\W+\w+){0,6}?\W+data sources?\b)',
-    "Data Quality & Testing": r'\b(data quality|test(ing|s)?\b|validat|monitor(ing)?|assertion|anomaly|reliability|accura(cy|te)|observability|data trust|Monte Carlo)',
+    # The second line holds the French equivalents of the first, so French-language ads are read on the same terms.
+    "Data Quality & Testing": r'\b(data quality|test(ing|s)?\b|validat|monitor(ing)?|assertion|anomaly|reliability|accura(cy|te)|observability|data trust|Monte Carlo'
+                              r'|qualit[ée] (de la |des |de )?donn[ée]es?|contr[ôo]les? (de )?qualit[ée]|tester\b|valider\b|anomalie\b|fiabilit[ée]|exactitude|observabilit[ée]|confiance dans (les|la) donn[ée]es?)',
     "Governance & Documentation": r'\b(governance|catalog|metadata|access control|documentation|document\b|lineage|compliance|standards?\b|single (source|version) of truth|certified metrics)',
     "Stakeholder Collaboration & Requirements": r'\b(stakeholder|collaborat|partner with|cross-functional|business (needs|requirements|users)|translate|liais|bridg(e|ing)|link between|align(ment)?|requirements gathering|work(ing)? closely with|works? with (customer|end.user)s?)',
     "BI & Reporting/Dashboards": r'\b(dashboard|report(ing|s)?\b|visuali[sz]ation|Looker\b|Tableau\b|Power ?BI|Grafana|BI (tool|layer|developer)|self-service (analytics|reporting)?)',
