@@ -38,13 +38,134 @@
 
 ## Key facts (checked 2026-10-05)
 
-1. **The bug still exists.** The Data Quality keyword pattern is English-only.
+Facts 2–7 are the figures from before the fix. They are frozen as of 2026-10-05.
+
+1. **The bug is fixed in the repo.** The Data Quality keyword pattern now includes French terms. After the fix, the per-ad gap is no longer significant: **65% vs 74%** (p=0.25). The per-bullet gap is smaller but still significant: **11.4% vs 16.6%** (p=0.02).
 2. **The gap:** the keyword pass finds data-quality language in **50%** of French-language ads vs **73%** of English ones (p=0.008). Per bullet: **8.5% vs 16.3%** (p=0.0005). Use the per-bullet figure if challenged.
 3. **The health metric that lied:** **100%** of French-language ads (32 of 32) matched at least one theme.
 4. **Length isn't the cause.** Median 7 bullets in both languages (p=0.78).
 5. **Employer type isn't the cause.** French-market ads written in English score **83%** (15 of 18).
 6. **The LLM control agrees.** No significant French/English difference on any of 10 dimensions.
 7. **The gated field is clean, the monitored one isn't.** 100% vs 82% of quotes match the source.
+
+---
+
+## Pressure test
+
+Each question gets four passes:
+1. A first answer.
+2. A challenge to the question itself.
+3. The view from the working level — the analytics engineers who read these ads, not the people who write them.
+4. What changes in the plan.
+
+New figures come from the 1,013-record corpus (928 in the cohort), checked 2026-10-09.
+
+### Round 1 — Questions about the talk
+
+**1. Who is this talk for: the people who write job ads, or the people who read them?**
+- **First answer:** Both. They sit in the same row.
+- **Question the question:** Most of the room is working-level, and managers write the ads. "Name the mechanism in your ad" asks engineers to applaud advice aimed at their boss.
+- **Working level:** "What can I do on Monday without asking anyone?"
+- **Change:** Give every takeaway an owner.
+
+  | Owner | Takeaway |
+  |---|---|
+  | Engineer reading an ad | Ask which test, which alert, which incident process, and who is on call |
+  | Engineer building a pipeline | Record the thing your rules can't read |
+  | Manager writing an ad | Name the mechanism |
+
+**2. Is my regex bug interesting to anyone but me?**
+- **First answer:** Yes. The total looked healthy while one group was misread.
+- **Question the question:** "Interesting" is the wrong test. The right test is whether it carries over. Every pipeline has a group it doesn't record: language, source system, extractor version.
+- **Working level:** The engineer who finds this bug rarely gets time to fix it. Fame doesn't help them; a small fix they can file as a ticket does.
+- **Change:** Price the fix on the slide. It costs one column and one table per group. Say it as a ticket title: "Record locale at ingestion, then report coverage per group."
+
+**3. "Blame the tool, never a group." Does that protect the truth, or the room?**
+- **First answer:** The truth. The gap really was the measurement: the model-coded field shows no French/English difference.
+- **Question the question:** The rule can become a reflex. It says to suspect the measurement whenever a group looks bad, but some groups do differ. The model-coded null is weak evidence: 32 ads can show a 23-point tool error, not a real 5-point difference.
+- **Working level:** Engineers at services companies know their ads describe a capability before a project exists. Being "cleared" by a stranger's chart can feel patronising.
+- **Change:** Keep the rule. Add one sentence on what the data can't tell: "I can rule out a big difference. I can't rule out a small one."
+
+**4. Can 10 minutes carry three ideas?**
+- **First answer:** No. The current plan carries the segment bug, alerting on the spread, and blocking writes.
+- **Question the question:** Each idea may still be needed, because each answers a different person in the row.
+- **Working level:** People remember one thing from a lightning talk, and they remember the thing that affects their own job.
+- **Change:** Keep one spine, and turn the other two into a single "how I know" beat.
+
+### Round 2 — Questions the data can answer
+
+**5. If you own data quality, are you paid for it?**
+- **Data:** I compared the midpoints of posted ranges in the 69 cohort ads that give an annual salary in US dollars.
+
+  | Ads that… | Median midpoint | Compared with | p |
+  |---|---|---|---|
+  | make the hire own data quality | $155k | $160k | 0.61 |
+  | expect any AI skill | $173k | $135k | <0.01 |
+  | are coded strategic | $170k | $139k | <0.01 |
+
+  Within senior titles alone, the AI premium shrinks to $166k vs $153k (p=0.21).
+- **Question the question:** A posted range is not an offer. Only 24% of cohort ads state pay at all, and most US ranges are from New York because of its disclosure law. This shows what employers advertise, not what anyone is paid.
+- **Working level:** The ad asks you to own quality, but the pay follows direction-setting scope and AI.
+- **Change:** Keep this for Q&A. It is too thin for a slide, and too sharp to leave out if someone asks "so what?"
+
+**6. Are engineers made accountable without authority?**
+- **Data:**
+  - 70% of ads make the hire own data quality.
+  - Of those, 21% are coded execution, meaning the role delivers scoped work rather than setting direction.
+  - 80% of those execution-coded owners name no mechanism: no SLA, incident process, data contract, freshness check, alert or quality tool.
+  - On-call appears in 1% of all ads.
+- **Question the question:** Is "execution" just the label short ads get? Partly. But a short ad that still assigns ownership is the case worth flagging.
+- **Working level:** These are the jobs where you are blamed when a number is wrong, and you had no say in what "right" meant.
+- **Change:** This is the strongest working-level sentence available. It fits any of the narrative options as the "So what?" line.
+
+**7. Where is the way in?**
+- **Data:**
+  - Junior titles are 4% of the cohort (37 of 928), flat across collection months (2–5%).
+  - 65% of junior ads still make the hire own data quality.
+  - 22% of junior ads expect AI-tool use, against 14% of mid-level ads.
+- **Question the question:** The search term is "analytics engineer", a title that skews senior. Juniors may be hired as data analysts and promoted. This shows the shape of ads with this title, not a shortage in the market.
+- **Working level:** If the route into the title runs through another title, the job ads are an incomplete map.
+- **Change:** Use this only in Q&A, and only with the title caveat.
+
+**8. Do AI roles raise the quality bar, or do better-funded teams just write longer ads?**
+- **Data:** AI-expecting ads make the hire own data quality 79% of the time, against 62% (p=2×10⁻⁸). The gap holds in short ads (68% vs 50%) and medium ads (83% vs 67%). It narrows in the longest third (83% vs 75%, p=0.09). It also holds within mid titles (76% vs 57%), senior titles (83% vs 67%) and manager-written ads (82% vs 69%).
+- **Question the question:** Even if length explains part of it, the ask still lands on one person.
+- **Working level:** It means more asks per ad. The pay data above shows no premium for the quality part of the ask.
+- **Change:** Quote it with the length caveat. The finding survives the obvious objection, but only partly.
+
+**9. Does "rigour" in 77% of ads mean anything?**
+- **Data:**
+  - Rigour framing barely tracks domain risk (V=0.12).
+  - The phrase "data quality" tracks it even less (V=0.09).
+  - Risk and trust language tracks it strongly (V=0.35).
+- **Question the question:** A near-universal word can still filter applicants, even if it doesn't inform them.
+- **Working level:** Skip the adjectives. Read the mechanisms and the risk sentences.
+- **Change:** This is a candidate one-line takeaway for readers of ads.
+
+### Round 3 — Questioning my own framing
+
+**10. Am I mistaking the corpus for the market?**
+- **Yes, a little.** It comes from one person's job search. It is mostly European, leans towards scale-ups, and 24% of its ads state pay.
+- **Change:** Say it once, then don't defend it again.
+
+**11. Is a talk about job ads the right fit for a data-quality track?**
+- **Yes.** The conference's own copy says "A large share of agent failures are context failures." A job ad is the context handed to the human who will build the system. If it doesn't say what quality means, the human has to guess.
+- **Change:** Use that line as the bridge to the track.
+
+**12. Is "agentic" framing chasing the hype the room is tired of?**
+- **Possibly.** 57% of ads ask for no AI skill. The honest headline may be "The agentic era hasn't reached most job ads."
+- **Change:** Decide which way to cut it. "AI roles demand more" and "most roles demand no AI" can't both be the headline.
+
+**13. Why should the room listen to me?**
+- **The current plan limits self-talk to 25 seconds.** But "I read 1,000 ads while looking for a job" is itself the working-level vantage point. It is more credible than a vendor slide.
+- **Change:** Consider opening with it instead of hiding it.
+
+### Open decisions
+
+- [ ] Choose one spine: the segment bug, accountability without authority, or AI raising the quality bar.
+- [ ] Give each takeaway an owner: engineer reading an ad, engineer building a pipeline, or manager writing an ad.
+- [ ] Refresh the reference table below. It still shows the 869-record values.
+- [ ] Decide whether the job-search vantage point opens the talk or stays at 25 seconds.
 
 ---
 
@@ -332,6 +453,8 @@ Checked against `analysis/data.json` on 2026-10-05. French-language means `jd_la
 | Responsibility bullets | 7,054 across 864 ads | 82.5% match at least one theme |
 | Data quality, FR vs EN, per ad | 50% vs 73% | p=0.008 |
 | Data quality, FR vs EN, per bullet | 8.5% vs 16.3% | p=0.0005 — the robust figure |
+| Data quality after the fix, per ad | 65% vs 74% (24/37 vs 671/905) | p=0.25. 942-ad cohort, checked 2026-10-10 |
+| Data quality after the fix, per bullet | 11.4% vs 16.6% (34/297 vs 1,217/7,311) | p=0.02. The same pattern before the fix gives 7.7% vs 16.6% on this cohort |
 | Themes lower in French | 14 of 16 | 7 significantly |
 | LLM testing framing, FR vs EN | 69% vs 68% | p≈1.0 |
 | LLM dimensions with no FR/EN difference | 10 of 10 | |
@@ -417,7 +540,7 @@ Salary sources, out of scope: [TPC analytics engineer](https://tpc-recrutement.c
 ## Repo actions before the talk
 
 - [x] **Add a `jd_language` field.** Stored on every record and derived by `scripts/language_detect.py`. French-language now means `jd_language = "fr"`: 32 cohort ads, a 23-point data-quality gap. The looser stopword detector (54 ads, a 36-point gap on the 845-JD corpus) is retired, because it also caught German, Swedish and Spanish ads.
-- [ ] **Gate `evidence` in `write_jd.py`**, the way `responsibilities` is gated. Split the quote from the reasoning; gate the quote, monitor the reasoning. Same bug class as the talk, one field over.
+- [x] **Gate `evidence` in `write_jd.py`**, the way `responsibilities` is gated. Split the quote from the reasoning; gate the quote, monitor the reasoning. Same bug class as the talk, one field over.
 - [ ] **Reconcile `consistency_report.md` with `report.md`.** One gives `jd_authorship` 0.43 and `domain_risk` 0.80; the other 0.58 and 0.95.
 - [ ] **Hand-check services companies outside France** before comparing regions.
 - [ ] **Verify every quote marked *verify*, *description only* or *snippet only*** on the page itself.
