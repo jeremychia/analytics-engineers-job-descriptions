@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4457034260/
+**URL:** https://www.amazon.jobs/en/jobs/10508184/business-intelligence-engineer-ii-fulfillment-optimization
 
 Business Intelligence Engineer II, Fulfillment Optimization
 Amazon

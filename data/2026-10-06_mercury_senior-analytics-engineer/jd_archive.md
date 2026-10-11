@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4473694757/
+**URL:** https://job-boards.greenhouse.io/mercury/jobs/6217794004
 
 Senior Analytics Engineer
 Mercury

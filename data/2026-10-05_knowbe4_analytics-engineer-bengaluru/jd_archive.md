@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4454412003/
+**URL:** https://job-boards.greenhouse.io/knowbe4/jobs/8721151002
 
 Analytics Engineer (Position located in Bengaluru, India)
 KnowBe4

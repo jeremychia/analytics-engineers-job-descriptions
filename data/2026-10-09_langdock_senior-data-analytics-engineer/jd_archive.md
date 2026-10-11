@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4475567660/
+**URL:** https://jobs.ashbyhq.com/langdock/c61f5bbf-1dec-436a-983a-96524d5b6e31
 
 (Senior) Data & Analytics Engineer - m/f/d
 Langdock

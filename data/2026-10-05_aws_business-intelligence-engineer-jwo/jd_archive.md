@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4455778958/
+**URL:** https://www.amazon.jobs/en/jobs/10461179/business-intelligence-engineer-jwo
 
 Business Intelligence Engineer, JWO
 Amazon Web Services (AWS)

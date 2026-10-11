@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4418835226/
+**URL:** https://job-boards.greenhouse.io/zocdoc/jobs/7659010
 
 Staff Analytics Engineer
 Zocdoc

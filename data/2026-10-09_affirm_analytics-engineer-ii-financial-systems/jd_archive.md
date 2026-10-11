@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4428707084/
+**URL:** https://job-boards.greenhouse.io/affirm/jobs/7764109003
 
 Analytics Engineer II
 Affirm

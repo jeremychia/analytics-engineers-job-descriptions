@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4476518059/
+**URL:** https://www.amazon.jobs/en/jobs/10571096/sr-business-intelligence-engineer-aws-marketplace
 
 Sr. Business Intelligence Engineer, AWS Marketplace
 Amazon Web Services (AWS)

@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4454962130/
+**URL:** https://jobs.ashbyhq.com/lovable/d92292d5-a9f5-4637-9d86-77e95bf66970
 
 Analytics Engineer
 Lovable

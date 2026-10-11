@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4472309589/
+**URL:** https://jobs.ashbyhq.com/sailorhealth/55702dde-a7c4-458c-96aa-487c0f4b3561
 
 Founding Data & Analytics Engineer
 Sailor Health

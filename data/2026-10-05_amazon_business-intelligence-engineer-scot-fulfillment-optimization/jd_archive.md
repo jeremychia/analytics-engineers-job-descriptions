@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4455906210/
+**URL:** https://www.amazon.jobs/en/jobs/10421802/business-intelligence-engineer-scot-fulfillment-optimization-scot-fo
 
 Business Intelligence Engineer - SCOT, Fulfillment Optimization, SCOT-FO
 Amazon

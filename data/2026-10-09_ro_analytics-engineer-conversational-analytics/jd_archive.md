@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4467130205/
+**URL:** https://jobs.lever.co/ro/3910baa9-f961-4380-ad0a-01deec07f7a2
 
 Analytics Engineer, Conversational Analytics
 Ro

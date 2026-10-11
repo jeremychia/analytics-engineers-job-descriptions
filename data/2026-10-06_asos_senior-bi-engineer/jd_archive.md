@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4473667554/
+**URL:** https://jobs.smartrecruiters.com/asos/744000153558179
 
 Senior BI Engineer
 ASOS.com

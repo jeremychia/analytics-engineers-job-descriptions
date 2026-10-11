@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4474600188/
+**URL:** https://job-boards.greenhouse.io/wolt/jobs/8256019
 
 Manager - Tax Data Analytics Engineer
 Wolt

@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4471571737/
+**URL:** https://job-boards.eu.greenhouse.io/siriuspoint/jobs/4988988101
 
 Business Intelligence Engineer
 SiriusPoint

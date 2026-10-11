@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4457394012/
+**URL:** https://www.amazon.jobs/en/jobs/10510008/sr-business-intelligence-engineer-b2c-amazon-leo
 
 Sr. Business Intelligence Engineer, B2C, Amazon Leo
 Amazon

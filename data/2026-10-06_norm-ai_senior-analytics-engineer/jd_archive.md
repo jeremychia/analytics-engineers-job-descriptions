@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4476106940/
+**URL:** https://jobs.ashbyhq.com/norm-ai/24c4f920-9a1d-46e6-bef2-db5aa188fd1b
 
 Senior Analytics Engineer
 Norm Ai

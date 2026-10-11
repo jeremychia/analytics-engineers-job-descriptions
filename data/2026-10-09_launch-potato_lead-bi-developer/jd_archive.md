@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4477190652/
+**URL:** https://launchpotato.com/careers-list?gh_jid=6030760004
 
 Lead BI Developer
 Launch Potato

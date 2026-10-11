@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4470894490/
+**URL:** https://jobs.ashbyhq.com/ledger/490a806d-48da-4279-82d1-5d4bdaf10bd4
 
 Analytics Engineer
 Ledger

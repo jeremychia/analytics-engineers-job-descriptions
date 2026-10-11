@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4435308704/
+**URL:** https://jobs.lever.co/duetti/77b93118-24bf-4feb-9a03-d62104dcdb1a
 
 About Duetti
 

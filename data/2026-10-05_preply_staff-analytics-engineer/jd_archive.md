@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4368004098/
+**URL:** https://jobs.ashbyhq.com/preply/8d2613dd-75de-4207-9296-af994e4f10e6
 
 Staff Analytics Engineer
 Preply

@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4477142557/
+**URL:** https://jobs.smartrecruiters.com/akuo/744000154392677
 
 Senior Analytics Engineer (F/H)
 Akuo

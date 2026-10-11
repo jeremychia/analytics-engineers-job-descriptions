@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4434542555/
+**URL:** https://sumup.com/careers/positions/8522383002?gh_jid=8522383002
 
 Senior Analytics Engineer - Acquisition
 SumUp

@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4464923377/
+**URL:** https://www.amazon.jobs/en/jobs/10531774/business-intelligence-engineer-ii-asp-insights
 
 Business Intelligence Engineer II, ASP Insights
 Amazon Web Services (AWS)

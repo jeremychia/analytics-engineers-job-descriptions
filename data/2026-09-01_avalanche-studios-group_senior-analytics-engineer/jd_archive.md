@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4371446236/
+**URL:** https://jobs.lever.co/avalanchestudios/557484be-0668-4a31-a06b-84a52edbdd51
 
 Avalanche Studios Group is looking for a Senior Analytics Engineer to join our Data and Insights team. This role will be responsible for creating, designing and maintaining our data architecture. This role requires a deep understanding of data engineering, data modelling, data visualization, event design and best practices in those areas.
 

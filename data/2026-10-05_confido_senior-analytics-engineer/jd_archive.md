@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4438295795/
+**URL:** https://jobs.ashbyhq.com/confido/b1365545-3b0d-4c21-928b-ff2d411d4d60
 
 Senior Analytics Engineer
 Confido

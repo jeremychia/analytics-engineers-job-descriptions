@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4448638053/
+**URL:** https://job-boards.greenhouse.io/scopely/jobs/5250464008?gh_jid=5250464008
 
 Senior Analytics Engineer
 Scopely

@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4476130840/
+**URL:** https://www.netskope.com/company/careers/open-positions/?gh_jid=8239207
 
 BI Analytics Engineer
 Netskope

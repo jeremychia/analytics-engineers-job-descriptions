@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4476188283/
+**URL:** https://jobs.ashbyhq.com/elevenlabs/3b807ff1-a6b0-4f1c-b4f4-6ab265ac6d2f
 
 Analytics Engineer
 ElevenLabs

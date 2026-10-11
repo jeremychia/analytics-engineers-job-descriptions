@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4474480863/
+**URL:** https://www.samsara.com/company/careers/roles/8262123?gh_jid=8262123
 
 Senior AI Data & Analytics Engineer II
 Samsara

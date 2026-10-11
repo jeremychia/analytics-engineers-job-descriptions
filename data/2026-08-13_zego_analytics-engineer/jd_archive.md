@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4449875621/
+**URL:** https://jobs.ashbyhq.com/zego/0247841f-29c2-4c89-9dc8-37146e44295d
 
 About Zego
 

@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4475828514/
+**URL:** https://jobs.ashbyhq.com/seccl/0e63508b-cf7e-466b-af55-78e619057a0f
 
 Data analytics engineer
 Seccl

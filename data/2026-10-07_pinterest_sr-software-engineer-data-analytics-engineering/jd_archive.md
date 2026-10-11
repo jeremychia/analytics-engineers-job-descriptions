@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4476399845/
+**URL:** https://www.pinterestcareers.com/jobs/?gh_jid=8213988
 
 Sr. Software Engineer, Data Analytics Engineering
 Pinterest

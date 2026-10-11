@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4443291421/
+**URL:** https://jobs.ashbyhq.com/stackfuel/bdd3721c-6652-4709-b794-cdcb205450bf
 
 Daten sind für uns kein Nebenprodukt, sondern ein zentraler Erfolgsfaktor und das Fundament unserer KI-Strategie.
 Als Analytics Engineer (m/w/d) bist du die treibende Kraft hinter unserer Datenplattform: Du baust und pflegst die Datenmodelle, auf denen Analytics, Reporting und Data Science im gesamten Unternehmen aufsetzen. Mit robusten, skalierbaren und vertrauenswürdigen Pipelines sorgst du dafür, dass alle Teams auf einer sauberen, konsistenten Datenbasis arbeiten – und machst unser Unternehmen damit messbar datengetriebener und KI-fähiger.

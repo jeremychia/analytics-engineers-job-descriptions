@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4447875002/
+**URL:** https://jobs.lever.co/coins/f3afe3da-ce80-4ab1-9876-9b92578d6efe
 
 Join Our Business Intelligence Team
 

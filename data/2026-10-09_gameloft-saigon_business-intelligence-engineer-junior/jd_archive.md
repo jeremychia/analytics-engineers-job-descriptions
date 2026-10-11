@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4477167086/
+**URL:** https://jobs.smartrecruiters.com/gameloft/744000154412309
 
 Business Intelligence Engineer (Junior)
 Gameloft Saigon
