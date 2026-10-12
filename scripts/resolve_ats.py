@@ -218,8 +218,10 @@ BOARDS = {"greenhouse": greenhouse, "lever": lever, "ashby": ashby, "workable": 
 def coverage(bullets, text):
     if not bullets:
         return None
-    t = norm(text)
-    return sum(norm(b)[:120] in t for b in bullets) / len(bullets)
+    # whitespace is dropped because scrapes split words around punctuation ("dbt- Modelle")
+    squash = lambda s: re.sub(r"\s+", "", norm(s))
+    t = squash(text)
+    return sum(squash(b)[:120] in t for b in bullets) / len(bullets)
 
 
 def resolve(company, title, bullets=None):

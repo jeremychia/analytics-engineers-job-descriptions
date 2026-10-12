@@ -122,7 +122,9 @@ python3 scripts/resolve_ats.py --company "{company}" --title "{title}" --text-fi
 - **Exit 1** prints `NO VERIFIED ATS MATCH`, sometimes with unverified title matches.
   - Keep the LinkedIn URL as `source_url`, `linkedin` as `ats_platform` and the LinkedIn job id as `ats_job_id`.
   - Never take an unverified title match. Titles like "Senior AI Engineer" and "Senior Analytics Engineer" score as similar.
-- The script covers Greenhouse, Lever, Ashby, Workable, SmartRecruiters, Recruitee, Personio and amazon.jobs. For Workday, Teamtailor or a company careers site, keep the LinkedIn URL unless you find the ATS posting another way and its text matches.
+- The script covers Greenhouse, Lever, Ashby, Workable, SmartRecruiters, Recruitee, Personio, Teamtailor, BambooHR and amazon.jobs.
+- On exit 1, search the web for the employer's own posting: the careers page, a Workday tenant (search it with the CXS `/jobs` POST), or another ATS. Fetch it with curl, never WebFetch. Switch to it only when the responsibility bullets appear in its text, ignoring whitespace. Use `unknown` as `ats_platform` for a company careers site.
+- A job aggregator or recruiter repost (Indeed, StepStone, Glassdoor) is not the employer's posting. An agency's own site counts when the agency is the hiring company.
 - Expect a miss when the responsibilities are paragraphs rather than `- ` bullet lines. The script verifies only on bullet lines.
 
 Run Step 1.5 on both URLs. A posting can already be in the corpus under its ATS URL.
