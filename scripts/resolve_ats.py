@@ -12,6 +12,8 @@ Usage:
     python3 scripts/resolve_ats.py --company "Ro" --title "Analytics Engineer" --text-file posting.txt
         prints the verified ATS posting as JSON (exit 0), or NO VERIFIED ATS MATCH (exit 1)
     python3 scripts/resolve_ats.py --corpus [--apply]   # every record whose source_url is LinkedIn
+    python3 scripts/resolve_ats.py --record <jd_id> --url <url> --platform <p> --job-id <id> --text-file employer.txt
+        switches one LinkedIn-sourced record to an employer posting found by hand, if its text matches
 
 With --apply, a verified record gets source_url, ats_platform and ats_job_id set to
 the ATS posting, its old LinkedIn URL kept in linkedin_url, and the archive URL line
@@ -277,6 +279,25 @@ def apply(f, r, res):
             a.write_text(f"**URL:** {url}\n{rest}", encoding="utf-8")
 
 
+def switch_record(args):
+    """Move one record's source_url to an employer posting found outside the boards above."""
+    f = DATA_DIR / args.record / f"{args.record}.json"
+    r = json.loads(f.read_text(encoding="utf-8"))
+    if "linkedin.com" not in (r.get("source_url") or ""):
+        sys.exit(f"NOT SWITCHED: source_url is not LinkedIn ({r.get('source_url')})")
+    text = Path(args.text_file).read_text(encoding="utf-8")
+    checked = r.get("responsibilities") or []
+    if not checked:  # prose-only records: check the archive's longer lines instead
+        body = (f.parent / "jd_archive.md").read_text(encoding="utf-8").split("\n")[5:]
+        checked = [l.strip("- ").strip() for l in body if len(l.strip()) > 60][:8]
+    cov = coverage(checked, text)
+    print(f"coverage={cov or 0:.2f} over {len(checked)} lines")
+    if cov is None or cov < MIN_BULLET_COVERAGE:
+        sys.exit("NOT SWITCHED: the employer text does not match the record")
+    apply(f, r, (args.platform, args.url, args.job_id))
+    print(f"SWITCHED {args.record} -> {args.url}")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--company")
@@ -284,7 +305,14 @@ def main():
     ap.add_argument("--text-file", help="fetched posting text; its bullet lines verify the ATS match")
     ap.add_argument("--corpus", action="store_true")
     ap.add_argument("--apply", action="store_true")
+    ap.add_argument("--record", help="jd_id to switch to the employer posting given by --url")
+    ap.add_argument("--url")
+    ap.add_argument("--platform", default="unknown")
+    ap.add_argument("--job-id", default="")
     args = ap.parse_args()
+    if args.record:
+        switch_record(args)
+        return
     if args.company:
         bullets = None
         if args.text_file:

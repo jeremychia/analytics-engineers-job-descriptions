@@ -214,6 +214,17 @@ def verify_evidence(data: dict, jd_text: str) -> list[str]:
     return errs
 
 
+def verify_source(data: dict) -> list[str]:
+    """A LinkedIn source_url needs a record of the employer-posting search that missed."""
+    if "linkedin.com" not in (data.get("source_url") or ""):
+        return []
+    if str((data.get("evidence") or {}).get("ats_lookup") or "").strip():
+        return []
+    return ["source_url is a LinkedIn job, and evidence.ats_lookup does not say what employer search was done",
+            "  Fix: run classify-jd Step 1.4 (resolve_ats.py, then a web search for the employer's posting). "
+            "Use the employer URL if its text matches, or set evidence.ats_lookup to what was searched and why it missed."]
+
+
 def write_files(data: dict):
     jd_text = data.pop("jd_text", "")
     # keyword-derived, never classifier-judged; overrides anything passed in
@@ -227,7 +238,7 @@ def write_files(data: dict):
     # of context. jd_id is itself a required field, so it is reported here rather
     # than subscripted first (which raised a bare KeyError instead).
     errors = (verify_required_fields(data, jd_text) + verify_responsibilities(data, jd_text)
-              + verify_evidence(data, jd_text))
+              + verify_evidence(data, jd_text) + verify_source(data))
     if errors:
         print(f"ERROR: {data.get('jd_id', '<no jd_id>')} - refusing to write.", file=sys.stderr)
         for e in errors:

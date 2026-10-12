@@ -119,12 +119,15 @@ python3 scripts/resolve_ats.py --company "{company}" --title "{title}" --text-fi
   - Set `source_url`, `ats_platform` and `ats_job_id` from it.
   - Put the LinkedIn URL in `linkedin_url`.
   - Keep the LinkedIn text as `jd_text`. It is the same posting, already verified.
-- **Exit 1** prints `NO VERIFIED ATS MATCH`, sometimes with unverified title matches.
-  - Keep the LinkedIn URL as `source_url`, `linkedin` as `ats_platform` and the LinkedIn job id as `ats_job_id`.
-  - Never take an unverified title match. Titles like "Senior AI Engineer" and "Senior Analytics Engineer" score as similar.
+- **Exit 1** prints `NO VERIFIED ATS MATCH`, sometimes with unverified title matches. Never take an unverified title match. Titles like "Senior AI Engineer" and "Senior Analytics Engineer" score as similar.
 - The script covers Greenhouse, Lever, Ashby, Workable, SmartRecruiters, Recruitee, Personio, Teamtailor, BambooHR and amazon.jobs.
-- On exit 1, search the web for the employer's own posting: the careers page, a Workday tenant (search it with the CXS `/jobs` POST), or another ATS. Fetch it with curl, never WebFetch. Switch to it only when the responsibility bullets appear in its text, ignoring whitespace. Use `unknown` as `ats_platform` for a company careers site.
-- A job aggregator or recruiter repost (Indeed, StepStone, Glassdoor) is not the employer's posting. An agency's own site counts when the agency is the hiring company.
+- **On exit 1, search the web for the employer's own posting before writing.** Do it now: the posting is live today and may be closed by the next pass.
+  - Look at the employer's careers page, its Workday tenant (search it with the CXS `/jobs` POST), and any other ATS it links to.
+  - Fetch the candidate with curl, never WebFetch, and save its plain text.
+  - Switch only when the responsibility bullets appear in that text, ignoring whitespace. Set `source_url`, `ats_platform` (`unknown` for a company careers site) and `ats_job_id` from it, and move the LinkedIn URL to `linkedin_url`.
+  - A job aggregator or recruiter repost (Indeed, StepStone, Glassdoor) is not the employer's posting. An agency's own site counts when the agency is the hiring company.
+- **When nothing matches**, keep the LinkedIn URL as `source_url`, `linkedin` as `ats_platform` and the LinkedIn job id as `ats_job_id`. Set `evidence.ats_lookup` to what was searched and why it missed, e.g. `"resolve_ats miss; careers.example.com lists no data roles; no workday tenant"`. `write_jd.py` refuses a LinkedIn `source_url` without it.
+- To switch an existing record later, run `python3 scripts/resolve_ats.py --record <jd_id> --url <url> --platform <platform> --job-id <id> --text-file <employer.txt>`. It checks the record's bullets against the text before changing anything.
 - Expect a miss when the responsibilities are paragraphs rather than `- ` bullet lines. The script verifies only on bullet lines.
 
 Run Step 1.5 on both URLs. A posting can already be in the corpus under its ATS URL.
@@ -299,11 +302,12 @@ Also extract:
 
 Produce a single JSON object and pipe it to `write_jd.py`. The script writes both output files (`jd_archive.md`, `{base-name}.json`) in one shot. `jd_archive.md` is prefixed with a `**URL:** {source_url}` line for traceability back to the original posting.
 
-**`write_jd.py` validates before writing anything, and exits 1 without touching disk if it fails.** Three gates, all fatal:
+**`write_jd.py` validates before writing anything, and exits 1 without touching disk if it fails.** Four gates, all fatal:
 
 1. **Every field in the template below must be present** — omitting one is an error, not a silent skip. `null` is a fine *value* for a dimension the JD doesn't state (`salary_min`, `interview_stages`), and `[]` for an empty list, but a missing *key* means the dimension was never considered. Only `salary_period`, `required_tools`, and `preferred_tools` may be absent. If you get `N required field(s) absent`, classify the named dimensions and re-run — do not work around it by inventing values.
 2. **Every `responsibilities` bullet must be a literal substring of `jd_text`** (quote/dash/whitespace differences are normalized away, nothing else). If you get `X/Y responsibility bullets are not verbatim in jd_text`, re-copy the offending bullets exactly from the archive text. **Do not relabel `responsibilities_source` to `inferred_from_prose` to get past it** — that flag bypasses the check and exists only for postings with genuinely no bullet list to copy.
 3. **Every evidence quote must be a literal substring of `jd_text`**, ignoring case. This covers each Layer B quote key, each `collaboration_width` team and each `ats_keywords` phrase. Join separate quotes with `...`, and each piece is checked on its own. The `*_explanation` keys and `loss_aversion` are not checked. If you get `N evidence quote(s) are not verbatim in jd_text`, re-copy the quote from the archive text. Never translate or paraphrase it. Put the reasoning in the `*_explanation` key. When there is nothing to quote, use the field's exact "nothing found" string from the template.
+4. **A LinkedIn `source_url` needs `evidence.ats_lookup`**, saying what employer search was done and why it missed. Run Step 1.4 in full rather than filling it in.
 
 Since the whole record is validated in one shot, hold the JD text in context until the write succeeds.
 
@@ -399,7 +403,8 @@ python3 scripts/write_jd.py <<'EOF'
     "urgency": "{verbatim urgency signal — use exact string 'No urgency signals present.' if none}",
     "work_arrangement": "{verbatim phrase driving the classification — use exact string 'Not stated in JD.' if none}",
     "loss_aversion": "{risk-reduction framing quote with context sentence, or 'No loss aversion framing detected.'}",
-    "ats_keywords": ["{8–12 distinctive verbatim phrases likely used as ATS filters}"]
+    "ats_keywords": ["{8–12 distinctive verbatim phrases likely used as ATS filters}"],
+    "ats_lookup": "{only when source_url is LinkedIn: what employer search was done and why it missed}"
   }
 }
 EOF

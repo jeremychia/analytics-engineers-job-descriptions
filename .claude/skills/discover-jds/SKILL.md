@@ -42,7 +42,7 @@ For more than 20 kept postings, split them into batches of about 20 by region an
 - Tell each agent not to run `discover_jobs.py done` or edit `discovery/*.json`. Concurrent writes overwrite the queue.
 - Have each agent report one line per job id with its status. Record every outcome yourself in Step 4.
 
-Every URL here is a LinkedIn job, so run classify-jd's Step 1.4 on each one. It looks up the employer's own ATS posting with `scripts/resolve_ats.py`. A verified match becomes `source_url`, and the LinkedIn URL moves to `linkedin_url`. Without a verified match the LinkedIn URL stays as `source_url`. Count resolved and unresolved postings in the summary.
+Every URL here is a LinkedIn job, so run classify-jd's Step 1.4 on each one, including its web search for the employer's posting. A verified match becomes `source_url`, and the LinkedIn URL moves to `linkedin_url`. Without one, the LinkedIn URL stays and `evidence.ats_lookup` says why. Count resolved and unresolved postings in the summary.
 
 ## Step 4 — Close out each posting
 
