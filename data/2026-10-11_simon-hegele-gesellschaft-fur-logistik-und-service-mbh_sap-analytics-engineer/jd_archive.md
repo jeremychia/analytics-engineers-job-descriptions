@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4477844673/
+**URL:** https://jobs.hegele.de/jobposting/cdf861a01d4de703e41920e10f455ce76807b18e0
 
 SAP Analytics Engineer (m/w/d)
 Simon Hegele Gesellschaft für Logistik und Service mbH

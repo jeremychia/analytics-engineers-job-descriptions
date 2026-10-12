@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4478039807/
+**URL:** https://ats.rippling.com/rippling/jobs/4695a2e2-ecc3-4aeb-87b2-719b6bb8cebe
 
 Analytics Engineer
 Rippling

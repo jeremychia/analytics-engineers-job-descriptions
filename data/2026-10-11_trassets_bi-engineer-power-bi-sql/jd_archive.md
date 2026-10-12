@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4473492365/
+**URL:** https://join.com/companies/trassets/16798543-bi-engineer-power-bi-und-sql-m-w-d
 
 BI Engineer: Power BI & SQL (m/w/d)
 Trassets

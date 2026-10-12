@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4478398351/
+**URL:** https://k40180.coveto.de/job-data-analytics-engineer-m-w-d-stuttgart-6192.html
 
 Data Analytics Engineer (m/w/d)
 prognum Automotive GmbH

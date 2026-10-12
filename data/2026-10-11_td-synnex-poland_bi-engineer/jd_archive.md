@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4475643912/
+**URL:** https://synnex.wd5.myworkdayjobs.com/en-US/tdsynnexcareers/job/Warsaw-Poland/Profit-Analyst_R50862
 
 BI Engineer
 TD SYNNEX Poland

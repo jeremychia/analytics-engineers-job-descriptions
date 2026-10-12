@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4478396850/
+**URL:** https://careers.internationalsos.com/job/Prague-Analytics-Engineer-15000/1439011700/
 
 Analytics Engineer
 International SOS

@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4477518592/
+**URL:** https://www.jobs.atlascopcogroup.com/job/Power-BI-Developer-Expert/175180-en_US/
 
 Power BI Developer Expert
 Atlas Copco Group

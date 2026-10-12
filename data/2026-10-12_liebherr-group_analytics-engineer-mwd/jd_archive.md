@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4457470086/
+**URL:** https://www.liebherr.com/en-int/j/careers/job-openings/84278-de-5370610
 
 Analytics Engineer (m/w/d)
 Liebherr Group

@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4477818792/
+**URL:** https://www.billerud.com/career/vacancies?pid=149728&vid=2026-5729&lang=en
 
 Data Platform / Power BI Developer
 Billerud

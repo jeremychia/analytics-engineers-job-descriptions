@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4476180025/
+**URL:** https://lottomaticagroup.wd103.myworkdayjobs.com/it-IT/LottomaticaCareers/job/Roma---Via-degli-Aldobrandeschi/Digital-Intelligence_JR100416
 
 BI Developer
 Lottomatica

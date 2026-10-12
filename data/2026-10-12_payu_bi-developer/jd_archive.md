@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4474771986/
+**URL:** https://jobs.lever.co/payugpo/bdb61340-9607-4efb-bd57-8dd9b0e845b7
 
 BI Developer
 PayU

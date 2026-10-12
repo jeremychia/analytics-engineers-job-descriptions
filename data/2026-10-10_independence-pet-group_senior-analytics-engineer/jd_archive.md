@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4475288097/
+**URL:** https://independencepetgroup.wd12.myworkdayjobs.com/en-US/Careers/job/Chicago-IL/Senior-Analytics-Engineer_JR103046
 
 Senior Analytics Engineer
 Independence Pet Group

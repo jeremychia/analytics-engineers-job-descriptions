@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4477506938/
+**URL:** https://www.jobs.atlascopcogroup.com/job/BI-developer/173257-en_US
 
 BI developer
 Atlas Copco Group

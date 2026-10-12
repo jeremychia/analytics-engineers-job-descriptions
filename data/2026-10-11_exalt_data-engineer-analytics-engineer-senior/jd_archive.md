@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4458387328/
+**URL:** https://exalt.welcomekit.co/jobs/data-engineer-analytics-engineer-senior_lille
 
 Data Engineer / Analytics Engineer SENIOR
 eXalt

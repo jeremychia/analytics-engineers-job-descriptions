@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4475920874/
+**URL:** https://balticamadeus.traffit.com/public/an/11c88f6bf2f5bf5fb8f4bdadbb627eed41752b58
 
 Mid/Senior Analytics Engineer for BA's Client (B2B contract)
 Baltic Amadeus

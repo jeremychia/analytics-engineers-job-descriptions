@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4466851477/
+**URL:** https://careers.vattenfall.com/global/job/international-trainee-hydro-power-optimisation-and-data-analytics-engineer-in-lulea-jid-52789
 
 International Trainee - Hydro Power Optimisation and Data Analytics Engineer
 Vattenfall

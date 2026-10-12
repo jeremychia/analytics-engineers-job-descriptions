@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4466936434/
+**URL:** https://job-boards.greenhouse.io/usenourish/jobs/5428653008
 
 Analytics Engineering Lead
 Nourish

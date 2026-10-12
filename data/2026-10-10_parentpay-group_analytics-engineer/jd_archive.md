@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4469131212/
+**URL:** https://careers.parentpaygroup.com/en/postings/b4f55440-0c10-4710-a2c1-8fb1cef2d8e7
 
 Analytics Engineer
 ParentPay Group

@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4477801731/
+**URL:** https://jobs.lever.co/ciandt/0c78a774-98d0-4716-a1a5-cdbbb312efdd
 
 Senior Analytics Engineer, Portugal
 CI&T

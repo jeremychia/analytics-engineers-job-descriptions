@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4476265015/
+**URL:** https://tuyendung.giakho.vn/senior-data-analyst-analytics-engineer
 
 Senior Data Analyst - Analytics Engineer
 Giá Kho Group

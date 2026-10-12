@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4434444833/
+**URL:** https://globalcareers.jobs.hr.cloud.sap/AluminiumSegment/job/Oinofyta-IT-BUSINESS-INTELLIGENCE-DEVELOPER/1409258833/
 
 IT Business Intelligence Developer
 ELVAL

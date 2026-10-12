@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4475556003/
+**URL:** https://deloittecm.avature.net/en_US/careers/JobDetail/Data-BI-Engineer-Thessaloniki-Ioannina-Patras/9055
 
 Data / BI Engineer @Thessaloniki, Ioannina, Patras
 Deloitte

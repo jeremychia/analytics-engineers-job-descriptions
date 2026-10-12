@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4469000498/
+**URL:** https://semdor-pharma-group-gmbh.jobs.personio.de/job/2632267
 
 Data & Analytics Engineer (m/w/d)
 Cannamedical Pharma

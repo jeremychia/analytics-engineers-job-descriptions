@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4478517570/
+**URL:** https://saabgroup.wd116.myworkdayjobs.com/Saab_careers/job/Gteborg/BI-Developer-in-Solution-Team_REQ_46101
 
 BI Developer in Solution Team
 Saab

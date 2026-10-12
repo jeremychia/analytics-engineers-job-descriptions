@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4467997248/
+**URL:** https://jobs.koerber.com/supplychain/job/Maia-Analytics-Engineer/1437541133/
 
 Analytics Engineer
 Körber

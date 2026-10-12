@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4459089569/
+**URL:** https://rbi.wd3.myworkdayjobs.com/RBI_External_Career_Site/job/Corp---Zug-Corporate-Office/Senior-Manager--Analytics-Engineering---Data-Science--EMEA_R3737
 
 Senior Manager, Analytics Engineering & Data Science, EMEA
 Restaurant Brands International

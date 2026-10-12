@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4469304146/
+**URL:** https://www.ista.com/de/karriere/stellenuebersicht/11451-specialist-analytics-engineer-wmd/
 
 (Specialist) Analytics Engineer (w/m/d)
 ista

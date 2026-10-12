@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4477663055/
+**URL:** https://www.michaelpage.com.ph/job-detail/analytics-engineer-snowflake-data-platform/ref/jn-102026-7122148
 
 Analytics Engineer (Snowflake Data Platform)
 Michael Page

@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4477658890/
+**URL:** https://opportunities.altia.es/jobs/analytics-engineer-dbt-sql
 
 Analytics Engineer (dbt & SQL)
 Altia

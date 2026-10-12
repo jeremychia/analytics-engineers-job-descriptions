@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4476279383/
+**URL:** https://www.globallogic.com/pl/careers/principal-analytics-engineer-irc306127/
 
 [Barclays] Principal Analytics Engineer IRC306127
 GlobalLogic

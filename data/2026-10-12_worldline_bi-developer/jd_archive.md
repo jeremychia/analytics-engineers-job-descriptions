@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4459355177/
+**URL:** https://jobs.worldline.com/job/BI-developer/305153-en_US/
 
 BI developer
 Worldline

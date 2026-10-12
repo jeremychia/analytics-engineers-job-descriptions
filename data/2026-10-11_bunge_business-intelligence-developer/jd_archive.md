@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4433329271/
+**URL:** https://jobs.bunge.com/job/Warszawa-Business-Intelligence-Developer-Maso-02-146/1434842733/
 
 Business Intelligence Developer
 Bunge

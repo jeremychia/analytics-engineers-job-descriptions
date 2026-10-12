@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4467872627/
+**URL:** https://www.welcometothejungle.com/fr/companies/nickel/jobs/staff-analytics-engineer-f-h_charenton-le-pont
 
 Staff Analytics Engineer F/H
 Nickel

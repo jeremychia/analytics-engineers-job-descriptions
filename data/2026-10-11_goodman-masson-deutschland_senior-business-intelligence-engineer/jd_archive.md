@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4475432179/
+**URL:** https://jobs-de.goodmanmasson.com/job/senior-business-intelligence-engineer-m-w-d/
 
 Senior Business Intelligence Engineer (m/w/d)
 Goodman Masson Deutschland

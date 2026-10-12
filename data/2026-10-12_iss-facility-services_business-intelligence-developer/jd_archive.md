@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4478512465/
+**URL:** https://iss.onecruiter.com/jobs/318927-bi-specialist
 
 Business Intelligence Developer
 A-hub

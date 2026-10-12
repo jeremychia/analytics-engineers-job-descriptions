@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4477425064/
+**URL:** https://careers.capgemini.com/job/Vila-Nova-de-Gaia-Senior-Analytics-Engineer/1445737633/
 
 Senior Analytics Engineer
 Capgemini

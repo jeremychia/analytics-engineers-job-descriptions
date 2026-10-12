@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4475222310/
+**URL:** https://candidate.hr-manager.net/ApplicationInit.aspx?cid=333&ProjectId=183588&MediaId=5
 
 Senior Analytics Engineer - Kunde- og adfærdsdata
 JP/Politikens Hus

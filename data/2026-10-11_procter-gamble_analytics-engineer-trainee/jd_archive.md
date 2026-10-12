@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4462506717/
+**URL:** https://pg.wd5.myworkdayjobs.com/1000/job/WARSAW-PLANT--GO/Analytics-Engineer-Trainee_R000153059
 
 Analytics Engineer Trainee
 Procter & Gamble

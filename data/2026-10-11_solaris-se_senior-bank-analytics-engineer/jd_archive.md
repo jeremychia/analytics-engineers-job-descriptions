@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4476596591/
+**URL:** https://job-boards.greenhouse.io/solarisbank/jobs/8675884002
 
 Senior Bank Analytics Engineer
 Solaris SE

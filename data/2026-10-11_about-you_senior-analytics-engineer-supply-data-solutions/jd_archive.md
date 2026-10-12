@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4475416304/
+**URL:** https://jobs.smartrecruiters.com/ABOUTYOUGmbH/744000154018570--senior-analytics-engineer-supply-data-solutions-all-genders-
 
 (Senior) Analytics Engineer - Supply Data Solutions (all genders)
 ABOUT YOU

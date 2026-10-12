@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4475464024/
+**URL:** https://cujo.com/careers/senior-data-analyst-analytics-engineering-data-platform-7a-37a/
 
 Senior Data Analyst (Analytics Engineering), Data Platform
 CUJO AI®
