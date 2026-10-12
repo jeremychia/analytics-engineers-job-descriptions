@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4474693235/
+**URL:** https://careers.podimo.com/jobs/8501502-analytics-engineer
 
 Analytics Engineer
 Podimo

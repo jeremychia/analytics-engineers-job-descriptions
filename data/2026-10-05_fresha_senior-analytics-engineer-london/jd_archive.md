@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4473925212/
+**URL:** https://careers.fresha.com/jobs/8474978-senior-analytics-engineer-london
 
 Senior Analytics Engineer (London)
 Fresha

@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4475788066/
+**URL:** https://strade.bamboohr.com/careers/96
 
 Senior Data Analytics Engineer
 STRADE

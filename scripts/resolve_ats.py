@@ -38,6 +38,8 @@ UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML,
 MIN_TITLE_SIM = 0.82
 MIN_BULLET_COVERAGE = 0.6
 LEGAL = r"\b(inc|ltd|limited|llc|gmbh|ag|sa|sas|bv|plc|corp|corporation|co|group|holdings|technologies|technology|labs|hq|se|nv|oy|ab|as)\b"
+# LinkedIn often appends the country of the hiring entity ("Funding Circle UK", "TD SYNNEX Poland").
+PLACE = r"\b(uk|us|usa|deutschland|germany|france|espana|spain|italia|italy|nederland|netherlands|polska|poland|portugal|sverige|sweden|danmark|denmark|norge|norway|suomi|finland|belgium|belgique|schweiz|switzerland|osterreich|austria|ireland|europe|emea|global|international)\b"
 
 _cache = {}
 
@@ -100,12 +102,17 @@ def slugs(company):
     c = norm(company)
     c = re.sub(r"[®™©]", "", c)
     c = re.sub(r"\(.*?\)", " ", c)
+    c = c.split(",")[0]  # "dataroots, a Talan company"
+    c = re.sub(r"^the\s+", "", c.strip())
     c = re.sub(LEGAL, " ", c)
-    words = re.findall(r"[a-z0-9]+", unicodedata.normalize("NFKD", c).encode("ascii", "ignore").decode())
+    ascii_c = unicodedata.normalize("NFKD", c).encode("ascii", "ignore").decode()
+    words = re.findall(r"[a-z0-9]+", ascii_c)
+    bare = re.findall(r"[a-z0-9]+", re.sub(PLACE, " ", ascii_c))
     out = []
-    for s in ["".join(words), "-".join(words), words[0] if words else ""]:
-        if s and s not in out:
-            out.append(s)
+    for w in (words, bare):
+        for s in ["".join(w), "-".join(w), "".join(w[:2]), w[0] if w else ""]:
+            if s and s not in out:
+                out.append(s)
     return out
 
 
@@ -169,6 +176,31 @@ def personio(slug, title=None):
     return out
 
 
+def teamtailor(slug, title=None):
+    body = get(f"https://{slug}.teamtailor.com/jobs.rss")
+    out = []
+    for item in re.findall(r"<item>(.*?)</item>", body or "", re.S):
+        t = re.search(r"<title>(.*?)</title>", item, re.S)
+        link = re.search(r"<link>(.*?)</link>", item, re.S)
+        desc = re.search(r"<description>(.*?)</description>", item, re.S)
+        if t and link:
+            url = link.group(1).strip()
+            jid = re.search(r"/jobs/(\d+)", url)
+            out.append((html.unescape(t.group(1)).strip(), url, jid.group(1) if jid else "", html.unescape(desc.group(1)) if desc else ""))
+    return out
+
+
+def bamboohr(slug, title=None):
+    d = get_json(f"https://{slug}.bamboohr.com/careers/list")
+    out = []
+    for j in (d or {}).get("result", []):
+        if title and title_sim(title, j.get("jobOpeningName")) < MIN_TITLE_SIM:
+            continue  # the detail call is per job, so fetch only plausible titles
+        det = ((get_json(f"https://{slug}.bamboohr.com/careers/{j['id']}/detail") or {}).get("result") or {}).get("jobOpening") or {}
+        out.append((j["jobOpeningName"], f"https://{slug}.bamboohr.com/careers/{j['id']}", str(j["id"]), det.get("description") or ""))
+    return out
+
+
 def amazon(slug, title=None):
     if slug not in ("amazon", "amazonwebservices", "aws") or not title:
         return []
@@ -179,7 +211,8 @@ def amazon(slug, title=None):
 
 
 BOARDS = {"greenhouse": greenhouse, "lever": lever, "ashby": ashby, "workable": workable,
-          "smartrecruiters": smartrecruiters, "recruitee": recruitee, "personio": personio, "amazon_jobs": amazon}
+          "smartrecruiters": smartrecruiters, "recruitee": recruitee, "personio": personio,
+          "teamtailor": teamtailor, "bamboohr": bamboohr, "amazon_jobs": amazon}
 
 
 def coverage(bullets, text):
