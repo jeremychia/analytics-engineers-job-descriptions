@@ -2,7 +2,7 @@
 name: discover-jds
 description: Sweep LinkedIn's public job search for new analytics-engineering postings in the configured regions, queue the ones not yet in the corpus, and classify them with /classify-jd. Use when asked to find, discover, scrape or refresh new job listings.
 allowed-tools: Bash Read Write Skill
-argument-hint: '[--regions emea,uk,apac,nyc_metro,seattle] [--days 4] [--max 20] [--dry-run]'
+argument-hint: '[--regions france,germany,uk,...] [--days 4] [--max 20] [--dry-run]'
 ---
 
 `$ARGUMENTS` may set `--regions`, `--days`, `--max` (postings to classify this run, default 20) and `--dry-run` (search and list only). Run every command from the repo root.
@@ -68,6 +68,8 @@ Print: postings found, queued, classified, duplicates, failures, and how many re
 - Add or change a region in `discovery/search_config.json`. Take the `geoId` from the region's LinkedIn search URL, and add `distance_miles` for a city.
 - Check a new `geoId` before relying on it. Fetch one results page and confirm the cards' locations are in that country.
 - Europe is searched country by country: every EU member, plus Norway and Switzerland. The broad `emea` search stops at its page limit, so it only catches what the country searches miss.
+  - EU: austria, belgium, bulgaria, croatia, cyprus, czechia, denmark, estonia, finland, france, germany, greece, hungary, ireland, italy, latvia, lithuania, luxembourg, malta, netherlands, poland, portugal, romania, slovakia, slovenia, spain, sweden.
+  - Outside the EU: norway, switzerland, uk, apac, nyc_metro, seattle, and the `emea` catch-all.
 - A region's name only scopes the search. A record's `geo_region` comes from its `job_location`, through `scripts/geo_classify.py`.
 - The `seattle` region has no `geo_region` bucket in `scripts/geo_classify.py`, so its records compile into `other`.
 - The search uses LinkedIn's logged-out job search. Keep to the configured regions, keywords and page limits.

@@ -14,7 +14,7 @@ Requests are spaced 2-4 seconds apart, and a search stops at the first rate-limi
 or block response (HTTP 429 or 999) instead of retrying.
 
 Usage:
-    python3 scripts/discover_jobs.py search [--regions emea,uk] [--days 4] [--max-pages 3]
+    python3 scripts/discover_jobs.py search [--regions france,germany] [--days 4] [--max-pages 3]
     python3 scripts/discover_jobs.py list [--limit 20]
     python3 scripts/discover_jobs.py recheck
     python3 scripts/discover_jobs.py done <job_id> [<job_id> ...] --status classified|duplicate|skipped|failed
