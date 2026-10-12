@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4461769416/
+**URL:** https://www.lotofhappiness.nl/vacatures/data-engineer
 
 Join ons als Analytics Engineer
 Krijg jij energie van data die niet alleen klopt, maar ook écht iets vertelt? Vind je het leuk om vragen uit de business te vertalen naar slimme datamodellen, pipelines en dashboards? En wil je met jouw werk direct bijdragen aan de groei van Lot of Happiness én aan onze impact voor goede doelen zoals KiKa, Make-A-Wish en Stichting ALS Nederland? Dan zoeken wij jou!

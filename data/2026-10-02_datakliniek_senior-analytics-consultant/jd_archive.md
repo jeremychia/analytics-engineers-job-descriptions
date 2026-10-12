@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4474180184/
+**URL:** https://www.datakliniek.nl/werken-bij/vacature-senior-analytics-consultant
 
 Bij Datakliniek bouwen we samen aan betere zorg door data slimmer en strategischer in te zetten. Als Senior Analytics / BI Consultant speel je een sleutelrol in hoe onze klanten in de zorg data gebruiken om betere beslissingen te nemen.
 In deze functie zorg je er als projectleider en consultant voor dat je samen met het projectteam waarde creëert voor onze klanten in de zorg met behulp van data. Maar je bent er ook niet vies van om zelf analyses te doen, een dashboard wat verder te finetunen als dat nodig is of in onze ETL-processen te duiken. Je werkt graag in een dynamische (startup) omgeving waar het voorwerk nog niet gedaan is en je de werkprocessen zelf slim mag inrichten. Deze functie combineert projectleiderschap met hands-on meebouwen aan onze producten.

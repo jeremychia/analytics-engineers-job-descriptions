@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4475786535/
+**URL:** https://www.airarabiagroupcareers.com/gb/en/job/17787/Associate-Data-Analytics-Engineer
 
 Associate Data Analytics Engineer
 Air Arabia

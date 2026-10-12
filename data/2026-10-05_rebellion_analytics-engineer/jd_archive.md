@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4473254184/
+**URL:** https://apply.workable.com/rebellion/jobs/view/16E47C04EE
 
 Analytics Engineer
 Rebellion

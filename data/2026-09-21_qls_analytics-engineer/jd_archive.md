@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4458425011/
+**URL:** https://qls.nl/werken-bij/vacatures/analytics-engineer/
 
 Over de functie
 

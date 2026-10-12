@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4471398803/
+**URL:** https://career.nordnetab.com/jobs/8466246-analytics-engineer
 
 Analytics Engineer
 Nordnet Bank AB

@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4472807243/
+**URL:** https://jobs.lever.co/duetti/77b93118-24bf-4feb-9a03-d62104dcdb1a
 
 Analytics Engineer
 Sharpe Recruiting Ventures

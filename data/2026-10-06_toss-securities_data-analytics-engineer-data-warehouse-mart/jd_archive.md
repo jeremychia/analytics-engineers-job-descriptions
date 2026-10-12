@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4429366070/
+**URL:** https://toss.im/career/job-detail?gh_jid=6110702003
 
 Data Analytics Engineer (Data Warehouse/Mart)
 Toss Securities

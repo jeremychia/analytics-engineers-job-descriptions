@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4464131843/
+**URL:** https://nba.wd108.myworkdayjobs.com/nbacareers/job/New-York-USA/Analytics-Engineer--WNBA_JR000967
 
 Analytics Engineer, WNBA
 National Basketball Association (NBA)

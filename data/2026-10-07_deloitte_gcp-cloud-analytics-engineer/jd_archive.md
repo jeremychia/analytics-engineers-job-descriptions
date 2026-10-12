@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4422387451/
+**URL:** https://apply.deloitte.com/en_US/careers/JobDetail/GCP-Cloud-Analytics-Engineer/353839
 
 GCP Cloud Analytics Engineer
 Deloitte

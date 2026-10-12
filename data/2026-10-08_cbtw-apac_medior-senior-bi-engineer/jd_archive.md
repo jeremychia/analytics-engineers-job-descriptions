@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4476568120/
+**URL:** https://careers-collaborationbetterstheworldvi.icims.com/jobs/1970/jad-%7c-senior-bi-engineer/job
 
 VN | JAD | Medior/Senior BI Engineer
 CBTW APAC

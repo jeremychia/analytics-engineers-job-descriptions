@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4451660400/
+**URL:** https://emp.jobylon.com/jobs/375299-einride-analytics-engineer/
 
 Born autonomous. Born electric.
 

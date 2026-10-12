@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4472833865/
+**URL:** https://richemont.wd3.myworkdayjobs.com/richemont/job/AMSTERDAM/Analytics-Engineer_JR133727-2
 
 Analytics Engineer
 Richemont

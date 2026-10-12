@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4455859524/
+**URL:** https://momo.careers/jobs/senior-analytics-engineer-17918
 
 We are looking for a Senior Analytics Engineer to help build the trusted data foundation that powers company-wide analytics and next-generation AI/agentic systems.
 

@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4456338312/
+**URL:** https://www.airarabiagroupcareers.com/gb/en/job/17991/Data-Analytics-Engineer-I
 
 Data Analytics Engineer I
 ISA

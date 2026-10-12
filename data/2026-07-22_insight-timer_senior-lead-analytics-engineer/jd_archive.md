@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4438470664/
+**URL:** https://apply.workable.com/insight-network-inc/j/A27B92BF87/
 
 Senior or Lead Analytics Engineer
 

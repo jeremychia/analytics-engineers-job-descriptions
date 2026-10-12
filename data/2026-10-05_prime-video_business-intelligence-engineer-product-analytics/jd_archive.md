@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4472466574/
+**URL:** https://www.amazon.jobs/en/jobs/10561031/business-intelligence-engineer-amazon-prime-video-product-analytics
 
 Business Intelligence Engineer, Amazon Prime Video Product Analytics
 Prime Video & Amazon MGM Studios

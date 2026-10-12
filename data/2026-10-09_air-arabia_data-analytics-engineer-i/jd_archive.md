@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4475795190/
+**URL:** https://www.airarabiagroupcareers.com/gb/en/job/17991/Data-Analytics-Engineer-I
 
 Data Analytics Engineer I
 Air Arabia

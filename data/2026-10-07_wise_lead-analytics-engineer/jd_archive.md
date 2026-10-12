@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4233586497/
+**URL:** https://wise.jobs/job/lead-analytics-engineer-in-london-jid-1727
 
 Lead Analytics Engineer
 Wise

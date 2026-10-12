@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4430222489/
+**URL:** https://teamtailor.kilo.co/jobs/7977004-analytics-engineer-moerie
 
 We are lookingfor a talented Analytics Engineer to work with data modeling and data infrastructure for Moérie, a brand focused on high-quality hair care products made with natural ingredients. If you thrive on turning messy, complex datasets into clean models and decisions that actually matter, this opportunity might be just for you.
 

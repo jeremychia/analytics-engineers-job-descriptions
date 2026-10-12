@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4431236489/
+**URL:** https://micron.wd1.myworkdayjobs.com/External/job/MSB-Singapore/Data-Analytics-Engineer_JR103378
 
 Our vision is to transform how the world uses information to enrich life for all.
 

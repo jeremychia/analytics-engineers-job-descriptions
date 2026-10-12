@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4475820773/
+**URL:** https://apply.workable.com/mindful-support-services/jobs/view/2734134FCD
 
 Senior Business Intelligence Developer, Seattle, Wa
 Mindful Support Services

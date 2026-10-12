@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4471912667/
+**URL:** https://curryscareers.co.uk/job/London-Analytics-Engineer/1389563833/
 
 Analytics Engineer
 Currys plc

@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4474359146/
+**URL:** https://experity.wd108.myworkdayjobs.com/Experity_Careers/job/Bengaluru-Office/Data-Analytics-Engineer-III_JR100351
 
 Data Analytics Engineer III
 Experity

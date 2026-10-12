@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4454786541/
+**URL:** https://careers.deliveryhero.com/job/analytics-engineer-i-ai-and-data-enablement-they-she-he-in-barcelona-spain-jid-9727
 
 Glovo is part of the Delivery Hero Group, the world's pioneering local delivery platform, our mission is to deliver an amazing experience—fast, easy, and to your door. We operate in around 65 countries worldwide. Headquartered in Berlin, Germany. Delivery Hero has been listed on the Frankfurt Stock Exchange since 2017 and is part of the MDAX stock market index.
 

@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4462419698/
+**URL:** https://jobs.smartrecruiters.com/Talan/744000141849375-data-engineer-dbt-snowflake
 
 Depuis plus de 20 ans, Talan est un groupe international de conseil et d'expertises technologiques qui accélère la transformation de ses clients par les leviers de l'innovation, la technologie et la data. Depuis plus de 20 ans, Talan conseille et accompagne les entreprises et les institutions publiques dans la mise en œuvre de leurs projets de transformation et d'innovation en France et à l'international.
 

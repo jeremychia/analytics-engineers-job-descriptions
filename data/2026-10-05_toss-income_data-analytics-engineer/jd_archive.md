@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4429357063/
+**URL:** https://toss.im/career/job-detail?gh_jid=6308074003
 
 Data Analytics Engineer
 Toss Income(토스인컴)

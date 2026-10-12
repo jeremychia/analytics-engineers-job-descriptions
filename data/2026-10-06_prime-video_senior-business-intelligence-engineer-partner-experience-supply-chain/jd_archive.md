@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4473563794/
+**URL:** https://www.amazon.jobs/en/jobs/10564339
 
 Senior Business Intelligence Engineer, Prime Video Partner Experience & Supply Chain
 Prime Video & Amazon MGM Studios

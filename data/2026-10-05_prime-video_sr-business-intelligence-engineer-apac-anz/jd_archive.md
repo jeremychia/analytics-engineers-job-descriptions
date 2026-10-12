@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4464384212/
+**URL:** https://www.amazon.jobs/en/jobs/10530993/sr-business-intelligence-engineer-prime-video-apac-and-anz-analytics-team
 
 Sr. Business Intelligence Engineer, Prime Video APAC and ANZ Analytics Team
 Prime Video & Amazon MGM Studios

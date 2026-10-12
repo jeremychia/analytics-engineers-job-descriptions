@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4462807111/
+**URL:** https://jobs.eu.lever.co/pnlfin/bde43d83-ab10-44cc-9063-53d410f63368
 
 As our Senior Analytics Engineer for Operations, you'll own that data end to end, the model behind it, the metrics it produces, and the trust the business places in both.
 

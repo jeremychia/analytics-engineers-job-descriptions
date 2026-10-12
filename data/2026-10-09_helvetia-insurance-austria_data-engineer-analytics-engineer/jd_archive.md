@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4468673969/
+**URL:** https://jobs.helvetia.com/offene-stellen/data-engineer-analytics-engineer-w-m-d/49c4c857-7ae2-49a8-bb07-0a2a8eb19c27
 
 Data Engineer / Analytics Engineer (w/m/d).
 Helvetia Insurance Austria

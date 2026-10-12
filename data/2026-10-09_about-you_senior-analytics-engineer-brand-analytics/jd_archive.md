@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4475789576/
+**URL:** https://jobs.smartrecruiters.com/ABOUTYOUGmbH/744000154364999-senior-analytics-engineer-brand-analytics-all-genders-
 
 Senior Analytics Engineer - Brand Analytics (all genders)
 ABOUT YOU

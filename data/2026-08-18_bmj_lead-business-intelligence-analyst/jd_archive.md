@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4454263449/
+**URL:** https://jobsearch.bmj.com/jobs/job/Lead-Business-Intelligence-Analyst/1168
 
 Job Title: 
 Lead Business Intelligence Analyst

@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4429350079/
+**URL:** https://toss.im/career/job-detail?gh_jid=7702871003
 
 [코어] Data Analytics Engineer (Finops)
 Toss

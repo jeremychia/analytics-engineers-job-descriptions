@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4426626553/
+**URL:** https://jobs.smartrecruiters.com/Devoteam/744000131706209-distributed-cloud-analytics-engineer-
 
 Distributed Cloud | Analytics Engineer
 Devoteam

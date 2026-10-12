@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4444315610/
+**URL:** https://careers.foodpanda.com/job/analytics-engineering-manager-ai-and-agentic-analytics-in-singapore-jid-2898
 
 Analytics Engineering Manager (AI & Agentic Analytics)
 

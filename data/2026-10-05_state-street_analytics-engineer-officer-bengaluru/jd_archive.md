@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4472768516/
+**URL:** https://statestreet.wd1.myworkdayjobs.com/Global/job/Bangalore-India/Analytics-Engineer--Officer_R-798696-1
 
 Analytics Engineer, Officer
 State Street

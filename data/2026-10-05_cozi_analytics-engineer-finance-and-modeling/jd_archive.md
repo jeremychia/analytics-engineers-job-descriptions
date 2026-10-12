@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4473100910/
+**URL:** https://careers.intandem.com/en/postings/eb51a586-1077-4699-a33e-6818d7206b4f
 
 Analytics Engineer, Finance and Modeling
 Cozi

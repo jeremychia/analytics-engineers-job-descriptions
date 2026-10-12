@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4477409193/
+**URL:** https://zillow.wd5.myworkdayjobs.com/Zillow_Group_External/job/Bengaluru/Senior-Analytics-Engineer_P751462-2
 
 Senior Analytics Engineer
 Zillow

@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4451356459/
+**URL:** https://clovr.be/vacatures/data-modeling-engineer/
 
 Voor onze klant in Antwerpen zijn we op zoek naar een Analytics Engineer - Data modeling engineer die zal meewerken aan integratie- en dataprojecten en tevens zich zal focussen op datamodelling voor het creëren, onderhouden en beheren van centrale datastores. Daarnaast neem je deel aan integratietesten en ondersteun je de gebruikerstesten. Na livegang draag je bij aan de ondersteuning en het beheer van de systemen.
 

@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4474647154/
+**URL:** https://careers.woolworthsgroup.com.au/en_GB/apply/JobDetail/Lead-Analytics-Engineer-Data-Audience-AI/110653
 
 Lead Analytics Engineer- Audience and AI
 Cartology - Part of the Woolworths Group

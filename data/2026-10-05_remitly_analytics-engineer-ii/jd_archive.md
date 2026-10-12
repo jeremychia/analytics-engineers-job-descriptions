@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4474592316/
+**URL:** https://remitly.wd5.myworkdayjobs.com/Remitly_Careers/job/Manila-Phillippines/Analytics-Engineer-II_R_106973
 
 Analytics Engineer II
 Remitly

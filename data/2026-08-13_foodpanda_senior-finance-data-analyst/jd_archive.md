@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4443739305/
+**URL:** https://careers.foodpanda.com/job/senior-data-analyst-finance-in-kuala-lumpur-malaysia-jid-3012
 
 foodpanda is part of the Delivery Hero Group, the world's pioneering local delivery platform, our mission is to deliver an amazing experience—fast, easy, and to your door. We operate in around 65 countries worldwide. Headquartered in Berlin, Germany. Delivery Hero has been listed on the Frankfurt Stock Exchange since 2017 and is part of the MDAX stock market index.
 

@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4439256063/
+**URL:** https://apply.workable.com/booksy-1/j/12F4DFC73E/
 
 Analytics Engineering Lead
 Booksy

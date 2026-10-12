@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4433929117/
+**URL:** https://aubay.com/jobs/analytics-engineer-f-h/
 
 Passionné par la Data avec une double compétence en Data Engineering et Data Analysis, vous souhaitez rejoindre une communauté d'experts pour travailler sur des projets variés et à forte valeur ajoutée. Aubay Data & AI, cabinet spécialisé en Data de Aubay Solutec, renforce sa communauté d'experts Data et recherche des Analytics Engineering pour concevoir et optimiser des solutions analytiques modernes.
 

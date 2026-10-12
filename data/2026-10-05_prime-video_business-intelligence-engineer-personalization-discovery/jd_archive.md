@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4455915897/
+**URL:** https://www.amazon.jobs/en/jobs/3204218
 
 Business Intelligence Engineer , Prime Video Personalization and Discovery
 Prime Video & Amazon MGM Studios

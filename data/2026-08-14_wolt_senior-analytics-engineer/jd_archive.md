@@ -1,4 +1,4 @@
-**URL:** https://www.linkedin.com/jobs/view/4452916643/
+**URL:** https://job-boards.greenhouse.io/wolt/jobs/8006892
 
 About Wolt
 
