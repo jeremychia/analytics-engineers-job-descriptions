@@ -16,6 +16,7 @@ python3 scripts/discover_jobs.py search [--regions ...] [--days N]
 - Pass `--regions` and `--days` through only when the user gave them. Otherwise the defaults in `discovery/search_config.json` apply.
 - Report each search line and the final counts to the user.
 - If any line says `blocked`, stop sweeping for this session. Do not retry, raise the page count or shorten the delay. Carry on with Step 2 using what is already queued.
+- Sweep regions that have never been swept first, with `--regions`, then the rest. A sweep of every configured region often hits LinkedIn's rate limit before the end of the list.
 
 ## Step 2 — Pick the batch
 
@@ -28,11 +29,18 @@ python3 scripts/discover_jobs.py list --limit <max>
 - Keep entries marked `similar to <jd_id>`, but compare before writing. Fetch the posting and compare its responsibilities with that record's `responsibilities`. Identical bullets mean a relabelled repost: mark it `duplicate`. A different level, team or pay band means a new opening: classify it and name the related record in its evidence.
 - Keep only the first of entries marked `same title as queued <job_id>`. After classifying it, fetch each twin and diff the body text. Identical apart from location means one opening listed twice: mark it `duplicate`. A separate country, pay band or contract means a distinct opening: classify it, reuse the first record's coding where the text is the same, and flag the pair as correlated signal in the summary.
 - Keep everything else, up to `--max`.
+- Read the queue from stdout. `list` prints its `N pending` count to stderr, so stripping the first line of stdout drops a real posting.
 - Run `python3 scripts/discover_jobs.py recheck` after a batch adds records, so postings already queued get compared against them.
 
 ## Step 3 — Classify
 
 Invoke the `classify-jd` skill once with the kept URLs, newline-separated, and follow its batch mode to the end. Do not skip its duplicate check: a posting can enter the corpus between the sweep and the classification.
+
+For more than 20 kept postings, split them into batches of about 20 by region and run one agent per batch in parallel.
+
+- Put every posting from the same company in one batch: twins, `similar to` entries and one job listed in several countries.
+- Tell each agent not to run `discover_jobs.py done` or edit `discovery/*.json`. Concurrent writes overwrite the queue.
+- Have each agent report one line per job id with its status. Record every outcome yourself in Step 4.
 
 Every URL here is a LinkedIn job, so run classify-jd's Step 1.4 on each one. It looks up the employer's own ATS posting with `scripts/resolve_ats.py`. A verified match becomes `source_url`, and the LinkedIn URL moves to `linkedin_url`. Without a verified match the LinkedIn URL stays as `source_url`. Count resolved and unresolved postings in the summary.
 
@@ -58,6 +66,9 @@ Print: postings found, queued, classified, duplicates, failures, and how many re
 ## Notes
 
 - Add or change a region in `discovery/search_config.json`. Take the `geoId` from the region's LinkedIn search URL, and add `distance_miles` for a city.
+- Check a new `geoId` before relying on it. Fetch one results page and confirm the cards' locations are in that country.
+- Europe is searched country by country: every EU member, plus Norway and Switzerland. The broad `emea` search stops at its page limit, so it only catches what the country searches miss.
+- A region's name only scopes the search. A record's `geo_region` comes from its `job_location`, through `scripts/geo_classify.py`.
 - The `seattle` region has no `geo_region` bucket in `scripts/geo_classify.py`, so its records compile into `other`.
 - The search uses LinkedIn's logged-out job search. Keep to the configured regions, keywords and page limits.
 
