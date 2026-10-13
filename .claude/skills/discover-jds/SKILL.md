@@ -75,7 +75,7 @@ Print: postings found, queued, classified, duplicates, failures, and how many re
 - The search uses LinkedIn's logged-out job search. Keep to the configured regions, keywords and page limits.
 
 - The sweep and `check_duplicate_jd.py` both read `linkedin_url` as well as `source_url`, so a record moved to its ATS URL is still recognised when LinkedIn shows it again.
-- To move older LinkedIn-sourced records to their ATS URLs, run `python3 scripts/resolve_ats.py --corpus` to preview, then add `--apply`. Only verified matches are changed. Expect many misses: postings close, and Workday, Teamtailor and company sites aren't covered.
+- To move older LinkedIn-sourced records to their ATS URLs, run `python3 scripts/resolve_ats.py --corpus` to preview, then add `--apply`. Only verified matches are changed. Expect many misses: postings close, and Workday and company sites aren't covered. For those, find the posting by web search and switch it with `resolve_ats.py --record`, which checks the bullets first.
 - Run every shell loop over job ids with `xargs` or a quoted array. In zsh an unquoted `$ids` stays one word, and `done` then records the whole string as a single bogus id.
 
 ## Worked case
