@@ -17,6 +17,7 @@ python3 scripts/discover_jobs.py search [--regions ...] [--days N]
 - Report each search line and the final counts to the user.
 - If any line says `blocked`, stop sweeping for this session. The script stops at the first block and prints the regions it skipped. Pass those with `--regions` in a later session. Do not retry, raise the page count or shorten the delay. Carry on with Step 2 using what is already queued.
 - Sweep regions that have never been swept first, with `--regions`, then the rest. A sweep of every configured region often hits LinkedIn's rate limit before the end of the list.
+- When a sweep was blocked earlier the same day, sweep in chunks of 4 regions with `--max-pages 2`, about 10 minutes apart. LinkedIn throttles after roughly 10–15 search requests in a short window, and the matching titles mostly sit on the first two pages.
 
 ## Step 2 — Pick the batch
 
