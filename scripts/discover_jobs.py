@@ -193,6 +193,7 @@ def cmd_search(args):
 
     today = dt.date.today().isoformat()
     found, added, counts = {}, [], {"off_title": 0, "in_corpus": 0, "known": 0}
+    blocked = False
     for region in regions:
         for kw in cfg["keywords"]:
             cards, stop = search_region(region, kw, days, max_pages)
@@ -200,6 +201,15 @@ def cmd_search(args):
             for c in cards:
                 c.setdefault("region", region["name"])
                 found.setdefault(c["job_id"], c)
+            # once LinkedIn rate-limits, every further request extends the block
+            blocked = stop.startswith("blocked")
+            if blocked:
+                break
+        if blocked:
+            rest = [r["name"] for r in regions[regions.index(region) + 1:]]
+            if rest:
+                print(f"stopped after the block; not swept: {','.join(rest)}")
+            break
 
     for jid, c in found.items():
         url = VIEW_URL.format(jid)

@@ -15,7 +15,7 @@ python3 scripts/discover_jobs.py search [--regions ...] [--days N]
 
 - Pass `--regions` and `--days` through only when the user gave them. Otherwise the defaults in `discovery/search_config.json` apply.
 - Report each search line and the final counts to the user.
-- If any line says `blocked`, stop sweeping for this session. Do not retry, raise the page count or shorten the delay. Carry on with Step 2 using what is already queued.
+- If any line says `blocked`, stop sweeping for this session. The script stops at the first block and prints the regions it skipped. Pass those with `--regions` in a later session. Do not retry, raise the page count or shorten the delay. Carry on with Step 2 using what is already queued.
 - Sweep regions that have never been swept first, with `--regions`, then the rest. A sweep of every configured region often hits LinkedIn's rate limit before the end of the list.
 
 ## Step 2 — Pick the batch
