@@ -17,6 +17,15 @@
   --muted: #586070;
   --bar: rgba(26,29,36,0.72);
   --highlight: #fde68a;
+  --font-text: Charter, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --t-xs: 0.75rem;
+  --t-sm: 0.8125rem;
+  --t-base: 0.9375rem;
+  --t-md: 1.0625rem;
+  --t-lg: 1.375rem;
+  --t-xl: 1.75rem;
+  --measure: 70ch;
   --r-sm: 4px;
   --r-md: 8px;
   --r-pill: 999px;
@@ -30,7 +39,12 @@
 }
 
 html { scroll-behavior: smooth; }
-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.6; }
+body { font-family: var(--font-text); background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.7; }
+
+/* sans for controls, labels and figures; the serif carries the reading text */
+button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .region-filter, .region-dd-list,
+.stat-num, .stat-label, .hygiene-stat, .hygiene-label, .geo-cell-n, .snapshot-row-label, .rel-tab, .motivator-chip,
+.assess-opt, .check-item-badge, .skip-link { font-family: var(--font-ui); font-variant-numeric: tabular-nums; }
 
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: var(--r-sm); }
 
@@ -42,9 +56,9 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 }
 .mode-toggle.hidden { display: none; }
 .mode-toggle button {
-  font-size: 0.72rem; font-weight: 600; border: none; background: transparent;
+  font-size: var(--t-xs); font-weight: 600; border: none; background: transparent;
   color: var(--muted); padding: 0.32rem 0.85rem; border-radius: var(--r-pill);
-  cursor: pointer; white-space: nowrap; font-family: inherit;
+  cursor: pointer; white-space: nowrap; font-family: var(--font-ui);
 }
 .mode-toggle button.active { background: var(--accent); color: #fff; }
 @media (max-width: 640px) { .mode-toggle { top: auto; bottom: 1rem; box-shadow: var(--shadow); } }
@@ -55,18 +69,18 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
   border-radius: var(--r-pill); padding: 0.3rem 0.9rem 0.3rem 1rem; box-shadow: var(--shadow);
 }
 .region-filter.hidden { display: none; }
-.region-filter label { font-size: 0.68rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.region-filter label { font-size: var(--t-xs); font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
 @media (max-width: 640px) { .region-filter { top: auto; bottom: 1rem; left: 1rem; box-shadow: var(--shadow); } }
 
 /* Custom dropdown (not native <select> — a native-popup rendering bug was observed
    in some Chrome/macOS setups where the select would focus but never open). */
 .region-dd { position: relative; }
 .region-dd-trigger {
-  font-size: 0.76rem; font-family: inherit; border: none; background: transparent; color: var(--text);
+  font-size: var(--t-xs); font-family: var(--font-ui); border: none; background: transparent; color: var(--text);
   font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 0.3rem; padding: 0.1rem 0;
 }
 .region-dd-trigger:disabled { color: var(--muted); cursor: default; }
-.region-dd-trigger .caret { font-size: 0.6rem; color: var(--muted); }
+.region-dd-trigger .caret { font-size: var(--t-xs); color: var(--muted); }
 .region-dd-list {
   position: absolute; top: calc(100% + 0.5rem); left: -1rem; min-width: 220px; max-height: 340px;
   overflow-y: auto; background: #fff; border: 1px solid var(--border); border-radius: var(--r-md);
@@ -74,7 +88,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 }
 .region-dd-list.open { display: block; }
 .region-dd-opt {
-  display: block; width: 100%; text-align: left; font-family: inherit; font-size: 0.8rem;
+  display: block; width: 100%; text-align: left; font-family: var(--font-ui); font-size: var(--t-sm);
   border: none; background: transparent; color: var(--text); padding: 0.5rem 0.7rem; border-radius: var(--r-md); cursor: pointer;
 }
 .region-dd-opt:hover { background: var(--surface2); }
@@ -87,37 +101,37 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
   padding: 1.1rem 1.4rem; margin: 0 auto 2rem; max-width: var(--w);
 }
 .region-nudge.hidden { display: none; }
-.region-nudge-title { font-size: 0.85rem; font-weight: 700; color: var(--text); margin-bottom: 0.3rem; }
-.region-nudge-sub { font-size: 0.78rem; color: var(--muted); line-height: 1.6; margin-bottom: 0.9rem; }
+.region-nudge-title { font-size: var(--t-sm); font-weight: 700; color: var(--text); margin-bottom: 0.3rem; }
+.region-nudge-sub { font-size: var(--t-xs); color: var(--muted); line-height: 1.6; margin-bottom: 0.9rem; }
 .region-nudge-opts { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .region-nudge-opt {
   padding: 0.5rem 1rem; border-radius: var(--r-pill); border: 1.5px solid var(--control-border);
-  background: #fff; cursor: pointer; font-family: inherit; font-size: 0.8rem; font-weight: 600;
+  background: #fff; cursor: pointer; font-family: var(--font-ui); font-size: var(--t-sm); font-weight: 600;
   color: var(--text); transition: all 0.15s;
 }
 .region-nudge-opt:hover { border-color: var(--accent); }
 .region-nudge-opt.active { background: var(--accent); border-color: var(--accent); color: #fff; }
-.region-nudge-dismiss { font-size: 0.72rem; color: var(--muted); text-decoration: underline; cursor: pointer; margin-left: 0.4rem; background: none; border: none; font-family: inherit; }
+.region-nudge-dismiss { font-size: var(--t-xs); color: var(--muted); text-decoration: underline; cursor: pointer; margin-left: 0.4rem; background: none; border: none; font-family: var(--font-ui); }
 
 /* ── HERO / MODE PICKER ── */
 .hero {
   min-height: 62vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
   text-align: center; padding: 4.5rem 1.5rem 3rem; background: #fff; border-bottom: 1px solid var(--border);
 }
-.hero-eyebrow { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; font-weight: 600; }
+.hero-eyebrow { font-size: var(--t-xs); letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; font-weight: 600; }
 .hero h1 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); font-weight: 700; line-height: 1.2; max-width: 700px; margin-bottom: 1.1rem; letter-spacing: -0.02em; }
-.hero-sub { font-size: 0.98rem; color: var(--muted); max-width: 560px; margin-bottom: 2.25rem; line-height: 1.75; }
+.hero-sub { font-size: var(--t-base); color: var(--muted); max-width: 560px; margin-bottom: 2.25rem; line-height: 1.75; }
 .mode-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; max-width: 680px; width: 100%; }
 @media (max-width: 560px) { .mode-cards { grid-template-columns: 1fr; } }
 .mode-card {
   border: 1px solid var(--border); border-radius: var(--r-md); padding: 1.6rem 1.5rem;
-  cursor: pointer; text-align: left; background: var(--surface); font-family: inherit;
+  cursor: pointer; text-align: left; background: var(--surface); font-family: var(--font-ui);
   transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
 }
 .mode-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow); }
-.mode-card h3 { font-size: 1.02rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text); }
-.mode-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
-.hero-footer-link { margin-top: 2rem; font-size: 0.78rem; color: var(--muted); }
+.mode-card h3 { font-size: var(--t-md); font-weight: 700; margin-bottom: 0.5rem; color: var(--text); }
+.mode-card p { font-size: var(--t-sm); color: var(--muted); line-height: 1.65; }
+.hero-footer-link { margin-top: 2rem; font-size: var(--t-xs); color: var(--muted); }
 .hero-footer-link a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
 
 /* ── CONTENT WRAP ── */
@@ -125,27 +139,27 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 #content.visible { display: block; }
 .section { padding: 3.5rem 1.5rem; max-width: var(--w); margin: 0 auto; }
 .section + .section { border-top: 1px solid var(--border); }
-.section-eyebrow { font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.7rem; }
+.section-eyebrow { font-size: var(--t-xs); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.7rem; }
 .section-title { font-size: clamp(1.3rem, 2.8vw, 1.7rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.3; margin-bottom: 0.75rem; }
-.section-intro { font-size: 0.9rem; color: var(--muted); line-height: 1.75; max-width: 680px; margin-bottom: 2rem; }
+.section-intro { font-size: var(--t-base); color: var(--muted); line-height: 1.75; max-width: var(--measure); margin-bottom: 2rem; }
 .section-intro strong { color: var(--text); }
 
 /* ── HYGIENE STRIP ── */
 .hygiene-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
 .hygiene-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 1.1rem 1.25rem; }
-.hygiene-stat { font-size: 1.3rem; font-weight: 700; color: var(--text); margin-bottom: 0.3rem; line-height: 1; }
-.hygiene-label { font-size: 0.78rem; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
-.hygiene-note { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
+.hygiene-stat { font-size: var(--t-lg); font-weight: 700; color: var(--text); margin-bottom: 0.3rem; line-height: 1; }
+.hygiene-label { font-size: var(--t-xs); font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
+.hygiene-note { font-size: var(--t-xs); color: var(--muted); line-height: 1.6; }
 .hygiene-check { display: flex; align-items: flex-start; gap: 0.6rem; }
-.hygiene-check-mark { flex-shrink: 0; width: 20px; height: 20px; border-radius: var(--r-sm); background: var(--surface2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: var(--muted); margin-top: 0.1rem; }
+.hygiene-check-mark { flex-shrink: 0; width: 20px; height: 20px; border-radius: var(--r-sm); background: var(--surface2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: var(--t-xs); color: var(--muted); margin-top: 0.1rem; }
 
 .sample-text {
   margin-top: 0.7rem; padding: 0.65rem 0.85rem; background: #fff; border: 1px dashed var(--border);
-  border-radius: var(--r-md); font-size: 0.78rem; color: var(--text); line-height: 1.6; font-style: italic;
+  border-radius: var(--r-md); font-size: var(--t-xs); color: var(--text); line-height: 1.6; font-style: italic;
 }
-.sample-text-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-style: normal; display: block; margin-bottom: 0.3rem; }
+.sample-text-label { font-size: var(--t-xs); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-style: normal; display: block; margin-bottom: 0.3rem; }
 
-.why-matters { margin-top: 0.7rem; font-size: 0.8rem; color: var(--text); line-height: 1.65; }
+.why-matters { margin-top: 0.7rem; font-size: var(--t-sm); color: var(--text); line-height: 1.65; }
 .why-matters b { color: var(--text); }
 
 .stat-bar-track { height: 6px; border-radius: var(--r-sm); background: var(--surface2); overflow: hidden; margin-top: 0.55rem; }
@@ -155,10 +169,10 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 /* ── SNAPSHOT (dataset composition, shown once above mode content) ── */
 .snapshot-section { padding: 2.5rem 1.5rem 0.5rem; max-width: var(--w); margin: 0 auto; }
 .snapshot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
-.snapshot-group-title { font-size: 0.78rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; }
+.snapshot-group-title { font-size: var(--t-xs); font-weight: 700; color: var(--text); margin-bottom: 0.75rem; }
 .snapshot-row { margin-bottom: 0.65rem; }
 .snapshot-row:last-child { margin-bottom: 0; }
-.snapshot-row-label { display: flex; justify-content: space-between; font-size: 0.76rem; color: var(--muted); margin-bottom: 0.3rem; }
+.snapshot-row-label { display: flex; justify-content: space-between; font-size: var(--t-xs); color: var(--muted); margin-bottom: 0.3rem; }
 .snapshot-row-label b { color: var(--text); font-weight: 600; }
 .snapshot-row .stat-bar-track { margin-top: 0; }
 
@@ -166,49 +180,49 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .motivator-chips { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem; }
 .motivator-chip {
   padding: 0.65rem 1.1rem; border-radius: var(--r-pill); border: 1.5px solid var(--control-border);
-  background: #fff; cursor: pointer; font-family: inherit; font-size: 0.82rem; font-weight: 600;
+  background: #fff; cursor: pointer; font-family: var(--font-ui); font-size: var(--t-sm); font-weight: 600;
   color: var(--text); transition: all 0.15s; display: flex; align-items: center; gap: 0.5rem;
 }
 .motivator-chip:hover { border-color: var(--accent); }
 .motivator-chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
-.motivator-chip .icon { font-size: 0.9rem; }
-.motivator-empty { font-size: 0.85rem; color: var(--muted); padding: 2rem 0; text-align: center; border: 1px dashed var(--border); border-radius: var(--r-md); }
+.motivator-chip .icon { font-size: var(--t-base); }
+.motivator-empty { font-size: var(--t-sm); color: var(--muted); padding: 2rem 0; text-align: center; border: 1px dashed var(--border); border-radius: var(--r-md); }
 
 /* ── CHECKLIST CARDS (shared seeker/manager) ── */
 .check-card { border: 1px solid var(--border); border-radius: var(--r-md); margin-bottom: 1.25rem; overflow: hidden; background: #fff; }
 .check-head { padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border); background: var(--surface); }
-.check-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
-.check-sub { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
+.check-title { font-size: var(--t-base); font-weight: 700; margin-bottom: 0.3rem; }
+.check-sub { font-size: var(--t-sm); color: var(--muted); line-height: 1.6; }
 .check-body { padding: 1.1rem 1.5rem 1.3rem; }
 .check-item { display: flex; gap: 0.75rem; padding: 0.7rem 0; border-bottom: 1px solid var(--border); }
 .check-item:last-child { border-bottom: none; }
 .check-item-badge {
   flex-shrink: 0; width: 22px; height: 22px; border-radius: var(--r-md); display: flex; align-items: center;
-  justify-content: center; font-size: 0.68rem; font-weight: 700; margin-top: 0.05rem;
+  justify-content: center; font-size: var(--t-xs); font-weight: 700; margin-top: 0.05rem;
 }
 .badge-look { background: #dcfce7; color: #166534; }
 .badge-caution { background: #fef3c7; color: #92400e; }
 .badge-flag { background: #fee2e2; color: #991b1b; }
 .badge-do { background: #dbeafe; color: #1e40af; }
-.check-item-text { font-size: 0.85rem; color: var(--text); line-height: 1.65; }
-.check-item-text a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; font-size: 0.78rem; white-space: nowrap; }
+.check-item-text { max-width: var(--measure); font-size: var(--t-sm); color: var(--text); line-height: 1.65; }
+.check-item-text a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; font-size: var(--t-xs); white-space: nowrap; }
 
 /* ── MANAGER SELF-ASSESS ── */
 .assess-card { border: 1px solid var(--border); border-radius: var(--r-md); margin-bottom: 1.25rem; padding: 1.4rem 1.5rem; background: #fff; }
-.assess-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; }
-.assess-question { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; line-height: 1.6; }
+.assess-title { font-size: var(--t-base); font-weight: 700; margin-bottom: 0.25rem; }
+.assess-question { font-size: var(--t-sm); color: var(--muted); margin-bottom: 1rem; line-height: 1.6; }
 .assess-options { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
 .assess-opt {
   padding: 0.45rem 0.9rem; border-radius: var(--r-pill); border: 1.5px solid var(--control-border);
-  background: var(--surface); cursor: pointer; font-family: inherit; font-size: 0.78rem; font-weight: 600;
+  background: var(--surface); cursor: pointer; font-family: var(--font-ui); font-size: var(--t-xs); font-weight: 600;
   color: var(--text); transition: all 0.15s;
 }
 .assess-opt:hover { border-color: var(--accent); }
 .assess-opt.active { background: var(--accent); border-color: var(--accent); color: #fff; }
-.assess-result { display: none; padding: 1rem 1.1rem; background: var(--surface); border-radius: var(--r-md); border-left: 3px solid var(--text); font-size: 0.84rem; color: var(--text); line-height: 1.7; }
+.assess-result { max-width: var(--measure); display: none; padding: 1rem 1.1rem; background: var(--surface); border-radius: var(--r-md); border-left: 3px solid var(--text); font-size: var(--t-sm); color: var(--text); line-height: 1.7; }
 .assess-result.visible { display: block; }
 .assess-result b { color: var(--text); }
-.assess-result .find { display: block; font-size: 0.72rem; color: var(--muted); margin-top: 0.6rem; }
+.assess-result .find { display: block; font-size: var(--t-xs); color: var(--muted); margin-top: 0.6rem; }
 .assess-result .find a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
 
 /* ── FOOTER LINK ── */
@@ -216,9 +230,9 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md);
   padding: 1.5rem 1.75rem; text-align: center;
 }
-.full-analysis-cta p { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.85rem; line-height: 1.65; }
+.full-analysis-cta p { font-size: var(--t-sm); color: var(--muted); margin-bottom: 0.85rem; line-height: 1.65; }
 .full-analysis-cta a {
-  display: inline-block; background: var(--accent); color: #fff; font-size: 0.82rem; font-weight: 600;
+  display: inline-block; background: var(--accent); color: #fff; font-size: var(--t-sm); font-weight: 600;
   padding: 0.6rem 1.4rem; border-radius: var(--r-md); text-decoration: none;
 }
 .full-analysis-cta a:hover { opacity: 0.9; }
@@ -273,7 +287,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 
   <section class="snapshot-section" id="snapshotSection">
     <div class="section-eyebrow">The corpus behind this page</div>
-    <h2 class="section-title" style="font-size:1.05rem" id="snapshotTitle">1,103 job descriptions, classified - not surveyed</h2>
+    <h2 class="section-title" style="font-size:var(--t-md)" id="snapshotTitle">1,103 job descriptions, classified - not surveyed</h2>
     <p class="section-intro" style="margin-bottom:0">Every stat and checklist item below is computed live from this dataset. Use the region filter (top-left) to narrow it — most numbers move once you do, and some cells get too small to trust.</p>
     <div class="snapshot-grid" id="snapshotGrid"></div>
   </section>
