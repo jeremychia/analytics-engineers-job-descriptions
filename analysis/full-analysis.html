@@ -59,6 +59,9 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
 .skip-link:focus { top: 0; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: var(--r-sm); }
 
+/* text for screen readers only */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
 /* ── HERO ── */
 .hero {
   min-height: 72vh;
@@ -260,7 +263,8 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
 /* ── STACK/TOOL SECTION ── */
 .tool-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.75rem 2rem; align-items: start; }
 .tool-group-title { font-size: var(--t-xs); font-weight: 700; color: var(--muted); margin-bottom: 0.85rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
-.tool-row { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.55rem; cursor: pointer; }
+.tool-row { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.55rem; cursor: pointer; width: 100%; padding: 0; border: none; background: none; font: inherit; color: inherit; text-align: left; }
+.tool-row-label, .tool-row-track, .tool-row-fill, .tool-row-n { display: block; }
 .tool-row-label { width: 118px; flex-shrink: 0; font-size: var(--t-xs); color: var(--text); text-align: right; }
 .tool-row-track { flex: 1; background: var(--surface2); border-radius: var(--r-sm); height: 20px; }
 .tool-row-fill { height: 100%; border-radius: var(--r-sm); min-width: 2px; transition: opacity 0.1s; }
@@ -434,10 +438,14 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
     <div class="card">
       <div class="card-title-row">
         <div class="card-title">Theme prevalence</div>
-        <span class="rt-click-badge">🔎 click a bar for JD examples</span>
+        <span class="rt-click-badge">Click a bar, or use the list, for JD examples</span>
       </div>
       <p class="card-sub">% of JDs (with a theme reading) whose responsibilities include each theme, recomputed against the active role filter</p>
-      <div class="rt-chart-wrap"><canvas id="rtChart"></canvas></div>
+      <div class="rt-chart-wrap"><canvas id="rtChart" role="img" aria-label="Bar chart of how many job descriptions carry each responsibility theme. The same figures are listed below the chart."></canvas></div>
+      <details class="rel-details" style="margin-top:1rem">
+        <summary>List the themes, with example sentences</summary>
+        <ul class="rt-theme-list" id="rtThemeList"></ul>
+      </details>
     </div>
     <div class="card">
       <div class="card-title">Which responsibilities travel together</div>
@@ -455,6 +463,11 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
   .rt-cooc-lift { font-weight: 700; color: var(--text); }
   .card-title-row { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap; }
   .card-title-row .card-title { margin-bottom: 0; }
+  .rt-theme-list { list-style: none; margin-top: 0.6rem; }
+  .rt-theme-list li { display: flex; align-items: baseline; gap: 0.75rem; padding: 0.35rem 0; border-bottom: 1px solid var(--border); font-size: var(--t-sm); }
+  .rt-theme-name { flex: 1; }
+  .rt-theme-n { color: var(--muted); font-family: var(--font-ui); font-size: var(--t-xs); white-space: nowrap; }
+  .rt-theme-list .drill-toggle { margin-top: 0; white-space: nowrap; }
   .rt-click-badge {
     font-size: var(--t-xs); font-weight: 600; color: var(--accent); background: rgba(29,78,216,0.09);
     border: 1px solid rgba(29,78,216,0.25); border-radius: var(--r-pill); padding: 0.2rem 0.65rem;
@@ -602,7 +615,7 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
     <div class="card-title">Tool prevalence across filtered roles</div>
     <p class="card-sub">% of JDs mentioning each tool, grouped by category. Click a bar for the company list</p>
     <div class="tool-groups" id="toolGroups"></div>
-    <div id="toolCompanyPanel" style="margin-top:1.5rem;display:none">
+    <div id="toolCompanyPanel" tabindex="-1" role="region" aria-labelledby="toolPanelTitle" style="margin-top:1.5rem;display:none">
       <div style="display:flex;align-items:baseline;gap:0.6rem;margin-bottom:0.75rem">
         <span id="toolPanelTitle" style="font-weight:700;font-size:var(--t-base)"></span>
         <span id="toolPanelCount" style="font-size:var(--t-xs);color:var(--muted)"></span>
@@ -1665,7 +1678,9 @@ function buildToolCompanyList(tool) {
   document.getElementById('toolCompanyList').innerHTML = yes.length
     ? yes.map(d => `<div class="company-card"><div class="cc-header"><span class="cc-company">${d.company}</span><span class="cc-role">${d.role}</span></div></div>`).join('')
     : '<div class="empty-state">None in current filter.</div>';
-  document.getElementById('toolCompanyPanel').style.display = 'block';
+  const panel = document.getElementById('toolCompanyPanel');
+  panel.style.display = 'block';
+  panel.focus();
 }
 
 const TOOL_GROUP_ORDER = ['Core','Warehouse','Cloud','BI','Ingestion','Orchestration','Compute','Streaming','Quality','Practice','Infra'];
@@ -1684,11 +1699,11 @@ function buildToolChart(data) {
 
   const groupsHtml = TOOL_GROUP_ORDER.filter(g => byGroup[g]).map(g => {
     const rows = byGroup[g].map(t => `
-      <div class="tool-row" data-key="${t.key}" title="Click for company list">
-        <div class="tool-row-label">${t.label}</div>
-        <div class="tool-row-track"><div class="tool-row-fill" style="width:${Math.max(t.pct,2)}%;background:${GC[g]}"></div></div>
-        <div class="tool-row-n">${t.pct}%</div>
-      </div>`).join('');
+      <button type="button" class="tool-row" data-key="${t.key}">
+        <span class="tool-row-label">${t.label}</span>
+        <span class="tool-row-track"><span class="tool-row-fill" style="width:${Math.max(t.pct,2)}%;background:${GC[g]}"></span></span>
+        <span class="tool-row-n">${t.pct}%<span class="sr-only"> of roles. Show the companies</span></span>
+      </button>`).join('');
     return `<div class="tool-group"><div class="tool-group-title">${g}</div>${rows}</div>`;
   }).join('');
   const wrap = document.getElementById('toolGroups');
@@ -1977,6 +1992,13 @@ function buildResponsibilityTaxonomy(data) {
         openRtEvidence(prevalence[els[0].index].theme);
       },
     },
+  });
+
+  document.getElementById('rtThemeList').innerHTML = prevalence.map(p => `
+    <li><span class="rt-theme-name">${p.theme}</span><span class="rt-theme-n">${p.pct}% (n=${p.cnt})</span>
+      <button type="button" class="drill-toggle" data-theme="${p.theme}">Show example sentences<span class="sr-only"> for ${p.theme}</span></button></li>`).join('');
+  document.querySelectorAll('#rtThemeList button').forEach(btn => {
+    btn.addEventListener('click', () => openRtEvidence(btn.dataset.theme));
   });
 
   // Co-occurrence: for every theme pair, P(A), P(B), P(A&B), lift.
