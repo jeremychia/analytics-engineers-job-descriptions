@@ -138,10 +138,10 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
 .rel-question { font-size: var(--t-md); font-weight: 700; letter-spacing: -0.015em; margin-bottom: 0.5rem; line-height: 1.35; }
 .rel-stat { font-size: var(--t-sm); color: var(--text); line-height: 1.6; }
 .rel-stat .n { color: var(--muted); font-weight: 500; }
-.rel-body { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 0; }
+.rel-body { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 0; }
 @media (max-width: 900px) { .rel-body { grid-template-columns: 1fr; } }
-.rel-viz { padding: 1.5rem 1.75rem; border-right: 1px solid var(--border); }
-@media (max-width: 900px) { .rel-viz { border-right: none; border-bottom: 1px solid var(--border); } }
+.rel-viz { padding: 1.5rem 1.75rem; border-left: 1px solid var(--border); }
+@media (max-width: 900px) { .rel-viz { border-left: none; border-top: 1px solid var(--border); } }
 .rel-read { padding: 1.5rem 1.75rem; font-size: var(--t-sm); color: var(--muted); line-height: 1.8; }
 .rel-read strong { color: var(--text); }
 .rel-takeaway { font-size: var(--t-base); color: var(--text); font-weight: 600; line-height: 1.55; margin-bottom: 0.9rem; }
@@ -1398,12 +1398,12 @@ function buildRelationships(data) {
         <div class="rel-test" id="${p.id}-test"></div>
       </div>
       <div class="rel-body">
-        <div class="rel-viz" id="${p.id}-viz"></div>
         <div class="rel-read">
           <p class="rel-takeaway">${p.takeaway}</p>
           <details class="rel-details"><summary>Full analysis &amp; methodology</summary><div class="rel-details-body">${p.read}</div></details>
           <div class="resume-tip"><b>${TIP_LABEL[view]}:</b> ${p.tip[view]}</div>
         </div>
+        <div class="rel-viz" id="${p.id}-viz"></div>
       </div>
     </div>
   `).join('');
