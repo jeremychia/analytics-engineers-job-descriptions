@@ -14,8 +14,24 @@
   --surface: #f8f8f6;
   --surface2: #f0f0ed;
   --border: #e5e5e1;
-  --text: #111111;
-  --muted: #6b7280;
+  --text: #1a1d24;
+  --muted: #586070;
+  --bar: rgba(26,29,36,0.72);
+  --highlight: #fde68a;
+  --font-text: Charter, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --t-xs: 0.75rem;
+  --t-sm: 0.8125rem;
+  --t-base: 0.9375rem;
+  --t-md: 1.0625rem;
+  --t-lg: 1.375rem;
+  --t-xl: 1.75rem;
+  --measure: 70ch;
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-pill: 999px;
+  --shadow: 0 8px 24px rgba(0,0,0,0.14);
+  --control-border: #80868f;
   --accent: #1d4ed8;
   --high: #c0392b;
   --moderate: #d97706;
@@ -23,17 +39,28 @@
   --w: 1120px;
 }
 
-html { scroll-behavior: smooth; }
-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.6; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+body { font-family: var(--font-text); background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.7; }
+
+/* sans for controls, labels and figures; the serif carries the reading text */
+button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .region-filter, .region-dd-list,
+.stat-num, .stat-label, .hygiene-stat, .hygiene-label, .geo-cell-n, .snapshot-row-label, .rel-tab, .motivator-chip,
+.assess-opt, .check-item-badge, .skip-link { font-family: var(--font-ui); font-variant-numeric: tabular-nums; }
 
 .skip-link {
   position: absolute; top: -48px; left: 1rem;
   background: var(--accent); color: #fff; padding: 0.5rem 1rem;
-  border-radius: 0 0 6px 6px; font-size: 0.82rem; font-weight: 600;
+  border-radius: 0 0 var(--r-md) var(--r-md); font-size: var(--t-sm); font-weight: 600;
   text-decoration: none; z-index: 9999; transition: top 0.1s;
 }
 .skip-link:focus { top: 0; }
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: var(--r-sm); }
+
+/* text for screen readers only */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
 /* ── HERO ── */
 .hero {
@@ -42,13 +69,11 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
   text-align: center; padding: 5rem 2rem 3rem;
   background: #fff; border-bottom: 1px solid var(--border);
 }
-.hero-eyebrow { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; font-weight: 600; }
 .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; line-height: 1.15; max-width: 720px; margin-bottom: 1.25rem; letter-spacing: -0.02em; }
-.hero h1 em { font-style: normal; color: var(--accent); }
-.hero-sub { font-size: 1rem; color: var(--muted); max-width: 560px; margin-bottom: 2rem; line-height: 1.75; }
+.hero-sub { font-size: var(--t-base); color: var(--muted); max-width: 560px; margin-bottom: 2rem; line-height: 1.75; }
 .hero-caveat {
-  max-width: 640px; font-size: 0.8rem; color: var(--muted); background: var(--surface);
-  border: 1px solid var(--border); border-radius: 8px; padding: 0.9rem 1.1rem; text-align: left; line-height: 1.7;
+  max-width: 640px; font-size: var(--t-sm); color: var(--muted); background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--r-md); padding: 0.9rem 1.1rem; text-align: left; line-height: 1.7;
 }
 .hero-caveat strong { color: var(--text); }
 
@@ -59,24 +84,23 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
   border-bottom: 1px solid var(--border);
   padding: 0.55rem 2rem; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
 }
-.nav-title { font-size: 0.78rem; font-weight: 700; color: var(--accent); margin-right: 0.5rem; white-space: nowrap; }
+.nav-title { font-size: var(--t-xs); font-weight: 700; color: var(--text); margin-right: 0.5rem; white-space: nowrap; }
 .nav-links { display: flex; gap: 1.25rem; flex: 1; flex-wrap: wrap; }
-.nav-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; transition: color 0.15s; white-space: nowrap; }
+.nav-links a { font-size: var(--t-xs); color: var(--muted); text-decoration: none; transition: color 0.15s; white-space: nowrap; }
 .nav-links a:hover { color: var(--text); }
 .nav-links a.active { color: var(--accent); font-weight: 600; }
 .nav-filters { display: flex; align-items: center; gap: 0.75rem; margin-left: auto; flex-wrap: wrap; }
 .nav-filter { display: flex; align-items: center; gap: 0.4rem; }
-.nav-filter label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap; }
-.nav-filter select { font-size: 0.78rem; background: var(--surface2); color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 0.25rem 0.5rem; }
-.count-pill { font-size: 0.7rem; background: var(--surface); border: 1px solid var(--border); color: var(--muted); border-radius: 20px; padding: 0.2rem 0.6rem; white-space: nowrap; }
-.count-pill strong { color: var(--accent); }
+.nav-filter label { font-size: var(--t-xs); color: var(--muted); white-space: nowrap; }
+.nav-filter select { font-size: var(--t-xs); background: var(--surface2); color: var(--text); border: 1px solid var(--control-border); border-radius: var(--r-sm); padding: 0.25rem 0.5rem; }
+.count-pill { font-size: var(--t-xs); background: var(--surface); border: 1px solid var(--border); color: var(--muted); border-radius: var(--r-pill); padding: 0.2rem 0.6rem; white-space: nowrap; }
+.count-pill strong { color: var(--text); }
 
 /* ── SECTIONS ── */
 .section { padding: 5.5rem 2rem; max-width: var(--w); margin: 0 auto; }
 .section.tight { padding-top: 2.5rem; padding-bottom: 2.5rem; }
-.section-label { font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.85rem; }
 .section-headline { font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.25; margin-bottom: 1.1rem; }
-.section-body { font-size: 0.91rem; color: var(--muted); max-width: 680px; line-height: 1.8; margin-bottom: 2.5rem; }
+.section-body { font-size: var(--t-base); color: var(--muted); max-width: var(--measure); line-height: 1.8; margin-bottom: 2.5rem; }
 .section-body strong { color: var(--text); }
 .divider { border: none; border-top: 1px solid var(--border); max-width: var(--w); margin: 0 auto; }
 
@@ -84,70 +108,69 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .stats-row {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 1px; background: var(--border); border: 1px solid var(--border);
-  border-radius: 10px; overflow: hidden;
+  border-radius: var(--r-md); overflow: hidden;
 }
 .stat-cell { background: var(--surface); padding: 1.5rem 1rem; text-align: center; }
-.stat-num { font-size: 1.7rem; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 0.35rem; }
-.stat-label { font-size: 0.65rem; color: var(--muted); font-weight: 500; }
+.stat-num { font-size: var(--t-xl); font-weight: 700; color: var(--text); line-height: 1; margin-bottom: 0.35rem; }
+.stat-label { font-size: var(--t-xs); color: var(--muted); font-weight: 500; }
 
-.card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.75rem; }
-.card-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.35rem; }
-.card-sub { font-size: 0.74rem; color: var(--muted); margin-bottom: 1.5rem; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 1.75rem; }
+.card-title { font-size: var(--t-base); font-weight: 700; margin-bottom: 0.35rem; }
+.card-sub { font-size: var(--t-xs); color: var(--muted); margin-bottom: 1.5rem; }
 
 /* ── RELATIONSHIP THEME TABS ── */
 .rel-tabs { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2.25rem; }
 .rel-tab {
   display: flex; flex-direction: column; align-items: flex-start; gap: 0.15rem;
-  padding: 0.65rem 1rem; border-radius: 10px; border: 1px solid var(--border);
-  background: #fff; cursor: pointer; font-family: inherit; text-align: left;
+  padding: 0.65rem 1rem; border-radius: var(--r-md); border: 1px solid var(--control-border);
+  background: #fff; cursor: pointer; font-family: var(--font-ui); text-align: left;
   transition: border-color 0.15s, background 0.15s;
 }
 .rel-tab:hover { border-color: var(--accent); }
-.rel-tab-name { font-size: 0.8rem; font-weight: 700; color: var(--text); }
-.rel-tab-count { font-size: 0.68rem; color: var(--muted); }
+.rel-tab-name { font-size: var(--t-sm); font-weight: 700; color: var(--text); }
+.rel-tab-count { font-size: var(--t-xs); color: var(--muted); }
 .rel-tab.active { background: var(--accent); border-color: var(--accent); }
 .rel-tab.active .rel-tab-name, .rel-tab.active .rel-tab-count { color: #fff; }
 .rel-tab.active .rel-tab-count { opacity: 0.85; }
 
 /* ── RELATIONSHIP GRID (primary content unit) ── */
 .rel-grid { display: flex; flex-direction: column; gap: 2.5rem; }
-.rel-panel { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: #fff; }
+.rel-panel { border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; background: #fff; }
 .rel-head { padding: 1.5rem 1.75rem 1.25rem; border-bottom: 1px solid var(--border); }
-.rel-tag { font-size: 0.64rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 0.5rem; }
-.rel-question { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.015em; margin-bottom: 0.5rem; line-height: 1.35; }
-.rel-stat { font-size: 0.86rem; color: var(--text); line-height: 1.6; }
+.rel-tag { font-size: var(--t-xs); color: var(--muted); font-weight: 600; margin-bottom: 0.5rem; }
+.rel-question { font-size: var(--t-md); font-weight: 700; letter-spacing: -0.015em; margin-bottom: 0.5rem; line-height: 1.35; }
+.rel-stat { font-size: var(--t-sm); color: var(--text); line-height: 1.6; }
 .rel-stat .n { color: var(--muted); font-weight: 500; }
-.rel-body { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 0; }
+.rel-body { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 0; }
 @media (max-width: 900px) { .rel-body { grid-template-columns: 1fr; } }
-.rel-viz { padding: 1.5rem 1.75rem; border-right: 1px solid var(--border); }
-@media (max-width: 900px) { .rel-viz { border-right: none; border-bottom: 1px solid var(--border); } }
-.rel-read { padding: 1.5rem 1.75rem; font-size: 0.85rem; color: var(--muted); line-height: 1.8; }
+.rel-viz { padding: 1.5rem 1.75rem; border-left: 1px solid var(--border); }
+@media (max-width: 900px) { .rel-viz { border-left: none; border-top: 1px solid var(--border); } }
+.rel-read { padding: 1.5rem 1.75rem; font-size: var(--t-sm); color: var(--muted); line-height: 1.8; }
 .rel-read strong { color: var(--text); }
-.rel-takeaway { font-size: 0.92rem; color: var(--text); font-weight: 600; line-height: 1.55; margin-bottom: 0.9rem; }
-.rel-takeaway strong, .null-takeaway strong { color: var(--accent); }
+.rel-takeaway { font-size: var(--t-base); color: var(--text); font-weight: 600; line-height: 1.55; margin-bottom: 0.9rem; }
+.rel-takeaway strong, .null-takeaway strong { color: var(--text); }
 details.rel-details, details.null-details { margin-bottom: 0; }
 details.rel-details summary, details.null-details summary {
-  cursor: pointer; font-size: 0.73rem; font-weight: 600; color: var(--accent);
+  cursor: pointer; font-size: var(--t-xs); font-weight: 600; color: var(--accent);
   list-style: none; display: inline-flex; align-items: center; gap: 0.3rem;
   padding: 0.1rem 0; user-select: none;
 }
 details.rel-details summary::-webkit-details-marker, details.null-details summary::-webkit-details-marker { display: none; }
 details.rel-details summary::before, details.null-details summary::before {
-  content: '▸'; font-size: 0.65rem; transition: transform 0.15s;
+  content: '▸'; font-size: var(--t-xs); transition: transform 0.15s;
 }
 details.rel-details[open] summary::before, details.null-details[open] summary::before { transform: rotate(90deg); }
 details.rel-details summary:hover, details.null-details summary:hover { color: var(--text); }
 .rel-details-body, .null-details-body { margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px dashed var(--border); }
 .rel-read .resume-tip {
-  margin-top: 1rem; padding: 0.85rem 1rem; background: var(--surface); border-radius: 8px;
-  border-left: 3px solid var(--accent); font-size: 0.82rem; color: var(--text);
+  margin-top: 1rem; padding: 0.85rem 1rem; background: var(--surface); border-radius: var(--r-md);
+  border-left: 3px solid var(--text); font-size: var(--t-sm); color: var(--text);
 }
-.rel-read .resume-tip b { color: var(--accent); }
+.rel-read .resume-tip b { color: var(--text); }
 .rel-read a, .resume-tip a, .null-apply a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
-.rel-test { margin-top: 0.65rem; font-size: 0.73rem; color: var(--muted); line-height: 1.6; }
+.rel-test { margin-top: 0.65rem; font-size: var(--t-xs); color: var(--muted); line-height: 1.6; }
 .rel-test .sig {
-  display: inline-block; font-weight: 700; font-size: 0.6rem; text-transform: uppercase;
-  letter-spacing: 0.08em; padding: 0.12rem 0.55rem; border-radius: 20px; margin-right: 0.45rem; vertical-align: 1px;
+  display: inline-block; font-weight: 700; font-size: var(--t-xs); padding: 0.12rem 0.55rem; border-radius: var(--r-pill); margin-right: 0.45rem; vertical-align: 1px;
 }
 .sig-strong, .sig-ok { background: #dcfce7; color: #166534; }
 .sig-marginal { background: #fef3c7; color: #92400e; }
@@ -156,139 +179,141 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
 
 /* ── NULL-RESULT CARDS ── */
 .null-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.25rem; }
-.null-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.4rem 1.5rem; }
-.null-expect { font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); font-weight: 700; margin-bottom: 0.45rem; }
-.null-title { font-size: 0.93rem; font-weight: 700; margin-bottom: 0.65rem; line-height: 1.4; }
-.null-result { font-size: 0.81rem; color: var(--muted); line-height: 1.7; }
+.null-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 1.4rem 1.5rem; }
+.null-expect { font-size: var(--t-xs); color: var(--muted); font-weight: 700; margin-bottom: 0.45rem; }
+.null-title { font-size: var(--t-base); font-weight: 700; margin-bottom: 0.65rem; line-height: 1.4; }
+.null-result { font-size: var(--t-sm); color: var(--muted); line-height: 1.7; }
 .null-result strong { color: var(--text); }
-.null-takeaway { font-size: 0.86rem; color: var(--text); font-weight: 600; line-height: 1.55; margin-bottom: 0.6rem; }
-.null-test { margin-top: 0.6rem; font-size: 0.72rem; color: var(--muted); }
-.null-apply { margin-top: 0.85rem; padding: 0.7rem 0.85rem; background: #fff; border-radius: 8px; border-left: 3px solid var(--accent); font-size: 0.77rem; color: var(--text); line-height: 1.65; }
-.null-apply b { color: var(--accent); }
+.null-takeaway { font-size: var(--t-sm); color: var(--text); font-weight: 600; line-height: 1.55; margin-bottom: 0.6rem; }
+.null-test { margin-top: 0.6rem; font-size: var(--t-xs); color: var(--muted); }
+.null-apply { margin-top: 0.85rem; padding: 0.7rem 0.85rem; background: #fff; border-radius: var(--r-md); border-left: 3px solid var(--text); font-size: var(--t-xs); color: var(--text); line-height: 1.65; }
+.null-apply b { color: var(--text); }
 
 /* stacked-bar cross-tab (two categorical variables) */
 .xtab-row { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.85rem; }
-.xtab-label { width: 110px; flex-shrink: 0; font-size: 0.76rem; color: var(--text); font-weight: 600; text-align: right; }
-.xtab-n { width: 34px; flex-shrink: 0; font-size: 0.66rem; color: var(--muted); }
-.xtab-bar { flex: 1; height: 22px; border-radius: 5px; overflow: hidden; display: flex; background: var(--surface2); }
-.xtab-seg { height: 100%; display: flex; align-items: center; justify-content: center; font-size: 0.62rem; font-weight: 700; color: #fff; min-width: 0; overflow: hidden; white-space: nowrap; }
+.xtab-label { width: 110px; flex-shrink: 0; font-size: var(--t-xs); color: var(--text); font-weight: 600; text-align: right; }
+.xtab-n { width: 34px; flex-shrink: 0; font-size: var(--t-xs); color: var(--muted); }
+.xtab-bar { flex: 1; height: 22px; border-radius: var(--r-sm); overflow: hidden; display: flex; background: var(--surface2); }
+.xtab-seg { height: 100%; display: flex; align-items: center; justify-content: center; font-size: var(--t-xs); font-weight: 700; color: #fff; min-width: 0; overflow: hidden; white-space: nowrap; }
 .xtab-legend { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: 1rem; padding-left: 144px; }
 @media (max-width: 500px) { .xtab-legend { padding-left: 0; } }
-.xtab-legend-item { display: flex; align-items: center; gap: 0.35rem; font-size: 0.72rem; color: var(--muted); }
-.xtab-legend-dot { width: 9px; height: 9px; border-radius: 3px; flex-shrink: 0; }
+.xtab-legend-item { display: flex; align-items: center; gap: 0.35rem; font-size: var(--t-xs); color: var(--muted); }
+.xtab-legend-dot { width: 9px; height: 9px; border-radius: var(--r-sm); flex-shrink: 0; }
 
 /* numeric-by-category bar (e.g. median collaboration width per group) */
 .numbar-row { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.85rem; }
-.numbar-label { width: 110px; flex-shrink: 0; font-size: 0.76rem; color: var(--text); font-weight: 600; text-align: right; }
-.numbar-track { flex: 1; background: var(--surface2); border-radius: 5px; height: 22px; position: relative; }
-.numbar-fill { height: 100%; border-radius: 5px; background: var(--accent); display: flex; align-items: center; justify-content: flex-end; padding-right: 0.5rem; }
-.numbar-fill-val { font-size: 0.66rem; font-weight: 700; color: #fff; }
-.numbar-n { width: 34px; flex-shrink: 0; font-size: 0.66rem; color: var(--muted); }
+.numbar-label { width: 110px; flex-shrink: 0; font-size: var(--t-xs); color: var(--text); font-weight: 600; text-align: right; }
+.numbar-track { flex: 1; background: var(--surface2); border-radius: var(--r-sm); height: 22px; position: relative; }
+.numbar-fill { height: 100%; border-radius: var(--r-sm); background: var(--bar); display: flex; align-items: center; justify-content: flex-end; padding-right: 0.5rem; }
+.numbar-fill-val { font-size: var(--t-xs); font-weight: 700; color: #fff; }
+.numbar-n { width: 34px; flex-shrink: 0; font-size: var(--t-xs); color: var(--muted); }
 
 /* ── TOOLTIP ── */
 #tooltip {
   position: fixed; background: #1c2030; border: 1px solid #2e364f; color: #e8eaf0;
-  border-radius: 8px; padding: 1rem 1.1rem; max-width: 300px;
-  font-size: 0.75rem; line-height: 1.55; pointer-events: none;
-  opacity: 0; transition: opacity 0.12s; z-index: 1000; box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  border-radius: var(--r-md); padding: 1rem 1.1rem; max-width: 300px;
+  font-size: var(--t-xs); line-height: 1.55; pointer-events: none;
+  opacity: 0; transition: opacity 0.12s; z-index: 1000; box-shadow: var(--shadow);
 }
 #tooltip.visible { opacity: 1; }
-.tt-company { font-weight: 700; font-size: 0.88rem; margin-bottom: 0.1rem; color: #fff; }
-.tt-role { color: #8892aa; margin-bottom: 0.75rem; font-size: 0.73rem; }
+.tt-company { font-weight: 700; font-size: var(--t-base); margin-bottom: 0.1rem; color: #fff; }
+.tt-role { color: #8892aa; margin-bottom: 0.75rem; font-size: var(--t-xs); }
 .tt-field { margin-bottom: 0.45rem; }
-.tt-label { font-size: 0.63rem; text-transform: uppercase; letter-spacing: 0.09em; color: #6b9ef7; margin-bottom: 0.1rem; }
-.tt-quote { font-style: italic; color: #b8c4d8; font-size: 0.73rem; }
+.tt-label { font-size: var(--t-xs); color: #6b9ef7; margin-bottom: 0.1rem; }
+.tt-quote { font-style: italic; color: #b8c4d8; font-size: var(--t-xs); }
 
 /* ── scatter card ── */
 .scatter-controls { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.25rem; align-items: center; }
 .ctrl-group { display: flex; align-items: center; gap: 0.4rem; }
-.ctrl-group label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.07em; }
-.ctrl-group select { font-size: 0.78rem; background: var(--surface2); color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 0.25rem 0.5rem; }
+.ctrl-group label { font-size: var(--t-xs); color: var(--muted); }
+.ctrl-group select { font-size: var(--t-xs); background: var(--surface2); color: var(--text); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 0.25rem 0.5rem; }
 .scatter-wrap { position: relative; height: 380px; }
 .legend { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
-.legend-item { display: flex; align-items: center; gap: 0.35rem; font-size: 0.74rem; color: var(--muted); }
+.legend-item { display: flex; align-items: center; gap: 0.35rem; font-size: var(--t-xs); color: var(--muted); }
 .legend-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
 
 /* company drill panel, shared */
-.drill-toggle { font-size: 0.72rem; color: var(--accent); background: none; border: none; cursor: pointer; font-weight: 600; padding: 0; margin-top: 0.5rem; text-decoration: underline; }
+.drill-toggle { font-size: var(--t-xs); color: var(--accent); background: none; border: none; cursor: pointer; font-weight: 600; padding: 0; margin-top: 0.5rem; text-decoration: underline; }
 .company-list { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1rem; max-height: 340px; overflow-y: auto; padding-right: 0.4rem; }
-.company-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 0.7rem 0.85rem; }
+.company-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 0.7rem 0.85rem; }
 .cc-header { display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 0.2rem; flex-wrap: wrap; }
-.cc-company { font-weight: 700; font-size: 0.83rem; }
-.cc-role { font-size: 0.72rem; color: var(--muted); }
-.cc-quote { font-size: 0.76rem; color: #374151; font-style: italic; line-height: 1.55; border-left: 3px solid var(--border); padding-left: 0.65rem; margin-top: 0.35rem; }
-.kw-highlight { background: #fef3c7; color: #92400e; font-style: normal; padding: 0.05em 0.2em; border-radius: 3px; font-weight: 500; }
-.empty-state { color: var(--muted); font-size: 0.85rem; padding: 1.5rem 0; text-align: center; }
+.cc-company { font-weight: 700; font-size: var(--t-sm); }
+.cc-role { font-size: var(--t-xs); color: var(--muted); }
+.cc-quote { font-size: var(--t-xs); color: #374151; font-style: italic; line-height: 1.55; border-left: 3px solid var(--border); padding-left: 0.65rem; margin-top: 0.35rem; }
+.kw-highlight { background: #fef3c7; color: #92400e; font-style: normal; padding: 0.05em 0.2em; border-radius: var(--r-sm); font-weight: 500; }
+.empty-state { color: var(--muted); font-size: var(--t-sm); padding: 1.5rem 0; text-align: center; }
 
 /* ── HONEST GEO CALLOUT ── */
 .geo-callout {
-  background: #fef3c7; border: 1px solid #fcd34d; border-radius: 10px; padding: 1.5rem 1.75rem; margin-bottom: 2rem;
+  background: #fef3c7; border: 1px solid #fcd34d; border-radius: var(--r-md); padding: 1.5rem 1.75rem; margin-bottom: 2rem;
 }
-.geo-callout-title { font-size: 0.82rem; font-weight: 700; color: #92400e; margin-bottom: 0.5rem; }
-.geo-callout p { font-size: 0.85rem; color: #78350f; line-height: 1.75; }
+.geo-callout-title { font-size: var(--t-sm); font-weight: 700; color: #92400e; margin-bottom: 0.5rem; }
+.geo-callout p { font-size: var(--t-sm); color: #78350f; line-height: 1.75; }
 .geo-callout p + p { margin-top: 0.6rem; }
 .geo-grid {
   display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 1px; background: var(--border); border: 1px solid var(--border);
-  border-radius: 10px; overflow: hidden;
+  border-radius: var(--r-md); overflow: hidden;
 }
 .geo-cell { background: var(--surface); padding: 1rem; text-align: center; }
-.geo-cell-region { font-size: 0.72rem; font-weight: 600; color: var(--text); }
-.geo-cell-n { font-size: 1.3rem; font-weight: 700; color: var(--accent); margin: 0.2rem 0; }
-.geo-cell-note { font-size: 0.63rem; color: var(--muted); }
+.geo-cell-region { font-size: var(--t-xs); font-weight: 600; color: var(--text); }
+.geo-cell-n { font-size: var(--t-lg); font-weight: 700; color: var(--text); margin: 0.2rem 0; }
+.geo-cell-note { font-size: var(--t-xs); color: var(--muted); }
 
 /* ── STACK/TOOL SECTION ── */
 .tool-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.75rem 2rem; align-items: start; }
-.tool-group-title { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.85rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
-.tool-row { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.55rem; cursor: pointer; }
-.tool-row-label { width: 118px; flex-shrink: 0; font-size: 0.76rem; color: var(--text); text-align: right; }
-.tool-row-track { flex: 1; background: var(--surface2); border-radius: 5px; height: 20px; }
-.tool-row-fill { height: 100%; border-radius: 5px; min-width: 2px; transition: opacity 0.1s; }
+.tool-group-title { font-size: var(--t-xs); font-weight: 700; color: var(--muted); margin-bottom: 0.85rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.tool-row { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.55rem; cursor: pointer; width: 100%; padding: 0; border: none; background: none; font: inherit; color: inherit; text-align: left; }
+.tool-row-label, .tool-row-track, .tool-row-fill, .tool-row-n { display: block; }
+.tool-row-label { width: 118px; flex-shrink: 0; font-size: var(--t-xs); color: var(--text); text-align: right; }
+.tool-row-track { flex: 1; background: var(--surface2); border-radius: var(--r-sm); height: 20px; }
+.tool-row-fill { height: 100%; border-radius: var(--r-sm); min-width: 2px; transition: opacity 0.1s; }
 .tool-row:hover .tool-row-fill { opacity: 0.8; }
-.tool-row-n { width: 34px; flex-shrink: 0; font-size: 0.72rem; font-weight: 700; color: var(--text); }
+.tool-row-n { width: 34px; flex-shrink: 0; font-size: var(--t-xs); font-weight: 700; color: var(--text); }
 .rt-chart-wrap { position: relative; height: 460px; }
 
-.salary-caveat { font-size: 0.78rem; color: var(--muted); line-height: 1.65; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem 1.1rem; margin-bottom: 1.5rem; }
-.salary-legend { display: flex; gap: 1.4rem; margin-bottom: 1.5rem; font-size: 0.78rem; color: var(--muted); flex-wrap: wrap; }
+.salary-caveat { font-size: var(--t-xs); color: var(--muted); line-height: 1.65; background: var(--surface2); border: 1px solid var(--border); border-radius: var(--r-md); padding: 0.85rem 1.1rem; margin-bottom: 1.5rem; }
+.salary-legend { display: flex; gap: 1.4rem; margin-bottom: 1.5rem; font-size: var(--t-xs); color: var(--muted); flex-wrap: wrap; }
 .salary-group { margin-bottom: 1.75rem; }
 .salary-group:last-child { margin-bottom: 0; }
-.salary-group-title { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.85rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.salary-group-title { font-size: var(--t-xs); font-weight: 700; color: var(--muted); margin-bottom: 0.85rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
 .salary-row { display: grid; grid-template-columns: 190px 1fr; align-items: center; gap: 0.75rem; padding: 0.5rem 0; }
-.salary-row-label { font-size: 0.74rem; color: var(--muted); text-align: right; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.salary-row-label b { color: var(--text); font-weight: 600; display: block; font-size: 0.76rem; }
+.salary-row-label { font-size: var(--t-xs); color: var(--muted); text-align: right; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.salary-row-label b { color: var(--text); font-weight: 600; display: block; font-size: var(--t-xs); }
 .salary-row-track { position: relative; height: 20px; }
-.salary-range-line { position: absolute; top: 50%; height: 2px; transform: translateY(-50%); border-radius: 1px; }
+.salary-range-line { position: absolute; top: 50%; height: 2px; transform: translateY(-50%); border-radius: var(--r-sm); }
 .salary-range-dot { position: absolute; top: 50%; width: 9px; height: 9px; border-radius: 50%; transform: translate(-50%,-50%); border: 2px solid var(--bg,#fff); }
-.salary-range-value { position: absolute; top: -1.05rem; transform: translateX(-100%); font-size: 0.66rem; font-weight: 600; color: var(--muted); white-space: nowrap; }
+.salary-range-value { position: absolute; top: -1.05rem; transform: translateX(-100%); font-size: var(--t-xs); font-weight: 600; color: var(--muted); white-space: nowrap; }
 .salary-axis-ticks { display: grid; grid-template-columns: 190px 1fr; margin-top: 0.35rem; }
 .salary-axis-inner { position: relative; height: 14px; }
-.salary-tick { position: absolute; font-size: 0.68rem; color: var(--muted); }
+.salary-tick { position: absolute; font-size: var(--t-xs); color: var(--muted); }
 .salary-row.inferred .salary-row-label b::after { content: ' *'; color: #d97706; }
-.salary-est-legend { display: flex; gap: 1.4rem; margin-bottom: 1rem; font-size: 0.76rem; color: var(--muted); flex-wrap: wrap; align-items: center; }
+.salary-est-legend { display: flex; gap: 1.4rem; margin-bottom: 1rem; font-size: var(--t-xs); color: var(--muted); flex-wrap: wrap; align-items: center; }
 .salary-est-legend .legend-dot.inferred { background: repeating-linear-gradient(45deg, #d97706, #d97706 2px, #fff 2px, #fff 4px); border: 1px solid #d97706; }
-.senior-sal-row { display: grid; grid-template-columns: 90px 1fr 100px; align-items: center; gap: 0.75rem; padding: 0.45rem 0; font-size: 0.78rem; }
+.senior-sal-row { display: grid; grid-template-columns: 90px 1fr 100px; align-items: center; gap: 0.75rem; padding: 0.45rem 0; font-size: var(--t-xs); }
 .senior-sal-label { font-weight: 600; color: var(--text); }
-.senior-sal-track { position: relative; height: 8px; background: var(--surface2); border-radius: 4px; overflow: hidden; }
-.senior-sal-range { position: absolute; top: 0; height: 100%; background: rgba(29,78,216,0.25); border-radius: 4px; }
-.senior-sal-median { position: absolute; top: -2px; width: 3px; height: 12px; background: var(--accent); border-radius: 1px; }
+.senior-sal-track { position: relative; height: 8px; background: var(--surface2); border-radius: var(--r-sm); overflow: hidden; }
+.senior-sal-range { position: absolute; top: 0; height: 100%; background: rgba(29,78,216,0.25); border-radius: var(--r-sm); }
+.senior-sal-median { position: absolute; top: -2px; width: 3px; height: 12px; background: var(--text); border-radius: var(--r-sm); }
 .senior-sal-value { text-align: right; color: var(--muted); white-space: nowrap; }
 
 /* ── PERSONA TOGGLE (fixed, top-right of screen) ── */
 .persona-toggle {
   position: fixed; top: 0.55rem; right: 1rem; z-index: 500;
   display: flex; background: #fff; border: 1px solid var(--border);
-  border-radius: 20px; padding: 2px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  border-radius: var(--r-pill); padding: 2px; box-shadow: var(--shadow);
 }
 .persona-toggle button {
-  font-size: 0.72rem; font-weight: 600; border: none; background: transparent;
-  color: var(--muted); padding: 0.32rem 0.85rem; border-radius: 20px;
-  cursor: pointer; white-space: nowrap; font-family: inherit;
+  font-size: var(--t-xs); font-weight: 600; border: none; background: transparent;
+  color: var(--muted); padding: 0.32rem 0.85rem; border-radius: var(--r-pill);
+  cursor: pointer; white-space: nowrap; font-family: var(--font-ui);
 }
 .persona-toggle button.active { background: var(--accent); color: #fff; }
 .sticky-nav { padding-right: 250px; }
 @media (max-width: 760px) {
-  .persona-toggle { top: auto; bottom: 1rem; box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
+  .persona-toggle { top: auto; bottom: 1rem; box-shadow: var(--shadow); }
   .sticky-nav { padding-right: 2rem; }
+  #sectionsWrap { padding-bottom: 5rem; }
 }
 
 /* ── PERSONA CHOOSER OVERLAY ── */
@@ -298,22 +323,22 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
 }
 .persona-overlay.hidden { display: none; }
 .persona-modal {
-  background: #fff; border-radius: 16px; max-width: 660px; width: 100%;
-  padding: 2.5rem 2.25rem; box-shadow: 0 24px 64px rgba(0,0,0,0.25);
+  background: #fff; border-radius: var(--r-md); max-width: 660px; width: 100%;
+  padding: 2.5rem 2.25rem; box-shadow: var(--shadow);
 }
-.persona-modal h2 { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
-.persona-modal > p { font-size: 0.86rem; color: var(--muted); line-height: 1.7; }
+.persona-modal h2 { font-size: var(--t-lg); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+.persona-modal > p { font-size: var(--t-sm); color: var(--muted); line-height: 1.7; }
 .persona-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
 @media (max-width: 560px) { .persona-cards { grid-template-columns: 1fr; } }
 .persona-card {
-  border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem 1.3rem;
-  cursor: pointer; text-align: left; background: var(--surface); font-family: inherit;
-  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  border: 1px solid var(--border); border-radius: var(--r-md); padding: 1.4rem 1.3rem;
+  cursor: pointer; text-align: left; background: var(--surface); font-family: var(--font-ui);
+  transition: border-color 0.15s;
 }
-.persona-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
-.persona-card h3 { font-size: 0.98rem; font-weight: 700; margin-bottom: 0.45rem; color: var(--text); }
-.persona-card p { font-size: 0.79rem; color: var(--muted); line-height: 1.65; }
-.persona-note { margin-top: 1.25rem; font-size: 0.72rem; color: var(--muted); text-align: center; }
+.persona-card:hover { border-color: var(--accent); }
+.persona-card h3 { font-size: var(--t-base); font-weight: 700; margin-bottom: 0.45rem; color: var(--text); }
+.persona-card p { font-size: var(--t-sm); color: var(--muted); line-height: 1.65; }
+.persona-note { margin-top: 1.25rem; font-size: var(--t-xs); color: var(--muted); text-align: center; }
 
 /* section dividers (replaces standalone <hr>, so sections can be reordered per persona) */
 #sectionsWrap > .section { border-top: 1px solid var(--border); }
@@ -321,8 +346,9 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
 
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: var(--r-sm); }
 </style>
+<link rel="stylesheet" href="hero-quote.css">
 </head>
 <body>
 <a class="skip-link" href="#relationships">Skip to main content</a>
@@ -354,24 +380,24 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
 
 <!-- HERO -->
 <section class="hero" aria-label="Introduction">
-  <div class="hero-eyebrow" id="heroEyebrow">JDs · classified on behavioural dimensions</div>
-  <h1 id="heroH1">What actually predicts what, in analytics engineering job descriptions</h1>
-  <p class="hero-sub" id="heroSub">Single percentages ("82% rigour-oriented") are cheap, and mostly uninformative on their own - every JD in a rigour-dominant market says similar things. What's useful is where two dimensions move together: does seniority predict autonomy? Does team maturity predict what kind of work you'll do? This page leads with those relationships, shows the test statistic behind each one (recomputed live against whatever filter is active), and reports the relationships that <em>failed</em> just as plainly as the ones that held. It started as a personal question - is an analytics-engineering skillset portable across a market that defines the role differently everywhere - answered by scraping JD text, coding it against a behavioural codebook, and classifying it. Zero-shot, LLM-driven for now; human review and cross-model consensus are the next step toward making that more robust.</p>
+  <div id="heroQuote"></div>
+  <h1 id="heroH1" tabindex="-1">What actually predicts what, in analytics engineering job descriptions</h1>
+  <p class="hero-sub" id="heroSub">Single percentages ("most postings are rigour-oriented") are cheap, and mostly uninformative on their own — every JD in a rigour-dominant market says similar things. What's useful is where two dimensions move together: does seniority predict autonomy? Does team maturity predict what kind of work you'll do? This page leads with those relationships, shows the test statistic behind each one (recomputed live against whatever filter is active), and reports the relationships that <em>failed</em> just as plainly as the ones that held. It started as a personal question — is an analytics-engineering skillset portable across a market that defines the role differently everywhere — answered by scraping JD text, coding it against a behavioural codebook, and classifying it. Zero-shot, LLM-driven for now; human review and cross-model consensus are the next step toward making that more robust.</p>
   <div class="hero-caveat">
-    <strong>Read before trusting any number here:</strong> this is a pilot-scale, single-market dataset - Europe-heavy, collected opportunistically during one person's job search. Confidence intervals are wide. Treat percentages as directional, not precise. Geography reflects what got scraped, not the market - see the callout in that section.
+    <strong>Read before trusting any number here:</strong> this is a pilot-scale, single-market dataset — Europe-heavy, collected opportunistically during one person's job search. Confidence intervals are wide. Treat percentages as directional, not precise. Geography reflects what got scraped, not the market — see the callout in that section.
   </div>
 </section>
 
 <!-- STICKY NAV -->
 <nav class="sticky-nav" aria-label="Page sections">
   <span class="nav-title">AE/BI Market</span>
-  <div class="nav-links" role="list">
-    <a href="#relationships" role="listitem" data-section="relationships">Relationships</a>
-    <a href="#nulls"         role="listitem" data-section="nulls">Didn't hold</a>
-    <a href="#explorer"      role="listitem" data-section="explorer">Explorer</a>
-    <a href="#orientation"   role="listitem" data-section="orientation">Orientation</a>
-    <a href="#geo-section"   role="listitem" data-section="geo-section">Coverage</a>
-    <a href="#stack"         role="listitem" data-section="stack">Stack</a>
+  <div class="nav-links">
+    <a href="#relationships" data-section="relationships">Relationships</a>
+    <a href="#nulls"         data-section="nulls">Didn't hold</a>
+    <a href="#explorer"      data-section="explorer">Explorer</a>
+    <a href="#orientation"   data-section="orientation">Orientation</a>
+    <a href="#geo-section"   data-section="geo-section">Coverage</a>
+    <a href="#stack"         data-section="stack">Stack</a>
   </div>
   <div class="nav-filters">
     <div class="nav-filter">
@@ -390,18 +416,16 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
 <main id="sectionsWrap">
 <!-- SECTION: SINGLE-VARIABLE SUMMARY (compact, intentionally minimized) -->
 <section class="section tight" id="summary">
-  <div class="section-label" id="sumLabel">Single-variable summary</div>
   <h2 class="section-headline" id="sumHead">The headline numbers, for reference — not the point of this page</h2>
-  <p class="section-body" id="sumBody">Useful as background, but a single percentage can't tell you which roles to target - most JDs cluster on the modal answer for every dimension individually. The relationships below are where the market actually splits into distinguishable segments.</p>
+  <p class="section-body" id="sumBody">Useful as background, but a single percentage can't tell you which roles to target — most JDs cluster on the modal answer for every dimension individually. The relationships below are where the market actually splits into distinguishable segments.</p>
   <div class="stats-row" id="statsRow"></div>
 </section>
 
 <!-- SECTION: RELATIONSHIPS (primary content) -->
 <section class="section" id="relationships">
-  <div class="section-label" id="relLabel">Two-variable findings</div>
   <h2 class="section-headline" id="relHead">Where dimensions move together</h2>
-  <p class="section-body" id="relBody">Each panel below crosses two classifications to answer a question a single-dimension stat can't answer: not "how many roles are strategic" but "<strong>which</strong> roles are strategic." Pick a theme below. Each panel's headline is one line - click "Full analysis" on any card for the underlying test, caveats, and methodology.</p>
-  <details class="rel-details" style="margin-bottom:1.5rem"><summary>Methodology note: why some responsibility-language pairings are excluded</summary><div class="rel-details-body" id="relOverlapNote" style="font-size:0.85rem"></div></details>
+  <p class="section-body" id="relBody">Each panel below crosses two classifications to answer a question a single-dimension stat can't answer: not "how many roles are strategic" but "<strong>which</strong> roles are strategic." Pick a theme below. Each panel's headline is one line — click "Full analysis" on any card for the underlying test, caveats, and methodology.</p>
+  <details class="rel-details" style="margin-bottom:1.5rem"><summary>Methodology note: why some responsibility-language pairings are excluded</summary><div class="rel-details-body" id="relOverlapNote" style="font-size:var(--t-sm)"></div></details>
   <div class="rel-tabs" id="relTabs" role="tablist" aria-label="Relationship theme"></div>
   <div class="rel-grid" id="relGrid"></div>
 </section>
@@ -409,17 +433,20 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
 
 <!-- SECTION: RESPONSIBILITY TAXONOMY (separate regex-classified pass over responsibility bullets) -->
 <section class="section" id="responsibility-taxonomy">
-  <div class="section-label" id="rtLabel">A second, independent read of the same corpus</div>
   <h2 class="section-headline" id="rtHead">What the responsibilities actually say, bullet by bullet</h2>
-  <p class="section-body" id="rtBody">The dimensions above classify each JD as a whole. This section instead parses just the responsibilities section of each posting into individual bullets, and classifies <em>those</em> against a fixed 16-theme taxonomy. The bullets are copied verbatim out of each posting's responsibilities section when it is classified, and checked against the archived text before the record is saved; the theme tagging applied to them is keyword-based, not LLM - see <code>analysis/responsibility_taxonomy.py</code>. A JD can carry several themes at once, so the bars sum to well over 100%. n=<span id="rtN">—</span> of the active filter's JDs have a theme reading (a few have no archived JD text or no extractable responsibilities section).</p>
+  <p class="section-body" id="rtBody">The dimensions above classify each JD as a whole. This section instead parses just the responsibilities section of each posting into individual bullets, and classifies <em>those</em> against a fixed 16-theme taxonomy. The bullets are copied verbatim out of each posting's responsibilities section when it is classified, and checked against the archived text before the record is saved; the theme tagging applied to them is keyword-based, not LLM — see <code>analysis/responsibility_taxonomy.py</code>. A JD can carry several themes at once, so the bars sum to well over 100%. n=<span id="rtN">—</span> of the active filter's JDs have a theme reading (a few have no archived JD text or no extractable responsibilities section).</p>
   <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:1.5rem;align-items:start" class="rt-grid-wrap">
     <div class="card">
       <div class="card-title-row">
         <div class="card-title">Theme prevalence</div>
-        <span class="rt-click-badge">🔎 click a bar for JD examples</span>
+        <span class="rt-click-badge">Click a bar, or use the list, for JD examples</span>
       </div>
-      <p class="card-sub">% of JDs (with a theme reading) whose responsibilities include each theme · recomputed against the active role filter</p>
-      <div class="rt-chart-wrap"><canvas id="rtChart"></canvas></div>
+      <p class="card-sub">% of JDs (with a theme reading) whose responsibilities include each theme, recomputed against the active role filter</p>
+      <div class="rt-chart-wrap"><canvas id="rtChart" role="img" aria-label="Bar chart of how many job descriptions carry each responsibility theme. The same figures are listed below the chart."></canvas></div>
+      <details class="rel-details" style="margin-top:1rem">
+        <summary>List the themes, with example sentences</summary>
+        <ul class="rt-theme-list" id="rtThemeList"></ul>
+      </details>
     </div>
     <div class="card">
       <div class="card-title">Which responsibilities travel together</div>
@@ -430,16 +457,21 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
 </section>
 <style>
   @media (max-width: 900px) { .rt-grid-wrap { grid-template-columns: 1fr !important; } }
-  .rt-cooc-row { display: flex; justify-content: space-between; align-items: baseline; gap: 0.75rem; padding: 0.55rem 0; border-bottom: 1px solid var(--border); font-size: 0.82rem; }
+  .rt-cooc-row { display: flex; justify-content: space-between; align-items: baseline; gap: 0.75rem; padding: 0.55rem 0; border-bottom: 1px solid var(--border); font-size: var(--t-sm); }
   .rt-cooc-row:last-child { border-bottom: none; }
   .rt-cooc-pair { flex: 1; line-height: 1.4; }
-  .rt-cooc-stat { white-space: nowrap; color: var(--muted); font-size: 0.76rem; text-align: right; }
+  .rt-cooc-stat { white-space: nowrap; color: var(--muted); font-size: var(--t-xs); text-align: right; }
   .rt-cooc-lift { font-weight: 700; color: var(--text); }
   .card-title-row { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap; }
   .card-title-row .card-title { margin-bottom: 0; }
+  .rt-theme-list { list-style: none; margin-top: 0.6rem; }
+  .rt-theme-list li { display: flex; align-items: baseline; gap: 0.75rem; padding: 0.35rem 0; border-bottom: 1px solid var(--border); font-size: var(--t-sm); }
+  .rt-theme-name { flex: 1; }
+  .rt-theme-n { color: var(--muted); font-family: var(--font-ui); font-size: var(--t-xs); white-space: nowrap; }
+  .rt-theme-list .drill-toggle { margin-top: 0; white-space: nowrap; }
   .rt-click-badge {
-    font-size: 0.72rem; font-weight: 600; color: #1d4ed8; background: rgba(29,78,216,0.09);
-    border: 1px solid rgba(29,78,216,0.25); border-radius: 999px; padding: 0.2rem 0.65rem;
+    font-size: var(--t-xs); font-weight: 600; color: var(--accent); background: rgba(29,78,216,0.09);
+    border: 1px solid rgba(29,78,216,0.25); border-radius: var(--r-pill); padding: 0.2rem 0.65rem;
     white-space: nowrap;
   }
   #rtChart { cursor: pointer; }
@@ -450,48 +482,36 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
   }
   .rt-evidence-overlay.hidden { display: none; }
   .rt-evidence-modal {
-    background: #fff; border-radius: 16px; max-width: 720px; width: 100%;
-    padding: 1.75rem 2rem 2rem; box-shadow: 0 24px 64px rgba(0,0,0,0.25); margin-bottom: 4vh;
+    background: #fff; border-radius: var(--r-md); max-width: 720px; width: 100%;
+    padding: 1.75rem 2rem 2rem; box-shadow: var(--shadow); margin-bottom: 4vh;
   }
   .rt-evidence-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.25rem; }
-  .rt-evidence-modal h3 { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.01em; }
+  .rt-evidence-modal h3 { font-size: var(--t-md); font-weight: 700; letter-spacing: -0.01em; }
   .rt-evidence-close {
     border: none; background: var(--bg, #f4f4f2); color: var(--muted); width: 28px; height: 28px;
-    border-radius: 50%; font-size: 1rem; cursor: pointer; flex-shrink: 0; line-height: 1;
+    border-radius: 50%; font-size: var(--t-base); cursor: pointer; flex-shrink: 0; line-height: 1;
   }
   .rt-evidence-close:hover { background: var(--border); }
   .rt-evidence-modal .card-sub { margin-bottom: 1rem; }
   .rt-evidence-list { max-height: 60vh; overflow-y: auto; }
-  .rt-evidence-item { padding: 0.7rem 0; border-bottom: 1px solid var(--border); font-size: 0.83rem; line-height: 1.55; }
+  .rt-evidence-item { padding: 0.7rem 0; border-bottom: 1px solid var(--border); font-size: var(--t-sm); line-height: 1.55; }
   .rt-evidence-item:last-child { border-bottom: none; }
-  .rt-evidence-item mark { background: #fde68a; color: inherit; padding: 0 2px; border-radius: 2px; }
-  .rt-evidence-meta { font-size: 0.72rem; color: var(--muted); margin-top: 0.25rem; }
-  .rt-evidence-empty { font-size: 0.85rem; color: var(--muted); padding: 1rem 0; }
+  .rt-evidence-item mark { background: var(--highlight); color: inherit; padding: 0 2px; border-radius: var(--r-sm); }
+  .rt-evidence-meta { font-size: var(--t-xs); color: var(--muted); margin-top: 0.25rem; }
+  .rt-evidence-empty { font-size: var(--t-sm); color: var(--muted); padding: 1rem 0; }
 </style>
-<div class="rt-evidence-overlay hidden" id="rtEvidenceOverlay" onclick="if(event.target===this) closeRtEvidence()">
-  <div class="rt-evidence-modal" role="dialog" aria-modal="true" aria-labelledby="rtEvidenceTitle">
-    <div class="rt-evidence-head">
-      <h3 id="rtEvidenceTitle"></h3>
-      <button class="rt-evidence-close" type="button" onclick="closeRtEvidence()" aria-label="Close">&times;</button>
-    </div>
-    <p class="card-sub" id="rtEvidenceSub"></p>
-    <div class="rt-evidence-list" id="rtEvidenceList"></div>
-  </div>
-</div>
 
 
 <!-- SECTION: NULL RESULTS -->
 <section class="section" id="nulls">
-  <div class="section-label" id="nullLabel">Negative results</div>
   <h2 class="section-headline" id="nullHead">What we expected but the data didn't support</h2>
-  <p class="section-body" id="nullBody">A page that only shows the cross-tabs that worked is survivorship bias with charts. These are relationships we specifically went looking for - because the industry narrative predicts them, or because they seemed like a reasonable hypothesis - that failed to replicate, flattened as the corpus grew, or never showed up. Reported with the same statistics as the findings above, because a solid null is often just as actionable.</p>
+  <p class="section-body" id="nullBody">A page that only shows the cross-tabs that worked is survivorship bias with charts. These are relationships we specifically went looking for — because the industry narrative predicts them, or because they seemed like a reasonable hypothesis — that failed to replicate, flattened as the corpus grew, or never showed up. Reported with the same statistics as the findings above, because a solid null is often just as actionable.</p>
   <div class="null-grid" id="nullGrid"></div>
 </section>
 
 
 <!-- SECTION: EXPLORER (scatter, user-driven relationship exploration) -->
 <section class="section" id="explorer">
-  <div class="section-label">Explorer</div>
   <h2 class="section-headline">Build your own cross-tab</h2>
   <p class="section-body">Collaboration width (named partner teams) against domain risk, coloured by any dimension. Hover any dot for the verbatim JD language behind that classification.</p>
   <div class="card">
@@ -499,14 +519,14 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
     <p class="card-sub">Top-right = maximum pressure (many stakeholders, high stakes). Hover any dot for evidence.</p>
     <div class="scatter-controls">
       <div class="ctrl-group">
-        <label>X axis</label>
+        <label for="xAxis">X axis</label>
         <select id="xAxis">
           <option value="collaboration_width">Collaboration width</option>
           <option value="salary_mid">Salary midpoint (EUR, annual only, n≈16)</option>
         </select>
       </div>
       <div class="ctrl-group">
-        <label>Colour by</label>
+        <label for="colourBy">Colour by</label>
         <select id="colourBy">
           <option value="autonomy_level">Autonomy level</option>
           <option value="velocity_vs_rigour">Rigour vs velocity</option>
@@ -522,7 +542,8 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
         </select>
       </div>
     </div>
-    <div class="scatter-wrap"><canvas id="scatterChart" role="img" aria-label="Scatter chart: collaboration width versus domain risk for each role"></canvas></div>
+    <div class="scatter-wrap"><canvas id="scatterChart" role="img" aria-label="Scatter chart: one dot per role, domain risk against the chosen axis." aria-describedby="scatterSummary"></canvas>
+      <p class="sr-only" id="scatterSummary"></p></div>
     <div class="legend" id="scatterLegend"></div>
   </div>
 </section>
@@ -530,13 +551,12 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
 
 <!-- SECTION: ORIENTATION (compact single-dim reference, tabs not full-screen chapters) -->
 <section class="section" id="orientation">
-  <div class="section-label">Reference</div>
   <h2 class="section-headline">Individual dimension breakdowns</h2>
   <p class="section-body">The raw distribution for each classification, for lookup. Click a segment to see the JDs behind it and the language that drove the classification.</p>
   <div class="card">
     <div class="scatter-controls">
       <div class="ctrl-group">
-        <label>Dimension</label>
+        <label for="orientationDim">Dimension</label>
         <select id="orientationDim">
           <option value="velocity_vs_rigour">Rigour vs velocity</option>
           <option value="jd_authorship">JD authorship</option>
@@ -553,8 +573,8 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
     </div>
     <div style="display:grid;grid-template-columns:280px 1fr;gap:2rem;align-items:start">
       <div>
-        <div style="position:relative;height:220px"><canvas id="orientationChart"></canvas></div>
-        <p id="orientationHeadline" style="font-size:0.8rem;color:var(--muted);margin-top:1rem;line-height:1.6"></p>
+        <div style="position:relative;height:220px"><canvas id="orientationChart" role="img" aria-label="Doughnut chart of the selected dimension." aria-describedby="orientationHeadline"></canvas></div>
+        <p id="orientationHeadline" style="font-size:var(--t-sm);color:var(--muted);margin-top:1rem;line-height:1.6"></p>
       </div>
       <div>
         <div class="scatter-controls" id="orientationTabs" style="margin-bottom:0.75rem"></div>
@@ -567,14 +587,13 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
 
 <!-- SECTION: GEOGRAPHY (demoted — honest about being a scraping artifact) -->
 <section class="section" id="geo-section">
-  <div class="section-label">Coverage, not a finding</div>
   <h2 class="section-headline">Where these JDs came from — and why that's not a market map</h2>
   <div class="geo-callout">
     <div class="geo-callout-title">This is a corpus-coverage statement, not a geographic finding</div>
-    <p><strong>The regional split below reflects what got scraped, not where demand exists.</strong> It's a keyword match on free-text location strings, collected opportunistically during one person's job search - sourced from whatever job boards and company pages surfaced roles worth applying to. A city appears here because a posting was found and classified, not because analytics engineering hiring is concentrated there.</p>
-    <p>Roughly a quarter of records fall into "other" - locations too ambiguous to bucket: multi-city remote listings, unstated locations, cities outside the keyword list. Treat every number in this section as a description of the dataset's blind spots, not the labour market's shape.</p>
-    <p><strong>A concrete example of the artifact:</strong> "Global remote" postings hard-gate on language (typically German) more often than Berlin postings do in this bucketing - backwards from what you'd expect if the categories meant what they sound like. The likely cause: a remote role that requires German gets classified as "global remote" by the location-string matcher rather than folded into the Berlin/DACH bucket, because the matcher keys off literal city names, not the language requirement itself. Read that as a bug in the bucketing, not a claim that remote roles gate on language more than local ones.</p>
-    <p><strong>That said, once regions are grouped into three broad, comparably-sized buckets (Europe / APAC / NYC metro) rather than read as fifteen fine-grained cells, a few effects survive confound-checking and are large enough to treat as real</strong> - language gates, rigour-vs-velocity framing, and salary disclosure norms differ by region in ways that hold up even after checking that domain-risk mix and company concentration aren't driving them. See the <strong>Region</strong> tab in the relationships section above for those three, presented with the same statistical rigour as every other cross-tab on this page. The caveat on this section stands for everything else - seniority mix, tool prevalence, and most other per-region breakdowns here are still corpus-coverage information, not a market claim.</p>
+    <p><strong>The regional split below reflects what got scraped, not where demand exists.</strong> It's a keyword match on free-text location strings, collected opportunistically during one person's job search — sourced from whatever job boards and company pages surfaced roles worth applying to. A city appears here because a posting was found and classified, not because analytics engineering hiring is concentrated there.</p>
+    <p>Roughly a quarter of records fall into "other" — locations too ambiguous to bucket: multi-city remote listings, unstated locations, cities outside the keyword list. Treat every number in this section as a description of the dataset's blind spots, not the labour market's shape.</p>
+    <p><strong>A concrete example of the artifact:</strong> "Global remote" postings hard-gate on language (typically German) more often than Berlin postings do in this bucketing — backwards from what you'd expect if the categories meant what they sound like. The likely cause: a remote role that requires German gets classified as "global remote" by the location-string matcher rather than folded into the Berlin/DACH bucket, because the matcher keys off literal city names, not the language requirement itself. Read that as a bug in the bucketing, not a claim that remote roles gate on language more than local ones.</p>
+    <p><strong>That said, once regions are grouped into three broad, comparably-sized buckets (Europe / APAC / NYC metro) rather than read as fifteen fine-grained cells, a few effects survive confound-checking and are large enough to treat as real</strong> — language gates, rigour-vs-velocity framing, and salary disclosure norms differ by region in ways that hold up even after checking that domain-risk mix and company concentration aren't driving them. See the <strong>Region</strong> tab in the relationships section above for those three, presented with the same statistical rigour as every other cross-tab on this page. The caveat on this section stands for everything else — seniority mix, tool prevalence, and most other per-region breakdowns here are still corpus-coverage information, not a market claim.</p>
   </div>
   <div class="geo-grid" id="geoBreakdown"></div>
 </section>
@@ -582,17 +601,16 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
 
 <!-- SECTION: STACK -->
 <section class="section" id="stack">
-  <div class="section-label">Reference</div>
   <h2 class="section-headline">SQL and dbt are the floor. Everything else is negotiable.</h2>
   <p class="section-body" id="stackBody">Loading…</p>
   <div class="card">
     <div class="card-title">Tool prevalence across filtered roles</div>
-    <p class="card-sub">% of JDs mentioning each tool, grouped by category · click a bar for the company list</p>
+    <p class="card-sub">% of JDs mentioning each tool, grouped by category. Click a bar for the company list</p>
     <div class="tool-groups" id="toolGroups"></div>
-    <div id="toolCompanyPanel" style="margin-top:1.5rem;display:none">
+    <div id="toolCompanyPanel" tabindex="-1" role="region" aria-labelledby="toolPanelTitle" style="margin-top:1.5rem;display:none">
       <div style="display:flex;align-items:baseline;gap:0.6rem;margin-bottom:0.75rem">
-        <span id="toolPanelTitle" style="font-weight:700;font-size:0.88rem"></span>
-        <span id="toolPanelCount" style="font-size:0.74rem;color:var(--muted)"></span>
+        <span id="toolPanelTitle" style="font-weight:700;font-size:var(--t-base)"></span>
+        <span id="toolPanelCount" style="font-size:var(--t-xs);color:var(--muted)"></span>
       </div>
       <div class="company-list" id="toolCompanyList" style="max-height:260px"></div>
     </div>
@@ -601,7 +619,6 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
 
 <!-- SECTION: SALARY (summary leads; both per-posting detail views are opt-in) -->
 <section class="section" id="salary">
-  <div class="section-label">Reference</div>
   <h2 class="section-headline">What the postings that disclosed a salary actually said</h2>
   <p class="section-body" id="salaryBody">Loading…</p>
 
@@ -621,7 +638,7 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
     <div class="rel-details-body">
       <div class="card">
         <div class="card-title">Annual salary ranges by posting</div>
-        <p class="card-sub" id="salarySub">Each line is one job posting's stated min–max range · grouped by currency, sorted by midpoint · figures as extracted, no conversion or inference</p>
+        <p class="card-sub" id="salarySub">Each line is one job posting's stated min–max range, grouped by currency and sorted by midpoint. Figures are as extracted, with no conversion or inference</p>
         <div id="salaryCaveat" class="salary-caveat"></div>
         <div id="salaryChart"></div>
       </div>
@@ -637,9 +654,24 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
 </section>
 </main>
 
+<div class="rt-evidence-overlay hidden" id="rtEvidenceOverlay" onclick="if(event.target===this) closeRtEvidence()">
+  <div class="rt-evidence-modal" role="dialog" aria-modal="true" aria-labelledby="rtEvidenceTitle">
+    <div class="rt-evidence-head">
+      <h3 id="rtEvidenceTitle"></h3>
+      <button class="rt-evidence-close" type="button" onclick="closeRtEvidence()" aria-label="Close">&times;</button>
+    </div>
+    <p class="card-sub" id="rtEvidenceSub"></p>
+    <div class="rt-evidence-list" id="rtEvidenceList"></div>
+  </div>
+</div>
+
 <div id="tooltip"></div>
 
+<script src="hero-quote.js"></script>
 <script>
+renderHeroQuote(document.getElementById('heroQuote'));
+if (window.Chart) { Chart.defaults.font.family = getComputedStyle(document.documentElement).getPropertyValue('--font-ui'); }
+const CHART_ANIM = matchMedia('(prefers-reduced-motion: reduce)').matches ? false : { duration: 250 };
 let ALL_DATA = [], activeData = [];
 let charts = {}, sortedTools = [];
 
@@ -651,6 +683,22 @@ let charts = {}, sortedTools = [];
 let persona = null;
 try { persona = localStorage.getItem('aeProfile') || localStorage.getItem('aeMode'); } catch (e) {}
 function P() { return persona === 'manager' ? 'manager' : 'seeker'; }
+
+// ── Dialogs: move focus in, hide the page behind from keyboard and screen readers, return focus on close ──
+let dialogOpener = null;
+function openDialog(overlay, focusEl) {
+  dialogOpener = document.activeElement;
+  [...document.body.children].forEach(el => { if (el !== overlay && !el.matches('script, style, link')) el.inert = true; });
+  overlay.classList.remove('hidden');
+  focusEl.focus();
+}
+function closeDialog(overlay, fallbackFocusEl) {
+  overlay.classList.add('hidden');
+  [...document.body.children].forEach(el => { el.inert = false; });
+  const back = dialogOpener && document.contains(dialogOpener) && dialogOpener !== document.body ? dialogOpener : fallbackFocusEl;
+  dialogOpener = null;
+  if (back) back.focus();
+}
 const TIP_LABEL = { seeker: 'Apply this', manager: 'For your JD' };
 
 // Section order: seekers get targeting findings first, then the stack (what to learn).
@@ -711,80 +759,102 @@ const COPY = {
     manager: 'What your job description signals — benchmarked against a market of near-identical postings',
   },
   heroSub: {
-    seeker: `Single percentages ("82% rigour-oriented") are cheap, and mostly uninformative on their own - every JD in a rigour-dominant market says similar things. What's useful is where two dimensions move together: does seniority predict autonomy? Does team maturity predict what kind of work you'll do? This page leads with those relationships, shows the test statistic behind each one (recomputed live against whatever filter is active), and reports the relationships that <em>failed</em> just as plainly as the ones that held. It started as a personal question - is an analytics-engineering skillset portable across a market that defines the role differently everywhere - answered by scraping JD text, coding it against a behavioural codebook, and classifying it. Zero-shot, LLM-driven for now; human review and cross-model consensus are the next step toward making that more robust.`,
-    manager: `Nearly every posting in this market says the same things: rigour vocabulary, "cross-functional collaboration," a Senior title. Candidates can't tell your role apart from the modal posting. And the things they most want to know - real autonomy, real work type, real quality accountability - are exactly what standard JD language communicates worst. This page shows which signals are saturated, what candidates infer from the signals you may not know you're sending, and the cheap, specific ways a posting stands out.`,
+    seeker: `Single percentages ("most postings are rigour-oriented") are cheap, and mostly uninformative on their own — every JD in a rigour-dominant market says similar things. What's useful is where two dimensions move together: does seniority predict autonomy? Does team maturity predict what kind of work you'll do? This page leads with those relationships, shows the test statistic behind each one (recomputed live against whatever filter is active), and reports the relationships that <em>failed</em> just as plainly as the ones that held. It started as a personal question — is an analytics-engineering skillset portable across a market that defines the role differently everywhere — answered by scraping JD text, coding it against a behavioural codebook, and classifying it. Zero-shot, LLM-driven for now; human review and cross-model consensus are the next step toward making that more robust.`,
+    manager: `Nearly every posting in this market says the same things: rigour vocabulary, "cross-functional collaboration," a Senior title. Candidates can't tell your role apart from the modal posting. And the things they most want to know — real autonomy, real work type, real quality accountability — are exactly what standard JD language communicates worst. This page shows which signals are saturated, what candidates infer from the signals you may not know you're sending, and the cheap, specific ways a posting stands out.`,
   },
-  sumLabel: { seeker: 'Single-variable summary', manager: 'Market baseline' },
   sumHead: {
     seeker: 'The headline numbers, for reference — not the point of this page',
     manager: 'The modal posting — everything your JD says that every other JD also says',
   },
   sumBody: {
-    seeker: `Useful as background, but a single percentage can't tell you which roles to target - most JDs cluster on the modal answer for every dimension individually. The relationships below are where the market actually splits into distinguishable segments.`,
-    manager: `This is the baseline your posting is read against: rigour-first, mid-stage, serving internal data consumers, naming dbt. Matching this profile is fine - its absence would be noticed - but nothing in it differentiates you. The sections below cover what does.`,
+    seeker: `Useful as background, but a single percentage can't tell you which roles to target — most JDs cluster on the modal answer for every dimension individually. The relationships below are where the market actually splits into distinguishable segments.`,
+    manager: `This is the baseline your posting is read against: rigour-first, mid-stage, serving internal data consumers, naming dbt. Matching this profile is fine — its absence would be noticed — but nothing in it differentiates you. The sections below cover what does.`,
   },
-  relLabel: { seeker: 'Two-variable findings', manager: 'Inference channels' },
   relHead: {
     seeker: 'Where dimensions move together',
     manager: 'What candidates read between your lines — whether you meant to write it or not',
   },
   relBody: {
-    seeker: `Each panel crosses two classifications to answer a question a single-dimension stat can't: not "how many roles are strategic" but "<strong>which</strong> roles are strategic." Pick a theme below. Each panel's headline is one line - click "Full analysis" on any card for the underlying test, caveats, and methodology.`,
-    manager: `Each panel crosses two classifications, and each one is an inference channel: candidates - and increasingly their tools - read your stage, title, authorship, and framing as predictions about the real role. Pick a theme below; click "Full analysis" on any card for the underlying test and caveats.`,
+    seeker: `Each panel crosses two classifications to answer a question a single-dimension stat can't: not "how many roles are strategic" but "<strong>which</strong> roles are strategic." Pick a theme below. Each panel's headline is one line — click "Full analysis" on any card for the underlying test, caveats, and methodology.`,
+    manager: `Each panel crosses two classifications, and each one is an inference channel: candidates — and increasingly their tools — read your stage, title, authorship, and framing as predictions about the real role. Pick a theme below; click "Full analysis" on any card for the underlying test and caveats.`,
   },
   relOverlapNote: {
-    seeker: `<strong>A methodology note on the "Responsibility language" panels:</strong> some pairings between the 15 regex-classified responsibility themes and the Layer B codebook are excluded from this page entirely - not because they're weak, but because they're circular. The theme's trigger keywords and the dimension's own coding rubric detect the same textual signal. The clearest case: the "Data Quality & Testing" theme (Cramér's V=0.52 against <code>testing_framing</code>, the single strongest pairing found) is excluded, because <code>testing_framing</code> is itself coded by looking for testing/quality language in the JD. Crossing the two mostly measures whether two different classification methods agree with each other, not a substantive relationship. Same logic excludes "Security, Privacy & Risk" vs. <code>domain_risk</code>/<code>loss_aversion_framing</code>, "Data Ownership" vs. <code>autonomy_level</code> (whose own rubric lists "own" as a strategic-verb signal), and any BI/Infrastructure theme against a tech-stack flag whose tool name is literally one of the theme's regex keywords (Looker, Tableau, Power BI, Snowflake, Databricks, dbt). The three panels shown here survived that filter <em>and</em> a follow-up stratification check - does the relationship hold within a plausible confounding subgroup, not just across the whole corpus. The null-results section below includes a worked example of a pairing that looked real unstratified and didn't survive that check, kept specifically to show why the check matters.`,
-    manager: `<strong>A methodology note on the "Responsibility language" panels:</strong> several theme/dimension pairings are deliberately excluded from this page, because the theme's keywords and the dimension's own coding rubric detect the same underlying text. Reporting them as "relationships" would just be two measurement methods agreeing with themselves. (The strongest excluded pairing, Cramér's V=0.52, is exactly this case.) The three panels shown here use genuinely independent signal sources <em>and</em> held up under a stratification check - see the null-results section for a pairing that looked real before that check and didn't survive it.`,
+    seeker: `<strong>A methodology note on the "Responsibility language" panels:</strong> some pairings between the {{themeCount}} regex-classified responsibility themes and the Layer B codebook are excluded from this page entirely — not because they're weak, but because they're circular. The theme's trigger keywords and the dimension's own coding rubric detect the same textual signal. The clearest case: the "Data Quality & Testing" theme (Cramér's V={{vQualityTesting}} against <code>testing_framing</code>, the single strongest pairing found) is excluded, because <code>testing_framing</code> is itself coded by looking for testing/quality language in the JD. Crossing the two mostly measures whether two different classification methods agree with each other, not a substantive relationship. Same logic excludes "Security, Privacy & Risk" vs. <code>domain_risk</code>/<code>loss_aversion_framing</code>, "Data Ownership" vs. <code>autonomy_level</code> (whose own rubric lists "own" as a strategic-verb signal), and any BI/Infrastructure theme against a tech-stack flag whose tool name is literally one of the theme's regex keywords (Looker, Tableau, Power BI, Snowflake, Databricks, dbt). The three panels shown here survived that filter <em>and</em> a follow-up stratification check — does the relationship hold within a plausible confounding subgroup, not just across the whole corpus. The null-results section below includes a worked example of a pairing that looked real unstratified and didn't survive that check, kept specifically to show why the check matters.`,
+    manager: `<strong>A methodology note on the "Responsibility language" panels:</strong> several theme/dimension pairings are deliberately excluded from this page, because the theme's keywords and the dimension's own coding rubric detect the same underlying text. Reporting them as "relationships" would just be two measurement methods agreeing with themselves. (The strongest excluded pairing, Cramér's V={{vQualityTesting}}, is exactly this case.) The three panels shown here use genuinely independent signal sources <em>and</em> held up under a stratification check — see the null-results section for a pairing that looked real before that check and didn't survive it.`,
   },
-  nullLabel: { seeker: 'Negative results', manager: 'Saturated signals' },
   nullHead: {
     seeker: `What we expected but the data didn't support`,
     manager: `Language that no longer differentiates a posting`,
   },
   nullBody: {
-    seeker: `A page that only shows the cross-tabs that worked is survivorship bias with charts. These are relationships we specifically went looking for - because the industry narrative predicts them, or because they seemed like a reasonable hypothesis - that failed to replicate, flattened as the corpus grew, or never showed up. Reported with the same statistics as the findings above, because a solid null is often just as actionable.`,
-    manager: `Every flat relationship here is a signal that has fully diffused: the whole market writes it, so no candidate can use it to tell employers apart. None of this language is wrong to include - its absence would be noticed - but relying on it to communicate is writing into noise. Reported with the same statistics as the positive findings, because knowing what's noise is half of writing a posting that isn't.`,
+    seeker: `A page that only shows the cross-tabs that worked is survivorship bias with charts. These are relationships we specifically went looking for — because the industry narrative predicts them, or because they seemed like a reasonable hypothesis — that failed to replicate, flattened as the corpus grew, or never showed up. Reported with the same statistics as the findings above, because a solid null is often just as actionable.`,
+    manager: `Every flat relationship here is a signal that has fully diffused: the whole market writes it, so no candidate can use it to tell employers apart. None of this language is wrong to include — its absence would be noticed — but relying on it to communicate is writing into noise. Reported with the same statistics as the positive findings, because knowing what's noise is half of writing a posting that isn't.`,
   },
 };
 
 function setPersona(p) {
   persona = p;
   try { localStorage.setItem('aeProfile', p); localStorage.setItem('aeMode', p); } catch (e) {}
-  document.getElementById('personaOverlay').classList.add('hidden');
+  const overlay = document.getElementById('personaOverlay');
+  if (!overlay.classList.contains('hidden')) closeDialog(overlay, document.getElementById('heroH1'));
   applyPersona();
+}
+// copy marks a figure computed from the data as {{name}}
+function copyFacts() {
+  if (!activeData.length) return {};
+  const s = chiSqStats(activeData, 'testing_framing', 'rt_quality');
+  return { vQualityTesting: s ? s.V.toFixed(2) : '–', themeCount: RT_THEME_ORDER.length };
+}
+function applyCopy() {
+  const p = P(), facts = copyFacts();
+  Object.entries(COPY).forEach(([id, t]) => {
+    const el = document.getElementById(id);
+    if (el) el.innerHTML = t[p].replace(/\{\{(\w+)\}\}/g, (_, k) => (k in facts ? facts[k] : '…'));
+  });
 }
 function applyPersona() {
   const p = P();
-  document.querySelectorAll('.persona-toggle button').forEach(b => b.classList.toggle('active', b.dataset.persona === p));
-  Object.entries(COPY).forEach(([id, t]) => { const el = document.getElementById(id); if (el) el.innerHTML = t[p]; });
+  document.querySelectorAll('.persona-toggle button').forEach(b => {
+    b.classList.toggle('active', b.dataset.persona === p);
+    b.setAttribute('aria-pressed', String(b.dataset.persona === p));
+  });
+  applyCopy();
   const wrap = document.getElementById('sectionsWrap');
   SECTION_ORDER[p].forEach(id => { const s = document.getElementById(id); if (s) wrap.appendChild(s); });
   document.querySelector('.nav-links').innerHTML = SECTION_ORDER[p].filter(id => id !== 'summary')
-    .map(id => `<a href="#${id}" role="listitem" data-section="${id}">${NAV_LABELS[id][p]}</a>`).join('');
+    .map(id => `<a href="#${id}" data-section="${id}">${NAV_LABELS[id][p]}</a>`).join('');
   if (ALL_DATA.length) { buildRelationships(activeData); buildNulls(activeData); }
+}
+
+// ink or white label, whichever clears 4.5:1 on the fill
+function labelOn(hex) {
+  const c = [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16) / 255)
+    .map(v => v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4);
+  const lum = 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2];
+  return 1.05 / (lum + 0.05) >= 4.5 ? '#fff' : 'var(--text)';
 }
 
 const COLOURS = {
   domain_risk:            { high: '#c0392b', moderate: '#d97706', low: '#16a34a' },
-  velocity_vs_rigour:     { rigour: '#1d4ed8', mixed: '#9ca3af', velocity: '#c0392b' },
-  jd_authorship:          { hiring_manager: '#1d4ed8', mixed: '#9ca3af', recruiter: '#c0392b' },
-  greenfield_vs_fix:      { greenfield: '#16a34a', mixed: '#9ca3af', fix_scale: '#1d4ed8' },
+  velocity_vs_rigour:     { rigour: '#3d4452', mixed: '#9ca3af', velocity: '#c0392b' },
+  jd_authorship:          { hiring_manager: '#3d4452', mixed: '#9ca3af', recruiter: '#c0392b' },
+  greenfield_vs_fix:      { greenfield: '#16a34a', mixed: '#9ca3af', fix_scale: '#3d4452' },
   data_team_maturity:     { early: '#c0392b', mid: '#d97706', mature: '#16a34a' },
-  stakeholder_orientation:{ commercial: '#7c3aed', product: '#0891b2', internal_data: '#1d4ed8', finance: '#c0392b', mixed: '#9ca3af' },
+  stakeholder_orientation:{ commercial: '#7c3aed', product: '#0891b2', internal_data: '#3d4452', finance: '#c0392b', mixed: '#9ca3af' },
   autonomy_level:         { strategic: '#16a34a', mixed: '#9ca3af', execution: '#d97706' },
   ai_role:                { none: '#9ca3af', ai_user: '#0891b2', ai_enabler: '#7c3aed' },
-  testing_framing:        { responsibility: '#1d4ed8', tool_listed: '#d97706', absent: '#9ca3af' },
+  testing_framing:        { responsibility: '#3d4452', tool_listed: '#d97706', absent: '#9ca3af' },
   loss_aversion_framing:  { none: '#16a34a', moderate: '#d97706', high: '#c0392b' },
-  seniority:              { junior: '#16a34a', mid: '#0891b2', senior: '#1d4ed8', lead: '#7c3aed', staff: '#c0392b', manager: '#d97706' },
-  dbt_named:              { named: '#1d4ed8', not_named: '#9ca3af' },
-  work_arrangement:       { hybrid: '#1d4ed8', remote: '#16a34a', onsite: '#c0392b', not_stated: '#9ca3af' },
-  rt_mentorship:          { yes: '#1d4ed8', no: '#9ca3af' },
-  rt_infra:               { yes: '#1d4ed8', no: '#9ca3af' },
-  rt_selfservice:         { yes: '#1d4ed8', no: '#9ca3af' },
-  rt_perfcost:            { yes: '#1d4ed8', no: '#9ca3af' },
-  rt_governance:          { yes: '#1d4ed8', no: '#9ca3af' },
-  rt_ownership:           { yes: '#1d4ed8', no: '#9ca3af' },
-  rt_architecture:        { yes: '#1d4ed8', no: '#9ca3af' },
+  seniority:              { junior: '#16a34a', mid: '#0891b2', senior: '#3d4452', lead: '#7c3aed', staff: '#c0392b', manager: '#d97706' },
+  dbt_named:              { named: '#3d4452', not_named: '#9ca3af' },
+  work_arrangement:       { hybrid: '#3d4452', remote: '#16a34a', onsite: '#c0392b', not_stated: '#9ca3af' },
+  rt_mentorship:          { yes: '#3d4452', no: '#9ca3af' },
+  rt_infra:               { yes: '#3d4452', no: '#9ca3af' },
+  rt_selfservice:         { yes: '#3d4452', no: '#9ca3af' },
+  rt_perfcost:            { yes: '#3d4452', no: '#9ca3af' },
+  rt_governance:          { yes: '#3d4452', no: '#9ca3af' },
+  rt_ownership:           { yes: '#3d4452', no: '#9ca3af' },
+  rt_architecture:        { yes: '#3d4452', no: '#9ca3af' },
 };
 const LABELS = {
   domain_risk:            { high: 'High risk', moderate: 'Moderate', low: 'Low risk' },
@@ -818,7 +888,7 @@ function highlightKeywords(text, dataKey, segmentKey) {
   return text.replace(regex, '<mark class="kw-highlight">$1</mark>');
 }
 
-Chart.defaults.color = '#6b7280';
+Chart.defaults.color = '#586070';
 Chart.defaults.borderColor = '#e5e5e1';
 function destroyChart(id) { if (charts[id]) { charts[id].destroy(); delete charts[id]; } }
 
@@ -912,8 +982,8 @@ function sigBadge(s, statTxt) {
   if (s.p < 0.05) { cls = s.p < 0.001 ? 'sig-strong' : 'sig-ok'; word = 'significant'; }
   else if (s.p < 0.10) { cls = 'sig-marginal'; word = 'marginal'; }
   else { cls = 'sig-none'; word = 'not significant'; }
-  const sparse = (s.minexp !== undefined && s.minexp < 5) ? ' · sparse cells — χ² approximate, read as directional' : '';
-  return `<span class="sig ${cls}">${word}</span> ${statTxt} · n=${s.n}${sparse}`;
+  const sparse = (s.minexp !== undefined && s.minexp < 5) ? ', sparse cells, so χ² is approximate and read as directional' : '';
+  return `<span class="sig ${cls}">${word}</span> ${statTxt}, n=${s.n}${sparse}`;
 }
 function chiBadge(data, aKey, bKey) {
   const s = chiSqStats(data, aKey, bKey);
@@ -930,7 +1000,6 @@ function buildStats(data) {
   const midPct    = Math.round(data.filter(d => d.data_team_maturity === 'mid').length / n * 100);
   const internalPct = Math.round(data.filter(d => d.stakeholder_orientation === 'internal_data').length / n * 100);
   const langGatePct = Math.round(data.filter(d => d.language_gate_type === 'hard').length / n * 100);
-  document.getElementById('heroEyebrow').textContent = `${data.length} job descriptions classified`;
   document.getElementById('statsRow').innerHTML = [
     { num: rigourPct+'%',   label: 'Rigour-first JDs' },
     { num: hmPct+'%',       label: 'Engineer-authored' },
@@ -972,11 +1041,12 @@ function renderXtab(containerId, data, rowKey, colKey, rowOrder, colOrder) {
   const rowsHtml = tab.map(({row, total, counts}) => {
     const segs = cols.filter(c => counts[c]).map(c => {
       const pct = Math.round(counts[c]/total*100);
-      return `<div class="xtab-seg" style="width:${pct}%;background:${colCol[c]||'#9ca3af'}" title="${colLab[c]||c}: ${pct}%">${pct>=12?pct+'%':''}</div>`;
+      return `<div class="xtab-seg" style="width:${pct}%;background:${colCol[c]||'#9ca3af'};color:${labelOn(colCol[c]||'#9ca3af')}" title="${colLab[c]||c}: ${pct}%">${pct>=12?pct+'%':''}</div>`;
     }).join('');
+    const barText = cols.filter(c => counts[c]).map(c => `${colLab[c]||c} ${Math.round(counts[c]/total*100)}%`).join(', ');
     return `<div class="xtab-row">
       <div class="xtab-label">${rowLab[row]||row}</div>
-      <div class="xtab-bar">${segs}</div>
+      <div class="xtab-bar" role="img" aria-label="${rowLab[row]||row}: ${barText}">${segs}</div>
       <div class="xtab-n">n=${total}</div>
     </div>`;
   }).join('');
@@ -1057,6 +1127,27 @@ function grpPctExcl(data, rowKey, rowVal, colKey, colVal, exclVal) {
   if (!sub.length) return 0;
   return Math.round(sub.filter(d => d[colKey] === colVal).length / sub.length * 100);
 }
+// Figures quoted in the panel copy, computed from the live data so the text cannot drift from it
+function vOf(data, a, b) { const s = chiSqStats(data, a, b); return s ? s.V.toFixed(2) : '–'; }
+function testLine(data, a, b) {
+  const s = chiSqStats(data, a, b);
+  return s ? `χ²=${s.chi2.toFixed(2)}, ${fmtP(s.p)}, Cramér's V≈${s.V.toFixed(2)}, n=${s.n.toLocaleString('en-GB')}` : 'too few records to test';
+}
+function pText(data, a, b) { const s = chiSqStats(data, a, b); return s ? fmtP(s.p) : 'p n/a'; }
+function meanBy(data, groupKey, groupVal, numKey) {
+  const vals = data.filter(d => d[groupKey] === groupVal).map(d => parseFloat(d[numKey])).filter(v => !isNaN(v));
+  return vals.length ? +(vals.reduce((a, b) => a + b, 0) / vals.length).toFixed(1) : 0;
+}
+function notStatedShares(data) {
+  const per = ['early', 'mid', 'mature'].map(m => grpPct(data, 'data_team_maturity', m, 'work_arrangement', 'not_stated'));
+  const stated = data.filter(d => d.work_arrangement && d.work_arrangement !== 'not_stated');
+  const withField = data.filter(d => d.work_arrangement);
+  return {
+    lo: Math.min(...per), hi: Math.max(...per),
+    all: withField.length ? Math.round(100 * (withField.length - stated.length) / withField.length) : 0,
+    remote: stated.length ? Math.round(100 * stated.filter(d => d.work_arrangement === 'remote').length / stated.length) : 0,
+  };
+}
 function median(xs) {
   const s = [...xs].sort((a,b)=>a-b), m = s.length;
   if (!m) return 0;
@@ -1069,16 +1160,22 @@ function medianBy(data, groupKey, groupVal, numKey) {
 }
 
 function buildRelationships(data) {
+  const ns = notStatedShares(data);
+  const stated = data.filter(d => d.work_arrangement && d.work_arrangement !== 'not_stated');
+  const wa = (m, k) => grpPctExcl(data, 'data_team_maturity', m, 'work_arrangement', k, 'not_stated');
+  const ratio = (a, b) => (a / Math.max(1, b)).toFixed(1);
+  const nIn = r => data.filter(d => d.geo_macro === r).length;
+  const salIn = r => data.filter(d => d.geo_macro === r && d.salary_min && d.salary_max).length;
   const cnt = (k, v) => data.filter(d => d[k] === v).length;
   const panels = [
     {
       id: 'rel-maturity-mission', rowKey: 'data_team_maturity', colKey: 'greenfield_vs_fix',
-      tag: 'Team maturity × Greenfield vs fix · Strongest relationship in the dataset',
+      tag: 'Team maturity × Greenfield vs fix: Strongest relationship in the dataset',
       takeaway: 'Greenfield work is almost entirely an early-stage phenomenon. Mature teams hire overwhelmingly to fix and scale, not build from scratch.',
       q: { seeker: 'Where is the "build from scratch" work, really?',
            manager: 'Candidates infer the day-to-day work from your company stage. Is your posting honest about which it is?' },
-      statFn: () => `Greenfield work concentrates at ${grpPct(data,'data_team_maturity','early','greenfield_vs_fix','greenfield')}% of early-stage roles, and is nearly absent at mature teams (${grpPct(data,'data_team_maturity','mature','greenfield_vs_fix','greenfield')}%). Mature teams' modal mission is fix/scale (${grpPct(data,'data_team_maturity','mature','greenfield_vs_fix','fix_scale')}%) - repairing and replacing, not starting over.`,
-      read: `The common advice - go early-stage for greenfield work - holds structurally, and has held harder as the corpus grew. This is the one cross-tab in the dataset that behaves almost deterministically. What's less obvious: mature teams carry the largest fix/scale share, about a third of their roles. They're the segment most likely to be hiring explicitly to replace or repair an underperforming system, not just extend a stable stack. Mid-stage is dominated by "mixed," the messiest, least clearly-scoped category, which also happens to be most of the market.`,
+      statFn: () => `Greenfield work concentrates at ${grpPct(data,'data_team_maturity','early','greenfield_vs_fix','greenfield')}% of early-stage roles, and is nearly absent at mature teams (${grpPct(data,'data_team_maturity','mature','greenfield_vs_fix','greenfield')}%). Mature teams' modal mission is fix/scale (${grpPct(data,'data_team_maturity','mature','greenfield_vs_fix','fix_scale')}%) — repairing and replacing, not starting over.`,
+      read: `The common advice — go early-stage for greenfield work — holds structurally, and has held harder as the corpus grew. This is the one cross-tab in the dataset that behaves almost deterministically. What's less obvious: mature teams carry the largest fix/scale share, ${grpPct(data,'data_team_maturity','mature','greenfield_vs_fix','fix_scale')}% of their roles. They're the segment most likely to be hiring explicitly to replace or repair an underperforming system, not just extend a stable stack. Mid-stage is dominated by "mixed," the messiest, least clearly-scoped category, which also happens to be most of the market.`,
       tip: {
         seeker: `If you want a portfolio-defining greenfield build, target early-stage specifically. Don't assume a "modernise our stack" mid-stage JD will give you that. If you like fixing broken systems, mature teams with fix/scale framing are a better match than their seniority-heavy titles might suggest.`,
         manager: `Your stage sets expectations before the candidate reads a word: early reads as greenfield, mature as fix/scale. If your mid-stage "modernise our stack" role is mostly maintenance, say so plainly. The mismatch surfaces by day 90, and it costs you exactly the candidate you screened hardest to get.`,
@@ -1089,43 +1186,43 @@ function buildRelationships(data) {
       tag: 'Domain risk × Stakeholder audience',
       takeaway: '"High-stakes" concentrates in finance. Product analytics is almost never coded high-risk even when the failure mode is real.',
       q: { seeker: 'Where does "high stakes" actually concentrate?',
-           manager: '"High stakes" reads as "finance" - if your risk is real but unregulated, the label won\'t carry it' },
+           manager: '"High stakes" reads as "finance" — if your risk is real but unregulated, the label won\'t carry it' },
       statFn: () => `High-risk roles are ${grpPct(data,'domain_risk','high','stakeholder_orientation','finance')}% finance-facing, versus ${grpPct(data,'domain_risk','moderate','stakeholder_orientation','finance')}% for moderate-risk roles. The current corpus contains exactly ${data.filter(d=>d.domain_risk==='high'&&d.stakeholder_orientation==='product').length} high-risk product-analytics role${data.filter(d=>d.domain_risk==='high'&&d.stakeholder_orientation==='product').length===1?'':'s'}.`,
-      read: `Domain risk isn't spread evenly across audiences. It concentrates heavily in finance, where regulation externally defines what "high stakes" means - IFRS, audit standards, SOX-adjacent controls. Product analytics is essentially never coded high-risk in JD language, even though experimentation errors can carry real revenue consequences. There's no external regulator setting a "risk bar" for A/B tests the way there is for financial reporting, so employers default to moderate. The association has weakened somewhat as the corpus grew - more high-risk internal-platform roles at fintechs - but remains one of the most robust in the data.`,
+      read: `Domain risk isn't spread evenly across audiences. It concentrates heavily in finance, where regulation externally defines what "high stakes" means — IFRS, audit standards, SOX-adjacent controls. Product analytics is essentially never coded high-risk in JD language, even though experimentation errors can carry real revenue consequences. There's no external regulator setting a "risk bar" for A/B tests the way there is for financial reporting, so employers default to moderate. The association has weakened somewhat as the corpus grew — more high-risk internal-platform roles at fintechs — but remains one of the most robust in the data.`,
       tip: {
         seeker: `"High-stakes" framing on your resume is credible mainly if you're pointing at finance or compliance work. Using it for product-analytics experience will read as inflated against how this market actually classifies risk.`,
-        manager: `The market has taught candidates that "high stakes" means finance. If errors in your domain carry real cost - safety, medical, marketplace trust, experimentation revenue - spell out the failure mode and what it costs in the JD itself. The sector label alone won't communicate it.`,
+        manager: `The market has taught candidates that "high stakes" means finance. If errors in your domain carry real cost — safety, medical, marketplace trust, experimentation revenue — spell out the failure mode and what it costs in the JD itself. The sector label alone won't communicate it.`,
       },
     },
     {
       id: 'rel-testing-rigour', rowKey: 'testing_framing', colKey: 'velocity_vs_rigour',
       tag: 'Testing framing × Rigour orientation',
-      takeaway: '"Rigour" language tells you the team values correctness. It doesn\'t tell you whether quality is named as your personal job - check testing framing separately.',
+      takeaway: '"Rigour" language tells you the team values correctness. It doesn\'t tell you whether quality is named as your personal job — check testing framing separately.',
       q: { seeker: 'Is "quality" a team value, or your personal job?',
-           manager: 'If quality is genuinely the hire\'s job, does your JD name it - or just say "quality"?' },
+           manager: 'If quality is genuinely the hire\'s job, does your JD name it — or just say "quality"?' },
       statFn: () => `${grpPct(data,'testing_framing','responsibility','velocity_vs_rigour','rigour')}% of "owns quality" JDs are rigour-coded, versus ${grpPct(data,'testing_framing','absent','velocity_vs_rigour','rigour')}% of JDs that don't mention testing at all (n=${data.filter(d=>d.testing_framing).length}).`,
-      read: `Rigour orientation - correctness over speed - is necessary but not sufficient to tell you whether <em>you personally</em> will be accountable for data quality, or whether it's just team culture. "Testing framing = responsibility" identifies the roles where governance has been written into the job as a named, individual accountability, not delegated to "the team" or a tool in the stack. That's the more actionable signal for how your first 90 days will actually go. The association is one of the cleanest in the dataset (Cramér's V≈0.29).`,
+      read: `Rigour orientation — correctness over speed — is necessary but not sufficient to tell you whether <em>you personally</em> will be accountable for data quality, or whether it's just team culture. "Testing framing = responsibility" identifies the roles where governance has been written into the job as a named, individual accountability, not delegated to "the team" or a tool in the stack. That's the more actionable signal for how your first 90 days will actually go. The association is one of the cleanest in the dataset (Cramér's V≈${vOf(data,'testing_framing','velocity_vs_rigour')}).`,
       tip: {
-        seeker: `For "owns quality" roles, lead with concrete accountability - "owned the data contract framework," "reduced production incidents by X%." For roles where testing is absent from the JD, don't over-index on quality bullets. Lead with delivery and impact instead.`,
-        manager: `"Data quality mindset" appears in nearly every posting and selects for nobody. A named, individual accountability - "you own the data contract framework," "you define the testing standards" - is rare in this corpus, and it's precisely what quality-motivated candidates filter for. If it's team culture rather than this hire's job, don't dress it up as ownership. That reads as scope inflation in the interview.`,
+        seeker: `For "owns quality" roles, lead with concrete accountability — "owned the data contract framework," "reduced production incidents by X%." For roles where testing is absent from the JD, don't over-index on quality bullets. Lead with delivery and impact instead.`,
+        manager: `"Data quality mindset" appears in most postings and selects for nobody. A named, individual accountability — "you own the data contract framework," "you define the testing standards" — is rare in this corpus, and it's precisely what quality-motivated candidates filter for. If it's team culture rather than this hire's job, don't dress it up as ownership. That reads as scope inflation in the interview.`,
       },
     },
     {
       id: 'rel-seniority-autonomy', rowKey: 'seniority', colKey: 'autonomy_level',
       tag: 'Seniority × Autonomy',
-      takeaway: 'A Senior title roughly doubles your odds of strategic scope over Mid. But within "Senior" itself, it\'s still close to a coin flip.',
-      q: { seeker: '"Senior" titles - do they actually predict who sets direction?',
+      takeaway: `A Senior title lifts strategic scope from ${grpPct(data,'seniority','mid','autonomy_level','strategic')}% of Mid roles to ${grpPct(data,'seniority','senior','autonomy_level','strategic')}%. But within "Senior" itself, it's still close to a coin flip.`,
+      q: { seeker: '"Senior" titles — do they actually predict who sets direction?',
            manager: 'Your "Senior" title tells candidates almost nothing about the scope you\'re offering' },
-      statFn: () => `"Senior" (n=${cnt('seniority','senior')}) is ${grpPct(data,'seniority','senior','autonomy_level','strategic')}% strategic versus ${grpPct(data,'seniority','mid','autonomy_level','strategic')}% for mid-level titles (n=${cnt('seniority','mid')}). Staff titles are ${grpPct(data,'seniority','staff','autonomy_level','strategic')}% strategic - but on ${cnt('seniority','staff')} records.`,
-      read: `<strong>Partly.</strong> A Senior title roughly doubles the odds of strategic scope versus a mid-level title. But it's still not much better than a coin flip <em>within</em> the title, and the impressive-looking tail - staff and lead titles going overwhelmingly strategic - sits on small counts. The test's significance is partly carried by cells too sparse to trust individually. The senior-vs-mid boundary is the durable part of this finding.`,
+      statFn: () => `"Senior" (n=${cnt('seniority','senior')}) is ${grpPct(data,'seniority','senior','autonomy_level','strategic')}% strategic versus ${grpPct(data,'seniority','mid','autonomy_level','strategic')}% for mid-level titles (n=${cnt('seniority','mid')}). Staff titles are ${grpPct(data,'seniority','staff','autonomy_level','strategic')}% strategic — but on ${cnt('seniority','staff')} records.`,
+      read: `<strong>Partly.</strong> A Senior title lifts strategic scope from ${grpPct(data,'seniority','mid','autonomy_level','strategic')}% of mid-level roles to ${grpPct(data,'seniority','senior','autonomy_level','strategic')}%. But it's still not much better than a coin flip <em>within</em> the title, and the impressive-looking tail — staff and lead titles going overwhelmingly strategic — sits on small counts. The test's significance is partly carried by cells too sparse to trust individually. The senior-vs-mid boundary is the durable part of this finding.`,
       tip: {
-        seeker: `The senior-vs-mid distinction is worth filtering on. Within "Senior," keep reading the verbs - "define/own/shape" versus "support/assist/deliver" - and ask directly in the interview what decisions the role makes autonomously in year one. Don't pay a premium for a Staff title on the strength of this dataset. The sample is too thin.`,
-        manager: `Within "Senior," candidates can't tell a direction-setting role from a ticket-executing one - the title splits close to the market base rate. Name the decisions the role owns in year one ("you choose the modelling architecture," "you set the testing roadmap"). It's the single cheapest differentiation available in this market, and its absence is why strong candidates ask pointed autonomy questions in your first screen.`,
+        seeker: `The senior-vs-mid distinction is worth filtering on. Within "Senior," keep reading the verbs — "define/own/shape" versus "support/assist/deliver" — and ask directly in the interview what decisions the role makes autonomously in year one. Don't pay a premium for a Staff title on the strength of this dataset. The sample is too thin.`,
+        manager: `Within "Senior," candidates can't tell a direction-setting role from a ticket-executing one — the title splits close to the market base rate. Name the decisions the role owns in year one ("you choose the modelling architecture," "you set the testing roadmap"). It's the single cheapest differentiation available in this market, and its absence is why strong candidates ask pointed autonomy questions in your first screen.`,
       },
     },
     {
       id: 'rel-stakeholder-autonomy', rowKey: 'stakeholder_orientation', colKey: 'autonomy_level',
-      tag: 'Stakeholder audience × Autonomy · A weak effect',
+      tag: 'Stakeholder audience × Autonomy: A weak effect',
       takeaway: 'Product-facing roles carry the most strategic scope. Every other audience sits close to the market split, so the audience label is a weak signal on its own.',
       q: { seeker: 'Does who you serve tell you how much say you get?',
            manager: 'Your posting\'s audience shapes how much scope candidates assume' },
@@ -1138,28 +1235,28 @@ function buildRelationships(data) {
     },
     {
       id: 'rel-mission-autonomy', rowKey: 'greenfield_vs_fix', colKey: 'autonomy_level',
-      tag: 'Mission × Autonomy · Tighter than company stage alone',
-      takeaway: 'What you\'d actually build - greenfield vs. fix/scale - predicts autonomy more tightly than company stage does. Read the mission line, not just the "About us."',
+      tag: 'Mission × Autonomy: Tighter than company stage alone',
+      takeaway: 'What you\'d actually build — greenfield vs. fix/scale — predicts autonomy more tightly than company stage does. Read the mission line, not just the "About us."',
       q: { seeker: 'What predicts strategic scope better: company stage, or what you\'d actually be doing?',
            manager: 'If you want to advertise real ownership, "greenfield" carries more than a maturity label does' },
-      statFn: () => `Greenfield roles are ${grpPct(data,'greenfield_vs_fix','greenfield','autonomy_level','strategic')}% strategic, versus ${grpPct(data,'greenfield_vs_fix','fix_scale','autonomy_level','strategic')}% for fix/scale roles, which lean execution (${grpPct(data,'greenfield_vs_fix','fix_scale','autonomy_level','execution')}%). The association (V≈0.28) is stronger than team maturity's own grip on autonomy (V≈0.20, see below).`,
-      read: `Company stage predicts autonomy indirectly, through mission: early-stage companies tend to hand out greenfield work, and greenfield work is what actually carries strategic scope. Tested directly, mission is the tighter predictor of the two. A mature company running a genuine greenfield initiative - a new platform, a first ML pipeline - looks more like the greenfield column here than the mature column of the maturity panel. The "mixed" mission category sits almost exactly between the two poles, which is what you'd expect if it's a real blend, not a hedge.`,
+      statFn: () => `Greenfield roles are ${grpPct(data,'greenfield_vs_fix','greenfield','autonomy_level','strategic')}% strategic, versus ${grpPct(data,'greenfield_vs_fix','fix_scale','autonomy_level','strategic')}% for fix/scale roles, which lean execution (${grpPct(data,'greenfield_vs_fix','fix_scale','autonomy_level','execution')}%). The association (V≈${vOf(data,'greenfield_vs_fix','autonomy_level')}) is stronger than team maturity's own grip on autonomy (V≈${vOf(data,'data_team_maturity','autonomy_level')}, see below).`,
+      read: `Company stage predicts autonomy indirectly, through mission: early-stage companies tend to hand out greenfield work, and greenfield work is what actually carries strategic scope. Tested directly, mission is the tighter predictor of the two. A mature company running a genuine greenfield initiative — a new platform, a first ML pipeline — looks more like the greenfield column here than the mature column of the maturity panel. The "mixed" mission category sits almost exactly between the two poles, which is what you'd expect if it's a real blend, not a hedge.`,
       tip: {
-        seeker: `If a mature or mid-stage company's JD reads as genuinely greenfield for a specific initiative - not "modernise everything," but "build the first X" - treat that as a stronger autonomy signal than the company's stage alone. Read the mission language, not just the "About us" section.`,
+        seeker: `If a mature or mid-stage company's JD reads as genuinely greenfield for a specific initiative — not "modernise everything," but "build the first X" — treat that as a stronger autonomy signal than the company's stage alone. Read the mission language, not just the "About us" section.`,
         manager: `"Greenfield" is a more specific and more credible ownership signal than your company stage implies on its own. If part of your team's remit is genuinely a from-scratch build, name that project directly rather than leaning on "early-stage energy" or similar stage-based framing. It reads as a stronger promise, and this data backs that instinct.`,
       },
     },
     {
       id: 'rel-authorship-autonomy', rowKey: 'jd_authorship', colKey: 'autonomy_level',
-      tag: 'JD authorship × Autonomy · Authorship\'s strongest tell',
+      tag: 'JD authorship × Autonomy: Authorship\'s strongest tell',
       takeaway: 'A recruiter-templated posting doesn\'t just under-name the stack. It undersells the role\'s real decision rights.',
       q: { seeker: 'Does who wrote the JD predict the actual shape of the job, not just the tool list?',
-           manager: 'A templated posting doesn\'t just under-name your stack - it undersells your role\'s scope' },
+           manager: 'A templated posting doesn\'t just under-name your stack — it undersells your role\'s scope' },
       statFn: () => `${grpPct(data,'jd_authorship','hiring_manager','autonomy_level','strategic')}% of hiring-manager-authored JDs are strategic, versus ${grpPct(data,'jd_authorship','recruiter','autonomy_level','strategic')}% of recruiter-authored ones, which run ${grpPct(data,'jd_authorship','recruiter','autonomy_level','execution')}% execution instead. This is a larger gap than authorship's effect on whether dbt gets named.`,
-      read: `Same logic as the authorship/dbt panel, and it applies harder here. An engineer writing their own JD tends to describe the actual decision rights of the role. A template built for reach and searchability defaults to safe, listable duties - "deliver," "support," "assist" - regardless of what the role really is. The effect size here (V≈0.21) sits just below the authorship/dbt relationship (V≈0.23). If you're trying to read scope rather than stack, this is the more useful of the two authorship tells.`,
+      read: `Same logic as the authorship/dbt panel, and it applies harder here. An engineer writing their own JD tends to describe the actual decision rights of the role. A template built for reach and searchability defaults to safe, listable duties — "deliver," "support," "assist" — regardless of what the role really is. The effect size here (V≈${vOf(data,'jd_authorship','autonomy_level')}) sits just below the authorship/dbt relationship (V≈${vOf(data,'jd_authorship','dbt_named')}). If you're trying to read scope rather than stack, this is the more useful of the two authorship tells.`,
       tip: {
-        seeker: `Weight authorship signals when judging a JD's autonomy claims. An engineer-written posting that says "you'll own X" is more likely to mean it. A recruiter-templated posting saying the same thing is worth confirming directly in screening - the base rate for that phrasing turning into real strategic scope is much lower coming from that source.`,
-        manager: `If your posting goes out recruiter-first or template-first, it's statistically more likely to undersell the role's real scope, not just its stack. Candidates who care about ownership read exactly this signal and self-select out. If the role does carry real decision rights, have the hiring manager write or review that section directly - it's the cheapest fix available for a role that's better than its JD makes it sound.`,
+        seeker: `Weight authorship signals when judging a JD's autonomy claims. An engineer-written posting that says "you'll own X" is more likely to mean it. A recruiter-templated posting saying the same thing is worth confirming directly in screening — the base rate for that phrasing turning into real strategic scope is much lower coming from that source.`,
+        manager: `If your posting goes out recruiter-first or template-first, it's statistically more likely to undersell the role's real scope, not just its stack. Candidates who care about ownership read exactly this signal and self-select out. If the role does carry real decision rights, have the hiring manager write or review that section directly — it's the cheapest fix available for a role that's better than its JD makes it sound.`,
       },
     },
     {
@@ -1169,10 +1266,10 @@ function buildRelationships(data) {
       q: { seeker: 'A JD doesn\'t mention dbt. Does that mean the team doesn\'t use it?',
            manager: 'If a recruiter drafts your posting, your actual stack probably won\'t survive the template' },
       statFn: () => `${grpPct(data,'jd_authorship','hiring_manager','dbt_named','named')}% of hiring-manager-authored JDs name dbt, versus ${grpPct(data,'jd_authorship','recruiter','dbt_named','named')}% of recruiter-authored ones.`,
-      read: `A hiring manager writes the tools they actually screen with into the JD. A recruiter often works from a template. So a missing dbt requirement means different things depending on who wrote the posting: in an engineer-written JD it's moderately informative about the stack, in a recruiter-written one it's close to noise. One honesty caveat: authorship is the least reliable dimension in the codebook, lowest classifier self-consistency across repeated runs - though "recruiter" is the cleanest of its three labels, conveniently the one this finding leans on most.`,
+      read: `A hiring manager writes the tools they actually screen with into the JD. A recruiter often works from a template. So a missing dbt requirement means different things depending on who wrote the posting: in an engineer-written JD it's moderately informative about the stack, in a recruiter-written one it's close to noise. One honesty caveat: authorship is the least reliable dimension in the codebook, lowest classifier self-consistency across repeated runs — though "recruiter" is the cleanest of its three labels, conveniently the one this finding leans on most.`,
       tip: {
-        seeker: `Don't self-select out of a recruiter-authored posting because your core tool isn't listed, and don't skip dbt or tooling prep for it either. Treat every named tool in a clearly engineer-written JD as a real screening criterion, though - for that author, it probably is.`,
-        manager: `Recruiter-templated postings name the real stack at a third the rate of engineer-written ones, and candidates discount generic postings accordingly. The strongest ones self-select out before you ever see them. Write the tools-and-responsibilities section yourself, or at minimum review it - every named tool reads as a genuine screening criterion, and every missing one as a coin flip about your team.`,
+        seeker: `Don't self-select out of a recruiter-authored posting because your core tool isn't listed, and don't skip dbt or tooling prep for it either. Treat every named tool in a clearly engineer-written JD as a real screening criterion, though — for that author, it probably is.`,
+        manager: `Recruiter-templated postings name dbt in ${grpPct(data,'jd_authorship','recruiter','dbt_named','named')}% of cases, against ${grpPct(data,'jd_authorship','hiring_manager','dbt_named','named')}% for engineer-written ones, and candidates discount generic postings accordingly. The strongest ones self-select out before you ever see them. Write the tools-and-responsibilities section yourself, or at minimum review it — every named tool reads as a genuine screening criterion, and every missing one as a coin flip about your team.`,
       },
     },
     {
@@ -1180,37 +1277,37 @@ function buildRelationships(data) {
       tag: 'Team maturity × Autonomy',
       takeaway: 'Strategic ownership concentrates at early-stage teams. Most of the market is mid-stage, where the roadmap is already set.',
       q: { seeker: 'Where does "own the data model" actually mean something?',
-           manager: '"Own the roadmap" is credible from early-stage teams - and discounted from everyone else' },
-      statFn: () => `Early-stage teams offer strategic autonomy ${grpPct(data,'data_team_maturity','early','autonomy_level','strategic')}% of the time, versus ${grpPct(data,'data_team_maturity','mid','autonomy_level','strategic')}% at mid-stage teams - despite mid-stage being ${Math.round(data.filter(d=>d.data_team_maturity==='mid').length/(data.filter(d=>d.data_team_maturity).length||1)*100)}% of the market.`,
-      read: `Early-stage companies are the clearest source of genuine strategic autonomy. The greenfield career-advice claim holds up in the data, though the effect is real but modest - about half the strength of maturity's grip on mission type, above. Most of the market is mid-stage, where the roadmap is already set and the role skews toward extending it, not defining it. Mid-stage leans execution harder than any other tier. Mature teams sit between mid and early-stage - sophisticated platforms come with established direction-setters already in the building.`,
+           manager: '"Own the roadmap" is credible from early-stage teams — and discounted from everyone else' },
+      statFn: () => `Early-stage teams offer strategic autonomy ${grpPct(data,'data_team_maturity','early','autonomy_level','strategic')}% of the time, versus ${grpPct(data,'data_team_maturity','mid','autonomy_level','strategic')}% at mid-stage teams — despite mid-stage being ${Math.round(data.filter(d=>d.data_team_maturity==='mid').length/(data.filter(d=>d.data_team_maturity).length||1)*100)}% of the market.`,
+      read: `Early-stage companies are the clearest source of genuine strategic autonomy. The greenfield career-advice claim holds up in the data, though the effect is real but modest — about half the strength of maturity's grip on mission type, above. Most of the market is mid-stage, where the roadmap is already set and the role skews toward extending it, not defining it. Mid-stage leans execution harder than any other tier. Mature teams sit between mid and early-stage — sophisticated platforms come with established direction-setters already in the building.`,
       tip: {
         seeker: `If strategic ownership is what you want, filter for early-stage teams first. Don't rely on title language at mid-stage companies to signal it. If you want structure and mentorship over direction-setting, mid-stage is the honest default, not a consolation prize.`,
-        manager: `Candidates have learned that mid-stage roadmaps are already set, so ownership language from a mid-stage team gets discounted. If your role genuinely carries direction-setting scope, prove it - name a decision the last person in the seat actually made. If it doesn't, sell the structure, mentorship, and scale instead. That's what your stage credibly offers, and the candidates it attracts will stay.`,
+        manager: `Candidates have learned that mid-stage roadmaps are already set, so ownership language from a mid-stage team gets discounted. If your role genuinely carries direction-setting scope, prove it — name a decision the last person in the seat actually made. If it doesn't, sell the structure, mentorship, and scale instead. That's what your stage credibly offers, and the candidates it attracts will stay.`,
       },
     },
     {
       id: 'rel-maturity-workarr', rowKey: 'data_team_maturity', colKey: 'work_arrangement',
-      tag: 'Team maturity × Work arrangement · Including JDs that state no policy at all',
+      tag: 'Team maturity × Work arrangement: Including JDs that state no policy at all',
       takeaway: 'About a third of postings at every stage say nothing about work arrangement. Among those that do, mature teams have converged on hybrid; early-stage is still contested.',
       q: { seeker: 'Is remote work actually still available, or only at unstable-sounding companies? And who\'s just not saying?',
            manager: 'Your maturity stage predicts what work-arrangement claim candidates will believe' },
-      statFn: () => `${grpPct(data,'data_team_maturity','mature','work_arrangement','not_stated')}% of mature-team postings state no arrangement at all, versus ${grpPct(data,'data_team_maturity','early','work_arrangement','not_stated')}% at early-stage - a gap, but silence is common at every stage (roughly a third of postings overall). Among the ones that do state a policy, mature teams post hybrid ${grpPctExcl(data,'data_team_maturity','mature','work_arrangement','hybrid','not_stated')}% of the time versus ${grpPctExcl(data,'data_team_maturity','early','work_arrangement','hybrid','not_stated')}% for early-stage.`,
-      read: `Add the "not stated" cases back in and the picture changes from the stated-policy-only view: roughly a third of postings at every maturity tier say nothing about work arrangement, so any hybrid/remote/onsite split describes only the two-thirds of the market that bothered to specify. Among <em>those</em>, mature data teams have mostly converged on hybrid (82%). Full remote is uncommon, about one in eight stated policies. Early-stage teams are the contrast: work arrangement is more contested, split hybrid-majority/onsite/remote (63% / 21% / 16%), which likely reflects small teams still deciding their own default rather than inheriting a corporate real-estate policy. Mid-stage sits between the two (77% / 8% / 15%), closer to mature's hybrid convergence than to early-stage's split. The "not stated" share itself varies modestly by maturity - 32% at early-stage, 36% mid, 43% mature - so silence is a background rate of roughly a third everywhere, slightly higher at mature teams. The association is statistically detectable on both versions of the test, at a small effect size: among the three stated options χ²=19.91, p=0.0005, Cramér's V≈0.13 (n=631), and with "not stated" folded in as a fourth category χ²=26.49, p=0.0002, V≈0.11 (n=1,007). Read it as a real but small pattern. The corpus spans roughly six months (April–October 2026), too short a window to claim a trend either way.`,
+      statFn: () => `${grpPct(data,'data_team_maturity','mature','work_arrangement','not_stated')}% of mature-team postings state no arrangement at all, versus ${grpPct(data,'data_team_maturity','early','work_arrangement','not_stated')}% at early-stage — a gap, but silence is common at every stage (${ns.all}% of postings overall). Among the ones that do state a policy, mature teams post hybrid ${grpPctExcl(data,'data_team_maturity','mature','work_arrangement','hybrid','not_stated')}% of the time versus ${grpPctExcl(data,'data_team_maturity','early','work_arrangement','hybrid','not_stated')}% for early-stage.`,
+      read: `Add the "not stated" cases back in and the picture changes from the stated-policy-only view: between ${ns.lo}% and ${ns.hi}% of postings at every maturity tier say nothing about work arrangement, so any hybrid/remote/onsite split describes only the ${100 - ns.all}% of the market that bothered to specify. Among <em>those</em>, mature data teams have mostly converged on hybrid (${wa('mature','hybrid')}%). Full remote is uncommon, about ${ns.remote}% of stated policies. Early-stage teams are the contrast: work arrangement is more contested, split hybrid-majority/onsite/remote (${wa('early','hybrid')}% / ${wa('early','onsite')}% / ${wa('early','remote')}%), which likely reflects small teams still deciding their own default rather than inheriting a corporate real-estate policy. Mid-stage sits between the two (${wa('mid','hybrid')}% / ${wa('mid','onsite')}% / ${wa('mid','remote')}%), closer to mature's hybrid convergence than to early-stage's split. The "not stated" share itself varies modestly by maturity — ${grpPct(data,'data_team_maturity','early','work_arrangement','not_stated')}% at early-stage, ${grpPct(data,'data_team_maturity','mid','work_arrangement','not_stated')}% mid, ${grpPct(data,'data_team_maturity','mature','work_arrangement','not_stated')}% mature — so silence is a background rate of ${ns.all}% overall, highest at mature teams. The association is statistically detectable on both versions of the test, at a small effect size: among the three stated options ${testLine(stated,'data_team_maturity','work_arrangement')}, and with "not stated" folded in as a fourth category ${testLine(data,'data_team_maturity','work_arrangement')}. Read it as a real but small pattern. The corpus spans roughly six months (April–October 2026), too short a window to claim a trend either way.`,
       tip: {
-        seeker: `If fully remote is a hard requirement, early-stage and smaller companies are structurally your better search target in this market. Mature-team postings that still offer it are the exception, not a fallback you can count on. But a third of postings at every stage say nothing at all - don't read silence as "onsite by default." Ask directly in screening, regardless of company stage. For mature-team roles that do state a policy, budget for a 2–3 day/week office commute by default.`,
-        manager: `If you're a mature team offering genuine remote flexibility, say so explicitly and early. It currently reads as a rare enough claim that candidates may discount it as boilerplate unless you're specific - days, geography, exceptions. If your posting states no policy at all, you're in the roughly one-third majority at every stage, but that's not neutral. Ambiguity here is exactly the kind of gap a strong candidate probes for and a weak one avoids. Stating it, even a firm in-office default, out-converts stating nothing.`,
+        seeker: `If fully remote is a hard requirement, early-stage and smaller companies are structurally your better search target in this market. Mature-team postings that still offer it are the exception, not a fallback you can count on. But ${ns.lo}% to ${ns.hi}% of postings at every stage say nothing at all — don't read silence as "onsite by default." Ask directly in screening, regardless of company stage. For mature-team roles that do state a policy, budget for a 2–3 day/week office commute by default.`,
+        manager: `If you're a mature team offering genuine remote flexibility, say so explicitly and early. It currently reads as a rare enough claim that candidates may discount it as boilerplate unless you're specific — days, geography, exceptions. If your posting states no policy at all, you're among the ${ns.all}% that state none, which is common at every stage, but that's not neutral. Ambiguity here is exactly the kind of gap a strong candidate probes for and a weak one avoids. Stating it, even a firm in-office default, out-converts stating nothing.`,
       },
     },
     {
       id: 'rel-fear-collab', rowKey: 'loss_aversion_framing', colKey: 'collaboration_width', numeric: true,
-      tag: 'Loss-aversion framing × Collaboration width · Fragile but monotonic',
+      tag: 'Loss-aversion framing × Collaboration width: Fragile but monotonic',
       takeaway: 'Fear-framed JDs (compliance, audit, trust) name roughly triple the stakeholder teams of fear-free ones. Treat it as a pattern to probe, not an established fact.',
       q: { seeker: 'Do fearful employers ask you to talk to more people?',
            manager: 'Compliance framing sets expectations about stakeholder load. Name the real number' },
-      statFn: () => `Median named-stakeholder count: ${medianBy(data,'loss_aversion_framing','high','collaboration_width').toFixed(1)} for high-fear JDs, ${medianBy(data,'loss_aversion_framing','moderate','collaboration_width').toFixed(1)} for moderate, and ${medianBy(data,'loss_aversion_framing','none','collaboration_width').toFixed(1)} for no-fear JDs - a monotonic gradient.`,
-      read: `Employers who write compliance- or trust-failure language into the JD - "regulatory exposure," "auditability," "data reaching decision-makers" - also name more stakeholder teams in the responsibilities section. A wider named-stakeholder count than JDs with no fear signal (median 3 named teams versus 2; means 3.3 versus 1.9). One reading: when an employer fears a specific failure mode, they scope the role to touch more of the organisation, so more surface area catches failures before they spread. Both dimensions are coded on the full analytical cohort, the high-fear group is 254 records, and the gradient is highly significant (Kruskal-Wallis p<0.0001) - considerably more robust than it looked in earlier snapshots when <code>loss_aversion_framing</code> was still coded on a small subset. <code>collaboration_width</code> stays the noisier of the two dimensions on its own - lowest evidence-quote pass rate, JDs say "cross-functional" without naming teams - so treat the count itself as approximate even though the gradient across fear levels is solid. A related earlier claim, that mature teams name the most partner teams, flattened out entirely at larger n. See the negative-results section.`,
+      statFn: () => `Median named-stakeholder count: ${medianBy(data,'loss_aversion_framing','high','collaboration_width').toFixed(1)} for high-fear JDs, ${medianBy(data,'loss_aversion_framing','moderate','collaboration_width').toFixed(1)} for moderate, and ${medianBy(data,'loss_aversion_framing','none','collaboration_width').toFixed(1)} for no-fear JDs — a monotonic gradient.`,
+      read: `Employers who write compliance- or trust-failure language into the JD — "regulatory exposure," "auditability," "data reaching decision-makers" — also name more stakeholder teams in the responsibilities section. A wider named-stakeholder count than JDs with no fear signal (median ${+medianBy(data,'loss_aversion_framing','high','collaboration_width').toFixed(1)} named teams versus ${+medianBy(data,'loss_aversion_framing','none','collaboration_width').toFixed(1)}; means ${meanBy(data,'loss_aversion_framing','high','collaboration_width')} versus ${meanBy(data,'loss_aversion_framing','none','collaboration_width')}). One reading: when an employer fears a specific failure mode, they scope the role to touch more of the organisation, so more surface area catches failures before they spread. Both dimensions are coded on the full analytical cohort, the high-fear group is ${data.filter(d => d.loss_aversion_framing === 'high').length} records, and the gradient is highly significant (Kruskal-Wallis p<0.0001) — considerably more robust than it looked in earlier snapshots when <code>loss_aversion_framing</code> was still coded on a small subset. <code>collaboration_width</code> stays the noisier of the two dimensions on its own — lowest evidence-quote pass rate, JDs say "cross-functional" without naming teams — so treat the count itself as approximate even though the gradient across fear levels is solid. A related earlier claim, that mature teams name the most partner teams, flattened out entirely at larger n. See the negative-results section.`,
       tip: {
-        seeker: `If a JD reads as fearful (compliance, trust, "single source of truth" framing), treat wide stakeholder scope as a hypothesis worth probing in the interview - "how many teams does this role interface with in a normal month?" - not an established fact. Cross-functional communication experience is still worth foregrounding for these postings.`,
+        seeker: `If a JD reads as fearful (compliance, trust, "single source of truth" framing), treat wide stakeholder scope as a hypothesis worth probing in the interview — "how many teams does this role interface with in a normal month?" — not an established fact. Cross-functional communication experience is still worth foregrounding for these postings.`,
         manager: `If your posting leans on trust or compliance framing, candidates will reasonably expect a wide stakeholder surface. So tell them the real one. Name the actual partner teams and the honest interface load: "cross-functional" is unread boilerplate, a number is signal, and a mismatch between fearful framing and actual scope is the kind of thing that surfaces awkwardly in the first month.`,
       },
     },
@@ -1221,10 +1318,10 @@ function buildRelationships(data) {
       q: { seeker: 'Does the JD\'s fear register actually track real stakes?',
            manager: 'Does your posting\'s risk framing match your actual domain risk, or is it borrowed language?' },
       statFn: () => `${grpPct(data,'loss_aversion_framing','high','domain_risk','high')}% of high-fear JDs are in genuinely high-risk domains, versus ${grpPct(data,'loss_aversion_framing','none','domain_risk','high')}% of no-fear JDs. This is the tightest link either dimension has to anything else in the dataset.`,
-      read: `<code>loss_aversion_framing</code> shows the strongest relationship of any pairing involving it. JDs that name compliance, audit, or stakeholder-trust risk overwhelmingly sit in domains independently coded as high-stakes - finance, regulated sectors. That's reassuring as a construct-validity check: two dimensions coded from different evidence quotes land in the same place. It means the fear register is a genuine, not decorative, signal. It's tracking something real about the role, not free-floating anxiety language.`,
+      read: `<code>loss_aversion_framing</code> shows the strongest relationship of any pairing involving it. JDs that name compliance, audit, or stakeholder-trust risk overwhelmingly sit in domains independently coded as high-stakes — finance, regulated sectors. That's reassuring as a construct-validity check: two dimensions coded from different evidence quotes land in the same place. It means the fear register is a genuine, not decorative, signal. It's tracking something real about the role, not free-floating anxiety language.`,
       tip: {
         seeker: `A JD's fear register is one of the more trustworthy signals in this dataset. If it names compliance, audit, or trust risk explicitly, take that seriously as evidence of genuinely high stakes, not just corporate risk-aversion boilerplate.`,
-        manager: `Good news if your risk framing is honest: candidates - and their tools - can reasonably infer real stakes from your fear language, because in this market that language does correlate with genuine risk. The flip side: borrowing "audit-proof," "compliance-first" language for a role that isn't actually high-stakes reads as inflated against how consistently this pairing holds elsewhere.`,
+        manager: `Good news if your risk framing is honest: candidates — and their tools — can reasonably infer real stakes from your fear language, because in this market that language does correlate with genuine risk. The flip side: borrowing "audit-proof," "compliance-first" language for a role that isn't actually high-stakes reads as inflated against how consistently this pairing holds elsewhere.`,
       },
     },
     {
@@ -1234,20 +1331,20 @@ function buildRelationships(data) {
       q: { seeker: 'Does "you own quality" travel with "we\'re afraid of something"?',
            manager: 'If you\'re asking for quality ownership, does your JD also name what you\'re afraid of?' },
       statFn: () => `Only ${grpPct(data,'testing_framing','responsibility','loss_aversion_framing','none')}% of "owns quality" JDs carry no fear signal at all, versus ${grpPct(data,'testing_framing','absent','loss_aversion_framing','none')}% of JDs that never mention testing.`,
-      read: `Two independently-coded dimensions move together tightly. JDs that hand the candidate explicit quality ownership almost always also name a fear - usually operational reliability, sometimes compliance or trust. The "pure delivery, no risk register, but you personally own quality" combination is rare. This is a coherence check more than a surprise: an employer who cares enough to write quality ownership into the role usually cares enough to say what they're protecting against. The interesting minority is the reverse gap - JDs with fear language but no ownership framing, where the risk is named but nobody is explicitly on the hook for it.`,
+      read: `Two independently-coded dimensions move together tightly. JDs that hand the candidate explicit quality ownership almost always also name a fear — usually operational reliability, sometimes compliance or trust. The "pure delivery, no risk register, but you personally own quality" combination is rare. This is a coherence check more than a surprise: an employer who cares enough to write quality ownership into the role usually cares enough to say what they're protecting against. The interesting minority is the reverse gap — JDs with fear language but no ownership framing, where the risk is named but nobody is explicitly on the hook for it.`,
       tip: {
         seeker: `If a JD names quality ownership without naming a specific fear (incidents, compliance, trust), ask directly what "quality" is protecting against. It's an atypical combination, and worth clarifying before you take the role.`,
-        manager: `If your posting asks the hire to own data quality, name the specific fear you're protecting against - incident history, compliance exposure, stakeholder trust. That's the more typical, more credible pairing in this market. Ownership language without a stated risk reads as vaguer than most postings that use it.`,
+        manager: `If your posting asks the hire to own data quality, name the specific fear you're protecting against — incident history, compliance exposure, stakeholder trust. That's the more typical, more credible pairing in this market. Ownership language without a stated risk reads as vaguer than most postings that use it.`,
       },
     },
     {
       id: 'rel-ai-autonomy', rowKey: 'ai_role', colKey: 'autonomy_level',
-      tag: 'AI role × Autonomy · A counter-intuitive direction',
+      tag: 'AI role × Autonomy: A counter-intuitive direction',
       takeaway: 'Counter-intuitive: JDs expecting AI-tool fluency skew more strategic, not more junior. Likely correlated with company stage rather than a direct effect.',
       q: { seeker: 'Is "use AI coding tools" a junior ask, or a senior one?',
            manager: 'Does naming an AI-tool expectation read as raising or lowering the bar on scope?' },
       statFn: () => `Roles asking the candidate to use AI coding tools are ${grpPct(data,'ai_role','ai_user','autonomy_level','strategic')}% strategic, close to AI-infrastructure-building roles (${grpPct(data,'ai_role','ai_enabler','autonomy_level','strategic')}%) and far higher than roles with no AI expectation at all (${grpPct(data,'ai_role','none','autonomy_level','strategic')}%).`,
-      read: `The naive guess is that "use Copilot/Claude Code" is a junior, execution-heavy ask - accelerate scoped work faster - while "build AI-consuming infrastructure" is the senior mandate. The data runs the other way. JDs that name an AI-tool-fluency expectation are far more strategic-leaning than JDs with no AI expectation, and close to the infrastructure-building group. A plausible read: naming a specific AI-workflow expectation ("use Claude Code as part of your daily workflow") is itself a marker of an employer confident enough in its engineering culture to be specific. It reads more like "operate at a higher level of leverage" than a junior competency checkbox. This finding is exploratory, not one of this page's two pre-registered predictions, and correlated with a related pattern: AI-tool roles also skew more greenfield, and greenfield work independently carries more strategic scope. So some of this may be downstream of company stage rather than a direct effect of the AI expectation itself.`,
+      read: `The naive guess is that "use Copilot/Claude Code" is a junior, execution-heavy ask — accelerate scoped work faster — while "build AI-consuming infrastructure" is the senior mandate. The data runs the other way. JDs that name an AI-tool-fluency expectation are far more strategic-leaning than JDs with no AI expectation, and close to the infrastructure-building group. A plausible read: naming a specific AI-workflow expectation ("use Claude Code as part of your daily workflow") is itself a marker of an employer confident enough in its engineering culture to be specific. It reads more like "operate at a higher level of leverage" than a junior competency checkbox. This finding is exploratory, not one of this page's two pre-registered predictions, and correlated with a related pattern: AI-tool roles also skew more greenfield, and greenfield work independently carries more strategic scope. So some of this may be downstream of company stage rather than a direct effect of the AI expectation itself.`,
       tip: {
         seeker: `Don't read "must be comfortable with AI coding tools" as a signal of a junior or narrowly-scoped role. In this market it correlates with more strategic scope, not less. Treat it as one more data point that the employer is being specific about their actual workflow, which is itself a positive signal.`,
         manager: `Naming an AI-tool-fluency expectation doesn't read as lowering your role's bar. If anything, it correlates with the more strategic-scoped postings in this market. If part of your role's substance is genuinely "work faster and with more leverage using AI tools," naming that explicitly doesn't undersell the role's seniority the way you might assume.`,
@@ -1255,12 +1352,12 @@ function buildRelationships(data) {
     },
     {
       id: 'rel-mentorship-autonomy', rowKey: 'autonomy_level', colKey: 'rt_mentorship',
-      tag: 'Responsibility language: Mentorship & Leadership × Autonomy · Concentrated in senior titles',
+      tag: 'Responsibility language: Mentorship & Leadership × Autonomy: Concentrated in senior titles',
       takeaway: 'Among senior titles, autonomy language predicts mentorship responsibilities that the title alone does not. At mid level, mentorship is rare regardless.',
       q: { seeker: 'Does the autonomy label predict actual people-management work, beyond what the title already tells you?',
            manager: 'If you want mentorship framed as part of the role, the autonomy language you write matters independently of the title' },
       statFn: () => `${grpPct(data,'autonomy_level','strategic','rt_mentorship','yes')}% of strategic-coded JDs carry mentorship/leadership language in their responsibilities, versus ${grpPct(data,'autonomy_level','execution','rt_mentorship','yes')}% of execution-coded ones. The gradient is a senior-title phenomenon: within "Senior" alone it runs ${grpPctIn(data,'seniority','senior','autonomy_level','execution','rt_mentorship','yes')}%→${grpPctIn(data,'seniority','senior','autonomy_level','mixed','rt_mentorship','yes')}%→${grpPctIn(data,'seniority','senior','autonomy_level','strategic','rt_mentorship','yes')}% (execution→mixed→strategic), while within "Mid" it stays flat at ${grpPctIn(data,'seniority','mid','autonomy_level','execution','rt_mentorship','yes')}%→${grpPctIn(data,'seniority','mid','autonomy_level','mixed','rt_mentorship','yes')}%→${grpPctIn(data,'seniority','mid','autonomy_level','strategic','rt_mentorship','yes')}%.`,
-      read: `This pairing draws from two independent signal sources by design. <code>autonomy_level</code> is an LLM-coded whole-JD judgment (verbs like "define," "own," "shape"), while the mentorship theme is a keyword match on specific responsibility-bullet phrasing ("mentor," "coach," "grow the team," "line manage"). Because the two don't share trigger vocabulary, this is a genuine relationship, not two measurements of the same text. Corpus-wide it is one of the stronger findings on this page (Cramér's V≈0.22, p&lt;0.0001). Stratifying by seniority title locates it: the gradient lives almost entirely in the "Senior" band, where a strategic-coded posting names mentorship more than three times as often as an execution-coded one with the identical title. In the "Mid" band mentorship language is uncommon across every autonomy level, and the strategic cell there is small enough (single-digit positives) that it would not carry a claim on its own. Read this as: once a posting is pitched at senior level, the autonomy framing — not the title — is what tells you whether developing other people is part of the job.`,
+      read: `This pairing draws from two independent signal sources by design. <code>autonomy_level</code> is an LLM-coded whole-JD judgment (verbs like "define," "own," "shape"), while the mentorship theme is a keyword match on specific responsibility-bullet phrasing ("mentor," "coach," "grow the team," "line manage"). Because the two don't share trigger vocabulary, this is a genuine relationship, not two measurements of the same text. Corpus-wide it is one of the stronger findings on this page (Cramér's V≈${vOf(data,'autonomy_level','rt_mentorship')}, ${pText(data,'autonomy_level','rt_mentorship')}). Stratifying by seniority title locates it: the gradient lives almost entirely in the "Senior" band, where a strategic-coded posting names mentorship about ${ratio(grpPctIn(data,'seniority','senior','autonomy_level','strategic','rt_mentorship','yes'), grpPctIn(data,'seniority','senior','autonomy_level','execution','rt_mentorship','yes'))} times as often as an execution-coded one with the identical title. In the "Mid" band mentorship language is uncommon across every autonomy level, and the strategic cell there is small enough (single-digit positives) that it would not carry a claim on its own. Read this as: once a posting is pitched at senior level, the autonomy framing — not the title — is what tells you whether developing other people is part of the job.`,
       tip: {
         seeker: `At senior level, don't let the title tell you whether you'll mentor anyone — look for autonomy language ("own," "define," "shape," "drive") in the responsibilities, which predicts people-development scope better than the title band does. At mid level the signal is weak in both directions: most mid postings don't name mentorship at all, so its absence tells you little.`,
         manager: `If part of the role is genuinely developing junior teammates, autonomy language ("own this domain," "define the approach") correlates with candidates reading that expectation correctly, more so than the seniority title alone. A "Mid, execution-scoped" posting reads as individually-scoped work even if you expect some informal mentoring. Say so explicitly if you want it read that way.`,
@@ -1272,20 +1369,20 @@ function buildRelationships(data) {
       takeaway: 'Naming real infrastructure work in the bullets, not just tool names in a skills list, is a stronger, independent tell of hiring-manager authorship.',
       q: { seeker: 'Does who wrote the JD predict how much real infrastructure detail you\'ll get?',
            manager: 'Naming your actual warehouse platform in the responsibilities, not just the tech-stack list, reads as hiring-manager authorship' },
-      statFn: () => `Hiring-manager-authored JDs name warehouse and infrastructure responsibilities (Snowflake, BigQuery, Databricks, Terraform, CI/CD) at ${grpPct(data,'jd_authorship','hiring_manager','rt_infra','yes')}%, versus ${grpPct(data,'jd_authorship','recruiter','rt_infra','yes')}% for recruiter-authored JDs - a considerably wider gap than authorship's already-known link to whether dbt is named at all.`,
+      statFn: () => `Hiring-manager-authored JDs name warehouse and infrastructure responsibilities (Snowflake, BigQuery, Databricks, Terraform, CI/CD) at ${grpPct(data,'jd_authorship','hiring_manager','rt_infra','yes')}%, versus ${grpPct(data,'jd_authorship','recruiter','rt_infra','yes')}% for recruiter-authored JDs — a considerably wider gap than authorship's already-known link to whether dbt is named at all.`,
       read: `Same logic as elsewhere on this page: a recruiter working from a template can drop a tool name into a skills list, but naming platform-level responsibilities in the day-to-day bullets ("own Unity Catalog governance," "manage the Snowflake warehouse cost profile") requires knowing what the team's infrastructure problem actually is. This pairing is a genuinely independent check on the authorship signal. It doesn't reuse any of the same trigger words the <code>jd_authorship</code> codebook rubric looks for.`,
       tip: {
-        seeker: `Infrastructure specificity in the responsibilities - not just a tool-name list under "requirements" - is a stronger tell of hiring-manager authorship than the tool name alone. Worth weighting when you're guessing how much the posting reflects what the team actually needs.`,
-        manager: `If you want your posting to read as written by someone who knows the stack, put the actual infrastructure work in the responsibilities section, not just tool names in a bullet list under requirements. That's the distinction candidates - and this analysis - can detect.`,
+        seeker: `Infrastructure specificity in the responsibilities — not just a tool-name list under "requirements" — is a stronger tell of hiring-manager authorship than the tool name alone. Worth weighting when you're guessing how much the posting reflects what the team actually needs.`,
+        manager: `If you want your posting to read as written by someone who knows the stack, put the actual infrastructure work in the responsibilities section, not just tool names in a bullet list under requirements. That's the distinction candidates — and this analysis — can detect.`,
       },
     },
     {
       id: 'rel-selfservice-maturity', rowKey: 'data_team_maturity', colKey: 'rt_selfservice',
       tag: 'Responsibility language: Self-Service Enablement × Team maturity',
-      takeaway: 'Maturity changes the type of work, not just the amount of autonomy: mature teams ask for teaching and enablement roughly 1.6× as often as early-stage ones.',
+      takeaway: `Maturity changes the type of work, not just the amount of autonomy: mature teams ask for teaching and enablement roughly ${ratio(grpPct(data,'data_team_maturity','mature','rt_selfservice','yes'), grpPct(data,'data_team_maturity','early','rt_selfservice','yes'))}× as often as early-stage ones.`,
       q: { seeker: 'What kind of work does a mature team actually ask for, beyond "less strategic"?',
            manager: 'Maturity changes the type of responsibility you should be writing, not just its scope' },
-      statFn: () => `Self-service and data-literacy responsibilities ("enable self-serve analytics," "run training," "drop-in office hours") show up in ${grpPct(data,'data_team_maturity','mature','rt_selfservice','yes')}% of mature-team JDs versus ${grpPct(data,'data_team_maturity','early','rt_selfservice','yes')}% of early-stage ones - roughly a 1.6× gap, on top of the maturity-to-autonomy relationship already documented elsewhere on this page.`,
+      statFn: () => `Self-service and data-literacy responsibilities ("enable self-serve analytics," "run training," "drop-in office hours") show up in ${grpPct(data,'data_team_maturity','mature','rt_selfservice','yes')}% of mature-team JDs versus ${grpPct(data,'data_team_maturity','early','rt_selfservice','yes')}% of early-stage ones — roughly a ${ratio(grpPct(data,'data_team_maturity','mature','rt_selfservice','yes'), grpPct(data,'data_team_maturity','early','rt_selfservice','yes'))}× gap, on top of the maturity-to-autonomy relationship already documented elsewhere on this page.`,
       read: `The maturity findings elsewhere on this page are mostly about <em>how much direction-setting</em> a role carries. This one is different in kind: it's evidence for <em>what the work actually is</em> at each stage, not just how much say you get over it. An early-stage team building its data function from zero has no established base to enable self-service on top of. A mature team's marginal responsibility increasingly looks like teaching other people to use what already exists, not building it. Read together with the performance and cost-optimization gradient by maturity, mature-team JDs are asking for a qualitatively different job, not a smaller one.`,
       tip: {
         seeker: `If "self-service enablement," "training," or "data literacy" language is missing from a JD at a company you know to be data-mature, that's worth a direct question. It's the modal responsibility at that stage, so its absence is more informative than its presence.`,
@@ -1294,54 +1391,54 @@ function buildRelationships(data) {
     },
     {
       id: 'rel-domainrisk-rigour', rowKey: 'domain_risk', colKey: 'velocity_vs_rigour',
-      tag: 'Domain risk × Rigour orientation · Small but real',
-      takeaway: 'Rigour is the majority framing at every risk tier (55%+). High-risk domains use it more consistently, but the gap is small.',
+      tag: 'Domain risk × Rigour orientation: Small but real',
+      takeaway: `Rigour is the majority framing at every risk tier (${Math.min(...['high','moderate','low'].map(r => grpPct(data,'domain_risk',r,'velocity_vs_rigour','rigour')))}%+). High-risk domains use it more consistently, but the gap is small.`,
       q: { seeker: 'Do high-stakes domains actually write more rigour-heavy JDs?',
-           manager: 'Rigour vocabulary is close to universal - high-risk domains use it only slightly more' },
+           manager: 'Rigour vocabulary is close to universal — high-risk domains use it only slightly more' },
       statFn: () => `High-risk roles are ${grpPct(data,'domain_risk','high','velocity_vs_rigour','rigour')}% rigour-coded versus ${grpPct(data,'domain_risk','moderate','velocity_vs_rigour','rigour')}% in moderate-risk and ${grpPct(data,'domain_risk','low','velocity_vs_rigour','rigour')}% in low-risk domains.`,
-      read: `Rigour is the majority framing in every risk tier - 55%+ even in the lowest - so this was never going to be a strong differentiator. But high-risk roles do write it more consistently than moderate- or low-risk ones, a real, small, statistically detectable gap (Cramér's V≈0.12). Read it as a weak tilt on top of an already-common signal, not a reliable classifier on its own.`,
+      read: `Rigour is the majority framing in every risk tier — ${Math.min(...['high','moderate','low'].map(r => grpPct(data,'domain_risk',r,'velocity_vs_rigour','rigour')))}%+ even in the lowest — so this was never going to be a strong differentiator. But high-risk roles do write it more consistently than moderate- or low-risk ones, a real, small, statistically detectable gap (Cramér's V≈${vOf(data,'domain_risk','velocity_vs_rigour')}). Read it as a weak tilt on top of an already-common signal, not a reliable classifier on its own.`,
       tip: {
-        seeker: `Rigour framing is close to table stakes everywhere, but high-stakes domains do write it slightly more consistently. Worth a small weight in how you read a JD's seriousness about quality, not a strong signal on its own. What differentiates roles more is whether quality is <em>your named job</em> - see the testing-framing panel - not whether the JD says "data quality."`,
-        manager: `"Data quality," "single source of truth," "reliability" - nearly every posting says it, so it barely selects. It does track real stakes slightly more than chance, so keep it honest to your actual risk profile. But differentiation still lives mainly in named accountabilities and explicit decision rights, not in how much quality vocabulary you pile on.`,
+        seeker: `Rigour framing is close to table stakes everywhere, but high-stakes domains do write it slightly more consistently. Worth a small weight in how you read a JD's seriousness about quality, not a strong signal on its own. What differentiates roles more is whether quality is <em>your named job</em> — see the testing-framing panel — not whether the JD says "data quality."`,
+        manager: `"Data quality," "single source of truth," "reliability" — most postings say it, so it barely selects. It does track real stakes slightly more than chance, so keep it honest to your actual risk profile. But differentiation still lives mainly in named accountabilities and explicit decision rights, not in how much quality vocabulary you pile on.`,
       },
     },
     {
       id: 'rel-region-langgate', rowKey: 'geo_macro', colKey: 'language_gate_type',
-      tag: 'Region × Language gate · Largest regional effect in the dataset',
-      takeaway: 'Language requirements are almost entirely a European pattern. Hard gates: 25% of European postings, 8% of APAC, 0% of NYC-metro.',
+      tag: 'Region × Language gate: Largest regional effect in the dataset',
+      takeaway: `Language requirements are almost entirely a European pattern. Hard gates: ${grpPct(data,'geo_macro','europe','language_gate_type','hard')}% of European postings, ${grpPct(data,'geo_macro','apac','language_gate_type','hard')}% of APAC, ${grpPct(data,'geo_macro','nyc_metro','language_gate_type','hard')}% of NYC-metro.`,
       q: { seeker: 'Which region actually gates on language, and how hard?',
-           manager: 'If you gate on language, say so plainly - the rest of this market mostly doesn\'t' },
+           manager: 'If you gate on language, say so plainly — the rest of this market mostly doesn\'t' },
       statFn: () => `Hard language requirements: ${grpPct(data,'geo_macro','europe','language_gate_type','hard')}% of European postings (n=${cnt('geo_macro','europe')}) versus ${grpPct(data,'geo_macro','apac','language_gate_type','hard')}% APAC (n=${cnt('geo_macro','apac')}) and ${grpPct(data,'geo_macro','nyc_metro','language_gate_type','hard')}% NYC metro (n=${cnt('geo_macro','nyc_metro')}). Add soft gates and Europe reaches ${100-grpPct(data,'geo_macro','europe','language_gate_type','none')}%.`,
-      read: `This is the largest regional effect found anywhere in this dataset (Cramér's V≈0.20, larger than any other region cross-tab here), and it's checked against the obvious confound: <code>domain_risk</code> composition does differ across the three regions (χ²=16.77, p=0.002) - Europe actually codes <em>lower</em> on high-risk (24%) than APAC (32%) or NYC metro (42%), so the confound runs against this finding rather than producing it. "Europe just has more client-facing roles that happen to be risky" is not what the data shows. Client-facing analytics roles across DACH, Benelux, and France routinely gate on the local language in a way that has no real equivalent in an English-default APAC or US hiring market. n=91 for NYC metro is thin - read that cell as directional, not precise - but the pattern (essentially zero language gates) is consistent with the region's international, English-default hiring norm.`,
+      read: `This is a clear regional effect (Cramér's V≈${vOf(data,'geo_macro','language_gate_type')}, against ${vOf(data,'geo_macro','velocity_vs_rigour')} for rigour framing by region), and it's checked against the obvious confound: <code>domain_risk</code> composition does differ across the three regions (${testLine(data,'geo_macro','domain_risk')}) — Europe actually codes <em>lower</em> on high-risk (${grpPct(data,'geo_macro','europe','domain_risk','high')}%) than APAC (${grpPct(data,'geo_macro','apac','domain_risk','high')}%) or NYC metro (${grpPct(data,'geo_macro','nyc_metro','domain_risk','high')}%), so the confound runs against this finding rather than producing it. "Europe just has more client-facing roles that happen to be risky" is not what the data shows. Client-facing analytics roles across DACH, Benelux, and France routinely gate on the local language in a way that has no real equivalent in an English-default APAC or US hiring market. n=${nIn('nyc_metro')} for NYC metro is thin — read that cell as directional, not precise — but the pattern (essentially zero language gates) is consistent with the region's international, English-default hiring norm.`,
       tip: {
-        seeker: `If you're applying in Europe, check the requirements section for a language gate before investing time - it's the single most common reason a European posting isn't actually open to you if you don't speak the local language. In APAC or NYC metro, this is a much smaller factor and less worth screening for upfront.`,
-        manager: `If your role genuinely requires a local language (client-facing, regulatory), say so plainly and early - hard-gating in Europe is common enough that candidates expect to see it stated, not implied. If you're hiring in APAC or NYC metro, a language requirement is unusual enough in this market that it's worth flagging explicitly if you have one, since candidates won't default to expecting it.`,
+        seeker: `If you're applying in Europe, check the requirements section for a language gate before investing time — it's the single most common reason a European posting isn't actually open to you if you don't speak the local language. In APAC or NYC metro, this is a much smaller factor and less worth screening for upfront.`,
+        manager: `If your role genuinely requires a local language (client-facing, regulatory), say so plainly and early — hard-gating in Europe is common enough that candidates expect to see it stated, not implied. If you're hiring in APAC or NYC metro, a language requirement is unusual enough in this market that it's worth flagging explicitly if you have one, since candidates won't default to expecting it.`,
       },
     },
     {
       id: 'rel-region-rigour', rowKey: 'geo_macro', colKey: 'velocity_vs_rigour',
-      tag: 'Region × Rigour orientation · A dialect gap, not a risk gap',
+      tag: 'Region × Rigour orientation: A dialect gap, not a risk gap',
       takeaway: 'Rigour-coded language drops step-wise Europe → APAC → NYC metro, even though the underlying risk mix is the same across all three.',
       q: { seeker: 'Does "rigour" language mean the same thing everywhere?',
            manager: 'Is your rigour language matching your actual risk profile, or just the regional default?' },
-      statFn: () => `Rigour-coded: ${grpPct(data,'geo_macro','europe','velocity_vs_rigour','rigour')}% Europe (n=${cnt('geo_macro','europe')}) vs. ${grpPct(data,'geo_macro','apac','velocity_vs_rigour','rigour')}% APAC (n=${cnt('geo_macro','apac')}) vs. ${grpPct(data,'geo_macro','nyc_metro','velocity_vs_rigour','rigour')}% NYC metro (n=${cnt('geo_macro','nyc_metro')}) - a step-wise decline with domain_risk composition held flat across all three regions.`,
-      read: `Because <code>domain_risk</code> mix doesn't differ meaningfully by region (checked directly before trusting this), the gap reads as a genuine dialect difference in how comparable-risk roles get written up, not a real difference in stakes. European JDs default to governance/compliance/correctness vocabulary even at moderate-risk, non-regulated companies. Looking at the NYC-metro roll call by hand: the velocity-coded roles cluster in genuinely earlier-stage consumer fintech/proptech, while the rigour-coded ones are the regulated-finance names - even those still code as rigour or mixed, they're just not the majority framing the way they are in Europe. Practically: a "rigour" classification from a European JD is weaker evidence of genuinely elevated stakes than the same classification from a US JD, because the base rate of reaching for that vocabulary differs by region independent of actual risk.`,
+      statFn: () => `Rigour-coded: ${grpPct(data,'geo_macro','europe','velocity_vs_rigour','rigour')}% Europe (n=${cnt('geo_macro','europe')}) vs. ${grpPct(data,'geo_macro','apac','velocity_vs_rigour','rigour')}% APAC (n=${cnt('geo_macro','apac')}) vs. ${grpPct(data,'geo_macro','nyc_metro','velocity_vs_rigour','rigour')}% NYC metro (n=${cnt('geo_macro','nyc_metro')}) — a step-wise decline with domain_risk composition held flat across all three regions.`,
+      read: `Because <code>domain_risk</code> mix differs only modestly by region (Cramér's V≈${vOf(data,'geo_macro','domain_risk')}, checked directly before trusting this), the gap reads as a genuine dialect difference in how comparable-risk roles get written up, not a real difference in stakes. European JDs default to governance/compliance/correctness vocabulary even at moderate-risk, non-regulated companies. Looking at the NYC-metro roll call by hand: the velocity-coded roles cluster in genuinely earlier-stage consumer fintech/proptech, while the rigour-coded ones are the regulated-finance names — even those still code as rigour or mixed, they're just not the majority framing the way they are in Europe. Practically: a "rigour" classification from a European JD is weaker evidence of genuinely elevated stakes than the same classification from a US JD, because the base rate of reaching for that vocabulary differs by region independent of actual risk.`,
       tip: {
-        seeker: `Don't take "rigour" language in a European JD as strong evidence of unusually high stakes on its own - it's closer to the regional default there. In NYC-metro postings, rigour language is a more concentrated signal precisely because it's used more sparingly, closer to when the company means it. Ask directly what a mistake would actually cost, rather than reading the vocabulary literally.`,
-        manager: `If you're hiring in Europe, know that rigour/compliance language reads as less distinctive here - most JDs already use it, so it won't differentiate a genuinely high-stakes role from a moderate one. If you're hiring in the US and your role has real compliance or trust stakes, naming them explicitly will carry more weight than it would in a market where that vocabulary is already everywhere.`,
+        seeker: `Don't take "rigour" language in a European JD as strong evidence of unusually high stakes on its own — it's closer to the regional default there. In NYC-metro postings, rigour language is a more concentrated signal precisely because it's used more sparingly, closer to when the company means it. Ask directly what a mistake would actually cost, rather than reading the vocabulary literally.`,
+        manager: `If you're hiring in Europe, know that rigour/compliance language reads as less distinctive here — most JDs already use it, so it won't differentiate a genuinely high-stakes role from a moderate one. If you're hiring in the US and your role has real compliance or trust stakes, naming them explicitly will carry more weight than it would in a market where that vocabulary is already everywhere.`,
       },
     },
     {
       id: 'rel-region-salary', rowKey: 'geo_macro', colKey: 'salary_stated',
-      tag: 'Region × Salary disclosure · A legal-regime effect, not a culture one',
-      takeaway: 'NYC metro states a salary range 78% of the time - almost certainly pay-transparency law, not employer culture. APAC states one 3% of the time.',
+      tag: 'Region × Salary disclosure: A legal-regime effect, not a culture one',
+      takeaway: `NYC metro states a salary range ${Math.round(100 * salIn('nyc_metro') / Math.max(1, nIn('nyc_metro')))}% of the time — almost certainly pay-transparency law, not employer culture. APAC states one ${Math.round(100 * salIn('apac') / Math.max(1, nIn('apac')))}% of the time.`,
       q: { seeker: 'Where can I actually expect a stated salary range?',
-           manager: 'Are you required to state a range where you\'re hiring - and are you doing it?' },
+           manager: 'Are you required to state a range where you\'re hiring — and are you doing it?' },
       statFn: () => `Salary range stated: ${grpPct(data,'geo_macro','nyc_metro','salary_stated','stated')}% NYC metro (n=${cnt('geo_macro','nyc_metro')}) vs. ${grpPct(data,'geo_macro','europe','salary_stated','stated')}% Europe (n=${cnt('geo_macro','europe')}) vs. ${grpPct(data,'geo_macro','apac','salary_stated','stated')}% APAC (n=${cnt('geo_macro','apac')}, ${data.filter(d=>d.geo_macro==='apac'&&d.salary_stated==='stated').length} of ${cnt('geo_macro','apac')} roles).`,
-      read: `The NYC-metro figure is very likely a legal-regime effect, not an employer-culture one - New York's pay transparency law requires a posted range, so this number reflects that law doing what it was designed to do, not that NYC employers are unusually forthcoming by disposition. Don't extrapolate the NYC rate to other US cities without their own transparency laws. The APAC figure (6 of 182 roles) is close to a null result - plan to ask directly, every time, regardless of company quality or size.`,
+      read: `The NYC-metro figure is very likely a legal-regime effect, not an employer-culture one — New York's pay transparency law requires a posted range, so this number reflects that law doing what it was designed to do, not that NYC employers are unusually forthcoming by disposition. Don't extrapolate the NYC rate to other US cities without their own transparency laws. The APAC figure (${salIn('apac')} of ${nIn('apac')} roles) is close to a null result — plan to ask directly, every time, regardless of company quality or size.`,
       tip: {
-        seeker: `In NYC metro, expect a stated range as the norm, enforced by law - if a posting doesn't have one, that's more unusual there than it is elsewhere. In Europe, absence of a range is the market norm, not a red flag on a specific employer. In APAC, expect near-total silence and plan to ask directly and early if it matters to you.`,
-        manager: `If you're hiring in NYC or another pay-transparency jurisdiction, confirm you're actually compliant - this isn't optional there the way it is elsewhere. If you're hiring in Europe or APAC, stating a real range is still a genuine differentiator, not table stakes yet - candidates in those markets don't expect it by default, so doing it anyway stands out.`,
+        seeker: `In NYC metro, expect a stated range as the norm, enforced by law — if a posting doesn't have one, that's more unusual there than it is elsewhere. In Europe, absence of a range is the market norm, not a red flag on a specific employer. In APAC, expect near-total silence and plan to ask directly and early if it matters to you.`,
+        manager: `If you're hiring in NYC or another pay-transparency jurisdiction, confirm you're actually compliant — this isn't optional there the way it is elsewhere. If you're hiring in Europe or APAC, stating a real range is still a genuine differentiator, not table stakes yet — candidates in those markets don't expect it by default, so doing it anyway stands out.`,
       },
     },
   ];
@@ -1359,13 +1456,34 @@ function buildRelationships(data) {
   const tabsEl = document.getElementById('relTabs');
   tabsEl.innerHTML = groups.map(g => {
     const count = panels.filter(p => p.group === g.key).length;
-    return `<button type="button" class="rel-tab${g.key === activeRelGroup ? ' active' : ''}" role="tab" aria-selected="${g.key === activeRelGroup}" data-group="${g.key}" title="${g.desc}">
+    const on = g.key === activeRelGroup;
+    return `<button type="button" class="rel-tab${on ? ' active' : ''}" role="tab" id="reltab-${g.key}" aria-selected="${on}" aria-controls="relGrid" tabindex="${on ? 0 : -1}" data-group="${g.key}" title="${g.desc}">
       <span class="rel-tab-name">${g.name}</span><span class="rel-tab-count">${count} relationship${count===1?'':'s'}</span>
     </button>`;
   }).join('');
+  const selectTab = group => {
+    activeRelGroup = group;
+    buildRelationships(activeData);
+    document.getElementById('reltab-' + group).focus();
+  };
   tabsEl.querySelectorAll('.rel-tab').forEach(btn => {
-    btn.addEventListener('click', () => { activeRelGroup = btn.dataset.group; buildRelationships(activeData); });
+    btn.addEventListener('click', () => selectTab(btn.dataset.group));
   });
+  if (!tabsEl.dataset.keys) {
+    tabsEl.dataset.keys = '1';
+    tabsEl.addEventListener('keydown', e => {
+      const tabs = [...tabsEl.querySelectorAll('.rel-tab')];
+      const i = tabs.indexOf(document.activeElement);
+      if (i < 0) return;
+      const to = { ArrowRight: (i + 1) % tabs.length, ArrowLeft: (i - 1 + tabs.length) % tabs.length, Home: 0, End: tabs.length - 1 }[e.key];
+      if (to === undefined) return;
+      e.preventDefault();
+      selectTab(tabs[to].dataset.group);
+    });
+  }
+  const gridEl = document.getElementById('relGrid');
+  gridEl.setAttribute('role', 'tabpanel');
+  gridEl.setAttribute('aria-labelledby', 'reltab-' + activeRelGroup);
 
   const visiblePanels = panels.filter(p => p.group === activeRelGroup);
   const grid = document.getElementById('relGrid');
@@ -1378,12 +1496,12 @@ function buildRelationships(data) {
         <div class="rel-test" id="${p.id}-test"></div>
       </div>
       <div class="rel-body">
-        <div class="rel-viz" id="${p.id}-viz"></div>
         <div class="rel-read">
           <p class="rel-takeaway">${p.takeaway}</p>
           <details class="rel-details"><summary>Full analysis &amp; methodology</summary><div class="rel-details-body">${p.read}</div></details>
           <div class="resume-tip"><b>${TIP_LABEL[view]}:</b> ${p.tip[view]}</div>
         </div>
+        <div class="rel-viz" id="${p.id}-viz"></div>
       </div>
     </div>
   `).join('');
@@ -1420,7 +1538,7 @@ function buildNulls(data) {
         const hy = grpPct(data,'work_arrangement','hybrid','rt_architecture','yes');
         const rm = grpPct(data,'work_arrangement','remote','rt_architecture','yes');
         const ns = grpPct(data,'work_arrangement','not_stated','rt_architecture','yes');
-        return `The raw numbers: <strong>${hy}%</strong> of hybrid JDs carry architecture/platform-strategy language, against <strong>${rm}%</strong> of remote ones and ${ns}% of postings that state no arrangement. The unstratified test is not significant (see the badge below). "Remote roles get less architectural scope" would be an easy headline, and it also fails the obvious confound check. <code>work_arrangement</code> and <code>data_team_maturity</code> are themselves correlated - mature teams skew hybrid - and once you split by maturity tier, no single arrangement is consistently the lowest (mid-stage: hybrid ${grpPctIn(data,'data_team_maturity','mid','work_arrangement','hybrid','rt_architecture','yes')}%, remote ${grpPctIn(data,'data_team_maturity','mid','work_arrangement','remote','rt_architecture','yes')}%, not-stated ${grpPctIn(data,'data_team_maturity','mid','work_arrangement','not_stated','rt_architecture','yes')}%). Small cells (under 20 remote JDs in the early and mature tiers) make the remote-specific comparison mostly noise.`;
+        return `The raw numbers: <strong>${hy}%</strong> of hybrid JDs carry architecture/platform-strategy language, against <strong>${rm}%</strong> of remote ones and ${ns}% of postings that state no arrangement. The unstratified test is not significant (see the badge below). "Remote roles get less architectural scope" would be an easy headline, and it also fails the obvious confound check. <code>work_arrangement</code> and <code>data_team_maturity</code> are themselves correlated — mature teams skew hybrid — and once you split by maturity tier, no single arrangement is consistently the lowest (mid-stage: hybrid ${grpPctIn(data,'data_team_maturity','mid','work_arrangement','hybrid','rt_architecture','yes')}%, remote ${grpPctIn(data,'data_team_maturity','mid','work_arrangement','remote','rt_architecture','yes')}%, not-stated ${grpPctIn(data,'data_team_maturity','mid','work_arrangement','not_stated','rt_architecture','yes')}%). Small cells (under 20 remote JDs in the early and mature tiers) make the remote-specific comparison mostly noise.`;
       },
       testFn: () => chiBadge(data, 'work_arrangement', 'rt_architecture'),
       apply: {
@@ -1452,7 +1570,7 @@ function buildNulls(data) {
         const e = medianBy(data,'data_team_maturity','early','collaboration_width');
         const m = medianBy(data,'data_team_maturity','mid','collaboration_width');
         const ma = medianBy(data,'data_team_maturity','mature','collaboration_width');
-        return `A federated-platform story would predict mature organisations naming the widest set of stakeholder teams. The medians are <strong>${e.toFixed(1)} / ${m.toFixed(1)} / ${ma.toFixed(1)}</strong> for early / mid / mature - no meaningful separation.`;
+        return `A federated-platform story would predict mature organisations naming the widest set of stakeholder teams. The medians are <strong>${e.toFixed(1)} / ${m.toFixed(1)} / ${ma.toFixed(1)}</strong> for early / mid / mature — no meaningful separation.`;
       },
       testFn: () => {
         const groups = ['early','mid','mature'].map(g =>
@@ -1519,11 +1637,20 @@ function buildScatter(data) {
     borderColor: colMap[cat]||'#888',
     borderWidth: 1.5, pointRadius: 8, pointHoverRadius: 11,
   }));
+  const tierName = { 3: 'high risk', 2: 'moderate risk', 1: 'low risk' };
+  const tierCounts = {};
+  Object.entries(groups).forEach(([cat, pts]) => pts.forEach(pt => {
+    const tier = Math.round(pt.y);
+    tierCounts[tier] = tierCounts[tier] || {};
+    tierCounts[tier][labMap[cat] || cat] = (tierCounts[tier][labMap[cat] || cat] || 0) + 1;
+  }));
+  document.getElementById('scatterSummary').textContent = `${Object.values(groups).reduce((a, b) => a + b.length, 0)} roles plotted. ` +
+    [3, 2, 1].filter(t => tierCounts[t]).map(t => `${tierName[t]}: ${Object.entries(tierCounts[t]).map(([k, v]) => `${v} ${k}`).join(', ')}`).join('. ') + '.';
   destroyChart('scatter');
   charts.scatter = new Chart(document.getElementById('scatterChart').getContext('2d'), {
     type: 'scatter', data: { datasets },
     options: {
-      responsive: true, maintainAspectRatio: false, animation: { duration: 250 },
+      responsive: true, maintainAspectRatio: false, animation: CHART_ANIM,
       plugins: { legend: { display: false }, tooltip: { enabled: false } },
       scales: {
         x: { title: { display: true, text: xKey==='salary_mid' ? 'Salary midpoint (EUR, annual only)' : 'Collaboration width (named partner teams)', font:{size:11} }, grid:{color:'#f0f0ed'}, ticks:{font:{size:10}} },
@@ -1574,7 +1701,7 @@ function buildOrientation() {
     type: 'doughnut',
     data: { labels: keys.map(k=>labMap[k]||k), datasets: [{ data: keys.map(k=>counts[k]), backgroundColor: keys.map(k=>(colMap[k]||'#ccc')+'cc'), borderColor: keys.map(k=>colMap[k]||'#ccc'), borderWidth: 2 }] },
     options: {
-      responsive: true, maintainAspectRatio: false, cutout: '58%', animation: { duration: 250 },
+      responsive: true, maintainAspectRatio: false, cutout: '58%', animation: CHART_ANIM,
       plugins: { legend: { position:'bottom', labels:{font:{size:10},boxWidth:10,padding:8} }, tooltip: { callbacks: { label: ctx => ` ${ctx.label}: ${ctx.raw} (${Math.round(ctx.raw/n*100)}%)` } } },
       onClick: (evt, els) => { if (!els.length) return; selectOrientation(dataKey, keys[els[0].index]); },
     },
@@ -1585,12 +1712,13 @@ function buildOrientation() {
     `n=${n}. Modal category: ${labMap[keys[0]]||keys[0]} at ${Math.round(counts[keys[0]]/n*100)}% (±${moe}pp, 95% CI). Click a wedge or a tab to see the JDs.`;
 
   document.getElementById('orientationTabs').innerHTML = keys.map(k => `
-    <button class="drill-toggle" style="text-decoration:none;background:${colMap[k]||'#888'}22;color:${colMap[k]||'#333'};padding:0.3rem 0.7rem;border-radius:20px;font-weight:600" data-key="${k}" onclick="selectOrientation('${dataKey}','${k}')">${labMap[k]||k} (${counts[k]})</button>
+    <button class="drill-toggle" style="text-decoration:none;background:${colMap[k]||'#888'}22;color:${colMap[k]||'#333'};padding:0.3rem 0.7rem;border-radius:var(--r-pill);font-weight:600" data-key="${k}" onclick="selectOrientation('${dataKey}','${k}')">${labMap[k]||k} (${counts[k]})</button>
   `).join('');
   if (keys.length) selectOrientation(dataKey, keys[0]);
 }
 
 function selectOrientation(dataKey, key) {
+  document.querySelectorAll('#orientationTabs button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.key === key)));
   const data = activeData.filter(d => d[dataKey] === key);
   const container = document.getElementById('orientationList');
   if (!data.length) { container.innerHTML = '<div class="empty-state">No roles in this segment.</div>'; return; }
@@ -1636,7 +1764,7 @@ const TOOLS = [
   {key:'has_version_control',label:'Version control',group:'Practice'},{key:'has_ci_cd',label:'CI/CD',group:'Practice'},{key:'has_semantic_layer',label:'Semantic layer',group:'Practice'},
   {key:'has_aws',label:'AWS',group:'Cloud'},{key:'has_azure',label:'Azure',group:'Cloud'},{key:'has_gcp',label:'GCP',group:'Cloud'},
 ];
-const GC = { Core:'#1d4ed8', Warehouse:'#16a34a', BI:'#d97706', Orchestration:'#7c3aed', Compute:'#ea580c', Ingestion:'#0d9488', Streaming:'#c0392b', Infra:'#6b7280', Quality:'#0891b2', Practice:'#be185d', Cloud:'#4338ca' };
+const GC = { Core:'#3d4452', Warehouse:'#16a34a', BI:'#d97706', Orchestration:'#7c3aed', Compute:'#ea580c', Ingestion:'#0d9488', Streaming:'#c0392b', Infra:'#6b7280', Quality:'#0891b2', Practice:'#be185d', Cloud:'#4338ca' };
 
 function buildToolCompanyList(tool) {
   const yes = activeData.filter(d => String(d[tool.key]).toLowerCase() === 'true');
@@ -1645,7 +1773,9 @@ function buildToolCompanyList(tool) {
   document.getElementById('toolCompanyList').innerHTML = yes.length
     ? yes.map(d => `<div class="company-card"><div class="cc-header"><span class="cc-company">${d.company}</span><span class="cc-role">${d.role}</span></div></div>`).join('')
     : '<div class="empty-state">None in current filter.</div>';
-  document.getElementById('toolCompanyPanel').style.display = 'block';
+  const panel = document.getElementById('toolCompanyPanel');
+  panel.style.display = 'block';
+  panel.focus();
 }
 
 const TOOL_GROUP_ORDER = ['Core','Warehouse','Cloud','BI','Ingestion','Orchestration','Compute','Streaming','Quality','Practice','Infra'];
@@ -1656,7 +1786,7 @@ function buildToolChart(data) {
   document.getElementById('toolCompanyPanel').style.display = 'none';
   const dbtPct = sortedTools.find(t=>t.key==='has_dbt')?.pct ?? 0;
   document.getElementById('stackBody').innerHTML =
-    `SQL and dbt are the baseline. Not knowing either rules you out of most roles. After the core stack, there's a real cliff to niche tools. <strong>${dbtPct}% require dbt - real, but not universal.</strong> A meaningful share of this market runs on Databricks SQL, BigQuery-native pipelines, or Spark-first stacks instead.`;
+    `SQL and dbt are the baseline. Not knowing either rules you out of most roles. After the core stack, there's a real cliff to niche tools. <strong>${dbtPct}% require dbt — real, but not universal.</strong> A meaningful share of this market runs on Databricks SQL, BigQuery-native pipelines, or Spark-first stacks instead.`;
 
   const byGroup = {};
   sortedTools.forEach(t => { (byGroup[t.group] = byGroup[t.group] || []).push(t); });
@@ -1664,11 +1794,11 @@ function buildToolChart(data) {
 
   const groupsHtml = TOOL_GROUP_ORDER.filter(g => byGroup[g]).map(g => {
     const rows = byGroup[g].map(t => `
-      <div class="tool-row" data-key="${t.key}" title="Click for company list">
-        <div class="tool-row-label">${t.label}</div>
-        <div class="tool-row-track"><div class="tool-row-fill" style="width:${Math.max(t.pct,2)}%;background:${GC[g]}"></div></div>
-        <div class="tool-row-n">${t.pct}%</div>
-      </div>`).join('');
+      <button type="button" class="tool-row" data-key="${t.key}">
+        <span class="tool-row-label">${t.label}</span>
+        <span class="tool-row-track"><span class="tool-row-fill" style="width:${Math.max(t.pct,2)}%;background:${GC[g]}"></span></span>
+        <span class="tool-row-n">${t.pct}%<span class="sr-only"> of roles. Show the companies</span></span>
+      </button>`).join('');
     return `<div class="tool-group"><div class="tool-group-title">${g}</div>${rows}</div>`;
   }).join('');
   const wrap = document.getElementById('toolGroups');
@@ -1687,7 +1817,7 @@ function buildToolChart(data) {
 // mixing either into this chart would silently distort the scale (see 2026-08-01 audit,
 // which also removed 4 salary values found to have no basis in their own JD's archived
 // text — this chart only ever reflects extracted, not estimated, figures).
-const SALARY_CUR_COLOR = { EUR: '#1d4ed8', GBP: '#eb6834', USD: '#16a34a', JPY: '#9ca3af' };
+const SALARY_CUR_COLOR = { EUR: '#3d4452', GBP: '#eb6834', USD: '#16a34a', JPY: '#9ca3af' };
 const SALARY_CUR_SYM   = { EUR: '€', GBP: '£', USD: '$', JPY: '¥' };
 function salaryFmt(n) { return Math.round(n/1000) + 'k'; }
 
@@ -1830,12 +1960,12 @@ function buildSalaryEstimated(data) {
 
   const inferredCount = rows.filter(x => x.e.periodInferred).length;
   const legendHtml = `
-    <div class="legend-item"><div class="legend-dot" style="background:#1d4ed8"></div>Stated period (n=${n - inferredCount})</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#3d4452"></div>Stated period (n=${n - inferredCount})</div>
     <div class="legend-item"><div class="legend-dot inferred"></div>Inferred period * (n=${inferredCount})</div>`;
 
   const rowsHtml = rows.map(({ d, e }) => {
     const x1 = pct(e.lo), x2 = pct(e.hi);
-    const color = e.periodInferred ? '#d97706' : '#1d4ed8';
+    const color = e.periodInferred ? '#d97706' : '#3d4452';
     return `
       <div class="salary-row${e.periodInferred ? ' inferred' : ''}" data-jd="${d.jd_id}">
         <div class="salary-row-label"><b>${d.company}</b>${LABELS.seniority[d.seniority]||d.seniority||''}</div>
@@ -1892,7 +2022,7 @@ function buildSalaryEstimated(data) {
 const SENIORITY_ORDER = ['junior', 'mid', 'senior', 'staff', 'lead', 'manager'];
 function buildSalaryEstSeniority(est) {
   document.getElementById('salaryEstSenioritySub').textContent =
-    `Median of each posting's EUR/annual-equivalent midpoint, grouped by title band · bar spans the observed min–max within that band · n shown per band`;
+    `Median of each posting's EUR/annual-equivalent midpoint, grouped by title band. The bar spans the observed min–max within that band, and n is shown per band`;
   const bySen = {};
   est.forEach(({ d, e }) => { (bySen[d.seniority] = bySen[d.seniority] || []).push(e.mid); });
   const allMids = est.map(x => x.e.mid);
@@ -1914,7 +2044,7 @@ function buildSalaryEstSeniority(est) {
         <div class="senior-sal-value">€${salaryFmt(median)}</div>
       </div>`;
   }).join('');
-  document.getElementById('salaryEstSeniority').innerHTML = rowsHtml || `<p style="font-size:0.8rem;color:var(--muted)">Not enough records per band to summarize.</p>`;
+  document.getElementById('salaryEstSeniority').innerHTML = rowsHtml || `<p style="font-size:var(--t-sm);color:var(--muted)">Not enough records per band to summarize.</p>`;
 }
 
 // ── Responsibility taxonomy: theme prevalence + co-occurrence (lift) ──
@@ -1941,10 +2071,10 @@ function buildResponsibilityTaxonomy(data) {
     type: 'bar',
     data: { labels: prevalence.map(p => p.theme), datasets: [{
       data: prevalence.map(p => p.pct),
-      backgroundColor: 'rgba(29,78,216,0.55)', borderColor: '#1d4ed8', borderWidth: 1, borderRadius: 4,
+      backgroundColor: 'rgba(61,68,82,0.55)', borderColor: '#3d4452', borderWidth: 1, borderRadius: 4,
     }] },
     options: {
-      indexAxis: 'y', responsive: true, maintainAspectRatio: false, animation: { duration: 250 },
+      indexAxis: 'y', responsive: true, maintainAspectRatio: false, animation: CHART_ANIM,
       layout: { padding: { right: 8 } },
       plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ` ${ctx.raw}% of JDs (n=${prevalence[ctx.dataIndex].cnt}) — click for JD language` } } },
       scales: {
@@ -1957,6 +2087,13 @@ function buildResponsibilityTaxonomy(data) {
         openRtEvidence(prevalence[els[0].index].theme);
       },
     },
+  });
+
+  document.getElementById('rtThemeList').innerHTML = prevalence.map(p => `
+    <li><span class="rt-theme-name">${p.theme}</span><span class="rt-theme-n">${p.pct}% (n=${p.cnt})</span>
+      <button type="button" class="drill-toggle" data-theme="${p.theme}">Show example sentences<span class="sr-only"> for ${p.theme}</span></button></li>`).join('');
+  document.querySelectorAll('#rtThemeList button').forEach(btn => {
+    btn.addEventListener('click', () => openRtEvidence(btn.dataset.theme));
   });
 
   // Co-occurrence: for every theme pair, P(A), P(B), P(A&B), lift.
@@ -1982,7 +2119,7 @@ function buildResponsibilityTaxonomy(data) {
   const list = document.getElementById('rtCoocList');
   window._rtActiveJdIds = new Set(withTheme.map(d => d.jd_id));
   if (!pairs.length) {
-    list.innerHTML = `<p style="font-size:0.8rem;color:var(--muted)">Not enough co-coded pairs under this filter to compute co-occurrence.</p>`;
+    list.innerHTML = `<p style="font-size:var(--t-sm);color:var(--muted)">Not enough co-coded pairs under this filter to compute co-occurrence.</p>`;
     return;
   }
   const top = pairs.slice(0, 12);
@@ -2024,7 +2161,7 @@ function openRtEvidence(theme) {
   document.getElementById('rtEvidenceTitle').textContent = theme;
   const nJds = new Set(allHits.map(h => h.jd_id)).size;
   document.getElementById('rtEvidenceSub').innerHTML =
-    `${allHits.length} responsibility bullet${allHits.length===1?'':'s'} across ${nJds} JD${nJds===1?'':'s'} matched this theme's keyword pattern (highlighted below) · showing up to 40`;
+    `${allHits.length} responsibility bullet${allHits.length===1?'':'s'} across ${nJds} JD${nJds===1?'':'s'} matched this theme's keyword pattern (highlighted below), showing up to 40`;
 
   const listEl = document.getElementById('rtEvidenceList');
   if (!allHits.length) {
@@ -2040,20 +2177,26 @@ function openRtEvidence(theme) {
         </div>`;
     }).join('');
   }
-  overlay.classList.remove('hidden');
+  openDialog(overlay, overlay.querySelector('.rt-evidence-close'));
 }
 
 function closeRtEvidence() {
-  document.getElementById('rtEvidenceOverlay').classList.add('hidden');
+  const overlay = document.getElementById('rtEvidenceOverlay');
+  if (!overlay.classList.contains('hidden')) closeDialog(overlay);
 }
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeRtEvidence();
+  if (e.key !== 'Escape') return;
+  const evidence = document.getElementById('rtEvidenceOverlay');
+  const chooser = document.getElementById('personaOverlay');
+  if (!evidence.classList.contains('hidden')) closeRtEvidence();
+  else if (!chooser.classList.contains('hidden')) closeDialog(chooser, document.getElementById('heroH1'));
 });
 
 // ── Main render ──
 function render() {
   const roleFilter = document.getElementById('filterRoleType').value;
   activeData = ALL_DATA.filter(d => roleFilter === 'all' || d.role_type === roleFilter);
+  applyCopy();
   document.getElementById('countBadge').innerHTML = `<strong>${activeData.length}</strong> / ${ALL_DATA.length} roles`;
 
   buildStats(activeData);
@@ -2160,7 +2303,11 @@ Promise.all([
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) document.querySelectorAll('.nav-links a[data-section]')
-        .forEach(a => a.classList.toggle('active', a.dataset.section === entry.target.id));
+        .forEach(a => {
+          const here = a.dataset.section === entry.target.id;
+          a.classList.toggle('active', here);
+          if (here) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current');
+        });
     });
   }, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
   ['relationships','responsibility-taxonomy','nulls','explorer','orientation','geo-section','stack'].forEach(id => {
@@ -2170,7 +2317,9 @@ Promise.all([
 })();
 
 // ── Persona init: returning visitors skip the chooser; first-timers pick a side ──
-if (persona) document.getElementById('personaOverlay').classList.add('hidden');
+const chooser = document.getElementById('personaOverlay');
+if (persona) chooser.classList.add('hidden');
+else openDialog(chooser, chooser.querySelector('.persona-card'));
 applyPersona();
 </script>
 </body>
