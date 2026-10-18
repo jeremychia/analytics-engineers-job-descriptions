@@ -244,15 +244,15 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
 <!-- HERO / MODE PICKER -->
 <section class="hero" id="hero">
   <h1>What are you actually trying to get out of this data?</h1>
-  <p class="hero-sub">Same dataset, two different questions - and they don't share an answer. Pick the one that's yours. Everything below is built around it, not around the statistics.</p>
+  <p class="hero-sub">Same dataset, two different questions — and they don't share an answer. Pick the one that's yours. Everything below is built around it, not around the statistics.</p>
   <div class="mode-cards">
     <button class="mode-card" type="button" onclick="setMode('seeker')">
       <h3>I'm looking for a role</h3>
-      <p>Tell me what you want more of - autonomy, real building work, growth, quality ownership - and get a concrete checklist: language to look for, language to distrust.</p>
+      <p>Tell me what you want more of — autonomy, real building work, growth, quality ownership — and get a concrete checklist: language to look for, language to distrust.</p>
     </button>
     <button class="mode-card" type="button" onclick="setMode('manager')">
       <h3>I'm hiring</h3>
-      <p>Check the basics your posting should state, then walk through what your role actually offers so your JD signals it - not the boilerplate every other posting already says.</p>
+      <p>Check the basics your posting should state, then walk through what your role actually offers so your JD signals it — not the boilerplate every other posting already says.</p>
     </button>
   </div>
   <p class="hero-footer-link">Want the underlying statistics, test results, and every relationship in the dataset? <a href="full-analysis.html">See the full analysis</a></p>
@@ -264,8 +264,8 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
   <div id="seekerContent" style="display:none">
 
     <section class="section" id="seekerHygiene">
-      <h2 class="section-title">Hygiene factors: they don't make a role good, but their absence should give you pause</h2>
-      <p class="section-intro">Herzberg's two-factor theory draws a sharp line between what <strong>prevents dissatisfaction</strong> and what <strong>actually motivates</strong>. These six are hygiene. Clearing the bar is normal, not impressive - but a JD that fails several of them at once is telling you something.</p>
+      <h2 class="section-title">The basics: they don't make a role good, but a posting that skips them should give you pause</h2>
+      <p class="section-intro">A posting can state all six of these and still be a poor job. Clearing the bar is normal, not impressive. But a posting that fails several of them at once is telling you something.</p>
       <p class="section-intro" id="hygieneSmallN" style="display:none;color:#92400e;font-weight:600;margin-top:-1.25rem"></p>
       <div class="hygiene-grid" id="hygieneGrid"></div>
     </section>
@@ -284,27 +284,27 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
 
     <section class="section" id="managerHygiene">
       <h2 class="section-title">Does your posting state these? Most don't.</h2>
-      <p class="section-intro">Hygiene factors won't make your posting exciting. But a posting silent on several of them reads as unfinished - and candidates screen for that before they ever get to whether the role itself is good.</p>
+      <p class="section-intro">These basics won't make your posting exciting. But a posting that skips several of them reads as unfinished, and candidates screen for that before they ask whether the role is good.</p>
       <div id="managerHygieneList"></div>
     </section>
 
     <section class="section" id="managerMotivators">
-      <h2 class="section-title">Most JDs nail hygiene and leave the good part implicit</h2>
-      <p class="section-intro">Recruiter-templated postings, generic "cross-functional collaboration" language, an unqualified "Senior" title - these cover hygiene while leaving the actual motivators (autonomy, real ownership, growth) for the candidate to guess at. Answer honestly about your role below. Each answer surfaces what candidates actually infer, and the cheapest fix.</p>
+      <h2 class="section-title">Most postings cover the basics and leave the good part implicit</h2>
+      <p class="section-intro">Recruiter-templated postings, generic "cross-functional collaboration" language, an unqualified "Senior" title — these cover the basics while leaving the actual motivators (autonomy, real ownership, growth) for the candidate to guess at. Answer honestly about your role below. Each answer surfaces what candidates actually infer, and the cheapest fix.</p>
       <div id="assessCards"></div>
     </section>
 
   </div>
 
   <section class="snapshot-section" id="snapshotSection">
-    <h2 class="section-title" style="font-size:var(--t-md)" id="snapshotTitle">1,103 job descriptions, classified - not surveyed</h2>
+    <h2 class="section-title" style="font-size:var(--t-md)" id="snapshotTitle">The job descriptions behind this page, classified and not surveyed</h2>
     <p class="section-intro" style="margin-bottom:0">Every stat and checklist item on this page is computed live from this dataset. Use the region filter to narrow it — most numbers move once you do, and some cells get too small to trust.</p>
     <div class="snapshot-grid" id="snapshotGrid"></div>
   </section>
 
   <section class="section">
     <div class="full-analysis-cta">
-      <p>Everything above is a synthesis of statistical findings across 1,103 classified job descriptions - chi-square tests, effect sizes, sparse-cell caveats, and the relationships that didn't hold up.</p>
+      <p>Everything above is a synthesis of statistical findings across <span id="ctaCount"></span> classified job descriptions — chi-square tests, effect sizes, sparse-cell caveats, and the relationships that didn't hold up.</p>
       <a href="full-analysis.html">See the full statistical analysis</a>
     </div>
   </section>
@@ -401,6 +401,44 @@ function setMode(m) {
   window.scrollTo(0, 0);
 }
 
+// ── Figures quoted in the copy, computed from the data so the text cannot drift from it ──
+let FACTS = {};
+function shareOf(rows, fn) { return rows.length ? Math.round(rows.filter(fn).length / rows.length * 100) : 0; }
+function medianOf(values) {
+  const vals = values.filter(v => !isNaN(v)).sort((a, b) => a - b);
+  if (!vals.length) return 0;
+  const m = vals.length;
+  return m % 2 ? vals[(m - 1) / 2] : (vals[m / 2 - 1] + vals[m / 2]) / 2;
+}
+function computeFacts() {
+  const inRegion = r => ALL_DATA.filter(d => (d.geo_region || 'other') === r);
+  const gated = d => d.language_gate_type === 'hard' || d.language_gate_type === 'soft';
+  const isDbt = d => String(d.has_dbt).toLowerCase() === 'true';
+  const collab = rows => medianOf(rows.map(d => parseFloat(d.collaboration_width)));
+  const apac = inRegion('apac');
+  FACTS = {
+    n: ALL_DATA.length.toLocaleString('en-GB'),
+    gateEurope: shareOf(ALL_DATA.filter(d => EUROPE_REGIONS.has(d.geo_region)), gated),
+    gateApac: shareOf(apac, gated),
+    gateNyc: shareOf(inRegion('nyc_metro'), gated),
+    apacOnsite: apac.filter(d => d.work_arrangement === 'onsite').length,
+    apacRemote: apac.filter(d => d.work_arrangement === 'remote').length,
+    collabHigh: collab(ALL_DATA.filter(d => d.loss_aversion_framing === 'high')).toFixed(1),
+    collabOther: collab(ALL_DATA.filter(d => d.loss_aversion_framing !== 'high')).toFixed(1),
+    dbtPct: shareOf(ALL_DATA, isDbt),
+    dbtRecruiter: shareOf(ALL_DATA.filter(d => d.jd_authorship === 'recruiter'), isDbt),
+    dbtEngineer: shareOf(ALL_DATA.filter(d => d.jd_authorship === 'hiring_manager'), isDbt),
+    noAiPct: shareOf(ALL_DATA, d => d.ai_role === 'none'),
+    rigourHigh: shareOf(ALL_DATA.filter(d => d.domain_risk === 'high'), d => d.velocity_vs_rigour === 'rigour'),
+    rigourModerate: shareOf(ALL_DATA.filter(d => d.domain_risk === 'moderate'), d => d.velocity_vs_rigour === 'rigour'),
+    rigourLow: shareOf(ALL_DATA.filter(d => d.domain_risk === 'low'), d => d.velocity_vs_rigour === 'rigour'),
+    strategicSenior: shareOf(ALL_DATA.filter(d => d.seniority === 'senior'), d => d.autonomy_level === 'strategic'),
+    strategicMid: shareOf(ALL_DATA.filter(d => d.seniority === 'mid'), d => d.autonomy_level === 'strategic'),
+  };
+}
+// static copy marks a computed figure as {{name}}
+function fill(text) { return text.replace(/\{\{(\w+)\}\}/g, (_, k) => (k in FACTS ? FACTS[k] : '')); }
+
 // ── Hygiene factors: real stats from the dataset ──
 function pct(filterFn) { const n = DATA.length || 1; return Math.round(DATA.filter(filterFn).length / n * 100); }
 
@@ -418,34 +456,29 @@ function buildHygiene() {
   const earlyPct = pct(d => d.data_team_maturity === 'early');
   const highFearPct = pct(d => d.loss_aversion_framing === 'high');
   const n = DATA.length || 1;
-  const medCollab = (() => {
-    const vals = DATA.map(d => parseFloat(d.collaboration_width)).filter(v => !isNaN(v)).sort((a,b)=>a-b);
-    if (!vals.length) return 0;
-    const m = vals.length;
-    return m % 2 ? vals[(m-1)/2] : (vals[m/2-1]+vals[m/2])/2;
-  })();
+  const medCollab = medianOf(DATA.map(d => parseFloat(d.collaboration_width)));
 
   const maxCollab = 6;
   const collabBarPct = Math.min(100, Math.round(medCollab / maxCollab * 100));
 
   const salaryNote = region === 'nyc_metro'
-    ? `${salaryPct}% state a range here - high because NYC and NY State pay-transparency law requires it, not because employers are unusually forthcoming. Don't expect the same rate elsewhere.`
+    ? `${salaryPct}% state a range here — high because NYC and NY State pay-transparency law requires it, not because employers are unusually forthcoming. Don't expect the same rate elsewhere.`
     : region === 'apac'
-    ? `Just ${salaryPct}% state a range in APAC. Near-total silence, not a signal about any specific employer - assume you'll need to ask directly.`
-    : `Only ${salaryPct}% of postings state a range at all. That's the market norm, not a red flag specific to that employer - but ask early if it matters to you.`;
+    ? `Just ${salaryPct}% state a range in APAC. Near-total silence, not a signal about any specific employer — assume you'll need to ask directly.`
+    : `Only ${salaryPct}% of postings state a range at all. That's the market norm, not a red flag specific to that employer — but ask early if it matters to you.`;
   const workNote = region === 'apac'
-    ? `${workStatedPct}% state a policy - the lowest disclosure rate of any region here. Where APAC postings do state one, onsite outweighs remote roughly 4:1, the most onsite-leaning split in this dataset. Silence here correlates with onsite more than it does elsewhere - ask directly.`
-    : `${workStatedPct}% state a policy. The rest say nothing. Don't read silence as "onsite by default" - ask directly, regardless of company stage.`;
+    ? `${workStatedPct}% state a policy — the lowest of any named region. Where APAC postings do state one, ${FACTS.apacOnsite} say onsite and ${FACTS.apacRemote} say remote. Ask directly.`
+    : `${workStatedPct}% state a policy. The rest say nothing. Don't read silence as "onsite by default" — ask directly, regardless of company stage.`;
   const langNote = region === 'nyc_metro' || region === 'apac'
-    ? `${hardLangPct}% hard-gate on a specific language here - language gates in this dataset are overwhelmingly a European pattern (40% of European postings carry a hard or soft gate, vs. under 10% in APAC and effectively none in NYC metro).`
-    : `${hardLangPct}% hard-gate on a specific language - fluency required, not "a plus." A binary dealbreaker, and the single strongest regional pattern in this dataset - concentrated in Europe far more than APAC or NYC metro. Check before you invest time in an application.`;
+    ? `${hardLangPct}% hard-gate on a specific language here — language gates in this dataset are mostly a European pattern (${FACTS.gateEurope}% of European postings carry a hard or soft gate, against ${FACTS.gateApac}% in APAC and ${FACTS.gateNyc}% in NYC metro).`
+    : `${hardLangPct}% hard-gate on a specific language — fluency required, not "a plus." A binary dealbreaker, and the single strongest regional pattern in this dataset — concentrated in Europe far more than APAC or NYC metro. Check before you invest time in an application.`;
 
   const cards = [
     { label: 'Salary stated', stat: salaryPct + '%', bar: salaryPct, note: salaryNote },
     { label: 'Work arrangement clarity', stat: workStatedPct + '%', bar: workStatedPct, note: workNote },
     { label: 'Hard language requirement', stat: hardLangPct + '%', bar: hardLangPct, warn: true, note: langNote },
-    { label: 'Early-stage share', stat: earlyPct + '%', bar: earlyPct, note: `${earlyPct}% of roles sit at early-stage teams - highest autonomy odds, least structural stability. Know which trade-off you're making.` },
-    { label: 'High-fear / compliance framing', stat: highFearPct + '%', bar: highFearPct, warn: true, note: `${highFearPct}% of JDs carry explicit compliance/trust/audit risk language. These also name roughly ${medCollab >= 2 ? '3×' : 'more'} the stakeholder teams of fear-free JDs - wider surface area, not just more paperwork.` },
+    { label: 'Early-stage share', stat: earlyPct + '%', bar: earlyPct, note: `${earlyPct}% of roles sit at early-stage teams — highest autonomy odds, least structural stability. Know which trade-off you're making.` },
+    { label: 'High-fear / compliance framing', stat: highFearPct + '%', bar: highFearPct, warn: true, note: `${highFearPct}% of JDs carry explicit compliance/trust/audit risk language. The typical one names ${FACTS.collabHigh} stakeholder teams, against ${FACTS.collabOther} for the rest, so a wider surface area and not just more paperwork.` },
     { label: 'Median stakeholder teams named', stat: medCollab.toFixed(1), bar: collabBarPct, note: `Half of JDs name ${medCollab.toFixed(1)} or fewer partner teams in the responsibilities. If a wide meeting load is a dealbreaker, "cross-functional collaboration" with zero named teams deserves a direct question.` },
   ];
   document.getElementById('hygieneGrid').innerHTML = cards.map(c => `
@@ -461,7 +494,7 @@ function buildHygiene() {
 function buildSnapshot() {
   const n = DATA.length || 1;
   document.getElementById('snapshotTitle').textContent = region === 'all'
-    ? `${ALL_DATA.length} job descriptions, classified - not surveyed`
+    ? `${ALL_DATA.length} job descriptions, classified — not surveyed`
     : `${DATA.length} of ${ALL_DATA.length} — ${REGION_LABELS[region]||region} only`;
   const groupPct = (field, order) => order.map(([key, label]) => ({
     label, pct: Math.round(DATA.filter(d => d[field] === key).length / n * 100),
@@ -495,26 +528,26 @@ function buildManagerHygiene() {
   const workStatedPct = pct(d => d.work_arrangement && d.work_arrangement !== 'not_stated');
   const hardLangPct = pct(d => d.language_gate_type === 'hard');
   const salaryNote = region === 'nyc_metro'
-    ? `${salaryPct}% of postings here state a range - high, because NYC and NY State pay-transparency law requires it. If you're hiring in this market, confirm you're actually compliant, not just competitive.`
+    ? `${salaryPct}% of postings here state a range — high, because NYC and NY State pay-transparency law requires it. If you're hiring in this market, confirm you're actually compliant, not just competitive.`
     : region === 'apac'
     ? `Just ${salaryPct}% of postings in this market state a range at all. Stating one here is a much bigger differentiator than it would be in NYC metro, where it's closer to mandatory.`
-    : `Only ${salaryPct}% of postings in this market state one at all. Stating a real range is still a differentiator, not table stakes yet - but its absence reads as normal, not suspicious.`;
+    : `Only ${salaryPct}% of postings in this market state one at all. Stating a real range is still a differentiator, not table stakes yet — but its absence reads as normal, not suspicious.`;
   const workNote = region === 'apac'
-    ? `${workStatedPct}% state a policy here - the lowest disclosure rate of any region in this dataset, and where postings do state one, onsite outweighs remote roughly 4:1. If you offer genuine remote flexibility in this market, say so explicitly - it will read as unusual, in a good way.`
-    : `${workStatedPct}% of postings state a policy. If you offer genuine remote flexibility, say so explicitly - vague or absent claims get discounted as boilerplate.`;
+    ? `${workStatedPct}% state a policy here — the lowest of any named region, and where postings do state one, ${FACTS.apacOnsite} say onsite and ${FACTS.apacRemote} say remote. If you offer genuine remote flexibility in this market, say so explicitly. It will read as unusual, in a good way.`
+    : `${workStatedPct}% of postings state a policy. If you offer genuine remote flexibility, say so explicitly — vague or absent claims get discounted as boilerplate.`;
   const langNote = (region === 'nyc_metro' || region === 'apac')
-    ? `${hardLangPct}% hard-gate on a specific language here. Language gates are overwhelmingly a European pattern in this dataset (40% of European postings vs. under 10% here) - if you have one in this market, it's unusual enough to flag explicitly, since candidates won't expect it by default.`
-    : `Say it plainly. Being upfront about hard language gates or unusual process length saves screening time on both sides - hard gates are common enough in this market (${hardLangPct}% of postings) that candidates actively screen for them.`;
+    ? `${hardLangPct}% hard-gate on a specific language here. Language gates are mostly a European pattern in this dataset (${FACTS.gateEurope}% of European postings, against ${FACTS.gateApac}% in APAC and ${FACTS.gateNyc}% in NYC metro). If you have one in this market, it's unusual enough to flag explicitly, since candidates won't expect it by default.`
+    : `Say it plainly. Being upfront about hard language gates or unusual process length saves screening time on both sides — hard gates are common enough in this market (${hardLangPct}% of postings) that candidates actively screen for them.`;
   const items = [
     { label: 'Salary range', note: salaryNote,
       sample: `"€65,000–€78,000 gross, depending on experience. We're open about this from the first call, not just once you ask."` },
     { label: 'Work arrangement (remote / hybrid / onsite, with specifics)', note: workNote,
       sample: `"Hybrid, 2 days/week in our Berlin office. Fully remote within Germany is fine after month 3." — not "flexible working environment."` },
     { label: 'The actual partner teams this role works with', note: `"Cross-functional collaboration" with no named teams is unread boilerplate. A real number and real team names set honest workload expectations.`,
-      sample: `"You'll work closely with Product, Finance, and the two backend squads - regular contact, not just occasional Slack pings." — not "strong cross-functional collaboration skills."` },
+      sample: `"You'll work closely with Product, Finance, and the two backend squads — regular contact, not just occasional Slack pings." — not "strong cross-functional collaboration skills."` },
     { label: 'What stage your team is at, honestly', note: `Candidates use your stage as an autonomy and stability signal whether you intend it or not. A mismatch between stated stage and real day-to-day work surfaces by day 90.`,
-      sample: `"You'd be our first analytics hire, building the warehouse from zero." or "We're a 6-person data team with an established dbt project - you'd extend it, not start it."` },
-    { label: 'The real tools and infrastructure, not just a skills list', note: `Recruiter-templated postings name the real stack at roughly a third the rate of engineer-written ones - candidates who care about the work discount generic tool lists accordingly.`,
+      sample: `"You'd be our first analytics hire, building the warehouse from zero." or "We're a 6-person data team with an established dbt project — you'd extend it, not start it."` },
+    { label: 'The real tools and infrastructure, not just a skills list', note: `Recruiter-templated postings name dbt in ${FACTS.dbtRecruiter}% of cases, against ${FACTS.dbtEngineer}% for ones written by the hiring manager. Candidates who care about the work discount generic tool lists accordingly.`,
       sample: `"We run dbt on Snowflake, orchestrated with Dagster, with Looker on top. About 400M rows across our core models." — not "modern data stack."` },
     { label: 'Interview process length / hard requirements upfront', note: langNote,
       sample: `"Fluent German is required for this role (client-facing). Process is 3 stages over ~2 weeks: screen, technical exercise, team interview."` },
@@ -533,18 +566,18 @@ const MOTIVATORS = [
     key: 'autonomy', name: 'Real autonomy, not execution work',
     desc: 'You want to set direction, not just deliver against someone else\'s plan.',
     items: [
-      { badge: 'look', text: `A "Senior" title roughly doubles your odds of strategic scope over "Mid" - but within "Senior" alone, it's close to a coin flip. Read the verbs: "define/own/shape" versus "support/assist/deliver."`, link: 'full-analysis.html#rel-seniority-autonomy' },
-      { badge: 'look', text: `A JD that's genuinely greenfield for one specific initiative - "first analytics hire," "from the ground up," "no existing pipeline" - is a stronger autonomy signal than "modernise everything" or company stage alone.`, link: 'full-analysis.html#rel-mission-autonomy' },
-      { badge: 'do', text: `Weight the claim by who wrote it. Engineer-written tells: specific tools and scale ("dbt," "Airflow," "1B rows," "multi-terabyte," named platforms). Recruiter-template tells: generic soft language with no specifics ("collaborate," "team player," "passionate," "dynamic," "stakeholder management"). If a recruiter-template JD says "you'll own X," confirm it directly - don't take it at face value.`, link: 'full-analysis.html#rel-authorship-autonomy' },
-      { badge: 'look', text: `"Must be comfortable with AI coding tools" - look for named tools ("GitHub Copilot," "Cursor," "Claude Code," "AI-assisted coding") - correlates with MORE strategic scope in this market, not less. Don't read it as a junior signal.`, link: 'full-analysis.html#rel-ai-autonomy' },
+      { badge: 'look', text: `A "Senior" title lifts strategic scope from {{strategicMid}}% of Mid roles to {{strategicSenior}}% — but within "Senior" alone, it's close to a coin flip. Read the verbs: "define/own/shape" versus "support/assist/deliver."`, link: 'full-analysis.html#rel-seniority-autonomy' },
+      { badge: 'look', text: `A JD that's genuinely greenfield for one specific initiative — "first analytics hire," "from the ground up," "no existing pipeline" — is a stronger autonomy signal than "modernise everything" or company stage alone.`, link: 'full-analysis.html#rel-mission-autonomy' },
+      { badge: 'do', text: `Weight the claim by who wrote it. Engineer-written tells: specific tools and scale ("dbt," "Airflow," "1B rows," "multi-terabyte," named platforms). Recruiter-template tells: generic soft language with no specifics ("collaborate," "team player," "passionate," "dynamic," "stakeholder management"). If a recruiter-template JD says "you'll own X," confirm it directly — don't take it at face value.`, link: 'full-analysis.html#rel-authorship-autonomy' },
+      { badge: 'look', text: `"Must be comfortable with AI coding tools" — look for named tools ("GitHub Copilot," "Cursor," "Claude Code," "AI-assisted coding") — correlates with MORE strategic scope in this market, not less. Don't read it as a junior signal.`, link: 'full-analysis.html#rel-ai-autonomy' },
     ],
   },
   {
     key: 'building', name: 'Building, not maintaining',
     desc: 'You want to build something from scratch, not patch an existing system.',
     items: [
-      { badge: 'look', text: `Greenfield tells: "build," "establish," "define," "create from scratch," "design," "from the ground up." Fix/scale tells: "improve," "maintain," "modernise," "inherited," "migrate," "refactor," "technical debt." Greenfield work concentrates almost entirely at early-stage companies - "modernise our stack" at a mid-stage company is more likely fix/scale than a true from-scratch build.`, link: 'full-analysis.html#rel-maturity-mission' },
-      { badge: 'caution', text: `Mature teams are now majority fix/scale - repairing and replacing established systems, not extending a stable stack. Good if you like fixing broken things. Misleading if you assumed "mature = calm maintenance."`, link: 'full-analysis.html#rel-maturity-mission' },
+      { badge: 'look', text: `Greenfield tells: "build," "establish," "define," "create from scratch," "design," "from the ground up." Fix/scale tells: "improve," "maintain," "modernise," "inherited," "migrate," "refactor," "technical debt." Greenfield work concentrates almost entirely at early-stage companies — "modernise our stack" at a mid-stage company is more likely fix/scale than a true from-scratch build.`, link: 'full-analysis.html#rel-maturity-mission' },
+      { badge: 'caution', text: `Mature teams are now majority fix/scale — repairing and replacing established systems, not extending a stable stack. Good if you like fixing broken things. Misleading if you assumed "mature = calm maintenance."`, link: 'full-analysis.html#rel-maturity-mission' },
       { badge: 'do', text: `Read the mission language directly, not the company's "About us" page. A mature company running one genuine greenfield initiative reads more like an early-stage JD than its own stage would suggest.`, link: 'full-analysis.html#rel-mission-autonomy' },
     ],
   },
@@ -553,23 +586,23 @@ const MOTIVATORS = [
     desc: 'You want to develop other people, or be developed — not just execute solo.',
     items: [
       { badge: 'look', text: `Don't assume a "Mid" or "Senior" title tells you whether you'll mentor anyone. Autonomy language ("own," "define," "shape," "drive") predicts it better, even within the same title band.`, link: 'full-analysis.html#rel-mentorship-autonomy' },
-      { badge: 'look', text: `At mature teams, the marginal responsibility increasingly shifts to teaching and enabling others - look for "enable self-serve," "run training," "office hours," "data literacy" - rather than building. Good if you want to develop others. Misleading if you assumed "mature = pure technical depth."`, link: 'full-analysis.html#rel-selfservice-maturity' },
+      { badge: 'look', text: `At mature teams, the marginal responsibility increasingly shifts to teaching and enabling others — look for "enable self-serve," "run training," "office hours," "data literacy" — rather than building. Good if you want to develop others. Misleading if you assumed "mature = pure technical depth."`, link: 'full-analysis.html#rel-selfservice-maturity' },
     ],
   },
   {
     key: 'quality', name: 'Quality ownership, not just "quality talk"',
     desc: 'You want data quality to be your named job, not a vibe everyone claims to share.',
     items: [
-      { badge: 'caution', text: `"Rigour" language is the majority framing in every risk tier, but it is not uniform - it runs 84% in high-risk domains, 64% in moderate, and 50% in low-risk. Either way it tells you the team values correctness, not whether YOU personally own it. Check testing framing separately: <b>owns it</b> - "own the quality," "you will define testing standards," "data contracts" as a named responsibility - versus <b>tool listed</b> - "Great Expectations," "Soda," "dbt tests" in a skills list with no ownership verb - versus <b>absent</b> entirely.`, link: 'full-analysis.html#rel-testing-rigour' },
-      { badge: 'flag', text: `"You own quality" almost always travels with a named fear - look for "regulatory," "compliance," "audit," "SLOs," "production reliability," "data accuracy has direct business impact." A JD claiming quality ownership with zero risk context is unusual. Ask directly what "quality" is protecting against.`, link: 'full-analysis.html#rel-testing-fear' },
+      { badge: 'caution', text: `"Rigour" language is the majority framing in every risk tier, but it is not uniform — it runs {{rigourHigh}}% in high-risk domains, {{rigourModerate}}% in moderate, and {{rigourLow}}% in low-risk. Either way it tells you the team values correctness, not whether YOU personally own it. Check testing framing separately: <b>owns it</b> — "own the quality," "you will define testing standards," "data contracts" as a named responsibility — versus <b>tool listed</b> — "Great Expectations," "Soda," "dbt tests" in a skills list with no ownership verb — versus <b>absent</b> entirely.`, link: 'full-analysis.html#rel-testing-rigour' },
+      { badge: 'flag', text: `"You own quality" almost always travels with a named fear — look for "regulatory," "compliance," "audit," "SLOs," "production reliability," "data accuracy has direct business impact." A JD claiming quality ownership with zero risk context is unusual. Ask directly what "quality" is protecting against.`, link: 'full-analysis.html#rel-testing-fear' },
     ],
   },
   {
     key: 'stakes', name: 'Meaningful stakeholder impact',
     desc: 'You care who your work actually reaches and affects — not just that it\'s "high stakes."',
     items: [
-      { badge: 'caution', text: `"High-stakes" in this market functionally means finance and compliance - look for "FP&A," "P&L," "financial reporting," "forecast," "audit," "controllership," "board." Product-facing tells ("experiment," "A/B," "funnel," "activation," "growth") almost never get coded high-risk, even when the failure mode - a bad experiment, a bad growth call - is real. Don't expect the JD's language to signal stakes if commercial or product impact matters more to you.`, link: 'full-analysis.html#rel-domain-stakeholder' },
-      { badge: 'look', text: `Who you serve is a real but weak predictor of autonomy - product-facing roles skew strategic and internal-data roles skew execution, but it's a small effect. Read the actual verbs, not the stakeholder label.`, link: 'full-analysis.html#rel-stakeholder-autonomy' },
+      { badge: 'caution', text: `"High-stakes" in this market functionally means finance and compliance — look for "FP&A," "P&L," "financial reporting," "forecast," "audit," "controllership," "board." Product-facing tells ("experiment," "A/B," "funnel," "activation," "growth") almost never get coded high-risk, even when the failure mode — a bad experiment, a bad growth call — is real. Don't expect the JD's language to signal stakes if commercial or product impact matters more to you.`, link: 'full-analysis.html#rel-domain-stakeholder' },
+      { badge: 'look', text: `Who you serve is a real but weak predictor of autonomy — product-facing roles skew strategic and internal-data roles skew execution, but it's a small effect. Read the actual verbs, not the stakeholder label.`, link: 'full-analysis.html#rel-stakeholder-autonomy' },
     ],
   },
   {
@@ -577,7 +610,7 @@ const MOTIVATORS = [
     desc: 'You want to work with a current stack and real AI-assisted workflows, not legacy tooling.',
     items: [
       { badge: 'look', text: `Look for named tools, not vague "AI-first mindset" language: "GitHub Copilot," "Cursor," "Claude Code," "AI-assisted coding," "coding agents." These correlate with more strategic-scoped roles in this market, not less. Treat a named tool as a positive signal, not a junior checkbox.`, link: 'full-analysis.html#rel-ai-autonomy' },
-      { badge: 'caution', text: `dbt is strong but not universal - around 63% name it. A JD that doesn't name it doesn't mean the team skips it, especially if the JD reads as recruiter-templated (generic "collaborate," "team player" language) rather than engineer-written (specific tools, real scale numbers).`, link: 'full-analysis.html#rel-authorship-dbt' },
+      { badge: 'caution', text: `dbt is strong but not universal — {{dbtPct}}% name it. A JD that doesn't name it doesn't mean the team skips it, especially if the JD reads as recruiter-templated (generic "collaborate," "team player" language) rather than engineer-written (specific tools, real scale numbers).`, link: 'full-analysis.html#rel-authorship-dbt' },
     ],
   },
 ];
@@ -615,7 +648,7 @@ function buildMotivatorChecklists() {
         ${m.items.map(it => `
           <div class="check-item">
             <div class="check-item-badge badge-${it.badge}">${BADGE_LABEL[it.badge]}</div>
-            <div class="check-item-text">${it.text} <a href="${it.link}" target="_blank" rel="noopener">see the data</a></div>
+            <div class="check-item-text">${fill(it.text)} <a href="${it.link}" target="_blank" rel="noopener">Read the evidence</a></div>
           </div>`).join('')}
       </div>
     </div>`).join('');
@@ -627,27 +660,27 @@ const ASSESS = [
     key: 'autonomy', name: 'Autonomy & scope',
     question: 'Does this hire mostly decide the approach, or mostly execute a pre-set plan?',
     options: [
-      { label: 'Decides the approach', result: `Say so explicitly. Name a real decision the role owns in year one ("you choose the modelling architecture," "you set the testing roadmap"). A bare "Senior" title doesn't communicate this - within "Senior" alone, strategic scope is close to a coin flip in this market's postings.`, link: 'full-analysis.html#rel-seniority-autonomy',
-        sample: `"You'll decide how we structure the semantic layer - there's no existing convention to inherit, and we're relying on you to set it."`,
-        why: `Candidates who want autonomy self-select on exactly this - naming a real decision costs you nothing and screens in the people who'd actually take the role for that reason.` },
+      { label: 'Decides the approach', result: `Say so explicitly. Name a real decision the role owns in year one ("you choose the modelling architecture," "you set the testing roadmap"). A bare "Senior" title doesn't communicate this — within "Senior" alone, strategic scope is close to a coin flip in this market's postings.`, link: 'full-analysis.html#rel-seniority-autonomy',
+        sample: `"You'll decide how we structure the semantic layer — there's no existing convention to inherit, and we're relying on you to set it."`,
+        why: `Candidates who want autonomy self-select on exactly this — naming a real decision costs you nothing and screens in the people who'd actually take the role for that reason.` },
       { label: 'Executes a set plan', result: `That's fine to say plainly. Don't dress it up with ownership language ("own," "define," "shape") if it isn't true. Candidates who care about autonomy read those verbs literally, and a mismatch surfaces fast once they're in the role.`, link: 'full-analysis.html#rel-authorship-autonomy',
-        sample: `"You'll build against a roadmap the team has already agreed on - this is an execution-focused role, not a direction-setting one, at least for the first year."`,
+        sample: `"You'll build against a roadmap the team has already agreed on — this is an execution-focused role, not a direction-setting one, at least for the first year."`,
         why: `Overselling autonomy you don't have is how you lose a strong hire in month two, once they realise the roadmap was never theirs to change.` },
-      { label: 'Genuinely mixed', result: `Say which parts are theirs to decide and which aren't. "Mixed" is the most common and least differentiated answer in this market - specificity here is rare enough to be a signal on its own.`, link: 'full-analysis.html#rel-mission-autonomy',
-        sample: `"You'll own how we implement testing standards, but the overall data platform roadmap is set by the Head of Data - you're shaping execution, not the strategic direction."`,
-        why: `"Mixed" is what nearly every posting defaults to when nobody's thought it through - splitting out the actual boundary is rare enough to read as honesty, not hedging.` },
+      { label: 'Genuinely mixed', result: `Say which parts are theirs to decide and which aren't. "Mixed" is the most common and least differentiated answer in this market — specificity here is rare enough to be a signal on its own.`, link: 'full-analysis.html#rel-mission-autonomy',
+        sample: `"You'll own how we implement testing standards, but the overall data platform roadmap is set by the Head of Data — you're shaping execution, not the strategic direction."`,
+        why: `"Mixed" is what nearly every posting defaults to when nobody's thought it through — splitting out the actual boundary is rare enough to read as honesty, not hedging.` },
     ],
   },
   {
     key: 'building', name: 'Building vs. maintaining',
     question: 'Is this role building something new, or improving/fixing what already exists?',
     options: [
-      { label: 'Building from scratch', result: `Name the specific project directly ("build the first X") rather than leaning on "early-stage energy" or generic stage framing. It reads as a stronger, more credible ownership signal - even at a mature company running one genuine greenfield initiative.`, link: 'full-analysis.html#rel-maturity-mission',
-        sample: `"You'll build our analytics function from zero - no existing pipeline, no inherited dashboards. First hire on data, reporting directly to the CTO."`,
-        why: `Candidates who want a portfolio-defining build are actively filtering for this - a vague "early-stage energy" line makes them ask in the interview instead of applying in the first place.` },
-      { label: 'Fixing / scaling existing systems', result: `Say so plainly instead of "modernise our stack." The mismatch between that framing and real day-to-day maintenance work surfaces by day 90 - and costs you the candidate you screened hardest to get.`, link: 'full-analysis.html#rel-maturity-mission',
-        sample: `"You'll take over an existing dbt project (3 years old, ~200 models) and lead a migration off legacy Redshift onto Snowflake - this is fix-and-scale work, not greenfield."`,
-        why: `Someone who took the job expecting a from-scratch build and got a migration project instead is your most likely early leaver - this is cheap to prevent by being specific upfront.` },
+      { label: 'Building from scratch', result: `Name the specific project directly ("build the first X") rather than leaning on "early-stage energy" or generic stage framing. It reads as a stronger, more credible ownership signal — even at a mature company running one genuine greenfield initiative.`, link: 'full-analysis.html#rel-maturity-mission',
+        sample: `"You'll build our analytics function from zero — no existing pipeline, no inherited dashboards. First hire on data, reporting directly to the CTO."`,
+        why: `Candidates who want a portfolio-defining build are actively filtering for this — a vague "early-stage energy" line makes them ask in the interview instead of applying in the first place.` },
+      { label: 'Fixing / scaling existing systems', result: `Say so plainly instead of "modernise our stack." The mismatch between that framing and real day-to-day maintenance work surfaces by day 90 — and costs you the candidate you screened hardest to get.`, link: 'full-analysis.html#rel-maturity-mission',
+        sample: `"You'll take over an existing dbt project (3 years old, ~200 models) and lead a migration off legacy Redshift onto Snowflake — this is fix-and-scale work, not greenfield."`,
+        why: `Someone who took the job expecting a from-scratch build and got a migration project instead is your most likely early leaver — this is cheap to prevent by being specific upfront.` },
     ],
   },
   {
@@ -656,22 +689,22 @@ const ASSESS = [
     options: [
       { label: 'Yes, meaningfully', result: `Use ownership and autonomy language ("own this domain," "define the approach") rather than relying on the seniority title alone. Candidates read it as a mentorship signal more accurately than they read title band.`, link: 'full-analysis.html#rel-mentorship-autonomy',
         sample: `"You'll own our data quality practice end to end, including coaching two junior analysts on testing standards and code review."`,
-        why: `A title alone doesn't tell candidates whether they'll develop anyone - people who want that experience are reading the verbs, not the seniority band, so name it directly.` },
+        why: `A title alone doesn't tell candidates whether they'll develop anyone — people who want that experience are reading the verbs, not the seniority band, so name it directly.` },
       { label: 'No, individual contributor', result: `That's a fine, common answer. No need to imply mentorship scope you don't intend. If your team is mature-stage, "enable self-service" or "run training" language sets more accurate expectations than build-from-scratch framing your team has moved past.`, link: 'full-analysis.html#rel-selfservice-maturity',
-        sample: `"This is an individual-contributor role - you'll be deep in the modelling work, not managing or mentoring anyone directly."`,
-        why: `Candidates hoping to move into people development will self-select out fast if you're clear about this - better before an offer than during their first 1:1.` },
+        sample: `"This is an individual-contributor role — you'll be deep in the modelling work, not managing or mentoring anyone directly."`,
+        why: `Candidates hoping to move into people development will self-select out fast if you're clear about this — better before an offer than during their first 1:1.` },
     ],
   },
   {
     key: 'quality', name: 'Quality ownership',
     question: 'Does this person personally own data quality, or is it a shared team value?',
     options: [
-      { label: 'Personally owns it', result: `Name a concrete accountability ("you own the data contract framework," "you define the testing standards"). "Data quality mindset" appears in nearly every posting and selects for nobody - a named individual accountability is rare, and it's exactly what quality-motivated candidates filter for.`, link: 'full-analysis.html#rel-testing-rigour',
-        sample: `"You own our data contract framework - defining and enforcing the testing standards every model has to pass before it ships."`,
-        why: `Nearly every posting claims a "quality mindset," so that phrase alone selects for nobody - a named, individual accountability is rare enough to actually catch the candidates who want that job.` },
-      { label: 'Shared team culture', result: `Don't dress it up as personal ownership - that reads as scope inflation in the interview. Still name what you're protecting against (incidents, compliance, trust), even as a team-level concern.`, link: 'full-analysis.html#rel-testing-fear',
-        sample: `"Data quality is a shared team responsibility, not one person's job - we care about it because a bad number reaching the board is expensive to walk back."`,
-        why: `Candidates who probe for ownership in the interview will find out it's shared anyway - saying so upfront avoids a mismatch that reads as scope inflation once they're in the room.` },
+      { label: 'Personally owns it', result: `Name a concrete accountability ("you own the data contract framework," "you define the testing standards"). "Data quality mindset" appears in nearly every posting and selects for nobody — a named individual accountability is rare, and it's exactly what quality-motivated candidates filter for.`, link: 'full-analysis.html#rel-testing-rigour',
+        sample: `"You own our data contract framework — defining and enforcing the testing standards every model has to pass before it ships."`,
+        why: `Nearly every posting claims a "quality mindset," so that phrase alone selects for nobody — a named, individual accountability is rare enough to actually catch the candidates who want that job.` },
+      { label: 'Shared team culture', result: `Don't dress it up as personal ownership — that reads as scope inflation in the interview. Still name what you're protecting against (incidents, compliance, trust), even as a team-level concern.`, link: 'full-analysis.html#rel-testing-fear',
+        sample: `"Data quality is a shared team responsibility, not one person's job — we care about it because a bad number reaching the board is expensive to walk back."`,
+        why: `Candidates who probe for ownership in the interview will find out it's shared anyway — saying so upfront avoids a mismatch that reads as scope inflation once they're in the room.` },
     ],
   },
   {
@@ -679,25 +712,25 @@ const ASSESS = [
     question: 'If this role gets something wrong, what actually breaks?',
     options: [
       { label: 'Compliance / financial / regulatory exposure', result: `Name it directly. Compliance and audit language reliably correlates with genuinely high stakes in this market, so candidates take it seriously rather than reading it as boilerplate.`, link: 'full-analysis.html#rel-fear-domainrisk',
-        sample: `"Your numbers feed directly into regulatory reporting - errors here have real audit and compliance consequences, not just an awkward Slack message."`,
-        why: `This is the one risk framing candidates actually trust in this market - naming it plainly gets taken seriously instead of getting filed under generic risk-aversion boilerplate.` },
-      { label: 'Real cost, but not compliance-shaped (product, trust, revenue)', result: `Spell out the failure mode and its cost explicitly. This market has taught candidates that "high-stakes" language means finance - a sector label alone won't communicate risk that lives outside that pattern.`, link: 'full-analysis.html#rel-domain-stakeholder',
-        sample: `"A bad experiment read here can send us building the wrong feature for a quarter - it's not regulated, but a mistake is expensive in lost roadmap time, not just embarrassment."`,
-        why: `Candidates have learned "high stakes" means finance - if your real risk lives in product or trust instead, a sector label won't communicate it, so you have to spell out the failure mode yourself.` },
-      { label: 'Low stakes, iterate and fix later', result: `Say so. It's an honest, attractive pitch to candidates who want velocity over rigour - and forcing risk language onto a low-stakes role reads as inflated.`, link: 'full-analysis.html#rel-domainrisk-rigour',
-        sample: `"We move fast here and fix things in the next sprint if they're wrong - this isn't a role where a mistake takes down anything critical."`,
-        why: `Some candidates actively want low-stakes, fast-iteration work over rigour - saying so plainly attracts them, while forcing risk language onto a low-stakes role just reads as inflated to everyone else.` },
+        sample: `"Your numbers feed directly into regulatory reporting — errors here have real audit and compliance consequences, not just an awkward Slack message."`,
+        why: `This is the one risk framing candidates actually trust in this market — naming it plainly gets taken seriously instead of getting filed under generic risk-aversion boilerplate.` },
+      { label: 'Real cost, but not compliance-shaped (product, trust, revenue)', result: `Spell out the failure mode and its cost explicitly. This market has taught candidates that "high-stakes" language means finance — a sector label alone won't communicate risk that lives outside that pattern.`, link: 'full-analysis.html#rel-domain-stakeholder',
+        sample: `"A bad experiment read here can send us building the wrong feature for a quarter — it's not regulated, but a mistake is expensive in lost roadmap time, not just embarrassment."`,
+        why: `Candidates have learned "high stakes" means finance — if your real risk lives in product or trust instead, a sector label won't communicate it, so you have to spell out the failure mode yourself.` },
+      { label: 'Low stakes, iterate and fix later', result: `Say so. It's an honest, attractive pitch to candidates who want velocity over rigour — and forcing risk language onto a low-stakes role reads as inflated.`, link: 'full-analysis.html#rel-domainrisk-rigour',
+        sample: `"We move fast here and fix things in the next sprint if they're wrong — this isn't a role where a mistake takes down anything critical."`,
+        why: `Some candidates actively want low-stakes, fast-iteration work over rigour — saying so plainly attracts them, while forcing risk language onto a low-stakes role just reads as inflated to everyone else.` },
     ],
   },
   {
     key: 'tooling', name: 'Tooling & AI leverage',
     question: 'Is using AI-assisted coding tools genuinely part of how this role works day to day?',
     options: [
-      { label: 'Yes, expected daily use', result: `Say so explicitly. Naming an AI-tool-fluency expectation doesn't undersell your role's seniority in this market - if anything it correlates with more strategic-scoped postings, not more junior ones.`, link: 'full-analysis.html#rel-ai-autonomy',
-        sample: `"We use Claude Code and GitHub Copilot daily as part of our normal dbt workflow - comfort with AI-assisted coding is expected, not optional."`,
-        why: `Managers often worry naming this makes a role sound junior - in this market it does the opposite, so leaving it out costs you a positive signal for free.` },
-      { label: 'Not really a factor', result: `No need to force it in. Most postings in this market - over two-thirds - state no AI expectation at all. Spend your specificity budget on the real stack instead.`, link: 'full-analysis.html#rel-authorship-dbt',
-        sample: `Leave it out entirely - naming a real tool ("dbt, Airflow, Snowflake") does more work for you than a line about AI tooling you don't actually use day to day.`,
+      { label: 'Yes, expected daily use', result: `Say so explicitly. Naming an AI-tool-fluency expectation doesn't undersell your role's seniority in this market — if anything it correlates with more strategic-scoped postings, not more junior ones.`, link: 'full-analysis.html#rel-ai-autonomy',
+        sample: `"We use Claude Code and GitHub Copilot daily as part of our normal dbt workflow — comfort with AI-assisted coding is expected, not optional."`,
+        why: `Managers often worry naming this makes a role sound junior — in this market it does the opposite, so leaving it out costs you a positive signal for free.` },
+      { label: 'Not really a factor', result: `No need to force it in. Most postings in this market ({{noAiPct}}%) state no AI expectation at all. Spend your specificity budget on the real stack instead.`, link: 'full-analysis.html#rel-authorship-dbt',
+        sample: `Leave it out entirely — naming a real tool ("dbt, Airflow, Snowflake") does more work for you than a line about AI tooling you don't actually use day to day.`,
         why: `Most postings already say nothing here, so forcing in an AI line you don't mean just wastes space you could spend on the real stack, which candidates actually screen against.` },
     ],
   },
@@ -727,10 +760,10 @@ function buildAssessCards() {
         }
         btn.classList.add('active');
         const opt = a.options[parseInt(btn.dataset.idx, 10)];
-        resultEl.innerHTML = `<b>What this means for your JD:</b> ${opt.result}` +
+        resultEl.innerHTML = `<b>What this means for your JD:</b> ${fill(opt.result)}` +
           (opt.sample ? `<div class="sample-text"><span class="sample-text-label">Sample text</span>${opt.sample}</div>` : '') +
           (opt.why ? `<div class="why-matters"><b>Why it matters:</b> ${opt.why}</div>` : '') +
-          `<span class="find"><a href="${opt.link}" target="_blank" rel="noopener">See the underlying finding</a></span>`;
+          `<span class="find"><a href="${opt.link}" target="_blank" rel="noopener">Read the evidence</a></span>`;
         resultEl.classList.add('visible');
       });
     });
@@ -740,6 +773,8 @@ function buildAssessCards() {
 fetch('./data.json').then(r => r.json()).then(data => {
   ALL_DATA = data;
   DATA = data;
+  computeFacts();
+  document.getElementById('ctaCount').textContent = FACTS.n;
   buildRegionFilter();
   buildSnapshot();
   buildHygiene();
@@ -750,7 +785,7 @@ fetch('./data.json').then(r => r.json()).then(data => {
   if (mode) setMode(mode);
 }).catch(err => {
   document.getElementById('hero').insertAdjacentHTML('afterend',
-    `<div style="text-align:center;padding:4rem;color:#c0392b">Failed to load data.json: ${err.message}</div>`);
+    `<div style="text-align:center;padding:4rem;color:#c0392b">The data did not load. Check your connection and reload the page.</div>`);
 });
 </script>
 </body>
