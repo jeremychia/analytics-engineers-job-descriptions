@@ -64,7 +64,7 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
   cursor: pointer; white-space: nowrap; font-family: var(--font-ui);
 }
 .mode-toggle button.active { background: var(--accent); color: #fff; }
-@media (max-width: 640px) { .mode-toggle { top: auto; bottom: 1rem; box-shadow: var(--shadow); } }
+@media (max-width: 640px) { .mode-toggle { top: auto; bottom: 3.75rem; box-shadow: var(--shadow); } }
 
 .region-filter {
   position: fixed; top: 0.6rem; left: 1rem; z-index: 500;
@@ -96,25 +96,9 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
 }
 .region-dd-opt:hover { background: var(--surface2); }
 .region-dd-opt.active { background: var(--accent); color: #fff; }
+@media (max-width: 640px) { #content { padding-bottom: 7rem; } }
 @media (max-width: 640px) { .region-dd-list { left: 0; bottom: calc(100% + 0.5rem); top: auto; } }
 
-/* ── REGION NUDGE (one-time prompt shown right after mode is picked) ── */
-.region-nudge {
-  background: #eff6ff; border: 1px solid #bfdbfe; border-radius: var(--r-md);
-  padding: 1.1rem 1.4rem; margin: 0 auto 2rem; max-width: var(--w);
-}
-.region-nudge.hidden { display: none; }
-.region-nudge-title { font-size: var(--t-sm); font-weight: 700; color: var(--text); margin-bottom: 0.3rem; }
-.region-nudge-sub { font-size: var(--t-xs); color: var(--muted); line-height: 1.6; margin-bottom: 0.9rem; }
-.region-nudge-opts { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.region-nudge-opt {
-  padding: 0.5rem 1rem; border-radius: var(--r-pill); border: 1.5px solid var(--control-border);
-  background: #fff; cursor: pointer; font-family: var(--font-ui); font-size: var(--t-sm); font-weight: 600;
-  color: var(--text); transition: border-color 0.15s, background-color 0.15s;
-}
-.region-nudge-opt:hover { border-color: var(--accent); }
-.region-nudge-opt.active { background: var(--accent); border-color: var(--accent); color: #fff; }
-.region-nudge-dismiss { font-size: var(--t-xs); color: var(--muted); text-decoration: underline; cursor: pointer; margin-left: 0.4rem; background: none; border: none; font-family: var(--font-ui); }
 
 /* ── HERO / MODE PICKER ── */
 .hero {
@@ -151,8 +135,6 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
 .hygiene-stat { font-size: var(--t-lg); font-weight: 700; color: var(--text); margin-bottom: 0.3rem; line-height: 1; }
 .hygiene-label { font-size: var(--t-xs); font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
 .hygiene-note { font-size: var(--t-xs); color: var(--muted); line-height: 1.6; }
-.hygiene-check { display: flex; align-items: flex-start; gap: 0.6rem; }
-.hygiene-check-mark { flex-shrink: 0; width: 20px; height: 20px; border-radius: var(--r-sm); background: var(--surface2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: var(--t-xs); color: var(--muted); margin-top: 0.1rem; }
 
 .sample-text {
   margin-top: 0.7rem; padding: 0.65rem 0.85rem; background: #fff; border: 1px dashed var(--border);
@@ -168,7 +150,7 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
 .stat-bar-fill.warn { background: var(--warn); }
 
 /* ── SNAPSHOT (dataset composition, shown once above mode content) ── */
-.snapshot-section { padding: 2.5rem 1.5rem 0.5rem; max-width: var(--w); margin: 0 auto; }
+.snapshot-section { padding: 3.5rem 1.5rem; max-width: var(--w); margin: 0 auto; border-top: 1px solid var(--border); }
 .snapshot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
 .snapshot-group-title { font-size: var(--t-xs); font-weight: 700; color: var(--text); margin-bottom: 0.75rem; }
 .snapshot-row { margin-bottom: 0.65rem; }
@@ -186,7 +168,6 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
 }
 .motivator-chip:hover { border-color: var(--accent); }
 .motivator-chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
-.motivator-chip .icon { font-size: var(--t-base); }
 .motivator-empty { font-size: var(--t-sm); color: var(--muted); padding: 2rem 0; text-align: center; border: 1px dashed var(--border); border-radius: var(--r-md); }
 
 /* ── CHECKLIST CARDS (shared seeker/manager) ── */
@@ -279,18 +260,6 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
 
 <main id="content">
 
-  <div class="region-nudge hidden" id="regionNudge">
-    <div class="region-nudge-title" id="regionNudgeTitle">Where are you applying?</div>
-    <div class="region-nudge-sub">JD language doesn't mean the same thing everywhere in this dataset. Language requirements are almost entirely a European pattern, salary ranges are close to mandatory in NYC metro and close to unheard-of in APAC, and "rigour" language reads as more routine in Europe than the same language would in the US. Pick a region to calibrate the numbers below - or skip it and see the blended average across all regions (currently ~77% European by volume).</div>
-    <div class="region-nudge-opts" id="regionNudgeOpts"></div>
-  </div>
-
-  <section class="snapshot-section" id="snapshotSection">
-    <h2 class="section-title" style="font-size:var(--t-md)" id="snapshotTitle">1,103 job descriptions, classified - not surveyed</h2>
-    <p class="section-intro" style="margin-bottom:0">Every stat and checklist item below is computed live from this dataset. Use the region filter (top-left) to narrow it — most numbers move once you do, and some cells get too small to trust.</p>
-    <div class="snapshot-grid" id="snapshotGrid"></div>
-  </section>
-
   <!-- ══════════════ SEEKER MODE ══════════════ -->
   <div id="seekerContent" style="display:none">
 
@@ -326,6 +295,12 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
     </section>
 
   </div>
+
+  <section class="snapshot-section" id="snapshotSection">
+    <h2 class="section-title" style="font-size:var(--t-md)" id="snapshotTitle">1,103 job descriptions, classified - not surveyed</h2>
+    <p class="section-intro" style="margin-bottom:0">Every stat and checklist item on this page is computed live from this dataset. Use the region filter to narrow it — most numbers move once you do, and some cells get too small to trust.</p>
+    <div class="snapshot-grid" id="snapshotGrid"></div>
+  </section>
 
   <section class="section">
     <div class="full-analysis-cta">
@@ -410,7 +385,6 @@ function applyRegionFilter() {
   buildSnapshot();
   buildHygiene();
   buildManagerHygiene();
-  updateRegionNudge();
   if (window._regionDdSyncTriggerText) window._regionDdSyncTriggerText();
 }
 
@@ -424,44 +398,7 @@ function setMode(m) {
   document.querySelectorAll('.mode-toggle button').forEach(b => b.classList.toggle('active', b.dataset.mode === m));
   document.getElementById('seekerContent').style.display = m === 'seeker' ? 'block' : 'none';
   document.getElementById('managerContent').style.display = m === 'manager' ? 'block' : 'none';
-  document.getElementById('regionNudgeTitle').textContent = m === 'manager' ? 'Where are you hiring?' : 'Where are you applying?';
-  maybeShowRegionNudge();
   window.scrollTo(0, 0);
-}
-
-// ── Region nudge: shown once per session right after mode is picked, so region
-// is a conscious choice instead of a corner dropdown a user has to discover. ──
-let regionNudgeDismissed = false;
-const REGION_NUDGE_OPTS = [
-  { key: 'europe', label: 'Europe' },
-  { key: 'apac', label: 'APAC' },
-  { key: 'nyc_metro', label: 'NYC metro' },
-  { key: 'all', label: 'All regions (blended)' },
-];
-function buildRegionNudge() {
-  document.getElementById('regionNudgeOpts').innerHTML = REGION_NUDGE_OPTS.map(o => `
-    <button type="button" class="region-nudge-opt${region === o.key ? ' active' : ''}" data-region="${o.key}">${o.label}</button>`
-  ).join('') + `<button type="button" class="region-nudge-dismiss" id="regionNudgeSkip">Skip, decide later</button>`;
-  document.querySelectorAll('.region-nudge-opt').forEach(btn => {
-    btn.addEventListener('click', () => {
-      region = btn.dataset.region;
-      applyRegionFilter();
-      regionNudgeDismissed = true;
-      document.getElementById('regionNudge').classList.add('hidden');
-    });
-  });
-  document.getElementById('regionNudgeSkip').addEventListener('click', () => {
-    regionNudgeDismissed = true;
-    document.getElementById('regionNudge').classList.add('hidden');
-  });
-}
-function maybeShowRegionNudge() {
-  if (regionNudgeDismissed) return;
-  buildRegionNudge();
-  document.getElementById('regionNudge').classList.remove('hidden');
-}
-function updateRegionNudge() {
-  document.querySelectorAll('.region-nudge-opt').forEach(b => b.classList.toggle('active', b.dataset.region === region));
 }
 
 // ── Hygiene factors: real stats from the dataset ──
@@ -584,18 +521,16 @@ function buildManagerHygiene() {
   ];
   document.getElementById('managerHygieneList').innerHTML = `<div class="hygiene-grid">` + items.map(c => `
     <div class="hygiene-card">
-      <div class="hygiene-check"><div class="hygiene-check-mark">?</div><div>
-        <div class="hygiene-label">${c.label}</div>
+              <div class="hygiene-label">${c.label}</div>
         <div class="hygiene-note">${c.note}</div>
         <div class="sample-text"><span class="sample-text-label">Sample text</span>${c.sample}</div>
-      </div></div>
     </div>`).join('') + `</div>`;
 }
 
 // ── Motivators: seeker checklist content ──
 const MOTIVATORS = [
   {
-    key: 'autonomy', icon: '🎯', name: 'Real autonomy, not execution work',
+    key: 'autonomy', name: 'Real autonomy, not execution work',
     desc: 'You want to set direction, not just deliver against someone else\'s plan.',
     items: [
       { badge: 'look', text: `A "Senior" title roughly doubles your odds of strategic scope over "Mid" - but within "Senior" alone, it's close to a coin flip. Read the verbs: "define/own/shape" versus "support/assist/deliver."`, link: 'full-analysis.html#rel-seniority-autonomy' },
@@ -605,7 +540,7 @@ const MOTIVATORS = [
     ],
   },
   {
-    key: 'building', icon: '🏗️', name: 'Building, not maintaining',
+    key: 'building', name: 'Building, not maintaining',
     desc: 'You want to build something from scratch, not patch an existing system.',
     items: [
       { badge: 'look', text: `Greenfield tells: "build," "establish," "define," "create from scratch," "design," "from the ground up." Fix/scale tells: "improve," "maintain," "modernise," "inherited," "migrate," "refactor," "technical debt." Greenfield work concentrates almost entirely at early-stage companies - "modernise our stack" at a mid-stage company is more likely fix/scale than a true from-scratch build.`, link: 'full-analysis.html#rel-maturity-mission' },
@@ -614,7 +549,7 @@ const MOTIVATORS = [
     ],
   },
   {
-    key: 'growth', icon: '🌱', name: 'Growth & mentorship',
+    key: 'growth', name: 'Growth & mentorship',
     desc: 'You want to develop other people, or be developed — not just execute solo.',
     items: [
       { badge: 'look', text: `Don't assume a "Mid" or "Senior" title tells you whether you'll mentor anyone. Autonomy language ("own," "define," "shape," "drive") predicts it better, even within the same title band.`, link: 'full-analysis.html#rel-mentorship-autonomy' },
@@ -622,7 +557,7 @@ const MOTIVATORS = [
     ],
   },
   {
-    key: 'quality', icon: '🔬', name: 'Quality ownership, not just "quality talk"',
+    key: 'quality', name: 'Quality ownership, not just "quality talk"',
     desc: 'You want data quality to be your named job, not a vibe everyone claims to share.',
     items: [
       { badge: 'caution', text: `"Rigour" language is the majority framing in every risk tier, but it is not uniform - it runs 84% in high-risk domains, 64% in moderate, and 50% in low-risk. Either way it tells you the team values correctness, not whether YOU personally own it. Check testing framing separately: <b>owns it</b> - "own the quality," "you will define testing standards," "data contracts" as a named responsibility - versus <b>tool listed</b> - "Great Expectations," "Soda," "dbt tests" in a skills list with no ownership verb - versus <b>absent</b> entirely.`, link: 'full-analysis.html#rel-testing-rigour' },
@@ -630,7 +565,7 @@ const MOTIVATORS = [
     ],
   },
   {
-    key: 'stakes', icon: '🧭', name: 'Meaningful stakeholder impact',
+    key: 'stakes', name: 'Meaningful stakeholder impact',
     desc: 'You care who your work actually reaches and affects — not just that it\'s "high stakes."',
     items: [
       { badge: 'caution', text: `"High-stakes" in this market functionally means finance and compliance - look for "FP&A," "P&L," "financial reporting," "forecast," "audit," "controllership," "board." Product-facing tells ("experiment," "A/B," "funnel," "activation," "growth") almost never get coded high-risk, even when the failure mode - a bad experiment, a bad growth call - is real. Don't expect the JD's language to signal stakes if commercial or product impact matters more to you.`, link: 'full-analysis.html#rel-domain-stakeholder' },
@@ -638,7 +573,7 @@ const MOTIVATORS = [
     ],
   },
   {
-    key: 'tooling', icon: '⚙️', name: 'Modern tooling & AI leverage',
+    key: 'tooling', name: 'Modern tooling & AI leverage',
     desc: 'You want to work with a current stack and real AI-assisted workflows, not legacy tooling.',
     items: [
       { badge: 'look', text: `Look for named tools, not vague "AI-first mindset" language: "GitHub Copilot," "Cursor," "Claude Code," "AI-assisted coding," "coding agents." These correlate with more strategic-scoped roles in this market, not less. Treat a named tool as a positive signal, not a junior checkbox.`, link: 'full-analysis.html#rel-ai-autonomy' },
@@ -652,7 +587,7 @@ const BADGE_LABEL = { look: 'OK', caution: '!', flag: '✕', do: '→' };
 function buildMotivatorChips() {
   document.getElementById('motivatorChips').innerHTML = MOTIVATORS.map(m => `
     <button type="button" class="motivator-chip${activeMotivators.has(m.key) ? ' active' : ''}" data-key="${m.key}">
-      <span class="icon">${m.icon}</span>${m.name}
+      ${m.name}
     </button>`).join('');
   document.querySelectorAll('.motivator-chip').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -673,7 +608,7 @@ function buildMotivatorChecklists() {
   container.innerHTML = MOTIVATORS.filter(m => activeMotivators.has(m.key)).map(m => `
     <div class="check-card">
       <div class="check-head">
-        <div class="check-title">${m.icon} ${m.name}</div>
+        <div class="check-title">${m.name}</div>
         <div class="check-sub">${m.desc}</div>
       </div>
       <div class="check-body">
@@ -689,7 +624,7 @@ function buildMotivatorChecklists() {
 // ── Manager self-assessment: same 6 motivators, question + answer-triggered tip ──
 const ASSESS = [
   {
-    key: 'autonomy', icon: '🎯', name: 'Autonomy & scope',
+    key: 'autonomy', name: 'Autonomy & scope',
     question: 'Does this hire mostly decide the approach, or mostly execute a pre-set plan?',
     options: [
       { label: 'Decides the approach', result: `Say so explicitly. Name a real decision the role owns in year one ("you choose the modelling architecture," "you set the testing roadmap"). A bare "Senior" title doesn't communicate this - within "Senior" alone, strategic scope is close to a coin flip in this market's postings.`, link: 'full-analysis.html#rel-seniority-autonomy',
@@ -704,7 +639,7 @@ const ASSESS = [
     ],
   },
   {
-    key: 'building', icon: '🏗️', name: 'Building vs. maintaining',
+    key: 'building', name: 'Building vs. maintaining',
     question: 'Is this role building something new, or improving/fixing what already exists?',
     options: [
       { label: 'Building from scratch', result: `Name the specific project directly ("build the first X") rather than leaning on "early-stage energy" or generic stage framing. It reads as a stronger, more credible ownership signal - even at a mature company running one genuine greenfield initiative.`, link: 'full-analysis.html#rel-maturity-mission',
@@ -716,7 +651,7 @@ const ASSESS = [
     ],
   },
   {
-    key: 'growth', icon: '🌱', name: 'Growth & mentorship',
+    key: 'growth', name: 'Growth & mentorship',
     question: 'Will this person mentor or develop others as part of the role?',
     options: [
       { label: 'Yes, meaningfully', result: `Use ownership and autonomy language ("own this domain," "define the approach") rather than relying on the seniority title alone. Candidates read it as a mentorship signal more accurately than they read title band.`, link: 'full-analysis.html#rel-mentorship-autonomy',
@@ -728,7 +663,7 @@ const ASSESS = [
     ],
   },
   {
-    key: 'quality', icon: '🔬', name: 'Quality ownership',
+    key: 'quality', name: 'Quality ownership',
     question: 'Does this person personally own data quality, or is it a shared team value?',
     options: [
       { label: 'Personally owns it', result: `Name a concrete accountability ("you own the data contract framework," "you define the testing standards"). "Data quality mindset" appears in nearly every posting and selects for nobody - a named individual accountability is rare, and it's exactly what quality-motivated candidates filter for.`, link: 'full-analysis.html#rel-testing-rigour',
@@ -740,7 +675,7 @@ const ASSESS = [
     ],
   },
   {
-    key: 'stakes', icon: '🧭', name: 'Risk & stakeholder stakes',
+    key: 'stakes', name: 'Risk & stakeholder stakes',
     question: 'If this role gets something wrong, what actually breaks?',
     options: [
       { label: 'Compliance / financial / regulatory exposure', result: `Name it directly. Compliance and audit language reliably correlates with genuinely high stakes in this market, so candidates take it seriously rather than reading it as boilerplate.`, link: 'full-analysis.html#rel-fear-domainrisk',
@@ -755,7 +690,7 @@ const ASSESS = [
     ],
   },
   {
-    key: 'tooling', icon: '⚙️', name: 'Tooling & AI leverage',
+    key: 'tooling', name: 'Tooling & AI leverage',
     question: 'Is using AI-assisted coding tools genuinely part of how this role works day to day?',
     options: [
       { label: 'Yes, expected daily use', result: `Say so explicitly. Naming an AI-tool-fluency expectation doesn't undersell your role's seniority in this market - if anything it correlates with more strategic-scoped postings, not more junior ones.`, link: 'full-analysis.html#rel-ai-autonomy',
@@ -771,7 +706,7 @@ const ASSESS = [
 function buildAssessCards() {
   document.getElementById('assessCards').innerHTML = ASSESS.map(a => `
     <div class="assess-card">
-      <div class="assess-title">${a.icon} ${a.name}</div>
+      <div class="assess-title">${a.name}</div>
       <div class="assess-question">${a.question}</div>
       <div class="assess-options" data-key="${a.key}">
         ${a.options.map((o, i) => `<button type="button" class="assess-opt" data-idx="${i}">${o.label}</button>`).join('')}
