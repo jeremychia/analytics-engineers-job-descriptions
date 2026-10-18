@@ -390,13 +390,13 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
 <!-- STICKY NAV -->
 <nav class="sticky-nav" aria-label="Page sections">
   <span class="nav-title">AE/BI Market</span>
-  <div class="nav-links" role="list">
-    <a href="#relationships" role="listitem" data-section="relationships">Relationships</a>
-    <a href="#nulls"         role="listitem" data-section="nulls">Didn't hold</a>
-    <a href="#explorer"      role="listitem" data-section="explorer">Explorer</a>
-    <a href="#orientation"   role="listitem" data-section="orientation">Orientation</a>
-    <a href="#geo-section"   role="listitem" data-section="geo-section">Coverage</a>
-    <a href="#stack"         role="listitem" data-section="stack">Stack</a>
+  <div class="nav-links">
+    <a href="#relationships" data-section="relationships">Relationships</a>
+    <a href="#nulls"         data-section="nulls">Didn't hold</a>
+    <a href="#explorer"      data-section="explorer">Explorer</a>
+    <a href="#orientation"   data-section="orientation">Orientation</a>
+    <a href="#geo-section"   data-section="geo-section">Coverage</a>
+    <a href="#stack"         data-section="stack">Stack</a>
   </div>
   <div class="nav-filters">
     <div class="nav-filter">
@@ -518,14 +518,14 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
     <p class="card-sub">Top-right = maximum pressure (many stakeholders, high stakes). Hover any dot for evidence.</p>
     <div class="scatter-controls">
       <div class="ctrl-group">
-        <label>X axis</label>
+        <label for="xAxis">X axis</label>
         <select id="xAxis">
           <option value="collaboration_width">Collaboration width</option>
           <option value="salary_mid">Salary midpoint (EUR, annual only, n≈16)</option>
         </select>
       </div>
       <div class="ctrl-group">
-        <label>Colour by</label>
+        <label for="colourBy">Colour by</label>
         <select id="colourBy">
           <option value="autonomy_level">Autonomy level</option>
           <option value="velocity_vs_rigour">Rigour vs velocity</option>
@@ -541,7 +541,8 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
         </select>
       </div>
     </div>
-    <div class="scatter-wrap"><canvas id="scatterChart" role="img" aria-label="Scatter chart: collaboration width versus domain risk for each role"></canvas></div>
+    <div class="scatter-wrap"><canvas id="scatterChart" role="img" aria-label="Scatter chart: one dot per role, domain risk against the chosen axis." aria-describedby="scatterSummary"></canvas>
+      <p class="sr-only" id="scatterSummary"></p></div>
     <div class="legend" id="scatterLegend"></div>
   </div>
 </section>
@@ -554,7 +555,7 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
   <div class="card">
     <div class="scatter-controls">
       <div class="ctrl-group">
-        <label>Dimension</label>
+        <label for="orientationDim">Dimension</label>
         <select id="orientationDim">
           <option value="velocity_vs_rigour">Rigour vs velocity</option>
           <option value="jd_authorship">JD authorship</option>
@@ -571,7 +572,7 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
     </div>
     <div style="display:grid;grid-template-columns:280px 1fr;gap:2rem;align-items:start">
       <div>
-        <div style="position:relative;height:220px"><canvas id="orientationChart"></canvas></div>
+        <div style="position:relative;height:220px"><canvas id="orientationChart" role="img" aria-label="Doughnut chart of the selected dimension." aria-describedby="orientationHeadline"></canvas></div>
         <p id="orientationHeadline" style="font-size:var(--t-sm);color:var(--muted);margin-top:1rem;line-height:1.6"></p>
       </div>
       <div>
@@ -799,12 +800,15 @@ function setPersona(p) {
 }
 function applyPersona() {
   const p = P();
-  document.querySelectorAll('.persona-toggle button').forEach(b => b.classList.toggle('active', b.dataset.persona === p));
+  document.querySelectorAll('.persona-toggle button').forEach(b => {
+    b.classList.toggle('active', b.dataset.persona === p);
+    b.setAttribute('aria-pressed', String(b.dataset.persona === p));
+  });
   Object.entries(COPY).forEach(([id, t]) => { const el = document.getElementById(id); if (el) el.innerHTML = t[p]; });
   const wrap = document.getElementById('sectionsWrap');
   SECTION_ORDER[p].forEach(id => { const s = document.getElementById(id); if (s) wrap.appendChild(s); });
   document.querySelector('.nav-links').innerHTML = SECTION_ORDER[p].filter(id => id !== 'summary')
-    .map(id => `<a href="#${id}" role="listitem" data-section="${id}">${NAV_LABELS[id][p]}</a>`).join('');
+    .map(id => `<a href="#${id}" data-section="${id}">${NAV_LABELS[id][p]}</a>`).join('');
   if (ALL_DATA.length) { buildRelationships(activeData); buildNulls(activeData); }
 }
 
@@ -1025,9 +1029,10 @@ function renderXtab(containerId, data, rowKey, colKey, rowOrder, colOrder) {
       const pct = Math.round(counts[c]/total*100);
       return `<div class="xtab-seg" style="width:${pct}%;background:${colCol[c]||'#9ca3af'};color:${labelOn(colCol[c]||'#9ca3af')}" title="${colLab[c]||c}: ${pct}%">${pct>=12?pct+'%':''}</div>`;
     }).join('');
+    const barText = cols.filter(c => counts[c]).map(c => `${colLab[c]||c} ${Math.round(counts[c]/total*100)}%`).join(', ');
     return `<div class="xtab-row">
       <div class="xtab-label">${rowLab[row]||row}</div>
-      <div class="xtab-bar">${segs}</div>
+      <div class="xtab-bar" role="img" aria-label="${rowLab[row]||row}: ${barText}">${segs}</div>
       <div class="xtab-n">n=${total}</div>
     </div>`;
   }).join('');
@@ -1410,13 +1415,34 @@ function buildRelationships(data) {
   const tabsEl = document.getElementById('relTabs');
   tabsEl.innerHTML = groups.map(g => {
     const count = panels.filter(p => p.group === g.key).length;
-    return `<button type="button" class="rel-tab${g.key === activeRelGroup ? ' active' : ''}" role="tab" aria-selected="${g.key === activeRelGroup}" data-group="${g.key}" title="${g.desc}">
+    const on = g.key === activeRelGroup;
+    return `<button type="button" class="rel-tab${on ? ' active' : ''}" role="tab" id="reltab-${g.key}" aria-selected="${on}" aria-controls="relGrid" tabindex="${on ? 0 : -1}" data-group="${g.key}" title="${g.desc}">
       <span class="rel-tab-name">${g.name}</span><span class="rel-tab-count">${count} relationship${count===1?'':'s'}</span>
     </button>`;
   }).join('');
+  const selectTab = group => {
+    activeRelGroup = group;
+    buildRelationships(activeData);
+    document.getElementById('reltab-' + group).focus();
+  };
   tabsEl.querySelectorAll('.rel-tab').forEach(btn => {
-    btn.addEventListener('click', () => { activeRelGroup = btn.dataset.group; buildRelationships(activeData); });
+    btn.addEventListener('click', () => selectTab(btn.dataset.group));
   });
+  if (!tabsEl.dataset.keys) {
+    tabsEl.dataset.keys = '1';
+    tabsEl.addEventListener('keydown', e => {
+      const tabs = [...tabsEl.querySelectorAll('.rel-tab')];
+      const i = tabs.indexOf(document.activeElement);
+      if (i < 0) return;
+      const to = { ArrowRight: (i + 1) % tabs.length, ArrowLeft: (i - 1 + tabs.length) % tabs.length, Home: 0, End: tabs.length - 1 }[e.key];
+      if (to === undefined) return;
+      e.preventDefault();
+      selectTab(tabs[to].dataset.group);
+    });
+  }
+  const gridEl = document.getElementById('relGrid');
+  gridEl.setAttribute('role', 'tabpanel');
+  gridEl.setAttribute('aria-labelledby', 'reltab-' + activeRelGroup);
 
   const visiblePanels = panels.filter(p => p.group === activeRelGroup);
   const grid = document.getElementById('relGrid');
@@ -1570,6 +1596,15 @@ function buildScatter(data) {
     borderColor: colMap[cat]||'#888',
     borderWidth: 1.5, pointRadius: 8, pointHoverRadius: 11,
   }));
+  const tierName = { 3: 'high risk', 2: 'moderate risk', 1: 'low risk' };
+  const tierCounts = {};
+  Object.entries(groups).forEach(([cat, pts]) => pts.forEach(pt => {
+    const tier = Math.round(pt.y);
+    tierCounts[tier] = tierCounts[tier] || {};
+    tierCounts[tier][labMap[cat] || cat] = (tierCounts[tier][labMap[cat] || cat] || 0) + 1;
+  }));
+  document.getElementById('scatterSummary').textContent = `${Object.values(groups).reduce((a, b) => a + b.length, 0)} roles plotted. ` +
+    [3, 2, 1].filter(t => tierCounts[t]).map(t => `${tierName[t]}: ${Object.entries(tierCounts[t]).map(([k, v]) => `${v} ${k}`).join(', ')}`).join('. ') + '.';
   destroyChart('scatter');
   charts.scatter = new Chart(document.getElementById('scatterChart').getContext('2d'), {
     type: 'scatter', data: { datasets },
@@ -1642,6 +1677,7 @@ function buildOrientation() {
 }
 
 function selectOrientation(dataKey, key) {
+  document.querySelectorAll('#orientationTabs button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.key === key)));
   const data = activeData.filter(d => d[dataKey] === key);
   const container = document.getElementById('orientationList');
   if (!data.length) { container.innerHTML = '<div class="empty-state">No roles in this segment.</div>'; return; }
@@ -2225,7 +2261,11 @@ Promise.all([
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) document.querySelectorAll('.nav-links a[data-section]')
-        .forEach(a => a.classList.toggle('active', a.dataset.section === entry.target.id));
+        .forEach(a => {
+          const here = a.dataset.section === entry.target.id;
+          a.classList.toggle('active', here);
+          if (here) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current');
+        });
     });
   }, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
   ['relationships','responsibility-taxonomy','nulls','explorer','orientation','geo-section','stack'].forEach(id => {
