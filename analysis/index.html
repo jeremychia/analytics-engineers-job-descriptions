@@ -77,6 +77,15 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
 
 /* Custom dropdown (not native <select> — a native-popup rendering bug was observed
    in some Chrome/macOS setups where the select would focus but never open). */
+/* text for screen readers only */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.skip-link {
+  position: absolute; top: -48px; left: 1rem; z-index: 9999;
+  background: var(--accent); color: #fff; padding: 0.5rem 1rem; border-radius: 0 0 var(--r-md) var(--r-md);
+  font-size: var(--t-sm); font-weight: 600; text-decoration: none; transition: top 0.1s;
+}
+.skip-link:focus { top: 0; }
+
 .region-dd { position: relative; }
 .region-dd-trigger {
   font-size: var(--t-xs); font-family: var(--font-ui); border: none; background: transparent; color: var(--text);
@@ -226,6 +235,7 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
 <link rel="stylesheet" href="hero-quote.css">
 </head>
 <body>
+<a class="skip-link" id="skipLink" href="#hero">Skip to main content</a>
 
 <div class="mode-toggle hidden" id="modeToggle" role="group" aria-label="Switch mode">
   <button type="button" data-mode="seeker" onclick="setMode('seeker')">Job seeker</button>
@@ -243,7 +253,7 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
 </div>
 
 <!-- HERO / MODE PICKER -->
-<section class="hero" id="hero">
+<section class="hero" id="hero" tabindex="-1">
   <div id="heroQuote"></div>
   <h1>Read the verbs, not just the title</h1>
   <p class="hero-sub">Same postings, two different questions, and they don't share an answer. Pick the one that's yours and the rest of the page is built around it.</p>
@@ -260,7 +270,8 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
   <p class="hero-footer-link">Want the underlying statistics, test results, and every relationship in the dataset? <a href="full-analysis.html">See the full analysis</a></p>
 </section>
 
-<main id="content">
+<main id="content" tabindex="-1">
+  <h1 class="sr-only">AE/BI job market: what to look for and what to signal</h1>
 
   <!-- ══════════════ SEEKER MODE ══════════════ -->
   <div id="seekerContent" style="display:none">
@@ -268,7 +279,7 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
     <section class="section" id="seekerHygiene">
       <h2 class="section-title">The basics: they don't make a role good, but a posting that skips them should give you pause</h2>
       <p class="section-intro">A posting can state all six of these and still be a poor job. Clearing the bar is normal, not impressive. But a posting that fails several of them at once is telling you something.</p>
-      <p class="section-intro" id="hygieneSmallN" style="display:none;color:#92400e;font-weight:600;margin-top:-1.25rem"></p>
+      <p class="section-intro" id="hygieneSmallN" role="status" style="display:none;color:#92400e;font-weight:600;margin-top:-1.25rem"></p>
       <div class="hygiene-grid" id="hygieneGrid"></div>
     </section>
 
@@ -276,6 +287,7 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
       <h2 class="section-title">Pick what you want more of</h2>
       <p class="section-intro">These predict engagement, not just tolerance. Pick one or more and get the specific signals this dataset shows actually correlate with each one, in real JD language.</p>
       <div class="motivator-chips" id="motivatorChips"></div>
+      <p class="sr-only" role="status" id="motivatorStatus"></p>
       <div id="motivatorChecklists"></div>
     </section>
 
@@ -417,6 +429,7 @@ function setMode(m) {
   mode = m;
   try { localStorage.setItem('aeMode', m); } catch (e) {}
   document.getElementById('hero').style.display = 'none';
+  document.getElementById('skipLink').setAttribute('href', '#content');
   document.getElementById('content').classList.add('visible');
   document.getElementById('modeToggle').classList.remove('hidden');
   document.getElementById('regionFilter').classList.remove('hidden');
@@ -644,6 +657,7 @@ const MOTIVATORS = [
 ];
 
 const BADGE_LABEL = { look: 'OK', caution: '!', flag: '✕', do: '→' };
+const BADGE_NAME = { look: 'Look for', caution: 'Be careful', flag: 'Red flag', do: 'Do this' };
 
 function buildMotivatorChips() {
   document.getElementById('motivatorChips').innerHTML = MOTIVATORS.map(m => `
@@ -663,6 +677,10 @@ function buildMotivatorChips() {
 
 function buildMotivatorChecklists() {
   const container = document.getElementById('motivatorChecklists');
+  const shown = MOTIVATORS.filter(m => activeMotivators.has(m.key));
+  document.getElementById('motivatorStatus').textContent = shown.length
+    ? `${shown.length} checklist${shown.length === 1 ? '' : 's'} shown: ${shown.map(m => m.name).join('; ')}.`
+    : 'No checklists shown.';
   if (!activeMotivators.size) {
     container.innerHTML = `<div class="motivator-empty">Pick one or more of the above — your checklist builds here.</div>`;
     return;
@@ -676,8 +694,8 @@ function buildMotivatorChecklists() {
       <div class="check-body">
         ${m.items.map(it => `
           <div class="check-item">
-            <div class="check-item-badge badge-${it.badge}">${BADGE_LABEL[it.badge]}</div>
-            <div class="check-item-text">${fill(it.text)} <a href="${it.link}" target="_blank" rel="noopener">Read the evidence</a></div>
+            <div class="check-item-badge badge-${it.badge}" aria-hidden="true">${BADGE_LABEL[it.badge]}</div>
+            <div class="check-item-text"><span class="sr-only">${BADGE_NAME[it.badge]}: </span>${fill(it.text)} <a href="${it.link}" target="_blank" rel="noopener">Read the evidence<span class="sr-only"> for ${m.name} (opens in a new tab)</span></a></div>
           </div>`).join('')}
       </div>
     </div>`).join('');
@@ -773,7 +791,7 @@ function buildAssessCards() {
       <div class="assess-options" data-key="${a.key}">
         ${a.options.map((o, i) => `<button type="button" class="assess-opt" aria-pressed="false" data-idx="${i}">${o.label}</button>`).join('')}
       </div>
-      <div class="assess-result" id="assess-result-${a.key}"></div>
+      <div class="assess-result" id="assess-result-${a.key}" aria-live="polite"></div>
     </div>`).join('');
 
   ASSESS.forEach(a => {
@@ -793,7 +811,7 @@ function buildAssessCards() {
         resultEl.innerHTML = `<b>What this means for your JD:</b> ${fill(opt.result)}` +
           (opt.sample ? `<div class="sample-text"><span class="sample-text-label">Sample text</span>${opt.sample}</div>` : '') +
           (opt.why ? `<div class="why-matters"><b>Why it matters:</b> ${opt.why}</div>` : '') +
-          `<span class="find"><a href="${opt.link}" target="_blank" rel="noopener">Read the evidence</a></span>`;
+          `<span class="find"><a href="${opt.link}" target="_blank" rel="noopener">Read the evidence<span class="sr-only"> for ${a.name} (opens in a new tab)</span></a></span>`;
         resultEl.classList.add('visible');
       });
     });
@@ -815,7 +833,7 @@ fetch('./data.json').then(r => r.json()).then(data => {
   if (mode) setMode(mode);
 }).catch(err => {
   document.getElementById('hero').insertAdjacentHTML('afterend',
-    `<div style="text-align:center;padding:4rem;color:#c0392b">The data did not load. Check your connection and reload the page.</div>`);
+    `<div role="alert" style="text-align:center;padding:4rem;color:#c0392b">The data did not load. Check your connection and reload the page.</div>`);
 });
 </script>
 </body>
