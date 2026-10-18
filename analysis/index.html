@@ -223,6 +223,7 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: var(--r-sm); }
 </style>
+<link rel="stylesheet" href="hero-quote.css">
 </head>
 <body>
 
@@ -243,8 +244,9 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
 
 <!-- HERO / MODE PICKER -->
 <section class="hero" id="hero">
-  <h1>What are you actually trying to get out of this data?</h1>
-  <p class="hero-sub">Same dataset, two different questions — and they don't share an answer. Pick the one that's yours. Everything below is built around it, not around the statistics.</p>
+  <div id="heroQuote"></div>
+  <h1>Read the verbs, not just the title</h1>
+  <p class="hero-sub">Same postings, two different questions, and they don't share an answer. Pick the one that's yours and the rest of the page is built around it.</p>
   <div class="mode-cards">
     <button class="mode-card" type="button" onclick="setMode('seeker')">
       <h3>I'm looking for a role</h3>
@@ -311,7 +313,9 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
 
 </main>
 
+<script src="hero-quote.js"></script>
 <script>
+renderHeroQuote(document.getElementById('heroQuote'));
 let ALL_DATA = [];
 let DATA = [];
 let mode = null;

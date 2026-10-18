@@ -343,6 +343,7 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: var(--r-sm); }
 </style>
+<link rel="stylesheet" href="hero-quote.css">
 </head>
 <body>
 <a class="skip-link" href="#relationships">Skip to main content</a>
@@ -374,6 +375,7 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
 
 <!-- HERO -->
 <section class="hero" aria-label="Introduction">
+  <div id="heroQuote"></div>
   <h1 id="heroH1">What actually predicts what, in analytics engineering job descriptions</h1>
   <p class="hero-sub" id="heroSub">Single percentages ("82% rigour-oriented") are cheap, and mostly uninformative on their own — every JD in a rigour-dominant market says similar things. What's useful is where two dimensions move together: does seniority predict autonomy? Does team maturity predict what kind of work you'll do? This page leads with those relationships, shows the test statistic behind each one (recomputed live against whatever filter is active), and reports the relationships that <em>failed</em> just as plainly as the ones that held. It started as a personal question — is an analytics-engineering skillset portable across a market that defines the role differently everywhere — answered by scraping JD text, coding it against a behavioural codebook, and classifying it. Zero-shot, LLM-driven for now; human review and cross-model consensus are the next step toward making that more robust.</p>
   <div class="hero-caveat">
@@ -649,7 +651,9 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
 
 <div id="tooltip"></div>
 
+<script src="hero-quote.js"></script>
 <script>
+renderHeroQuote(document.getElementById('heroQuote'));
 if (window.Chart) { Chart.defaults.font.family = getComputedStyle(document.documentElement).getPropertyValue('--font-ui'); }
 const CHART_ANIM = matchMedia('(prefers-reduced-motion: reduce)').matches ? false : { duration: 250 };
 let ALL_DATA = [], activeData = [];
