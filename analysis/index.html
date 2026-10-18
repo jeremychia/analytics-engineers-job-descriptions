@@ -38,7 +38,10 @@
   --w: 880px;
 }
 
-html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
 body { font-family: var(--font-text); background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.7; }
 
 /* sans for controls, labels and figures; the serif carries the reading text */
@@ -107,7 +110,7 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
 .region-nudge-opt {
   padding: 0.5rem 1rem; border-radius: var(--r-pill); border: 1.5px solid var(--control-border);
   background: #fff; cursor: pointer; font-family: var(--font-ui); font-size: var(--t-sm); font-weight: 600;
-  color: var(--text); transition: all 0.15s;
+  color: var(--text); transition: border-color 0.15s, background-color 0.15s;
 }
 .region-nudge-opt:hover { border-color: var(--accent); }
 .region-nudge-opt.active { background: var(--accent); border-color: var(--accent); color: #fff; }
@@ -125,9 +128,9 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
 .mode-card {
   border: 1px solid var(--border); border-radius: var(--r-md); padding: 1.6rem 1.5rem;
   cursor: pointer; text-align: left; background: var(--surface); font-family: var(--font-ui);
-  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  transition: border-color 0.15s;
 }
-.mode-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow); }
+.mode-card:hover { border-color: var(--accent); }
 .mode-card h3 { font-size: var(--t-md); font-weight: 700; margin-bottom: 0.5rem; color: var(--text); }
 .mode-card p { font-size: var(--t-sm); color: var(--muted); line-height: 1.65; }
 .hero-footer-link { margin-top: 2rem; font-size: var(--t-xs); color: var(--muted); }
@@ -179,7 +182,7 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
 .motivator-chip {
   padding: 0.65rem 1.1rem; border-radius: var(--r-pill); border: 1.5px solid var(--control-border);
   background: #fff; cursor: pointer; font-family: var(--font-ui); font-size: var(--t-sm); font-weight: 600;
-  color: var(--text); transition: all 0.15s; display: flex; align-items: center; gap: 0.5rem;
+  color: var(--text); transition: border-color 0.15s, background-color 0.15s; display: flex; align-items: center; gap: 0.5rem;
 }
 .motivator-chip:hover { border-color: var(--accent); }
 .motivator-chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
@@ -213,7 +216,7 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
 .assess-opt {
   padding: 0.45rem 0.9rem; border-radius: var(--r-pill); border: 1.5px solid var(--control-border);
   background: var(--surface); cursor: pointer; font-family: var(--font-ui); font-size: var(--t-xs); font-weight: 600;
-  color: var(--text); transition: all 0.15s;
+  color: var(--text); transition: border-color 0.15s, background-color 0.15s;
 }
 .assess-opt:hover { border-color: var(--accent); }
 .assess-opt.active { background: var(--accent); border-color: var(--accent); color: #fff; }
