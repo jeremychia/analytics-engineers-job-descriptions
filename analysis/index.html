@@ -420,7 +420,10 @@ function setMode(m) {
   document.getElementById('content').classList.add('visible');
   document.getElementById('modeToggle').classList.remove('hidden');
   document.getElementById('regionFilter').classList.remove('hidden');
-  document.querySelectorAll('.mode-toggle button').forEach(b => b.classList.toggle('active', b.dataset.mode === m));
+  document.querySelectorAll('.mode-toggle button').forEach(b => {
+    b.classList.toggle('active', b.dataset.mode === m);
+    b.setAttribute('aria-pressed', String(b.dataset.mode === m));
+  });
   document.getElementById('seekerContent').style.display = m === 'seeker' ? 'block' : 'none';
   document.getElementById('managerContent').style.display = m === 'manager' ? 'block' : 'none';
   window.scrollTo(0, 0);
@@ -644,14 +647,15 @@ const BADGE_LABEL = { look: 'OK', caution: '!', flag: '✕', do: '→' };
 
 function buildMotivatorChips() {
   document.getElementById('motivatorChips').innerHTML = MOTIVATORS.map(m => `
-    <button type="button" class="motivator-chip${activeMotivators.has(m.key) ? ' active' : ''}" data-key="${m.key}">
+    <button type="button" class="motivator-chip${activeMotivators.has(m.key) ? ' active' : ''}" aria-pressed="${activeMotivators.has(m.key)}" data-key="${m.key}">
       ${m.name}
     </button>`).join('');
   document.querySelectorAll('.motivator-chip').forEach(btn => {
     btn.addEventListener('click', () => {
       const k = btn.dataset.key;
       activeMotivators.has(k) ? activeMotivators.delete(k) : activeMotivators.add(k);
-      buildMotivatorChips();
+      btn.classList.toggle('active', activeMotivators.has(k));
+      btn.setAttribute('aria-pressed', String(activeMotivators.has(k)));
       buildMotivatorChecklists();
     });
   });
@@ -767,7 +771,7 @@ function buildAssessCards() {
       <div class="assess-title">${a.name}</div>
       <div class="assess-question">${a.question}</div>
       <div class="assess-options" data-key="${a.key}">
-        ${a.options.map((o, i) => `<button type="button" class="assess-opt" data-idx="${i}">${o.label}</button>`).join('')}
+        ${a.options.map((o, i) => `<button type="button" class="assess-opt" aria-pressed="false" data-idx="${i}">${o.label}</button>`).join('')}
       </div>
       <div class="assess-result" id="assess-result-${a.key}"></div>
     </div>`).join('');
@@ -777,13 +781,14 @@ function buildAssessCards() {
       btn.addEventListener('click', () => {
         const resultEl = document.getElementById(`assess-result-${a.key}`);
         const wasActive = btn.classList.contains('active');
-        document.querySelectorAll(`.assess-options[data-key="${a.key}"] .assess-opt`).forEach(b => b.classList.remove('active'));
+        document.querySelectorAll(`.assess-options[data-key="${a.key}"] .assess-opt`).forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
         if (wasActive) {
           resultEl.classList.remove('visible');
           resultEl.innerHTML = '';
           return;
         }
         btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
         const opt = a.options[parseInt(btn.dataset.idx, 10)];
         resultEl.innerHTML = `<b>What this means for your JD:</b> ${fill(opt.result)}` +
           (opt.sample ? `<div class="sample-text"><span class="sample-text-label">Sample text</span>${opt.sample}</div>` : '') +
