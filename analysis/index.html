@@ -72,7 +72,7 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
   border-radius: var(--r-pill); padding: 0.3rem 0.9rem 0.3rem 1rem; box-shadow: var(--shadow);
 }
 .region-filter.hidden { display: none; }
-.region-filter label { font-size: var(--t-xs); font-weight: 600; color: var(--muted); }
+.region-filter .region-label { font-size: var(--t-xs); font-weight: 600; color: var(--muted); }
 @media (max-width: 640px) { .region-filter { top: auto; bottom: 1rem; left: 1rem; box-shadow: var(--shadow); } }
 
 /* Custom dropdown (not native <select> — a native-popup rendering bug was observed
@@ -233,12 +233,12 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
 </div>
 
 <div class="region-filter hidden" id="regionFilter">
-  <label id="regionDdLabel">Region</label>
+  <span class="region-label" id="regionDdLabel">Region</span>
   <div class="region-dd">
-    <button type="button" class="region-dd-trigger" id="regionDdTrigger" aria-haspopup="listbox" aria-expanded="false" disabled>
-      <span id="regionDdTriggerText">Loading…</span><span class="caret">▾</span>
+    <button type="button" class="region-dd-trigger" id="regionDdTrigger" aria-labelledby="regionDdLabel regionDdTriggerText" aria-expanded="false" aria-controls="regionDdList" disabled>
+      <span id="regionDdTriggerText">Loading…</span><span class="caret" aria-hidden="true">▾</span>
     </button>
-    <div class="region-dd-list" id="regionDdList" role="listbox" aria-label="Filter by region"></div>
+    <div class="region-dd-list" id="regionDdList" role="group" aria-label="Choose a region"></div>
   </div>
 </div>
 
@@ -347,12 +347,12 @@ function buildRegionFilter() {
 
   function renderList() {
     list.innerHTML = opts.map(o => `
-      <button type="button" class="region-dd-opt${o.value === region ? ' active' : ''}" role="option" aria-selected="${o.value === region}" data-value="${o.value}">${o.label}</button>`
+      <button type="button" class="region-dd-opt${o.value === region ? ' active' : ''}"${o.value === region ? ' aria-current="true"' : ''} data-value="${o.value}">${o.label}</button>`
     ).join('');
     list.querySelectorAll('.region-dd-opt').forEach(btn => {
       btn.addEventListener('click', () => {
         region = btn.dataset.value;
-        closeList();
+        closeList(true);
         syncTriggerText();
         applyRegionFilter();
       });
@@ -362,8 +362,17 @@ function buildRegionFilter() {
     const cur = opts.find(o => o.value === region) || opts[0];
     triggerText.textContent = cur.label;
   }
-  function openList() { renderList(); list.classList.add('open'); trigger.setAttribute('aria-expanded', 'true'); }
-  function closeList() { list.classList.remove('open'); trigger.setAttribute('aria-expanded', 'false'); }
+  function openList() {
+    renderList();
+    list.classList.add('open');
+    trigger.setAttribute('aria-expanded', 'true');
+    (list.querySelector('.region-dd-opt.active') || list.querySelector('.region-dd-opt')).focus();
+  }
+  function closeList(returnFocus) {
+    list.classList.remove('open');
+    trigger.setAttribute('aria-expanded', 'false');
+    if (returnFocus) trigger.focus();
+  }
   function toggleList() { list.classList.contains('open') ? closeList() : openList(); }
 
   trigger.disabled = false;
@@ -372,7 +381,19 @@ function buildRegionFilter() {
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.region-dd')) closeList();
   });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeList(); });
+  document.getElementById('regionFilter').addEventListener('focusout', (e) => {
+    if (list.classList.contains('open') && !e.relatedTarget?.closest('.region-dd')) closeList();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (!list.classList.contains('open')) return;
+    if (e.key === 'Escape') { closeList(true); return; }
+    const opts = [...list.querySelectorAll('.region-dd-opt')];
+    const i = opts.indexOf(document.activeElement);
+    const to = { ArrowDown: Math.min(i + 1, opts.length - 1), ArrowUp: Math.max(i - 1, 0), Home: 0, End: opts.length - 1 }[e.key];
+    if (to === undefined || i < 0) return;
+    e.preventDefault();
+    opts[to].focus();
+  });
 
   window._regionDdSyncTriggerText = syncTriggerText;
 }
