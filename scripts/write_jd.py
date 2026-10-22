@@ -226,6 +226,18 @@ def verify_source(data: dict) -> list[str]:
             "Use the employer URL if its text matches, or set evidence.ats_lookup to what was searched and why it missed."]
 
 
+def verify_language_gate(data: dict) -> list[str]:
+    """A language gate grades non-English languages only, so its type and language list must agree."""
+    gate, langs = data.get("language_gate_type"), data.get("language_gate_languages") or []
+    if "English" in langs:
+        return ["language_gate_languages lists English",
+                "  Fix: drop English. A requirement for English alone is language_gate_type none with an empty list."]
+    if (gate == "none") != (not langs):
+        return [f"language_gate_type is {gate} but language_gate_languages is {langs}",
+                "  Fix: a soft or hard gate names its non-English language(s); none has an empty list."]
+    return []
+
+
 def write_files(data: dict):
     jd_text = data.pop("jd_text", "")
     # keyword-derived, never classifier-judged; overrides anything passed in
@@ -241,7 +253,7 @@ def write_files(data: dict):
     # of context. jd_id is itself a required field, so it is reported here rather
     # than subscripted first (which raised a bare KeyError instead).
     errors = (verify_required_fields(data, jd_text) + verify_responsibilities(data, jd_text)
-              + verify_evidence(data, jd_text) + verify_source(data))
+              + verify_evidence(data, jd_text) + verify_source(data) + verify_language_gate(data))
     if errors:
         print(f"ERROR: {data.get('jd_id', '<no jd_id>')} - refusing to write.", file=sys.stderr)
         for e in errors:
