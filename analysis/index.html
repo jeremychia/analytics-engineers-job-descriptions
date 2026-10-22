@@ -627,7 +627,7 @@ const MOTIVATORS = [
     desc: 'You want to develop other people, or be developed — not just execute solo.',
     items: [
       { badge: 'look', text: `Don't assume a "Mid" or "Senior" title tells you whether you'll mentor anyone. Autonomy language ("own," "define," "shape," "drive") predicts it better, even within the same title band.`, link: 'full-analysis.html#rel-mentorship-autonomy' },
-      { badge: 'look', text: `At mature teams, the marginal responsibility increasingly shifts to teaching and enabling others — look for "enable self-serve," "run training," "office hours," "data literacy" — rather than building. Good if you want to develop others. Misleading if you assumed "mature = pure technical depth."`, link: 'full-analysis.html#rel-selfservice-maturity' },
+      { badge: 'look', text: `Teaching and enablement duties ("enable self-serve," "run training," "office hours") turn up a little more often at mature teams, but the gap is too small to count. Read the posting's own duties rather than assuming maturity means more teaching.` },
     ],
   },
   {
@@ -643,7 +643,7 @@ const MOTIVATORS = [
     desc: 'You care who your work actually reaches and affects — not just that it\'s "high stakes."',
     items: [
       { badge: 'caution', text: `"High-stakes" in this market functionally means finance and compliance — look for "FP&A," "P&L," "financial reporting," "forecast," "audit," "controllership," "board." Product-facing tells ("experiment," "A/B," "funnel," "activation," "growth") almost never get coded high-risk, even when the failure mode — a bad experiment, a bad growth call — is real. Don't expect the JD's language to signal stakes if commercial or product impact matters more to you.`, link: 'full-analysis.html#rel-domain-stakeholder' },
-      { badge: 'look', text: `Who you serve is a real but weak predictor of autonomy — product-facing roles skew strategic and internal-data roles skew execution, but it's a small effect. Read the actual verbs, not the stakeholder label.`, link: 'full-analysis.html#rel-stakeholder-autonomy' },
+      { badge: 'look', text: `Who you serve barely predicts autonomy. Product-facing roles lean strategic and internal-data roles lean execution, but the gap is too small to count. Read the actual verbs, not the stakeholder label.` },
     ],
   },
   {
@@ -695,7 +695,7 @@ function buildMotivatorChecklists() {
         ${m.items.map(it => `
           <div class="check-item">
             <div class="check-item-badge badge-${it.badge}" aria-hidden="true">${BADGE_LABEL[it.badge]}</div>
-            <div class="check-item-text"><span class="sr-only">${BADGE_NAME[it.badge]}: </span>${fill(it.text)} <a href="${it.link}" target="_blank" rel="noopener">Read the evidence<span class="sr-only"> for ${m.name} (opens in a new tab)</span></a></div>
+            <div class="check-item-text"><span class="sr-only">${BADGE_NAME[it.badge]}: </span>${fill(it.text)}${it.link ? ` <a href="${it.link}" target="_blank" rel="noopener">Read the evidence<span class="sr-only"> for ${m.name} (opens in a new tab)</span></a>` : ''}</div>
           </div>`).join('')}
       </div>
     </div>`).join('');
@@ -737,7 +737,7 @@ const ASSESS = [
       { label: 'Yes, meaningfully', result: `Use ownership and autonomy language ("own this domain," "define the approach") rather than relying on the seniority title alone. Candidates read it as a mentorship signal more accurately than they read title band.`, link: 'full-analysis.html#rel-mentorship-autonomy',
         sample: `"You'll own our data quality practice end to end, including coaching two junior analysts on testing standards and code review."`,
         why: `A title alone doesn't tell candidates whether they'll develop anyone — people who want that experience are reading the verbs, not the seniority band, so name it directly.` },
-      { label: 'No, individual contributor', result: `That's a fine, common answer. No need to imply mentorship scope you don't intend. If your team is mature-stage, "enable self-service" or "run training" language sets more accurate expectations than build-from-scratch framing your team has moved past.`, link: 'full-analysis.html#rel-selfservice-maturity',
+      { label: 'No, individual contributor', result: `That's a fine, common answer. No need to imply mentorship scope you don't intend.`, link: 'full-analysis.html#rel-mentorship-autonomy',
         sample: `"This is an individual-contributor role — you'll be deep in the modelling work, not managing or mentoring anyone directly."`,
         why: `Candidates hoping to move into people development will self-select out fast if you're clear about this — better before an offer than during their first 1:1.` },
     ],

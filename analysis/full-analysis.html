@@ -710,15 +710,15 @@ const SECTION_ORDER = {
 // Panel order: seeker = effect size (discriminating power is what targeting needs);
 // manager = consequence for writing a posting (title language first — it's the cheapest fix).
 const PANEL_ORDER = {
-  seeker:  ['rel-maturity-mission','rel-mission-autonomy','rel-domain-stakeholder','rel-testing-rigour','rel-fear-domainrisk','rel-testing-fear','rel-seniority-autonomy','rel-ai-autonomy','rel-stakeholder-autonomy','rel-authorship-autonomy','rel-authorship-dbt','rel-maturity-autonomy','rel-maturity-workarr','rel-domainrisk-rigour','rel-fear-collab','rel-mentorship-autonomy','rel-infra-authorship','rel-region-langgate','rel-region-rigour','rel-region-salary'],
-  manager: ['rel-seniority-autonomy','rel-authorship-autonomy','rel-testing-rigour','rel-authorship-dbt','rel-fear-domainrisk','rel-testing-fear','rel-ai-autonomy','rel-maturity-mission','rel-mission-autonomy','rel-maturity-autonomy','rel-stakeholder-autonomy','rel-maturity-workarr','rel-domain-stakeholder','rel-domainrisk-rigour','rel-fear-collab','rel-mentorship-autonomy','rel-infra-authorship','rel-region-langgate','rel-region-rigour','rel-region-salary'],
+  seeker:  ['rel-maturity-mission','rel-mission-autonomy','rel-domain-stakeholder','rel-testing-rigour','rel-fear-domainrisk','rel-testing-fear','rel-seniority-autonomy','rel-ai-autonomy','rel-authorship-autonomy','rel-authorship-dbt','rel-maturity-autonomy','rel-maturity-workarr','rel-domainrisk-rigour','rel-fear-collab','rel-mentorship-autonomy','rel-infra-authorship','rel-region-langgate','rel-region-rigour','rel-region-salary'],
+  manager: ['rel-seniority-autonomy','rel-authorship-autonomy','rel-testing-rigour','rel-authorship-dbt','rel-fear-domainrisk','rel-testing-fear','rel-ai-autonomy','rel-maturity-mission','rel-mission-autonomy','rel-maturity-autonomy','rel-maturity-workarr','rel-domain-stakeholder','rel-domainrisk-rigour','rel-fear-collab','rel-mentorship-autonomy','rel-infra-authorship','rel-region-langgate','rel-region-rigour','rel-region-salary'],
 };
 // Relationship theme tabs: panels grouped into themes so the section shows
 // ~5 full cards at a time instead of 18 stacked vertically. Group order and labels
 // are persona-aware (same idea as PANEL_ORDER); membership itself doesn't change.
 const REL_GROUP_OF = {
   'rel-seniority-autonomy': 'autonomy', 'rel-mission-autonomy': 'autonomy', 'rel-maturity-autonomy': 'autonomy',
-  'rel-ai-autonomy': 'autonomy', 'rel-mentorship-autonomy': 'autonomy', 'rel-stakeholder-autonomy': 'autonomy',
+  'rel-ai-autonomy': 'autonomy', 'rel-mentorship-autonomy': 'autonomy',
   'rel-maturity-mission': 'stage', 'rel-maturity-workarr': 'stage',
   'rel-domain-stakeholder': 'risk', 'rel-testing-rigour': 'risk', 'rel-fear-collab': 'risk',
   'rel-fear-domainrisk': 'risk', 'rel-testing-fear': 'risk', 'rel-domainrisk-rigour': 'risk',
@@ -1221,19 +1221,6 @@ function buildRelationships(data) {
       },
     },
     {
-      id: 'rel-stakeholder-autonomy', rowKey: 'stakeholder_orientation', colKey: 'autonomy_level',
-      tag: 'Stakeholder audience × Autonomy: A weak effect',
-      takeaway: 'Product-facing roles carry the most strategic scope. Every other audience sits close to the market split, so the audience label is a weak signal on its own.',
-      q: { seeker: 'Does who you serve tell you how much say you get?',
-           manager: 'Your posting\'s audience shapes how much scope candidates assume' },
-      statFn: () => `Product-facing roles (n=${cnt('stakeholder_orientation','product')}) are ${grpPct(data,'stakeholder_orientation','product','autonomy_level','strategic')}% strategic, against ${grpPct(data,'stakeholder_orientation','internal_data','autonomy_level','strategic')}% for internal-data roles (n=${cnt('stakeholder_orientation','internal_data')}). Internal-data roles are the most execution-coded audience, at ${grpPct(data,'stakeholder_orientation','internal_data','autonomy_level','execution')}%.`,
-      read: `<strong>Weakly.</strong> Product-facing roles stand out: about half are coded strategic, well above every other audience. Internal-data roles lean the other way and carry the highest execution share. Finance-facing roles are not the execution-heavy group a structural story would predict, since their execution share is ${grpPct(data,'stakeholder_orientation','finance','autonomy_level','execution')}%. The effect sits just above this page's V≈0.10 floor, and the product group is the smallest audience, so treat the pattern as a lean rather than a rule.`,
-      tip: {
-        seeker: `A product-facing posting is a modest hint of more say over direction, and an internal-data posting a modest hint of less. Neither replaces reading the verbs. Check for "define/own/shape" against "support/deliver" before drawing a conclusion from the audience label.`,
-        manager: `Candidates reading an internal-data or finance-facing posting will assume execution-shaped scope unless told otherwise. If the role owns direction, say which decisions it makes. The audience category won't carry that message for you.`,
-      },
-    },
-    {
       id: 'rel-mission-autonomy', rowKey: 'greenfield_vs_fix', colKey: 'autonomy_level',
       tag: 'Mission × Autonomy: Tighter than company stage alone',
       takeaway: 'What you\'d actually build — greenfield vs. fix/scale — predicts autonomy more tightly than company stage does. Read the mission line, not just the "About us."',
@@ -1391,7 +1378,7 @@ function buildRelationships(data) {
     },
     {
       id: 'rel-region-langgate', rowKey: 'geo_macro', colKey: 'language_gate_type',
-      tag: 'Region × Language gate: Largest regional effect in the dataset',
+      tag: 'Region × Language gate: A European pattern',
       takeaway: `Language requirements are almost entirely a European pattern. Hard gates: ${grpPct(data,'geo_macro','europe','language_gate_type','hard')}% of European postings, ${grpPct(data,'geo_macro','apac','language_gate_type','hard')}% of APAC, ${grpPct(data,'geo_macro','nyc_metro','language_gate_type','hard')}% of NYC-metro.`,
       q: { seeker: 'Which region actually gates on language, and how hard?',
            manager: 'If you gate on language, say so plainly — the rest of this market mostly doesn\'t' },
