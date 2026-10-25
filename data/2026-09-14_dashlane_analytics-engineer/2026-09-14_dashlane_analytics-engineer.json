@@ -25,6 +25,36 @@
   "language_gate_type": "hard",
   "language_gate_languages": [],
   "jd_language": "en",
+  "ai_written": {
+    "score": 59.4,
+    "spread": 33.9,
+    "measures": {
+      "marker_vocab": {
+        "raw": 8.867,
+        "score": 57.2
+      },
+      "stock_phrases": {
+        "raw": 4.926,
+        "score": 98.5
+      },
+      "structure": {
+        "raw": 0.541,
+        "score": 100.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.882,
+        "score": 0.0
+      },
+      "burstiness": {
+        "raw": 0.586,
+        "score": 47.0
+      },
+      "specificity": {
+        "raw": 9.163,
+        "score": 53.7
+      }
+    }
+  },
   "interview_stages": null,
   "ats_platform": "greenhouse",
   "ats_job_id": "8141238",

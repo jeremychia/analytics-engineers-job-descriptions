@@ -27,6 +27,36 @@
     "German"
   ],
   "jd_language": "de",
+  "ai_written": {
+    "score": 51.0,
+    "spread": 34.0,
+    "measures": {
+      "marker_vocab": {
+        "raw": 4.505,
+        "score": 20.9
+      },
+      "stock_phrases": {
+        "raw": 2.252,
+        "score": 45.0
+      },
+      "structure": {
+        "raw": 0.292,
+        "score": 58.3
+      },
+      "bullet_symmetry": {
+        "raw": 0.382,
+        "score": 81.7
+      },
+      "burstiness": {
+        "raw": 1.137,
+        "score": 0.0
+      },
+      "specificity": {
+        "raw": 2.928,
+        "score": 100.0
+      }
+    }
+  },
   "interview_stages": null,
   "ats_platform": "unknown",
   "ats_job_id": "data-engineer-business-intelligence-m-w-d",

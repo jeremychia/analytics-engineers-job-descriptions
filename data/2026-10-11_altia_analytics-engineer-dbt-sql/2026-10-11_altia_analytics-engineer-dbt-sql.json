@@ -25,6 +25,36 @@
   "language_gate_type": "none",
   "language_gate_languages": [],
   "jd_language": "es",
+  "ai_written": {
+    "score": 24.2,
+    "spread": 32.1,
+    "measures": {
+      "marker_vocab": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "structure": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.378,
+        "score": 82.6
+      },
+      "burstiness": {
+        "raw": 0.714,
+        "score": 10.2
+      },
+      "specificity": {
+        "raw": 9.278,
+        "score": 52.5
+      }
+    }
+  },
   "interview_stages": null,
   "ats_platform": "unknown",
   "ats_job_id": "analytics-engineer-dbt-sql",

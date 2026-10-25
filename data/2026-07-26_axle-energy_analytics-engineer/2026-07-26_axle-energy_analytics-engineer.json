@@ -24,6 +24,36 @@
   "language_gate_type": "none",
   "language_gate_languages": [],
   "jd_language": "en",
+  "ai_written": {
+    "score": 40.0,
+    "spread": 41.2,
+    "measures": {
+      "marker_vocab": {
+        "raw": 2.083,
+        "score": 0.7
+      },
+      "stock_phrases": {
+        "raw": 8.333,
+        "score": 100.0
+      },
+      "structure": {
+        "raw": 0.053,
+        "score": 10.5
+      },
+      "bullet_symmetry": {
+        "raw": 0.578,
+        "score": 38.1
+      },
+      "burstiness": {
+        "raw": 1.053,
+        "score": 0.0
+      },
+      "specificity": {
+        "raw": 5.833,
+        "score": 90.7
+      }
+    }
+  },
   "interview_stages": 3,
   "ats_platform": "unknown",
   "ats_job_id": "87565818-analytics-engineer",

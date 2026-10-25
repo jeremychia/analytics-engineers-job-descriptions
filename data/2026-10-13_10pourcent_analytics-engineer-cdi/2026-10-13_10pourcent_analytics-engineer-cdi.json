@@ -27,6 +27,36 @@
     "French"
   ],
   "jd_language": "fr",
+  "ai_written": {
+    "score": 41.6,
+    "spread": 37.8,
+    "measures": {
+      "marker_vocab": {
+        "raw": 1.862,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "structure": {
+        "raw": 0.077,
+        "score": 15.4
+      },
+      "bullet_symmetry": {
+        "raw": 0.456,
+        "score": 65.2
+      },
+      "burstiness": {
+        "raw": 0.485,
+        "score": 75.8
+      },
+      "specificity": {
+        "raw": 5.587,
+        "score": 93.5
+      }
+    }
+  },
   "interview_stages": 5,
   "ats_platform": "unknown",
   "ats_job_id": "analytics-engineer",

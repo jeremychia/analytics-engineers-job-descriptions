@@ -25,6 +25,36 @@
   "language_gate_type": "none",
   "language_gate_languages": [],
   "jd_language": "en",
+  "ai_written": {
+    "score": 24.9,
+    "spread": 19.3,
+    "measures": {
+      "marker_vocab": {
+        "raw": 0.784,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 0.784,
+        "score": 15.7
+      },
+      "structure": {
+        "raw": 0.034,
+        "score": 6.9
+      },
+      "bullet_symmetry": {
+        "raw": 0.524,
+        "score": 50.2
+      },
+      "burstiness": {
+        "raw": 0.651,
+        "score": 28.3
+      },
+      "specificity": {
+        "raw": 9.639,
+        "score": 48.5
+      }
+    }
+  },
   "interview_stages": null,
   "ats_platform": "workday",
   "ats_job_id": "R0065429",
