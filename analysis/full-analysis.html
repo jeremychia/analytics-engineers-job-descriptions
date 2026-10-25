@@ -1552,12 +1552,19 @@ function buildNulls(data) {
     {
       expect: 'Expected — federated platforms should need more coordination',
       title: 'Mature teams name the most partner teams',
-      takeaway: 'No meaningful separation by maturity. The median named-stakeholder count is flat across early, mid, and mature teams.',
+      takeaway: 'No steady rise with maturity. The difference between stages is small and not ordered by stage, so maturity does not rank stakeholder load.',
       resultFn: () => {
         const e = medianBy(data,'data_team_maturity','early','collaboration_width');
         const m = medianBy(data,'data_team_maturity','mid','collaboration_width');
         const ma = medianBy(data,'data_team_maturity','mature','collaboration_width');
-        return `A federated-platform story would predict mature organisations naming the widest set of stakeholder teams. The medians are <strong>${e.toFixed(1)} / ${m.toFixed(1)} / ${ma.toFixed(1)}</strong> for early / mid / mature — no meaningful separation.`;
+        const means = ['early','mid','mature'].map(g => meanBy(data,'data_team_maturity',g,'collaboration_width'));
+        const groups = ['early','mid','mature'].map(g =>
+          data.filter(d => d.data_team_maturity === g).map(d => parseFloat(d.collaboration_width)).filter(v => !isNaN(v)));
+        const kw = kruskalWallis(groups);
+        const total = groups.reduce((a, g) => a + g.length, 0);
+        const eps = kw && total > 1 ? (kw.H / (total - 1)).toFixed(2) : '–';
+        const rises = e <= m && m <= ma;
+        return `A federated-platform story would predict mature organisations naming the widest set of stakeholder teams. The medians are <strong>${e.toFixed(1)} / ${m.toFixed(1)} / ${ma.toFixed(1)}</strong> and the means ${means.join(' / ')} for early / mid / mature, ${rises ? 'rising with maturity, but' : 'not rising with maturity, and'} the difference is small (ε²=${eps}).`;
       },
       testFn: () => {
         const groups = ['early','mid','mature'].map(g =>
