@@ -274,6 +274,8 @@ Leave `has_version_control`, `has_ci_cd`, `has_aws`, `has_azure`, `has_gcp` and 
 
 Leave `jd_language` out too. `write_jd.py` derives it from the responsibility bullets with `scripts/language_detect.py` and overwrites any value passed. After changing the rule, run `python3 scripts/backfill_language.py`.
 
+Leave `ai_written` out too. `write_jd.py` scores `jd_text` with `scripts/ai_written.py` and stores the result after `jd_language`, overwriting any value passed. It is a relative 0-100 indicator of how much the posting reads like LLM output, built from six model-free measures (see `scripts/AI_WRITTEN.md`), not a verdict on one posting. Postings of at least 80 words with four or more computable measures get the field. English, French, German, Dutch and Spanish use all six measures; Swedish, Portuguese, Norwegian, Italian, Polish, Danish and Hungarian use the four language-independent ones; Japanese and Korean are never scored. A posting that is short, has too few bullets and sentences, or is in an unscored language is written without it. That is expected, not an error. After changing a measure or anchor in `ai_written.py`, run `python3 scripts/backfill_ai_written.py`.
+
 Also populate (additive, does not replace `has_*`):
 - **required_tools**: array of tool names (from the `has_*` vocabulary above, e.g. `"dbt"`, `"Python"`, `"Snowflake"` — strip the `has_` prefix, keep normal capitalization) named in a requirements/qualifications context with hard language ("required", "must have", "X+ years of experience with", listed under "Requirements"/"Must have" headers with no hedging). Empty list if the JD doesn't distinguish required from preferred at all (e.g. a single flat skills list with no qualifying language) — don't force a required/preferred split where the JD doesn't make one.
 - **preferred_tools**: array of tool names named with soft/hedged language ("nice to have", "a plus", "bonus points for", "preferred", "ideally", listed under "Nice to have"/"Bonus"/"Preferred" headers). Empty list if none.
@@ -432,6 +434,7 @@ Layer B:
 - testing_framing: {value} ("{decisive quote}")
 - loss_aversion_framing: {value} ("{decisive quote}")
 - work_arrangement: {value} ("{decisive quote}")
+- ai_written: {score} (spread {spread}), read back from the written record, or "not scored" for a short, sparse or Japanese/Korean posting
 
 Stack: {comma-separated true has_* fields}
 
