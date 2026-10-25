@@ -7,7 +7,7 @@ records, compile time recomputes it, and backfill_language.py rewrites existing
 records when the rule changes.
 
 Rule: read the responsibility bullets (the archive body when a record has none).
-Kana, hangul or CJK characters decide Japanese, Korean or Chinese. Otherwise count
+Kana, hangul or CJK characters decide Japanese, Korean or Chinese, and Vietnamese-only letters decide Vietnamese. Otherwise count
 each language's function words; the top language wins with at least 3 hits,
 anything else is English. The French list is the one behind the FWDC talk figures.
 """
@@ -31,6 +31,9 @@ FUNCTION_WORDS = {
     "it": "per il della dei delle nostro nostra dati squadra",
     "pl": "oraz dla danych zespołu będzie się",
     "hu": "és az egy vagy valamint adatok csapat",
+    "fi": "ja sekä että tai meidän olet työ kanssa joka haemme teemme",
+    "hr": "koji koje naš nas iskustvo razvoj poznavanje rad kao ili što podatke izvještaje različitih poslovna zapravo",
+    "sl": "ter ali pri smo iščemo boste vaše naše podatkovne uporabo podatkov modelov poročanje vzdrževanje transformacij",
 }
 _COMPILED = {
     lang: re.compile(r"(?<!\w)(" + "|".join(words.split()) + r")(?!\w)", re.IGNORECASE)
@@ -39,6 +42,7 @@ _COMPILED = {
 _KANA = re.compile(r"[぀-ヿ]")
 _HANGUL = re.compile(r"[가-힯]")
 _CJK = re.compile(r"[一-鿿]")
+_VIET = re.compile(r"[ăơưđạảấầẩẫậắằẳẵặẹẻẽếềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]", re.IGNORECASE)
 
 
 def detect_language_in_text(text: str) -> str:
@@ -49,6 +53,8 @@ def detect_language_in_text(text: str) -> str:
         return "ko"
     if len(_CJK.findall(text)) >= MIN_SCRIPT_CHARS:
         return "zh"
+    if len(_VIET.findall(text)) >= MIN_SCRIPT_CHARS:
+        return "vi"
     hits = {lang: len(rx.findall(text)) for lang, rx in _COMPILED.items()}
     lang, n = max(hits.items(), key=lambda kv: kv[1])
     return lang if n >= MIN_HITS else "en"

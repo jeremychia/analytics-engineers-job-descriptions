@@ -142,6 +142,12 @@ New figures come from the 1,013-record corpus (928 in the cohort), checked 2026-
 - **Working level:** Skip the adjectives. Read the mechanisms and the risk sentences.
 - **Change:** This is a candidate one-line takeaway for readers of ads.
 
+**9b. Are job ads getting more AI-written, and does it matter for the argument?**
+- **Data:** Six model-free measures score each English ad 0–100 for how much it reads like LLM output. The mean is flat from July to October (38–41, intervals overlap), and the share above 55 sits at 15–21% without a trend. See `scripts/AI_WRITTEN.md` for the method.
+- **Question the question:** The corpus starts in April 2026, long after LLM drafting became common, so a flat line shows no change *within* the window, not that ads were human-written. The score is uncalibrated, and edited LLM output evades it.
+- **Working level:** An ad written by a model is more likely to name no mechanism, which is the exact failure the talk is about. But I haven't tested that link: check whether high-score ads name fewer mechanisms before saying it.
+- **Change:** Q&A only, with the baseline caveat. Don't claim AI-written ads cause vague quality ownership until the check is run.
+
 ### Round 3 — Questioning my own framing
 
 **10. Am I mistaking the corpus for the market?**
@@ -166,6 +172,23 @@ New figures come from the 1,013-record corpus (928 in the cohort), checked 2026-
 - [ ] Give each takeaway an owner: engineer reading an ad, engineer building a pipeline, or manager writing an ad.
 - [ ] Refresh the reference table below. It still shows the 869-record values.
 - [ ] Decide whether the job-search vantage point opens the talk or stays at 25 seconds.
+
+---
+
+## Extra visuals for Q&A or a longer slot (checked 2026-10-25)
+
+Deck: `analysis/jd_deck.html` (arrow keys). The corpus is now 1,140 ads: 67 reposts and recruiter copies moved to `data_excluded/` (see its `MANIFEST.json`). Numbers below that came from the surprises search were computed before that removal; re-run before freezing.
+
+| Slide | Claim | Key numbers |
+|---|---|---|
+| 2–4 | Strangers' ads share little | Different-company pairs: mean cosine 0.04. Same company: 0.35. Only 5.5% of ads have a different-company look-alike at 0.30+, and those are parent-company families (Amazon, Booking, LEGO, Nord/Saily) and consultancies |
+| 5–7 | Power BI/Fabric ads describe scoped work; dbt ads describe direction-setting | Strategic 43% vs 18%, execution 19% vs 40%. χ² p=5×10⁻¹⁰ (Holm 1×10⁻⁸). After seniority, length, month, team maturity (company-clustered): odds of strategic 0.27 [0.14, 0.43]. No detectable difference in seniority (p=0.14) or rigour (p=0.5). Say "scoped delivery vs direction-setting", not "traditional" |
+| 8 | 1 in 5 English EU ads needs another language | 18.7% [14.6, 22.8]; hard gates 11.7%; UK and US 0% |
+| 9 | EU pay law changed nothing | Pay stated: US 80%, UK 23%, EU 18%. After 7 June 2026: OR 0.78 [0.47, 1.31] |
+| 10 | Years asked match the title | Mid: 49% of ads stating years say exactly 3. Senior: 49% say exactly 5. Only 4% of mid ads ask 5+ |
+| 11 | One AI-in-hiring paragraph appears in 22 ads in 10 wordings | Most common variant adds "verification signals" (14 ads) |
+
+Caveats: the autonomy field is coded from ad wording, so it measures how the ad is written. Similarity is vocabulary overlap, not authorship. Scrape dates are not posting dates. Four Vietnamese ads are tagged English by the language detector and one Wise ad has `company` set to "Flexible working"; neither is fixed.
 
 ---
 
@@ -493,6 +516,7 @@ Checked against `analysis/data.json` on 2026-10-05. French-language means `jd_la
 | **Nobody defines the quality they hand over** | Of 531 quality-owning ads: incident 3.6%, data contract 6.2%; SLA 6.8% and on-call 1.0% (both not re-run). 28 of 787 name a data-quality tool | Partly true by definition: authorship and testing are coded from the same text. Keep for Q&A |
 | **AI expectation comes with quality ownership** | 78% vs 60% (p=1×10⁻⁷); manager-written only 80% vs 67%. AI-infrastructure roles carry the most compliance fear (39% vs 21%) | The most publishable finding — save for a longer slot |
 | **Fear is the honest signal** | Of 205 high-fear ads, 65% are high-risk, none low-risk | Longer slot |
+| **Job ads are not getting more AI-written** | 1,148 English ads scored 0–100 for how much they read like LLM output (six measures, see `scripts/AI_WRITTEN.md`). Monthly mean 38–41 from July to October, with overlapping 95% intervals. Rank correlation of score with scrape date: ρ=0.05, p=0.10. Share scoring 55+ was 17% (July), 21% (August), 20% (September), 15% (October) | A flat result from a 6-month window with no pre-LLM baseline. It cannot say ads were never AI-written. Scores are uncalibrated and use scrape date, not posting date. Early-July archives are shorter or truncated (median 2.3k characters vs about 5k later) and the collection method changed on 2026-10-05; the score is mostly per-word rates, but it has not been re-run on length-matched ads. April–June (85 ads) are too thin to trend, and the early ads score oddly on sentence variation (not investigated). Keep for Q&A: "Are these ads written by AI?" — "Not more than in July, by the measures I can run" |
 | **The semantic layer has the same shape as data quality** | Mentioned in 25% of ads, product named in 14 | Bridge to the agentic track for a future talk |
 
 Good one-sentence examples for any of these: Rabot Energy — "errors surface in CI rather than in a management meeting"; Mimecast — "define and enforce the data quality bar: tests, freshness SLAs, lineage, incident response."
