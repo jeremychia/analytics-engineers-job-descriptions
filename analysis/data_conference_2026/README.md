@@ -16,5 +16,5 @@ Forward Data Conference, Paris, 16 November 2026. Two versions of the talk and e
 - Numbers come from the corpus of 25 Oct 2026 (about 1,136 ads after removing 82 reposts). Freeze it and re-run before the talk.
 - The deck still tells the v1 story. v2 needs new slides (title and similarity, stack to scope, AI-ask spectrum, junior ladder and gates, career ladder).
 - Quotes from Conquet and Blef, and the "Indeed France 3.4%" figure, are unverified and must not go on a slide unless the verification pass confirms them.
-- French market: only 80 France-located ads (3 junior, 0 alternance). Treat French ladder and junior results as thin until a broader French sweep is run.
+- French market: 94 France-located ads, 13 junior (after a paced sweep on 26 Oct; the second keyword chunk was blocked by LinkedIn). The French ladder was computed before the sweep and still needs a re-run.
 - Raw scripts for the analyses live outside the repo for now.
