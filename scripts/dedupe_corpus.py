@@ -19,6 +19,16 @@ scrape. The rest move to data_excluded/ (a git mv, so it is reversible) and are
 listed with a reason in data_excluded/MANIFEST.json. Intermediaries listed in
 INTERMEDIARIES are also removed when they share 0.4+ with a client's ad.
 
+A second pass catches reposts whose text was rewritten, so few shingles match:
+ads in the same city with the same title (or one title extending the other)
+and a TF-IDF cosine of
+  - 0.50+ when the company labels match (the same role relisted);
+  - 0.60+ when they differ (a brand or group name spelled two ways);
+  - 0.25+ when one side is an intermediary (a recruiter paraphrasing a client);
+    only the intermediary's ad is removed, and the title may extend the other's.
+Company names where one contains the other ("Global", "This Is Global") count
+as the same company. Same company and 0.95+ is the same ad whatever the title.
+
 Usage:
     python3 scripts/dedupe_corpus.py            # dry run: print the plan
     python3 scripts/dedupe_corpus.py --apply    # move the extras
@@ -27,6 +37,7 @@ Usage:
 import collections
 import itertools
 import json
+import math
 import re
 import subprocess
 import sys
@@ -40,10 +51,15 @@ SAME_ANY_TITLE = 0.97
 SAME_MATCHING = 0.90
 INTERMEDIARY_MIN = 0.40
 SAME_CROSS_TITLE = 0.85
+REPOST_SAME_CO = 0.50
+REPOST_CROSS = 0.60
+REPOST_INTERMEDIARY = 0.25
+REPOST_ANY_TITLE = 0.95
+STOP = set("the and for with that this you your our are will from have has not but all can who their they about into more also its any new work role team data".split())
 MIN_SHINGLES = 30
 BOILERPLATE_COMPANIES = 4
 INTERMEDIARIES = ("licorne society", "sharpe recruiting", "pri technology", "emagine", "smartosc",
-                  "undisclosed employer", "linkedin", "flexible working", "techbiz global")
+                  "undisclosed employer", "linkedin", "flexible working", "techbiz global", "talentmerge")
 
 
 def company_key(c: str) -> str:
@@ -75,7 +91,9 @@ def load():
         w = re.findall(r"[^\W_]+", t.lower())
         if len(w) < 60:
             continue
-        docs[f.name] = dict(company=r["company"], ckey=company_key(r["company"]), tkey=title_key(r["role"]),
+        city = re.sub(r"[^a-z]", "", (r.get("job_location") or "").lower().split(",")[0])[:8]
+        tf = collections.Counter(x for x in w if len(x) > 2 and x not in STOP)
+        docs[f.name] = dict(company=r["company"], ckey=company_key(r["company"]), tkey=title_key(r["role"]), city=city, tf=tf,
                             shingles={" ".join(w[i:i + K]) for i in range(len(w) - K + 1)})
     return docs
 
@@ -101,6 +119,55 @@ def similar_pairs(docs):
             yield n / m, a, b
 
 
+def cosine_vectors(docs):
+    df = collections.Counter(t for d in docs.values() for t in d["tf"])
+    n = len(docs)
+    vecs = {}
+    for k, d in docs.items():
+        v = {t: (1 + math.log(c)) * math.log(n / df[t]) for t, c in d["tf"].items() if df[t] / n <= 0.4}
+        norm = math.sqrt(sum(x * x for x in v.values())) or 1.0
+        vecs[k] = {t: x / norm for t, x in v.items()}
+    return vecs
+
+
+def name_variant(x, y):
+    nx = re.sub(r"[^a-z0-9]", "", re.sub(r"\(.*?\)", "", (x or "").lower()))
+    ny = re.sub(r"[^a-z0-9]", "", re.sub(r"\(.*?\)", "", (y or "").lower()))
+    return min(len(nx), len(ny)) >= 4 and (nx in ny or ny in nx)
+
+
+def repost_pairs(docs, find, parent, reason, parent_drops):
+    vecs = cosine_vectors(docs)
+    by_city = collections.defaultdict(list)
+    for k, d in docs.items():
+        if d["city"] and d["tkey"]:
+            by_city[d["city"]].append(k)
+    for ks in by_city.values():
+        for a, b in itertools.combinations(sorted(ks), 2):
+            A, B = docs[a], docs[b]
+            ta, tb = A["tkey"], B["tkey"]
+            cross = A["ckey"] != B["ckey"]
+            intermediary = is_intermediary(A["company"]) or is_intermediary(B["company"])
+            extends = min(len(ta), len(tb)) >= 12 and (ta.startswith(tb) or tb.startswith(ta))
+            va, vb = vecs[a], vecs[b]
+            if len(va) > len(vb):
+                va, vb = vb, va
+            sim = sum(x * vb.get(t, 0.0) for t, x in va.items())
+            variant = cross and name_variant(A["company"], B["company"])
+            if cross and intermediary and (ta == tb or extends):
+                if sim >= REPOST_INTERMEDIARY:
+                    drop = a if is_intermediary(A["company"]) else b
+                    keep = b if drop == a else a
+                    if not is_intermediary(docs[keep]["company"]) and drop not in parent_drops:
+                        parent_drops[drop] = (keep, round(sim, 2))
+                continue
+            if ta != tb and not (sim >= REPOST_ANY_TITLE and not cross):
+                continue
+            if sim >= (REPOST_SAME_CO if (not cross or variant) else REPOST_CROSS):
+                parent[find(b)] = find(a)
+                reason[(a, b)] = round(sim, 2)
+
+
 def plan(docs):
     parent = {k: k for k in docs}
     reason = {}
@@ -121,6 +188,8 @@ def plan(docs):
         if same:
             parent[find(b)] = find(a)
             reason[(a, b)] = round(sim, 2)
+    parent_drops = {}
+    repost_pairs(docs, find, parent, reason, parent_drops)
     groups = collections.defaultdict(list)
     for k in docs:
         groups[find(k)].append(k)
@@ -134,6 +203,11 @@ def plan(docs):
                 best = max([v for (x, y), v in reason.items() if k in (x, y)] or [0])
                 removals.append({"jd_id": k, "company": docs[k]["company"], "kept": keep,
                                  "kept_company": docs[keep]["company"], "similarity": best})
+    gone = {r["jd_id"] for r in removals}
+    for drop, (keep, sim) in parent_drops.items():
+        if drop not in gone and keep not in parent_drops:
+            removals.append({"jd_id": drop, "company": docs[drop]["company"], "kept": keep,
+                             "kept_company": docs[keep]["company"], "similarity": sim})
     return sorted(removals, key=lambda r: r["jd_id"])
 
 
