@@ -4,17 +4,23 @@ function buildStack(stage) {
   const layer = () => s('g', { style: { opacity: 0, transition: 'opacity .5s' } }, svg), g1 = layer(), g2 = layer(), g3 = layer(), g4 = layer(), g5 = layer();
   const show = async (...on) => { [g1, g2, g3, g4, g5].forEach(g => g.style.opacity = 0); await wait(Anim.fast ? 0 : 420); on.forEach(g => g.style.opacity = 1); await wait(Anim.fast ? 0 : 450); };
   // 1. same level, two stacks
-  const L = 215, bw = 520, cols = { dbt_only: C.plum, pbi_only: C.coral }, nm = { dbt_only: 'dbt, no Power BI or Fabric', pbi_only: 'Power BI or Fabric, no dbt' };
-  s('text', { x: L, y: 34, class: 'lbl', text: 'share of ads that ask for strategic work: “define, own, shape, lead”, rather than “support, assist, deliver”' }, g1);
-  const bars = [];
-  [['mid', 'Mid-level ads', 70], ['senior', 'Senior ads', 250]].forEach(([lv, lab, y0]) => {
-    s('text', { x: L - 20, y: y0 + 62, 'text-anchor': 'end', class: 'rowlab', text: lab }, g1);
-    ['dbt_only', 'pbi_only'].forEach((g, k) => { const [v, n] = ST.levels[lv][g], y = y0 + k * 70;
-      s('rect', { x: L, y, width: bw, height: 52, rx: 12, fill: C.soft }, g1);
-      const b = s('rect', { x: L, y, width: 0, height: 52, rx: 12, fill: cols[g] }, g1);
-      const t = s('text', { x: L + 16, y: y + 35, class: 'barnum', text: '0%' }, g1);
-      s('text', { x: L + bw + 12, y: y + 24, class: 'rowsub', text: nm[g] }, g1); s('text', { x: L + bw + 12, y: y + 42, class: 'rowsub', text: `${n} ads` }, g1);
-      bars.push({ b, t, v }); }); });
+  const cols = { dbt_only: C.plum, pbi_only: C.coral }, nm = { dbt_only: 'dbt, no Power BI or Fabric', pbi_only: 'Power BI or Fabric, no dbt' };
+  const base = 440, pxs = 240 / 60, bars = [];
+  s('text', { x: W / 2, y: 30, 'text-anchor': 'middle', class: 'lbl', text: 'share of ads that ask for strategic work: “define, own, shape, lead”, rather than “support, assist, deliver”' }, g1);
+  [['mid', 'Mid-level ads', 40], ['senior', 'Senior ads', 520]].forEach(([lv, lab, x0]) => {
+    s('text', { x: x0 + 220, y: 80, 'text-anchor': 'middle', class: 'rowlab', text: lab }, g1);
+    s('line', { x1: x0, x2: x0 + 440, y1: base, y2: base, stroke: C.line, 'stroke-width': 2 }, g1);
+    const vs = ['dbt_only', 'pbi_only'].map((g, k) => { const [v, n] = ST.levels[lv][g], x = x0 + 40 + k * 230;
+      const r = s('rect', { x, y: base, width: 150, height: 0, rx: 12, fill: cols[g] }, g1);
+      const t = s('text', { x: x + 75, y: base - 12, 'text-anchor': 'middle', class: 'bigstat2', text: '0%', style: { fontSize: '54px', fill: cols[g] } }, g1);
+      s('text', { x: x + 75, y: base + 28, 'text-anchor': 'middle', class: 'rowsub', text: nm[g] }, g1); s('text', { x: x + 75, y: base + 48, 'text-anchor': 'middle', class: 'rowsub', text: `${n} ads` }, g1);
+      bars.push({ r, t, v, x, base }); return v; });
+    const ratio = Math.round(vs[0] / Math.max(vs[1], 0.5));
+    const badge = s('g', { style: { opacity: 0, transition: 'opacity .6s' } }, g1);
+    s('rect', { x: x0 + 225, y: 112, width: 160, height: 46, rx: 25, fill: C.paper, stroke: C.line }, badge);
+    s('text', { x: x0 + 305, y: 143, 'text-anchor': 'middle', class: 'adj', text: 'dbt: ≈' + ratio + '× more' }, badge);
+    bars.badges = (bars.badges || []).concat(badge);
+  });
   // 2. same title, two jobs
   s('text', { x: W / 2, y: 190, 'text-anchor': 'middle', class: 'bigstat2', text: ST.ae_titled.pbi_only_pct + '%' }, g2);
   s('text', { x: W / 2, y: 250, 'text-anchor': 'middle', class: 'bigline', text: 'of ads titled “Analytics Engineer”' }, g2);
@@ -47,7 +53,7 @@ function buildStack(stage) {
     s('text', { x: x + 20, y: 214, 'text-anchor': 'middle', class: 'rowsub', text: 'predicts nothing I could find' }, g5); });
   s('text', { x: W / 2, y: 330, 'text-anchor': 'middle', class: 'bigline', text: 'The adjectives say a lot. They ask for nothing.' }, g5);
   return [
-    async () => { await show(g1); await Promise.all(bars.map(({ b, t, v }, i) => tween(1200, e => { b.setAttribute('width', bw * v / 70 * e); t.textContent = Math.round(v * e) + '%'; }, { delay: i * 260 }))); },
+    async () => { await show(g1); await Promise.all(bars.map(({ r, t, v, x, base }, i) => tween(1200, e => { const h = pxs * v * e; r.setAttribute('y', base - h); r.setAttribute('height', h); t.setAttribute('y', base - h - 12); t.textContent = Math.round(v * e) + '%'; }, { delay: i * 260 }))); bars.badges.forEach(b => b.style.opacity = 1); },
     async () => { await show(g2); },
     async () => { await show(g3); await Promise.all(dbars.map((d, i) => tween(1100, e => { d.a.setAttribute('width', d.sc * d.va * e); d.b.setAttribute('width', d.sc * d.vb * e);
       d.ta.textContent = d.va * e > 3 ? Math.round(d.va * e) + '%' : ''; d.tb.textContent = d.vb * e > 3 ? Math.round(d.vb * e) + '%' : ''; }, { delay: i * 150 }))); },
