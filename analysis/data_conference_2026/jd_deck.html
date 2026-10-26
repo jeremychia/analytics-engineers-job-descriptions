@@ -199,7 +199,7 @@ function buildAdSlide(stage, final) {
   stage.append(h('div', { class: 'col' }, card));
   const L1 = $('#l1', card), L2 = $('#l2', card);
   L1.style.opacity = 0; L2.style.opacity = 0;
-  const ruler = adRuler($('.col', stage), { zone: [0, 1], zoneLabel: 'junior ads: the median ask is 1 year', from: 2, to: 5, label: '2 to 5 years' });
+  const ruler = adRuler($('.col', stage), { zone: [0, 1], zoneLabel: 'what a typical junior ad asks: about 1 year', from: 2, to: 5, label: 'this “junior” ad asks: 2 to 5 years' });
   $('.ruler', stage).style.opacity = 0;
   const hi = (el, word, cls) => { const t = el.textContent, i = t.indexOf(word); if (i < 0) return;
     el.innerHTML = t.slice(0, i) + `<mark class="${cls}">${word}</mark>` + t.slice(i + word.length); };
