@@ -15,10 +15,11 @@ function buildStack(stage) {
       const t = s('text', { x: x + 75, y: base - 12, 'text-anchor': 'middle', class: 'bigstat2', text: '0%', style: { fontSize: '54px', fill: cols[g] } }, g1);
       s('text', { x: x + 75, y: base + 28, 'text-anchor': 'middle', class: 'rowsub', text: nm[g] }, g1); s('text', { x: x + 75, y: base + 48, 'text-anchor': 'middle', class: 'rowsub', text: `${n} ads` }, g1);
       bars.push({ r, t, v, x, base }); return v; });
-    const ratio = Math.round(vs[0] / Math.max(vs[1], 0.5));
+    const T = D.stats.levels[lv], pp = Math.round(T.diff * 100), lo = Math.round(T.ci[0] * 100), hi = Math.round(T.ci[1] * 100);
     const badge = s('g', { style: { opacity: 0, transition: 'opacity .6s' } }, g1);
-    s('rect', { x: x0 + 225, y: 112, width: 160, height: 46, rx: 25, fill: C.paper, stroke: C.line }, badge);
-    s('text', { x: x0 + 305, y: 143, 'text-anchor': 'middle', class: 'adj', text: 'dbt: ≈' + ratio + '× more' }, badge);
+    s('rect', { x: x0 + 215, y: 104, width: 215, height: 64, rx: 18, fill: C.paper, stroke: C.line }, badge);
+    s('text', { x: x0 + 322, y: 130, 'text-anchor': 'middle', class: 'adj', text: '+' + pp + ' points' }, badge);
+    s('text', { x: x0 + 322, y: 154, 'text-anchor': 'middle', class: 'rowsub', text: `95% CI ${lo} to ${hi} · Fisher p ${T.fisher_p < 0.001 ? '< 0.001' : T.fisher_p.toFixed(3)}` }, badge);
     bars.badges = (bars.badges || []).concat(badge);
   });
   // 2. same title, two jobs
