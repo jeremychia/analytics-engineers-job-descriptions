@@ -4,8 +4,8 @@ Forward Data Conference, Paris, 16 November 2026. Two versions of the talk and e
 
 | File | What it is |
 |---|---|
-| `talk_v2_for_the_people.md` | **Current draft.** A 5-minute story told as the questions the speaker asked: what an ad looks like, what the title hides, what AI asks, juniors, how to move up, what to do on Monday. Evidence tables, claims to soften or cut, comparison with outside data, Q&A, checklist before slides are final. |
-| `talk_v1_fwdc_2026_talk_plan.md` | The original plan: the French-versus-English keyword bug ("a zero means two things"). Now the 30-second cold open of v2. |
+| `talk_v2_for_the_people.md` | **Current draft.** A 5-minute story told as the questions the speaker asked, with one thread: what an ad says versus what it asks. Evidence tables, claims to soften or cut, comparison with outside data, Q&A, checklist before slides are final. |
+| `talk_v1_fwdc_2026_talk_plan.md` | The original plan: the French-versus-English keyword bug ("a zero means two things"). Kept for reference; v2 no longer uses it (it opens on an "Early Career, minimum 3+ years" ad instead). |
 | `jd_deck.html` | The slide deck. Open in a browser; arrow keys move. Slides 1–8 follow the v1 story, then an appendix (similarity, twin ads, stack versus scope, language gates, pay, years, AI-written text, boilerplate). Not yet rebuilt for v2. |
 | `jd_views.html` | Explorer with six views of the corpus (duty gaps by stack, stack-by-theme grid, duty-mix scatter, fused similarity map, look-alike families, AI-written trend). |
 | `research/evidence_pack.md` | Every finding gathered for v2 in one place, with the caveats. |

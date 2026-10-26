@@ -1,82 +1,46 @@
 # Read the ad, not the adjectives — a talk for the people
 
-Draft 2, 2026-10-26. Supersedes the spine of `talk_v1_fwdc_2026_talk_plan.md` (its French-versus-English story survives as the cold open). Built from six research and analysis agents and two challengers; the raw evidence is in the session notes, the claims below carry their safe wording.
+Draft 2, 2026-10-26. Supersedes the spine of `talk_v1_fwdc_2026_talk_plan.md` (its French-versus-English story is no longer part of the spoken talk). Built from six research and analysis agents and two challengers; the raw evidence is in the session notes, the claims below carry their safe wording.
 
 ## The story, told as the questions I asked (5 minutes, about 700 words)
 
-The thread is a person asking one question after another, each answer raising the next. The room follows the question, not a list of findings. Slide cues in brackets; every number is in the evidence table below.
+**The thread:** at every turn, two questions about an ad: *what does it say, and what does it ask?* The opening shows the gap in one real ad, the middle shows it again and again, and the ending comes back to it: answer what the ad asks. The spoken script does not apologise for the method; limits live in the Q&A section and the evidence tables below.
 
-**[The line: silent vote]**
-Read this line. Does it make data quality part of the job? ... Yes. You all said yes in about two seconds. My tool said zero. It only knew English words. So when I tell you what about 1,100 job ads for analytics engineers say, keep one thing in mind: a zero can mean "it isn't there", or it can mean "I can't read it". I'll tell you which one each time.
+**[The line · on screen, two lines from one real ad]**
+`BI Engineering Senior Analyst | Early Career | Full time`
+`Minimum of 3+ years of experience in Business Data, BI Engineering, or Analytics Engineering roles` *(Accenture, Lisbon)*
 
-**[Question 1 · What does a job ad actually look like?]**
-So I started with a plain question: what does a job ad actually look like? I read about 1,100 of them, mostly from Europe, over the year. One scraper, LinkedIn and company pages. That's the limit, and it's the last time I'll say it. First surprise: 534 different job titles. But read what they ask for, and they fall into about five kinds of job. And almost no two ads are alike. Two companies that have never met share about four percent of their wording, and about one duty bullet in a thousand is copied word for word. The ones that do copy are families: Amazon, DoorDash, two consultancies in Lisbon.
+"Early career. A minimum of three years. Same ad. This is what the ad says, and this is what it asks. They aren't always the same thing. I read about 1,100 job ads for analytics engineers, from LinkedIn and company career pages, to find out what they actually ask. A few questions, five minutes. Each time: what does it say, and what does it ask?"
+
+**[Question 1 · What does a job ad look like?]**
+"First: what does an ad look like? Say: 534 different job titles. Ask: about five kinds of job. And almost no two ads are alike. Two companies that have never met share about four percent of their wording, and about one duty bullet in a thousand is copied word for word. The ones that do copy are families: Amazon, DoorDash, two consultancies in Lisbon."
 
 **[Question 2 · If the title doesn't tell me the job, what does?]**
-So if the title doesn't tell me the job, what does? The stack does. Ads that name dbt and no Power BI: about half describe strategic work, setting direction. Ads with Power BI or Fabric and no dbt: fewer than one in five. Same seniority. Same rigour. Different scope. That is not a ranking of tools; both stacks do serious work. It's a hint about how the job is written. And here's the other half: the adjectives told me nothing. "Fast-paced", "self-starter", "wear many hats". I tested them. They predict nothing I could find.
+"So if the title doesn't tell me the job, what does? The stack does. Ads that name dbt and no Power BI: about half ask for strategic work, setting direction. Ads with Power BI or Fabric and no dbt: fewer than one in five. Same seniority. Same rigour. Different scope. That's not a ranking of tools; both do serious work. It's a hint about what the job asks. And the adjectives? 'Fast-paced', 'self-starter', 'wear many hats'. They say a lot and ask for nothing: I tested them, and they predict nothing."
 
-**[Question 3 · What are they asking about AI?]**
-Next: how much AI do they want? About half of the ads. Not company marketing; I'm counting ads where AI is part of the role. And here's the part I find useful: four in ten of those asks are vague. "Curiosity to leverage AI." In a third of the ads that require AI, nothing in the duties describes any AI work. The concrete ones name a tool: Copilot, Cursor, Claude Code. Is it growing? I looked for a trend, and in three months of scrapes I can't show one. So be wary of anyone who tells you there is.
+**[Question 3 · What do they ask about AI?]**
+"Next: AI. Ads say AI. What do they ask? About half of them ask for it, as part of the role, not company marketing. Four in ten of those asks are vague: 'curiosity to leverage AI.' In a third of the ads that require AI, nothing in the duties describes any AI work. The concrete ones name the tool: Copilot, Cursor, Claude Code. Is it growing? From August to October, it's flat."
 
-**[Question 4 · If I'm just starting, is there a door?]**
-Now the question I care about most. If I'm starting out, is there a door? About one ad in twenty is for a junior. By title it's closer to one in seventy; by a loose count, one in ten. And read them. One "early career" ad asks for "a minimum of 3+ years". Another says junior and asks for two to five. Six in ten ask for a degree. One in six needs a language that isn't English; in Portugal, Spain and France, about four in ten English-language ads do, and you can read that gate before you apply. The skills are the same as for mid-level: SQL, a BI tool, Python, modelling, and being able to talk to people.
+**[Question 4 · If I'm starting out, is there a door?]**
+"Now the question I care about most. 'Early career' says welcome. What does it ask? About one ad in twenty is for a junior; by title closer to one in seventy; by a loose count one in ten. Another says junior and asks two to five years. Six in ten ask for a degree. One in six needs a language that isn't English, and in Portugal, Spain and France about four in ten English-language ads do. The skills are the same as at mid-level: SQL, a BI tool, Python, modelling, and being able to talk to people."
 
 **[Question 5 · How do I move up?]**
-And the question under all of it: how do I move up? Here's what surprised me. The core never changes. SQL, a warehouse, tests on your data, working with stakeholders: asked at every level, juniors and leads alike. What changes is the verb. Junior ads say "support" and "assist". Mid ads say "own": own the pipeline, own the model. Senior ads add three things: mentor people, set the standards, and decide what comes next. Mentoring and standards show up about twenty points more often than at mid-level. Lead ads add a roadmap and working across teams. The AI ask follows the same shape: using AI tools is asked of everyone; building with AI climbs with level. And the years agree: about one, three, five, six.
+"And the question under all of it: how do I move up? The core never changes. SQL, a warehouse, tests on your data, working with stakeholders: asked at every level. What changes is the verb. Junior ads say 'support' and 'assist'. Mid ads say 'own'. Senior ads add three things: mentor people, set the standards, decide what comes next. Mentoring and standards show up about twenty points more often than at mid-level. Lead ads add a roadmap and working across teams. Using AI tools is asked of everyone; building with AI climbs with level. The years agree: about one, three, five, six.
 
-For this room I checked the same thing in French. The sample is thinner, 94 ads in France, but the shift points the same way: mentoring and "piloter" show up more in senior ads, and the years go from about three to about five. Then I went looking for the door in, searching for alternance, stage and junior. I found 13 junior ads in France, and 12 of them ask for a Bac+4 or Bac+5, a master's, or an engineering school. Internship pay, where it's stated, is eleven hundred to seventeen hundred euros gross a month. I searched for these on purpose, so I can't tell you how common they are, only what they ask.
+For this room I checked the same thing in French. The shift points the same way: mentoring and 'piloter' show up more in senior ads, and the years go from about three to about five. Then I went looking for the door in: alternance, stage, junior. I found 13 junior ads in France, and 12 of them ask for a Bac+4 or Bac+5, a master's, or an engineering school. Internship pay, where it's stated, is eleven hundred to seventeen hundred euros gross a month."
 
-**[Question 6 · What are they offering?]**
-Benefits are the one part of the ad I took out of the comparison, because they're trivia. But they tell you where you are. In the US, an ad sells you health insurance, a pension plan and equity: about half the ads each. In France, it's meal vouchers: a third of ads. Pension: not once, because it's built in. Same for parental leave: a quarter of UK ads, a handful on the continent. Ads advertise what the law doesn't already give you. So a benefit in an ad isn't generosity. It's a gap the law leaves. And a quarter of ads mention no benefit at all.
+**[Question 6 · What do they offer?]**
+"And what do they offer? Benefits are trivia, which is why I took them out of the comparison. But they tell you where you are. In the US an ad sells you health insurance, a pension plan and equity: about half the ads each. In France it's meal vouchers: a third of ads. Pension: not once, because it's built in. Ads advertise what the law doesn't already give you. A benefit in an ad isn't generosity. It's a gap the law leaves."
 
 **[Question 7 · What is a pile of ads good for?]**
-So what is a pile of 1,100 ads good for? Four things. See your competition: what other people in your seat are being asked for. Know what's expected at your level: the core, and the verb. Know your worth, where pay is stated. And see your gaps. Read the years. Read the stack. Read the AI sentence.
+"So what is a pile of 1,100 ads good for? Four things. See your competition: what other people in your seat are being asked for. Know what's expected at your level: the core, and the verb. Know your worth, where pay is stated. See your gaps.
 
-But the thing I most want you to take away is this. Almost no two ads are alike. Six in ten have a combination of tools that no other ad has. We read ads as templates, and they aren't: each one is a specific request from a specific team. So don't answer with a template. Find where you're unusual: your stack, your domain, the mess you've cleaned up. And pitch to that. And if you're the one hiring: you aren't looking for "an analytics engineer". You're looking for something specific. Say what it is. I believe the age of the volume application is ending, because the volume ad, with its adjectives, carries no signal. Don't send the template. Answer the specific.
+But the thing I most want you to take away: almost no two ads are alike. Six in ten have a combination of tools that no other ad has. We read ads as templates, and they aren't: each one is a specific request from a specific team. So don't answer with a template. Find where you're unusual: your stack, your domain, the mess you've cleaned up. And pitch to that. If you're the one hiring, you aren't looking for 'an analytics engineer'. You're looking for something specific. Say what it is. I believe the age of the volume application is ending, because the volume ad, with its adjectives, carries no signal."
 
+**[The line, again]**
+"That ad said early career, and asked for three years. Read what it asks. Answer what it asks."
 
 ---
-
-## Career ladder in the French market (80 France-located ads, 85 with French-language ads elsewhere; the English ladder above covers 942 English ads)
-
-**Update after the France sweep (2026-10-26):** 14 more French postings were classified (internships, apprenticeships and BI titles), so France-located ads are now 94 (68 in French) and 13 are classified junior (6 internships, 1 apprenticeship, 6 other). 12 of the 13 name a Bac+4 or Bac+5, a master's, or an engineering school; stated pay is an internship stipend of 1,100–1,400 and 1,400–1,700 EUR gross a month, plus one 40–50k CDI. These were found by searching for alternance, stage and junior, so the share of internships among them is a product of the search, not a market share. The ladder numbers below were computed before the sweep.
-
-**Sample (before the sweep):** classifier levels in France: junior 3, mid 38, senior 33, lead/staff/manager 6. Title ladder: 0 junior titles. Years ladder: 10 ads asking 2 years or fewer, 21 asking 3–4, 23 asking 5–7. 77 of 80 titles contain "Analytics Engineer", so there is no Data Analyst, BI engineer or BI developer ladder.
-
-**Mid to senior, percentage points (95% CI), English / France-located / French-language:**
-- Mentoring and code review: +21 (15, 27) / +15 (-5, 36) / +7 (-17, 30)
-- Lead or drive ("piloter", "porter"): +23 (16, 29) / +20 (-3, 41) / +17 (-8, 42)
-- Standards and best practices: +20 (14, 26) / +6 (-17, 29) / -4 (-31, 21)
-- Own: +13 (7, 20) / -4 (-25, 18) / -7 (-31, 16)
-- Roadmap and prioritisation: +18 (12, 24) / +2 (-20, 23) / +8 (-17, 31)
-
-Same sign as English on 5 of 8 features (6 of 8 on the title ladder). Only mentoring and lead/drive point consistently the same way; every French interval includes zero, so nothing is confirmed. Standards, "own" and roadmap do not replicate in France. Junior to mid and senior to lead are not testable (3 and 6 ads).
-
-**Years asked in France:** median 1 (n=2), 3 (n=26), 5 (n=23), 5 (n=4), against English 1 / 3 / 5 / 6.
-
-**France-specific:**
-- Degree: 50% mention one; 31% name Bac+5, master or école d'ingénieur; 29% say "ou équivalent". Bac+5 does not rise with level (mid 32%, senior 30%). French-language ads mention it about five times as often as English-language ads in France (about 40% against 8%).
-- Alternance, stage, apprentissage, VIE: none of the 85 ads offers one. This reflects how the corpus was collected (search on "analytics engineer"), not the French market.
-- Language gate: 41% name one (English only 15, French only 15, both 3). Six of 24 English-language ads in France require French; 12 of 61 French-language ads require English.
-- Pay stated in 24% of ads (all annual EUR): mid about 52k (n=12), senior 65k (n=5); junior and lead are single ads.
-- Remote: 51% hybrid, 9% remote, 40% not stated.
-
-**Method checks:** French dictionaries hand-checked on 26 ads (precision 70–95%, recall 70–95%; "support/assist" is the weak one because "participer à" appears in 70% of ads). The classifier's seniority label looked plausible on 25 of 25 French ads checked (kappa 0.67 against the title ladder, 0.54 against years).
-
-**Safe wording for the French room:** "In 80 French postings the wording shifts from junior to senior in the same direction as in English for mentoring and for driving the work, and the years go from about three to about five. I cannot say anything solid about junior or lead roles. These are associations in ads for external hires, not advice on how to be promoted. Bac+5 or any particular phrase does not get you hired."
-
-**French quotes (exact substrings):** Léonar, junior: "Participer au cadrage et à la collecte des données." Elax Énergie, mid: "Prendre progressivement la responsabilité d’un domaine métier de bout en bout." Exalt, mid: "Participer à la mise en place de bonnes pratiques autour du versioning, de l’intégration continue, de la documentation et des revues de code." Akuo, senior: "Accompagner les utilisateurs, former les Analytics Engineers et contribuer à leur montée en compétence par les revues et le partage de bonnes pratiques." ALTEN, senior: "accompagner la montée en compétences des profils plus juniors". EVA Esports, senior: "Capacité à définir une vision, une roadmap et, à terme, à encadrer une squad Data". AXA, lead: "accompagnez une équipe de 10 collaborateurs en France et en Pologne".
-
-## Benefits, separately from duties (1,136 ads; extractor in 7 languages; hand-checked on 54 ads, tag precision about 94%)
-
-No backfill is needed: benefits are extracted at analysis time from headings and benefit sentences (28 tags). A heading-only field would miss about 29% of ads that mention benefits outside headings. If a stored field is wanted later: `benefits: {tags, text, section_found, extractor_version}`, and `scripts/write_jd.py`'s field whitelist must be updated first because it silently drops new fields.
-
-- **Coverage:** 76% of ads mention at least one benefit; 24% (277) mention none (55 of those point to a careers page). Ad length is the strongest confounder: only APAC's gap (short LinkedIn excerpts) survives a length control.
-- **Typical package by region** (tags in 40% or more of ads): US health 58%, paid time off 56%, pension/401k 54%, equity 48%, parental leave 40%. UK and Ireland: remote/hybrid 61%, paid time off 42%. Benelux: learning 48%, paid time off 46%, remote 45%. **France: remote 58% only, with meal vouchers 35% the signature**, then learning 31%, health 28%, profit-sharing 15%, RTT about 10%, pension 0%. DACH: remote 56%, learning 49%, wellbeing 44%. Southern Europe: remote 63%, learning 45%, health 40%.
-- **Biggest contrasts** (percentage points, 95% CI): equity US 48% against Europe 10%, +38 (29, 46); pension US +36 (27, 45); health US +31 (22, 39); meal vouchers France 35% against UK and Ireland 8%, +27 (16, 38); transport and mobility Benelux 33% and DACH 23% against US 10%.
-- **By level and company type** (after region, language, length): senior ads mention bonus more (OR 1.5) and learning less (0.73); startup wording does not mean more benefits; consultancy ads mention fewer (32% mention none).
-- **Cannot say:** generosity, take-up, unstated benefits, or anything about statutory baselines (EU paid leave and parental leave are statutory, so a mention is a selling point). Remote or hybrid is mostly a statement of arrangement, not a perk.
-- **Quotes:** Chobani (US): "To support growing families, we provide fertility and childcare assistance, and 12 weeks of parental leave at full pay". Médiaperformances (France): "RTT : 18 jours de RTT en plus des 25 jours habituels de congés payés" and "Des Tickets restaurant, deux restaurants d'entreprise, une cafétéria". Chefs Culinar West (Germany): "Fahrradleasing- und Jobticket-Bezuschussung sowie kostenfreie Mitarbeiterparkplätze".
 
 ## Career ladder: what the ads ask at each step (942 English ads; seniority from the classifier, checked against the title ladder and the years ladder)
 
@@ -103,14 +67,14 @@ Sample sizes: classifier labels junior 40, mid 415, senior 393, lead/staff/manag
 2. **The AI strand is a non-event as a trend.** The honest result is "no detectable change in three months". It becomes a finding when you say what the ask looks like (about half of ads, four in ten of those vague), not when you chase a rise.
 3. **The red-flag strand mostly failed.** "Fast-paced", "self-starter", "wear many hats", unicorn ads and pay opacity predicted nothing. That is itself useful ("most red-flag adjectives carry no signal") but it is one line, not a section.
 4. **"Juniors" rests on a fragile definition.** 50 ads by a classifier, 16 by title, 117 by a loose rule. Say all three.
-5. **Your two storylines cannot both be spines in six minutes.** The French-misread bug is now a bug you fixed; its numbers moved (after the fix 70% against 79%, p=0.19). Keep it as a thirty-second credibility beat.
+5. **Your two storylines cannot both be spines in six minutes.** Decided: the French data-quality bug is out of the spoken talk (the numbers moved after the fix: 70% against 79%, p=0.19) and the talk opens on the Accenture "Early Career … minimum 3+ years" ad. The bug story stays in `talk_v1_fwdc_2026_talk_plan.md`.
 6. **Literature check, stated carefully:** the research agents found no systematic study of analytics-engineering ads and nothing testing Power BI or Fabric against dbt as a signal of scope. Say "I found no one who has measured this", never "no one has".
 
 ## The one sentence
 
-> A job ad is mostly a shared dialect that says little, but three things in it are real signals: the stack, the AI sentence and the years. And for juniors, the door is narrower and more contradictory than the titles admit.
+> A job ad often says one thing and asks another. Three things in it are real signals of what it asks: the stack, the AI sentence and the years. And almost no two ads are alike, so answer the specific request, not a template.
 
-Spoken short: **"Ignore the adjectives. Read the stack, the AI sentence and the years."**
+Spoken short: **"Read what the ad asks, not what it says: the stack, the AI sentence, the years."**
 
 ## Who it is for, and what they do on Monday
 
@@ -124,7 +88,7 @@ Tone rule from the old plan, still binding: **the tool or the document is the su
 
 | # | Time | Slide (visual) | Say | Evidence and safe wording |
 |---|---|---|---|---|
-| 1 | 0:00–0:30 | The French Emeria line, full screen, nothing else. Silent vote. | "Does this line make data quality part of the job? ... My tool scored it zero. A zero means 'not there' or 'I can't read it'. Keep that in mind for every number I show you." | Earns the right to say ads are weak evidence. Old numbers: before the fix 40% (18 of 45) of French ads against 79% (683 of 860) had data-quality language; after, 70% against 79%. |
+| 1 | 0:00–0:30 | Two lines from one real ad: "Early Career" and "Minimum of 3+ years" (Accenture, Lisbon). | "Early career. A minimum of three years. This is what the ad says; this is what it asks." | Verbatim lines from the archive of 2026-08-01_accenture_analytics-engineer-lisbon. The French data-quality story is no longer in the spoken talk (it stays in `talk_v1_fwdc_2026_talk_plan.md`). |
 | 2 | 0:30–0:50 | Dot field of the corpus, one dot per ad. | "About 1,100 ads, a year of looking, mostly Europe. One scraper, LinkedIn and company pages. I'll say the limits once." | Freeze the count before the talk (1,136 today). |
 | 3 | 0:50–1:30 | 534 title strings collapsing into five job types; beside it, a similarity strip. | "534 titles, five jobs. And almost no two ads are alike: strangers share about 4%, under 1% of requirement sentences are copied. The copiers are families: Amazon, DoorDash, two consultancies in Lisbon." | Titles: 88% of "Analytics Engineer" ads list reporting duties, 85% pipelines, 96% modelling. Five types is one way to slice it, k-means, unvalidated. Say "about four in ten are dbt-heavy", not "40% match". Similarity is role text only. |
 | 4 | 1:30–2:20 | Four bars: strategic scope by stack, with "same seniority, same rigour" pinned beneath. Optional decoder: two ads, company names hidden, guess the stack. | "The tool names the job better than the title. Ads that name dbt and no Power BI describe strategic scope 47% of the time; Power BI or Fabric with no dbt, 18%. Same seniority, same rigour. Different scope." | English ads: dbt-no-PBI 47%, PBI plus dbt 31%, neither 32%, PBI-no-dbt 18%. Say "associated with, especially without dbt". Never "means". Never a ranking: no difference in seniority (p=0.23) or rigour framing (p=0.5). Autonomy is a classifier label: show the hand check. |
@@ -194,5 +158,5 @@ Style: type only on the quote slides, one idea per slide, two colours plus one h
 ## Decisions for you
 
 - 6 or 10 minutes? The order above works for 6; the 10-minute adds are listed.
-- Keep the French opener and its credibility line, or open with the Accenture "Early Career … minimum 3+ years" ad instead? The challengers like both; the French line ties to your track.
+- ~~Keep the French opener~~ Decided: open on the Accenture ad and carry the "says versus asks" thread to the end.
 - **Outside voices, as verified (2026-10-26):** Conquet, DataGen #160 (3 Aug 2026): "80% des besoins de nos clients sont sur des fondamentaux et 20% sont sur des sujets très innovants" is about his freelance collective's clients, and he says 80% of the podcast is about innovative topics; it is a usable quote if attributed that way. "En France, 99% sont français" is about the roughly 50 leaders he contacted at German and British unicorns, not about French team composition: do not use it for the language gate. Blef, DataGen #242 (8 Dec 2025): the show notes list semantic layer, MCP, "95% des projets ne sont pas en production" and internal AI assistants as 2026 trends; the 95% comes from an MIT study in the resources, so do not attribute it to him. #267: the title is "L'agentique accélère : quel impact pour l'équipe data ?" and the rest is unconfirmed.
