@@ -84,3 +84,13 @@ mark.m-ask{background:var(--plum);color:#fff;padding:0 6px;border-radius:5px}
 #navbtns button:hover{background:var(--soft)}#navbtns button:focus-visible{outline:2px solid var(--coral)}
 
 .bigstat2{font-size:110px;font-weight:700;fill:#ea5b4d;letter-spacing:-.05em}
+
+.sowhat{position:absolute;inset:0;background:var(--bg);z-index:5;display:flex;flex-direction:column;justify-content:center;gap:2.2vh;padding:0 2vw;opacity:0;transition:opacity .45s}
+.sowhat.on{opacity:1}
+.sw-kick{font:700 13px 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--coral,#ec5b4b)}
+.sw-find{font-weight:700;font-size:clamp(20px,2.4vw,34px);line-height:1.15;max-width:1100px}
+.sw-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4vh 1.4vw;max-width:1150px}
+.sw-card{background:#fff8;border:1px solid var(--line,#ecd6d0);border-radius:14px;padding:1.2vh 1.2vw;display:flex;flex-direction:column;gap:4px;font-size:clamp(14px,1.45vw,20px);line-height:1.3}
+.sw-card b{font:700 12px 'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.sw-ext{max-width:1150px;border-left:5px solid var(--plum,#5a2a4a);padding:.4vh 0 .4vh 1.2vw;font-size:clamp(13px,1.3vw,18px);line-height:1.3}
+.sw-ext p{margin:.4vh 0 0}
