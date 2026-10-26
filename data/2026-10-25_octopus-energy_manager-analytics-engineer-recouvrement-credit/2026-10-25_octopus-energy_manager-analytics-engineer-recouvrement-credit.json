@@ -1,0 +1,150 @@
+{
+  "jd_id": "2026-10-25_octopus-energy_manager-analytics-engineer-recouvrement-credit",
+  "company": "Octopus Energy",
+  "role": "Manager Analytics Engineer - Recouvrement & crédit H/F",
+  "job_location": "Paris, Île-de-France, France",
+  "seniority": "manager",
+  "role_type": "team_lead",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "mixed",
+  "stakeholder_orientation": "finance",
+  "autonomy_level": "strategic",
+  "ai_role": "none",
+  "testing_framing": "absent",
+  "loss_aversion_framing": "moderate",
+  "greenfield_vs_fix": "mixed",
+  "velocity_vs_rigour": "mixed",
+  "domain_risk": "high",
+  "collaboration_width": 4,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "not_stated",
+  "language_gate_type": "hard",
+  "language_gate_languages": [
+    "French"
+  ],
+  "jd_language": "fr",
+  "ai_written": {
+    "score": 27.3,
+    "spread": 40.0,
+    "measures": {
+      "marker_vocab": {
+        "raw": 0.941,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "structure": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.462,
+        "score": 64.0
+      },
+      "burstiness": {
+        "raw": 1.478,
+        "score": 0.0
+      },
+      "specificity": {
+        "raw": 3.01,
+        "score": 100.0
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "linkedin",
+  "ats_job_id": "4455717057",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": true,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "Python",
+    "SQL",
+    "dbt"
+  ],
+  "preferred_tools": [],
+  "responsibilities": [
+    "Être moteur dans la mise en place de la stratégie et des priorités du recouvrement pour l’entreprise",
+    "Développer, maintenir et partager des reportings et des analyses data complexes en lien avec la dette, le recouvrement et plus largement la Finance pour Octopus Energy France",
+    "Être force de proposition sur  la mise en place des processus de recouvrement et des mesures de prévention pour garantir une excellente expérience client (par ex. : adaptation de mensualité, échelonnement de dettes)",
+    "Optimiser les décisions de crédit à partir de la données (A/B tests de workflow, décision de seuils)",
+    "Modéliser la dette en collaboration avec les différentes équipes Finance en France et Groupe pour du provisionnement",
+    "Développer la collaboration étroite entre ton équipe et les équipes Data France, et intervenir dans les instances de reporting auprès du COMEX France et du Groupe."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://www.linkedin.com/jobs/view/4455717057/",
+  "linkedin_url": null,
+  "evidence": {
+    "velocity_vs_rigour": "Tu es rigoureux·se et proactif·ve dans l’amélioration de tes reportings et des tes analyses",
+    "velocity_vs_rigour_explanation": "Rigour language appears alongside speed language (\"avance vite\", \"plus rapidement\"), giving parity.",
+    "domain_risk": "Modéliser la dette en collaboration avec les différentes équipes Finance en France et Groupe pour du provisionnement",
+    "domain_risk_explanation": "Debt provisioning and credit risk for a utility's collections book is financial-reporting adjacent.",
+    "collaboration_width": "équipes recouvrement; ops; finance; équipes Data France",
+    "data_team_maturity": "Développer la collaboration étroite entre ton équipe et les équipes Data France",
+    "data_team_maturity_explanation": "A central Data France team exists alongside a local analyst and data scientist; named stack in requirements.",
+    "jd_authorship": "Optimiser les décisions de crédit à partir de la données (A/B tests de workflow, décision de seuils)",
+    "jd_authorship_explanation": "Mix of specific collections work (A/B workflow tests, thresholds) and generic strategy bullets.",
+    "stakeholder_orientation": "Tu accompagneras les équipes Recouvrement et Finance dans leurs prises de décisions",
+    "stakeholder_orientation_explanation": "Primary audience is collections and finance teams making credit and provisioning decisions.",
+    "autonomy_level": "Être moteur dans la mise en place de la stratégie et des priorités du recouvrement",
+    "autonomy_level_explanation": "The role sets collections strategy and manages two direct reports.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "ML and AI knowledge is only a vague nice-to-have.",
+    "testing_framing": "No testing or data quality signal.",
+    "testing_framing_explanation": "No testing or data quality practice is mentioned.",
+    "loss_aversion_framing": "améliorer les taux de recouvrement et gérer le risque crédit",
+    "loss_aversion_framing_explanation": "Credit risk is a business concern, not a data-trust or compliance fear.",
+    "greenfield_vs_fix": "Développer, maintenir et partager des reportings et des analyses data complexes",
+    "greenfield_vs_fix_explanation": "Develop and maintain reporting plus proposing new processes.",
+    "language_gate": "Tu sais travailler en Français et en Anglais (niveau min C1)",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Not stated in JD.",
+    "loss_aversion": "No loss aversion framing detected.",
+    "ats_keywords": [
+      "Python, SQL, DBT, Git",
+      "Recouvrement",
+      "risque crédit",
+      "provisionnement",
+      "A/B tests de workflow",
+      "management direct",
+      "stack data moderne",
+      "Analytics Engineer ou Data analyst"
+    ],
+    "ats_lookup": "resolve_ats miss; web search found only makesense job board mirrors, no Octopus Energy ATS or careers posting"
+  }
+}
