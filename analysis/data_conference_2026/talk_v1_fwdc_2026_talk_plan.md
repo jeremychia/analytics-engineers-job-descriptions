@@ -177,7 +177,7 @@ New figures come from the 1,013-record corpus (928 in the cohort), checked 2026-
 
 ## Extra visuals for Q&A or a longer slot (checked 2026-10-25)
 
-Deck: `analysis/jd_deck.html` (arrow keys). The corpus is now 1,140 ads: 67 reposts and recruiter copies moved to `data_excluded/` (see its `MANIFEST.json`). Numbers below that came from the surprises search were computed before that removal; re-run before freezing.
+Deck: `jd_deck.html` in this folder (arrow keys; slides 1–8 are the talk, the rest is the appendix). The corpus is now 1,140 ads: 67 reposts and recruiter copies moved to `data_excluded/` (see its `MANIFEST.json`). Numbers below that came from the surprises search were computed before that removal; re-run before freezing.
 
 | Slide | Claim | Key numbers |
 |---|---|---|
@@ -311,6 +311,9 @@ r'\b(data quality|test(ing|s)?\b|validat|monitor(ing)?|assertion|anomaly|reliabi
 
 - Lead with dbt. It is a genuine compliment.
 - Add Conquet's line after the language fact: "En France, 99% sont français" ([DataGen #160](https://datageneration.substack.com/p/quel-est-lepisode-datagen-le-plus)). It makes the language requirement a feature of a domestic talent pool, not a barrier anyone chose.
+
+  **Correction (checked 2026-10-26, see `research/ext_verify.md`):** on the DataGen #160 page the line "En France, 99% sont français" is about the roughly 50 data/AI leaders at German and British unicorns whom Conquet contacted (fewer than half were German or British); it is not a statement about the composition of French teams. Do not use it as a feature of a domestic talent pool. "80% des besoins de nos clients sont sur des fondamentaux et 20% sont sur des sujets très innovants" is about his freelance collective's clients, and he says 80% of the podcast is about innovative topics.
+
 - Say the language fact flat. It pays off in Act 2.
 - Say "written by people in this building", not "yours" — many build for clients.
 - Version control and CI/CD come from keyword fields, so say "mention", not "require".
@@ -553,7 +556,7 @@ Salary sources, out of scope: [TPC analytics engineer](https://tpc-recrutement.c
 
 ### How to use it
 
-1. **Language requirement → Conquet's "99% sont français"**, in the Act 1 mirror.
+1. ~~Language requirement → Conquet's "99% sont français"~~ — context differs (see the correction above); do not use.
 2. **Fundamentals → Conquet's "80% des besoins… fondamentaux"**, as an epigraph before the teaser or in Q&A. Name him; he may be in the room.
 3. **AI teaser → Indeed's 3.4%.** A large sample closes the "one person's job search" objection.
 4. **"What should employers write?" → the conference's own "infrastructure of trust"** vs 6% mentioning data contracts. Q&A only.

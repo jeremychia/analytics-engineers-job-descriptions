@@ -1,0 +1,133 @@
+tag,A,B,pA,nA,pB,nB,diff,lo,hi,absdiff
+health,US,Europe(all),58.3,139,27.6,762,30.7,21.8,39.2,30.7
+health,FR+Benelux,other EU,18.6,172,30.2,590,-11.6,-17.9,-4.2,11.6
+health,France,UK&IE,27.5,80,38.6,166,-11.1,-22.5,1.7,11.1
+health,DACH+Benelux,US,8.6,221,58.3,139,-49.7,-58.1,-40.3,49.7
+health,DACH,France,7.0,129,27.5,80,-20.5,-31.7,-10.2,20.5
+health,UK&IE,Continental Europe,38.6,166,24.5,596,14.1,6.1,22.3,14.1
+life_disability_ins,US,Europe(all),20.1,139,7.2,762,12.9,6.7,20.5,12.9
+life_disability_ins,FR+Benelux,other EU,4.1,172,8.1,590,-4.1,-7.3,0.5,4.1
+life_disability_ins,France,UK&IE,6.2,80,16.3,166,-10.0,-17.3,-1.0,10.0
+life_disability_ins,DACH+Benelux,US,1.8,221,20.1,139,-18.3,-25.8,-11.9,18.3
+life_disability_ins,DACH,France,1.6,129,6.2,80,-4.7,-12.3,0.6,4.7
+life_disability_ins,UK&IE,Continental Europe,16.3,166,4.7,596,11.6,6.3,18.1,11.6
+pension,US,Europe(all),54.0,139,17.8,762,36.1,27.3,44.6,36.1
+pension,FR+Benelux,other EU,19.2,172,17.5,590,1.7,-4.4,8.9,1.7
+pension,France,UK&IE,0.0,80,28.9,166,-28.9,-36.2,-21.1,28.9
+pension,DACH+Benelux,US,26.2,221,54.0,139,-27.7,-37.4,-17.4,27.7
+pension,DACH,France,19.4,129,0.0,80,19.4,11.9,27.0,19.4
+pension,UK&IE,Continental Europe,28.9,166,14.8,596,14.2,7.1,21.9,14.2
+equity,US,Europe(all),47.5,139,9.7,762,37.8,29.3,46.2,37.8
+equity,FR+Benelux,other EU,4.7,172,11.2,590,-6.5,-10.1,-1.7,6.5
+equity,France,UK&IE,5.0,80,14.5,166,-9.5,-16.3,-1.0,9.5
+equity,DACH+Benelux,US,6.8,221,47.5,139,-40.7,-49.4,-31.6,40.7
+equity,DACH,France,8.5,129,5.0,80,3.5,-4.5,10.3,3.5
+equity,UK&IE,Continental Europe,14.5,166,8.4,596,6.1,0.9,12.5,6.1
+bonus,US,Europe(all),30.2,139,13.0,762,17.2,9.7,25.6,17.2
+bonus,FR+Benelux,other EU,14.0,172,12.7,590,1.2,-4.0,7.7,1.2
+bonus,France,UK&IE,12.5,80,18.1,166,-5.6,-14.2,4.8,5.6
+bonus,DACH+Benelux,US,11.8,221,30.2,139,-18.5,-27.3,-9.9,18.5
+bonus,DACH,France,9.3,129,12.5,80,-3.2,-13.0,5.2,3.2
+bonus,UK&IE,Continental Europe,18.1,166,11.6,596,6.5,0.7,13.4,6.5
+pto,US,Europe(all),56.1,139,33.1,762,23.0,14.1,31.7,23.0
+pto,FR+Benelux,other EU,31.4,172,33.6,590,-2.2,-9.7,6.0,2.2
+pto,France,UK&IE,15.0,80,42.2,166,-27.2,-37.0,-15.3,27.2
+pto,DACH+Benelux,US,38.5,221,56.1,139,-17.7,-27.7,-7.1,17.7
+pto,DACH,France,33.3,129,15.0,80,18.3,6.3,28.9,18.3
+pto,UK&IE,Continental Europe,42.2,166,30.5,596,11.6,3.4,20.0,11.6
+parental,US,Europe(all),39.6,139,9.8,762,29.7,21.6,38.2,29.7
+parental,FR+Benelux,other EU,2.3,172,12.0,590,-9.7,-12.9,-5.5,9.7
+parental,France,UK&IE,2.5,80,25.3,166,-22.8,-30.1,-14.2,22.8
+parental,DACH+Benelux,US,2.3,221,39.6,139,-37.3,-45.7,-29.0,37.3
+parental,DACH,France,2.3,129,2.5,80,-0.2,-6.5,4.5,0.2
+parental,UK&IE,Continental Europe,25.3,166,5.5,596,19.8,13.4,27.1,19.8
+sick,US,Europe(all),9.4,139,2.9,762,6.5,2.4,12.5,6.5
+sick,FR+Benelux,other EU,0.6,172,3.6,590,-3.0,-4.9,-0.1,3.0
+sick,France,UK&IE,0.0,80,4.2,166,-4.2,-8.4,0.8,4.2
+sick,DACH+Benelux,US,0.9,221,9.4,139,-8.4,-14.5,-4.0,8.4
+sick,DACH,France,0.8,129,0.0,80,0.8,-3.9,4.3,0.8
+sick,UK&IE,Continental Europe,4.2,166,2.5,596,1.7,-1.0,6.0,1.7
+remote_flex,US,Europe(all),41.7,139,56.2,762,-14.4,-23.0,-5.4,14.4
+remote_flex,FR+Benelux,other EU,50.6,172,57.8,590,-7.2,-15.6,1.2,7.2
+remote_flex,France,UK&IE,57.5,80,61.4,166,-3.9,-17.0,8.8,3.9
+remote_flex,DACH+Benelux,US,51.1,221,41.7,139,9.4,-1.2,19.6,9.4
+remote_flex,DACH,France,55.8,129,57.5,80,-1.7,-15.1,12.0,1.7
+remote_flex,UK&IE,Continental Europe,61.4,166,54.7,596,6.7,-1.8,14.9,6.7
+home_office_equip,US,Europe(all),4.3,139,9.7,762,-5.4,-8.7,-0.2,5.4
+home_office_equip,FR+Benelux,other EU,16.3,172,7.8,590,8.5,3.1,15.0,8.5
+home_office_equip,France,UK&IE,11.2,80,8.4,166,2.8,-4.6,12.2,2.8
+home_office_equip,DACH+Benelux,US,13.6,221,4.3,139,9.3,3.1,14.9,9.3
+home_office_equip,DACH,France,8.5,129,11.2,80,-2.7,-12.2,5.3,2.7
+home_office_equip,UK&IE,Continental Europe,8.4,166,10.1,596,-1.6,-5.9,4.0,1.6
+flex_hours,US,Europe(all),16.5,139,23.6,762,-7.1,-13.2,0.5,7.1
+flex_hours,FR+Benelux,other EU,19.8,172,24.7,590,-5.0,-11.4,2.4,5.0
+flex_hours,France,UK&IE,10.0,80,18.7,166,-8.7,-16.9,1.3,8.7
+flex_hours,DACH+Benelux,US,33.0,221,16.5,139,16.5,7.3,24.8,16.5
+flex_hours,DACH,France,36.4,129,10.0,80,26.4,14.9,36.3,26.4
+flex_hours,UK&IE,Continental Europe,18.7,166,25.0,596,-6.3,-12.7,1.1,6.3
+learning,US,Europe(all),25.9,139,39.5,762,-13.6,-21.0,-5.0,13.6
+learning,FR+Benelux,other EU,40.1,172,39.3,590,0.8,-7.3,9.2,0.8
+learning,France,UK&IE,31.2,80,28.3,166,2.9,-8.7,15.5,2.9
+learning,DACH+Benelux,US,48.4,221,25.9,139,22.5,12.3,31.8,22.5
+learning,DACH,France,48.8,129,31.2,80,17.6,3.9,30.1,17.6
+learning,UK&IE,Continental Europe,28.3,166,42.6,596,-14.3,-21.8,-6.0,14.3
+wellbeing,US,Europe(all),41.0,139,34.4,762,6.6,-1.9,15.6,6.6
+wellbeing,FR+Benelux,other EU,26.2,172,36.8,590,-10.6,-17.8,-2.6,10.6
+wellbeing,France,UK&IE,26.2,80,31.9,166,-5.7,-16.9,6.8,5.7
+wellbeing,DACH+Benelux,US,36.7,221,41.0,139,-4.4,-14.7,5.8,4.4
+wellbeing,DACH,France,44.2,129,26.2,80,17.9,4.5,30.0,17.9
+wellbeing,UK&IE,Continental Europe,31.9,166,35.1,596,-3.1,-10.8,5.2,3.1
+meal,US,Europe(all),12.2,139,18.9,762,-6.7,-12.0,0.3,6.7
+meal,FR+Benelux,other EU,25.6,172,16.9,590,8.6,1.9,16.2,8.6
+meal,France,UK&IE,35.0,80,8.4,166,26.6,15.7,38.0,26.6
+meal,DACH+Benelux,US,21.3,221,12.2,139,9.0,0.9,16.4,9.0
+meal,DACH,France,24.0,129,35.0,80,-11.0,-23.7,1.5,11.0
+meal,UK&IE,Continental Europe,8.4,166,21.8,596,-13.4,-18.2,-7.3,13.4
+transport,US,Europe(all),10.1,139,15.4,762,-5.3,-10.1,1.3,5.3
+transport,FR+Benelux,other EU,23.8,172,12.9,590,11.0,4.5,18.3,11.0
+transport,France,UK&IE,13.8,80,16.9,166,-3.1,-11.8,7.3,3.1
+transport,DACH+Benelux,US,27.1,221,10.1,139,17.1,8.9,24.5,17.1
+transport,DACH,France,23.3,129,13.8,80,9.5,-1.7,19.4,9.5
+transport,UK&IE,Continental Europe,16.9,166,14.9,596,1.9,-3.9,8.9,1.9
+relocation,US,Europe(all),7.2,139,3.9,762,3.3,-0.4,8.9,3.3
+relocation,FR+Benelux,other EU,1.7,172,4.6,590,-2.8,-5.1,0.7,2.8
+relocation,France,UK&IE,2.5,80,4.2,166,-1.7,-6.3,4.8,1.7
+relocation,DACH+Benelux,US,3.6,221,7.2,139,-3.6,-9.4,1.1,3.6
+relocation,DACH,France,5.4,129,2.5,80,2.9,-3.8,8.6,2.9
+relocation,UK&IE,Continental Europe,4.2,166,3.9,596,0.4,-2.5,4.8,0.4
+childcare_family,US,Europe(all),20.9,139,6.0,762,14.8,8.6,22.5,14.8
+childcare_family,FR+Benelux,other EU,1.2,172,7.5,590,-6.3,-8.8,-2.8,6.3
+childcare_family,France,UK&IE,2.5,80,9.0,166,-6.5,-12.2,0.5,6.5
+childcare_family,DACH+Benelux,US,5.0,221,20.9,139,-15.9,-23.7,-8.9,15.9
+childcare_family,DACH,France,8.5,129,2.5,80,6.0,-1.2,12.4,6.0
+childcare_family,UK&IE,Continental Europe,9.0,166,5.2,596,3.8,-0.2,9.4,3.8
+discounts,US,Europe(all),10.1,139,15.7,762,-5.7,-10.5,0.9,5.7
+discounts,FR+Benelux,other EU,14.0,172,16.3,590,-2.3,-7.8,4.3,2.3
+discounts,France,UK&IE,8.8,80,15.7,166,-6.9,-14.6,2.6,6.9
+discounts,DACH+Benelux,US,23.1,221,10.1,139,13.0,5.1,20.2,13.0
+discounts,DACH,France,26.4,129,8.8,80,17.6,6.9,26.9,17.6
+discounts,UK&IE,Continental Europe,15.7,166,15.8,596,-0.1,-5.8,6.7,0.1
+events,US,Europe(all),11.5,139,18.8,762,-7.3,-12.5,-0.4,7.3
+events,FR+Benelux,other EU,15.7,172,19.7,590,-4.0,-9.7,2.9,4.0
+events,France,UK&IE,13.8,80,11.4,166,2.3,-5.9,12.3,2.3
+events,DACH+Benelux,US,25.8,221,11.5,139,14.3,6.0,21.8,14.3
+events,DACH,France,31.8,129,13.8,80,18.0,6.2,28.3,18.0
+events,UK&IE,Continental Europe,11.4,166,20.8,596,-9.4,-14.6,-2.9,9.4
+competitive_vague,US,Europe(all),42.4,139,19.2,762,23.3,14.8,32.0,23.3
+competitive_vague,FR+Benelux,other EU,20.9,172,18.6,590,2.3,-4.1,9.6,2.3
+competitive_vague,France,UK&IE,17.5,80,23.5,166,-6.0,-15.7,5.4,6.0
+competitive_vague,DACH+Benelux,US,16.3,221,42.4,139,-26.2,-35.5,-16.6,26.2
+competitive_vague,DACH,France,10.9,129,17.5,80,-6.6,-17.3,2.8,6.6
+competitive_vague,UK&IE,Continental Europe,23.5,166,18.0,596,5.5,-1.1,13.1,5.5
+volunteering_giving,US,Europe(all),4.3,139,3.5,762,0.8,-2.0,5.7,0.8
+volunteering_giving,FR+Benelux,other EU,1.7,172,4.1,590,-2.3,-4.6,1.2,2.3
+volunteering_giving,France,UK&IE,2.5,80,7.2,166,-4.7,-10.0,2.1,4.7
+volunteering_giving,DACH+Benelux,US,0.5,221,4.3,139,-3.9,-8.7,-0.8,3.9
+volunteering_giving,DACH,France,0.0,129,2.5,80,-2.5,-8.7,0.9,2.5
+volunteering_giving,UK&IE,Continental Europe,7.2,166,2.5,596,4.7,1.3,9.8,4.7
+collective_agreement,US,Europe(all),0.0,139,0.8,762,-0.8,-1.7,1.9,0.8
+collective_agreement,FR+Benelux,other EU,1.2,172,0.7,590,0.5,-0.9,3.5,0.5
+collective_agreement,France,UK&IE,0.0,80,0.0,166,0.0,-2.3,4.6,0.0
+collective_agreement,DACH+Benelux,US,0.9,221,0.0,139,0.9,-1.9,3.2,0.9
+collective_agreement,DACH,France,0.0,129,0.0,80,0.0,-4.6,2.9,0.0
+collective_agreement,UK&IE,Continental Europe,0.0,166,1.0,596,-1.0,-2.2,1.3,1.0

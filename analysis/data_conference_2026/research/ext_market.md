@@ -1,0 +1,14 @@
+# ext_market notes (2026-10-25). Fetched = page read via WebFetch; snippet = search summary only.
+- Stanford DEL Brynjolfsson/Chandar/Chen, rev 12 Aug 2026 (fetched): ages 22-25 in AI-exposed occupations 19% below trend (13% in Aug 2025 version); experienced workers no gap; authors call descriptive not causal. https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/
+- Indeed Hiring Lab, Lisa Feist 7 May 2026 (fetched): pay in ads Mar 2026 UK56 NL48 FR43 IE39 IT36 ES17 DE12. https://hiringlab.indeed.com/uk/blog/2026/05/07/full-salary-transparency-in-europe-is-still-a-distant-prospect/
+- Euronews, Servet Yanatma 8 Sep 2026 (fetched): July 2026 IT61 UK60 NL49.5 FR43 ES18 DE14; Italy 35% Jan->61% Jul; transposed per PwC: IT SK MT LT GR (date inconsistency). https://www.euronews.com/business/2026/09/08/eu-pay-transparency-are-job-ads-finally-getting-honest-about-salaries
+- WageIndicator "EU Sources" 30 Jun 2026 (fetched): only SK IT LT MT met 7 Jun deadline.
+- L'Essentiel de l'Eco, Nicolas Martin 8 Apr 2026 (fetched, journalism citing Hellowork, APEC, INSEE): IT offers -28% 2025 (Hellowork); APEC IT exec hiring -21% 2023-25; junior IT exec offers -19% 2024; data engineer offers +10% 2025; INSEE 15-29 digital employment -7.4% Q4 2025 y/y. Original APEC/INSEE not opened.
+- Blog du Modérateur, Alexandra Patard 4 Jun 2026 (fetched): Torner quotes; France Travail BMO Apr 2026 info&comm hiring intentions -12.5%; Numeum growth forecast 4.3%; ~17% productivity (Numeum claim); OPIIEC 49%.
+- dbt Labs 14 Apr 2026 (fetched; vendor survey n=363): 72% prioritise AI-assisted coding, 24% AI pipeline mgmt; trust 66->83%; 57% higher compute spend vs 36% bigger team budgets. Silent on hiring/juniors.
+- HBS + Burning Glass, Fuller, Feb/May 2024 (fetched): <1 in 700 hires; 45% firms name-only change.
+- Indeed Hiring Lab, Gallacher 10 Oct 2024 (fetched): % postings saying local language not needed NL 7.8 ES 5.8 FR/IT ~4 DE 2.4-3.4 UK 2.8; UK visa sponsorship 0.5%.
+- Entry-level experience: TalentWorks 61% (snippet, old), Seeker 2026 (snippet), Hirebase 6.5% 3+yrs (snippet). Not fetched.
+- Eurostat 2025 ICT specialists 10.45M, 5.0%, growth 2.6% 2024-25 (snippet).
+- Blue Card DE 2026 EUR50,700 / 45,934 shortage (snippet, law-firm blogs).
+- Unverified: Robin Conquet quotes (not found), Blef items (not found), Indeed AI tracker 6.28% (snippet), datadriven.io 67% junior DE drop (vendor blog, unverified), NY Fed 6.1%/7.5% CS (2023 data, snippets).
