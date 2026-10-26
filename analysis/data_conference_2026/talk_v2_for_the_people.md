@@ -7,22 +7,22 @@ Draft 2, 2026-10-26. Supersedes the spine of `talk_v1_fwdc_2026_talk_plan.md` (i
 **The thread:** at every turn, two questions about an ad: *what does it say, and what does it ask?* The opening shows the gap in one real ad, the middle shows it again and again, and the ending comes back to it: answer what the ad asks. The spoken script does not apologise for the method; limits live in the Q&A section and the evidence tables below.
 
 **[The line · on screen, two lines from one real ad]**
-`BI Engineering Senior Analyst | Early Career | Full time`
-`Minimum of 3+ years of experience in Business Data, BI Engineering, or Analytics Engineering roles` *(Accenture, Lisbon)*
+`Enhance is hiring a Junior Analytics Engineer in Dubai to help turn our data into insights…`
+`2-5 years in analytics, BI or data engineering. Strong internships or graduate projects count.` *(Enhance, Dubai)*
 
-"Early career. A minimum of three years. Same ad. This is what the ad says, and this is what it asks. They aren't always the same thing. I read about 1,100 job ads for analytics engineers, from LinkedIn and company career pages, to find out what they actually ask. A few questions, five minutes. Each time: what does it say, and what does it ask?"
+"Junior. Two to five years. Same ad. This is what the ad says, and this is what it asks. They aren't always the same thing. (Yes, it adds that internships count. That is the point: even the softening asks for experience.) I read about 1,100 job ads for analytics engineers, from LinkedIn and company career pages, to find out what they actually ask. A few questions, five minutes. Each time: what does it say, and what does it ask?"
 
 **[Question 1 · What does a job ad look like?]**
 "First: what does an ad look like? Say: 534 different job titles. Ask: about five kinds of job. And almost no two ads are alike. Two companies that have never met share about four percent of their wording, and about one duty bullet in a thousand is copied word for word. The ones that do copy are families: Amazon, DoorDash, two consultancies in Lisbon."
 
 **[Question 2 · If the title doesn't tell me the job, what does?]**
-"So if the title doesn't tell me the job, what does? The stack does. Ads that name dbt and no Power BI: about half ask for strategic work, setting direction. Ads with Power BI or Fabric and no dbt: fewer than one in five. Same seniority. Same rigour. Different scope. That's not a ranking of tools; both do serious work. It's a hint about what the job asks. And the adjectives? 'Fast-paced', 'self-starter', 'wear many hats'. They say a lot and ask for nothing: I tested them, and they predict nothing."
+"So if the title doesn't tell me the job, what does? Take two ads at the same level. Mid-level: ads that name dbt and not Power BI ask for strategic work, 'define, own, shape, lead', 27% of the time. Ads that name Power BI or Fabric and no dbt: 4%. Senior: 60% against 27%. And the title won't warn you: 15% of ads titled 'Analytics Engineer' are Power BI jobs without dbt. Look at what fills the ad: dashboards and reporting are 19% of the duties in one, 9% in the other. That's not a ranking of tools; both do serious work. It's what the job is made of. And the adjectives? 'Fast-paced', 'self-starter', 'wear many hats': they say a lot and ask for nothing. I tested them. They predict nothing."
 
 **[Question 3 · What do they ask about AI?]**
 "Next: AI. Ads say AI. What do they ask? About half of them ask for it, as part of the role, not company marketing. Four in ten of those asks are vague: 'curiosity to leverage AI.' In a third of the ads that require AI, nothing in the duties describes any AI work. The concrete ones name the tool: Copilot, Cursor, Claude Code. Is it growing? From August to October, it's flat."
 
 **[Question 4 · If I'm starting out, is there a door?]**
-"Now the question I care about most. 'Early career' says welcome. What does it ask? About one ad in twenty is for a junior; by title closer to one in seventy; by a loose count one in ten. Another says junior and asks two to five years. Six in ten ask for a degree, and four in ten face a hard gate: two or more years, a language that isn't English, or a visa. In Portugal, Spain and France about four in ten English-language ads need another language. The skills are the same as at mid-level: SQL, a BI tool, Python, modelling, and being able to talk to people."
+"Now the question I care about most. 'Junior' says welcome. What does it ask? About one ad in twenty is for a junior; by title closer to one in seventy; by a loose count one in ten. One ad says it is hiring a junior and asks two to five years; another lives at a web address ending junior-analytics-engineer and asks three. Six in ten ask for a degree, and four in ten face a hard gate: two or more years, a language that isn't English, or a visa. In Portugal, Spain and France about four in ten English-language ads need another language. The skills are the same as at mid-level: SQL, a BI tool, Python, modelling, and being able to talk to people."
 
 **[Question 5 · How do I move up?]**
 "And the question under all of it: how do I move up? The core never changes. SQL, a warehouse, tests on your data, working with stakeholders: asked at every level. What changes is the verb. Junior ads say 'support' and 'assist'. Mid ads say 'own'. Senior ads add three things: mentor people, set the standards, decide what comes next. Mentoring and standards show up about twenty points more often than at mid-level. Lead ads add a roadmap and working across teams. Using AI tools is asked of everyone; building with AI climbs with level. The years agree: about one, three, five, six.
@@ -38,9 +38,34 @@ For this room I checked the same thing in French. The shift points the same way:
 But the thing I most want you to take away: almost no two ads are alike. Six in ten have a combination of tools that no other ad has. We read ads as templates, and they aren't: each one is a specific request from a specific team. So don't answer with a template. Find where you're unusual: your stack, your domain, the mess you've cleaned up. And pitch to that. If you're the one hiring, you aren't looking for 'an analytics engineer'. You're looking for something specific. Say what it is. I believe the age of the volume application is ending, because the volume ad, with its adjectives, carries no signal."
 
 **[The line, again]**
-"That ad said early career, and asked for three years. Read what it asks. Answer what it asks."
+"That ad said junior, and asked for two to five years. Read what it asks. Answer what it asks."
 
 ---
+
+## Tone and arc (set 2026-10-26): hopeful and definitive, with care about what we paint
+
+Aim: a field guide that reminds analytics engineers why the job matters, not a list of what is wrong with ads. Each question ends on something the audience can do or take pride in.
+
+What the 1,211 ads support for a hopeful close (classifier labels, all ads):
+- **Care about trust is the universal.** 77% of ads lean to rigour over velocity (only 3% to velocity); 80% frame testing or data quality as a responsibility or name a tool for it, in high-, moderate- and low-risk domains alike. Reminder line: "Everyone asks for it. It is the job."
+- **Stage predicts mission, but not almost deterministically.** Early-stage teams: 68% greenfield (106 of 157). Mature teams: 6% greenfield, 36% fix-and-scale, 57% mixed (n=317). So "early-stage means you build from scratch" is a good bet; "mature means fixing" is only half-true, and most mature roles are both. Do not say "almost entirely".
+- **Stack and the kind of job** (the stack slide): same level, different stack, different duties. Frame as "choose the job you want by what fills the ad", with no stack ranking.
+- **Honest, not gloomy, on juniors:** "junior" ads ask a median of one year and a minority ask two to five. The advice is to apply anyway and pitch specifically.
+
+Not in the data, so not to be said as findings: the "who a role serves vs autonomy held at 120 postings and fell apart at 270" story (I could not reproduce it from the current files; check the old analysis before using it as an anecdote) and the "hundreds" count (the corpus is now 1,211 ads, 20+ countries; say "over a thousand").
+
+## Stack against title: what was tested (992 English ads, cross-validated logistic regression, AUC of predicting "strategic")
+
+| Predictor | AUC |
+|---|---|
+| Title family (Analytics Engineer / BI / Data Engineer / Analyst) | 0.54 |
+| Stack group (dbt only / Power BI+dbt / Power BI only / neither) | 0.62 |
+| Level word in the title (junior / none / senior / lead) | 0.68 |
+| Classifier seniority label | 0.72 |
+| Title level + family + stack | 0.74 |
+| Seniority label + stack | 0.77 |
+
+So the earlier line "the stack says more than the title" was wrong: the level in the title predicts scope better than the stack does, the title *family* predicts almost nothing, and the stack adds real information on top. Within a level the stack gap is large: strategic share at mid level 27% (dbt only, n=169) against 4% (Power BI or Fabric only, n=92); at senior level 60% (n=180) against 27% (n=81); juniors are 0% in every group. "Strategic" is coded from verbs ("define, establish, own, shape, lead, drive, architect" against "support, assist, deliver, help"), so the stack finding is partly a finding about verbs. Across the four stack groups the seniority mix differs little (p = 0.10; senior or above is 55% for dbt only, 48% for Power BI only) and the rigour framing differs in the "neither" group (p = 0.001, driven by its share of "velocity"), not between dbt-only and Power BI-only (80% against 78% rigour). 15% of ads titled "Analytics Engineer" (746 ads) name Power BI or Fabric and no dbt.
 
 ## Career ladder: what the ads ask at each step (942 English ads; seniority from the classifier, checked against the title ladder and the years ladder)
 
@@ -88,14 +113,14 @@ Tone rule from the old plan, still binding: **the tool or the document is the su
 
 | # | Time | Slide (visual) | Say | Evidence and safe wording |
 |---|---|---|---|---|
-| 1 | 0:00–0:30 | Two lines from one real ad: "Early Career" and "Minimum of 3+ years" (Accenture, Lisbon). | "Early career. A minimum of three years. This is what the ad says; this is what it asks." | Verbatim lines from the archive of 2026-08-01_accenture_analytics-engineer-lisbon. The French data-quality story is no longer in the spoken talk (it stays in `talk_v1_fwdc_2026_talk_plan.md`). |
+| 1 | 0:00–0:30 | Two lines from one real ad: "hiring a Junior Analytics Engineer" and "2-5 years" (Enhance, Dubai). | "Junior. Two to five years. This is what the ad says; this is what it asks." | Verbatim lines from the archive of 2026-10-09_enhance_analytics-engineer. The ad's next sentence ("Strong internships or graduate projects count") stays on the card. Accenture Lisbon was dropped as the opener: its header says "Senior Analyst | Early Career" (Accenture's own grade names), which reads as a senior role. The French data-quality story is no longer in the spoken talk (it stays in `talk_v1_fwdc_2026_talk_plan.md`). |
 | 2 | 0:30–0:50 | Dot field of the corpus, one dot per ad. | "About 1,100 ads, a year of looking, mostly Europe. One scraper, LinkedIn and company pages. I'll say the limits once." | Freeze the count before the talk (1,136 today). |
 | 3 | 0:50–1:30 | 534 title strings collapsing into five job types; beside it, a similarity strip. | "534 titles, five jobs. And almost no two ads are alike: strangers share about 4%, under 1% of requirement sentences are copied. The copiers are families: Amazon, DoorDash, two consultancies in Lisbon." | Titles: 88% of "Analytics Engineer" ads list reporting duties, 85% pipelines, 96% modelling. Five types is one way to slice it, k-means, unvalidated. Say "about four in ten are dbt-heavy", not "40% match". Similarity is role text only. |
-| 4 | 1:30–2:20 | Four bars: strategic scope by stack, with "same seniority, same rigour" pinned beneath. Optional decoder: two ads, company names hidden, guess the stack. | "The tool names the job better than the title. Ads that name dbt and no Power BI describe strategic scope 47% of the time; Power BI or Fabric with no dbt, 18%. Same seniority, same rigour. Different scope." | English ads: dbt-no-PBI 47%, PBI plus dbt 31%, neither 32%, PBI-no-dbt 18%. Say "associated with, especially without dbt". Never "means". Never a ranking: no difference in seniority (p=0.23) or rigour framing (p=0.5). Autonomy is a classifier label: show the hand check. |
+| 4 | 1:30–2:20 | Strategic share by stack within mid and senior level, the "15% of Analytics Engineer titles are Power BI jobs" stat, then the duties that fill each ad. Optional decoder: two ads, company names hidden, guess the stack. | "The tool names the job better than the title. Ads that name dbt and no Power BI describe strategic scope 47% of the time; Power BI or Fabric with no dbt, 18%. Same seniority, same rigour. Different scope." | English ads: dbt-no-PBI 47%, PBI plus dbt 31%, neither 32%, PBI-no-dbt 18%. Say "associated with, especially without dbt". Never "means". Never a ranking: no difference in seniority (p=0.23) or rigour framing (p=0.5). Autonomy is a classifier label: show the hand check. |
 | 5 | 2:20–3:05 | One real ad, full page, five margin marks: the stack, the AI sentence, the years, a stock bullet, a mechanism. | "Five lines carry the information. The rest is the dialect." | Stock bullets: SQL 89%, stakeholder collaboration 67%, data quality 58% of ads. Most red-flag phrases ("fast-paced", "self-starter") predicted nothing here. Say so in one line. |
 | 6 | 3:05–3:55 | An AI-ask spectrum, vague to concrete, three real quotes pinned along it. | "About half of ads ask for AI. Four in ten of those stay vague: 'curiosity to leverage AI' (Aritzia). A third of ads that require it describe no AI duty anywhere. The concrete ones name Copilot, Cursor or Claude Code (LC Waikiki)." | 46% of all ads, 50% of English ads (state which). 26% required, 17% nice-to-have. 59% name a tool or task. 31% of required-AI ads have no AI duty. Only 35% of tool asks name review in the same sentence. Say "ads often ask for AI without describing AI work". Do not say "leading indicator": it cannot be tested here. |
 | 7 | 3:55–4:15 | A flat line, labelled "no detectable change". | "I looked for a trend and could not show one in three months of scrapes, so be wary of anyone who says there is." | August, September, October: 48%, 48%, 50%, intervals about 40–56. Never quote the old 37% to 47% rise: it was ad length and a collection change. Do not set 46% next to Indeed's 4.2% or about 45%: different dictionaries and populations. |
-| 8 | 4:15–5:00 | A junior ladder (117, 60, 50, 16 as nested rungs) and three contradiction cards: Accenture Lisbon, Dataroots, Enhance. | "Four ways to count juniors, four answers: about one ad in 20, from one in 70 to one in 10. Some say 'early career' and ask for 'a minimum of 3+ years'." | 4.4% [3.3, 5.8] by classifier; 1.4% by title; 10.3% loose. 60% of junior ads state a degree against 34% of mid ("stated more often", never "a missing line means no gate"). 20 of 50 carry a hard gate: show the components. Zero name a certification. Pair the small number with: the title skews senior and the route often runs through other titles. |
+| 8 | 4:15–5:00 | A junior ladder (117, 60, 50, 16 as nested rungs) and three contradiction cards: Enhance, Dataroots, ITT. | "Four ways to count juniors, four answers: about one ad in 20, from one in 70 to one in 10. Some say 'early career' and ask for 'a minimum of 3+ years'." | 4.4% [3.3, 5.8] by classifier; 1.4% by title; 10.3% loose. 60% of junior ads state a degree against 34% of mid ("stated more often", never "a missing line means no gate"). 20 of 50 carry a hard gate: show the components. Zero name a certification. Pair the small number with: the title skews senior and the route often runs through other titles. |
 | 9 | 5:00–5:20 | Map of Europe tinted by the share of English-language ads that need another language. | "In this market it is a gate you can read in advance: about one in five English-language EU ads needs another language, near 40% in Portugal, Spain and France." | 18.7% [14.6, 22.8]; hard gates 11.7%. Use for direction: LinkedIn, one scraper. Indeed's separate data: few ads waive the local language (2–8%). |
 | 10 | 5:20–6:00 | Three Monday lines and the QR. | "Read the years. Read the stack. Read the AI sentence." | Calls to action above. |
 
@@ -144,7 +169,7 @@ Style: type only on the quote slides, one idea per slide, two colours plus one h
 3. **Re-run the four-group stack-to-scope table with CIs** on the frozen corpus (the 47/31/18/32 numbers are the challenger's, 942 English ads, no CIs yet).
 4. **External figures: verification status** (full notes in `research/ext_verify.md`). Verified from a fetched page: Indeed France 3.4% (Feb 2026) and the AI-tracker CSV; Lightcast 28% premium; Eurostat 10.45M ICT specialists (5.0%); Anthropic Economic Index (the Jan 2026 report, 52% augmentation and 45% automation, Claude.ai only); Numeum +4.3% (Dec 2025 forecast, since revised toward +3%). Snippet-only, do not put on a slide: PwC 62% and 1.3%; Greenhouse 18–22% (Fox syndication only, and the definition differs from "no intention to hire"). Not confirmable: APEC -19% and -21%, INSEE -7.4%. The TalentWorks 61% is from 2018. The Conquet and Blef points are in the next item.
 5. **French-market coverage.** Done in part on 26 Oct: a paced sweep for alternance, stage, junior and BI titles added 14 French ads (13 junior in France in total). LinkedIn blocked the second keyword chunk (429), so "développeur BI", "BI engineer alternance", "business intelligence alternance" and "ingénieur décisionnel" are still unsearched, and the French job boards (Welcome to the Jungle, APEC, Hellowork, France Travail) are not covered. Re-run the France ladder and junior cuts on the new data before freezing.
-6. **Hand-check the three contradiction ads** (Accenture Lisbon, Dataroots, Enhance) for exact wording and dates.
+6. **Hand-check the three contradiction ads** (Enhance, Dataroots, ITT) for exact wording and dates.
 7. **Check your abstract.** If it promises the French-bug talk, reframe or re-submit.
 
 ## Q&A ready
@@ -152,7 +177,7 @@ Style: type only on the quote slides, one idea per slide, two colours plus one h
 - "One scraper, mostly Europe." Say it once. Directional claims only.
 - "Juniors are hired as analysts and promoted." True. The 4.4% describes ads with this title.
 - "Classifier labels, not truth." Seniority and autonomy are LLM-coded; the 60-ad hand check agrees on AI presence 98% of the time and on category 80%.
-- "Power BI shops are worse." No: same seniority, same rigour, different scope.
+- "Power BI shops are worse." No. Dbt-only and Power BI-only ads have a similar seniority mix (55% and 48% senior or above) and similar rigour framing (80% and 78%); within each level they differ in scope, and in what fills the duties.
 - "So how do I get promoted?" The ads are for external hires. They show what employers write at each level, not what earns a promotion.
 - "Is the AI ask a leading indicator?" Nobody has tested ad wording against measured adoption. Practitioner surveys (dbt Labs: 72% prioritise AI-assisted coding, n=363, vendor) run well ahead of what ads say, which fits either story.
 - "Why not call out bad ads?" The tool is the subject, not the company. Breadth in a small team is legitimate.
@@ -160,5 +185,5 @@ Style: type only on the quote slides, one idea per slide, two colours plus one h
 ## Decisions for you
 
 - 6 or 10 minutes? The order above works for 6; the 10-minute adds are listed.
-- ~~Keep the French opener~~ Decided: open on the Accenture ad and carry the "says versus asks" thread to the end.
+- ~~Keep the French opener~~ Decided: open on the Enhance ad (the Accenture ad was dropped: its header says "Senior Analyst") and carry the "says versus asks" thread to the end.
 - **Outside voices, as verified (2026-10-26):** Conquet, DataGen #160 (3 Aug 2026): "80% des besoins de nos clients sont sur des fondamentaux et 20% sont sur des sujets très innovants" is about his freelance collective's clients, and he says 80% of the podcast is about innovative topics; it is a usable quote if attributed that way. "En France, 99% sont français" is about the roughly 50 leaders he contacted at German and British unicorns, not about French team composition: do not use it for the language gate. Blef, DataGen #242 (8 Dec 2025): the show notes list semantic layer, MCP, "95% des projets ne sont pas en production" and internal AI assistants as 2026 trends; the 95% comes from an MIT study in the resources, so do not attribute it to him. #267: the title is "L'agentique accélère : quel impact pour l'équipe data ?" and the rest is unconfirmed.

@@ -108,8 +108,23 @@ def main():
     g = json.loads((IN / "duty_gap_stats.json").read_text())
     holm = {t["test"][7:]: t["holm"] for t in g["tests"] if t["test"].startswith("theme: ")}
     out["gap"] = {"themes": g["themes"], "mean": g["gap"]["mean"], "lo": g["gap"]["lo"], "hi": g["gap"]["hi"],
-                  "holm": [holm[t] for t in g["themes"]], "n": g["gap"]["n"],
+                  "holm": [holm[t] for t in g["themes"]], "n": g["gap"]["n"], "ms": g["gap"]["ms"], "dbt": g["gap"]["dbt"],
                   "autonomy": g["autonomy"], "or_strategic": g["or_strategic"]}
+
+    # --- stack against scope, within seniority (English ads; groups from the has_* flags)
+    grp = lambda r: ("dbt_only" if r.get("has_dbt") and not (r.get("has_power_bi") or r.get("has_fabric_synapse")) else
+                     "pbi_only" if (r.get("has_power_bi") or r.get("has_fabric_synapse")) and not r.get("has_dbt") else
+                     "pbi_dbt" if r.get("has_dbt") else "neither")
+    en = [(r, grp(r)) for r, _ in recs.values() if r.get("jd_language") == "en"]
+    st = {"n": len(en), "levels": {}}
+    for lv in ("mid", "senior"):
+        st["levels"][lv] = {}
+        for g in ("dbt_only", "pbi_only"):
+            sel = [r for r, gg in en if r.get("seniority") == lv and gg == g]
+            st["levels"][lv][g] = [round(100 * sum(1 for r in sel if r.get("autonomy_level") == "strategic") / len(sel)), len(sel)]
+    ae = [(r, g) for r, g in en if re.search(r"analytics engineer", r["role"], re.I)]
+    st["ae_titled"] = {"n": len(ae), "pbi_only_pct": round(100 * sum(1 for _, g in ae if g == "pbi_only") / len(ae))}
+    out["stack"] = st
 
     # --- verified quotes
     quotes = [("2026-08-01_accenture_analytics-engineer-lisbon", "BI Engineering Senior Analyst | Early Career | Full time"),
@@ -120,14 +135,15 @@ def main():
               ("2026-09-08_january_senior-analytics-engineer", "Own the gold layer and build January's semantic layer"),
               ("2026-09-05_dataroots_analytics-engineer", "You have 3+ years of experience where you were involved in a data project"),
               ("2026-10-09_enhance_analytics-engineer", "2-5 years in analytics, BI or data engineering. Strong internships or graduate projects count."),
-              ("2026-10-09_enhance_analytics-engineer", "Enhance is hiring a Junior Analytics Engineer")]
+              ("2026-10-09_enhance_analytics-engineer", "Enhance is hiring a Junior Analytics Engineer"),
+              ("2026-07-31_itt-inc_junior-analytics-engineer", "2+ years of experience in data analytics, or a similar role")]
     for jid, q in quotes:
         txt = recs[jid][1] if jid in recs else ""
         if q not in txt:
             print("WARNING quote not found verbatim:", jid, q[:60])
     out["quotes"] = {"accenture_says": quotes[0][1], "accenture_asks": quotes[1][1], "vague": quotes[2][1], "concrete": quotes[3][1],
                      "lenovo": quotes[4][1], "january": quotes[5][1],
-                     "dataroots": quotes[6][1], "enhance_asks": quotes[7][1], "enhance_says": quotes[8][1]}
+                     "dataroots": quotes[6][1], "enhance_asks": quotes[7][1], "enhance_says": quotes[8][1], "itt": quotes[9][1]}
 
     # --- pitch-yourself map: fused positions + tools
     pos = {n[0]: n for n in json.loads((IN / "fused_positions.json").read_text())["nodes"]}
