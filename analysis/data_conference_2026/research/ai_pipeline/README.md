@@ -1,0 +1,4 @@
+# AI-in-ads pipeline (copied from the analysis scratch folder, 26 Oct 2026)
+Run with a Python that has pandas (`/opt/homebrew/bin/python3`), from this folder: `classify.py` (writes ads.pkl, sents.pkl) then `measure.py` (writes ads2.pkl and prints the tables), then `trend2.py` (logistic trend with company-clustered SEs).
+`seg.py` and `load.py` hold paths to the corpus (`load.py` has an absolute path) and the segmenter. The ai_flags.csv in build/inputs is exported from ads2.pkl.
+Result on the 1,211-ad corpus (992 English): role-relevant AI 47% of all ads, 51% of English ads. Trend, English, Aug-Oct: odds ratio per 30 days 1.15 (95% CI 0.96 to 1.37, p = 0.13); with Jul-Oct the raw trend is significant (p = 0.003) but disappears after adjusting for ad length, level and stack (OR 1.06, 0.94 to 1.19), because ads got longer (median 1.7k characters in April to 5k from August).

@@ -46,13 +46,13 @@ def main():
             recs[f.name] = (json.loads(j.read_text(encoding="utf-8")), a.read_text(encoding="utf-8").split("## Layer B")[0])
     out = {"corpus_n": len(recs), "tools": [t[1] for t in TOOLS]}
 
-    # --- AI waffle: one row per ad in the 25 Oct snapshot
+    # --- AI waffle: one row per ad (regenerated 26 Oct from the full corpus; see research/ai_pipeline)
     ai = list(csv.DictReader(open(IN / "ai_flags.csv")))
     out["ai"] = {
         "n": len(ai),
         "rows": [[int(r["roleAI"]), 2 if int(r["concrete"]) else 1 if int(r["vague_only"]) else 0 if not int(r["roleAI"]) else 1,
                   int(r["req_no_duty"]), int(r["ai_req"]), SEN.get(r["seniority"], 1)] for r in ai],
-        "months": {"Aug": 48, "Sep": 48, "Oct": 50},
+        "months": {m: round(100 * sum(int(r["roleAI"]) for r in ai if r["lang"] == "en" and r["scrape"][:7] == k) / max(1, sum(1 for r in ai if r["lang"] == "en" and r["scrape"][:7] == k))) for m, k in (("Aug", "2026-08"), ("Sep", "2026-09"), ("Oct", "2026-10"))},
     }
 
     # --- titles -> five jobs

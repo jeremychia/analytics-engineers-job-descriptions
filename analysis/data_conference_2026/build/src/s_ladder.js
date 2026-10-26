@@ -27,8 +27,8 @@ function buildLadder(stage) {
   D.ladder.years.forEach((v, i) => { s('text', { x: left.X(i), y: 494, 'text-anchor': 'middle', class: 'ladnum2', text: v }, yrs); });
   const fr = s('g', { style: { opacity: 0 } }, svg);
   s('rect', { x: 520, y: 456, width: 450, height: 62, rx: 14, fill: C.paper, stroke: C.line }, fr);
-  s('text', { x: 540, y: 482, class: 'rowlab', text: 'In France (94 ads) the same direction' }, fr);
-  s('text', { x: 540, y: 504, class: 'rowsub', text: 'more mentoring and “piloter” in senior ads; years about 3 then 5' }, fr);
+  s('text', { x: 540, y: 482, class: 'rowlab', text: 'France (94 ads): same direction, wide margins' }, fr);
+  s('text', { x: 540, y: 504, class: 'rowsub', text: 'only the degree step is clear: 92% of 13 junior ads, 44% of mid ads' }, fr);
   const draw = async (pn, delay0 = 0) => { pn.g.style.transition = 'opacity .5s'; pn.g.style.opacity = 1;
     await Promise.all(pn.paths.map(({ p, len, dots, lab }, i) => tween(1500, e => { p.style.strokeDashoffset = len * (1 - e);
       dots.forEach((d, k) => d.style.opacity = e > k / 3 ? 1 : 0); lab.style.opacity = e > .9 ? 1 : 0; }, { delay: delay0 + i * 260, ease: E.inOut }))); };

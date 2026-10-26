@@ -1,4 +1,4 @@
-/* The AI waffle: 1,125 dots, one per ad. Light up the ones that ask, sort vague from concrete, ring the 'required, no duty'. */
+/* The AI waffle: 1,211 dots, one per ad. Light up the ones that ask, sort vague from concrete, ring the 'required, no duty'. */
 function buildAI(stage) {
   const W = 1000, H = 520, rows = D.ai.rows, N = rows.length, COLS = 45, ROWS = Math.ceil(N / COLS), r = rng(5);
   const svg = s('svg', { viewBox: `0 0 ${W} ${H}`, class: 'chart' }, stage);
