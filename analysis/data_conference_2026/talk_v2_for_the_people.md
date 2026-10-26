@@ -22,7 +22,7 @@ Draft 2, 2026-10-26. Supersedes the spine of `talk_v1_fwdc_2026_talk_plan.md` (i
 "Next: AI. Ads say AI. What do they ask? About half of them ask for it, as part of the role, not company marketing. Four in ten of those asks are vague: 'curiosity to leverage AI.' In a third of the ads that require AI, nothing in the duties describes any AI work. The concrete ones name the tool: Copilot, Cursor, Claude Code. Is it growing? From August to October, it's flat."
 
 **[Question 4 · If I'm starting out, is there a door?]**
-"Now the question I care about most. 'Early career' says welcome. What does it ask? About one ad in twenty is for a junior; by title closer to one in seventy; by a loose count one in ten. Another says junior and asks two to five years. Six in ten ask for a degree. One in six needs a language that isn't English, and in Portugal, Spain and France about four in ten English-language ads do. The skills are the same as at mid-level: SQL, a BI tool, Python, modelling, and being able to talk to people."
+"Now the question I care about most. 'Early career' says welcome. What does it ask? About one ad in twenty is for a junior; by title closer to one in seventy; by a loose count one in ten. Another says junior and asks two to five years. Six in ten ask for a degree, and four in ten face a hard gate: two or more years, a language that isn't English, or a visa. In Portugal, Spain and France about four in ten English-language ads need another language. The skills are the same as at mid-level: SQL, a BI tool, Python, modelling, and being able to talk to people."
 
 **[Question 5 · How do I move up?]**
 "And the question under all of it: how do I move up? The core never changes. SQL, a warehouse, tests on your data, working with stakeholders: asked at every level. What changes is the verb. Junior ads say 'support' and 'assist'. Mid ads say 'own'. Senior ads add three things: mentor people, set the standards, decide what comes next. Mentoring and standards show up about twenty points more often than at mid-level. Lead ads add a roadmap and working across teams. Using AI tools is asked of everyone; building with AI climbs with level. The years agree: about one, three, five, six.
@@ -101,7 +101,9 @@ Tone rule from the old plan, still binding: **the tool or the document is the su
 
 **Ten-minute version:** add the live decoder (+60 s), the junior gate stack of 50 dots with 20 lit (+45 s), the failed red flags as a short list (+45 s), the stack-to-scope duty gaps chart (+30 s), and 15 more seconds on the contradiction cards.
 
-## Visuals worth building (name, data, one-line takeaway)
+## Visuals (built: `jd_deck.html` slides 1–10, `jd_views.html`; this list is the original brief)
+
+Built, with their data: the ad and ruler (slide 1, 10), 721 dots from titles to five jobs (2), a 150×150 similarity barcode (3), four stack bars then two first duties then the adjectives (4), a 1,125-dot AI waffle that lights, sorts and rings (5), junior rungs, 64 junior dots with hard gates, three contradiction cards and the 13 French junior ads (6), two slope charts for the ladder (7), a benefits grid by region (8), an interactive pitch map of 945 ads (9).
 
 Existing in `jd_deck.html` or `jd_views.html` (this folder): the similarity strip (slide 2), the twin ads with step-by-step highlights (slide 4), the duty-gap dot chart (slide 7), the language-gate bars (slide 9). Needing work or new:
 
