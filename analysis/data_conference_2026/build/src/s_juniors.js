@@ -22,12 +22,12 @@ function buildJuniors(stage) {
   s('text', { x: gx + 130, y: 380, class: 'rowsub', text: `${yrsN} ask 2+ years · ${langN} need a language other than English · ${visaN} need a visa or clearance` }, lg);
   s('text', { x: gx - 20, y: 450, class: 'rowsub', text: `${pct(ads.filter(a => a.flags[0]).length, n)}% state a degree; ${ads.filter(a => a.flags[3]).length} ask for a portfolio` }, lg);
   // 3. contradictions
-  const cards = [['Accenture, Lisbon', D.quotes.accenture_says, D.quotes.accenture_asks], ['Dataroots', 'junior-analytics-engineer (the ad’s own URL)', D.quotes.dataroots], ['Enhance', D.quotes.enhance_says, D.quotes.enhance_asks]];
+  const cards = [['Accenture, Lisbon', D.quotes.accenture_says, D.quotes.accenture_asks], ['Dataroots', 'junior-analytics-engineer', D.quotes.dataroots], ['Enhance', D.quotes.enhance_says, D.quotes.enhance_asks]];
   const cardEls = cards.map(([co, say, ask], i) => { const x = 30 + i * 320, g = s('g', { style: { opacity: 0 } }, g3);
     s('rect', { x, y: 90, width: 300, height: 360, rx: 20, fill: C.paper, stroke: C.line }, g);
     s('text', { x: x + 22, y: 130, class: 'cardlab', text: co }, g);
     const fo = s('foreignObject', { x: x + 22, y: 146, width: 256, height: 290 }, g);
-    fo.append(h('div', { class: 'ctr' }, h('div', { class: 'tag say' }, 'SAYS'), h('p', {}, say), h('div', { class: 'tag ask' }, 'ASKS'), h('p', {}, '“' + ask + '”')));
+    fo.append(h('div', { class: 'ctr' }, h('div', { class: 'tag say' }, 'SAYS'), h('p', {}, '“' + say + '”'), h('div', { class: 'tag ask' }, 'ASKS'), h('p', {}, '“' + ask + '”')));
     return g; });
   s('text', { x: 40, y: 50, class: 'lbl', text: 'Junior in the title, more in the text' }, g3);
   // 4. France

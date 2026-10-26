@@ -78,3 +78,7 @@ mark.m-ask{background:var(--plum);color:#fff;padding:0 6px;border-radius:5px}
 .vctl{display:flex;align-items:center;gap:8px;margin-top:10px;flex-wrap:wrap}.vctl button{all:unset;cursor:pointer;padding:5px 12px;border:1px solid var(--line);border-radius:10px;font-size:13px;color:var(--ink);background:var(--bg)}
 .vctl button:hover{background:var(--soft)}.vctl .sp{flex:1}.vctl .n{font:12px 'JetBrains Mono',monospace;color:var(--ink2)}
 .vfoot{font:11px 'JetBrains Mono',monospace;color:var(--mute);margin-top:10px;line-height:1.5}.xp a{color:var(--coral)}
+
+#navbtns{position:fixed;left:2vw;bottom:2.6vh;display:flex;gap:8px;z-index:9}
+#navbtns button{all:unset;cursor:pointer;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--paper);color:var(--ink);font-size:24px;line-height:36px;text-align:center}
+#navbtns button:hover{background:var(--soft)}#navbtns button:focus-visible{outline:2px solid var(--coral)}
