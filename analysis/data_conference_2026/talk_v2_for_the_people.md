@@ -54,6 +54,19 @@ What the 1,211 ads support for a hopeful close (classifier labels, all ads):
 
 Not in the data, so not to be said as findings: the "who a role serves vs autonomy held at 120 postings and fell apart at 270" story (I could not reproduce it from the current files; check the old analysis before using it as an anecdote) and the "hundreds" count (the corpus is now 1,211 ads, 20+ countries; say "over a thousand").
 
+## Statistical verdict per slide (build/stack_stats.py, build/more_stats.py)
+
+| Slide | Test | Result | Verdict |
+|---|---|---|---|
+| Stack | Fisher, company-clustered bootstrap CI, Cochran-Mantel-Haenszel | mid +23 pts (CI 15 to 31), senior +33 (21 to 44), pooled OR 5.0, all p < 0.001 | Conclusive (association) |
+| AI by stack | same | dbt-only 57% vs Power BI/Fabric-only 38%, +18 pts (CI 9 to 27), p < 0.001 | Conclusive |
+| AI by level | same | senior 53% vs junior 37%, +16 (CI -1 to 32), p = 0.065, 38 juniors | Inconclusive |
+| AI over time | logistic trend | no detectable trend | Null |
+| Juniors | Wilson CI; Fisher | 2+ years 28% (19 to 40); any hard gate 42% (31 to 54); France Bac+4/5 12/13 vs 13/51, p < 0.001 (selection effect) | Suggestive, n = 64 |
+| Ladder | adjacent-level Fisher, Holm over 18 tests | strategic verbs 0% to 19% to 46% to 79%, each step p < 0.01; SQL, Python, dbt, version control no detectable change (Holm p > 0.4); CI/CD mid to senior p = 0.06 | Conclusive on the verb; null on the core |
+| Benefits | chi-square across regions, Benjamini-Hochberg | 26 of 31 tags differ (q < 0.01); relocation, collective agreements, wellness checks do not | Conclusive that regions differ |
+| Titles, similarity, pitch | none | counts only; k = 5 is a presentation choice, stability untested | Descriptive |
+
 ## Stack against title: what was tested (992 English ads, cross-validated logistic regression, AUC of predicting "strategic")
 
 | Predictor | AUC |

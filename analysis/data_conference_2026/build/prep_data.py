@@ -125,6 +125,7 @@ def main():
     ae = [(r, g) for r, g in en if re.search(r"analytics engineer", r["role"], re.I)]
     st["ae_titled"] = {"n": len(ae), "pbi_only_pct": round(100 * sum(1 for _, g in ae if g == "pbi_only") / len(ae))}
     out["stack"] = st
+    out["stats2"] = json.loads((IN / "more_stats.json").read_text())   # from more_stats.py (run it after prep once, then prep again)
     out["stats"] = json.loads((IN / "stack_stats.json").read_text())   # from stack_stats.py
 
     # --- verified quotes
