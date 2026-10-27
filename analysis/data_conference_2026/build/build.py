@@ -11,7 +11,7 @@ HERE = Path(__file__).resolve().parent
 OUT = HERE.parent
 SRC = HERE / "src"
 SHARED = ["lib.js", "s_open.js", "s_titles.js", "s_barcode.js", "s_stack.js", "s_ai.js", "s_juniors.js",
-          "s_ladder.js", "s_benefits.js", "s_pitch.js", "s_gap.js", "s_sowhat.js", "slides_def.js"]
+          "s_ladder.js", "s_benefits.js", "s_pitch.js", "s_gap.js", "slides_def.js"]
 
 
 def assemble(template, runtime, name):

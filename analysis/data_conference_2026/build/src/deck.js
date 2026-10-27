@@ -3,7 +3,7 @@ const DECK = { cur: 0, step: 0, steps: [], busy: false };
 function mountSlide(i) {
   const sec = $$('section.slide')[i], stage = $('.stage', sec);
   Anim.cancel(); Anim.fast = false; stage.innerHTML = ''; tip.hide();
-  DECK.steps = SLIDES[i].build(stage); DECK.step = 0; DECK.cur = i; updateDots();
+  DECK.steps = SLIDES[i].build(stage).filter(f => !(DECK.short && f.optional)); DECK.step = 0; DECK.cur = i; updateDots();
 }
 async function playTo(i, k) {            // rebuild slide i and run steps up to (and including) k-1 instantly, then animate step k-1 if animate
   mountSlide(i); Anim.fast = true;
@@ -16,7 +16,7 @@ async function advance(first) {
   await DECK.steps[k]();
   return true;
 }
-function updateDots() { const d = $('#stepdots'); if (!d) return; d.innerHTML = ''; for (let k = 0; k < DECK.steps.length; k++) d.append(h('i', { class: k < DECK.step ? 'on' : '' })); }
+function updateDots() { const d = $('#stepdots'); if (!d) return; d.innerHTML = ''; for (let k = 0; k < DECK.steps.length; k++) d.append(h('i', { class: (k < DECK.step ? 'on ' : '') + (DECK.steps[k].optional ? 'opt' : '') })); }
 function goSlide(i, behavior = 'smooth', mode = 'first') { i = Math.max(0, Math.min(SLIDES.length - 1, i)); DECK.mode = mode; $$('section.slide')[i].scrollIntoView({ behavior }); }
 async function next() {
   if (DECK.step < DECK.steps.length) { await advance(); return; }
@@ -40,7 +40,9 @@ function initDeck() {
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { const i = $$('section.slide').indexOf(e.target);
     $$('#tabs button').forEach((b, j) => b.setAttribute('aria-selected', String(j === i))); if (i !== DECK.cur || DECK.steps.length === 0 || !DECK.started) { DECK.started = true; const m = DECK.mode; DECK.mode = 'first'; if (m === 'final') showFinal(i); else { mountSlide(i); advance(); } } } }), { threshold: .6 });
   $$('section.slide').forEach(sct => io.observe(sct));
-  addEventListener('keydown', e => { if (['ArrowRight', ' ', 'Enter', 'PageDown', 'ArrowDown'].includes(e.key)) { e.preventDefault(); next(); }
+  DECK.short = /[?&]short\b/.test(location.search); document.body.classList.toggle('short', DECK.short);
+  document.body.append(h('div', { id: 'shortmode' }, 'short version · s to switch'));
+  addEventListener('keydown', e => { if (e.key === 's') { DECK.short = !DECK.short; document.body.classList.toggle('short', DECK.short); showFinal(DECK.cur); return; } if (['ArrowRight', ' ', 'Enter', 'PageDown', 'ArrowDown'].includes(e.key)) { e.preventDefault(); next(); }
     else if (['ArrowLeft', 'PageUp', 'ArrowUp', 'Backspace'].includes(e.key)) { e.preventDefault(); prev(); } });
   $('#deck').addEventListener('click', e => { if (e.target.closest('button,select,a,.tchip')) return; if (e.clientX < innerWidth * .2) prev(); else next(); });
   const nav = h('div', { id: 'navbtns' }, h('button', { 'aria-label': 'Back', onclick: 'prev()' }, '‹'), h('button', { 'aria-label': 'Next', onclick: 'next()' }, '›'));

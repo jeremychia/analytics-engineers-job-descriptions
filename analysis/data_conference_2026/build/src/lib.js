@@ -31,7 +31,20 @@ const E = { out: t => 1 - Math.pow(1 - t, 3), inOut: t => t < .5 ? 4 * t * t * t
 function frame(f) { let done = false; const run = () => { if (done) return; done = true; f(); }; requestAnimationFrame(run); setTimeout(run, 34); }
 function later(fn, ms) { if (Anim.fast || !ms) { fn(); return; } const t = Anim.tok; setTimeout(() => { if (t === Anim.tok) fn(); }, ms); }
 /* Every animation checks the token; bumping it cancels all running tweens (slide change, step back, reset). */
-const Anim = { tok: 0, fast: false, cancel() { this.tok++; } };
+/* Fast mode (replaying earlier steps) also switches CSS transitions off, so a replay lands instantly. */
+const Anim = { tok: 0, _fast: false, cancel() { this.tok++; },
+  get fast() { return this._fast; },
+  set fast(v) { this._fast = v; const r = document.documentElement; if (v) r.classList.add('fast'); else { void r.offsetWidth; r.classList.remove('fast'); } } };
+const optional = step => Object.assign(step, { optional: true });   // a build the short version of the talk skips
+/* One-word verdict pill beside the claim it qualifies; anchor 'start' or 'end' at x. */
+const VERDICT = { conclusive: '#2b7a4b', suggestive: '#b9770e', descriptive: '#9a817c', inconclusive: '#7a5a55', untested: '#7a5a55' };
+function tag(parent, x, y, word, o = {}) {
+  const { anchor = 'start', size = 14 } = o, w = word.length * size * .62 + size * 1.4, col = VERDICT[word] || C.ink2;
+  const g = s('g', { class: 'vtag', transform: `translate(${anchor === 'end' ? x - w : x},${y - size})` }, parent);
+  s('rect', { width: w, height: size * 1.7, rx: size * .85, fill: C.paper, stroke: col, 'stroke-width': 1.5, 'stroke-dasharray': word === 'untested' ? '4 3' : 'none' }, g);
+  s('text', { x: w / 2, y: size * 1.18, 'text-anchor': 'middle', class: 'vtagt', text: word, style: { fill: col, fontSize: size + 'px' } }, g);
+  return g;
+}
 function tween(dur, fn, o = {}) {
   const { delay = 0, ease = E.out } = o, tok = Anim.tok;
   if (Anim.fast) { fn(ease(1), 1); return Promise.resolve(true); }

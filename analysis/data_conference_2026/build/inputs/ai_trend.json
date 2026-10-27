@@ -1,0 +1,41 @@
+{
+ "or": 1.148,
+ "ci": [
+  0.96,
+  1.373
+ ],
+ "p": 0.131,
+ "n": 673,
+ "companies": 588,
+ "unit": "odds ratio per 30 days, English ads scraped Aug-Oct 2026",
+ "adjusted": {
+  "or": 1.135,
+  "ci": [
+   0.943,
+   1.366
+  ],
+  "p": 0.1819,
+  "n": 673,
+  "companies": 588
+ },
+ "jul_oct": {
+  "or": 1.18,
+  "ci": [
+   1.059,
+   1.315
+  ],
+  "p": 0.0028,
+  "n": 915,
+  "companies": 782
+ },
+ "jul_oct_adjusted": {
+  "or": 1.055,
+  "ci": [
+   0.938,
+   1.186
+  ],
+  "p": 0.3695,
+  "n": 915,
+  "companies": 782
+ }
+}

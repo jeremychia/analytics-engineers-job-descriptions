@@ -1,55 +1,136 @@
-/* Juniors: four ways to count, the gates, three contradictions, then France. */
+/* Juniors: four ways to count, the hard gate, three contradictions, France, then what a junior can do. */
 function buildJuniors(stage) {
-  const W = 1000, H = 540, J = D.junior, ads = J.ads, n = ads.length;
+  const W = 1000, H = 500, JC = D.junior_counts, J = D.junior, ads = J.ads, n = ads.length, S2 = D.stats2.juniors;
   const svg = s('svg', { viewBox: `0 0 ${W} ${H}`, class: 'chart' }, stage);
-  const g1 = s('g', {}, svg), g2 = s('g', { style: { opacity: 0 } }, svg), g3 = s('g', { style: { opacity: 0 } }, svg), g4 = s('g', { style: { opacity: 0 } }, svg);
-  // 1. concentric ways to count
-  const cnt = [['by a loose count', D.junior_counts.loose, C.soft], ['an explicit early-career label', D.junior_counts.text_label, '#f3b8ae'], ['by the classifier', D.junior_counts.classifier, '#ea8478'], ['by the title', D.junior_counts.title, C.coral]];
-  const k = 15, cx = 300, cy = 290, circles = cnt.map(([lab, v, col], i) => { const rr = k * Math.sqrt(v);
-    const c = s('circle', { cx, cy: cy + (cnt[0][1] ? k * Math.sqrt(cnt[0][1]) - rr : 0) - 10, r: 0, fill: col, stroke: C.bg, 'stroke-width': 2 }, g1); return { c, rr }; });
-  cnt.forEach(([lab, v], i) => { const y = 130 + i * 90; s('line', { x1: 540, x2: 580, y1: y - 6, y2: y - 6, stroke: C.line }, g1);
-    s('text', { x: 600, y, class: 'ladnum', text: v }, g1); s('text', { x: 600, y: y + 26, class: 'rowsub', text: lab }, g1); });
-  s('text', { x: 40, y: 40, class: 'lbl', text: 'Four ways to count junior-open ads, four answers' }, g1);
-  // 2. the 64 junior dots with hard gates
-  const cols = 16, dw = 46, dh = 56, gx = 90, gy = 100;
-  const dots = ads.map((a, i) => { const x = gx + (i % cols) * dw, y = gy + Math.floor(i / cols) * dh;
-    const c = s('circle', { cx: x, cy: y, r: 15, fill: C.grey }, g2); c.style.transformOrigin = `${x}px ${y}px`; return c; });
-  const gateN = ads.filter(a => a.gate).length, yrsN = ads.filter(a => a.flags[1]).length, langN = ads.filter(a => a.flags[2]).length, visaN = ads.filter(a => a.flags[4]).length;
-  s('text', { x: 40, y: 40, class: 'lbl', text: `${n} ads the classifier calls junior, one dot each` }, g2);
-  const lg = s('g', { style: { opacity: 0 } }, g2);
-  s('text', { x: gx - 20, y: 370, class: 'bignum2', text: `${pct(gateN, n)}%` }, lg);
-  s('text', { x: gx + 130, y: 354, class: 'rowlab', text: 'face a hard gate' }, lg);
-  s('text', { x: gx + 130, y: 380, class: 'rowsub', text: `${yrsN} ask 2+ years · ${langN} need a language other than English · ${visaN} need a visa or clearance` }, lg);
-  s('text', { x: gx - 20, y: 450, class: 'rowsub', text: `${pct(ads.filter(a => a.flags[0]).length, n)}% state a degree; ${ads.filter(a => a.flags[3]).length} ask for a portfolio` }, lg);
-  // 3. contradictions
-  const cards = [['Enhance, Dubai', D.quotes.enhance_says + '…', D.quotes.enhance_asks], ['Dataroots, Belgium', 'its own web address ends /junior-analytics-engineer', D.quotes.dataroots], ['ITT, Athens', 'Junior Analytics Engineer (the ad’s title)', D.quotes.itt]];
-  const cardEls = cards.map(([co, say, ask], i) => { const x = 30 + i * 320, g = s('g', { style: { opacity: 0 } }, g3);
-    s('rect', { x, y: 90, width: 300, height: 360, rx: 20, fill: C.paper, stroke: C.line }, g);
-    s('text', { x: x + 22, y: 130, class: 'cardlab', text: co }, g);
-    const fo = s('foreignObject', { x: x + 22, y: 146, width: 256, height: 290 }, g);
-    fo.append(h('div', { class: 'ctr' }, h('div', { class: 'tag say' }, 'SAYS'), h('p', {}, '“' + say + '”'), h('div', { class: 'tag ask' }, 'ASKS'), h('p', {}, '“' + ask + '”')));
-    return g; });
-  s('text', { x: 40, y: 50, class: 'lbl', text: 'Junior in the label, years in the requirements' }, g3);
-  // 4. France
-  const fr = ads.filter(a => a.fr), nb = fr.filter(a => a.bac).length;
-  s('text', { x: 40, y: 46, class: 'bignum2', text: `${nb} of ${fr.length}` }, g4);
-  s('text', { x: 210, y: 46, class: 'rowlab', text: 'junior ads in France name a Bac+4/5, a master’s or an engineering school' }, g4);
-  const fcards = fr.map((a, i) => { const x = 40 + (i % 5) * 190, y = 100 + Math.floor(i / 5) * 118, g = s('g', { style: { opacity: 0 } }, g4);
-    s('rect', { x, y, width: 176, height: 100, rx: 14, fill: a.bac ? C.paper : 'none', stroke: a.bac ? C.coral : C.line, 'stroke-width': a.bac ? 2.5 : 1.2, 'stroke-dasharray': a.bac ? '' : '5 4' }, g);
-    s('text', { x: x + 14, y: y + 30, class: 'frco', text: a.co.length > 18 ? a.co.slice(0, 17) + '…' : a.co }, g);
-    s('text', { x: x + 14, y: y + 52, class: 'rowsub', text: a.role.length > 26 ? a.role.slice(0, 25) + '…' : a.role }, g);
-    s('text', { x: x + 14, y: y + 82, class: 'frtick', text: a.bac ? '✓ Bac+4/5 · master · école' : 'no degree level named', style: { fill: a.bac ? C.coral : C.mute } }, g); return g; });
-  s('text', { x: 40, y: 500, class: 'rowsub', text: 'Found by searching for alternance, stage and junior. Where pay is stated, internships pay €1,100 to €1,700 gross a month.' }, g4);
+  const txt = (p, x, y, str, size, o = {}) => s('text', { x, y, 'text-anchor': o.anchor || 'start', text: str,
+    style: { fontSize: size + 'px', fill: o.fill || C.ink, fontWeight: o.weight || 400, fontStyle: o.italic ? 'italic' : 'normal', letterSpacing: o.ls || 'normal', opacity: o.op ?? 1 } }, p);
+  const span = (t, str, o = {}) => s('tspan', { text: str, style: { fontSize: (o.size || 16) + 'px', fill: o.fill || C.ink, fontWeight: o.weight || 400 } }, t);
+  const op = el => +(el.style.opacity === '' ? 1 : el.style.opacity);
+  const fade = (el, to, dur = 400, delay = 0) => { const a = op(el); return tween(dur, e => el.style.opacity = a + (to - a) * e, { delay }); };
+  const tenths = (k, d) => Math.round(10 * k / d);
+  const oneIn = c => { const r = JC.n / c, p = Math.pow(10, Math.floor(Math.log10(r))); return Math.round(r / p) * p; };
+
+  // 1. the ruler: four nested counts, zoomed out of all ads
+  const gR = s('g', {}, svg), X0 = 60, X1 = 940, zMax = 130, zx = v => X0 + (X1 - X0) * v / zMax, fx = v => X0 + (X1 - X0) * v / JC.n;
+  txt(gR, X0, 52, `How many of ${JC.n.toLocaleString('en-US')} ads are open to juniors?`, 24, { weight: 700 });
+  const full = s('line', { x1: X0, x2: X0, y1: 120, y2: 120, stroke: C.ink2, 'stroke-width': 2 }, gR);
+  const fullLab = s('g', { style: { opacity: 0 } }, gR);
+  txt(fullLab, X0, 104, '0', 15, { fill: C.ink2 }); txt(fullLab, X1, 104, `${JC.n.toLocaleString('en-US')} ads`, 15, { fill: C.ink2, anchor: 'end' });
+  const zoom = s('g', { style: { opacity: 0 } }, gR);
+  s('polygon', { points: `${X0},128 ${fx(zMax)},128 ${X1},262 ${X0},262`, fill: C.soft, opacity: .45 }, zoom);
+  s('rect', { x: X0, y: 112, width: fx(zMax) - X0, height: 16, fill: C.soft }, zoom);
+  s('line', { x1: X0, x2: X1, y1: 270, y2: 270, stroke: C.ink2, 'stroke-width': 2 }, zoom);
+  [0, 50, 100].forEach(v => { s('line', { x1: zx(v), x2: zx(v), y1: 270, y2: 276, stroke: C.mute }, zoom); txt(zoom, zx(v), 292, v, 13, { fill: C.mute, anchor: 'middle' }); });
+  const counts = [[JC.title, 'the title says junior', 'up'], [JC.classifier, 'the classifier says junior', 'up'], [JC.text_label, 'the text says early-career', 'down'], [JC.loose, 'a loose count', 'down']];
+  const marks = counts.map(([v, lab, side]) => { const x = zx(v), up = side === 'up', g = s('g', { style: { opacity: 0 } }, gR), col = v === JC.classifier ? C.coral : C.ink;
+    const anchor = x > 880 ? 'end' : 'middle', ax = anchor === 'end' ? x + 10 : x;
+    s('line', { x1: x, x2: x, y1: up ? 254 : 270, y2: up ? 270 : 300, stroke: col, 'stroke-width': 4 }, g);
+    s('circle', { cx: x, cy: 270, r: 6, fill: col }, g);
+    const t = s('text', { x: ax, y: up ? 214 : 336, 'text-anchor': anchor }, g); const num = span(t, '0', { size: 32, weight: 700, fill: col }); span(t, `  1 in ${oneIn(v)}`, { size: 17, fill: C.ink2 });
+    txt(g, ax, up ? 240 : 362, lab, 17, { anchor, fill: C.ink2 }); return { g, num, v }; });
+  const rAns = s('g', { style: { opacity: 0 } }, gR);
+  txt(rAns, X0, 424, `1 in ${oneIn(JC.title)} to 1 in ${oneIn(JC.loose)}, depending on how you count`, 24, { weight: 700 });
+  txt(rAns, X0, 454, 'each wider count includes the narrower ones', 16, { fill: C.ink2 });
+  tag(rAns, 612, 424, 'descriptive');
+
+  // 2. the 64 classifier juniors, one dot each
+  const P = 50, R = 18, GY = 135, gx0 = 60, nx0 = 420;
+  const contraIds = ['enhance', 'dataroots', 'itt-inc'].map(k => ads.findIndex(a => a.id.includes('_' + k + '_')));
+  const projSet = new Set(J.counts_projects.map(p => p.id)), proj = ads.map(a => projSet.has(a.id));
+  const route = ads.map(a => a.fr && ['internship', 'alternance'].includes(a.route)), routeN = route.filter(Boolean).length;
+  const gateN = S2.gate[0], noN = n - gateN;
+  // gate layout: hard-gate block of 7 columns, no-gate block of 10; the three contradictions sit last in the gate block
+  const gateOrder = ads.map((a, i) => i).filter(i => ads[i].gate && !contraIds.includes(i)).concat([contraIds[2], contraIds[1], contraIds[0]]);
+  const noOrder = ads.map((a, i) => i).filter(i => !ads[i].gate);
+  const L = { gate: [], fr: [], pre: [] };
+  gateOrder.forEach((i, k) => L.gate[i] = [gx0 + (k % 7) * P, GY + Math.floor(k / 7) * P]);
+  noOrder.forEach((i, k) => L.gate[i] = [nx0 + (k % 10) * P, GY + Math.floor(k / 10) * P]);
+  ads.forEach((a, i) => L.pre[i] = [gx0 + (i % 16) * 54, GY + Math.floor(i / 16) * P]);
+  const byBac = arr => arr.filter(i => ads[i].bac_checked).concat(arr.filter(i => !ads[i].bac_checked));
+  byBac(ads.map((a, i) => i).filter(i => !ads[i].fr)).forEach((i, k) => L.fr[i] = [gx0 + (k % 13) * P, GY + Math.floor(k / 13) * P]);
+  byBac(ads.map((a, i) => i).filter(i => ads[i].fr)).forEach((i, k) => L.fr[i] = [720 + (k % 5) * P, GY + Math.floor(k / 5) * P]);
+  const gD = s('g', {}, svg), start = [zx(JC.classifier), 270];
+  const dots = ads.map((a, i) => { const ring = s('circle', { r: R + 5, fill: 'none', stroke: C.coral, 'stroke-width': 3, style: { opacity: 0 } }, gD);
+    const c = s('circle', { r: 0, fill: C.grey }, gD);
+    const q = s('text', { 'text-anchor': 'middle', text: '?', style: { fontSize: '22px', fontWeight: 700, fill: '#fff', opacity: 0 } }, gD);
+    return { c, ring, q, x: start[0], y: start[1], r: 0, fill: C.grey }; });
+  const place = d => { d.c.setAttribute('cx', d.x); d.c.setAttribute('cy', d.y); d.c.setAttribute('r', d.r);
+    d.ring.setAttribute('cx', d.x); d.ring.setAttribute('cy', d.y); d.q.setAttribute('x', d.x); d.q.setAttribute('y', d.y + 8); };
+  dots.forEach(place);
+  const moveTo = (lay, dur, stagger = 0, r = R) => Promise.all(dots.map((d, i) => { const [x0, y0, r0] = [d.x, d.y, d.r], [x1, y1] = lay[i];
+    return tween(dur, e => { d.x = x0 + (x1 - x0) * e; d.y = y0 + (y1 - y0) * e; d.r = r0 + (r - r0) * e; place(d); }, { delay: i * stagger, ease: E.inOut }); }));
+  const paint = (fillOf, dur, stagger = 0) => Promise.all(dots.map((d, i) => { const a = d.fill, b = fillOf(i); if (a === b) return true;
+    return tween(dur, e => d.c.setAttribute('fill', mix(a.slice(1), b.slice(1), e)), { delay: i * stagger }).then(ok => { if (ok) d.fill = b; return ok; }); }));
+
+  // block captions over the gate layout
+  const caps = s('g', { style: { opacity: 0 } }, svg);
+  const capG = txt(caps, gx0 - R, 97, `hard gate · ${gateN}`, 18, { weight: 700, fill: C.coral });
+  const capN = txt(caps, nx0 - R, 97, `no hard gate · ${noN}`, 18, { weight: 700, fill: C.mute });
+
+  // panels: one per build, all created now and shown by state
+  const panel = () => s('g', { style: { opacity: 0 } }, svg), PY = 405, PX = 330;
+  const pGate = panel();
+  txt(pGate, gx0 - 4, PY + 10, `${tenths(gateN, n)} in 10`, 64, { weight: 700, fill: C.coral, ls: '-.03em' });
+  txt(pGate, PX, PY - 14, 'face a hard gate', 26, { weight: 700 }); tag(pGate, PX + 230, PY - 14, 'suggestive');
+  const sh = S2.shares;
+  txt(pGate, PX, PY + 22, `${sh['2+ years'][0]} ask 2+ years · ${sh['non-English language'][0]} another language · ${sh['visa / clearance'][0]} a visa`, 18, { fill: C.ink2 });
+  const pContra = panel(), years = q => (q.match(/\d+\s*[-–]\s*\d+ years|\d+\+ years/) || [''])[0].replace('-', '–');
+  [[contraIds[0], `Enhance: says junior, asks ${years(D.quotes.enhance_asks)}`], [contraIds[1], `Dataroots: junior web address, asks ${years(D.quotes.dataroots)}`], [contraIds[2], `ITT: junior title, asks ${years(D.quotes.itt)}`]]
+    .forEach(([i, lab], k) => { const [x, y] = L.gate[i], ly = 354 + k * 42;
+      s('polyline', { points: `${x},${y + R + 9} ${x},${ly - 6} ${x + 10},${ly - 6}`, fill: 'none', stroke: C.coral, 'stroke-width': 2 }, pContra);
+      const t = s('text', { x: x + 16, y: ly }, pContra); const [co, rest] = lab.split(': '); span(t, co + ': ', { size: 19, weight: 700 }); span(t, rest, { size: 19 }); });
+  txt(pContra, 700, 446, 'junior in the label,', 26, { weight: 700 }); txt(pContra, 700, 480, 'years in the ask', 26, { weight: 700, fill: C.coral });
+  const pFr = panel(), fb = S2.france_bac_checked;
+  txt(pFr, gx0 - R, 97, `elsewhere · ${fb.rest[1]}`, 18, { weight: 700, fill: C.ink2 }); txt(pFr, 720 - R, 97, `France · ${fb.fr[1]}`, 18, { weight: 700, fill: C.ink2 });
+  txt(pFr, gx0 - 4, 382, `${fb.rest[0]} of ${fb.rest[1]}`, 48, { weight: 700 }); txt(pFr, gx0, 414, 'ask a master’s', 20, { fill: C.ink2 });
+  txt(pFr, 716, 382, `${fb.fr[0]} of ${fb.fr[1]}`, 48, { weight: 700, fill: C.coral }); txt(pFr, 720, 414, 'ask a master’s', 20, { fill: C.ink2 });
+  tag(pFr, 868, 414, 'suggestive');
+  txt(pFr, 720, 452, 'French ads were found by searching', 15, { fill: C.ink2 }); txt(pFr, 720, 472, 'for internships and work-study', 15, { fill: C.ink2 });
+  const pHope = panel();
+  txt(pHope, gx0 - 4, PY + 10, `${tenths(noN, n)} in 10`, 64, { weight: 700, ls: '-.03em' });
+  txt(pHope, PX, PY - 14, 'no hard gate', 26, { weight: 700 }); tag(pHope, PX + 180, PY - 14, 'suggestive');
+  txt(pHope, PX, PY + 22, 'no 2+ years, no other language, no visa', 18, { fill: C.ink2 });
+  const pRoute = panel();
+  txt(pRoute, gx0 - 4, PY + 10, routeN, 64, { weight: 700, fill: C.coral });
+  txt(pRoute, 150, PY - 14, 'French ads are internships or work-study', 22, { fill: C.ink2 });
+  txt(pRoute, 150, PY + 22, 'is the real door a school route?', 28, { weight: 700, italic: true });
+  const pProj = panel(), projN = J.counts_projects.length;
+  txt(pProj, gx0 - 4, PY + 10, projN, 64, { weight: 700, fill: C.coral });
+  txt(pProj, 160, PY - 14, 'say internships or projects count', 22, { fill: C.ink2 });
+  txt(pProj, 160, PY + 22, 'meet the core? apply, lead with the project', 28, { weight: 700 });
+  const panels = [pGate, pContra, pFr, pHope, pRoute, pProj];
+
+  // absolute state for every build after the ruler
+  const gateFill = i => ads[i].gate ? C.coral : C.grey, hopeFill = i => ads[i].gate ? C.soft : C.ink2;
+  async function go(st) {
+    const off = [...panels.filter(p => p !== st.panel), ...dots.filter((d, i) => !(st.ring && st.ring(i))).map(d => d.ring), ...dots.filter((d, i) => !(st.q && st.q(i))).map(d => d.q)];
+    await Promise.all([...off.map(el => fade(el, 0, 300)), fade(gR, 0, 300), fade(caps, st.caps ? 1 : 0, 300)]);
+    if (!(await moveTo(L[st.layout], 800)).every(Boolean)) return;
+    if (!(await paint(st.fill, 500)).every(Boolean)) return;
+    capG.style.fill = st.caps === 'hope' ? C.mute : C.coral; capN.style.fill = st.caps === 'hope' ? C.ink : C.mute;
+    if (st.caps) await fade(caps, 1, 400);
+    await Promise.all([fade(st.panel, 1, 500), ...dots.map((d, i) => Promise.all([st.ring && st.ring(i) ? fade(d.ring, 1, 400, 0) : true, st.q && st.q(i) ? fade(d.q, 1, 400) : true]))]);
+  }
   return [
-    async () => { await Promise.all(circles.map(({ c, rr }, i) => tween(900, e => c.setAttribute('r', rr * e), { delay: i * 260, ease: E.back }))); },
-    async () => { g1.style.transition = g2.style.transition = 'opacity .5s'; g1.style.opacity = 0; g2.style.opacity = 1; await wait(300);
-      dots.forEach((c, i) => { c.style.transform = 'scale(0)'; c.style.transition = `transform .45s cubic-bezier(.2,.9,.3,1.4) ${Anim.fast ? 0 : i * 14}ms, fill .4s`; requestAnimationFrame(() => c.style.transform = 'scale(1)'); });
-      await wait(Anim.fast ? 0 : n * 14 + 500);
-      ads.forEach((a, i) => { if (a.gate) later(() => dots[i].style.fill = C.coral, Anim.fast ? 0 : i * 22); });
-      await wait(Anim.fast ? 0 : n * 22 + 200); lg.style.transition = 'opacity .6s'; lg.style.opacity = 1; await wait(600); },
-    async () => { g2.style.opacity = 0; g3.style.opacity = 1; await wait(300);
-      for (const g of cardEls) { g.style.transition = 'opacity .5s, transform .6s'; g.style.transform = 'translateY(20px)'; requestAnimationFrame(() => { g.style.opacity = 1; g.style.transform = 'none'; }); await wait(450); } },
-    async () => { g3.style.opacity = 0; g4.style.transition = g3.style.transition = 'opacity .5s'; g4.style.opacity = 1; await wait(300);
-      for (let i = 0; i < fcards.length; i++) { const g = fcards[i]; g.style.transition = 'opacity .4s'; g.style.opacity = 1; await wait(90); } }
+    async () => {   // four ways to count
+      gR.style.opacity = 1; dots.forEach(d => { d.x = start[0]; d.y = start[1]; d.r = 0; place(d); }); [caps, ...panels].forEach(p => p.style.opacity = 0);
+      if (!(await tween(700, e => full.setAttribute('x2', X0 + (X1 - X0) * e)))) return;
+      await fade(fullLab, 1, 300); if (!(await fade(zoom, 1, 600))) return;
+      for (const m of marks) { if (!(await Promise.all([fade(m.g, 1, 350), countUp(m.num, m.v, { dur: 600 })])).every(Boolean)) return; await wait(150); }
+      await fade(rAns, 1, 500);
+    },
+    async () => {   // one dot each; the gated ones turn coral and sort
+      [...panels, caps].forEach(p => p.style.opacity = 0); dots.forEach(d => { d.ring.style.opacity = 0; d.q.style.opacity = 0; });
+      if (!(await fade(gR, 0, 400))) return;
+      if (!(await moveTo(L.pre, 700, 12)).every(Boolean)) return;
+      if (!(await paint(gateFill, 400, 18)).every(Boolean)) return;
+      if (!(await wait(300))) return;
+      await go({ layout: 'gate', fill: gateFill, panel: pGate, caps: 'gate' });
+    },
+    async () => go({ layout: 'gate', fill: i => contraIds.includes(i) ? C.coral : ads[i].gate ? C.soft : C.grey, ring: i => contraIds.includes(i), panel: pContra, caps: 'gate' }),
+    optional(async () => go({ layout: 'fr', fill: i => ads[i].bac_checked ? C.coral : C.grey, panel: pFr })),
+    async () => go({ layout: 'gate', fill: hopeFill, panel: pHope, caps: 'hope' }),
+    optional(async () => go({ layout: 'gate', fill: i => route[i] ? C.coral : hopeFill(i), q: i => route[i], panel: pRoute, caps: 'hope' })),
+    async () => go({ layout: 'gate', fill: i => proj[i] ? C.coral : hopeFill(i), ring: i => proj[i], panel: pProj, caps: 'hope' })
   ];
 }
