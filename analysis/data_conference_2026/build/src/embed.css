@@ -1,0 +1,33 @@
+/* Chart figures inside index.html and full-analysis.html, drawn as the host pages' own cards with their tokens and fonts. */
+.qv.qv-fig{margin:1.25rem 0 0;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:1.75rem;color:var(--text);font-family:var(--font-ui);line-height:1.6;text-align:left}
+.qv-title{font-size:var(--t-base);font-weight:700;margin-bottom:.35rem;line-height:1.4}.qv-title em{font-style:normal;color:var(--accent)}
+.qv-sub{font-size:var(--t-xs);color:var(--muted);font-variant-numeric:tabular-nums}
+.qanswer{font-family:var(--font-text);font-size:var(--t-base);font-weight:400;line-height:1.75;max-width:var(--measure);margin-top:.9rem}
+.qbody p{font-family:var(--font-text);font-size:var(--t-sm);color:var(--muted);line-height:1.75;max-width:var(--measure);margin-top:.5rem}
+.vcard{margin-top:1rem;background:none;border:0;border-radius:0;padding:0}
+.vt{display:none}
+.vstage{height:clamp(360px,58vh,560px);margin-top:0}
+.vctl{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin-top:.75rem}
+.vctl button{padding:.35rem .85rem;border:1.5px solid var(--control-border);border-radius:var(--r-pill);background:#fff;color:var(--text);font-family:var(--font-ui);font-size:var(--t-xs);font-weight:600;line-height:1.4;transition:border-color .15s}
+.vctl button:hover{background:#fff;border-color:var(--accent)}
+.vctl button:disabled{opacity:.45;cursor:default;border-color:var(--control-border)}
+.vctl button:focus-visible,.vmethod summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:var(--r-sm)}
+.vctl .n{font-family:var(--font-ui);font-size:var(--t-xs);color:var(--muted);font-variant-numeric:tabular-nums}
+.vmethod summary{cursor:pointer;font-family:var(--font-ui);font-size:var(--t-xs);color:var(--muted);margin-top:.85rem;width:max-content}
+.vmethod p{font-family:var(--font-ui);font-size:var(--t-xs);color:var(--muted);line-height:1.6;margin-top:.35rem;max-width:var(--measure)}
+.qdo{margin-top:1.1rem;display:flex;flex-direction:column;gap:.35rem}
+.qdo div{max-width:var(--measure)}
+.qdo b{font-family:var(--font-ui);font-size:var(--t-sm);font-weight:700;color:var(--text);margin-right:.35rem}
+.qdo b::after{content:":"}
+.qdo p{display:inline;font-family:var(--font-text);font-size:var(--t-sm);line-height:1.7}
+.qsure{margin-top:1rem;display:flex;flex-direction:column;gap:.4rem}
+.qsure .vkick{font:600 var(--t-xs) var(--font-ui);letter-spacing:0;text-transform:none;color:var(--muted);margin:0}
+.qsure p{display:flex;gap:.6rem;align-items:baseline;font-family:var(--font-text);font-size:var(--t-sm);color:var(--muted);line-height:1.65;max-width:var(--measure)}
+.pill{flex:none;font-family:var(--font-ui);font-size:var(--t-xs);font-weight:700;border:1.5px solid;border-radius:var(--r-pill);padding:0 .55rem;background:#fff}
+.pill.untested{border-style:dashed}
+.vhint{display:none;font-size:var(--t-xs);color:var(--muted);margin-top:.35rem}
+@media (max-width:640px){
+  .qv.qv-fig{padding:1.1rem}
+  .vstage{display:block;height:auto;overflow-x:auto;padding-bottom:6px}.vstage:empty{min-height:410px}.vstage>svg.chart{width:760px;height:auto;max-height:none}
+  .vstage:has(>svg.chart)+.vhint{display:block}
+}

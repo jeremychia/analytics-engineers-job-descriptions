@@ -117,6 +117,14 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 1.75rem; }
 .card-title { font-size: var(--t-base); font-weight: 700; margin-bottom: 0.35rem; }
 .card-sub { font-size: var(--t-xs); color: var(--muted); margin-bottom: 1.5rem; }
+/* lead-in to a chart from the corpus, filled by question-charts.js into each [data-q] */
+.chart-lead { font-size: var(--t-base); color: var(--muted); max-width: var(--measure); line-height: 1.8; margin-top: 2.5rem; }
+.chart-lead strong { color: var(--text); }
+.more-views { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1.25rem; }
+.more-views .card { display: block; padding: 1.1rem 1.25rem; color: var(--text); text-decoration: none; transition: border-color 0.15s; }
+.more-views .card:hover { border-color: var(--accent); }
+.more-views .card-title, .more-views .card-sub { display: block; }
+.more-views .card-sub { margin-bottom: 0; line-height: 1.6; }
 
 /* ── RELATIONSHIP THEME TABS ── */
 .rel-tabs { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2.25rem; }
@@ -428,6 +436,10 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
   <details class="rel-details" style="margin-bottom:1.5rem"><summary>Methodology note: why some responsibility-language pairings are excluded</summary><div class="rel-details-body" id="relOverlapNote" style="font-size:var(--t-sm)"></div></details>
   <div class="rel-tabs" id="relTabs" role="tablist" aria-label="Relationship theme"></div>
   <div class="rel-grid" id="relGrid"></div>
+  <p class="chart-lead">Seniority also shows in the wording of the duties. <strong>Across levels the core skills hold steady and the verbs change.</strong></p>
+  <div data-q="ladder" data-note="the role filter does not apply" data-body></div>
+  <p class="chart-lead">At the bottom of that ladder, <strong>a junior title does not always mean a junior ask.</strong></p>
+  <div data-q="juniors" data-note="the role filter does not apply" data-body></div>
 </section>
 
 
@@ -454,6 +466,10 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
       <div class="company-list" id="rtCoocList" style="max-height:420px"></div>
     </div>
   </div>
+  <p class="chart-lead">Read the same bullets ad by ad rather than theme by theme, and <strong>the ads fall on one spectrum</strong>: reporting and analysis at one end, data quality and pipelines at the other.</p>
+  <div data-q="titles" data-note="the role filter does not apply" data-body></div>
+  <p class="chart-lead">Split the ads by stack and <strong>the largest gap in their duties is BI and reporting</strong>. Most other themes barely move.</p>
+  <div data-q="gap" data-note="the role filter does not apply" data-body></div>
 </section>
 <style>
   @media (max-width: 900px) { .rt-grid-wrap { grid-template-columns: 1fr !important; } }
@@ -507,6 +523,8 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
   <h2 class="section-headline" id="nullHead">What we expected but the data didn't support</h2>
   <p class="section-body" id="nullBody">A page that only shows the cross-tabs that worked is survivorship bias with charts. These are relationships we specifically went looking for — because the industry narrative predicts them, or because they seemed like a reasonable hypothesis — that failed to replicate, flattened as the corpus grew, or never showed up. Reported with the same statistics as the findings above, because a solid null is often just as actionable.</p>
   <div class="null-grid" id="nullGrid"></div>
+  <p class="chart-lead">One more expectation that failed: <strong>that ads borrow their wording from each other.</strong></p>
+  <div data-q="barcode" data-note="the role filter does not apply" data-body></div>
 </section>
 
 
@@ -545,6 +563,14 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
     <div class="scatter-wrap"><canvas id="scatterChart" role="img" aria-label="Scatter chart: one dot per role, domain risk against the chosen axis." aria-describedby="scatterSummary"></canvas>
       <p class="sr-only" id="scatterSummary"></p></div>
     <div class="legend" id="scatterLegend"></div>
+  </div>
+  <p class="chart-lead">An earlier explorer looked at the same ads in other ways. <strong>It uses an earlier snapshot</strong>, so its counts differ slightly from the rest of this page.</p>
+  <div class="more-views">
+    <a class="card" href="data_conference_2026/jd_views_v1.html#heat"><span class="card-title">Stack by duty grid</span><span class="card-sub">The average duty mix for each stack family, side by side.</span></a>
+    <a class="card" href="data_conference_2026/jd_views_v1.html#sc"><span class="card-title">Duty-mix scatter</span><span class="card-sub">Every ad placed by what it asks you to do, coloured by its stack.</span></a>
+    <a class="card" href="data_conference_2026/jd_views_v1.html#net"><span class="card-title">Similarity network</span><span class="card-sub">Ads joined when they are close on tools, duties and wording.</span></a>
+    <a class="card" href="data_conference_2026/jd_views_v1.html#fam"><span class="card-title">Look-alike families</span><span class="card-sub">The few ads that share whole sentences, and who wrote them.</span></a>
+    <a class="card" href="data_conference_2026/jd_views_v1.html#ai"><span class="card-title">AI-written score over time</span><span class="card-sub">Whether ads read as more machine-written month by month.</span></a>
   </div>
 </section>
 
@@ -615,6 +641,12 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
       <div class="company-list" id="toolCompanyList" style="max-height:260px"></div>
     </div>
   </div>
+  <p class="chart-lead">Which tools an ad names says more than how often each one is named. <strong>At the same level, the stack changes the job.</strong></p>
+  <div data-q="stack" data-note="the role filter does not apply" data-body></div>
+  <p class="chart-lead">The same split runs through how ads ask for AI, and <strong>most AI asks stay vague.</strong></p>
+  <div data-q="ai" data-note="the role filter does not apply" data-body></div>
+  <p class="chart-lead">Put the tools together and <strong>almost no two ads ask for the same set.</strong> Pick your own tools to see which ads come closest.</p>
+  <div data-q="pitch" data-note="the role filter does not apply" data-body></div>
 </section>
 
 <!-- SECTION: SALARY (summary leads; both per-posting detail views are opt-in) -->
@@ -651,6 +683,8 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
       <div id="salaryEstChart"></div>
     </div>
   </details>
+  <p class="chart-lead">Pay is one line of the offer. <strong>What else an ad lists depends on the region</strong>, and so does how often pay is stated at all.</p>
+  <div data-q="benefits" data-note="the role filter does not apply" data-body></div>
 </section>
 </main>
 
@@ -668,6 +702,7 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
 <div id="tooltip"></div>
 
 <script src="hero-quote.js"></script>
+<script src="question-charts-embed.js"></script>
 <script>
 renderHeroQuote(document.getElementById('heroQuote'));
 if (window.Chart) { Chart.defaults.font.family = getComputedStyle(document.documentElement).getPropertyValue('--font-ui'); }
@@ -2302,6 +2337,7 @@ const chooser = document.getElementById('personaOverlay');
 if (persona) chooser.classList.add('hidden');
 else openDialog(chooser, chooser.querySelector('.persona-card'));
 applyPersona();
+
 </script>
 </body>
 </html>

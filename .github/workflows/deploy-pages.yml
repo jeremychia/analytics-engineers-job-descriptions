@@ -6,6 +6,10 @@ on:
     paths:
       - 'analysis/index.html'
       - 'analysis/data.json'
+      - 'analysis/full-analysis.html'
+      - 'analysis/question-charts.js'
+      - 'analysis/question-charts-embed.js'
+      - 'analysis/data_conference_2026/*.html'
       - '.github/workflows/deploy-pages.yml'
   workflow_dispatch:
 
