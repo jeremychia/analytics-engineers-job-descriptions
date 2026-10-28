@@ -37,7 +37,15 @@
       "Bash(open -a \"Google Chrome\" \"/Users/jeremychia/Documents/Github/jeremychia/resume/applications/2026-04-22_qasa_analytics-engineer/2026-04-22_qasa_analytics-engineer.html\")",
       "WebFetch(domain:jobs.smartrecruiters.com)",
       "Bash(python3 -)",
-      "Edit(analysis/report.md)"
+      "Edit(analysis/report.md)",
+      "Bash(xargs -I{} python3 -c \"import json;d=json.load\\(open\\('{}'\\)\\);print\\(d['source_url'],d['ats_platform'],d['ats_job_id']\\)\")",
+      "Bash(curl -sL -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0 Safari/537.36\" \"https://careers.swissre.com/job/Bratislava-Data-Analytics-Engineer/1441419333/\" -o sr.html -w \"%{http_code} %{size_download} %{url_effective}\\\\n\")",
+      "Bash(grep -o '<html[^>]*>' sr.html)",
+      "Bash(grep -c 'itemprop=\"description\"\\\\|jobdescription' sr.html)",
+      "Bash(curl -s -L -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0 Safari/537.36\" \"https://www.careers.amanotes.com/jobs/analytics-engineer/db2846ed-e86b-483a-abdc-a89256993432\" -o ama.html -w \"%{http_code} %{size_download}\\\\n\")",
+      "Bash(grep -o '<title>[^<]*' ama.html)",
+      "Bash(grep -o '__NEXT_DATA__\\\\|__NUXT[A-Z_]*\\\\|__appData\\\\|application/ld+json\\\\|self.__next_f' ama.html)",
+      "Bash(python3 -c ' *)"
     ],
     "defaultMode": "acceptEdits"
   }
