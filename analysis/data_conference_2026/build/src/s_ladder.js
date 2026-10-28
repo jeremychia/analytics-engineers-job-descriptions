@@ -20,7 +20,7 @@ function buildLadder(stage) {
   tag(gCore, 258, 18, 'suggestive');
   axes(gCore, XC, 56, 322, 52);
   const coreItems = [['SQL', 'SQL'], ['Any warehouse (Snowflake/BQ/Databricks/Redshift/Fabric)', 'a warehouse'],
-    ['THEME: Data Quality & Testing', 'tests on data'], ['THEME: Stakeholder Collaboration & Requirements', 'stakeholders']]
+    ['THEME: Data Quality & Testing', 'tests on data'], ['THEME: Stakeholder Collaboration & Requirements', 'people skills']]
     .map(([k, label]) => ({ v: core[k], label, ly: Y(core[k][3]) + 5 }));
   const coreLines = coreItems.map(o => s('path', { d: pathOf(o.v, XC), fill: 'none', stroke: C.plum, 'stroke-width': 3.5, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, gCore));
   spread(coreItems.slice().sort((a, b) => a.ly - b.ly));
@@ -57,7 +57,7 @@ function buildLadder(stage) {
   [[0.5, ['support → own']], [1.5, ['+ mentor', '+ standards']], [2.5, ['+ roadmap']]].forEach(([i, ts]) => ts.forEach((t, k) =>
     txt(gSeg, 480 + i * 130, base + 80 + k * 19, t, { fill: C.ink, fontWeight: 700 }, { 'text-anchor': 'middle' })));
   s('line', { x1: 480, x2: 504, y1: base + 123, y2: base + 123, stroke: fade, 'stroke-width': 2, 'stroke-dasharray': '5 5' }, gSeg);
-  txt(gSeg, 512, base + 128, `junior: ${L.n[0]} ads, too few to read dips`);
+  txt(gSeg, 512, base + 128, `only ${L.n[0]} junior ads: read these lines loosely`);
 
   // 4. same work, next verb
   const gNext = layer(), dex = D.quotes.dex.split(' '), qLines = [''];

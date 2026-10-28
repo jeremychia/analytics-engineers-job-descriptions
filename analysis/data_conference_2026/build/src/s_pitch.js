@@ -19,11 +19,11 @@ function pitchMap(svg, ads, box) {
     c.addEventListener('mousemove', e => tip.show(e, `<b>${a[5]}</b>`)); c.addEventListener('mouseleave', () => tip.hide()); return c; });
 }
 
-function buildPitch(stage) {
-  return stage.id === 'vstage' ? buildPitchExplorer(stage) : buildPitchDeck(stage);
+function buildPitch(stage, v2 = false) {
+  return stage.classList.contains('vstage') ? buildPitchExplorer(stage) : buildPitchDeck(stage, v2);
 }
 
-function buildPitchDeck(stage) {
+function buildPitchDeck(stage, v2 = false) {
   const P = D.pitch, ads = P.ads, Tp = P.template, Wv = 1000, Hv = 520;
   const svg = s('svg', { viewBox: `0 0 ${Wv} ${Hv}`, class: 'chart' }, stage);
   const dots = pitchMap(svg, ads, { x: 44, y: 34, w: 540, h: 430 });
@@ -77,14 +77,14 @@ function buildPitchDeck(stage) {
     l.body.forEach((b, j) => txt(g, px, y + 78 + j * 24, b, { fontSize: '17px', fill: C.ink2 }));
     return { g, bar }; });
 
-  // absolute state of the panel: which evidence lines show, which lane is lit
+  // absolute state of the panel: which evidence lines show, which lane is lit (lane 3 = all three lit)
   const panel = (upTo, lane) => {
     evidence.forEach((g, k) => g.style.opacity = lane < 0 && k <= upTo ? 1 : 0);
-    lanes.forEach((l, k) => { l.g.style.opacity = k > lane ? 0 : k === lane ? 1 : .55; l.bar.style.opacity = k === lane ? 1 : 0; });
+    lanes.forEach((l, k) => { const lit = k === lane || lane === 3; l.g.style.opacity = k > lane ? 0 : lit ? 1 : .55; l.bar.style.opacity = lit ? 1 : 0; });
   };
   const show = (upTo, lane, f, caption, ringOn = false) => { panel(upTo, lane); paint(f); setCap(caption); ring.style.opacity = ringOn ? 1 : 0; };
 
-  return [
+  const steps = [
     async () => { panel(0, -1); setCap(''); ring.style.opacity = 0;
       dots.forEach((c, i) => { c.style.opacity = 0; c.style.r = 0; c.style.fill = C.mute; later(() => { c.style.r = 3; c.style.opacity = .9; }, (i % 200) * 5); });
       await wait(1300); },
@@ -96,6 +96,8 @@ function buildPitchDeck(stage) {
     optional(async () => show(4, 1, r => r.upper ? lit : base, 'coral: senior and lead ads')),
     async () => show(4, 2, r => r.core ? lit : base, 'coral: ads that name a template tool')
   ];
+  if (v2) return [chain(steps[0], steps[1]), async () => show(4, 3, r => r.unique ? lit : base, `coral: ${pct(P.unique, P.n)}% of ads, a tool mix no other ad names`)];
+  return steps;
 }
 
 /* Explorer only: pick your tools, a level and a region; ads that name only tools you have light up. */

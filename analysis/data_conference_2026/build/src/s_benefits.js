@@ -1,5 +1,5 @@
 /* Benefits grid: share of ads in each region that mention each benefit, read as a negotiation map. Pay row and Indeed ticks close it. */
-function buildBenefits(stage) {
+function buildBenefits(stage, v2 = false) {
   const W = 1000, H = 540, B = D.benefits, SUM = D.stats2.benefits_summary, regs = B.regions, tags = B.tags.filter(t => t !== 'remote_flex');
   const label = { health: 'health insurance', pension: 'pension / 401k', equity: 'equity', bonus: 'bonus', pto: 'paid time off', parental: 'parental leave',
     learning: 'learning budget', wellbeing: 'wellbeing', meal: 'meal vouchers', transport: 'transport', flex_hours: 'flexible hours' };
@@ -57,6 +57,7 @@ function buildBenefits(stage) {
     law: caption(CAP, [['a pale cell ≠ not offered: '], ['the law may already give it', 1]], 'untested'),
     lever: caption(CAP, [['your lever: what your region’s ads list '], ['more than elsewhere', 1]]),
     ask: caption(CAP, [['not in the ad? '], ['ask for what the competition lists', 1]]),
+    v2: caption(CAP, [['the norm differs by region: '], ['the competition is your lever', 1]], 'conclusive'),
     pay: caption(CAP2, [['the EU directive wants pay shown: '], ['will this row fill in?', 1]], 'descriptive')
   };
   /* every step sets the whole picture: lit cells, ring set, ask fills, caption, pay row */
@@ -74,6 +75,7 @@ function buildBenefits(stage) {
     if (!o.pay) bars.forEach(b => b.el.setAttribute('width', 0));
     return o.pay ? tween(1100, e => bars.forEach(b => b.el.setAttribute('width', b.to * e)), { delay: 300 }) : wait(Anim.fast ? 0 : 700);
   };
+  if (v2) return [async () => { show({ stagger: true }); if (!(await wait(Anim.fast ? 0 : regs.length * 140 + 700))) return; await show({ cap: 'v2', ring: 'extreme' }); }];
   return [
     async () => { show({ cap: 'norm', stagger: true }); await wait(Anim.fast ? 0 : regs.length * 140 + 700); },
     async () => { await show({ cap: 'differ', ring: 'extreme' }); },

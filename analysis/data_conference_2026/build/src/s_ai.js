@@ -110,7 +110,7 @@ function buildAI(stage) {
   txt(P.ask, PX, sy - 12, 'dbt Labs survey: prioritise AI-assisted coding', { fontSize: '16px', fill: C.ink2 });
   s('rect', { x: PX, y: sy, width: sx(.72) - PX, height: 22, rx: 3, fill: 'none', stroke: C.ink2, 'stroke-width': 1.6, 'stroke-dasharray': '5 4' }, P.ask);
   txt(P.ask, sx(.72) + 8, sy + 18, '72%', { fontSize: '20px', fontWeight: 700 });
-  txt(P.ask, PX, sy + 44, '2026 · n = 363 · vendor survey', { fontSize: '15px', fill: C.mute });
+  txt(P.ask, PX, sy + 44, '2026 · 363 people · run by a tool maker', { fontSize: '15px', fill: C.mute });
   s('line', { x1: PX, x2: 1000, y1: 164, y2: 164, stroke: C.line, 'stroke-width': 1.2, 'stroke-dasharray': '3 4' }, P.ask);
   txt(P.ask, PX + PW / 2, 170, 'different people, different question', { fontSize: '16px', fontStyle: 'italic', fill: C.ink2, paintOrder: 'stroke', stroke: C.bg, strokeWidth: '8px' }, { 'text-anchor': 'middle' });
   txt(P.ask, PX, ay - 12, 'job ads: ask for AI in the role', { fontSize: '16px', fill: C.ink2 });

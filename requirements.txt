@@ -7,3 +7,4 @@
 # (scipy.stats.chi2_contingency, for the theme x dimension relationship tests).
 # Everything under scripts/ is stdlib-only and runs on a bare python3.
 scipy>=1.11        # tested against 1.18.1
+qrcode>=8.2        # analysis/data_conference_2026/build/make_qr.py, the QR code on the talk's closing slide

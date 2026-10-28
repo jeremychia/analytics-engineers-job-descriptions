@@ -27,12 +27,12 @@ function buildAdSlide(stage, final) {
   const A = D.quotes.enhance_says + '…', B = D.quotes.enhance_asks;
   const card = h('div', { class: 'adcard' },
     h('div', { class: 'adlab' }, 'Enhance · Dubai · from the ad text'),
-    h('div', { class: 'adline', id: 'l1' }, h('span', { class: 'tag say' }, 'SAYS'), h('span', { class: 'txt' })),
-    h('div', { class: 'adline', id: 'l2' }, h('span', { class: 'tag ask' }, 'ASKS'), h('span', { class: 'txt' })));
+    h('div', { class: 'adline l1' }, h('span', { class: 'tag say' }, 'SAYS'), h('span', { class: 'txt' })),
+    h('div', { class: 'adline l2' }, h('span', { class: 'tag ask' }, 'ASKS'), h('span', { class: 'txt' })));
   stage.append(h('div', { class: 'col' }, card));
-  const L1 = $('#l1', card), L2 = $('#l2', card);
+  const L1 = $('.l1', card), L2 = $('.l2', card);
   L1.style.opacity = 0; L2.style.opacity = 0;
-  const ruler = adRuler($('.col', stage), { zone: [0, 1], zoneLabel: 'what a typical junior ad asks: about 1 year', from: 2, to: 5, label: 'this “junior” ad asks: 2 to 5 years' });
+  const ruler = adRuler($('.col', stage), { zone: [0, 1], zoneLabel: 'a typical junior ad: about 1 year', from: 2, to: 5, label: 'this “junior” ad asks: 2 to 5 years' });
   $('.ruler', stage).style.opacity = 0;
   const hi = (el, word, cls) => { const t = el.textContent, i = t.indexOf(word); if (i < 0) return;
     el.innerHTML = t.slice(0, i) + `<mark class="${cls}">${word}</mark>` + t.slice(i + word.length); };
@@ -41,7 +41,10 @@ function buildAdSlide(stage, final) {
     async () => { L2.style.opacity = 1; await typeText($('.txt', L2), B, 16); hi($('.txt', L2), '2-5 years', 'm-ask'); },
     async () => { $('.ruler', stage).style.opacity = 1; await ruler.drop(); }
   ];
-  if (final) steps.push(async () => { const f = h('div', { class: 'finalline' }, 'Read what it asks. ', h('em', {}, 'Answer what it asks.')); $('.col', stage).append(f);
-    f.style.opacity = 0; await tween(700, e => { f.style.opacity = e; f.style.transform = `translateY(${(1 - e) * 20}px)`; }); });
+  if (final) steps.push(async () => { const f = h('div', { class: 'finalline' }, 'Read what it asks. ', h('em', {}, 'Answer with your own story.')); $('.col', stage).append(f);
+    const q = h('a', { class: 'qr', href: QR.url, target: '_blank' }, h('div', { class: 'qrbox', html: `<svg viewBox="-2 -2 ${QR.size + 4} ${QR.size + 4}" shape-rendering="crispEdges"><rect x="-2" y="-2" width="${QR.size + 4}" height="${QR.size + 4}" fill="#fff"/><path d="${QR.path}" fill="#000"/></svg>` }),
+      h('div', { class: 'qrcap' }, 'Explore the ads yourself'), h('div', { class: 'qrurl' }, QR.url.replace(/^https:\/\//, '').replace(/\/(?=[^/]+$)/, '/\u200b')));
+    stage.append(q); [f, q].forEach(el => el.style.opacity = 0);
+    await tween(700, e => { f.style.opacity = e; f.style.transform = `translateY(${(1 - e) * 20}px)`; q.style.opacity = e; }); });
   return steps;
 }

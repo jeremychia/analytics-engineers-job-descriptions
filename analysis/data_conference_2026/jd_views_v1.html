@@ -157,5 +157,5 @@ views.forEach((v,i)=>{const b=document.createElement('button');b.setAttribute('r
  const p=document.createElement('div');p.className='panel';p.hidden=true;p.setAttribute('role','tabpanel');
  b.onclick=()=>{hideTip();views.forEach(x=>{document.getElementById('t-'+x.id).setAttribute('aria-selected',String(x===v));x.p.hidden=x!==v});if(!v.built){p.appendChild(v.html());v.built=true}};
  v.p=p;tabs.appendChild(b);panels.appendChild(p)});
-document.getElementById('t-'+views[0].id).click();
+(document.getElementById('t-'+location.hash.slice(1))||document.getElementById('t-'+views[0].id)).click();
 </script></body></html>

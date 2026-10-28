@@ -116,10 +116,10 @@ function buildTitles(stage) {
       spread('plain', 'the plain title sits at both ends', null, C.coral, rows.plain);
     }),
     optional(async () => {   // the core travels
-      spread('dim', `SQL at both ends: ${coreText} · n = ${T.n}`, null, C.ink, rows.sql);
+      spread('dim', `SQL at both ends: ${coreText} · ${T.n} ads`, null, C.ink, rows.sql);
     }),
     async () => {   // the word that tells the ends apart
-      spread('dim', `search these words, not the title · n = ${T.n}`, null, C.coral, rows.sql, rows.word);
+      spread('dim', `search these words, not the title · ${T.n} ads`, null, C.coral, rows.sql, rows.word);
     }
   ];
 }

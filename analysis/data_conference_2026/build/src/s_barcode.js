@@ -1,6 +1,6 @@
 /* The similarity barcode: 150 ads x 150 ads, role text only, grouped by company. Dark squares on the diagonal are the same company or company family. */
 let bcSeq = 0;
-function buildBarcode(stage) {
+function buildBarcode(stage, v2 = false) {
   const W = 1000, H = 520, S = D.sim, n = S.n, CP = S.copy_rate;
   const M = 470, X0 = 8, Y0 = 26, cell = M / n, PX = 560;   // matrix square, panel left edge
   const pc = v => Math.round(100 * v) + '%';
@@ -85,17 +85,28 @@ function buildBarcode(stage) {
   txt(gQ, qx + 107, qy + 38, 'does a specific ad', { fontSize: '21px', fontWeight: 700 }, { 'text-anchor': 'middle' });
   txt(gQ, qx + 107, qy + 66, 'mean a clear brief?', { fontSize: '21px', fontWeight: 700, fill: C.coral }, { 'text-anchor': 'middle' });
 
-  // absolute state for build k (1-based): which layers show
+  // v2 only: the title count opens the slide, over the empty square
+  const gTitles = layer(), T = D.titles;
+  txt(gTitles, X0 + M / 2, Y0 + 230, T.n_titles, { fontSize: '120px', fontWeight: 700, fill: C.coral, letterSpacing: '-.04em' }, { 'text-anchor': 'middle' });
+  txt(gTitles, X0 + M / 2, Y0 + 280, 'different titles', { fontSize: '28px', fontWeight: 700 }, { 'text-anchor': 'middle' });
+  txt(gTitles, X0 + M / 2, Y0 + 312, `on ${T.n} analytics engineer ads`, { fontSize: '20px', fill: C.ink2 }, { 'text-anchor': 'middle' });
+  kicker(gTitles, PX, 44, 'FIRST WRITTEN UP IN 2019');
+  txt(gTitles, PX, 76, 'still no shared definition', { fontSize: '24px', fontWeight: 700 });
+
+  // absolute state for build k (1-based; 0 = the v2 title count): which layers show
   const state = k => {
-    const on = { gExp: k === 1, gPanelExp: k >= 1, gLeg: k <= 2, gFind: k >= 2, gFamMarks: k === 3, gFam: k === 3, gRing: k >= 4, gRest: k >= 4, gQ: k >= 5 };
+    gTitles.style.opacity = k === 0 ? 1 : 0;
+    const on = { gExp: k === 1, gPanelExp: k >= 1, gLeg: k >= 1 && k <= 2, gFind: k >= 2, gFamMarks: k === 3, gFam: k === 3, gRing: k >= 4, gRest: k >= 4, gQ: k >= 5 };
     Object.entries({ gExp, gPanelExp, gLeg, gFind, gFamMarks, gFam, gRing, gRest, gQ }).forEach(([nm, g]) => g.style.opacity = on[nm] ? 1 : 0);
-    gPanelExp.style.opacity = k >= 2 ? .45 : 1; strike.style.opacity = k >= 2 ? 1 : 0;
+    gPanelExp.style.opacity = k === 0 ? 0 : k >= 2 ? .45 : 1; strike.style.opacity = k >= 2 ? 1 : 0;
     dimRest.style.opacity = k === 3 ? 1 : 0; dimFam.style.opacity = k >= 4 ? 1 : 0;
     if (k >= 2) setClip(1.01); else setClip(0);
   };
+  const find = async () => { setClip(0); state(2); setClip(0); await tween(2200, e => setClip(e * 1.01), { ease: E.inOut }); };
+  if (v2) return [async () => { state(0); await wait(500); }, find];
   return [
     async () => { state(1); await wait(500); },
-    async () => { setClip(0); state(2); setClip(0); await tween(2200, e => setClip(e * 1.01), { ease: E.inOut }); },
+    find,
     async () => { state(3); await wait(600); },
     async () => { state(4); await wait(600); },
     optional(async () => { state(5); await wait(600); })

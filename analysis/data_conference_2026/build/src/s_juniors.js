@@ -1,5 +1,5 @@
 /* Juniors: four ways to count, the hard gate, three contradictions, France, then what a junior can do. */
-function buildJuniors(stage) {
+function buildJuniors(stage, by = 'gate') {   // by 'years': group the ads by whether they ask 2+ years of experience, the one ask that contradicts the junior label
   const W = 1000, H = 500, JC = D.junior_counts, J = D.junior, ads = J.ads, n = ads.length, S2 = D.stats2.juniors;
   const svg = s('svg', { viewBox: `0 0 ${W} ${H}`, class: 'chart' }, stage);
   const txt = (p, x, y, str, size, o = {}) => s('text', { x, y, 'text-anchor': o.anchor || 'start', text: str,
@@ -11,7 +11,7 @@ function buildJuniors(stage) {
   const oneIn = c => { const r = JC.n / c, p = Math.pow(10, Math.floor(Math.log10(r))); return Math.round(r / p) * p; };
 
   // 1. the ruler: four nested counts, zoomed out of all ads
-  const gR = s('g', {}, svg), X0 = 60, X1 = 940, zMax = 130, zx = v => X0 + (X1 - X0) * v / zMax, fx = v => X0 + (X1 - X0) * v / JC.n;
+  const gR = s('g', { style: { opacity: 0 } }, svg), X0 = 60, X1 = 940, zMax = 130, zx = v => X0 + (X1 - X0) * v / zMax, fx = v => X0 + (X1 - X0) * v / JC.n;
   txt(gR, X0, 52, `How many of ${JC.n.toLocaleString('en-US')} ads are open to juniors?`, 24, { weight: 700 });
   const full = s('line', { x1: X0, x2: X0, y1: 120, y2: 120, stroke: C.ink2, 'stroke-width': 2 }, gR);
   const fullLab = s('g', { style: { opacity: 0 } }, gR);
@@ -34,17 +34,18 @@ function buildJuniors(stage) {
   tag(rAns, 612, 424, 'descriptive');
 
   // 2. the 64 classifier juniors, one dot each
-  const P = 50, R = 18, GY = 135, gx0 = 60, nx0 = 420;
+  const P = 50, R = 18, GY = 135, gx0 = 60;
   const contraIds = ['enhance', 'dataroots', 'itt-inc'].map(k => ads.findIndex(a => a.id.includes('_' + k + '_')));
   const projSet = new Set(J.counts_projects.map(p => p.id)), proj = ads.map(a => projSet.has(a.id));
   const route = ads.map(a => a.fr && ['internship', 'alternance'].includes(a.route)), routeN = route.filter(Boolean).length;
-  const gateN = S2.gate[0], noN = n - gateN;
-  // gate layout: hard-gate block of 7 columns, no-gate block of 10; the three contradictions sit last in the gate block
-  const gateOrder = ads.map((a, i) => i).filter(i => ads[i].gate && !contraIds.includes(i)).concat([contraIds[2], contraIds[1], contraIds[0]]);
-  const noOrder = ads.map((a, i) => i).filter(i => !ads[i].gate);
+  const inGate = i => by === 'years' ? ads[i].yrs2 : ads[i].gate, gateN = ads.filter((a, i) => inGate(i)).length, noN = n - gateN;
+  // gate layout: hard-gate block of 7 columns, no-gate block of 10 (by years: 4 and 13, the no block being larger); the three contradictions sit last in the gate block
+  const gCols = by === 'years' ? 4 : 7, nCols = by === 'years' ? 13 : 10, nx0 = gx0 + gCols * P + 60;
+  const gateOrder = ads.map((a, i) => i).filter(i => inGate(i) && !contraIds.includes(i)).concat([contraIds[2], contraIds[1], contraIds[0]]);
+  const noOrder = ads.map((a, i) => i).filter(i => !inGate(i));
   const L = { gate: [], fr: [], pre: [] };
-  gateOrder.forEach((i, k) => L.gate[i] = [gx0 + (k % 7) * P, GY + Math.floor(k / 7) * P]);
-  noOrder.forEach((i, k) => L.gate[i] = [nx0 + (k % 10) * P, GY + Math.floor(k / 10) * P]);
+  gateOrder.forEach((i, k) => L.gate[i] = [gx0 + (k % gCols) * P, GY + Math.floor(k / gCols) * P]);
+  noOrder.forEach((i, k) => L.gate[i] = [nx0 + (k % nCols) * P, GY + Math.floor(k / nCols) * P]);
   ads.forEach((a, i) => L.pre[i] = [gx0 + (i % 16) * 54, GY + Math.floor(i / 16) * P]);
   const byBac = arr => arr.filter(i => ads[i].bac_checked).concat(arr.filter(i => !ads[i].bac_checked));
   byBac(ads.map((a, i) => i).filter(i => !ads[i].fr)).forEach((i, k) => L.fr[i] = [gx0 + (k % 13) * P, GY + Math.floor(k / 13) * P]);
@@ -64,16 +65,22 @@ function buildJuniors(stage) {
 
   // block captions over the gate layout
   const caps = s('g', { style: { opacity: 0 } }, svg);
-  const capG = txt(caps, gx0 - R, 97, `hard gate · ${gateN}`, 18, { weight: 700, fill: C.coral });
-  const capN = txt(caps, nx0 - R, 97, `no hard gate · ${noN}`, 18, { weight: 700, fill: C.mute });
+  const capG = txt(caps, gx0 - R, 97, `${by === 'years' ? 'asks 2+ years' : 'asks 2+ years, a language or a visa'} · ${gateN}`, 18, { weight: 700, fill: C.coral });
+  const capN = txt(caps, nx0 - R, 97, `${by === 'years' ? 'asks less, or none' : 'asks none of these'} · ${noN}`, 18, { weight: 700, fill: C.mute });
 
   // panels: one per build, all created now and shown by state
   const panel = () => s('g', { style: { opacity: 0 } }, svg), PY = 405, PX = 330;
   const pGate = panel();
-  txt(pGate, gx0 - 4, PY + 10, `${tenths(gateN, n)} in 10`, 64, { weight: 700, fill: C.coral, ls: '-.03em' });
-  txt(pGate, PX, PY - 14, 'face a hard gate', 26, { weight: 700 }); tag(pGate, PX + 230, PY - 14, 'suggestive');
-  const sh = S2.shares;
-  txt(pGate, PX, PY + 22, `${sh['2+ years'][0]} ask 2+ years · ${sh['non-English language'][0]} another language · ${sh['visa / clearance'][0]} a visa`, 18, { fill: C.ink2 });
+  const sh = S2.shares, parts = Math.round(n / Math.max(gateN, 1)), quarters = k => `${Math.round(parts * k / n)} in ${parts}`;
+  if (by === 'years') {
+    txt(pGate, gx0 - 4, PY + 10, quarters(gateN), 64, { weight: 700, fill: C.coral, ls: '-.03em' });
+    txt(pGate, PX, PY - 14, 'ask for two years or more', 26, { weight: 700 }); tag(pGate, PX + 330, PY - 14, 'suggestive');
+    txt(pGate, PX, PY + 22, `${gateN} of ${n} ads labelled junior`, 18, { fill: C.ink2 });
+  } else {
+    txt(pGate, gx0 - 4, PY + 10, `${tenths(gateN, n)} in 10`, 64, { weight: 700, fill: C.coral, ls: '-.03em' });
+    txt(pGate, PX, PY - 14, 'can rule you out', 26, { weight: 700 }); tag(pGate, PX + 230, PY - 14, 'suggestive');
+    txt(pGate, PX, PY + 22, `${sh['2+ years'][0]} ask 2+ years · ${sh['non-English language'][0]} another language · ${sh['visa / clearance'][0]} a visa`, 18, { fill: C.ink2 });
+  }
   const pContra = panel(), years = q => (q.match(/\d+\s*[-–]\s*\d+ years|\d+\+ years/) || [''])[0].replace('-', '–');
   [[contraIds[0], `Enhance: says junior, asks ${years(D.quotes.enhance_asks)}`], [contraIds[1], `Dataroots: junior web address, asks ${years(D.quotes.dataroots)}`], [contraIds[2], `ITT: junior title, asks ${years(D.quotes.itt)}`]]
     .forEach(([i, lab], k) => { const [x, y] = L.gate[i], ly = 354 + k * 42;
@@ -87,9 +94,9 @@ function buildJuniors(stage) {
   tag(pFr, 868, 414, 'suggestive');
   txt(pFr, 720, 452, 'French ads were found by searching', 15, { fill: C.ink2 }); txt(pFr, 720, 472, 'for internships and work-study', 15, { fill: C.ink2 });
   const pHope = panel();
-  txt(pHope, gx0 - 4, PY + 10, `${tenths(noN, n)} in 10`, 64, { weight: 700, ls: '-.03em' });
-  txt(pHope, PX, PY - 14, 'no hard gate', 26, { weight: 700 }); tag(pHope, PX + 180, PY - 14, 'suggestive');
-  txt(pHope, PX, PY + 22, 'no 2+ years, no other language, no visa', 18, { fill: C.ink2 });
+  txt(pHope, gx0 - 4, PY + 10, by === 'years' ? quarters(noN) : `${tenths(noN, n)} in 10`, 64, { weight: 700, ls: '-.03em' });
+  txt(pHope, PX, PY - 14, by === 'years' ? 'ask for less, or no years at all' : 'ask for none of these', 26, { weight: 700 }); tag(pHope, PX + (by === 'years' ? 400 : 290), PY - 14, 'suggestive');
+  txt(pHope, PX, PY + 22, by === 'years' ? `${noN} of ${n} ads labelled junior` : 'no 2+ years, no other language, no visa', 18, { fill: C.ink2 });
   const pRoute = panel();
   txt(pRoute, gx0 - 4, PY + 10, routeN, 64, { weight: 700, fill: C.coral });
   txt(pRoute, 150, PY - 14, 'French ads are internships or work-study', 22, { fill: C.ink2 });
@@ -97,11 +104,11 @@ function buildJuniors(stage) {
   const pProj = panel(), projN = J.counts_projects.length;
   txt(pProj, gx0 - 4, PY + 10, projN, 64, { weight: 700, fill: C.coral });
   txt(pProj, 160, PY - 14, 'say internships or projects count', 22, { fill: C.ink2 });
-  txt(pProj, 160, PY + 22, 'meet the core? apply, lead with the project', 28, { weight: 700 });
+  txt(pProj, 160, PY + 22, 'have the basics? apply, lead with the project', 28, { weight: 700 });
   const panels = [pGate, pContra, pFr, pHope, pRoute, pProj];
 
   // absolute state for every build after the ruler
-  const gateFill = i => ads[i].gate ? C.coral : C.grey, hopeFill = i => ads[i].gate ? C.soft : C.ink2;
+  const gateFill = i => inGate(i) ? C.coral : C.grey, hopeFill = i => inGate(i) ? C.soft : C.ink2;
   async function go(st) {
     const off = [...panels.filter(p => p !== st.panel), ...dots.filter((d, i) => !(st.ring && st.ring(i))).map(d => d.ring), ...dots.filter((d, i) => !(st.q && st.q(i))).map(d => d.q)];
     await Promise.all([...off.map(el => fade(el, 0, 300)), fade(gR, 0, 300), fade(caps, st.caps ? 1 : 0, 300)]);
@@ -127,7 +134,7 @@ function buildJuniors(stage) {
       if (!(await wait(300))) return;
       await go({ layout: 'gate', fill: gateFill, panel: pGate, caps: 'gate' });
     },
-    async () => go({ layout: 'gate', fill: i => contraIds.includes(i) ? C.coral : ads[i].gate ? C.soft : C.grey, ring: i => contraIds.includes(i), panel: pContra, caps: 'gate' }),
+    async () => go({ layout: 'gate', fill: i => contraIds.includes(i) ? C.coral : inGate(i) ? C.soft : C.grey, ring: i => contraIds.includes(i), panel: pContra, caps: 'gate' }),
     optional(async () => go({ layout: 'fr', fill: i => ads[i].bac_checked ? C.coral : C.grey, panel: pFr })),
     async () => go({ layout: 'gate', fill: hopeFill, panel: pHope, caps: 'hope' }),
     optional(async () => go({ layout: 'gate', fill: i => route[i] ? C.coral : hopeFill(i), q: i => route[i], panel: pRoute, caps: 'hope' })),

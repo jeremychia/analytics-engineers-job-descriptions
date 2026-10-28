@@ -36,13 +36,17 @@ const Anim = { tok: 0, _fast: false, cancel() { this.tok++; },
   get fast() { return this._fast; },
   set fast(v) { this._fast = v; const r = document.documentElement; if (v) r.classList.add('fast'); else { void r.offsetWidth; r.classList.remove('fast'); } } };
 const optional = step => Object.assign(step, { optional: true });   // a build the short version of the talk skips
+const pick = (steps, keep) => keep.map(k => steps[k]);   // the builds a shorter deck keeps, in order
+const chain = (...steps) => async () => { for (const f of steps) if ((await f()) === false) return false; };   // several builds on one click
+const instant = (...steps) => async () => { const was = Anim.fast; Anim.fast = true; for (const f of steps) await f(); Anim.fast = was; };   // several builds shown at once, no animation
 /* One-word verdict pill beside the claim it qualifies; anchor 'start' or 'end' at x. */
+const VERDICT_LABEL = {};   // a deck may swap the verdict words for plainer ones
 const VERDICT = { conclusive: '#2b7a4b', suggestive: '#b9770e', descriptive: '#9a817c', inconclusive: '#7a5a55', untested: '#7a5a55' };
 function tag(parent, x, y, word, o = {}) {
-  const { anchor = 'start', size = 14 } = o, w = word.length * size * .62 + size * 1.4, col = VERDICT[word] || C.ink2;
+  const { anchor = 'start', size = 14 } = o, label = VERDICT_LABEL[word] || word, w = label.length * size * .62 + size * 1.4, col = VERDICT[word] || C.ink2;
   const g = s('g', { class: 'vtag', transform: `translate(${anchor === 'end' ? x - w : x},${y - size})` }, parent);
   s('rect', { width: w, height: size * 1.7, rx: size * .85, fill: C.paper, stroke: col, 'stroke-width': 1.5, 'stroke-dasharray': word === 'untested' ? '4 3' : 'none' }, g);
-  s('text', { x: w / 2, y: size * 1.18, 'text-anchor': 'middle', class: 'vtagt', text: word, style: { fill: col, fontSize: size + 'px' } }, g);
+  s('text', { x: w / 2, y: size * 1.18, 'text-anchor': 'middle', class: 'vtagt', text: label, style: { fill: col, fontSize: size + 'px' } }, g);
   return g;
 }
 function tween(dur, fn, o = {}) {

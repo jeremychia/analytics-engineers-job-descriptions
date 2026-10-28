@@ -90,3 +90,5 @@ mark.m-ask{background:var(--plum);color:#fff;padding:0 6px;border-radius:5px}
 
 .bigstat2{font-size:110px;font-weight:700;fill:#ea5b4d;letter-spacing:-.05em}
 
+
+.qr{position:absolute;right:0;bottom:0;width:150px;display:flex;flex-direction:column;gap:6px;text-decoration:none;color:var(--ink)}.qrbox svg{display:block;width:150px;height:150px;border-radius:6px}.qrcap{font-size:14px;font-weight:700}.qrurl{font:10px 'JetBrains Mono',monospace;color:var(--ink2);overflow-wrap:anywhere}

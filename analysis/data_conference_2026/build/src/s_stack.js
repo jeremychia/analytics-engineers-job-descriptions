@@ -137,3 +137,35 @@ function buildStack(stage) {
     optional(async () => { setCtx(1); await show({ ctx: 1, open: 1 }); })
   ];
 }
+
+/* v2: one picture. Each stack's mid and senior ads on one scale, then one senior ad's first duty under its column. */
+function buildStackV2(stage) {
+  const W = 1000, svg = s('svg', { viewBox: `0 0 ${W} 520`, class: 'chart' }, stage), ST = D.stack, base = 300, pxs = 2.5, bars = [];
+  const txt = (p, x, y, text, st = {}) => s('text', { x, y, text, 'text-anchor': 'middle', style: Object.assign({ fontSize: '16px', fill: C.ink2 }, st) }, p);
+  const gQ = s('g', { style: { opacity: 0, transition: 'opacity .5s' } }, svg);
+  txt(svg, W / 2, 16, 'share of ads that ask you to define, own or lead', { fontSize: '19px', fontWeight: 500 });
+  tag(svg, W - 8, 24, 'conclusive', { anchor: 'end' });
+  const counted = ['mid', 'senior'].reduce((a, lv) => a + ST.levels[lv].dbt_only[1] + ST.levels[lv].pbi_only[1], 0);
+  txt(svg, W / 2, 38, `${counted} of ${ST.corpus_n.toLocaleString('en-US')} ads: mid or senior, naming dbt or Power BI but not both`, { fontSize: '15px' });
+  [['dbt_only', C.plum, 'dbt, no Power BI or Fabric', 'January', D.quotes.january, 'Own', 40],
+   ['pbi_only', C.coral, 'Power BI or Fabric, no dbt', 'Lenovo', D.quotes.lenovo, 'supporting', 520]].forEach(([g, col, name, co, quote, verb, x0]) => {
+    const cx = x0 + 220;
+    s('rect', { x: x0, y: 52, width: 440, height: 6, rx: 3, fill: col }, svg);
+    txt(svg, cx, 86, name, { fontSize: '22px', fontWeight: 700, fill: C.ink });
+    s('line', { x1: x0 + 40, x2: x0 + 400, y1: base, y2: base, stroke: C.line, 'stroke-width': 2 }, svg);
+    [['mid', 'mid-level', -90], ['senior', 'senior', 90]].forEach(([lv, lab, dx]) => { const [val, n] = ST.levels[lv][g];
+      bars.push({ val, r: s('rect', { x: cx + dx - 55, y: base, width: 110, height: 0, rx: 10, fill: col }, svg),
+        t: s('text', { x: cx + dx, y: base - 10, 'text-anchor': 'middle', class: 'bigstat2', text: '0%', style: { fontSize: '44px', fill: col } }, svg) });
+      txt(svg, cx + dx, base + 26, `${lab} · ${n} ads`, { fontSize: '15px' }); });
+    const at = quote.search(new RegExp('\\b' + verb + '\\b'));
+    s('text', { x: x0 + 10, y: 360, class: 'cardlab', text: `a senior ad · ${co}` }, gQ);
+    s('foreignObject', { x: x0 + 10, y: 370, width: 420, height: 70 }, gQ).append(h('div', { class: 'cardq', style: { fontSize: '21px' } }, '“', quote.slice(0, at),
+      h('span', { style: { color: col, fontWeight: 700, boxShadow: `inset 0 -0.45em 0 ${col}33` } }, verb), quote.slice(at + verb.length), '…”'));
+  });
+  txt(gQ, W / 2, 478, 'Read the first duty. Its verb tells you the job.', { fontSize: '26px', fontWeight: 700, fill: C.ink });
+  const grow = (b, e) => { const hh = pxs * b.val * e; b.r.setAttribute('y', base - hh); b.r.setAttribute('height', hh); b.t.setAttribute('y', base - hh - 10); b.t.textContent = Math.round(b.val * e) + '%'; };
+  return [
+    async () => { gQ.style.opacity = 0; bars.forEach(b => grow(b, 0)); await Promise.all(bars.map((b, i) => tween(1100, e => grow(b, e), { delay: i * 180 }))); },
+    async () => { bars.forEach(b => grow(b, 1)); gQ.style.opacity = 1; await wait(Anim.fast ? 0 : 500); }
+  ];
+}

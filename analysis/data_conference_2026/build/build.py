@@ -12,7 +12,7 @@ HERE = Path(__file__).resolve().parent
 OUT = HERE.parent
 SITE = OUT.parent
 SRC = HERE / "src"
-SHARED = ["lib.js", "s_open.js", "s_titles.js", "s_barcode.js", "s_stack.js", "s_ai.js", "s_juniors.js",
+SHARED = ["lib.js", "qr.js", "s_open.js", "s_titles.js", "s_barcode.js", "s_stack.js", "s_ai.js", "s_juniors.js",
           "s_ladder.js", "s_benefits.js", "s_pitch.js", "s_gap.js", "slides_def.js"]
 FONTS = "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap"
 
@@ -167,5 +167,7 @@ def bundle(out, F):
 if __name__ == "__main__":
     F = facts(json.loads((HERE / "inputs" / "deck_data.json").read_text(encoding="utf-8")))
     assemble("deck.template.html", ["deck.js"], OUT / "jd_deck.html", F)
+    assemble("deck.template.html", ["s_missing.js", "slides_v2.js", "deck.js"], OUT / "jd_deck_v2.html", F)
+    assemble("deck.template.html", ["s_missing.js", "s_v4.js", "slides_v2.js", "slides_v4.js", "deck.js"], OUT / "jd_deck_v4.html", F)
     assemble("views.template.html", ["views.js"], OUT / "jd_views.html", F)
     bundle(SITE / "question-charts.js", F)
