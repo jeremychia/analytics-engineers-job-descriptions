@@ -15,7 +15,7 @@ def grp(r):
 rows = []
 for f in glob.glob(str(ROOT / "data/*/*.json")):
     r = json.load(open(f))
-    if r.get("jd_language") == "en" and grp(r) and r.get("seniority") in ("mid", "senior"):
+    if grp(r) and r.get("seniority") in ("mid", "senior"):   # every language: the classifier reads the verbs in each
         rows.append((r["seniority"], grp(r), int(r.get("autonomy_level") == "strategic"), (r.get("company") or "").lower().strip()))
 random.seed(7); res = {"levels": {}}
 def diff(rs):

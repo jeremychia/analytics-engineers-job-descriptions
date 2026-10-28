@@ -6,7 +6,7 @@ in scripts/geo_classify.py. Nothing is typed by hand except the ladder step size
 the hand-checked junior lists, the Indeed pay ticks and the quotes (checked as exact
 substrings of the archives).
 
-Order: ai_flags.py, titles_stats.py, make_similarity_matrix.py, benefits_tags.py, prep_data.py,
+Order: ai_flags.py, titles_stats.py, make_similarity_matrix.py, benefits_tags.py, missing_stats.py, prep_data.py,
 then stack_stats.py and more_stats.py (they read deck_data.json), then prep_data.py again.
 Usage:  python3 analysis/data_conference_2026/build/prep_data.py
 """
@@ -21,6 +21,7 @@ sys.path.insert(0, str(HERE))
 from geo_classify import classify_geo_region  # noqa: E402
 from roletext import role_lines  # noqa: E402
 from regions import grid_region, GRID  # noqa: E402
+from missing_stats import min_years_asked  # noqa: E402
 
 DATA = ROOT / "data"
 IN = HERE / "inputs"
@@ -169,7 +170,7 @@ def main():
                  int(r.get("language_gate_type") == "hard" and bool(langs)), int(bool(PORTFOLIO.search(rl))),
                  int(bool(VISA.search(rl)))]
         fr = bool(FRANCE.search(r.get("job_location") or ""))
-        jr.append({"id": jid, "co": short(r["company"]), "role": r["role"], "flags": flags, "gate": int(bool(flags[1] or flags[2] or flags[4])),
+        jr.append({"id": jid, "co": short(r["company"]), "role": r["role"], "flags": flags, "gate": int(bool(flags[1] or flags[2] or flags[4])), "yrs2": int((min_years_asked(rl) or 0) >= 2),
                    "fr": int(fr), "bac": int(bool(BAC5.search(rl))), "bac_checked": int(jid in BAC5_CHECKED), "lang": r.get("jd_language"),
                    "route": next((k for k, p in ROUTE if p.search(r["role"])), None)})
     for jid, q in COUNTS_PROJECTS:
@@ -197,17 +198,27 @@ def main():
                      "pbi_only" if (r.get("has_power_bi") or r.get("has_fabric_synapse")) and not r.get("has_dbt") else
                      "pbi_dbt" if r.get("has_dbt") else "neither")
     en = [(r, grp(r)) for r, _ in recs.values() if r.get("jd_language") == "en"]
-    st = {"n": len(en), "levels": {}}
+    every = [(r, grp(r)) for r, _ in recs.values()]   # strategic share by stack: every language, same set as stack_stats.py
+    st = {"n": len(en), "corpus_n": len(every), "levels": {}}
     for lv in ("mid", "senior"):
         st["levels"][lv] = {}
         for g in ("dbt_only", "pbi_only"):
-            sel = [r for r, gg in en if r.get("seniority") == lv and gg == g]
+            sel = [r for r, gg in every if r.get("seniority") == lv and gg == g]
             st["levels"][lv][g] = [round(100 * sum(1 for r in sel if r.get("autonomy_level") == "strategic") / len(sel)), len(sel)]
     ae = [(r, g) for r, g in en if re.search(r"analytics engineer", r["role"], re.I)]
     st["ae_titled"] = {"n": len(ae), "pbi_only_pct": round(100 * sum(1 for _, g in ae if g == "pbi_only") / len(ae))}
     out["stack"] = st
+    out["seniority_n"] = dict(Counter(r.get("seniority") for r, _ in recs.values()))   # every ad, classifier level
+    hr = json.loads((IN / "hand_read_mentoring.json").read_text())   # hand-read: all junior ads, and a sample of 50 senior ads
+    jr_guides = [a for a in hr["junior"] if a["names_guide"]]
+    out["mentoring"] = {"junior_names_guide": [len(jr_guides), len(hr["junior"])], "junior_any_support": [sum(a["any_support"] for a in hr["junior"]), len(hr["junior"])],
+                        "senior_asks_mentor": [sum(a["asks_mentor"] for a in hr["senior_sample"]), len(hr["senior_sample"])],
+                        "senior_asks_enable": [sum(a["asks_enable"] for a in hr["senior_sample"]), len(hr["senior_sample"])],
+                        "quotes": {a["id"]: a["quote"] for a in jr_guides}}
     out["stats2"] = json.loads((IN / "more_stats.json").read_text())   # from more_stats.py (run it after prep once, then prep again)
     out["stats"] = json.loads((IN / "stack_stats.json").read_text())   # from stack_stats.py
+    m = json.loads((IN / "missing_stats.json").read_text())   # from missing_stats.py; totals only, the per-ad flags stay in the file
+    out["missing"] = {"n": m["n"], "items": m["items"]}
     out["stack"]["context"] = out["stats"].get("context")
     out["gap_by_level"] = out["stats"].get("gap_by_level")
 
