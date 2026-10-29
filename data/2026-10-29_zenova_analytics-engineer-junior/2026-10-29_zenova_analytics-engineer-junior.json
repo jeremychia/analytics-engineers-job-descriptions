@@ -1,0 +1,157 @@
+{
+  "jd_id": "2026-10-29_zenova_analytics-engineer-junior",
+  "company": "Zenova",
+  "role": "Analytics Engineer (Junior)",
+  "job_location": "Madrid, Community of Madrid, Spain",
+  "seniority": "junior",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "internal_data",
+  "autonomy_level": "execution",
+  "ai_role": "ai_enabler",
+  "testing_framing": "absent",
+  "loss_aversion_framing": "none",
+  "greenfield_vs_fix": "greenfield",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 1,
+  "data_team_maturity": "early",
+  "urgency": "standard",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "hard",
+  "language_gate_languages": [
+    "Spanish"
+  ],
+  "jd_language": "es",
+  "ai_written": {
+    "score": 28.1,
+    "spread": 34.2,
+    "measures": {
+      "marker_vocab": {
+        "raw": 1.185,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "structure": {
+        "raw": 0.129,
+        "score": 25.8
+      },
+      "bullet_symmetry": {
+        "raw": 0.698,
+        "score": 11.6
+      },
+      "burstiness": {
+        "raw": 0.64,
+        "score": 31.3
+      },
+      "specificity": {
+        "raw": 4.621,
+        "score": 100.0
+      }
+    }
+  },
+  "interview_stages": 3,
+  "ats_platform": "linkedin",
+  "ats_job_id": "4481045477",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": true,
+  "has_dagster": true,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": true,
+  "required_tools": [
+    "dbt",
+    "SQL",
+    "Python"
+  ],
+  "preferred_tools": [
+    "Airflow",
+    "Dagster"
+  ],
+  "responsibilities": [
+    "Diseñar y construir modelos de datos en dbt, aplicando arquitectura en capas.",
+    "Diseñar la capa semántica de métricas de Zenova.",
+    "Construir y mantener el catálogo de datos, y ayudar a su implementación y adopción dentro de la organización.",
+    "Colaborar con las áreas de negocio para traducir preguntas ambiguas en modelos de datos con una definición clara y defendible.",
+    "Acompañar a los equipos no técnicos en el uso de los datos y las métricas.",
+    "Explorar e implementar soluciones de IA aplicadas a datos, tanto para herramientas internas como para productos y funcionalidades para nuestros clientes.",
+    "Usar LLMs para acelerar tu propio desarrollo."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://www.linkedin.com/jobs/view/4481045477/",
+  "evidence": {
+    "velocity_vs_rigour": "convertir preguntas de negocio en respuestas fiables",
+    "velocity_vs_rigour_explanation": "Reliable answers, a 'fuente de verdad' and 'definición clara y defendible' set the tone, with no speed language about the work, so rigour.",
+    "domain_risk": "transformando la gestión energética de grandes empresas y grupos inmobiliarios",
+    "domain_risk_explanation": "An energy-management SaaS for corporate and real-estate clients, with no financial reporting or regulatory language, so moderate.",
+    "collaboration_width": "producto",
+    "data_team_maturity": "Estamos construyendo el equipo de Datos desde cero",
+    "data_team_maturity_explanation": "The data team is being built from scratch and this is one of its first hires, so early.",
+    "jd_authorship": "Diseñar y construir modelos de datos en dbt, aplicando arquitectura en capas.",
+    "jd_authorship_explanation": "Bullets name dbt layered modelling, a metrics semantic layer, a data catalogue and LLM use, with one generic enablement bullet, so hiring_manager.",
+    "stakeholder_orientation": "diseñando los modelos de datos que usará toda la compañía",
+    "stakeholder_orientation_explanation": "The output is the company-wide modelling layer, semantic layer and catalogue, so internal_data.",
+    "autonomy_level": "A medida que vayas aprendiendo, asumirás modelos, métricas y proyectos propios con mayor autonomía y responsabilidad.",
+    "autonomy_level_explanation": "Design verbs appear, but a junior reporting to the Head of Data takes on ownership only 'a medida que vayas aprendiendo', so execution.",
+    "ai_role": "Explorar e implementar soluciones de IA aplicadas a datos, tanto para herramientas internas como para productos y funcionalidades para nuestros clientes.",
+    "ai_role_explanation": "The candidate builds AI solutions on top of data (with RAG as a plus) and also uses LLMs for their own work; the enabler signal wins the tie.",
+    "testing_framing": "No testing or data quality signal.",
+    "testing_framing_explanation": "Reliable answers are a goal, but no testing, data quality framework or observability practice is named.",
+    "loss_aversion_framing": "No loss aversion framing.",
+    "loss_aversion_framing_explanation": "The posting is framed around building and learning, not around risk.",
+    "greenfield_vs_fix": "Ser de las primeras personas del equipo de Datos y construirlo desde cero.",
+    "greenfield_vs_fix_explanation": "The team, models, semantic layer and catalogue are all being built new, so greenfield.",
+    "language_gate": "Español e inglés fluidos.",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Modelo híbrido: 3 días a la semana en nuestra oficina de Madrid",
+    "loss_aversion": "No loss aversion framing detected.",
+    "ats_keywords": [
+      "Analytics Engineer",
+      "dbt",
+      "arquitectura en capas",
+      "capa semántica",
+      "catálogo de datos",
+      "SQL avanzado",
+      "window functions",
+      "Python",
+      "LLMs",
+      "RAG",
+      "Airflow",
+      "Dagster"
+    ],
+    "ats_lookup": "resolve_ats miss; zenovapro.com links no careers page; its join.com board (companies/qlip) lists only an operations internship and an sdr role; web search found no other employer posting"
+  }
+}

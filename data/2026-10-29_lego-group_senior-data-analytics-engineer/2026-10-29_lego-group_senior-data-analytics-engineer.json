@@ -1,0 +1,153 @@
+{
+  "jd_id": "2026-10-29_lego-group_senior-data-analytics-engineer",
+  "company": "the LEGO Group",
+  "role": "Senior Data/Analytics Engineer",
+  "job_location": "Billund, Denmark",
+  "seniority": "senior",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "mixed",
+  "stakeholder_orientation": "internal_data",
+  "autonomy_level": "execution",
+  "ai_role": "ai_user",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "high",
+  "greenfield_vs_fix": "mixed",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 4,
+  "data_team_maturity": "mature",
+  "urgency": "standard",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "none",
+  "language_gate_languages": [],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 46.0,
+    "spread": 37.6,
+    "measures": {
+      "marker_vocab": {
+        "raw": 6.757,
+        "score": 39.6
+      },
+      "stock_phrases": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "structure": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.17,
+        "score": 100.0
+      },
+      "burstiness": {
+        "raw": 0.467,
+        "score": 80.8
+      },
+      "specificity": {
+        "raw": 9.009,
+        "score": 55.5
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "workday",
+  "ats_job_id": "0000037978",
+  "has_dbt": false,
+  "has_dbt_cloud": false,
+  "has_spark": true,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": true,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": true,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": true,
+  "has_azure": true,
+  "has_gcp": true,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "Python",
+    "Spark",
+    "SQL"
+  ],
+  "preferred_tools": [
+    "Power BI",
+    "Databricks"
+  ],
+  "responsibilities": [
+    "Design and maintain a robust data foundation that supports Manufacturing and Engineering.",
+    "Create and manage data products that improve access to reliable, high-quality data.",
+    "Transform data into scalable solutions that enable informed business decisions.",
+    "Support the development of automated data pipelines, APIs, and analytics capabilities.",
+    "Contribute to data engineering standards and ways of working across the organisation.",
+    "Help teams understand performance metrics and identify opportunities for improvement through data."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://lego.wd103.myworkdayjobs.com/en-US/LEGO_External/job/Billund/Senior-Analytics-Engineer_0000037978",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4463038785/",
+  "evidence": {
+    "velocity_vs_rigour": "Create and manage data products that improve access to reliable, high-quality data.",
+    "velocity_vs_rigour_explanation": "Reliability, trust and quality recur across the summary, bullets and success criteria (\"reliable, high-quality data\", \"trusted data\") with no speed language, so rigour.",
+    "domain_risk": "enables Manufacturing and Engineering teams to make better decisions through data",
+    "domain_risk_explanation": "Errors would affect manufacturing and engineering decisions, not financial reporting or regulated outputs, so moderate.",
+    "collaboration_width": "Manufacturing; Engineering; product managers; project managers",
+    "data_team_maturity": "You'll join the Data Engineering & Analytics team within Engineering & Workplace in Operations",
+    "data_team_maturity_explanation": "The team sits inside named nested units (\"Manufacturing Products and Data Enablement\", \"Engineering & Workplace in Operations\") with sites in Billund and Nyíregyháza, an established specialised data organisation.",
+    "jd_authorship": "Design and maintain a robust data foundation that supports Manufacturing and Engineering... Transform data into scalable solutions that enable informed business decisions.",
+    "jd_authorship_explanation": "Some lines are specific to manufacturing data products, Databricks and dimensional models, but several bullets are generic (\"Transform data into scalable solutions\"), so mixed.",
+    "stakeholder_orientation": "build a reliable data foundation that enables Manufacturing and Engineering teams to make better decisions through data",
+    "stakeholder_orientation_explanation": "The role builds the data foundation and data products other teams consume, an internal-data orientation serving operations rather than commercial, product or finance users.",
+    "autonomy_level": "Support the development of automated data pipelines, APIs, and analytics capabilities.",
+    "autonomy_level_explanation": "Verbs are support, contribute and help, with design-and-maintain ownership limited to the technical foundation, so execution.",
+    "ai_role": "Applied agentic data engineering concepts in data platform environments.",
+    "ai_role_explanation": "A preferred qualification expects the candidate to apply agentic, AI-agent-driven methods to their own data engineering work, an ai_user signal.",
+    "testing_framing": "improve the availability and quality of data",
+    "testing_framing_explanation": "Improving data quality is part of the stated success measure and a bullet owns reliable, high-quality data products, an ownership framing with no testing tool named.",
+    "loss_aversion_framing": "deliver solutions that people use and trust",
+    "loss_aversion_framing_explanation": "Trust is the primary framing in the role summary and repeats in the bullets and success criteria (\"reliable data products that stakeholders trust\"), so high.",
+    "greenfield_vs_fix": "Design and maintain a robust data foundation",
+    "greenfield_vs_fix_explanation": "The role builds new data products for an expanding manufacturing footprint while maintaining the existing foundation, so mixed.",
+    "language_gate": "Not stated in JD",
+    "urgency": "Applications are reviewed on an ongoing basis.",
+    "work_arrangement": "We work in a hybrid rhythm across Billund and Nyíregyháza",
+    "loss_aversion": "Success means delivering reliable data products that stakeholders trust and use. — trust in data is the role's measure of success.",
+    "ats_keywords": [
+      "Senior Analytics Engineer",
+      "dimensional data models",
+      "PySpark",
+      "Databricks",
+      "data products",
+      "DataOps",
+      "ETL pipelines",
+      "Power BI Dataflow",
+      "agentic data engineering",
+      "manufacturing",
+      "data foundation"
+    ]
+  }
+}
