@@ -80,7 +80,7 @@ RESPONSIBILITY_SOURCES = ("jd_section", "inferred_from_prose")
 # used to write cleanly and only surface much later, as a non-fatal warning from
 # responsibility_taxonomy.py, by which point the bullets can no longer be captured
 # without re-reading the posting.
-OPTIONAL_FIELDS = {"salary_period", "required_tools", "preferred_tools", "linkedin_url"}
+OPTIONAL_FIELDS = {"salary_period", "required_tools", "preferred_tools", "linkedin_url", "ai_written"}
 REQUIRED_FIELDS = [f for f in JSON_FIELD_ORDER if f not in OPTIONAL_FIELDS]
 
 
@@ -243,6 +243,7 @@ def write_files(data: dict):
     # keyword-derived, never classifier-judged; overrides anything passed in
     data.update(detect_tool_mentions_in_text(jd_text))
     data["jd_language"] = detect_language({**data, "jd_text": jd_text})
+    data.pop("ai_written", None)
     if (ai := ai_written_score(jd_text, data["jd_language"])):
         data["ai_written"] = ai
 
