@@ -1,15 +1,18 @@
 /* The senior-room talk (jd_deck_v4.html, script in talk_v4_for_the_people.md): how the field lets people in, helps them up, and who teaches them. Runs after slides_v2.js and reuses its footers. */
 {
-  const by = Object.fromEntries(SLIDES.map(S => [S.id, S])), N = D.seniority_n, MG = D.mentoring;
+  const by = Object.fromEntries(SLIDES.map(S => [S.id, S])), N = D.seniority_n, MG = D.mentoring, J = D.junior, [dk, dn] = J.degree_by_level.junior, [sk, sn] = J.degree_by_level.senior;
   const ratio = Math.round((N.senior + N.lead + N.staff + N.manager) / N.junior);
   SLIDES.splice(0, SLIDES.length,
     by.open,
     { id: 'pipeline', name: 'Doors', kick: 'Let them in · How many doors are there?', title: `1 junior ad. <em>${ratio} senior or above.</em>`, build: buildPipeline,
       foot: `All ${D.corpus_n.toLocaleString('en-US')} ads, by the level an AI model read from each one. The ads were collected during one person’s job search, so they lean senior.` },
-    { ...by.juniors, kick: 'Let them in · What stands in the way?' },
+    { ...by.juniors, kick: 'Let them in · What stands in the way?', title: 'Junior in the label. <em>Years and a degree in the ask.</em>', build: st => pick(buildJuniors(st, 'years'), [1, 2, 7, 6]),
+      foot: `Junior = ads an AI model read as junior: ${J.n} of ${D.corpus_n.toLocaleString('en-US')}. Two years or more = the smallest number of years the ad asks for: ${J.ads.filter(a => a.yrs2).length} of ${J.n}. Degree = the ad names one, “or equivalent” included: ${dk} of ${dn} junior ads against ${sk} of ${sn} senior ads; chance does not explain the gap. Another route = a bootcamp, self-taught practice or a non-traditional background, read by hand (${J.other_routes.map(r => r.co).join(', ')}).` },
     { ...by.ladder, name: 'Next verb', kick: 'Help them up · What changes at each step?', title: 'The core stays the same. <em>Hand them the next verb.</em>' },
     { id: 'mentoring', name: 'Who teaches', kick: 'Pass it on · Who teaches the juniors?', title: `3 in 4 junior ads <em>don’t say who will teach.</em>`, build: buildMentorGap,
       foot: `All ${MG.junior_names_guide[1]} junior ads read by hand: ${MG.junior_names_guide[0]} name a person or role who will mentor, guide or supervise the new hire (${MG.junior_any_support[0]} if a structured programme counts). Senior: ${MG.senior_asks_mentor[0]} of a random ${MG.senior_asks_mentor[1]} senior ads, read by hand, ask the candidate to mentor, coach or review code.` },
+    { id: 'next', name: 'What next', kick: 'What comes next · What does AI change?', title: 'The tool writes the first draft. <em>Someone still teaches the review.</em>', build: buildNext,
+      foot: `Stanford Digital Economy Lab, “Canaries in the Coal Mine”, revised ${D.stanford.revised}: US employment of ${D.stanford.ages}-year-olds in jobs exposed to AI, against its trend; experienced workers show no gap; the authors call it descriptive, not causal. Zego: verbatim from an analytics engineer ad asking for 1–3 years, labelled junior by the AI model. Junior ads asking for AI: ${MG.junior_asks_ai[1]}, read by hand for who will teach.` },
     { id: 'rewrite', name: 'Your ad', kick: 'The ad again', title: 'One line right. <em>One line missing.</em>', build: buildRewrite,
       foot: 'Verbatim from the ad (Enhance, Dubai). The added line is the one most junior ads leave out; counted on all junior ads, read by hand.' });
 }

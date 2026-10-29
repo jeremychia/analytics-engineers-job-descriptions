@@ -1,4 +1,4 @@
-/* Slides only the senior-room deck uses: the junior pipeline, who teaches the juniors, and the opening ad with the one line it is missing. */
+/* Slides only the senior-room deck uses: the junior pipeline, who teaches the juniors, what AI changes, and the opening ad with the one line it is missing. */
 function buildPipeline(stage) {
   const W = 1000, N = D.seniority_n, jr = N.junior, up = N.senior + N.lead + N.staff + N.manager, ratio = Math.round(up / jr);
   const svg = s('svg', { viewBox: `0 0 ${W} 520`, class: 'chart' }, stage), X0 = 70, Y = 170, R = 36, GAP = (W - 2 * X0 - 2 * R) / ratio;
@@ -62,5 +62,27 @@ function buildRewrite(stage) {
   return [
     async () => { blanks.style.opacity = 0; line.style.opacity = 0; await wait(Anim.fast ? 0 : 400); },
     async () => { blanks.style.opacity = 1; if (!(await wait(Anim.fast ? 0 : 900))) return; line.style.opacity = 1; }
+  ];
+}
+
+/* what comes next: an outside signal on young workers, then an ad that says the tool now writes the first draft and the new hire reviews it */
+function buildNext(stage) {
+  const ST = D.stanford, Q = D.quotes, show = (el, on) => el.style.opacity = on ? 1 : 0;
+  const stat = h('div', { style: { display: 'flex', alignItems: 'center', gap: '2vw', transition: 'opacity .5s' } },
+    h('div', { style: { fontSize: 'clamp(52px,7.5vw,120px)', fontWeight: 700, color: C.coral, letterSpacing: '-.04em', lineHeight: 1 } }, `${ST.gap_pct}%`),
+    h('div', {}, h('div', { style: { fontSize: 'clamp(17px,2vw,30px)', fontWeight: 700, lineHeight: 1.2 } }, `below trend: US jobs held by ${ST.ages}-year-olds in work exposed to AI`),
+      h('div', { style: { fontSize: 'clamp(12px,1.1vw,17px)', color: C.ink2, marginTop: '.8vh' } }, `Stanford Digital Economy Lab, revised ${ST.revised} · outside these ads · the authors call it a pattern, not proof`)));
+  const at = Q.zego_asks.indexOf('critically');
+  const card = h('div', { class: 'adcard', style: { opacity: 0, transition: 'opacity .5s' } }, h('div', { class: 'adlab' }, 'Zego · analytics engineer, 1–3 years · from the ad text'),
+    h('div', { class: 'adline' }, h('span', { class: 'tag say' }, 'SAYS'), h('span', { class: 'txt' }, Q.zego_says + '…')),
+    h('div', { class: 'adline' }, h('span', { class: 'tag ask' }, 'ASKS'), h('span', { class: 'txt' }, Q.zego_asks.slice(0, at), h('mark', { class: 'm-ask' }, Q.zego_asks.slice(at)))));
+  const [gk, gn] = D.mentoring.junior_asks_ai;
+  const teach = h('div', { style: { fontSize: 'clamp(15px,1.6vw,24px)', fontWeight: 700, opacity: 0, transition: 'opacity .5s' } }, `${gn} junior ads ask for AI. `, h('span', { style: { color: C.coral } }, `${gk} say who will teach.`));
+  const line = h('div', { class: 'finalline', style: { fontSize: 'clamp(22px,3vw,46px)', opacity: 0, transition: 'opacity .6s' } }, 'In ten years, someone reviews what the AI writes. ', h('em', {}, 'That person is a junior today.'));
+  stage.append(h('div', { class: 'col', style: { gap: '2.2vh' } }, stat, card, teach, line));
+  return [
+    async () => { show(stat, 1); show(card, 0); show(teach, 0); show(line, 0); await wait(Anim.fast ? 0 : 400); },
+    async () => { show(stat, 1); show(card, 1); show(teach, 1); show(line, 0); await wait(Anim.fast ? 0 : 500); },
+    async () => { show(stat, 1); show(card, 1); show(teach, 1); show(line, 1); await wait(Anim.fast ? 0 : 600); }
   ];
 }

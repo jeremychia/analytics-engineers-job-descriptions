@@ -50,6 +50,10 @@ BAC5_CHECKED = {"2026-10-11_leonar_consultant-analytics-engineer", "2026-10-19_d
                 "2026-10-26_numberly_stage-analytics-engineer-data-collab", "2026-10-26_renault-group_ap26-bac5-alternance-data-analytics-et-ia-audit-interne",
                 "2026-10-26_stellantis_stage-ingenieur-data-analytics-performance-economique-base-couts-composants-mecatroniques",
                 "2026-10-26_wavestone_data-platform-analytics-engineering-data-for-ia", "2026-10-11_vattenfall_international-trainee-hydro-power-optimisation-and-data-analytics-engineer"}
+# ads that name a way in other than a degree (a bootcamp, self-taught practice, a non-traditional background), read by hand from a wide pattern search
+OTHER_ROUTES = [("2026-07-21_moerie-beauty_analytics-engineer", "through a degree or a relevant bootcamp/training program"),
+                ("2026-07-29_fremantle-dockers_analytics-engineer", "This may come from study, work, or self-taught practice"),
+                ("2026-10-09_zillow_analytics-engineer", "Zillow values the experience and perspective of candidates with non-traditional backgrounds")]
 # junior ads that say internships or projects count toward the experience ask, read by hand (exact substrings, checked below)
 COUNTS_PROJECTS = [("2026-06-30_louis-dreyfus-company_data-analytics-engineer-finance-systems", "Internship experience is welcomed"),
                    ("2026-07-06_intelligent-lending_analytics-engineer-ocean-squad", "0–2 years' experience in an analytics, data or engineering role, including internships, placements or strong personal/academic projects"),
@@ -178,6 +182,14 @@ def main():
             print("WARNING counts-projects quote not found verbatim:", jid, q[:60])
     out["junior"] = {"n": len(jr), "ads": jr, "labels": ["degree stated", "2+ years", "non-English language", "portfolio", "visa / clearance"],
                      "counts_projects": [{"id": j, "co": short(recs[j][0]["company"]), "quote": q} for j, q in COUNTS_PROJECTS]}
+    # the degree is the gate that falls hardest on juniors: language and visa asks differ little by level once the ad's language is held fixed
+    level = {"junior": "junior", "mid": "mid", "senior": "senior", "lead": "lead+", "staff": "lead+", "manager": "lead+"}
+    level_text = lambda lv: [t for r, t in recs.values() if level.get(r.get("seniority")) == lv]
+    out["junior"]["degree_by_level"] = {lv: [sum(bool(DEGREE.search(t)) for t in level_text(lv)), len(level_text(lv))] for lv in ("junior", "mid", "senior", "lead+")}
+    for jid, q in OTHER_ROUTES:
+        if q not in recs[jid][1]:
+            print("WARNING other-route quote not found verbatim:", jid, q[:60])
+    out["junior"]["other_routes"] = [{"id": j, "co": short(recs[j][0]["company"]), "quote": q} for j, q in OTHER_ROUTES]
     # four nested counts on all ads: title word, classifier, plus early-career wording, plus mid ads asking at most 2 years
     title = {j for j, (r, _) in recs.items() if JR_TITLE.search(r["role"])}
     clf = {j for j, (r, _) in recs.items() if r.get("seniority") == "junior"}
@@ -215,6 +227,8 @@ def main():
                         "senior_asks_mentor": [sum(a["asks_mentor"] for a in hr["senior_sample"]), len(hr["senior_sample"])],
                         "senior_asks_enable": [sum(a["asks_enable"] for a in hr["senior_sample"]), len(hr["senior_sample"])],
                         "quotes": {a["id"]: a["quote"] for a in jr_guides}}
+    asks_ai = {r["jd_id"] for r in ai if r["roleAI"] == "1"}; jr_ai = [a for a in hr["junior"] if a["id"] in asks_ai]
+    out["mentoring"]["junior_asks_ai"] = [sum(a["names_guide"] for a in jr_ai), len(jr_ai)]   # junior ads asking for AI: how many say who will teach
     out["stats2"] = json.loads((IN / "more_stats.json").read_text())   # from more_stats.py (run it after prep once, then prep again)
     out["stats"] = json.loads((IN / "stack_stats.json").read_text())   # from stack_stats.py
     m = json.loads((IN / "missing_stats.json").read_text())   # from missing_stats.py; totals only, the per-ad flags stay in the file
@@ -233,14 +247,19 @@ def main():
               ("2026-10-09_enhance_analytics-engineer", "2-5 years in analytics, BI or data engineering. Strong internships or graduate projects count."),
               ("2026-10-09_enhance_analytics-engineer", "Enhance is hiring a Junior Analytics Engineer"),
               ("2026-07-31_itt-inc_junior-analytics-engineer", "2+ years of experience in data analytics, or a similar role"),
-              ("2026-09-25_dex_founding-analytics-engineer", "Set the standards for data quality, definitions and instrumentation across Dex.")]
+              ("2026-09-25_dex_founding-analytics-engineer", "Set the standards for data quality, definitions and instrumentation across Dex."),
+              ("2026-07-29_zego_analytics-engineer", "AI tools now handle a lot of the heavy lifting of writing SQL and boilerplate"),
+              ("2026-07-29_zego_analytics-engineer", "Read, debug, and critically review SQL (including AI-generated code)")]
     for jid, q in quotes:
         txt = recs[jid][1] if jid in recs else ""
         if q not in txt:
             print("WARNING quote not found verbatim:", jid, q[:60])
     out["quotes"] = {"accenture_says": quotes[0][1], "accenture_asks": quotes[1][1], "vague": quotes[2][1], "concrete": quotes[3][1],
                      "lenovo": quotes[4][1], "january": quotes[5][1],
-                     "dataroots": quotes[6][1], "enhance_asks": quotes[7][1], "enhance_says": quotes[8][1], "itt": quotes[9][1], "dex": quotes[10][1]}
+                     "dataroots": quotes[6][1], "enhance_asks": quotes[7][1], "enhance_says": quotes[8][1], "itt": quotes[9][1], "dex": quotes[10][1],
+                     "zego_says": quotes[11][1], "zego_asks": quotes[12][1]}
+    # Stanford Digital Economy Lab, "Canaries in the Coal Mine", revised 12 Aug 2026: US employment of 22-25-year-olds in AI-exposed jobs, against trend
+    out["stanford"] = {"gap_pct": 19, "ages": "22–25", "revised": "12 Aug 2026"}
 
     # --- pitch-yourself map: fused positions + tools
     pos = {n[0]: n for n in json.loads((IN / "fused_positions.json").read_text())["nodes"]}
