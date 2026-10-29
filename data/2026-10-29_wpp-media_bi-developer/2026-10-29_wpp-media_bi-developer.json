@@ -1,0 +1,151 @@
+{
+  "jd_id": "2026-10-29_wpp-media_bi-developer",
+  "company": "WPP Media",
+  "role": "BI Developer",
+  "job_location": "Stockholm, Stockholm County, Sweden",
+  "seniority": "mid",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "mixed",
+  "stakeholder_orientation": "commercial",
+  "autonomy_level": "execution",
+  "ai_role": "none",
+  "testing_framing": "absent",
+  "loss_aversion_framing": "moderate",
+  "greenfield_vs_fix": "mixed",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 4,
+  "data_team_maturity": "mid",
+  "urgency": "urgent",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "hard",
+  "language_gate_languages": [
+    "Swedish"
+  ],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 46.7,
+    "spread": 25.5,
+    "measures": {
+      "marker_vocab": {
+        "raw": 7.474,
+        "score": 45.6
+      },
+      "stock_phrases": {
+        "raw": 2.99,
+        "score": 59.8
+      },
+      "structure": {
+        "raw": 0.167,
+        "score": 33.3
+      },
+      "bullet_symmetry": {
+        "raw": 0.386,
+        "score": 80.8
+      },
+      "burstiness": {
+        "raw": 1.051,
+        "score": 0.0
+      },
+      "specificity": {
+        "raw": 8.52,
+        "score": 60.9
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "linkedin",
+  "ats_job_id": "4360523975",
+  "has_dbt": false,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": true,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": true,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": true,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "Power BI",
+    "SQL"
+  ],
+  "preferred_tools": [
+    "BigQuery",
+    "Python"
+  ],
+  "responsibilities": [
+    "As a BI Developer at WPP Media, you will build and maintain Power BI solutions that help our specialists and clients follow up on media performance.",
+    "The role is centered around developing user-friendly dashboards, establishing robust data streams, and creating well-structured data models that enable reliable reporting at scale.",
+    "You’ll translate business needs into technical BI solutions and work closely with engineers, Data Scientists, client teams, and customers - often integrating outputs from different measurement and analytics projects (e.g., MMM, attribution, and other studies) into clear, actionable reporting."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://www.linkedin.com/jobs/view/4360523975/",
+  "evidence": {
+    "velocity_vs_rigour": "establishing robust data streams, and creating well-structured data models that enable reliable reporting at scale",
+    "velocity_vs_rigour_explanation": "the role summary stresses robust streams and reliable, stable reporting with no speed language, so rigour.",
+    "domain_risk": "help our specialists and clients follow up on media performance",
+    "domain_risk_explanation": "media-performance reporting for advertising clients, with no financial or regulatory language, so moderate.",
+    "collaboration_width": "engineers; Data Scientists; client teams; customers",
+    "data_team_maturity": "integrating outputs from different measurement and analytics projects (e.g., MMM, attribution, and other studies)",
+    "data_team_maturity_explanation": "the role sits beside existing engineers, data scientists and MMM and attribution projects, so the data function exists: mid. Related records: 2026-08-05_wpp-media_analytics-engineer and 2026-08-14_wpp-media_data-analytics-manager are Netherlands roles; this is a separate Stockholm opening.",
+    "jd_authorship": "integrating outputs from different measurement and analytics projects (e.g., MMM, attribution, and other studies) into clear, actionable reporting",
+    "jd_authorship_explanation": "the summary names Power BI and MMM and attribution outputs but is otherwise generic ('translate business needs into technical BI solutions'), so mixed.",
+    "stakeholder_orientation": "help our specialists and clients follow up on media performance",
+    "stakeholder_orientation_explanation": "the audience is media specialists and advertising clients tracking campaign performance, so commercial.",
+    "autonomy_level": "you will build and maintain Power BI solutions",
+    "autonomy_level_explanation": "the role builds and maintains reporting from business needs with no direction-setting verbs, so execution.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "AI appears only in the company description ('AI-driven media operating unit'), not in the role.",
+    "testing_framing": "No testing or data quality signal.",
+    "testing_framing_explanation": "the posting asks for robust, reliable reporting but names no testing or data quality practice.",
+    "loss_aversion_framing": "Understanding of how data flows and data models are set up to support stable reporting",
+    "loss_aversion_framing_explanation": "reporting stability and reliability are concerns, but secondary to delivery and with no compliance or trust framing, so moderate.",
+    "greenfield_vs_fix": "build and maintain Power BI solutions",
+    "greenfield_vs_fix_explanation": "the role both establishes new data streams and maintains existing Power BI solutions, so mixed.",
+    "language_gate": "Swedish: good understanding in speech and writing",
+    "urgency": "a start date as soon as possible",
+    "work_arrangement": "we’ve adopted a hybrid approach, with teams in the office around four days a week",
+    "loss_aversion": "The role is centered around developing user-friendly dashboards, establishing robust data streams, and creating well-structured data models that enable reliable reporting at scale.",
+    "ats_keywords": [
+      "BI Developer",
+      "Power BI",
+      "SQL",
+      "Google Cloud/BigQuery",
+      "DAXs",
+      "MMM",
+      "attribution",
+      "media measurement",
+      "media performance",
+      "data models",
+      "data integration"
+    ],
+    "ats_lookup": "resolve_ats miss; WPP Media's Greenhouse board (wppmedia, 830 jobs) lists no Stockholm BI developer and no posting contains this text; choreograph, wppmediasweden and groupm boards are empty. LinkedIn job id is older, so the employer listing has likely closed."
+  }
+}

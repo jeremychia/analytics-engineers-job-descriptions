@@ -1,0 +1,155 @@
+{
+  "jd_id": "2026-10-29_red-global_senior-business-intelligence-developer",
+  "company": "RED Global",
+  "role": "Senior Business Intelligence Developer",
+  "job_location": "Umeå, Västerbotten County, Sweden",
+  "seniority": "senior",
+  "role_type": "data_engineering",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "mixed",
+  "stakeholder_orientation": "internal_data",
+  "autonomy_level": "execution",
+  "ai_role": "none",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "moderate",
+  "greenfield_vs_fix": "fix_scale",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 2,
+  "data_team_maturity": "mid",
+  "urgency": "urgent",
+  "work_arrangement": "onsite",
+  "language_gate_type": "hard",
+  "language_gate_languages": [
+    "Swedish"
+  ],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 29.8,
+    "spread": 41.4,
+    "measures": {
+      "marker_vocab": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "structure": {
+        "raw": 0.373,
+        "score": 74.6
+      },
+      "bullet_symmetry": {
+        "raw": 0.297,
+        "score": 100.0
+      },
+      "burstiness": {
+        "raw": 0.736,
+        "score": 4.1
+      },
+      "specificity": {
+        "raw": 17.91,
+        "score": 0.0
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "unknown",
+  "ats_job_id": "X1fOMPse",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": true,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": true,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": true,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": true,
+  "has_aws": false,
+  "has_azure": true,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL"
+  ],
+  "preferred_tools": [
+    "Power BI",
+    "Microsoft Fabric",
+    "Databricks",
+    "dbt"
+  ],
+  "responsibilities": [
+    "Develop and maintain data warehouses, pipelines and analytical solutions.",
+    "Build and optimise SQL procedures, business logic and data models.",
+    "Integrate internal and external systems through APIs, files and messaging.",
+    "Troubleshoot data flows and improve database performance and data quality.",
+    "Contribute to the evolution of the data platform, including technical decisions, testing and documentation.",
+    "Collaborate with product owners, developers and business stakeholders."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://www.redglobal.com/jobs/job/senior-bi-developer/X1fOMPse",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4477068507/",
+  "evidence": {
+    "velocity_vs_rigour": "improve database performance and data quality",
+    "velocity_vs_rigour_explanation": "the bullets cover data quality, testing and performance with no speed language ('ASAP' is a start date), so rigour.",
+    "domain_risk": "Experience in energy, utilities, or another regulated industry.",
+    "domain_risk_explanation": "the client is unnamed and the regulated-industry line is only a desirable skill, with no regulatory duty in the bullets, so moderate.",
+    "collaboration_width": "product owners; developers",
+    "data_team_maturity": "supporting the development and modernisation of a Microsoft-based data and analytics platform",
+    "data_team_maturity_explanation": "the contract modernises an existing Microsoft data platform, so the data function exists: mid.",
+    "jd_authorship": "Integrate internal and external systems through APIs, files and messaging.",
+    "jd_authorship_explanation": "some bullets are concrete (SQL procedures, integrations through APIs, files and messaging) while others are generic ('Collaborate with product owners, developers and business stakeholders'), so mixed.",
+    "stakeholder_orientation": "Contribute to the evolution of the data platform",
+    "stakeholder_orientation_explanation": "the work is warehouse, pipeline and platform engineering for the client's data platform, with no named business audience, so internal_data.",
+    "autonomy_level": "Contribute to the evolution of the data platform",
+    "autonomy_level_explanation": "a contractor delivering development work, whose platform role is to 'contribute', so execution.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "the posting does not mention AI.",
+    "testing_framing": "Contribute to the evolution of the data platform, including technical decisions, testing and documentation.",
+    "testing_framing_explanation": "testing and data quality improvement appear in responsibility bullets with action verbs, so responsibility.",
+    "loss_aversion_framing": "Troubleshoot data flows and improve database performance and data quality.",
+    "loss_aversion_framing_explanation": "the concern is data-flow failures and performance, not compliance or trust, so moderate.",
+    "greenfield_vs_fix": "development and modernisation of a Microsoft-based data and analytics platform",
+    "greenfield_vs_fix_explanation": "the work modernises, optimises and troubleshoots an existing platform, so fix_scale.",
+    "language_gate": "Language: Fluent Swedish required",
+    "urgency": "Duration: ASAP to 31 October 2027, with potential extensions",
+    "work_arrangement": "Location: Umeå, Sweden — onsite",
+    "loss_aversion": "Troubleshoot data flows and improve database performance and data quality.",
+    "ats_keywords": [
+      "Senior BI Developer / Data Engineer",
+      "Microsoft Stack",
+      "stored procedures",
+      "ETL/ELT",
+      "SQL Server, SSIS, SSAS, SSRS, and Power BI",
+      "Azure Data Factory",
+      "Azure DevOps",
+      "Data Vault",
+      "Kimball",
+      "B2B freelance"
+    ],
+    "ats_lookup": "resolve_ats miss; switched to RED Global's own job page found in redglobal.com/sitemap.xml (all 19 bullet lines match); RED Global contracts the freelancer, so it is the hiring company."
+  }
+}

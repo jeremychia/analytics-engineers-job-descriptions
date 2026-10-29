@@ -1,0 +1,150 @@
+{
+  "jd_id": "2026-10-29_ascendis-pharma_senior-data-analytics-engineer",
+  "company": "Ascendis Pharma",
+  "role": "Senior Data & Analytics Engineer",
+  "job_location": "Copenhagen, Capital Region of Denmark, Denmark",
+  "seniority": "senior",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "mixed",
+  "stakeholder_orientation": "mixed",
+  "autonomy_level": "mixed",
+  "ai_role": "ai_user",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "high",
+  "greenfield_vs_fix": "mixed",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "high",
+  "collaboration_width": 0,
+  "data_team_maturity": "mid",
+  "urgency": "urgent",
+  "work_arrangement": "not_stated",
+  "language_gate_type": "none",
+  "language_gate_languages": [],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 27.3,
+    "spread": 29.7,
+    "measures": {
+      "marker_vocab": {
+        "raw": 3.764,
+        "score": 14.7
+      },
+      "stock_phrases": {
+        "raw": 1.255,
+        "score": 25.1
+      },
+      "structure": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.359,
+        "score": 86.8
+      },
+      "burstiness": {
+        "raw": 0.774,
+        "score": 0.0
+      },
+      "specificity": {
+        "raw": 10.665,
+        "score": 37.1
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "workable",
+  "ats_job_id": "F17059E5B3",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": false,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": true,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": true,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": true,
+  "has_aws": false,
+  "has_azure": true,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL"
+  ],
+  "preferred_tools": [
+    "Databricks",
+    "dbt",
+    "Power BI"
+  ],
+  "responsibilities": [
+    "Partner with stakeholders to understand needs, facilitate workshops and shape fit-for-purpose data and analytics solutions",
+    "Design, build and operate end-to-end solutions, from data pipelines, integrations and transformations to semantic models, dashboards and reporting",
+    "Ensure solutions are reliable, traceable and well documented, and developed in accordance with data quality, security, governance and regulatory requirements",
+    "Collaborate with colleagues and users to continuously improve solutions, controls and ways of working"
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://apply.workable.com/j/F17059E5B3",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4480707639/",
+  "evidence": {
+    "velocity_vs_rigour": "Ensure solutions are reliable, traceable and well documented",
+    "velocity_vs_rigour_explanation": "reliability, traceability, governance and regulatory requirements dominate the bullets with no speed language, so rigour.",
+    "domain_risk": "data quality, security, governance and regulatory requirements",
+    "domain_risk_explanation": "a biopharmaceutical company whose solutions must meet 'regulatory requirements' in a 'compliance-focused environment', so high.",
+    "collaboration_width": "No named partner teams.",
+    "data_team_maturity": "join Ascendis Pharma as our new Data Analytics Engineer in the Data & Analytics team",
+    "data_team_maturity_explanation": "an existing Data & Analytics team covers the full stack from pipelines to semantic models and reporting, so mid. Related record: 2026-10-12_ascendis-pharma_senior-business-oriented-data-analytics-engineer, an earlier Copenhagen opening in the same team with different title and bullets.",
+    "jd_authorship": "from data pipelines, integrations and transformations to semantic models, dashboards and reporting",
+    "jd_authorship_explanation": "one bullet maps the full delivery stack while the others are generic stakeholder and improvement lines, so mixed.",
+    "stakeholder_orientation": "help drive better decisions across the business",
+    "stakeholder_orientation_explanation": "the solutions serve decision-makers across the business with no single function emphasised, so mixed, matching the related October record.",
+    "autonomy_level": "shape fit-for-purpose data and analytics solutions",
+    "autonomy_level_explanation": "the role shapes solutions and is asked to take ownership while also building and operating them for stakeholders, so mixed.",
+    "ai_role": "AI-assisted development tools or coding agents, used responsibly to support quality and productivity",
+    "ai_role_explanation": "the candidate is expected to use AI coding tools in their own development work, so ai_user.",
+    "testing_framing": "Ensure solutions are reliable, traceable and well documented, and developed in accordance with data quality",
+    "testing_framing_explanation": "data quality and reliability are a responsibility bullet with an ownership verb, backed by 'a structured approach to testing', so responsibility.",
+    "loss_aversion_framing": "developed in accordance with data quality, security, governance and regulatory requirements",
+    "loss_aversion_framing_explanation": "regulatory and governance requirements sit in the responsibilities and recur in the 'compliance-focused environment' line, so high.",
+    "greenfield_vs_fix": "continuously improve solutions, controls and ways of working",
+    "greenfield_vs_fix_explanation": "the role both designs and builds new end-to-end solutions and continuously improves existing ones, so mixed.",
+    "language_gate": "Applications must be submitted in English",
+    "urgency": "We evaluate applications when received, so we encourage you to apply as soon as possible",
+    "work_arrangement": "Not stated in JD.",
+    "loss_aversion": "Ensure solutions are reliable, traceable and well documented, and developed in accordance with data quality, security, governance and regulatory requirements",
+    "ats_keywords": [
+      "Data & Analytics Engineer",
+      "semantic models",
+      "data pipelines",
+      "Databricks",
+      "dbt",
+      "Azure DevOps",
+      "CI/CD",
+      "Power BI",
+      "coding agents",
+      "regulated and compliance-focused environment",
+      "change management"
+    ]
+  }
+}

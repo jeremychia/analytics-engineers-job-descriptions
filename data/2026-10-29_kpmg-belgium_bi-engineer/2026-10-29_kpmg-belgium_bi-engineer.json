@@ -1,0 +1,159 @@
+{
+  "jd_id": "2026-10-29_kpmg-belgium_bi-engineer",
+  "company": "KPMG Belgium",
+  "role": "BI Engineer",
+  "job_location": "Zaventem, Flemish Region, Belgium",
+  "seniority": "mid",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "mixed",
+  "stakeholder_orientation": "commercial",
+  "autonomy_level": "execution",
+  "ai_role": "ai_user",
+  "testing_framing": "absent",
+  "loss_aversion_framing": "none",
+  "greenfield_vs_fix": "greenfield",
+  "velocity_vs_rigour": "mixed",
+  "domain_risk": "moderate",
+  "collaboration_width": 4,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "hard",
+  "language_gate_languages": [
+    "Dutch",
+    "French"
+  ],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 65.5,
+    "spread": 35.7,
+    "measures": {
+      "marker_vocab": {
+        "raw": 11.686,
+        "score": 80.7
+      },
+      "stock_phrases": {
+        "raw": 8.347,
+        "score": 100.0
+      },
+      "structure": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.303,
+        "score": 99.3
+      },
+      "burstiness": {
+        "raw": 0.491,
+        "score": 74.0
+      },
+      "specificity": {
+        "raw": 10.518,
+        "score": 38.7
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "unknown",
+  "ats_job_id": "1445349333",
+  "has_dbt": false,
+  "has_dbt_cloud": false,
+  "has_spark": true,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": true,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": true,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": true,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "Power BI",
+    "Microsoft Fabric",
+    "SQL"
+  ],
+  "preferred_tools": [
+    "Python",
+    "Spark"
+  ],
+  "responsibilities": [
+    "Analyze data to identify trends, opportunities, and actionable business insights.",
+    "Design and build dashboards, reports, and decision-intelligence solutions using Power BI and Microsoft Fabric.",
+    "Translate analytical findings into clear, impactful business recommendations.",
+    "Create engaging data stories tailored to different audiences and stakeholders.",
+    "Design semantic models and reusable data products that support business reporting and analytics.",
+    "Leverage GenBI capabilities to enhance analytics, reporting, and storytelling.",
+    "Facilitate workshops and collaborate closely with business stakeholders, Data Engineers, Data Scientists, AI specialists, and Solution Architects.",
+    "Contribute to the growth of our Insights & Decision Intelligence capability through innovation, knowledge sharing, and continuous learning."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://ema-careers.kpmg.com/job/Zaventem-Data-Insights-Specialist/1445349333/",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4470923812/",
+  "evidence": {
+    "velocity_vs_rigour": "Design semantic models and reusable data products that support business reporting and analytics.",
+    "velocity_vs_rigour_explanation": "The posting carries neither speed language nor quality, testing or governance language, so the signals sit at parity: mixed.",
+    "domain_risk": "Work on cutting-edge Data & AI projects for leading organizations across industries.",
+    "domain_risk_explanation": "Consulting work across unnamed industries with no financial-reporting or regulatory language, so moderate.",
+    "collaboration_width": "Data Engineers; Data Scientists; AI specialists; Solution Architects",
+    "data_team_maturity": "Be part of a growing team",
+    "data_team_maturity_explanation": "An existing Lighthouse unit with named specialists and a 'growing team' points to mid.",
+    "jd_authorship": "Leverage GenBI capabilities to enhance analytics, reporting, and storytelling.",
+    "jd_authorship_explanation": "Power BI, Fabric and semantic-model bullets are specific, but storytelling, recommendations and workshop bullets are generic consulting language, so mixed.",
+    "stakeholder_orientation": "Translate analytical findings into clear, impactful business recommendations.",
+    "stakeholder_orientation_explanation": "The audience is client business decision-makers receiving insights and recommendations rather than product, finance or the data team, so commercial.",
+    "autonomy_level": "Facilitate workshops and collaborate closely with business stakeholders",
+    "autonomy_level_explanation": "The role delivers dashboards, analyses and stories for client engagements and contributes to the capability rather than setting its direction, so execution.",
+    "ai_role": "Leverage GenBI capabilities to enhance analytics, reporting, and storytelling.",
+    "ai_role_explanation": "The candidate is expected to use GenBI tools in their own analysis and reporting work, so ai_user.",
+    "testing_framing": "No testing or data quality signal.",
+    "testing_framing_explanation": "No testing, data quality or observability practice is mentioned.",
+    "loss_aversion_framing": "No loss aversion framing.",
+    "loss_aversion_framing_explanation": "The posting is framed around insight and impact, not risk.",
+    "greenfield_vs_fix": "Design and build dashboards, reports, and decision-intelligence solutions",
+    "greenfield_vs_fix_explanation": "Design-and-build verbs for new client solutions dominate, with no maintain or migrate tasks, so greenfield.",
+    "language_gate": "Fluent in Dutch/French and English.",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Enjoy flexible hours, hybrid working",
+    "loss_aversion": "No loss aversion framing detected.",
+    "ats_keywords": [
+      "Power BI",
+      "Microsoft Fabric",
+      "Databricks",
+      "semantic models",
+      "reusable data products",
+      "GenBI",
+      "data stories",
+      "decision-intelligence solutions",
+      "dashboard design",
+      "data visualization best practices",
+      "SQL",
+      "KPMG Lighthouse"
+    ]
+  }
+}

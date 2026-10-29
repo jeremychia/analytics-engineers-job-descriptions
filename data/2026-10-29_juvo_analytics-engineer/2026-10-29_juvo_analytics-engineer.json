@@ -1,0 +1,153 @@
+{
+  "jd_id": "2026-10-29_juvo_analytics-engineer",
+  "company": "JUVO",
+  "role": "Analytics Engineer",
+  "job_location": "Flemish Region, Belgium",
+  "seniority": "mid",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "mixed",
+  "stakeholder_orientation": "internal_data",
+  "autonomy_level": "execution",
+  "ai_role": "none",
+  "testing_framing": "absent",
+  "loss_aversion_framing": "none",
+  "greenfield_vs_fix": "mixed",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 2,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "hard",
+  "language_gate_languages": [
+    "Dutch",
+    "French"
+  ],
+  "jd_language": "nl",
+  "ai_written": {
+    "score": 50.0,
+    "spread": 36.3,
+    "measures": {
+      "marker_vocab": {
+        "raw": 1.934,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 1.934,
+        "score": 38.7
+      },
+      "structure": {
+        "raw": 0.056,
+        "score": 11.1
+      },
+      "bullet_symmetry": {
+        "raw": 0.41,
+        "score": 75.5
+      },
+      "burstiness": {
+        "raw": 0.49,
+        "score": 74.4
+      },
+      "specificity": {
+        "raw": 3.095,
+        "score": 100.0
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "unknown",
+  "ats_job_id": "analytics-engineer-herentals",
+  "has_dbt": false,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": false,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": true,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": true,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "Power BI",
+    "SQL"
+  ],
+  "preferred_tools": [
+    "Microsoft Fabric"
+  ],
+  "responsibilities": [
+    "Je ontwikkelt en optimaliseert Power BI-oplossingen, van datamodellen tot interactieve dashboards en rapporteringen.",
+    "Je bouwt en onderhoudt schaalbare datamodellen en semantische lagen die zorgen voor consistente en betrouwbare rapportering.",
+    "Je werkt met Power BI, DAX, SQL, ... om data te transformeren, modelleren en analyseren.",
+    "Je denkt mee over data governance, performantie, herbruikbaarheid en best practices.",
+    "Je vertaalt business requirements naar concrete technische oplossingen en stemt regelmatig af met stakeholders.",
+    "Je werkt nauw samen met Data Engineers, Data Architects en andere collega's om kwalitatieve end-to-end dataoplossingen te realiseren."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://jobs.juvo.be/analytics-engineer-herentals/",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4480458799/",
+  "evidence": {
+    "velocity_vs_rigour": "semantische lagen die zorgen voor consistente en betrouwbare rapportering",
+    "velocity_vs_rigour_explanation": "Reliability and governance words ('betrouwbare rapportering', 'data governance') run through the role with no speed language, so rigour.",
+    "domain_risk": "projecten bij verschillende klanten verspreid over Vlaanderen en Brussel",
+    "domain_risk_explanation": "A consultancy role across unnamed client sectors with no financial or regulatory language, so moderate.",
+    "collaboration_width": "Data Engineers; Data Architects",
+    "data_team_maturity": "Je komt terecht in onze Data & AI unit",
+    "data_team_maturity_explanation": "An existing Data & AI unit with several specialisms and Power BI named in the responsibilities points to mid.",
+    "jd_authorship": "Je werkt met Power BI, DAX, SQL, ... om data te transformeren, modelleren en analyseren.",
+    "jd_authorship_explanation": "Power BI, DAX and semantic-layer bullets are specific, but 'stemt regelmatig af met stakeholders' and the governance bullet are generic, so mixed.",
+    "stakeholder_orientation": "semantische lagen die zorgen voor consistente en betrouwbare rapportering",
+    "stakeholder_orientation_explanation": "The work is the modelling and semantic layer that feeds client reporting, with no commercial, product or finance audience named, so internal_data.",
+    "autonomy_level": "Je denkt mee over data governance",
+    "autonomy_level_explanation": "The role builds and maintains client solutions and 'denkt mee' (contributes) on governance rather than setting it, so execution.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "The Data & AI unit name is company context; no AI skill is asked of the candidate.",
+    "testing_framing": "No testing or data quality signal.",
+    "testing_framing_explanation": "Reliable reporting is mentioned but no testing, data quality framework or observability practice appears.",
+    "loss_aversion_framing": "No loss aversion framing.",
+    "loss_aversion_framing_explanation": "The posting is framed around delivering insight and dashboards, not around risk.",
+    "greenfield_vs_fix": "Je bouwt en onderhoudt schaalbare datamodellen",
+    "greenfield_vs_fix_explanation": "Build-and-maintain and develop-and-optimise verbs carry equal weight across client projects, so mixed.",
+    "language_gate": "Je spreekt en schrijft vlot Nederlands en Engels. Frans is mooi meegenomen, maar geen must.",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "afhankelijk van het project en de afspraken rond hybride werken",
+    "loss_aversion": "No loss aversion framing detected.",
+    "ats_keywords": [
+      "Analytics Engineer",
+      "Power BI",
+      "DAX",
+      "SQL",
+      "semantische lagen",
+      "datamodellen",
+      "data governance",
+      "Fabric",
+      "Business Intelligence",
+      "semantische modellen"
+    ]
+  }
+}

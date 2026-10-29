@@ -1,0 +1,154 @@
+{
+  "jd_id": "2026-10-29_altia_database-bi-engineering-european-agency",
+  "company": "Altia",
+  "role": "Database & BI Engineering - European Agency",
+  "job_location": "Brussels, Brussels Region, Belgium",
+  "seniority": "senior",
+  "role_type": "data_engineering",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "internal_data",
+  "autonomy_level": "mixed",
+  "ai_role": "none",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "high",
+  "greenfield_vs_fix": "fix_scale",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "high",
+  "collaboration_width": 4,
+  "data_team_maturity": "mature",
+  "urgency": "standard",
+  "work_arrangement": "remote",
+  "language_gate_type": "soft",
+  "language_gate_languages": [
+    "French"
+  ],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 48.9,
+    "spread": 44.3,
+    "measures": {
+      "marker_vocab": {
+        "raw": 4.027,
+        "score": 16.9
+      },
+      "stock_phrases": {
+        "raw": 5.369,
+        "score": 100.0
+      },
+      "structure": {
+        "raw": 0.381,
+        "score": 76.2
+      },
+      "bullet_symmetry": {
+        "raw": 0.244,
+        "score": 100.0
+      },
+      "burstiness": {
+        "raw": 1.121,
+        "score": 0.0
+      },
+      "specificity": {
+        "raw": 14.899,
+        "score": 0.0
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "unknown",
+  "ats_job_id": "data-bi-engineering-european-agency",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": false,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": true,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": true,
+  "has_duckdb": false,
+  "has_fabric_synapse": true,
+  "has_postgres": true,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": true,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": true,
+  "has_aws": true,
+  "has_azure": true,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL",
+    "Postgres"
+  ],
+  "preferred_tools": [
+    "Azure Synapse",
+    "Snowflake",
+    "Redshift"
+  ],
+  "responsibilities": [
+    "The role involves designing, building, migrating, and optimizing modern Database and Business Intelligence architectures across cloud, on-premises, and hybrid environments.",
+    "The specialist will lead secure and scalable database design, conceptual/logical/physical data modeling, procedural programming (PL/SQL, PL/pgSQL), release/deployment scripting, performance tuning, and the implementation of complex ETL/ELT pipelines and analytics solutions.",
+    "Working within structured European management frameworks (PM² and Agile methodologies), the position requires high technical rigor, data quality enforcement, and secure management of sensitive operational information.",
+    "In close collaboration with project leads, service managers, developers, analysts, and cross-functional international teams, the specialist will translate complex functional needs into scalable, secure, and high-performing database and data engineering solutions."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://opportunities.altia.es/jobs/data-bi-engineering-european-agency",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4481118194/",
+  "evidence": {
+    "velocity_vs_rigour": "the position requires high technical rigor, data quality enforcement, and secure management of sensitive operational information",
+    "velocity_vs_rigour_explanation": "Rigour, data quality enforcement, security, GDPR and production continuity dominate with no speed language, so rigour.",
+    "domain_risk": "GDPR compliance",
+    "domain_risk_explanation": "European Commission platforms holding 'sensitive operational information' with explicit GDPR compliance and access control language, so high.",
+    "collaboration_width": "project leads; service managers; developers; analysts",
+    "data_team_maturity": "large-scale European Commission data platforms and core application systems",
+    "data_team_maturity_explanation": "Large established EC platforms, structured PM² frameworks and an 'experienced, highly skilled' international team point to mature. Related record: 2026-10-11_altia_analytics-engineer-dbt-sql is a different Altia opening (Barcelona dbt analytics engineer, different bullets), not a repost.",
+    "jd_authorship": "procedural programming (PL/SQL, PL/pgSQL), release/deployment scripting, performance tuning",
+    "jd_authorship_explanation": "The role paragraph names procedural languages, DDL release scripting, modelling layers and PM², so a reader knows the daily work: hiring_manager.",
+    "stakeholder_orientation": "translate complex functional needs into scalable, secure, and high-performing database and data engineering solutions",
+    "stakeholder_orientation_explanation": "The audience is the EC project and service teams running the platforms and applications, so internal_data.",
+    "autonomy_level": "The specialist will lead secure and scalable database design",
+    "autonomy_level_explanation": "The role leads database design as its technical domain while 'supporting the evolution' of platforms for project teams, so mixed.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "AI appears only in the company introduction; nothing is asked of the candidate.",
+    "testing_framing": "data quality enforcement",
+    "testing_framing_explanation": "Data quality enforcement is stated as a requirement of the position itself, with data quality controls in the experience list, so responsibility.",
+    "loss_aversion_framing": "secure management of sensitive operational information",
+    "loss_aversion_framing_explanation": "Security of sensitive data, GDPR compliance and production continuity frame the role from its summary onward, so high.",
+    "greenfield_vs_fix": "supporting the evolution, design, migration, and maintenance of large-scale European Commission data platforms",
+    "greenfield_vs_fix_explanation": "Evolution, migration, maintenance and performance tuning of existing platforms dominate, so fix_scale.",
+    "language_gate": "Working knowledge of French for technical discussions is considered a strong asset.",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Far-site delivery with potential occasional, planned presence in Brussels",
+    "loss_aversion": "Governance, Security & Compliance: Implementation of data security best practices, access control, GDPR compliance, row-level security, data lineage. The posting treats sensitive-data security and compliance as a core part of the role.",
+    "ats_keywords": [
+      "Oracle",
+      "PostgreSQL",
+      "PL/SQL",
+      "PL/pgSQL",
+      "Enterprise Data Warehousing",
+      "data modeling",
+      "database migration",
+      "performance tuning",
+      "Liquibase",
+      "SAP BusinessObjects",
+      "Qlik Sense",
+      "GDPR compliance"
+    ]
+  }
+}

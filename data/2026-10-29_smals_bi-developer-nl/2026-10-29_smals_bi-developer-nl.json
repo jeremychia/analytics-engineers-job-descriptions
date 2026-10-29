@@ -1,0 +1,151 @@
+{
+  "jd_id": "2026-10-29_smals_bi-developer-nl",
+  "company": "Smals",
+  "role": "BI Developer - NL",
+  "job_location": "Brussels, Brussels Region, Belgium",
+  "seniority": "mid",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "internal_data",
+  "autonomy_level": "execution",
+  "ai_role": "none",
+  "testing_framing": "absent",
+  "loss_aversion_framing": "none",
+  "greenfield_vs_fix": "fix_scale",
+  "velocity_vs_rigour": "mixed",
+  "domain_risk": "moderate",
+  "collaboration_width": 0,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "hard",
+  "language_gate_languages": [
+    "French",
+    "Dutch"
+  ],
+  "jd_language": "nl",
+  "ai_written": {
+    "score": 34.8,
+    "spread": 32.7,
+    "measures": {
+      "marker_vocab": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 2.77,
+        "score": 55.4
+      },
+      "structure": {
+        "raw": 0.154,
+        "score": 30.8
+      },
+      "bullet_symmetry": {
+        "raw": 0.967,
+        "score": 0.0
+      },
+      "burstiness": {
+        "raw": 0.649,
+        "score": 28.7
+      },
+      "specificity": {
+        "raw": 5.54,
+        "score": 94.0
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "unknown",
+  "ats_job_id": "7281",
+  "has_dbt": false,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": false,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": true,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": true,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL",
+    "Power BI"
+  ],
+  "preferred_tools": [
+    "Postgres"
+  ],
+  "responsibilities": [
+    "Als Business Intelligence Developer draag je bij tot het beheer, de ondersteuning en de voortdurende ontwikkeling van onze BI-omgeving.",
+    "Je ontwerpt en ontwikkelt ETL-processen in Informatica PowerCenter, inclusief het aanmaken van nieuwe mappings en workflows.",
+    "In dit kader zorg je voor het beheer en de optimalisatie van ons datawarehouse (PostgreSQL) en ontwikkel je rapportageoplossingen in Cognos en Power BI.",
+    "Je draagt bij aan de migratie van bestaande Cognos-rapporten naar Power BI en ontwikkelt nieuwe rapportage- en dashboardoplossingen ter ondersteuning van de activiteiten van de organisatie."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://www.smals.be/nl/jobs/apply/7281/bi-developer",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4471677385/",
+  "evidence": {
+    "velocity_vs_rigour": "zorg je voor het beheer en de optimalisatie van ons datawarehouse (PostgreSQL)",
+    "velocity_vs_rigour_explanation": "The posting has neither speed language nor quality, testing or governance language, so the signals sit at parity: mixed.",
+    "domain_risk": "ter ondersteuning van de activiteiten van de organisatie",
+    "domain_risk_explanation": "Internal reporting for a public-sector IT provider with no regulatory or financial-reporting language, so moderate.",
+    "collaboration_width": "No named partner teams.",
+    "data_team_maturity": "draag je bij tot het beheer, de ondersteuning en de voortdurende ontwikkeling van onze BI-omgeving",
+    "data_team_maturity_explanation": "An existing BI environment with a PostgreSQL warehouse, Informatica and Cognos being moved to Power BI points to mid. Related record: 2026-06-29_onem-smals_senior-data-analytics-engineer is a different Smals opening (senior dbt and Dagster role at ONEM), not a repost.",
+    "jd_authorship": "Je ontwerpt en ontwikkelt ETL-processen in Informatica PowerCenter, inclusief het aanmaken van nieuwe mappings en workflows.",
+    "jd_authorship_explanation": "The role text names Informatica mappings, the PostgreSQL warehouse and the Cognos-to-Power BI migration, so a reader knows the daily work: hiring_manager.",
+    "stakeholder_orientation": "rapportage- en dashboardoplossingen ter ondersteuning van de activiteiten van de organisatie",
+    "stakeholder_orientation_explanation": "The work maintains the BI environment and reporting for the organisation itself, with no commercial, product or finance audience named, so internal_data.",
+    "autonomy_level": "Je draagt bij aan de migratie van bestaande Cognos-rapporten naar Power BI",
+    "autonomy_level_explanation": "The role contributes to ('draag je bij') maintaining and migrating an existing environment rather than setting direction, so execution.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "No AI tooling or AI-facing data work is mentioned.",
+    "testing_framing": "No testing or data quality signal.",
+    "testing_framing_explanation": "No testing, data quality or observability practice is mentioned.",
+    "loss_aversion_framing": "No loss aversion framing.",
+    "loss_aversion_framing_explanation": "The posting is framed around maintaining and migrating reporting, not around risk.",
+    "greenfield_vs_fix": "zorg je voor het beheer en de optimalisatie van ons datawarehouse",
+    "greenfield_vs_fix_explanation": "Maintaining, optimising and migrating an existing warehouse and report estate dominate, so fix_scale.",
+    "language_gate": "Ten slotte heb je uitstekende communicatieve vaardigheden in het Frans of Nederlands, evenals in het Engels.",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "maak gebruik van ons zeer uitgebreid telewerkbeleid",
+    "loss_aversion": "No loss aversion framing detected.",
+    "ats_keywords": [
+      "BI Developer",
+      "Informatica PowerCenter",
+      "PostgreSQL",
+      "Cognos",
+      "Power BI",
+      "Power Query",
+      "Power BI Report Builder",
+      "data warehousing",
+      "mappings en workflows",
+      "Geavanceerde SQL"
+    ]
+  }
+}
