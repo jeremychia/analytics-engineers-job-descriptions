@@ -1,0 +1,149 @@
+{
+  "jd_id": "2026-10-30_valon_senior-analytics-engineer",
+  "company": "Valon",
+  "role": "Senior Analytics Engineer",
+  "job_location": "New York, NY",
+  "seniority": "senior",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": 135000,
+  "salary_max": 180000,
+  "salary_currency": "USD",
+  "salary_period": null,
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "commercial",
+  "autonomy_level": "mixed",
+  "ai_role": "ai_enabler",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "high",
+  "greenfield_vs_fix": "mixed",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "high",
+  "collaboration_width": 5,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "not_stated",
+  "language_gate_type": "none",
+  "language_gate_languages": [],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 47.8,
+    "spread": 33.6,
+    "measures": {
+      "marker_vocab": {
+        "raw": 1.248,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 1.248,
+        "score": 25.0
+      },
+      "structure": {
+        "raw": 0.882,
+        "score": 100.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.384,
+        "score": 81.4
+      },
+      "burstiness": {
+        "raw": 0.611,
+        "score": 39.7
+      },
+      "specificity": {
+        "raw": 10.362,
+        "score": 40.4
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "ashby",
+  "ats_job_id": "9e7b4bb4-04c8-498f-b399-fa749a35b39d",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": true,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": true,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": true,
+  "has_tableau": false,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL"
+  ],
+  "preferred_tools": [
+    "Python",
+    "dbt",
+    "Airflow"
+  ],
+  "responsibilities": [
+    "Client Reporting & Infrastructure: Scope and develop new client reports, while also maintaining and enhancing existing reporting pipelines. Collaborate with external clients and our internal client success team to effectively manage and triage inbound requests. Partner with Valon Technologies' data team to improve the underlying infrastructure for client reporting.",
+    "Data Modeling & Transformation: Design, build, and maintain the production-grade data models and analytical layers using our existing stack of BigQuery, dbt, and Airflow to ensure reliability and structure at scale.",
+    "Data Governance & Quality: Partner with engineering and product teams to define and implement data contracts and observability frameworks to guarantee data quality and auditability for a regulated environment.",
+    "Analytical Support: Write complex SQL queries, build dashboards (in tools like Hex or Looker), and conduct ad hoc analysis to empower operational leaders and provide deep root-cause insights into business performance."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://jobs.ashbyhq.com/valon/9e7b4bb4-04c8-498f-b399-fa749a35b39d",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4481993389/",
+  "evidence": {
+    "velocity_vs_rigour": "ensuring data is production-grade, auditable, and easily accessible",
+    "velocity_vs_rigour_explanation": "Auditability, data contracts, observability and 'guarantee data quality' dominate with no speed language, so rigour.",
+    "domain_risk": "to guarantee data quality and auditability for a regulated environment",
+    "domain_risk_explanation": "Mortgage servicing software for 'regulated finance', with explicit audit and regulated-environment language, so high.",
+    "collaboration_width": "external clients; client success team; data team; engineering; product teams",
+    "data_team_maturity": "using our existing stack of BigQuery, dbt, and Airflow",
+    "data_team_maturity_explanation": "An existing stack and a separate Valon Technologies data team, with the hire standardising modelling practices, so mid.",
+    "jd_authorship": "Design, build, and maintain the production-grade data models and analytical layers using our existing stack of BigQuery, dbt, and Airflow",
+    "jd_authorship_explanation": "Bullets name the client reporting scope, the BigQuery, dbt and Airflow stack, data contracts and Hex or Looker, so hiring_manager.",
+    "stakeholder_orientation": "Collaborate with external clients and our internal client success team",
+    "stakeholder_orientation_explanation": "The core ownership is client reporting for mortgage servicer customers, managed with client success, so commercial.",
+    "autonomy_level": "take ownership of our client reporting data models and pipelines",
+    "autonomy_level_explanation": "The role owns client reporting and standardises modelling practice, and also gives hands-on analytical support to operational leaders, so mixed.",
+    "ai_role": "transforming raw data into reliable, structured, and performant assets for reporting, analysis, and AI initiatives",
+    "ai_role_explanation": "The role summary makes the candidate's data models an input to AI initiatives, so ai_enabler; the signal is a single phrase.",
+    "testing_framing": "define and implement data contracts and observability frameworks to guarantee data quality",
+    "testing_framing_explanation": "Data contracts and observability are owned responsibilities with action verbs, so responsibility.",
+    "loss_aversion_framing": "provide hands-on analytical support for high-stakes operational business functions",
+    "loss_aversion_framing_explanation": "Auditability, a regulated environment and 'high-stakes' functions frame the role summary, so high.",
+    "greenfield_vs_fix": "Scope and develop new client reports, while also maintaining and enhancing existing reporting pipelines.",
+    "greenfield_vs_fix_explanation": "New reports sit beside maintaining and improving existing pipelines and infrastructure, so mixed.",
+    "language_gate": "Not stated in JD",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Not stated in JD.",
+    "loss_aversion": "ensuring data is production-grade, auditable, and easily accessible across the organization and our customers - audit and regulated-environment framing in the role summary.",
+    "ats_keywords": [
+      "client reporting",
+      "BigQuery, dbt, and Airflow",
+      "data contracts",
+      "observability frameworks",
+      "auditability",
+      "regulated environment",
+      "medallion architecture",
+      "Hex or Looker",
+      "mortgage servicing",
+      "production-grade data models"
+    ]
+  }
+}

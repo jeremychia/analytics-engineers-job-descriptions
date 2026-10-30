@@ -1,0 +1,151 @@
+{
+  "jd_id": "2026-10-30_butternut-box_analytics-engineer-ii",
+  "company": "Butternut Box",
+  "role": "Analytics Engineer II",
+  "job_location": "London, England, United Kingdom",
+  "seniority": "mid",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "internal_data",
+  "autonomy_level": "execution",
+  "ai_role": "ai_enabler",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "moderate",
+  "greenfield_vs_fix": "fix_scale",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 3,
+  "data_team_maturity": "mid",
+  "urgency": "urgent",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "none",
+  "language_gate_languages": [],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 15.7,
+    "spread": 26.1,
+    "measures": {
+      "marker_vocab": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "structure": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.647,
+        "score": 22.9
+      },
+      "burstiness": {
+        "raw": 0.753,
+        "score": 0.0
+      },
+      "specificity": {
+        "raw": 7.608,
+        "score": 71.0
+      }
+    }
+  },
+  "interview_stages": 3,
+  "ats_platform": "greenhouse",
+  "ats_job_id": "8911439002",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": true,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": true,
+  "has_tableau": false,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": true,
+  "has_aws": true,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "dbt",
+    "Python",
+    "SQL"
+  ],
+  "preferred_tools": [
+    "Looker"
+  ],
+  "responsibilities": [
+    "Working with our in-house product engineering teams to ensure source data supports downstream requirements.",
+    "Building and maintaining SQL transformations, tests and documentation in dbt.",
+    "Developing Python code to automate data workflows and integrate systems.",
+    "Contributing to data modelling best practices and advising the team on how to write reliable, maintainable transformations.",
+    "Working with stakeholders across the business to make clean, intuitive datasets available through Looker and AI data analyst tools.",
+    "Working with our analysts and data scientists to identify opportunities to improve data quality, optimise performance and automate manual processes."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://job-boards.greenhouse.io/butternutbox/jobs/8911439002",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4484498289/",
+  "evidence": {
+    "velocity_vs_rigour": "create clean, tested, well-documented and well-modelled datasets",
+    "velocity_vs_rigour_explanation": "Tested, documented, 'reliable, maintainable transformations' set the tone and there is no speed language about the work, so rigour.",
+    "domain_risk": "we feed hundreds of thousands of hungry dogs across the UK and Europe",
+    "domain_risk_explanation": "A direct-to-consumer pet food business with no financial reporting or regulatory language, so moderate.",
+    "collaboration_width": "product engineering teams; data analysts; data scientists",
+    "data_team_maturity": "Our data stack includes Snowflake for data warehousing, dbt for data transformation and testing, and Looker for business intelligence.",
+    "data_team_maturity_explanation": "An established stack and a data team with analysts and data scientists, with the hire maintaining 'foundational data models', so mid.",
+    "jd_authorship": "Building and maintaining SQL transformations, tests and documentation in dbt.",
+    "jd_authorship_explanation": "Bullets name dbt tests and documentation, Python automation and Looker delivery, so a reader can picture the day-to-day; hiring_manager.",
+    "stakeholder_orientation": "you'll work closely with our data analysts and data scientists",
+    "stakeholder_orientation_explanation": "The main audience is the data team and self-serve consumers of 'foundational data models', so internal_data.",
+    "autonomy_level": "Contributing to data modelling best practices",
+    "autonomy_level_explanation": "A mid-level role that builds, maintains and contributes rather than sets direction, so execution.",
+    "ai_role": "make clean, intuitive datasets available through Looker and AI data analyst tools",
+    "ai_role_explanation": "The candidate prepares datasets that AI data analyst tools consume and builds 'next generation analytics using generative AI and agentic tools', so ai_enabler.",
+    "testing_framing": "Building and maintaining SQL transformations, tests and documentation in dbt.",
+    "testing_framing_explanation": "Tests are an owned responsibility with action verbs, not only a listed tool, so responsibility.",
+    "loss_aversion_framing": "improve the reliability and efficiency of our data systems",
+    "loss_aversion_framing_explanation": "Reliability is a concern secondary to delivery, with no compliance or trust framing, so moderate.",
+    "greenfield_vs_fix": "You'll build and maintain foundational data models",
+    "greenfield_vs_fix_explanation": "The work maintains and improves an existing stack (improve data quality, optimise performance, automate manual processes), so fix_scale.",
+    "language_gate": "Not stated in JD",
+    "urgency": "We recommend getting your application in as soon as possible. We reserve the right to close the role early.",
+    "work_arrangement": "We spend 3 days a week in our West London office (Monday, Wednesday, and Thursday) and 2 days working from wherever you’re most productive.",
+    "loss_aversion": "Python to automate workflows and improve the reliability and efficiency of our data systems - reliability as an operational concern, not a risk register.",
+    "ats_keywords": [
+      "Snowflake for data warehousing",
+      "dbt for data transformation and testing",
+      "Looker",
+      "AI data analyst tools",
+      "generative AI and agentic tools",
+      "self-serve analytics",
+      "production-grade data models and test suites",
+      "LookML",
+      "version control and CI/CD",
+      "maintainable Python code"
+    ]
+  }
+}

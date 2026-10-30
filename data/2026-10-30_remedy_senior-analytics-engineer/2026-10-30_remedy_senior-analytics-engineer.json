@@ -1,0 +1,153 @@
+{
+  "jd_id": "2026-10-30_remedy_senior-analytics-engineer",
+  "company": "Remedy",
+  "role": "Senior Analytics Engineer",
+  "job_location": "Summit, NJ",
+  "seniority": "senior",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": 160000,
+  "salary_max": 180000,
+  "salary_currency": "USD",
+  "salary_period": null,
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "mixed",
+  "autonomy_level": "strategic",
+  "ai_role": "ai_enabler",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "moderate",
+  "greenfield_vs_fix": "mixed",
+  "velocity_vs_rigour": "mixed",
+  "domain_risk": "high",
+  "collaboration_width": 5,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "not_stated",
+  "language_gate_type": "none",
+  "language_gate_languages": [],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 20.3,
+    "spread": 31.3,
+    "measures": {
+      "marker_vocab": {
+        "raw": 1.072,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "structure": {
+        "raw": 0.036,
+        "score": 7.1
+      },
+      "bullet_symmetry": {
+        "raw": 0.639,
+        "score": 24.6
+      },
+      "burstiness": {
+        "raw": 0.741,
+        "score": 2.5
+      },
+      "specificity": {
+        "raw": 6.109,
+        "score": 87.7
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "greenhouse",
+  "ats_job_id": "8910423002",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": false,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": true,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": true,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": true,
+  "has_tableau": false,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": true,
+  "required_tools": [
+    "SQL",
+    "dbt"
+  ],
+  "preferred_tools": [
+    "Snowflake",
+    "Looker"
+  ],
+  "responsibilities": [
+    "Own a functional data area. Be the lead analyst for a domain like finance or growth and retention, the first person stakeholders turn to for answers and insight. You'll own its models, metrics, analysis and roadmap.",
+    "Architect core data models. Design and maintain silver and gold layer models in dbt using Kimball dimensional modeling (facts and dimensions). These power segmentation, targeting, automation and analytics for your area.",
+    "Define and operationalize metrics. Turn company-wide metrics into governed, consistent definitions. Examples include retention, funnel conversion, LTV/CAC/ROAS and revenue.",
+    "Steward the semantic layer. Treat our BI tooling (Hex) as a product. Own semantic layer health, cross-team modeling standards and self-serve data products, beyond building dashboards on request.",
+    "Make the numbers trustworthy. Set standards for testing, documentation and freshness. Lead root-cause analysis on data discrepancies, then fix the underlying architecture so they don't recur.",
+    "Partner with the business. Turn ambiguous questions from Marketing, Growth, Finance and Product into clear requirements and scalable solutions. Work without dedicated PM support and use data to influence decisions.",
+    "Communicate clearly. Explain technical decisions, trade-offs and results to audiences from engineers to senior leadership. Set and manage expectations along the way.",
+    "Improve upstream data. Work with product and engineering on event taxonomy, instrumentation quality and consistency across app, web and backend."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://job-boards.greenhouse.io/remedy/jobs/8910423002",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4483689404/",
+  "evidence": {
+    "velocity_vs_rigour": "This is a high-ownership role on a lean team that moves fast.",
+    "velocity_vs_rigour_explanation": "Speed phrases ('moves fast', 'ship without waiting for perfect specs', 'bias for action') balance governed metric definitions and 'Make the numbers trustworthy', so mixed.",
+    "domain_risk": "continue to revolutionize healthcare accessibility",
+    "domain_risk_explanation": "A healthcare company where the role may own financial performance and revenue metrics for leadership, so high.",
+    "collaboration_width": "Marketing; Growth; Finance; Product; engineering",
+    "data_team_maturity": "We're hiring a Senior Analytics Engineer within our centralized data team",
+    "data_team_maturity_explanation": "A lean centralised data team with an established Snowflake, dbt, Fivetran and Hex stack and layered models, so mid.",
+    "jd_authorship": "Design and maintain silver and gold layer models in dbt using Kimball dimensional modeling (facts and dimensions).",
+    "jd_authorship_explanation": "Bullets name silver and gold dbt layers, Kimball modelling, Hex as the semantic layer and specific metrics such as LTV/CAC/ROAS, so hiring_manager.",
+    "stakeholder_orientation": "Turn ambiguous questions from Marketing, Growth, Finance and Product into clear requirements",
+    "stakeholder_orientation_explanation": "The owned domain could be finance, operations or growth and retention, with Marketing, Growth, Finance and Product as equal partners, so mixed.",
+    "autonomy_level": "You'll own its models, metrics, analysis and roadmap.",
+    "autonomy_level_explanation": "The role owns a domain's roadmap, sets testing standards and finds problems 'before they reach anyone's roadmap', so strategic.",
+    "ai_role": "Experience building semantic layers and documentation designed for AI and agentic workflows.",
+    "ai_role_explanation": "A bonus asks for semantic layers and documentation that AI and agentic workflows consume, so ai_enabler.",
+    "testing_framing": "Set standards for testing, documentation and freshness.",
+    "testing_framing_explanation": "The candidate sets testing standards and leads root-cause analysis, so responsibility.",
+    "loss_aversion_framing": "Make the numbers trustworthy.",
+    "loss_aversion_framing_explanation": "Trustworthy numbers are one responsibility among delivery-led ones, with no compliance framing, so moderate.",
+    "greenfield_vs_fix": "Lead root-cause analysis on data discrepancies, then fix the underlying architecture so they don't recur.",
+    "greenfield_vs_fix_explanation": "The role architects new core models and also fixes existing architecture, so mixed.",
+    "language_gate": "Not stated in JD",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Not stated in JD.",
+    "loss_aversion": "Make the numbers trustworthy. Set standards for testing, documentation and freshness - data trust as one responsibility, not the dominant frame.",
+    "ats_keywords": [
+      "Snowflake, dbt, Fivetran and Hex",
+      "silver and gold layer models",
+      "Kimball dimensional modeling",
+      "semantic layer",
+      "governed, consistent definitions",
+      "LTV/CAC/ROAS",
+      "slowly changing dimensions",
+      "medallion architectures",
+      "event taxonomy",
+      "agentic workflows"
+    ]
+  }
+}

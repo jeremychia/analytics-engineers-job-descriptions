@@ -1,0 +1,152 @@
+{
+  "jd_id": "2026-10-30_wedo_senior-analytics-engineer",
+  "company": "WeDo",
+  "role": "Senior Analytics Engineer",
+  "job_location": "England, United Kingdom (Fully Remote (UK))",
+  "seniority": "senior",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "mixed",
+  "stakeholder_orientation": "internal_data",
+  "autonomy_level": "mixed",
+  "ai_role": "ai_user",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "moderate",
+  "greenfield_vs_fix": "mixed",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "high",
+  "collaboration_width": 4,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "remote",
+  "language_gate_type": "none",
+  "language_gate_languages": [],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 21.2,
+    "spread": 25.3,
+    "measures": {
+      "marker_vocab": {
+        "raw": 1.477,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 1.477,
+        "score": 29.5
+      },
+      "structure": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.435,
+        "score": 70.0
+      },
+      "burstiness": {
+        "raw": 0.804,
+        "score": 0.0
+      },
+      "specificity": {
+        "raw": 11.521,
+        "score": 27.5
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "linkedin",
+  "ats_job_id": "4483019743",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": false,
+  "has_sql": true,
+  "has_airflow": true,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": true,
+  "has_databricks": false,
+  "has_bigquery": true,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL"
+  ],
+  "preferred_tools": [
+    "Snowflake",
+    "Airflow"
+  ],
+  "responsibilities": [
+    "Design, build and optimise scalable data models within a modern cloud data platform.",
+    "Develop new data solutions supporting upcoming products and business initiatives.",
+    "Review and improve existing data models, focusing on performance, efficiency, cost and maintainability.",
+    "Work directly with stakeholders across Product, Engineering, Finance and Analytics to understand their challenges and design appropriate solutions.",
+    "Contribute to data quality, governance and testing standards within a regulated environment.",
+    "Explore opportunities to leverage AI and automation to improve engineering practices and delivery.",
+    "Work across the wider data ecosystem, gaining exposure to Data Engineering, orchestration and BI.",
+    "Collaborate with and support less experienced engineers, sharing knowledge and contributing to technical decisions."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://www.linkedin.com/jobs/view/4483019743/",
+  "evidence": {
+    "velocity_vs_rigour": "Contribute to data quality, governance and testing standards within a regulated environment.",
+    "velocity_vs_rigour_explanation": "Quality, governance, testing and maintainability language outweighs the single 'fast-paced' requirement, so rigour.",
+    "domain_risk": "growing UK fintech",
+    "domain_risk_explanation": "The client is a fintech and the posting names work 'within a regulated environment', so high.",
+    "collaboration_width": "Product; Engineering; Finance; Analytics",
+    "data_team_maturity": "the business has established a modern, AI-enabled data platform using Snowflake, dbt, Coalesce, Sigma and Airflow",
+    "data_team_maturity_explanation": "The platform migration is 'largely complete' and the hire improves existing models and mentors less experienced engineers, so mid.",
+    "jd_authorship": "Review and improve existing data models, focusing on performance, efficiency, cost and maintainability.",
+    "jd_authorship_explanation": "An agency-written posting with some specific bullets (performance, cost, maintainability) next to generic ones such as 'Work across the wider data ecosystem', so mixed.",
+    "stakeholder_orientation": "influence how data is modelled, optimised and used across the business",
+    "stakeholder_orientation_explanation": "The emphasis is on the data models and platform used across the business rather than one business function, so internal_data.",
+    "autonomy_level": "You'll have the autonomy to challenge how things are done, introduce new ideas",
+    "autonomy_level_explanation": "The role can 'help shape what comes next' but the bullets are design-and-deliver and 'contribute to' work, so mixed.",
+    "ai_role": "Explore opportunities to leverage AI and automation to improve engineering practices and delivery.",
+    "ai_role_explanation": "The candidate is expected to use AI to improve their own engineering practice and delivery, so ai_user.",
+    "testing_framing": "Contribute to data quality, governance and testing standards within a regulated environment.",
+    "testing_framing_explanation": "Testing standards are a responsibility bullet with an action verb, so responsibility.",
+    "loss_aversion_framing": "within a regulated environment",
+    "loss_aversion_framing_explanation": "Regulation is mentioned once inside a delivery-focused posting, so moderate.",
+    "greenfield_vs_fix": "Develop new data solutions supporting upcoming products and business initiatives.",
+    "greenfield_vs_fix_explanation": "New solutions for new initiatives sit beside 'Review and improve existing data models', so mixed.",
+    "language_gate": "Not stated in JD",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Location: Fully Remote (UK)",
+    "loss_aversion": "Contribute to data quality, governance and testing standards within a regulated environment - one regulatory mention in a delivery-led posting.",
+    "ats_keywords": [
+      "Snowflake, dbt, Coalesce, Sigma and Airflow",
+      "Coalesce.io",
+      "scalable data models",
+      "performance, efficiency, cost and maintainability",
+      "testing standards",
+      "regulated environment",
+      "window functions",
+      "cloud data warehouse",
+      "fintech",
+      "AI and automation"
+    ],
+    "ats_lookup": "resolve_ats miss; WeDo is a recruitment agency posting for an unnamed UK fintech, so there is no employer posting to find."
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "jd_id": "2026-10-30_plansee-group_analytics-engineer",
+  "company": "Plansee Group",
+  "role": "Analytics Engineer (f/m/d)",
+  "job_location": "Reutte, Tyrol, Austria",
+  "seniority": "junior",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "mixed",
+  "stakeholder_orientation": "internal_data",
+  "autonomy_level": "execution",
+  "ai_role": "none",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "moderate",
+  "greenfield_vs_fix": "fix_scale",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 3,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "hard",
+  "language_gate_languages": [
+    "German"
+  ],
+  "jd_language": "de",
+  "ai_written": {
+    "score": 46.0,
+    "spread": 43.8,
+    "measures": {
+      "marker_vocab": {
+        "raw": 9.639,
+        "score": 63.7
+      },
+      "stock_phrases": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "structure": {
+        "raw": 0.062,
+        "score": 12.5
+      },
+      "bullet_symmetry": {
+        "raw": 0.227,
+        "score": 100.0
+      },
+      "burstiness": {
+        "raw": 1.999,
+        "score": 0.0
+      },
+      "specificity": {
+        "raw": 4.096,
+        "score": 100.0
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "unknown",
+  "ats_job_id": "JR-13211",
+  "has_dbt": false,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [],
+  "preferred_tools": [
+    "SQL",
+    "Python"
+  ],
+  "responsibilities": [
+    "Enge Zusammenarbeit mit Fachexpert:innen, Geschäftsgruppen, Datenwissenschaftler:innen und Analyst:innen zur Definition von Anforderungen sowie zur Integration, Aufbereitung und Analyse relevanter Daten",
+    "Konzeption, Entwicklung und Weiterentwicklung von Datenmodellen für unterschiedliche Geschäftsprozesse und Analytics-Anwendungsfälle",
+    "Entwicklung, Rollout und Support von Analytics-, Process-Mining- und Reporting-Lösungen gemeinsam mit den Fachbereichen",
+    "Integration unterschiedlicher Datenquellen und Weiterentwicklung bestehender Datenflüsse für Analytics- und Reporting-Anwendungen",
+    "Mitarbeit bei der Konzeption und Weiterentwicklung von Datenqualitäts-, Berechtigungs- und Governance-Konzepten",
+    "Aktive Mitgestaltung der Weiterentwicklung unserer Data & Analytics Landschaft sowie Evaluierung neuer Technologien und Lösungsansätze"
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://plansee-group.com/de/karriere/jobs?detail=JR-13211&title=Analytics-Engineer-f-m-d",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4483686298/",
+  "evidence": {
+    "velocity_vs_rigour": "fachliche Anforderungen in verlässliche Datenmodelle und Analytics-Lösungen zu übersetzen...qualitativ hochwertige Datenbasis",
+    "velocity_vs_rigour_explanation": "reliability, data quality and governance (\"verlässliche Datenmodelle\", \"Datenqualitäts-, Berechtigungs- und Governance-Konzepten\") with no velocity phrases.",
+    "domain_risk": "innovativen Lösungen aus Wolfram und Molybdän für die Hightech-Welt",
+    "domain_risk_explanation": "industrial manufacturer with no financial reporting or regulatory language in the role, so moderate.",
+    "collaboration_width": "Fachexpert:innen; Datenwissenschaftler:innen; Analyst:innen",
+    "data_team_maturity": "Weiterentwicklung bestehender Datenflüsse für Analytics- und Reporting-Anwendungen",
+    "data_team_maturity_explanation": "existing data flows and a data and analytics landscape are extended, with data scientists and analysts already in place, so mid.",
+    "jd_authorship": "Entwicklung, Rollout und Support von Analytics-, Process-Mining- und Reporting-Lösungen gemeinsam mit den Fachbereichen",
+    "jd_authorship_explanation": "process mining is a specific detail, but most bullets are generic modelling and integration language with no tools named.",
+    "stakeholder_orientation": "eine qualitativ hochwertige Datenbasis für Analysen, Reporting und die Optimierung von Geschäftsprozessen",
+    "stakeholder_orientation_explanation": "the role builds a data foundation for analysts, data scientists and internal reporting consumers rather than a commercial, product or finance team.",
+    "autonomy_level": "Mitarbeit bei der Konzeption und Weiterentwicklung",
+    "autonomy_level_explanation": "an entry-level role that contributes to (\"Mitarbeit bei\") and supports solutions alongside the business departments.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "the posting does not mention AI.",
+    "testing_framing": "Mitarbeit bei der Konzeption und Weiterentwicklung von Datenqualitäts-, Berechtigungs- und Governance-Konzepten",
+    "testing_framing_explanation": "data quality concepts are a responsibility the candidate helps design.",
+    "loss_aversion_framing": "verlässliche Datenmodelle",
+    "loss_aversion_framing_explanation": "reliability and governance appear but are secondary to delivering models and reporting, so moderate.",
+    "greenfield_vs_fix": "Weiterentwicklung bestehender Datenflüsse",
+    "greenfield_vs_fix_explanation": "the dominant verb is Weiterentwicklung (further development) of existing models and flows.",
+    "language_gate": "Sichere Deutsch- und Englischkenntnisse",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "die Möglichkeit, teilweise remote zu arbeiten",
+    "loss_aversion": "Mitarbeit bei der Konzeption und Weiterentwicklung von Datenqualitäts-, Berechtigungs- und Governance-Konzepten — governance is a contributing task, not the role's framing.",
+    "ats_keywords": [
+      "Analytics Engineer",
+      "Datenmodellen",
+      "Process-Mining",
+      "Reporting-Lösungen",
+      "Datenqualitäts-, Berechtigungs- und Governance-Konzepten",
+      "Data & Analytics Landschaft",
+      "Integration unterschiedlicher Datenquellen",
+      "SQL und Python",
+      "Datenmodellierung",
+      "Wirtschafts-)Informatik"
+    ]
+  }
+}

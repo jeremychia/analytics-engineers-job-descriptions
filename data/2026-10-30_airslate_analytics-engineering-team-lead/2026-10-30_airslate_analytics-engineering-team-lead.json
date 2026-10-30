@@ -1,0 +1,150 @@
+{
+  "jd_id": "2026-10-30_airslate_analytics-engineering-team-lead",
+  "company": "airSlate",
+  "role": "Analytics Engineering Team Lead",
+  "job_location": "Poland",
+  "seniority": "lead",
+  "role_type": "team_lead",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "internal_data",
+  "autonomy_level": "strategic",
+  "ai_role": "ai_enabler",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "high",
+  "greenfield_vs_fix": "fix_scale",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 3,
+  "data_team_maturity": "mature",
+  "urgency": "standard",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "none",
+  "language_gate_languages": [],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 36.8,
+    "spread": 37.2,
+    "measures": {
+      "marker_vocab": {
+        "raw": 1.735,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 0.867,
+        "score": 17.3
+      },
+      "structure": {
+        "raw": 0.071,
+        "score": 14.3
+      },
+      "bullet_symmetry": {
+        "raw": 0.334,
+        "score": 92.4
+      },
+      "burstiness": {
+        "raw": 0.709,
+        "score": 11.7
+      },
+      "specificity": {
+        "raw": 6.331,
+        "score": 85.2
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "lever",
+  "ats_job_id": "420d3150-1983-4032-9170-14e29d8b2fc9",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": true,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": true,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": true,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": false,
+  "has_aws": true,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": true,
+  "required_tools": [
+    "SQL",
+    "Python"
+  ],
+  "preferred_tools": [
+    "dbt"
+  ],
+  "responsibilities": [
+    "Lead and grow the team. Set priorities, coach, and keep a steady delivery rhythm across analytics engineering and web analytics.",
+    "Own the semantic layer. Design, build and evolve SQL-based models and metric definitions so that one number means one thing across all our products.",
+    "Raise data curation and automate the routine. Move the team from ad hoc requests to reusable, tested, documented datasets that people and our AI data assistant can query directly, with tracking checks and data-quality monitoring on autopilot.",
+    "Set standards and partner across the data organization. Modeling conventions, version control, testing and release practices, code review; work with Data Business Partners, Data Science / ML and Data Platform on scope and ownership. Stay close to the code on critical builds."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://jobs.lever.co/airslate/420d3150-1983-4032-9170-14e29d8b2fc9",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4483649825/",
+  "evidence": {
+    "velocity_vs_rigour": "require schema and data tests and CI before release, and lead risky changes with a clear rollout and rollback plan",
+    "velocity_vs_rigour_explanation": "testing, data-quality monitoring, validation and release discipline dominate, against one \"fast-moving environment\" in the company intro.",
+    "domain_risk": "no-code workflow automation, electronic signature, and document management solutions",
+    "domain_risk_explanation": "B2B SaaS with no financial reporting or regulatory language in the role, so moderate.",
+    "collaboration_width": "Data Business Partners; Data Science / ML; Data Platform",
+    "data_team_maturity": "partner across the data organization",
+    "data_team_maturity_explanation": "the data organisation already has named sub-teams (Data Business Partners, Data Science / ML, Data Platform) with distinct charters, so mature.",
+    "jd_authorship": "handle incremental loads, deduplication and slowly changing dimensions",
+    "jd_authorship_explanation": "the posting names concrete practices (semantic layer, metric definitions, tracking checks, rollback plans) that show what the job involves.",
+    "stakeholder_orientation": "Own the semantic layer",
+    "stakeholder_orientation_explanation": "the role runs Data Enablement, serving the data organisation and its consumers through curated datasets and a semantic layer.",
+    "autonomy_level": "Set priorities, coach, and keep a steady delivery rhythm",
+    "autonomy_level_explanation": "the lead sets priorities, standards and modelling methodology for the team.",
+    "ai_role": "reusable, tested, documented datasets that people and our AI data assistant can query directly",
+    "ai_role_explanation": "the team prepares data \"ready for the business and for AI\" for an AI data assistant to query, and the lead also redesigns workflows around AI tools; both signals present, so ai_enabler.",
+    "testing_framing": "require schema and data tests and CI before release",
+    "testing_framing_explanation": "the lead sets testing and release standards and owns data-quality monitoring.",
+    "loss_aversion_framing": "You design validation that catches problems before stakeholders do",
+    "loss_aversion_framing_explanation": "the role summary frames the team around data being \"trusted\" and relied on, and validation aims to stop bad data reaching stakeholders.",
+    "greenfield_vs_fix": "Move the team from ad hoc requests to reusable, tested, documented datasets",
+    "greenfield_vs_fix_explanation": "the work evolves an existing analytics stack into curated, automated datasets.",
+    "language_gate": "communicate in fluent English",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "We value in‑person collaboration in our hubs, but we also embrace remote and hybrid working",
+    "loss_aversion": "turn raw product and event data into curated, well-documented datasets that people can rely on — trust is the team's stated purpose.",
+    "ats_keywords": [
+      "Analytics Engineering Team Lead",
+      "Data Enablement",
+      "semantic layer",
+      "metric definitions",
+      "data-quality monitoring",
+      "slowly changing dimensions",
+      "star schema, Data Vault",
+      "Athena, Redshift, Glue",
+      "Airflow",
+      "AI data assistant",
+      "web analytics",
+      "GTM, GA4"
+    ]
+  }
+}

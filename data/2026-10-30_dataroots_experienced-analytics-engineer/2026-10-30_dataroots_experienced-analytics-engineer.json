@@ -1,0 +1,152 @@
+{
+  "jd_id": "2026-10-30_dataroots_experienced-analytics-engineer",
+  "company": "dataroots, a Talan company",
+  "role": "Experienced Analytics Engineer",
+  "job_location": "Brussels Region, Belgium (offices in Leuven and Ghent)",
+  "seniority": "mid",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "internal_data",
+  "autonomy_level": "mixed",
+  "ai_role": "none",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "none",
+  "greenfield_vs_fix": "greenfield",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 3,
+  "data_team_maturity": "early",
+  "urgency": "standard",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "soft",
+  "language_gate_languages": [
+    "Dutch",
+    "French"
+  ],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 38.5,
+    "spread": 36.1,
+    "measures": {
+      "marker_vocab": {
+        "raw": 1.748,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 3.497,
+        "score": 69.9
+      },
+      "structure": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.507,
+        "score": 54.0
+      },
+      "burstiness": {
+        "raw": 0.703,
+        "score": 13.4
+      },
+      "specificity": {
+        "raw": 5.594,
+        "score": 93.4
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "linkedin",
+  "ats_job_id": "4314113394",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": true,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "dbt",
+    "SQL"
+  ],
+  "preferred_tools": [
+    "Python"
+  ],
+  "responsibilities": [
+    "Wrangle and model data so the users of your datasets get the insights they need",
+    "Understand the business side of data, discuss the data and its origins, and implement a maintainable technical solution",
+    "Keep clear documentation, detailed lineage and passing automated data tests",
+    "Collaborate with data engineers and data analysts to help customers gain insights from their data",
+    "Build the right data model with customers and advise them on starting analytics engineering in their data teams"
+  ],
+  "responsibilities_source": "inferred_from_prose",
+  "source_url": "https://www.linkedin.com/jobs/view/4314113394/",
+  "evidence": {
+    "velocity_vs_rigour": "Clear documentation and detailed lineage are as vital to you as seeing all the green check marks in your automated data tests.",
+    "velocity_vs_rigour_explanation": "testing, documentation, lineage and a \"quality-first focus\" with no velocity phrases.",
+    "domain_risk": "help our customers gain insights from their data",
+    "domain_risk_explanation": "consulting work for varied clients with no financial reporting or regulatory language, so errors affect business decisions only.",
+    "collaboration_width": "data engineers; data analysts; customers",
+    "data_team_maturity": "comfortable building a new dbt project from scratch",
+    "data_team_maturity_explanation": "the consultant builds dbt projects from scratch and advises customers \"how they can start with analytics engineering\", so client data teams are early.",
+    "jd_authorship": "as vital to you as seeing all the green check marks in your automated data tests",
+    "jd_authorship_explanation": "there is no responsibilities list; the practitioner-written prose (lineage, automated tests, CI/CD steps) shows what the work involves.",
+    "stakeholder_orientation": "empower the users of your datasets to gain the insights they are looking for",
+    "stakeholder_orientation_explanation": "the audience is the data users and analysts who consume the models.",
+    "autonomy_level": "advise our customers on how they can start with analytics engineering",
+    "autonomy_level_explanation": "the consultant advises clients and chooses data models, while delivering modelling work for them.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "AI appears only in the company description (\"data and AI professionals\").",
+    "testing_framing": "seeing all the green check marks in your automated data tests",
+    "testing_framing_explanation": "automated data tests are framed as part of the candidate's own work standard, not just a listed tool.",
+    "loss_aversion_framing": "No loss aversion framing.",
+    "loss_aversion_framing_explanation": "the posting is framed around quality craft and delivery, with no risk register.",
+    "greenfield_vs_fix": "building a new dbt project from scratch",
+    "greenfield_vs_fix_explanation": "the consultant builds new dbt projects and helps clients start the practice; related to 2026-09-05_dataroots_analytics-engineer, a different (junior) dataroots posting.",
+    "language_gate": "You speak fluent English and ideally also Dutch. A tad of French is an added benefit.",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "much work can be performed remotely, but you will most likely also visit our clients on-site",
+    "loss_aversion": "No loss aversion framing detected.",
+    "ats_keywords": [
+      "Analytics Engineer",
+      "dbt",
+      "new dbt project from scratch",
+      "automated data tests",
+      "detailed lineage",
+      "CI/CD",
+      "Git, pull requests, and code reviews",
+      "data modelling styles",
+      "cloud) data warehouses",
+      "SQL"
+    ],
+    "ats_lookup": "resolve_ats miss; dataroots uses Recruitee (careers.dataroots.io); its offers API lists only senior-analytics-engineer, whose text does not match, and /o/experienced-analytics-engineer returns 404, so the posting is no longer on the employer board"
+  }
+}
