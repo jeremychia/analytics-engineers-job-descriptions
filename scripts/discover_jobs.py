@@ -10,8 +10,11 @@ whose company and title match an existing record are queued with a
 `possible_repost_of` note, because a re-posted listing has a new URL that the
 URL-based duplicate check cannot catch.
 
-Requests are spaced 2-4 seconds apart, and a search stops at the first rate-limit
-or block response (HTTP 429 or 999) instead of retrying.
+Requests are spaced 2-4 seconds apart, and a sweep stops at the first rate-limit
+or block response (HTTP 429, 999 or a dropped connection) instead of retrying.
+A sweep makes at most `requests_per_sweep` requests. discovery/sweep_state.json
+keeps the page each region stopped on, so the next sweep carries on from there,
+starting with the region swept least recently.
 
 Usage:
     python3 scripts/discover_jobs.py search [--regions france,germany] [--days 4] [--max-pages 3]
@@ -40,6 +43,7 @@ DISCOVERY_DIR = ROOT / "discovery"
 CONFIG_PATH = DISCOVERY_DIR / "search_config.json"
 QUEUE_PATH = DISCOVERY_DIR / "queue.json"
 SEEN_PATH = DISCOVERY_DIR / "seen.json"
+STATE_PATH = DISCOVERY_DIR / "sweep_state.json"
 
 SEARCH_URL = "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search"
 VIEW_URL = "https://www.linkedin.com/jobs/view/{}/"
@@ -113,7 +117,7 @@ def fetch(params):
             return resp.status, resp.read().decode("utf-8", errors="replace")
     except urllib.error.HTTPError as e:
         return e.code, ""
-    except urllib.error.URLError:
+    except (urllib.error.URLError, ConnectionError, TimeoutError):
         return 0, ""
 
 
@@ -137,25 +141,29 @@ def parse_cards(body):
     return cards
 
 
-def search_region(region, keyword, days, max_pages):
-    """All cards for one region x keyword, plus the reason the search stopped."""
+def search_region(region, keyword, days, first_page, max_pages):
+    """Cards for one region x keyword from first_page on, why the search stopped, the page to resume from
+    next sweep, and the number of requests made."""
     params = {"keywords": keyword, "geoId": region["geo_id"], "f_TPR": f"r{days * 86400}"}
     if region.get("distance_miles"):
         params["distance"] = region["distance_miles"]
     cards = []
-    for page in range(max_pages):
+    for page in range(first_page, first_page + max_pages):
         params["start"] = page * PAGE_SIZE
         status, body = fetch(params)
         time.sleep(random.uniform(2, 4))
-        if status in (429, 999):
-            return cards, f"blocked (HTTP {status}) on page {page + 1}"
+        used = page - first_page + 1
+        # a dropped connection is how LinkedIn throttles as often as a 429
+        if status in (0, 429, 999):
+            reason = "connection dropped" if status == 0 else f"HTTP {status}"
+            return cards, f"blocked ({reason}) on page {page + 1}", page, used
         if status != 200:
-            return cards, f"HTTP {status} on page {page + 1}"
+            return cards, f"HTTP {status} on page {page + 1}", 0, used
         page_cards = parse_cards(body)
         if not page_cards:
-            return cards, f"end of results after {page} page(s)"
+            return cards, f"end of results after {page} page(s)", 0, used
         cards += page_cards
-    return cards, f"page limit ({max_pages}) reached"
+    return cards, f"paused after page {first_page + max_pages}", first_page + max_pages, max_pages
 
 
 def corpus_linkedin_ids(corpus):
@@ -178,12 +186,18 @@ def cmd_search(args):
     regions = cfg["regions"]
     if args.regions:
         wanted = set(args.regions.split(","))
-        regions = [r for r in regions if r["name"] in wanted]
+        regions = [r for r in cfg["regions"] + cfg.get("country_regions", []) if r["name"] in wanted]
         if not regions:
             sys.exit(f"no configured region matches {args.regions}")
     days = args.days or cfg.get("time_window_days", 7)
     max_pages = args.max_pages or cfg.get("max_pages_per_search", 5)
+    budget = cfg.get("requests_per_sweep", 12)
     include = re.compile(cfg["title_include"], re.I)
+
+    state = load_json(STATE_PATH, {})
+    # least recently swept first, so a sweep cut short by the budget or a block resumes elsewhere next time
+    searches = sorted(((r, kw) for r in regions for kw in cfg["keywords"]),
+                      key=lambda s: state.get(f"{s[0]['name']}|{s[1]}", {}).get("swept_at", ""))
 
     corpus = load_corpus()
     li_ids = corpus_linkedin_ids(corpus)
@@ -193,23 +207,27 @@ def cmd_search(args):
 
     today = dt.date.today().isoformat()
     found, added, counts = {}, [], {"off_title": 0, "in_corpus": 0, "known": 0}
-    blocked = False
-    for region in regions:
-        for kw in cfg["keywords"]:
-            cards, stop = search_region(region, kw, days, max_pages)
-            print(f"{region['name']:10s} {kw:30s} {len(cards):3d} cards  ({stop})")
-            for c in cards:
-                c.setdefault("region", region["name"])
-                found.setdefault(c["job_id"], c)
-            # once LinkedIn rate-limits, every further request extends the block
-            blocked = stop.startswith("blocked")
-            if blocked:
-                break
-        if blocked:
-            rest = [r["name"] for r in regions[regions.index(region) + 1:]]
+    for i, (region, kw) in enumerate(searches):
+        key = f"{region['name']}|{kw}"
+        first = state.get(key, {}).get("next_page", 0)
+        cards, stop, next_page, used = search_region(region, kw, days, first, min(max_pages, budget))
+        budget -= used
+        blocked = stop.startswith("blocked")
+        state[key] = {"next_page": next_page,
+                      "swept_at": state.get(key, {}).get("swept_at", "") if blocked
+                      else dt.datetime.now().isoformat(timespec="minutes")}
+        print(f"{region['name']:12s} {kw:22s} from page {first + 1:<3d} {len(cards):3d} cards  ({stop})")
+        for c in cards:
+            c.setdefault("region", region["name"])
+            found.setdefault(c["job_id"], c)
+        # once LinkedIn rate-limits, every further request extends the block
+        if blocked or budget <= 0:
+            rest = sorted({r["name"] for r, _ in searches[i + 1:]})
             if rest:
-                print(f"stopped after the block; not swept: {','.join(rest)}")
+                why = "the block" if blocked else f"the request budget ({cfg.get('requests_per_sweep', 12)})"
+                print(f"stopped after {why}; not swept: {','.join(rest)}")
             break
+    save_json(STATE_PATH, state)
 
     for jid, c in found.items():
         url = VIEW_URL.format(jid)

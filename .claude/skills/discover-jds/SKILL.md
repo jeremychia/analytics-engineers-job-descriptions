@@ -15,9 +15,8 @@ python3 scripts/discover_jobs.py search [--regions ...] [--days N]
 
 - Pass `--regions` and `--days` through only when the user gave them. Otherwise the defaults in `discovery/search_config.json` apply.
 - Report each search line and the final counts to the user.
-- If any line says `blocked`, stop sweeping for this session. The script stops at the first block and prints the regions it skipped. Pass those with `--regions` in a later session. Do not retry, raise the page count or shorten the delay. Carry on with Step 2 using what is already queued.
-- Sweep regions that have never been swept first, with `--regions`, then the rest. A sweep of every configured region often hits LinkedIn's rate limit before the end of the list.
-- When a sweep was blocked earlier the same day, sweep in chunks of 4 regions with `--max-pages 2`, about 10 minutes apart. LinkedIn throttles after roughly 10–15 search requests in a short window, and the matching titles mostly sit on the first two pages.
+- Run one sweep per session. The script spends at most `requests_per_sweep` requests, starts with the region swept least recently, and saves the page each region stopped on in `discovery/sweep_state.json`. The next sweep carries on from there, so do not pass the skipped regions by hand.
+- If any line says `blocked`, stop sweeping for this session. A dropped connection counts as a block. Do not retry, raise the page count or shorten the delay. Carry on with Step 2 using what is already queued.
 
 ## Step 2 — Pick the batch
 
@@ -68,9 +67,8 @@ Print: postings found, queued, classified, duplicates, failures, and how many re
 
 - Add or change a region in `discovery/search_config.json`. Take the `geoId` from the region's LinkedIn search URL, and add `distance_miles` for a city.
 - Check a new `geoId` before relying on it. Fetch one results page and confirm the cards' locations are in that country.
-- Europe is searched country by country: every EU member, plus Norway and Switzerland. The broad `emea` search stops at its page limit, so it only catches what the country searches miss.
-  - EU: austria, belgium, bulgaria, croatia, cyprus, czechia, denmark, estonia, finland, france, germany, greece, hungary, ireland, italy, latvia, lithuania, luxembourg, malta, netherlands, poland, portugal, romania, slovakia, slovenia, spain, sweden.
-  - Outside the EU: norway, switzerland, uk, apac, nyc_metro, seattle, and the `emea` catch-all.
+- The default sweep covers seven regions: `eu` (all 27 members), uk, norway, switzerland, apac, nyc_metro and seattle. LinkedIn throttles after roughly 10–15 search requests in a short window, so a broad region takes several sweeps to page through.
+- `country_regions` keeps one search per EU country, plus singapore and the `emea` catch-all. Use them only with `--regions`, for a catch-up sweep of one country.
 - A region's name only scopes the search. A record's `geo_region` comes from its `job_location`, through `scripts/geo_classify.py`.
 - The `seattle` region has no `geo_region` bucket in `scripts/geo_classify.py`, so its records compile into `other`.
 - The search uses LinkedIn's logged-out job search. Keep to the configured regions, keywords and page limits.
