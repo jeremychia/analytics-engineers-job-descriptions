@@ -7,6 +7,7 @@ function buildBenefits(stage, v2 = false) {
   const L = 178, T = 34, cw = 88, rh = 33, PY = T + tags.length * rh + 14, PH = 62, CAP = PY + 34, CAP2 = PY + PH + 36;
   const stops = [[0, '#fbeee9'], [15, '#f5d0c8'], [35, '#ea5b4d'], [60, '#5b2a4a']];
   const svg = s('svg', { viewBox: `0 0 ${W} ${H}`, class: 'chart' }, stage), key = (t, r) => t + '|' + r;
+  s('text', { x: L - 12, y: 24, 'text-anchor': 'end', text: '% of ads', style: { fontSize: '15px', fontWeight: 700, fill: C.ink2 } }, svg);
   regs.forEach((r, ci) => s('text', { x: L + ci * cw + cw / 2, y: 24, 'text-anchor': 'middle', text: short(r), style: { fontSize: '16px', fontWeight: 700, fill: C.ink } }, svg));
   const rowLab = tags.map((t, ri) => s('text', { x: L - 12, y: T + ri * rh + 22, 'text-anchor': 'end', text: label[t] || t,
     style: { fontSize: '16px', fontWeight: 500, fill: C.ink2, transition: 'fill .4s' } }, svg));
@@ -52,7 +53,7 @@ function buildBenefits(stage, v2 = false) {
     const tx = s('text', { x, y, style: { fontSize: '21px', fontWeight: 500, fill: C.ink } }, g);
     words.forEach(([w, hi]) => s('tspan', { text: w, style: hi ? { fill: C.coral, fontWeight: 700 } : {} }, tx)); return g; };
   const caps = {
-    norm: caption(CAP, [['the norm: what ads in each region list']]),
+    norm: caption(CAP, [['the norm: % of ads in each region that list each benefit']]),
     differ: caption(CAP, [['the norm differs: '], [`${SUM.differ_q01} of ${SUM.tags} benefits`, 1], [' vary by region']], 'conclusive'),
     law: caption(CAP, [['a pale cell ≠ not offered: '], ['the law may already give it', 1]], 'untested'),
     lever: caption(CAP, [['your lever: what your region’s ads list '], ['more than elsewhere', 1]]),
