@@ -1,0 +1,153 @@
+{
+  "jd_id": "2026-10-30_finom_senior-analytics-engineer-finance-data",
+  "company": "Finom",
+  "role": "Senior Analytics Engineer (Finance Data)",
+  "job_location": "Barcelona; Amsterdam; Cyprus; Berlin; United Kingdom",
+  "seniority": "senior",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": 63500,
+  "salary_max": null,
+  "salary_currency": "EUR",
+  "salary_period": "annual",
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "finance",
+  "autonomy_level": "strategic",
+  "ai_role": "ai_enabler",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "high",
+  "greenfield_vs_fix": "mixed",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "high",
+  "collaboration_width": 4,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "not_stated",
+  "language_gate_type": "none",
+  "language_gate_languages": [],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 31.7,
+    "spread": 29.4,
+    "measures": {
+      "marker_vocab": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "structure": {
+        "raw": 0.048,
+        "score": 9.5
+      },
+      "bullet_symmetry": {
+        "raw": 0.449,
+        "score": 66.9
+      },
+      "burstiness": {
+        "raw": 0.581,
+        "score": 48.2
+      },
+      "specificity": {
+        "raw": 8.082,
+        "score": 65.8
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "lever",
+  "ats_job_id": "9582819b-3654-4de7-9d49-fb5550a3b3f5",
+  "has_dbt": false,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": false,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": true,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": true,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL"
+  ],
+  "preferred_tools": [
+    "Databricks"
+  ],
+  "responsibilities": [
+    "Partner with the Treasury, Reconciliation and Accounting teams on their processes, priorities and how data supports them.",
+    "Build out treasury data: positions, cash flows and liquidity, as trusted data products the team can rely on day to day.",
+    "Build and scale reconciliation, so that matching, breaks and exceptions are handled systematically rather than by hand.",
+    "Support Accounting with the data, checks and integrations behind their close and day-to-day work.",
+    "Support our corporate finance data partner on corporate finance and investor reporting, working from one shared model and set of definitions.",
+    "Design and evolve the Finance data model, entities and metrics, with tests, lineage and documentation, so the team can reuse and extend them.",
+    "Set data standards and quality checks for Finance data, and build integrations with the systems Finance uses.",
+    "Bring automation and agents into Finance workflows where they remove recurring manual work.",
+    "Look at how Finance processes run today, identify what can work better and connect each piece of data work to its business cost and value."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://jobs.eu.lever.co/pnlfin/9582819b-3654-4de7-9d49-fb5550a3b3f5",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4485328479/",
+  "evidence": {
+    "velocity_vs_rigour": "You choose precision over speed when the two conflict.",
+    "velocity_vs_rigour_explanation": "Trusted data products, tests, lineage, quality checks and 'precision over speed' outweigh the single 'growing fast', so rigour.",
+    "domain_risk": "corporate finance and investor reporting",
+    "domain_risk_explanation": "The role builds treasury, reconciliation, accounting close and investor reporting data at a fintech, so high.",
+    "collaboration_width": "Treasury; Reconciliation; Accounting; corporate finance",
+    "data_team_maturity": "We're a small central team that works with every function",
+    "data_team_maturity_explanation": "A small central data team with an existing finance data partner, scaling the finance model, so mid.",
+    "jd_authorship": "Build out treasury data: positions, cash flows and liquidity",
+    "jd_authorship_explanation": "Bullets name the finance domains and concrete data (positions, cash flows, breaks and exceptions, close), so hiring_manager.",
+    "stakeholder_orientation": "you'll be the data partner for treasury, reconciliation and accounting",
+    "stakeholder_orientation_explanation": "The audience is the Finance function: treasury, reconciliation, accounting and investor reporting, so finance.",
+    "autonomy_level": "Set data standards and quality checks for Finance data",
+    "autonomy_level_explanation": "High autonomy over tools and approach, setting standards and later owning the finance data roadmap, so strategic.",
+    "ai_role": "Bring automation and agents into Finance workflows",
+    "ai_role_explanation": "The candidate builds agents and automation on top of the finance data model, so ai_enabler.",
+    "testing_framing": "Set data standards and quality checks for Finance data",
+    "testing_framing_explanation": "Quality checks, tests and lineage are owned responsibilities, so responsibility.",
+    "loss_aversion_framing": "anything that feeds high-stakes decisions",
+    "loss_aversion_framing_explanation": "Trusted finance data, sign-off for high-stakes outputs and precision over speed frame the role around the risk of wrong numbers, so high.",
+    "greenfield_vs_fix": "Design and evolve the Finance data model",
+    "greenfield_vs_fix_explanation": "The role builds out new treasury and reconciliation data while evolving an existing model, so mixed.",
+    "language_gate": "We work in English",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Not stated in JD.",
+    "loss_aversion": "Sign-off is needed in two cases. ... The second is anything that feeds high-stakes decisions.",
+    "ats_keywords": [
+      "treasury",
+      "reconciliation",
+      "accounting",
+      "investor reporting",
+      "Finance data model",
+      "lineage and documentation",
+      "quality checks",
+      "Unity Catalog",
+      "dimensional or semantic data modelling",
+      "FP&A",
+      "agents"
+    ]
+  }
+}

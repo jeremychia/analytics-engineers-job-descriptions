@@ -1,0 +1,163 @@
+{
+  "jd_id": "2026-10-30_rabot-energy_analytics-engineer",
+  "company": "Rabot Energy",
+  "role": "Analytics Engineer (m/w/d)",
+  "job_location": "Berlin, Berlin, Germany",
+  "seniority": "junior",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "internal_data",
+  "autonomy_level": "execution",
+  "ai_role": "ai_user",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "none",
+  "greenfield_vs_fix": "mixed",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 2,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "not_stated",
+  "language_gate_type": "soft",
+  "language_gate_languages": [
+    "German"
+  ],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 48.0,
+    "spread": 35.7,
+    "measures": {
+      "marker_vocab": {
+        "raw": 1.34,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "structure": {
+        "raw": 0.435,
+        "score": 87.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.384,
+        "score": 81.3
+      },
+      "burstiness": {
+        "raw": 0.515,
+        "score": 67.1
+      },
+      "specificity": {
+        "raw": 9.249,
+        "score": 52.8
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "unknown",
+  "ats_job_id": "538e18d3-1724-4ad8-b688-7d4866e58890",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": true,
+  "has_dagster": true,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": true,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": true,
+  "has_tableau": false,
+  "has_power_bi": true,
+  "has_metabase": true,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": true,
+  "required_tools": [
+    "SQL"
+  ],
+  "preferred_tools": [
+    "dbt",
+    "Python",
+    "BigQuery",
+    "Dagster",
+    "Airflow",
+    "Metabase",
+    "Looker",
+    "Power BI"
+  ],
+  "responsibilities": [
+    "You know the dbt project, the new model structure and the most important source systems, and you work confidently with Claude Code and the skills in the repo.",
+    "Your first models are running in production, via branch, review and test, with documentation.",
+    "You can trace a core metric (for example revenue or active contracts) from the source all the way to the report.",
+    "You implement model tickets in dbt independently, from requirement to release, with tests and documentation as part of \"done\".",
+    "You build metrics in the semantic layer (MetricFlow) and move Metabase questions onto certified models.",
+    "You give and receive reviews, learning from the senior Analytics Engineer and your peers.",
+    "You own a business domain in the model (for example Product or Marketing) and are the point of contact for those teams.",
+    "The business teams answer recurring questions on these models themselves, without a ticket.",
+    "At mid level, you define metrics together with the business teams and contribute improvements to our standards."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://ats.rippling.com/rabot-energy/jobs/538e18d3-1724-4ad8-b688-7d4866e58890",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4485384531/",
+  "evidence": {
+    "velocity_vs_rigour": "with tests and documentation as part of \"done\"",
+    "velocity_vs_rigour_explanation": "Tests, reviews, documentation and certified models recur throughout; 'take on real responsibility fast' is the only speed phrase.",
+    "domain_risk": "You can trace a core metric (for example revenue or active contracts) from the source all the way to the report.",
+    "domain_risk_explanation": "An energy retailer's internal analytics on revenue and contracts, with no regulatory, compliance or financial reporting language.",
+    "collaboration_width": "Product; Marketing",
+    "data_team_maturity": "We are growing our Analytics Engineering team, and this is a great moment to join early.",
+    "data_team_maturity_explanation": "An existing analytics engineering team with a dbt project, semantic layer and senior engineer is growing, which is a mid-stage function.",
+    "jd_authorship": "You build metrics in the semantic layer (MetricFlow) and move Metabase questions onto certified models.",
+    "jd_authorship_explanation": "Outcomes name the tools (dbt, MetricFlow, Metabase, Claude Code), the workflow and the timeline, so the day-to-day work is clear.",
+    "stakeholder_orientation": "The business teams answer recurring questions on these models themselves, without a ticket.",
+    "stakeholder_orientation_explanation": "The goal is a certified self-serve modelling layer that business teams query themselves.",
+    "autonomy_level": "You start by shipping your first models and grow into owning a business domain over time.",
+    "autonomy_level_explanation": "The role implements model tickets and learns from a senior engineer, with domain ownership as a 12-month growth goal.",
+    "ai_role": "Claude Code is a core part of how you work, with skills and agents already set up in our repo.",
+    "ai_role_explanation": "The candidate is expected to use AI coding tools such as Claude Code, Cursor or Copilot in their daily modelling work.",
+    "testing_framing": "You implement model tickets in dbt independently, from requirement to release, with tests and documentation as part of \"done\".",
+    "testing_framing_explanation": "Writing tests is part of the candidate's own definition of done.",
+    "loss_aversion_framing": "No loss aversion framing.",
+    "loss_aversion_framing_explanation": "The posting is framed around growth and delivery ('We celebrate mistakes as long as we learn from them'), with no risk or compliance register.",
+    "greenfield_vs_fix": "move Metabase questions onto certified models",
+    "greenfield_vs_fix_explanation": "The role builds new models and metrics while migrating existing Metabase questions onto the new model structure.",
+    "language_gate": "experience in a growing startup, and German.",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Not stated in JD.",
+    "loss_aversion": "No loss aversion framing detected.",
+    "ats_keywords": [
+      "dbt",
+      "BigQuery",
+      "dimensional modelling",
+      "semantic layer",
+      "MetricFlow",
+      "Metabase",
+      "Claude Code",
+      "Dagster",
+      "dlt",
+      "window functions",
+      "certified models",
+      "AI coding tools"
+    ]
+  }
+}

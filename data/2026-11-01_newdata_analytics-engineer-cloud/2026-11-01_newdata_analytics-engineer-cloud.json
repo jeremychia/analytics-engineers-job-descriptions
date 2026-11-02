@@ -1,0 +1,152 @@
+{
+  "jd_id": "2026-11-01_newdata_analytics-engineer-cloud",
+  "company": "NewData",
+  "role": "Analytics Engineer | Cloud",
+  "job_location": "Rotterdam, South Holland, Netherlands",
+  "seniority": "mid",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "mixed",
+  "stakeholder_orientation": "internal_data",
+  "autonomy_level": "execution",
+  "ai_role": "none",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "moderate",
+  "greenfield_vs_fix": "mixed",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 0,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "hard",
+  "language_gate_languages": [
+    "Dutch"
+  ],
+  "jd_language": "nl",
+  "ai_written": {
+    "score": 29.2,
+    "spread": 39.0,
+    "measures": {
+      "marker_vocab": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "structure": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.7,
+        "score": 11.0
+      },
+      "burstiness": {
+        "raw": 0.526,
+        "score": 64.1
+      },
+      "specificity": {
+        "raw": 1.919,
+        "score": 100.0
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "linkedin",
+  "ats_job_id": "4481207233",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": false,
+  "has_sql": false,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": true,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": true,
+  "has_aws": true,
+  "has_azure": true,
+  "has_gcp": true,
+  "has_semantic_layer": false,
+  "required_tools": [],
+  "preferred_tools": [
+    "dbt",
+    "Terraform"
+  ],
+  "responsibilities": [
+    "Het ontwerpen en bouwen van conceptuele, logische en fysieke datamodellen.",
+    "Het transformeren van ruwe data naar betrouwbare datasets voor analytics, reporting en andere toepassingen.",
+    "Het ontwikkelen en onderhouden van data pipelines.",
+    "Het vertalen van business requirements naar technische oplossingen.",
+    "Het optimaliseren van dataoplossingen op performance, schaalbaarheid en kosten.",
+    "Testing, versiebeheer en CI/CD.",
+    "Het samenwerken met zowel technische als niet-technische stakeholders.",
+    "Het documenteren van modellen, datasets en technische keuzes."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://www.linkedin.com/jobs/view/4481207233/",
+  "evidence": {
+    "velocity_vs_rigour": "hoe pipelines betrouwbaar blijven",
+    "velocity_vs_rigour_explanation": "Reliable pipelines and datasets, testing and documentation recur, with no velocity phrases.",
+    "domain_risk": "Voor een gespecialiseerde data- en cloudorganisatie in Rotterdam",
+    "domain_risk_explanation": "A data and cloud consultancy building solutions for various clients, with no financial or regulatory language.",
+    "collaboration_width": "No named partner teams.",
+    "data_team_maturity": "Je komt terecht in een technisch sterke omgeving",
+    "data_team_maturity_explanation": "An established technical consultancy whose engineers already build pipelines for clients, which fits a working, growing function.",
+    "jd_authorship": "Het ontwerpen en bouwen van conceptuele, logische en fysieke datamodellen.",
+    "jd_authorship_explanation": "A few bullets are precise about modelling levels, while most are generic ('Testing, versiebeheer en CI/CD', 'Het vertalen van business requirements').",
+    "stakeholder_orientation": "betrouwbare datasets voor analytics, reporting en andere toepassingen",
+    "stakeholder_orientation_explanation": "The output is reliable datasets for analytics and reporting consumers, served through the modelling layer.",
+    "autonomy_level": "Je krijgt veel verantwoordelijkheid over je eigen werk",
+    "autonomy_level_explanation": "The candidate owns their own delivery on client projects but sets no direction or strategy.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "The posting expects no AI skill of the candidate.",
+    "testing_framing": "Testing, versiebeheer en CI/CD.",
+    "testing_framing_explanation": "Testing is listed among the work the candidate does, not only as a known tool.",
+    "loss_aversion_framing": "hoe pipelines betrouwbaar blijven",
+    "loss_aversion_framing_explanation": "Pipeline reliability is a concern but secondary to building client solutions.",
+    "greenfield_vs_fix": "Het ontwikkelen en onderhouden van data pipelines.",
+    "greenfield_vs_fix_explanation": "The work spans building new models, maintaining pipelines and optimising existing solutions.",
+    "language_gate": "Je spreekt Nederlands op minimaal C1-niveau en kunt goed uit de voeten in het Engels.",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Tijdens het eerste jaar werk je vijf dagen per week vanuit kantoor. Daarna is hybride werken mogelijk.",
+    "loss_aversion": "Je denkt na over hoe data goed wordt gestructureerd, hoe pipelines betrouwbaar blijven en hoe oplossingen op een nette en schaalbare manier naar productie gaan.",
+    "ats_keywords": [
+      "conceptuele, logische en fysieke datamodellen",
+      "data pipelines",
+      "Testing, versiebeheer en CI/CD",
+      "dbt",
+      "Terraform",
+      "Google Cloud Platform",
+      "AWS, Azure of GCP",
+      "objectgeoriënteerde programmeertaal",
+      "data modelling",
+      "C1-niveau"
+    ],
+    "ats_lookup": "resolve_ats not applicable; newdata is a recruiter posting for an unnamed rotterdam data and cloud organisation; newdata.nl/vacatures lists a medior-analytics-engineer page but its text does not match this posting"
+  }
+}

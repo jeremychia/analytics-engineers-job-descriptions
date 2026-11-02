@@ -1,0 +1,153 @@
+{
+  "jd_id": "2026-11-02_atlas-copco-group_business-intelligence-developer",
+  "company": "Atlas Copco Group",
+  "role": "Business Intelligence Developer",
+  "job_location": "Lutín, Olomouc, Czechia",
+  "seniority": "mid",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "mixed",
+  "autonomy_level": "mixed",
+  "ai_role": "none",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "moderate",
+  "greenfield_vs_fix": "greenfield",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "high",
+  "collaboration_width": 1,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "none",
+  "language_gate_languages": [],
+  "jd_language": "nl",
+  "ai_written": {
+    "score": 48.3,
+    "spread": 48.4,
+    "measures": {
+      "marker_vocab": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "structure": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.346,
+        "score": 89.7
+      },
+      "burstiness": {
+        "raw": 0.382,
+        "score": 100.0
+      },
+      "specificity": {
+        "raw": 4.835,
+        "score": 100.0
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "unknown",
+  "ats_job_id": "1449824733",
+  "has_dbt": false,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": false,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": true,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": true,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "Power BI"
+  ],
+  "preferred_tools": [
+    "SQL"
+  ],
+  "responsibilities": [
+    "Aktivně hledat problémy, souvislosti a příležitosti ve finančních, výrobních a dalších interních datech a navrhovat, jak je pomocí dat řešit.",
+    "Vytvářet nová BI řešení od identifikace potřeby až po jejich zavedení do praxe a následné využívání interními zákazníky.",
+    "Navrhovat a vyvíjet dashboardy, analytické nástroje a self-service reporting v prostředí Power BI.",
+    "Spolupracovat s managementem a dalšími stakeholdery na pochopení jejich potřeb a převádět je do konkrétních datových a analytických řešení.",
+    "Prezentovat vytvořená řešení uživatelům, školit je a pomáhat jim využívat data při řízení a rozhodování.",
+    "Zajišťovat kvalitu, konzistenci a správnost dat, na kterých jsou reporting a analýzy postavené.",
+    "Připravovat pravidelné i ad hoc analýzy a vyhledávat trendy, odchylky a jejich příčiny.",
+    "Podporovat finanční reporting a měsíční účetní závěrky.",
+    "Přicházet s dalšími možnostmi digitalizace, automatizace a zefektivnění procesů.",
+    "Budeš také u zrodu nového MES a pomůžeš nastavit, jak budou výrobní data podporovat rozhodování ve firmě."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://www.jobs.atlascopcogroup.com/job/Lut%C3%ADn-Business-Intelligence-Developer-Othe/1449824733/",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4481109135/",
+  "evidence": {
+    "velocity_vs_rigour": "Zajišťovat kvalitu, konzistenci a správnost dat, na kterých jsou reporting a analýzy postavené.",
+    "velocity_vs_rigour_explanation": "Rigour: ensuring data quality, consistency and correctness is a named duty, and there is no speed language.",
+    "domain_risk": "Podporovat finanční reporting a měsíční účetní závěrky.",
+    "domain_risk_explanation": "High: the role supports financial reporting and the monthly accounting close.",
+    "collaboration_width": "managementem",
+    "data_team_maturity": "Navrhovat a vyvíjet dashboardy, analytické nástroje a self-service reporting v prostředí Power BI.",
+    "data_team_maturity_explanation": "Mid: Power BI is already in use in the responsibilities, while a new MES (manufacturing execution system) is still being set up.",
+    "jd_authorship": "Budeš také u zrodu nového MES a pomůžeš nastavit, jak budou výrobní data podporovat rozhodování ve firmě.",
+    "jd_authorship_explanation": "Hiring manager: the bullets name the plant's financial close, a new MES and Power BI self-service reporting, so the daily work is clear.",
+    "stakeholder_orientation": "ve finančních, výrobních a dalších interních datech",
+    "stakeholder_orientation_explanation": "Mixed: the work serves finance (reporting, monthly close) and manufacturing (production data, MES) in roughly equal measure.",
+    "autonomy_level": "Aktivně hledat problémy, souvislosti a příležitosti",
+    "autonomy_level_explanation": "Mixed: the role proposes and owns new BI solutions end to end, while also supporting finance reporting and ad hoc analyses.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "The posting does not mention AI.",
+    "testing_framing": "Zajišťovat kvalitu, konzistenci a správnost dat",
+    "testing_framing_explanation": "Responsibility: data quality and correctness is framed as the candidate's own duty.",
+    "loss_aversion_framing": "Zajišťovat kvalitu, konzistenci a správnost dat",
+    "loss_aversion_framing_explanation": "Moderate: data correctness is one duty among many; the framing is about impact and new solutions rather than risk.",
+    "greenfield_vs_fix": "Vytvářet nová BI řešení od identifikace potřeby až po jejich zavedení do praxe",
+    "greenfield_vs_fix_explanation": "Greenfield: the bullets centre on creating new BI solutions and helping launch a new MES.",
+    "language_gate": "Domluvíš se plynule anglicky.",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Tato role nabízí hybridní způsob práce",
+    "loss_aversion": "Zajišťovat kvalitu, konzistenci a správnost dat, na kterých jsou reporting a analýzy postavené. Data correctness is a duty, secondary to building new solutions.",
+    "ats_keywords": [
+      "Business Intelligence řešení",
+      "self-service reporting v prostředí Power BI",
+      "finanční reporting",
+      "měsíční účetní závěrky",
+      "nového MES",
+      "výrobní data",
+      "Znalost SQL, Azure (MS Cloud)",
+      "ad hoc analýzy",
+      "digitalizace, automatizace",
+      "controllingu"
+    ]
+  }
+}

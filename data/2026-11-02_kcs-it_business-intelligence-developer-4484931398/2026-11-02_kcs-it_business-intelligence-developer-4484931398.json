@@ -1,0 +1,143 @@
+{
+  "jd_id": "2026-11-02_kcs-it_business-intelligence-developer-4484931398",
+  "company": "KCS iT",
+  "role": "Business intelligence developer",
+  "job_location": "Lisboa, Lisbon, Portugal",
+  "seniority": "senior",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "recruiter",
+  "stakeholder_orientation": "mixed",
+  "autonomy_level": "execution",
+  "ai_role": "none",
+  "testing_framing": "absent",
+  "loss_aversion_framing": "none",
+  "greenfield_vs_fix": "mixed",
+  "velocity_vs_rigour": "mixed",
+  "domain_risk": "moderate",
+  "collaboration_width": 0,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "hard",
+  "language_gate_languages": [
+    "Portuguese"
+  ],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 32.5,
+    "spread": 35.1,
+    "measures": {
+      "marker_vocab": {
+        "raw": 1.698,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "structure": {
+        "raw": 0.4,
+        "score": 80.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.407,
+        "score": 76.2
+      },
+      "burstiness": {
+        "raw": 1.25,
+        "score": 0.0
+      },
+      "specificity": {
+        "raw": 10.526,
+        "score": 38.6
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "unknown",
+  "ats_job_id": "404900",
+  "has_dbt": false,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": false,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": true,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL",
+    "Power BI"
+  ],
+  "preferred_tools": [],
+  "responsibilities": [],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://jobpage.cvwarehouse.com/?companyGuid=488b6259-1e95-443a-aefc-c526c05b2d9a&channel=own_website&job=404900&lang=en-US",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4484931398/",
+  "evidence": {
+    "velocity_vs_rigour": "query performance optimisation",
+    "velocity_vs_rigour_explanation": "Mixed: a short skills list with no rigour or speed language, so the signals are at parity.",
+    "domain_risk": "you can work for several clients from different sectors of activity",
+    "domain_risk_explanation": "Moderate: a consultancy placement for an unnamed client, with no financial or regulatory consequence named.",
+    "collaboration_width": "No named partner teams.",
+    "data_team_maturity": "Basic knowledge of C#, as part of the business logic is developed in this language",
+    "data_team_maturity_explanation": "Mid: an existing warehouse on Dedicated SQL Pools with Tabular models and business logic in C# is implied.",
+    "jd_authorship": "Experience working with Data Warehouse environments, preferably with Dedicated SQL Pools",
+    "jd_authorship_explanation": "Recruiter: the posting has no responsibilities section, only a skills list inside consultancy boilerplate.",
+    "stakeholder_orientation": "Experience in data modelling, particularly Star Schema",
+    "stakeholder_orientation_explanation": "Mixed: no audience is named at all.",
+    "autonomy_level": "with the ability to identify when more advanced modelling approaches are required",
+    "autonomy_level_explanation": "Execution: a consultant placed with a client, with judgement asked only on modelling choices.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "The posting does not mention AI.",
+    "testing_framing": "No testing or data quality signal.",
+    "testing_framing_explanation": "No testing or data quality practice is named.",
+    "loss_aversion_framing": "No loss aversion framing.",
+    "loss_aversion_framing_explanation": "A skills list with no risk register.",
+    "greenfield_vs_fix": "Knowledge of data warehouse architecture, ETL/ELT processes, and data optimisation best practices",
+    "greenfield_vs_fix_explanation": "Mixed: no infrastructure tasks are described, so neither building nor fixing dominates.",
+    "language_gate": "Fluent in both Portuguese and English.",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Type of position: Hybrid in Lisbon.",
+    "loss_aversion": "No loss aversion framing detected.",
+    "ats_keywords": [
+      "Business intelligence developer",
+      "SQL engine behaviour",
+      "query performance optimisation",
+      "Star Schema",
+      "Dedicated SQL Pools",
+      "Power BI, DAX, and Tabular Models",
+      "SSDT (SQL Server Data Tools)",
+      "Git for version control",
+      "Basic knowledge of C#",
+      "ETL/ELT processes"
+    ]
+  }
+}

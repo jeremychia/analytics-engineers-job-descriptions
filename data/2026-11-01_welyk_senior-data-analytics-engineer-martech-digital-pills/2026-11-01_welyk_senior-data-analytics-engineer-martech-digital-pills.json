@@ -1,0 +1,154 @@
+{
+  "jd_id": "2026-11-01_welyk_senior-data-analytics-engineer-martech-digital-pills",
+  "company": "Welyk",
+  "role": "Senior Data & Analytics Engineer - Martech | Digital Pills",
+  "job_location": "Turin, Piedmont, Italy",
+  "seniority": "senior",
+  "role_type": "other",
+  "salary_min": 50000,
+  "salary_max": 60000,
+  "salary_currency": "EUR",
+  "salary_period": "annual",
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "commercial",
+  "autonomy_level": "mixed",
+  "ai_role": "none",
+  "testing_framing": "tool_listed",
+  "loss_aversion_framing": "moderate",
+  "greenfield_vs_fix": "mixed",
+  "velocity_vs_rigour": "mixed",
+  "domain_risk": "moderate",
+  "collaboration_width": 2,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "hard",
+  "language_gate_languages": [
+    "Italian"
+  ],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 12.2,
+    "spread": 19.2,
+    "measures": {
+      "marker_vocab": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "structure": {
+        "raw": 0.111,
+        "score": 22.2
+      },
+      "bullet_symmetry": {
+        "raw": 0.52,
+        "score": 51.2
+      },
+      "burstiness": {
+        "raw": 0.951,
+        "score": 0.0
+      },
+      "specificity": {
+        "raw": 16.253,
+        "score": 0.0
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "linkedin",
+  "ats_job_id": "4482480054",
+  "has_dbt": false,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": true,
+  "has_databricks": false,
+  "has_bigquery": true,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": false,
+  "has_aws": true,
+  "has_azure": true,
+  "has_gcp": true,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL"
+  ],
+  "preferred_tools": [
+    "Python"
+  ],
+  "responsibilities": [
+    "Be the technical reference of the Martech team and coordinate its community of practice, supporting and growing the two specialists already on the team",
+    "Lead the most complex analytics implementation projects for web and app environments, from design to production, with tools such as Google Tag Manager client and server side, Google Analytics 4, Adjust, Amplitude, Piwik",
+    "Stay hands-on: work directly on implementations, especially during peak periods",
+    "Follow 2-3 client projects in parallel, managing relationships with stakeholders, including senior ones: understand the problems, propose solutions and explain them effectively",
+    "Carry out audits of clients’ entire Martech infrastructures and propose architectures to improve them",
+    "Manage the project side: estimating activities, planning, allocating team members",
+    "Support client managers in pre-sales, translating business requirements into technical architectures and realistic estimates",
+    "Together with the CTO, turn recurring patterns across projects into reusable frameworks and accelerators"
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://www.linkedin.com/jobs/view/4482480054/",
+  "evidence": {
+    "velocity_vs_rigour": "Ability to validate data correctness, detect inconsistencies and reason about metric definitions and data reliability...you produce a lot without waste",
+    "velocity_vs_rigour_explanation": "Data correctness and audits sit beside a 'pragmatic approach' that values producing 'a lot without waste', so mixed.",
+    "domain_risk": "data activation and modelling for marketing optimization",
+    "domain_risk_explanation": "Marketing tracking for consulting clients with no financial or regulatory language, so moderate.",
+    "collaboration_width": "CTO; client managers",
+    "data_team_maturity": "supporting and growing the two specialists already on the team",
+    "data_team_maturity_explanation": "A small existing Martech team inside a 30-person data consultancy, so mid.",
+    "jd_authorship": "Lead the most complex analytics implementation projects for web and app environments, from design to production, with tools such as Google Tag Manager client and server side, Google Analytics 4, Adjust, Amplitude, Piwik",
+    "jd_authorship_explanation": "Bullets name the tracking stack, project load ('2-3 client projects in parallel') and tasks precisely, so hiring_manager.",
+    "stakeholder_orientation": "Support client managers in pre-sales",
+    "stakeholder_orientation_explanation": "Work serves clients' marketing tracking and pre-sales, so commercial.",
+    "autonomy_level": "Be the technical reference of the Martech team",
+    "autonomy_level_explanation": "The candidate leads the team technically and proposes architectures while staying hands-on on client implementations, so mixed.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "The company's AI practice is mentioned, but no AI skill is asked of the candidate.",
+    "testing_framing": "Ability to validate data correctness, detect inconsistencies",
+    "testing_framing_explanation": "Validation appears as a required ability, not an owned responsibility, so tool_listed.",
+    "loss_aversion_framing": "you understand why a number doesn’t add up",
+    "loss_aversion_framing_explanation": "Data correctness and reliability matter but the framing is delivery to clients, so moderate.",
+    "greenfield_vs_fix": "Carry out audits of clients’ entire Martech infrastructures and propose architectures to improve them",
+    "greenfield_vs_fix_explanation": "New implementations from design to production sit beside audits that improve existing setups, so mixed.",
+    "language_gate": "Fluent Italian (projects are largely with Italian stakeholders) and C1 English",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Way of working: hybrid, office in Turin (city centre), around 8 days per month on site",
+    "loss_aversion": "Ability to validate data correctness, detect inconsistencies and reason about metric definitions and data reliability",
+    "ats_keywords": [
+      "Google Tag Manager",
+      "Google Analytics 4",
+      "server-side tracking",
+      "Adjust",
+      "Firebase",
+      "consent management",
+      "CMPs",
+      "CDPs",
+      "BigQuery",
+      "Martech",
+      "GA4 and Adjust raw data"
+    ],
+    "ats_lookup": "resolve_ats miss for Digital Pills and Welyk; digitalpills.it/en/careers lists no open roles; welyk.com did not resolve; web search found no other posting"
+  }
+}

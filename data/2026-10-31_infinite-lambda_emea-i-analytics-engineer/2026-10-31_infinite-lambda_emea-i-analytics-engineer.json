@@ -1,0 +1,152 @@
+{
+  "jd_id": "2026-10-31_infinite-lambda_emea-i-analytics-engineer",
+  "company": "Infinite Lambda",
+  "role": "EMEA I Analytics Engineer",
+  "job_location": "Sofia, Sofia City, Bulgaria",
+  "seniority": "senior",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "mixed",
+  "stakeholder_orientation": "commercial",
+  "autonomy_level": "execution",
+  "ai_role": "none",
+  "testing_framing": "tool_listed",
+  "loss_aversion_framing": "none",
+  "greenfield_vs_fix": "greenfield",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 1,
+  "data_team_maturity": "mature",
+  "urgency": "standard",
+  "work_arrangement": "not_stated",
+  "language_gate_type": "none",
+  "language_gate_languages": [],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 46.6,
+    "spread": 23.1,
+    "measures": {
+      "marker_vocab": {
+        "raw": 8.13,
+        "score": 51.1
+      },
+      "stock_phrases": {
+        "raw": 3.252,
+        "score": 65.0
+      },
+      "structure": {
+        "raw": 0.229,
+        "score": 45.9
+      },
+      "bullet_symmetry": {
+        "raw": 0.424,
+        "score": 72.5
+      },
+      "burstiness": {
+        "raw": 0.81,
+        "score": 0.0
+      },
+      "specificity": {
+        "raw": 9.919,
+        "score": 45.3
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "ashby",
+  "ats_job_id": "29a420ae-c0f0-4386-a34c-2a2000765da4",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": false,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": true,
+  "has_databricks": true,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": true,
+  "has_tableau": true,
+  "has_power_bi": true,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL",
+    "dbt",
+    "Tableau",
+    "Power BI",
+    "Looker"
+  ],
+  "preferred_tools": [
+    "Snowflake",
+    "Databricks"
+  ],
+  "responsibilities": [
+    "At Infinite Lambda, Analytics Engineers turn vast amounts of data into insightful, easy-to-use, automated BI solutions.",
+    "This is a highly client-facing role where you will work directly with our partners’ project teams to deliver high-impact analytics and reporting that drive better business decisions.",
+    "You will leverage modern data tools with a strong focus on dbt for reliable data modeling/transformation and BI tools for analytics to build scalable, self-service solutions."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://jobs.ashbyhq.com/Infinite%20Lambda/29a420ae-c0f0-4386-a34c-2a2000765da4",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4482878708/",
+  "evidence": {
+    "velocity_vs_rigour": "a strong focus on dbt for reliable data modeling/transformation",
+    "velocity_vs_rigour_explanation": "Rigour phrases ('reliable data modeling', 'High attention to detail', 'high-quality work', 'best practices') outnumber the single 'agile' framing more than two to one.",
+    "domain_risk": "deliver high-impact analytics and reporting that drive better business decisions",
+    "domain_risk_explanation": "Errors affect client business decisions, with no financial reporting or regulatory language.",
+    "collaboration_width": "partners’ project teams",
+    "data_team_maturity": "Europe’s fastest-growing data and cloud engineering consultancy",
+    "data_team_maturity_explanation": "The employer is a specialised data consultancy with distributed teams across many countries, an established data organisation.",
+    "jd_authorship": "You will leverage modern data tools with a strong focus on dbt for reliable data modeling/transformation and BI tools for analytics to build scalable, self-service solutions.",
+    "jd_authorship_explanation": "The role prose names dbt and BI tools but stays at consultancy-brochure level with no client, scale or method detail.",
+    "stakeholder_orientation": "This is a highly client-facing role",
+    "stakeholder_orientation_explanation": "The primary audience is the consultancy's clients, a client-delivery (commercial) orientation.",
+    "autonomy_level": "deliver high-impact analytics and reporting",
+    "autonomy_level_explanation": "The role delivers analytics and reporting for client project teams rather than setting direction.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "AI appears only in the company description ('data and AI technology'); no AI skill is asked of the candidate.",
+    "testing_framing": "including data modeling, transformation, testing, documentation, and deployment",
+    "testing_framing_explanation": "Testing appears inside the dbt experience requirement without an ownership verb.",
+    "loss_aversion_framing": "No loss aversion framing.",
+    "loss_aversion_framing_explanation": "The posting is framed in delivery and client-impact terms with no risk register.",
+    "greenfield_vs_fix": "to build scalable, self-service solutions",
+    "greenfield_vs_fix_explanation": "Consultancy delivery to build new BI solutions for clients dominates over fixing existing systems.",
+    "language_gate": "Submit your CV in English in PDF.",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Not stated in JD.",
+    "loss_aversion": "No loss aversion framing detected.",
+    "ats_keywords": [
+      "Analytics Engineers",
+      "automated BI solutions",
+      "client-facing",
+      "self-service solutions",
+      "dbt",
+      "ELT processes",
+      "Version control with Git",
+      "Tableau/ Power BI / Qlik / Looker",
+      "Snowflake, Databricks",
+      "consultancy experience",
+      "stakeholder management"
+    ]
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "jd_id": "2026-11-01_protein-works_analytics-engineer",
+  "company": "Protein Works",
+  "role": "Analytics Engineer",
+  "job_location": "Liverpool, England, United Kingdom",
+  "seniority": "mid",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "internal_data",
+  "autonomy_level": "strategic",
+  "ai_role": "ai_enabler",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "high",
+  "greenfield_vs_fix": "mixed",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 5,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "none",
+  "language_gate_languages": [],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 8.0,
+    "spread": 14.4,
+    "measures": {
+      "marker_vocab": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "structure": {
+        "raw": 0.031,
+        "score": 6.2
+      },
+      "bullet_symmetry": {
+        "raw": 0.741,
+        "score": 1.9
+      },
+      "burstiness": {
+        "raw": 1.094,
+        "score": 0.0
+      },
+      "specificity": {
+        "raw": 10.419,
+        "score": 39.8
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "linkedin",
+  "ats_job_id": "4482091871",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": true,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": true,
+  "has_tableau": false,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": true,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": true,
+  "required_tools": [
+    "SQL"
+  ],
+  "preferred_tools": [
+    "BigQuery",
+    "Python"
+  ],
+  "responsibilities": [
+    "Own the transformation layer in Dataform end to end: the models, dependency graph, tests and documentation between raw BigQuery data and everything the business sees.",
+    "Build the semantic layer that gives revenue, margin, customer and order one definition, read by every report and every AI tool.",
+    "Own our Looker Studio reporting, from executive dashboards to the self-serve datasets our analysts and the wider business build on.",
+    "Shape safe, self-serve AI analytics by structuring and documenting models so AI tools answer standard questions reliably, and deciding where the boundaries sit.",
+    "Partner with marketing, trading, operations and finance to work out what they really need to measure, then turn it into models that answer it.",
+    "Drive data quality with tests and checks that catch problems before they reach a report, and agree contracts and conventions with our Data Engineer."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://www.linkedin.com/jobs/view/4482091871/",
+  "evidence": {
+    "velocity_vs_rigour": "One definition of every metric. One version of the truth.",
+    "velocity_vs_rigour_explanation": "Consistency, tests, contracts and 'an eye for cost as well as correctness' dominate; 'fast-growing brand' is the only speed phrase.",
+    "domain_risk": "revenue, margin, customer and order one definition",
+    "domain_risk_explanation": "Sports nutrition ecommerce and retail; metric definitions drive business decisions without regulatory or statutory reporting language.",
+    "collaboration_width": "marketing; trading; operations; finance; analysts",
+    "data_team_maturity": "one of two engineering roles we are hiring into the Business Intelligence team",
+    "data_team_maturity_explanation": "An existing Business Intelligence team with analysts, now adding a Data Engineer and an Analytics Engineer with split ownership.",
+    "jd_authorship": "Own the transformation layer in Dataform end to end: the models, dependency graph, tests and documentation",
+    "jd_authorship_explanation": "Bullets name the tools, the layer boundaries with the Data Engineer and the specific metrics to define.",
+    "stakeholder_orientation": "the self-serve datasets our analysts and the wider business build on",
+    "stakeholder_orientation_explanation": "The core output is the modelling and semantic layer that analysts, reports and AI tools consume across the business.",
+    "autonomy_level": "Own the transformation layer in Dataform end to end",
+    "autonomy_level_explanation": "Owns the transformation, semantic and reporting layers and decides 'where the boundaries sit' for AI analytics.",
+    "ai_role": "structuring and documenting models so AI tools answer standard questions reliably",
+    "ai_role_explanation": "The candidate builds the models and semantic layer that self-serve AI analytics tools read.",
+    "testing_framing": "Drive data quality with tests and checks that catch problems before they reach a report",
+    "testing_framing_explanation": "Data quality testing is an owned responsibility, alongside contracts agreed with the Data Engineer.",
+    "loss_aversion_framing": "Accurate, consistent numbers the business trusts",
+    "loss_aversion_framing_explanation": "Trust in the numbers frames the role from its first line ('One version of the truth') to its success measures.",
+    "greenfield_vs_fix": "Build the semantic layer",
+    "greenfield_vs_fix_explanation": "Building a new semantic layer and AI self-serve sits alongside owning existing Dataform models and Looker Studio reporting.",
+    "language_gate": "Not stated in JD",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "WFH on Fridays",
+    "loss_aversion": "Drive data quality with tests and checks that catch problems before they reach a report",
+    "ats_keywords": [
+      "Dataform",
+      "dbt",
+      "BigQuery",
+      "semantic layer",
+      "Looker Studio",
+      "self-serve AI analytics",
+      "shared metric definitions",
+      "Git and CI/CD workflow",
+      "data modelling",
+      "Google Tag Manager",
+      "vector databases",
+      "ecommerce, DTC or retail"
+    ],
+    "ats_lookup": "resolve_ats miss; theproteinworks.com/careers redirects to careers.theproteinworks.com, which serves a 404 page with no job list; web search found only aggregator copies of other Protein Works data roles"
+  }
+}

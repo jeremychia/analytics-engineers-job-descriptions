@@ -1,0 +1,154 @@
+{
+  "jd_id": "2026-10-30_med-on-mvz_analytics-engineer",
+  "company": "MED:ON MVZ",
+  "role": "Analytics Engineer (m/w/d)",
+  "job_location": "Frankfurt am Main or Erfurt, Germany",
+  "seniority": "senior",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "finance",
+  "autonomy_level": "strategic",
+  "ai_role": "ai_enabler",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "moderate",
+  "greenfield_vs_fix": "greenfield",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "high",
+  "collaboration_width": 4,
+  "data_team_maturity": "early",
+  "urgency": "urgent",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "hard",
+  "language_gate_languages": [
+    "German"
+  ],
+  "jd_language": "de",
+  "ai_written": {
+    "score": 55.2,
+    "spread": 39.4,
+    "measures": {
+      "marker_vocab": {
+        "raw": 3.373,
+        "score": 11.4
+      },
+      "stock_phrases": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "structure": {
+        "raw": 0.8,
+        "score": 100.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.425,
+        "score": 72.2
+      },
+      "burstiness": {
+        "raw": 0.583,
+        "score": 47.7
+      },
+      "specificity": {
+        "raw": 3.541,
+        "score": 100.0
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "unknown",
+  "ats_job_id": "780",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": true,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": true,
+  "required_tools": [
+    "SQL",
+    "dbt"
+  ],
+  "preferred_tools": [
+    "Airflow",
+    "Python"
+  ],
+  "responsibilities": [
+    "Ein Datenmodell für alles: Sie verbinden unsere verschiedenen Systeme und Stammdaten zu einem stimmigen Ganzen bzw. Enterprise Data Model. Das ist der Kern Ihrer Arbeit. Sie entwickeln es gemeinsam mit unseren Fachbereichen und externen Partnern",
+    "Klare Zahlen, klare Regeln: Sie legen fest, wie unsere KPIs berechnet werden, und dokumentieren das nachvollziehbar. Bei Ihnen läuft die Logik zusammen, von der Datenaufbereitung (aktuell dbt) bis zum Semantic Layer",
+    "Zahlen verständlich machen: Sie prüfen Auswertungen fachlich, gehen Abweichungen auf den Grund und moderieren Definitionen. Ergebnisse erklären Sie Controlling, Geschäftsführung und Management Team so, dass sie jede und jeder gut einordnen kann",
+    "Verlässliche Daten und gutes Reporting: Sie bauen automatisierte Checks und Monitoring auf und klären, wer für welche Datenquelle zuständig ist. Dazu entwickeln Sie Reports und Self-Service-Angebote, die im Alltag gern genutzt werden",
+    "Zusammenarbeit und Ausblick auf KI: Sie priorisieren Anforderungen in einer gemeinsamen Data-Roadmap und steuern externe Dienstleister. Wenn das Fundament steht, entwickeln Sie auf dem Semantic Layer erste KI-Anwendungen, z. B. Text-to-SQL"
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://karriere.med-on-mvz.de/Analytics-Engineer-mwd-de-j780.html",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4481443269/",
+  "evidence": {
+    "velocity_vs_rigour": "Sie bauen automatisierte Checks und Monitoring auf und klären, wer für welche Datenquelle zuständig ist",
+    "velocity_vs_rigour_explanation": "Documented KPI rules, automated checks, monitoring, source ownership and measurable data quality dominate, with no speed language.",
+    "domain_risk": "Sie verstehen Finance bzw. Controlling",
+    "domain_risk_explanation": "A regulated healthcare group (MVZ, 'KV-Abrechnung', 'Datenschutz') whose role reports KPIs to Controlling and the Geschäftsführung and shapes 'Finance-Prozesse', so errors reach financial steering.",
+    "collaboration_width": "Controlling; Geschäftsführung; Management Team; externe Dienstleister",
+    "data_team_maturity": "Wenn das Fundament steht",
+    "data_team_maturity_explanation": "The role builds the first Enterprise Data Model, KPI rules and source ownership with external providers, so the data foundation does not yet exist even though dbt is already in use.",
+    "jd_authorship": "Bei Ihnen läuft die Logik zusammen, von der Datenaufbereitung (aktuell dbt) bis zum Semantic Layer",
+    "jd_authorship_explanation": "Bullets name the current tool, the semantic layer, Text-to-SQL and the audiences, so the reader can see what the work involves.",
+    "stakeholder_orientation": "Ergebnisse erklären Sie Controlling, Geschäftsführung und Management Team",
+    "stakeholder_orientation_explanation": "The audience is Controlling, the managing directors and the finance lead ('Sie arbeiten eng mit der Finance-Leitung zusammen').",
+    "autonomy_level": "Sie legen fest, wie unsere KPIs berechnet werden",
+    "autonomy_level_explanation": "The role defines KPI logic, prioritises the data roadmap and steers external providers ('Sie priorisieren Anforderungen in einer gemeinsamen Data-Roadmap').",
+    "ai_role": "entwickeln Sie auf dem Semantic Layer erste KI-Anwendungen, z. B. Text-to-SQL",
+    "ai_role_explanation": "The candidate is expected to build the semantic layer that first AI applications such as Text-to-SQL run on.",
+    "testing_framing": "Sie bauen automatisierte Checks und Monitoring auf",
+    "testing_framing_explanation": "Automated checks and monitoring are the candidate's own build responsibility.",
+    "loss_aversion_framing": "Verlässliche Daten und gutes Reporting",
+    "loss_aversion_framing_explanation": "Reliable figures and resolving discrepancies matter, but the posting frames them as delivery goals rather than compliance or trust risk.",
+    "greenfield_vs_fix": "Sie verbinden unsere verschiedenen Systeme und Stammdaten zu einem stimmigen Ganzen bzw. Enterprise Data Model",
+    "greenfield_vs_fix_explanation": "The core task is building a new enterprise data model, checks and monitoring.",
+    "language_gate": "Sehr gute Deutschkenntnisse (mindestens C1) für die Zusammenarbeit mit Kolleginnen und Kollegen ohne Englischkenntnisse.",
+    "urgency": "zum nächstmöglichen Zeitpunkt",
+    "work_arrangement": "Mindestens 2 Präsenztage pro Monat im Büro sind erforderlich.",
+    "loss_aversion": "Sie prüfen Auswertungen fachlich, gehen Abweichungen auf den Grund und moderieren Definitionen.",
+    "ats_keywords": [
+      "Enterprise Data Model",
+      "KPIs",
+      "dbt",
+      "Semantic Layer",
+      "Text-to-SQL",
+      "Data-Roadmap",
+      "Self-Service",
+      "Monitoring",
+      "SQL",
+      "Qlik",
+      "DATEV",
+      "KV-Abrechnung"
+    ]
+  }
+}

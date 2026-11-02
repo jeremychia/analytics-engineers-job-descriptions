@@ -1,0 +1,152 @@
+{
+  "jd_id": "2026-11-01_siemens-energy_data-analytics-engineer-fmd",
+  "company": "Siemens Energy",
+  "role": "Data Analytics Engineer (f/m/d)",
+  "job_location": "Berlin, Germany",
+  "seniority": "senior",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "internal_data",
+  "autonomy_level": "mixed",
+  "ai_role": "none",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "high",
+  "greenfield_vs_fix": "greenfield",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 4,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "hard",
+  "language_gate_languages": [
+    "German"
+  ],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 22.1,
+    "spread": 30.4,
+    "measures": {
+      "marker_vocab": {
+        "raw": 1.397,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 2.793,
+        "score": 55.9
+      },
+      "structure": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.421,
+        "score": 73.1
+      },
+      "burstiness": {
+        "raw": 1.365,
+        "score": 0.0
+      },
+      "specificity": {
+        "raw": 13.687,
+        "score": 3.5
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "unknown",
+  "ats_job_id": "305686",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": false,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": true,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": true,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "dbt",
+    "Snowflake",
+    "SQL"
+  ],
+  "preferred_tools": [],
+  "responsibilities": [
+    "Own data products end-to-end, from understanding business requirements to delivering tested, documented, and production-ready transformation logic",
+    "Design and apply layered data models using medallion architecture and dimensional modeling to create reusable and scalable data products",
+    "Define and standardize KPIs by translating requirements from global factories and business functions into shared business metrics",
+    "Build data quality checks, governance practices, and maintainability standards into data solutions from the start, while contributing to engineering standards through code reviews and shared development practices",
+    "Collaborate with Data Engineers, Product Owners, and domain experts to support the Factory Data Cloud implementation and turn operational and IoT data into trusted assets"
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://jobs.siemens-energy.com/en_US/jobs/FolderDetail/Data-Analytics-Engineer-f-m-d/305686",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4483225751/",
+  "evidence": {
+    "velocity_vs_rigour": "delivering tested, documented, and production-ready transformation logic",
+    "velocity_vs_rigour_explanation": "Testing, data quality checks, governance and code review dominate, with no velocity phrases.",
+    "domain_risk": "turn operational and IoT data into trusted assets",
+    "domain_risk_explanation": "Manufacturing and IoT KPIs for transformer factories carry no financial or regulatory language, so errors affect operational decisions.",
+    "collaboration_width": "global factories; Data Engineers; Product Owners; domain experts",
+    "data_team_maturity": "help expand IoT Data Products for the Factory Data Cloud",
+    "data_team_maturity_explanation": "A named Data & Cloud Infrastructure team and a Data Mesh exist, but the Factory Data Cloud is still being implemented, which fits a growing function.",
+    "jd_authorship": "Design and apply layered data models using medallion architecture and dimensional modeling",
+    "jd_authorship_explanation": "Bullets name methods (medallion architecture, dimensional modeling, KPI standardisation) and the platform being built.",
+    "stakeholder_orientation": "create reusable data products within an AI-enabled Data Mesh architecture",
+    "stakeholder_orientation_explanation": "The output is shared data products and standard KPIs for factories and other data users, served through the modelling layer.",
+    "autonomy_level": "Own data products end-to-end",
+    "autonomy_level_explanation": "The role owns data products and defines KPIs, while collaborating 'to support the Factory Data Cloud implementation'.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "The 'AI-enabled Data Mesh architecture' describes the platform, and no AI skill is asked of the candidate.",
+    "testing_framing": "Build data quality checks, governance practices, and maintainability standards into data solutions from the start",
+    "testing_framing_explanation": "Data quality checks are something the candidate builds into their own data products.",
+    "loss_aversion_framing": "translate business requirements into trusted, production-ready solutions",
+    "loss_aversion_framing_explanation": "Trusted, reliable data appears in the role summary and in the responsibilities, reflecting fear of inconsistent KPIs across factories.",
+    "greenfield_vs_fix": "support the Factory Data Cloud implementation",
+    "greenfield_vs_fix_explanation": "The role builds new data products for a platform being implemented, building quality in 'from the start'.",
+    "language_gate": "Fluency in English, and Good German",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "We offer our employees the opportunity to work flexibly and remotely, and our inspiring offices provide space for collaboration and creativity",
+    "loss_aversion": "Build data quality checks, governance practices, and maintainability standards into data solutions from the start.",
+    "ats_keywords": [
+      "IoT Data Products",
+      "Factory Data Cloud",
+      "medallion architecture",
+      "dimensional modeling",
+      "standardized KPIs",
+      "Data Mesh",
+      "dbt",
+      "Snowflake Data Cloud",
+      "Industrial IoT data",
+      "dbt Certified Developer",
+      "SnowPro Core Certification",
+      "CI/CD pipelines for analytics"
+    ]
+  }
+}

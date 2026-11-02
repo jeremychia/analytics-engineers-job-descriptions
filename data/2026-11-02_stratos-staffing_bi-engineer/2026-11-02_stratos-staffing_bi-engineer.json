@@ -1,0 +1,147 @@
+{
+  "jd_id": "2026-11-02_stratos-staffing_bi-engineer",
+  "company": "Stratos Staffing",
+  "role": "BI Engineer",
+  "job_location": "Kortrijk Metropolitan Area",
+  "seniority": "mid",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "recruiter",
+  "stakeholder_orientation": "internal_data",
+  "autonomy_level": "mixed",
+  "ai_role": "none",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "none",
+  "greenfield_vs_fix": "mixed",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 1,
+  "data_team_maturity": "early",
+  "urgency": "standard",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "hard",
+  "language_gate_languages": [
+    "French"
+  ],
+  "jd_language": "nl",
+  "ai_written": {
+    "score": 46.4,
+    "spread": 41.7,
+    "measures": {
+      "marker_vocab": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 5.208,
+        "score": 100.0
+      },
+      "structure": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.522,
+        "score": 50.8
+      },
+      "burstiness": {
+        "raw": 0.653,
+        "score": 27.7
+      },
+      "specificity": {
+        "raw": 4.688,
+        "score": 100.0
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "linkedin",
+  "ats_job_id": "4481430286",
+  "has_dbt": false,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": true,
+  "has_power_bi": true,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL",
+    "Python"
+  ],
+  "preferred_tools": [],
+  "responsibilities": [
+    "Als BI Engineer speel je een belangrijke rol in de verdere ontwikkeling en professionalisering van de dataomgeving.",
+    "Je werkt aan de inrichting, optimalisatie en verdere uitbouw van het dataplatform.",
+    "Daarbij richt je je voornamelijk op de technische kant van Business Intelligence, waaronder data-engineering, datamodellering, dataverwerking en het verbeteren van de datakwaliteit."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://www.linkedin.com/jobs/view/4481430286/",
+  "evidence": {
+    "velocity_vs_rigour": "het verbeteren van de datakwaliteit",
+    "velocity_vs_rigour_explanation": "Improving data quality and professionalising the environment are the only quality-or-speed signals, with no velocity language, so rigour.",
+    "domain_risk": "actief binnen een sector waarin innovatie, efficiëntie en duurzaamheid een belangrijke rol spelen",
+    "domain_risk_explanation": "An unnamed manufacturing client with no financial or regulatory language, so moderate.",
+    "collaboration_width": "IT",
+    "data_team_maturity": "vanaf een relatief vroeg stadium betrokken te zijn bij de ontwikkeling van een modern dataplatform",
+    "data_team_maturity_explanation": "The posting says the hire joins the data platform at a relatively early stage in a compact team, so early.",
+    "jd_authorship": "Je werkt aan de inrichting, optimalisatie en verdere uitbouw van het dataplatform.",
+    "jd_authorship_explanation": "Responsibilities are generic prose about building out a platform with no named tools, scale or methods, so recruiter.",
+    "stakeholder_orientation": "gegevens uit verschillende systemen beter beschikbaar te maken voor analyses en rapportages",
+    "stakeholder_orientation_explanation": "The work is the data platform itself, making data available for analyses and reports, so internal_data.",
+    "autonomy_level": "Je krijgt de ruimte om technische keuzes mee vorm te geven",
+    "autonomy_level_explanation": "The hire helps shape technical choices with direct influence while doing hands-on platform build-out, so mixed.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "No AI tooling or AI data work is mentioned.",
+    "testing_framing": "het verbeteren van de datakwaliteit",
+    "testing_framing_explanation": "Improving data quality is named as part of the role's own work, so responsibility.",
+    "loss_aversion_framing": "No loss aversion framing.",
+    "loss_aversion_framing_explanation": "The posting is framed around building and growth, with no risk register.",
+    "greenfield_vs_fix": "de inrichting, optimalisatie en verdere uitbouw van het dataplatform",
+    "greenfield_vs_fix_explanation": "Setting up a modern platform at an early stage alongside optimising and extending it, so mixed.",
+    "language_gate": "Goede kennis van Frans",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "beperkte thuiswerkmogelijkheden",
+    "loss_aversion": "No loss aversion framing detected.",
+    "ats_keywords": [
+      "BI Engineer",
+      "SQL",
+      "Python",
+      "Power BI",
+      "Tableau",
+      "dataplatform",
+      "datamodellering",
+      "data-engineering",
+      "datakwaliteit",
+      "cloudtechnologieën"
+    ],
+    "ats_lookup": "resolve_ats miss; Stratos Staffing is a recruitment agency posting for an unnamed client in south-west Flanders, so there is no employer posting to look up"
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "jd_id": "2026-10-30_crowe-nederland_analytics-engineer",
+  "company": "Crowe Nederland",
+  "role": "Analytics Engineer",
+  "job_location": "Eindhoven, North Brabant, Netherlands",
+  "seniority": "senior",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "mixed",
+  "autonomy_level": "mixed",
+  "ai_role": "ai_enabler",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "moderate",
+  "greenfield_vs_fix": "mixed",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 4,
+  "data_team_maturity": "mature",
+  "urgency": "standard",
+  "work_arrangement": "not_stated",
+  "language_gate_type": "none",
+  "language_gate_languages": [],
+  "jd_language": "nl",
+  "ai_written": {
+    "score": 47.0,
+    "spread": 47.4,
+    "measures": {
+      "marker_vocab": {
+        "raw": 1.059,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "structure": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.381,
+        "score": 82.0
+      },
+      "burstiness": {
+        "raw": 0.35,
+        "score": 100.0
+      },
+      "specificity": {
+        "raw": 3.496,
+        "score": 100.0
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "unknown",
+  "ats_job_id": "analytics-engineer",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": false,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": true,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": true,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": true,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL",
+    "Power BI"
+  ],
+  "preferred_tools": [
+    "Microsoft Fabric",
+    "dbt"
+  ],
+  "responsibilities": [
+    "Je werkt samen met klanten, businessanalisten en andere stakeholders om informatiebehoeften scherp te krijgen. Je vraagt door, toetst aannames en helpt bepalen wat er daadwerkelijk nodig is. Soms is dat een dashboard, soms een herbruikbaar datamodel en soms een dataset die een AI-agent kan gebruiken.",
+    "Je ontwerpt en bouwt datamodellen, transformaties en semantische modellen. Je legt bedrijfslogica, relaties en berekeningen zorgvuldig vast, zodat begrippen en KPI’s consistent worden gebruikt in rapportages én AI-toepassingen. Hiervoor werken we voornamelijk met Microsoft Fabric, SQL, dbt en Power BI.",
+    "Je ontwikkelt Power BI-dashboards die aansluiten op de dagelijkse praktijk van gebruikers. Je denkt mee over welke inzichten nodig zijn, hoe je deze duidelijk presenteert en hoe je voorkomt dat gebruikers zelf nog allerlei handmatige bewerkingen moeten doen.",
+    "Samen met onze data engineers en AI-engineers werk je aan de databasis voor CynthAI, onze eigen AI-analyticsoplossing. Je zorgt dat de data en bijbehorende bedrijfscontext goed zijn ingericht, zodat vragen in gewone taal kunnen worden vertaald naar bruikbare analyses.",
+    "Je neemt verantwoordelijkheid voor de kwaliteit van wat we opleveren. Je hebt aandacht voor datakwaliteit, performance, testen, versiebeheer en beheerbaarheid. Je helpt onze standaarden en herbruikbare bouwblokken binnen de Crowe Data Engine verder te ontwikkelen en past ze toe in projecten.",
+    "Binnen het analytics engineering-team ben je een inhoudelijk aanspreekpunt. Je reviewt werk, denkt mee bij complexe vraagstukken en begeleidt collega’s. Je legt uit waarom je bepaalde keuzes maakt en geeft anderen de ruimte om daar zelf vaardiger in te worden."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://www.werkenbijcrowe.nl/vacatures/analytics-engineer",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4485253890/",
+  "evidence": {
+    "velocity_vs_rigour": "Je neemt verantwoordelijkheid voor de kwaliteit van wat we opleveren. Je hebt aandacht voor datakwaliteit, performance, testen, versiebeheer en beheerbaarheid.",
+    "velocity_vs_rigour_explanation": "Quality, testing, version control, consistent definitions and maintainability recur, with no speed language.",
+    "domain_risk": "Van een Power BI-dashboard waarmee een klant zijn organisatie aanstuurt",
+    "domain_risk_explanation": "Client reporting and an AI analytics product inside an accounting firm, but the posting uses no financial reporting, audit or compliance language.",
+    "collaboration_width": "klanten; businessanalisten; data engineers; AI-engineers",
+    "data_team_maturity": "We zijn een multidisciplinair team van ongeveer 30 collega’s: data engineers, analytics engineers, developers, AI-engineers en businessanalisten.",
+    "data_team_maturity_explanation": "A team of about 30 with distinct specialisms, its own data platform ('Crowe Data Engine') and an analytics engineering sub-team points to an established function.",
+    "jd_authorship": "Hiervoor werken we voornamelijk met Microsoft Fabric, SQL, dbt en Power BI.",
+    "jd_authorship_explanation": "The paragraphs name the stack, the internal products (CynthAI, Crowe Data Engine) and the concrete outputs, so the reader can picture the work.",
+    "stakeholder_orientation": "Je werkt samen met klanten, businessanalisten en andere stakeholders om informatiebehoeften scherp te krijgen.",
+    "stakeholder_orientation_explanation": "The work splits between client-facing reporting projects and the data foundation for the firm's own AI product, with neither dominating.",
+    "autonomy_level": "Je brengt ervaring mee, maakt technische keuzes bespreekbaar en neemt je collega’s mee in je aanpak.",
+    "autonomy_level_explanation": "The role leads technical choices and standards ('We zoeken iemand die daarin het voortouw neemt') while delivering dashboards and models for client projects.",
+    "ai_role": "Samen met onze data engineers en AI-engineers werk je aan de databasis voor CynthAI, onze eigen AI-analyticsoplossing.",
+    "ai_role_explanation": "The candidate builds the data models, definitions and business context that an AI analytics product and AI agents consume.",
+    "testing_framing": "Je neemt verantwoordelijkheid voor de kwaliteit van wat we opleveren.",
+    "testing_framing_explanation": "Quality, including testing and version control, is framed as the candidate's own responsibility.",
+    "loss_aversion_framing": "de basis vormen voor betrouwbare antwoorden van onze AI-analyticsoplossing CynthAI",
+    "loss_aversion_framing_explanation": "Trustworthy answers and maintainability are concerns, but the posting is framed around delivering useful data products.",
+    "greenfield_vs_fix": "Je helpt onze standaarden en herbruikbare bouwblokken binnen de Crowe Data Engine verder te ontwikkelen en past ze toe in projecten.",
+    "greenfield_vs_fix_explanation": "The role builds new client models and the AI data foundation while extending existing standards and building blocks.",
+    "language_gate": "Not stated in JD",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Not stated in JD.",
+    "loss_aversion": "Maak jij van een businessvraag een dataproduct waar mensen op kunnen vertrouwen?",
+    "ats_keywords": [
+      "Senior Analytics Engineer",
+      "Microsoft Fabric",
+      "dbt",
+      "Power BI",
+      "DAX",
+      "semantische modellen",
+      "datamodellering",
+      "KPI-definities",
+      "CynthAI",
+      "Crowe Data Engine",
+      "CI/CD",
+      "geautomatiseerd testen"
+    ]
+  }
+}

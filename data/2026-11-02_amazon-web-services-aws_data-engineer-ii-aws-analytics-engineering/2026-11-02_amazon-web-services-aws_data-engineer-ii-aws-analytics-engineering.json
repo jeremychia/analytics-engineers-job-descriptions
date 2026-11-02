@@ -1,0 +1,151 @@
+{
+  "jd_id": "2026-11-02_amazon-web-services-aws_data-engineer-ii-aws-analytics-engineering",
+  "company": "Amazon Web Services (AWS)",
+  "role": "Data Engineer II, AWS Analytics Engineering",
+  "job_location": "Seattle, WA",
+  "seniority": "mid",
+  "role_type": "data_engineering",
+  "salary_min": 132100,
+  "salary_max": 178800,
+  "salary_currency": "USD",
+  "salary_period": "annual",
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "product",
+  "autonomy_level": "mixed",
+  "ai_role": "ai_enabler",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "moderate",
+  "greenfield_vs_fix": "fix_scale",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 3,
+  "data_team_maturity": "mature",
+  "urgency": "standard",
+  "work_arrangement": "not_stated",
+  "language_gate_type": "none",
+  "language_gate_languages": [],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 26.7,
+    "spread": 36.0,
+    "measures": {
+      "marker_vocab": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 0.959,
+        "score": 19.2
+      },
+      "structure": {
+        "raw": 2.012,
+        "score": 100.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.566,
+        "score": 41.0
+      },
+      "burstiness": {
+        "raw": 1.159,
+        "score": 0.0
+      },
+      "specificity": {
+        "raw": 20.038,
+        "score": 0.0
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "amazon_jobs",
+  "ats_job_id": "10591361",
+  "has_dbt": false,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": false,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": true,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": true,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": true,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL"
+  ],
+  "preferred_tools": [
+    "Redshift",
+    "Glue"
+  ],
+  "responsibilities": [
+    "ETL Monitoring & Pipeline Operations: Own the reliability and timeliness of 200+ data pipelines serving executive-facing reports. Today, the team uses automated alarms for real-time monitoring and AI-powered agents that self-heal failures and triage tasks — you will maintain and extend this system using Redshift, orchestration frameworks, and AWS data services.",
+    "Report Delivery & Business Reviews: Own and operate Weekly/Daily Business Review (WBR/DBR) reporting for EC2 services, ensuring accurate, timely delivery to CEO/S-Team and VP-level stakeholders. Today, report generation, validation, and delivery are automated via LLMs — you will operate and improve these workflows.",
+    "Callout Generation: Generate callouts on service performance — identifying week-over-week trends, anomalies, and key drivers to surface in executive reviews. Today, callout generation across all 9 services is LLM-automated — you will own the quality bar and continuously improve prompt and pipeline accuracy.",
+    "Data Ingestion & Metric Creation: Ingest new data sources and build metrics that track business health (usage, capacity, adoption, customer growth). Today, the team maintains scalable ETL pipelines in Redshift with workflow orchestration — you will ensure metrics remain sustainable, reproducible, and available on demand.",
+    "Analysis & Deep Dives: Conduct deep-dive analyses for Product Managers, Sales, and Finance teams. Today, the team uses a proprietary analytics platform with governed SOPs, stored context, and pre-built queries — enabling any stakeholder to deep-dive with technical depth and reproducibility. You will author and maintain these SOPs and analyses.",
+    "Dashboard Development: Design, build, and maintain interactive dashboards (QuickSight, Weave) covering product trends, customer growth, instance utilization, and feature adoption. Today, dashboards serve 100+ Product Managers across 11 engagement areas — you will own dashboards for your service areas and improve self-serve capabilities.",
+    "Stakeholder Partnership: Work closely with Product Managers, service finance teams, and cross-functional partners to translate business questions into data products and present findings to senior leaders. Today, the team partners across EC2, Networking, and Compute product families — you will be the primary analytics point of contact for your assigned service areas."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://www.amazon.jobs/en/jobs/10591361/data-engineer-ii-aws-analytics-engineering",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4484944769/",
+  "evidence": {
+    "velocity_vs_rigour": "Own the reliability and timeliness of 200+ data pipelines serving executive-facing reports",
+    "velocity_vs_rigour_explanation": "Reliability, accuracy, governed SOPs and reproducibility dominate; speed appears once, so rigour.",
+    "domain_risk": "our reports feed directly into CEO/S-Team weekly reviews",
+    "domain_risk_explanation": "Errors reach executive business reviews but there is no regulatory or financial-reporting language, so moderate.",
+    "collaboration_width": "Product Managers; Sales; Finance",
+    "data_team_maturity": "We are the EC2 + Networking Product BI team within AWS Analytics & Engineering (AAE)",
+    "data_team_maturity_explanation": "A named BI sub-team inside a larger analytics organisation running 200+ pipelines at petabyte scale, so mature.",
+    "jd_authorship": "Today, callout generation across all 9 services is LLM-automated",
+    "jd_authorship_explanation": "Bullets give scale numbers (200+ pipelines, 9 services, 100+ Product Managers) and named tools, so hiring manager.",
+    "stakeholder_orientation": "supporting 100+ Product Managers across 11 engagement areas",
+    "stakeholder_orientation_explanation": "The primary audience is the Compute product organisation and its Product Managers, so product.",
+    "autonomy_level": "you will be the primary analytics point of contact for your assigned service areas",
+    "autonomy_level_explanation": "Owns analytics for service areas end to end while operating existing reporting workflows for product teams, so mixed.",
+    "ai_role": "you will own the quality bar and continuously improve prompt and pipeline accuracy",
+    "ai_role_explanation": "The candidate maintains and extends LLM-automated reporting and self-healing agent pipelines, so AI runs on their output.",
+    "testing_framing": "Own the reliability and timeliness of 200+ data pipelines",
+    "testing_framing_explanation": "Pipeline monitoring, validation and the callout quality bar are owned responsibilities, so responsibility.",
+    "loss_aversion_framing": "Reliability and timeliness are critical",
+    "loss_aversion_framing_explanation": "The fear is late or broken pipelines feeding executive reviews, an operational reliability concern, so moderate.",
+    "greenfield_vs_fix": "you will maintain and extend this system",
+    "greenfield_vs_fix_explanation": "Each bullet describes an existing system to operate and improve.",
+    "language_gate": "Not stated in JD",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Not stated in JD.",
+    "loss_aversion": "Reliability and timeliness are critical — our reports feed directly into CEO/S-Team weekly reviews.",
+    "ats_keywords": [
+      "ETL Monitoring & Pipeline Operations",
+      "200+ data pipelines",
+      "Weekly/Daily Business Review (WBR/DBR)",
+      "LLM-automated",
+      "AI-powered agents",
+      "Redshift",
+      "QuickSight",
+      "OLAP technologies",
+      "data modeling",
+      "AWS Glue"
+    ]
+  }
+}

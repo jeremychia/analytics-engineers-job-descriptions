@@ -1,0 +1,156 @@
+{
+  "jd_id": "2026-11-02_fujitsu_data-engineer-bi-developer",
+  "company": "Fujitsu",
+  "role": "Data Engineer / BI Developer",
+  "job_location": "Antwerp Metropolitan Area",
+  "seniority": "senior",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "internal_data",
+  "autonomy_level": "execution",
+  "ai_role": "none",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "moderate",
+  "greenfield_vs_fix": "fix_scale",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 1,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "hard",
+  "language_gate_languages": [
+    "Dutch"
+  ],
+  "jd_language": "nl",
+  "ai_written": {
+    "score": 23.5,
+    "spread": 37.4,
+    "measures": {
+      "marker_vocab": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "structure": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.264,
+        "score": 100.0
+      },
+      "burstiness": {
+        "raw": 1.253,
+        "score": 0.0
+      },
+      "specificity": {
+        "raw": 10.3,
+        "score": 41.1
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "linkedin",
+  "ats_job_id": "4482085644",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": true,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": true,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": true,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": true,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL",
+    "Power BI"
+  ],
+  "preferred_tools": [
+    "dbt",
+    "Python",
+    "Databricks"
+  ],
+  "responsibilities": [
+    "Migreren en ontwikkelen van data pipelines en datawarehouse-structuren.",
+    "Bouwen en optimaliseren van data-transformaties met SQL en Python.",
+    "Ontwerpen van datamodellen volgens principes zoals Kimball, Inmon en Data Vault.",
+    "Ontwikkelen van Power BI-datasets, semantische modellen, dashboards en rapporten.",
+    "Optimaliseren van datakwaliteit, performantie, schaalbaarheid en onderhoudbaarheid.",
+    "Toepassen van data governance, toegangsbeheer en versioning.",
+    "Vertalen van businessbehoeften naar KPI's, rapporteringen en concrete inzichten.",
+    "Samenwerken met technische teams en business stakeholders."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://www.linkedin.com/jobs/view/4482085644/",
+  "evidence": {
+    "velocity_vs_rigour": "Optimaliseren van datakwaliteit, performantie, schaalbaarheid en onderhoudbaarheid",
+    "velocity_vs_rigour_explanation": "Rigour: the duties stress data quality, governance, access control and versioning, with no speed language at all.",
+    "domain_risk": "Voor een klant binnen de publieke sector",
+    "domain_risk_explanation": "Moderate: a public-sector client, but no financial, regulatory or compliance consequence is named.",
+    "collaboration_width": "technische teams",
+    "data_team_maturity": "verdere uitbouw en modernisering van een data lakehouse-omgeving",
+    "data_team_maturity_explanation": "Mid: an existing lakehouse is being extended and modernised, with pipelines being migrated rather than built from zero.",
+    "jd_authorship": "Ontwerpen van datamodellen volgens principes zoals Kimball, Inmon en Data Vault.",
+    "jd_authorship_explanation": "Hiring manager: the bullets name specific modelling methods and Power BI semantic models, so a reader knows the daily work.",
+    "stakeholder_orientation": "Ontwikkelen van Power BI-datasets, semantische modellen, dashboards en rapporten.",
+    "stakeholder_orientation_explanation": "Internal data: the work centres on the platform, models and semantic layer that feed reporting, with no named business function.",
+    "autonomy_level": "Samenwerken met technische teams en business stakeholders.",
+    "autonomy_level_explanation": "Execution: a freelance assignment of 240 days delivering pipelines and reports; no direction-setting verbs.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "The posting does not mention AI.",
+    "testing_framing": "Optimaliseren van datakwaliteit",
+    "testing_framing_explanation": "Responsibility: improving data quality is listed as one of the candidate's duties.",
+    "loss_aversion_framing": "Toepassen van data governance, toegangsbeheer en versioning.",
+    "loss_aversion_framing_explanation": "Moderate: governance and access control are duties, but the framing is delivery-led rather than fear of regulatory exposure.",
+    "greenfield_vs_fix": "Migreren en ontwikkelen van data pipelines en datawarehouse-structuren.",
+    "greenfield_vs_fix_explanation": "Fix/scale: migrating and modernising an existing lakehouse and warehouse.",
+    "language_gate": "Nederlands verplicht (C2) · Engels is een plus",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Thuiswerk: Mogelijk",
+    "loss_aversion": "Toepassen van data governance, toegangsbeheer en versioning. Governance is a duty within a delivery-led freelance brief.",
+    "ats_keywords": [
+      "Freelance opdracht",
+      "data lakehouse-omgeving",
+      "Kimball, Inmon en Data Vault",
+      "Power BI-datasets",
+      "semantische modellen",
+      "Microsoft Fabric of de Azure Data Stack",
+      "Azure Data Factory, dbt en Python",
+      "Databricks",
+      "self-service BI",
+      "BI-consultancy"
+    ],
+    "ats_lookup": "resolve_ats miss; freelance assignment for an unnamed public-sector client; jobs.global.fujitsu.com sitemap lists no Antwerp data engineer or BI developer posting (Belgian entries are Diegem consulting roles only); web search found no employer posting"
+  }
+}

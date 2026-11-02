@@ -1,0 +1,151 @@
+{
+  "jd_id": "2026-11-02_inverto_senior-business-intelligence-developer-fmd",
+  "company": "Inverto | A BCG Company",
+  "role": "Senior Business Intelligence Developer (f/m/d)",
+  "job_location": "Munich, Bavaria, Germany",
+  "seniority": "senior",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "internal_data",
+  "autonomy_level": "mixed",
+  "ai_role": "none",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "none",
+  "greenfield_vs_fix": "mixed",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 1,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "not_stated",
+  "language_gate_type": "hard",
+  "language_gate_languages": [
+    "German"
+  ],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 49.0,
+    "spread": 41.4,
+    "measures": {
+      "marker_vocab": {
+        "raw": 6.25,
+        "score": 35.4
+      },
+      "stock_phrases": {
+        "raw": 6.25,
+        "score": 100.0
+      },
+      "structure": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.098,
+        "score": 100.0
+      },
+      "burstiness": {
+        "raw": 0.772,
+        "score": 0.0
+      },
+      "specificity": {
+        "raw": 8.75,
+        "score": 58.3
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "unknown",
+  "ats_job_id": "30440",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": false,
+  "has_sql": false,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": true,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": true,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "Power BI"
+  ],
+  "preferred_tools": [
+    "Snowflake",
+    "dbt"
+  ],
+  "responsibilities": [
+    "Following our internal standards, you maintain the data model for Inverto's data warehouse and ensure the various data sources are seamlessly integrated.",
+    "Working closely with our product owners, you develop and run our data warehouse based on Snowflake and dbt, as well as our BI solution built on Power BI services.",
+    "You build a deep understanding of Inverto and its reporting needs and become one of the go-to persons for all technical and strategic questions around reporting.",
+    "You own requirements gathering, implementation, testing, and documentation for reporting needs, delivered through Power BI service.",
+    "From day one, you take on genuine responsibility, bring your own ideas to the table, and help shape the build-out of our software development team."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://inverto.dvinci-hr.com/en/p/homepage_en/jobs/30440/senior-business-intelligence-developer-fmd",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4484202064/",
+  "evidence": {
+    "velocity_vs_rigour": "You own requirements gathering, implementation, testing, and documentation",
+    "velocity_vs_rigour_explanation": "Internal standards, testing and documentation appear with no velocity language, so rigour.",
+    "domain_risk": "Inverto and its reporting needs",
+    "domain_risk_explanation": "Internal reporting at a procurement consultancy with no financial or regulatory language, so moderate.",
+    "collaboration_width": "product owners",
+    "data_team_maturity": "you develop and run our data warehouse based on Snowflake and dbt",
+    "data_team_maturity_explanation": "An existing Snowflake and dbt warehouse with internal standards, inside a team still being built out, so mid.",
+    "jd_authorship": "you develop and run our data warehouse based on Snowflake and dbt, as well as our BI solution built on Power BI services",
+    "jd_authorship_explanation": "The prose names the warehouse stack and what the role does with it, so hiring_manager.",
+    "stakeholder_orientation": "become one of the go-to persons for all technical and strategic questions around reporting",
+    "stakeholder_orientation_explanation": "The role runs the company's own warehouse and reporting layer for internal consumers, so internal_data.",
+    "autonomy_level": "help shape the build-out of our software development team",
+    "autonomy_level_explanation": "The role owns reporting delivery and shapes the team's build-out while working within internal standards and with product owners, so mixed.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "No AI tooling or AI data work is mentioned.",
+    "testing_framing": "You own requirements gathering, implementation, testing, and documentation",
+    "testing_framing_explanation": "Testing is something the candidate owns, with an ownership verb, so responsibility.",
+    "loss_aversion_framing": "No loss aversion framing.",
+    "loss_aversion_framing_explanation": "The posting is framed around ownership and growth with no risk register.",
+    "greenfield_vs_fix": "Building and evolving Inverto's data model.",
+    "greenfield_vs_fix_explanation": "Maintaining and running the existing warehouse is paired with building out the team and data model, so mixed.",
+    "language_gate": "You bring strong communication skills, both in negotiation-level German and fluent English.",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Not stated in JD.",
+    "loss_aversion": "No loss aversion framing detected.",
+    "ats_keywords": [
+      "Senior Business Intelligence Developer",
+      "Snowflake",
+      "dbt",
+      "Power BI service",
+      "data warehouse",
+      "data model",
+      "requirements gathering",
+      "Fachinformatiker für Anwendungsentwicklung",
+      "negotiation-level German",
+      "product owners"
+    ]
+  }
+}

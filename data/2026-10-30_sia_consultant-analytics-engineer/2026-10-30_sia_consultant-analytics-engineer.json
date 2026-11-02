@@ -1,0 +1,159 @@
+{
+  "jd_id": "2026-10-30_sia_consultant-analytics-engineer",
+  "company": "Sia",
+  "role": "Consultant - Analytics Engineer",
+  "job_location": "Paris, Île-de-France, France",
+  "seniority": "junior",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "recruiter",
+  "stakeholder_orientation": "mixed",
+  "autonomy_level": "execution",
+  "ai_role": "none",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "moderate",
+  "greenfield_vs_fix": "greenfield",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 3,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "not_stated",
+  "language_gate_type": "hard",
+  "language_gate_languages": [
+    "French"
+  ],
+  "jd_language": "fr",
+  "ai_written": {
+    "score": 42.4,
+    "spread": 29.8,
+    "measures": {
+      "marker_vocab": {
+        "raw": 7.566,
+        "score": 46.4
+      },
+      "stock_phrases": {
+        "raw": 1.261,
+        "score": 25.2
+      },
+      "structure": {
+        "raw": 0.074,
+        "score": 14.8
+      },
+      "bullet_symmetry": {
+        "raw": 0.509,
+        "score": 53.6
+      },
+      "burstiness": {
+        "raw": 0.7,
+        "score": 14.2
+      },
+      "specificity": {
+        "raw": 2.396,
+        "score": 100.0
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "smartrecruiters",
+  "ats_job_id": "744000158014984",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": false,
+  "has_sql": true,
+  "has_airflow": true,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": true,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": true,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": true,
+  "has_looker": true,
+  "has_tableau": true,
+  "has_power_bi": true,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": true,
+  "has_aws": true,
+  "has_azure": true,
+  "has_gcp": true,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL"
+  ],
+  "preferred_tools": [
+    "Terraform",
+    "Snowflake",
+    "Redshift",
+    "dbt",
+    "Airflow"
+  ],
+  "responsibilities": [
+    "Recueillir et comprendre les besoins métier et proposer des solutions techniques adaptées (outils analytiques, modèles de données, automatisation de flux, dashboards …).",
+    "Concevoir des modèles de données robustes et évolutifs",
+    "Créer et optimiser des pipelines ETL/ELT pour fiabiliser et automatiser les flux entre les différentes sources et les plateformes analytiques. Industrialiser les produits data (dashboards, APIs, exports, modèles analytiques) en veillant à leur maintenabilité, leur adoption et leur documentation.",
+    "Mettre en place une gouvernance des données (qualité, traçabilité, monitoring).",
+    "Former et accompagner les utilisateurs (équipes métier, analystes, data scientists…) à l’usage des outils et des assets développés.",
+    "Participer à toutes les étapes du projet, du diagnostic à la mise en production et à la conduite du changement.",
+    "Développer ou renforcer l’expertise du cabinet au travers de formations, de groupes de travail, de diffusions de supports internes et externes, et de travaux de R&D.",
+    "Participer au rayonnement du cabinet en contribuant au plan de publication (blogs sectoriels, études, parution presse...) et aux évènements clients",
+    "Appuyer le développement commercial en contribuant à la définition des besoins et en participant aux actions commerciales."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://jobs.smartrecruiters.com/sia/744000158014984",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4484051350/",
+  "evidence": {
+    "velocity_vs_rigour": "Mettre en place une gouvernance des données (qualité, traçabilité, monitoring).",
+    "velocity_vs_rigour_explanation": "Robust models, reliable flows, documentation and governance dominate; 'dynamique' describes the firm, not the work, so rigour.",
+    "domain_risk": "secteurs d’activités variés (Energie, luxe, transport, retail, finance…)",
+    "domain_risk_explanation": "A consultancy serving varied sectors with generic decision-support language, so moderate.",
+    "collaboration_width": "clients; analystes; data scientists",
+    "data_team_maturity": "Participer à toutes les étapes du projet, du diagnostic à la mise en production",
+    "data_team_maturity_explanation": "Client data maturity varies by mission; the firm has a data practice with training and R&D, so mid by default.",
+    "jd_authorship": "Concevoir des modèles de données robustes et évolutifs",
+    "jd_authorship_explanation": "The mission bullets are generic AE and consulting duties; only the example projects add detail, so recruiter.",
+    "stakeholder_orientation": "vous êtes un interlocuteur privilégié des équipes métiers",
+    "stakeholder_orientation_explanation": "The audience is client business teams across sectors with no single function dominating, so mixed.",
+    "autonomy_level": "Participer à toutes les étapes du projet",
+    "autonomy_level_explanation": "A junior consultant delivering client projects and contributing to firm activities, so execution.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "AI appears in the firm description and as a cross-sector interest topic, not as a skill expected of the candidate.",
+    "testing_framing": "Mettre en place une gouvernance des données (qualité, traçabilité, monitoring).",
+    "testing_framing_explanation": "Data quality and monitoring governance is a named mission, so responsibility.",
+    "loss_aversion_framing": "fiabiliser et automatiser les flux",
+    "loss_aversion_framing_explanation": "Reliable flows and governance matter but sit behind delivery of data products, so moderate.",
+    "greenfield_vs_fix": "Créer et optimiser des pipelines ETL/ELT",
+    "greenfield_vs_fix_explanation": "The verbs are design, create and set up across client projects, so greenfield.",
+    "language_gate": "Langues : Français et anglais professionnels",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Not stated in JD.",
+    "loss_aversion": "Créer et optimiser des pipelines ETL/ELT pour fiabiliser et automatiser les flux entre les différentes sources et les plateformes analytiques.",
+    "ats_keywords": [
+      "Analytics Engineer",
+      "pipelines ETL/ELT",
+      "modélisation dimensionnelle",
+      "gouvernance des données",
+      "Terraform",
+      "Snowflake",
+      "Redshift",
+      "dbt",
+      "Airflow",
+      "Power BI",
+      "tests analytiques"
+    ]
+  }
+}

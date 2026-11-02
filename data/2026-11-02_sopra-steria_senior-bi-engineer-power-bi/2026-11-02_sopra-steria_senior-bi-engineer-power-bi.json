@@ -1,0 +1,157 @@
+{
+  "jd_id": "2026-11-02_sopra-steria_senior-bi-engineer-power-bi",
+  "company": "Sopra Steria",
+  "role": "Senior BI Engineer – Power BI",
+  "job_location": "Brussels, Brussels Region, Belgium",
+  "seniority": "senior",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "mixed",
+  "autonomy_level": "mixed",
+  "ai_role": "none",
+  "testing_framing": "absent",
+  "loss_aversion_framing": "none",
+  "greenfield_vs_fix": "mixed",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 2,
+  "data_team_maturity": "mature",
+  "urgency": "standard",
+  "work_arrangement": "not_stated",
+  "language_gate_type": "hard",
+  "language_gate_languages": [
+    "Dutch",
+    "French"
+  ],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 41.4,
+    "spread": 33.2,
+    "measures": {
+      "marker_vocab": {
+        "raw": 5.447,
+        "score": 28.7
+      },
+      "stock_phrases": {
+        "raw": 2.179,
+        "score": 43.6
+      },
+      "structure": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.206,
+        "score": 100.0
+      },
+      "burstiness": {
+        "raw": 0.527,
+        "score": 63.6
+      },
+      "specificity": {
+        "raw": 12.854,
+        "score": 12.7
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "unknown",
+  "ats_job_id": "9176",
+  "has_dbt": false,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": false,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": true,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": true,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": true,
+  "has_power_bi": true,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": true,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "Power BI",
+    "SQL"
+  ],
+  "preferred_tools": [
+    "Fabric/Synapse",
+    "Databricks"
+  ],
+  "responsibilities": [
+    "As a Senior BI Engineer – Power BI, you will design and deliver end-to-end BI solutions, combining data engineering, ETL/ELT, data modelling and cloud data platform concepts with strong hands-on Power BI expertise.",
+    "You take a leading role in the delivery of end-to-end BI projects.",
+    "You work across the full BI lifecycle: from understanding business needs and defining data requirements, to shaping ETL/ELT flows, designing robust data models and delivering performant Power BI reports, dashboards and semantic models.",
+    "You take ownership of the solutions you design, ensuring performance, governance, scalability and long-term maintainability.",
+    "Beyond building dashboards, you actively coach and support colleagues in applying best practices in data modelling, DAX, visualisation and deployment.",
+    "You act as a point of reference within the team and contribute to the development of our internal methodology, reusable assets and standards.",
+    "You proactively collaborate with data engineers, architects and business stakeholders to create scalable, user-friendly and impactful BI solutions."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://careers.soprasteria.com/job/senior-bi-engineer-power-bi-in-brussels-belgium-jid-9176",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4437866905/",
+  "evidence": {
+    "velocity_vs_rigour": "ensuring performance, governance, scalability and long-term maintainability",
+    "velocity_vs_rigour_explanation": "Governance, robust models, dataset governance and Row-Level Security appear with no velocity language, so rigour.",
+    "domain_risk": "help clients get more value out of their data",
+    "domain_risk_explanation": "A consultancy role for unnamed clients with no financial or regulatory language, so moderate.",
+    "collaboration_width": "data engineers...architects",
+    "data_team_maturity": "a specialised group of consultants",
+    "data_team_maturity_explanation": "A named Data Visualisation Practice inside a multidisciplinary Data & AI team with its own methodology and reusable assets, so mature.",
+    "jd_authorship": "shaping ETL/ELT flows, designing robust data models and delivering performant Power BI reports, dashboards and semantic models",
+    "jd_authorship_explanation": "The prose names the BI lifecycle steps, Power BI semantic models, DAX and deployment, so a reader can picture the work; hiring_manager.",
+    "stakeholder_orientation": "collaborate with data engineers, architects and business stakeholders",
+    "stakeholder_orientation_explanation": "Work splits between client business stakeholders ('translate business needs into clear KPIs') and the data team, so mixed.",
+    "autonomy_level": "You take a leading role in the delivery of end-to-end BI projects",
+    "autonomy_level_explanation": "The role owns its BI solutions and shapes practice standards ('influence the direction of our BI practice') while delivering client projects, so mixed.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "AI appears only as the team's name and client use cases, not as a skill expected of the candidate.",
+    "testing_framing": "No testing or data quality signal.",
+    "testing_framing_explanation": "No testing, data quality or validation practice is mentioned.",
+    "loss_aversion_framing": "No loss aversion framing.",
+    "loss_aversion_framing_explanation": "The posting is framed in delivery and capability terms with no risk register.",
+    "greenfield_vs_fix": "help organisations modernise their reporting landscapes",
+    "greenfield_vs_fix_explanation": "Consulting work both builds new end-to-end BI solutions and modernises existing reporting landscapes, so mixed.",
+    "language_gate": "You are proficient in English and Dutch and/or French.",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Not stated in JD.",
+    "loss_aversion": "No loss aversion framing detected.",
+    "ats_keywords": [
+      "Power BI",
+      "semantic modelling",
+      "DAX",
+      "Power Query",
+      "Row-Level Security",
+      "Tabular Editor",
+      "DAX Studio",
+      "ETL/ELT",
+      "Power BI Service",
+      "Microsoft Fabric",
+      "Databricks",
+      "Power Automate"
+    ]
+  }
+}

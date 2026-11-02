@@ -1,0 +1,150 @@
+{
+  "jd_id": "2026-10-31_zimad_analytics-engineer-middle",
+  "company": "ZiMAD",
+  "role": "Analytics Engineer (Middle)",
+  "job_location": "All geos",
+  "seniority": "mid",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "mixed",
+  "autonomy_level": "mixed",
+  "ai_role": "ai_enabler",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "high",
+  "greenfield_vs_fix": "fix_scale",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 4,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "remote",
+  "language_gate_type": "none",
+  "language_gate_languages": [],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 43.2,
+    "spread": 26.8,
+    "measures": {
+      "marker_vocab": {
+        "raw": 4.751,
+        "score": 22.9
+      },
+      "stock_phrases": {
+        "raw": 2.375,
+        "score": 47.5
+      },
+      "structure": {
+        "raw": 0.391,
+        "score": 78.3
+      },
+      "bullet_symmetry": {
+        "raw": 0.572,
+        "score": 39.6
+      },
+      "burstiness": {
+        "raw": 1.772,
+        "score": 0.0
+      },
+      "specificity": {
+        "raw": 7.601,
+        "score": 71.1
+      }
+    }
+  },
+  "interview_stages": 3,
+  "ats_platform": "unknown",
+  "ats_job_id": "analytics-engineer",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": false,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": true,
+  "required_tools": [
+    "SQL"
+  ],
+  "preferred_tools": [
+    "dbt"
+  ],
+  "responsibilities": [
+    "Build and maintain reliable data marts for the UA, monetization, product and LiveOps teams",
+    "Prepare data models that both people and AI agents can use",
+    "Maintain core metric definitions together with the team so the whole company can trust the numbers",
+    "Monitor data quality with tests, freshness checks and comparisons against raw data, and investigate when numbers don’t match",
+    "Optimize ClickHouse query performance"
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://zimad.com/vacancy/analytics-engineer/",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4484528490/",
+  "evidence": {
+    "velocity_vs_rigour": "Monitor data quality with tests, freshness checks and comparisons against raw data",
+    "velocity_vs_rigour_explanation": "Responsibilities stress 'reliable data marts', tests, freshness checks and trusted metric definitions, with no velocity phrases.",
+    "domain_risk": "User acquisition, monetization, LiveOps and product decisions all run on data",
+    "domain_risk_explanation": "Errors affect game business decisions such as user acquisition and monetization, with no financial reporting or regulatory language.",
+    "collaboration_width": "UA; monetization; product; LiveOps teams",
+    "data_team_maturity": "Build and maintain reliable data marts for the UA, monetization, product and LiveOps teams",
+    "data_team_maturity_explanation": "Named tools (ClickHouse) and existing marts, metric definitions and a semantic layer appear in the responsibilities, so the function exists and is growing.",
+    "jd_authorship": "Monitor data quality with tests, freshness checks and comparisons against raw data, and investigate when numbers don’t match",
+    "jd_authorship_explanation": "Bullets name concrete practices (freshness checks, comparisons against raw data, ClickHouse query tuning), so a reader can picture the day-to-day work.",
+    "stakeholder_orientation": "data marts for the UA, monetization, product and LiveOps teams",
+    "stakeholder_orientation_explanation": "The marts serve user acquisition and monetization (commercial) and product and LiveOps (product) teams with equal weight.",
+    "autonomy_level": "this role owns the modeling layer everything else depends on",
+    "autonomy_level_explanation": "The role 'owns the modeling layer' as a technical domain while building marts in service of named business teams.",
+    "ai_role": "Prepare data models that both people and AI agents can use",
+    "ai_role_explanation": "The candidate builds data models that AI agents consume, which places AI downstream of the candidate's output.",
+    "testing_framing": "Monitor data quality with tests, freshness checks and comparisons against raw data",
+    "testing_framing_explanation": "Testing and freshness monitoring are a named responsibility with an ownership verb, not a listed tool.",
+    "loss_aversion_framing": "so the whole company can trust the numbers",
+    "loss_aversion_framing_explanation": "High: trust in the numbers and reliability recur across the summary and the bullets, and the fear is wrong numbers reaching the whole company.",
+    "greenfield_vs_fix": "Optimize ClickHouse query performance",
+    "greenfield_vs_fix_explanation": "The verbs are maintain, monitor and optimize against an existing ClickHouse modeling layer, so scaling dominates over building from scratch.",
+    "language_gate": "English proficiency at the B1–B2 level",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Full‑time with flexible hours; remote",
+    "loss_aversion": "Maintain core metric definitions together with the team so the whole company can trust the numbers: the role guards against untrusted numbers reaching the company.",
+    "ats_keywords": [
+      "data marts",
+      "metric definitions",
+      "semantic layer",
+      "ClickHouse",
+      "MergeTree engines",
+      "window functions",
+      "freshness checks",
+      "AI agents",
+      "incremental, reliable models",
+      "ROAS, LTV, ARPDAU, retention",
+      "workflow orchestration",
+      "Superset"
+    ]
+  }
+}

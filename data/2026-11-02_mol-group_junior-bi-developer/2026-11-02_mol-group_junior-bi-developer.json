@@ -1,0 +1,151 @@
+{
+  "jd_id": "2026-11-02_mol-group_junior-bi-developer",
+  "company": "MOL Group",
+  "role": "Junior BI Developer",
+  "job_location": "Budapest, Budapest, Hungary",
+  "seniority": "junior",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "mixed",
+  "autonomy_level": "execution",
+  "ai_role": "none",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "moderate",
+  "greenfield_vs_fix": "mixed",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 3,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "not_stated",
+  "language_gate_type": "none",
+  "language_gate_languages": [],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 47.3,
+    "spread": 31.1,
+    "measures": {
+      "marker_vocab": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 2.681,
+        "score": 53.6
+      },
+      "structure": {
+        "raw": 0.134,
+        "score": 26.8
+      },
+      "bullet_symmetry": {
+        "raw": 0.387,
+        "score": 80.6
+      },
+      "burstiness": {
+        "raw": 0.436,
+        "score": 89.6
+      },
+      "specificity": {
+        "raw": 10.992,
+        "score": 33.4
+      }
+    }
+  },
+  "interview_stages": 5,
+  "ats_platform": "linkedin",
+  "ats_job_id": "4484029583",
+  "has_dbt": false,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": true,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": true,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": true,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "Power BI"
+  ],
+  "preferred_tools": [
+    "Databricks"
+  ],
+  "responsibilities": [
+    "Deliver reporting that matters – handle internal requests for reports, dashboards, and data extracts, change requests, and data exploration needs.",
+    "Build with Power BI – design and maintain dashboards using data lake sources (SQL, Databricks).",
+    "Translate needs into visuals – turn business requirements, dashboard requests, data accuracy issues, and analytical needs into clean, comprehensible reports.",
+    "Guard data quality – run validations, support data collection, cleansing and validation activities and document logic so results are trusted and repeatable.",
+    "Guide operations – create KPIs and views for capacity optimization, collection planning, routing, and overall network performance, while developing easy-to-understand visualizations that drive action.",
+    "Support business stakeholders and data analysts by performing ad-hoc analyses, investigating data quality issues, and contributing to the development of advanced analytics solutions.",
+    "Partner with business stakeholders across MOL Group to understand analytical needs and help drive data-driven decision making."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://www.linkedin.com/jobs/view/4484029583/",
+  "evidence": {
+    "velocity_vs_rigour": "document logic so results are trusted and repeatable",
+    "velocity_vs_rigour_explanation": "Validation, data quality and 'reliable numbers' outweigh the single 'faster decisions' phrase, so rigour.",
+    "domain_risk": "support operational analytics for MOHU’s Reverse Vending Machine (RVM) network",
+    "domain_risk_explanation": "Operational reporting for a deposit-return network with no financial or regulatory language, so moderate.",
+    "collaboration_width": "data analysts...Data Engineers...Product Teams",
+    "data_team_maturity": "Collaborate with BI Developers, Data Engineers, and Product Teams across MOL Retail.",
+    "data_team_maturity_explanation": "An existing data lake on Databricks with BI developers, data engineers and analysts implies a functioning, growing function, so mid.",
+    "jd_authorship": "create KPIs and views for capacity optimization, collection planning, routing, and overall network performance",
+    "jd_authorship_explanation": "Bullets tie the work to the RVM network's capacity, collection and routing KPIs on named tools, so hiring_manager.",
+    "stakeholder_orientation": "Partner with business stakeholders across MOL Group",
+    "stakeholder_orientation_explanation": "Audiences span RVM network operations, business stakeholders and data analysts, none dominant, so mixed.",
+    "autonomy_level": "handle internal requests for reports, dashboards, and data extracts",
+    "autonomy_level_explanation": "An early-career role serving requests and supporting analysts ('Support business stakeholders and data analysts'), so execution.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "AI appears only in the company blurb, not as a skill expected of the candidate.",
+    "testing_framing": "Guard data quality – run validations",
+    "testing_framing_explanation": "Data validation is an owned responsibility with action verbs, so responsibility.",
+    "loss_aversion_framing": "so results are trusted and repeatable",
+    "loss_aversion_framing_explanation": "Trusted numbers matter but sit behind report delivery, with no compliance framing, so moderate.",
+    "greenfield_vs_fix": "design and maintain dashboards using data lake sources",
+    "greenfield_vs_fix_explanation": "New dashboards and KPIs are built alongside change requests and maintenance on an existing lake, so mixed.",
+    "language_gate": "Language- Fluent in English",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Not stated in JD.",
+    "loss_aversion": "Guard data quality – run validations, support data collection, cleansing and validation activities and document logic so results are trusted and repeatable.",
+    "ats_keywords": [
+      "Junior BI Developer",
+      "Power BI",
+      "Power Query",
+      "Databricks",
+      "Azure Data Lake",
+      "data lake",
+      "Reverse Vending Machine",
+      "operational analytics",
+      "data validation",
+      "statistical analysis",
+      "KPIs"
+    ],
+    "ats_lookup": "resolve_ats miss; the posting points to www.mol.hu/karrier, a javascript app with no job text in its html; jobs.molgroup.info did not respond; web search found only the profession.hu and cvonline.hu job-board copies"
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "jd_id": "2026-11-02_phonepe_business-intelligence-engineer-2-4-years",
+  "company": "PhonePe",
+  "role": "Business Intelligence Engineer (2-4 Years)",
+  "job_location": "Bengaluru, Karnataka, India",
+  "seniority": "mid",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "recruiter",
+  "stakeholder_orientation": "internal_data",
+  "autonomy_level": "strategic",
+  "ai_role": "ai_enabler",
+  "testing_framing": "absent",
+  "loss_aversion_framing": "none",
+  "greenfield_vs_fix": "mixed",
+  "velocity_vs_rigour": "velocity",
+  "domain_risk": "moderate",
+  "collaboration_width": 2,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "not_stated",
+  "language_gate_type": "none",
+  "language_gate_languages": [],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 28.3,
+    "spread": 34.8,
+    "measures": {
+      "marker_vocab": {
+        "raw": 4.11,
+        "score": 17.6
+      },
+      "stock_phrases": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "structure": {
+        "raw": 0.429,
+        "score": 85.7
+      },
+      "bullet_symmetry": {
+        "raw": 0.451,
+        "score": 66.4
+      },
+      "burstiness": {
+        "raw": 0.819,
+        "score": 0.0
+      },
+      "specificity": {
+        "raw": 19.041,
+        "score": 0.0
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "smartrecruiters",
+  "ats_job_id": "1000000000004599",
+  "has_dbt": false,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": true,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": true,
+  "has_power_bi": true,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL",
+    "Python"
+  ],
+  "preferred_tools": [
+    "Airflow"
+  ],
+  "responsibilities": [
+    "Be an integral part of defining the data consumption strategy across the org. You’ll also monitor performance trends and influence any interventions based on performance.",
+    "Collaborate closely with the engineering and product functions to understand the data flow and architecture, finding the best tech solutions from an Analytics standpoint to build scalable data models.",
+    "Drive integration of AI capabilities to build forward-looking, BI-focused applications and automated insights.",
+    "Define processes and best practices when it comes to data modeling, consumption, querying, and reporting.",
+    "Become an SME in the tech stack being used across the different analytics functionalities and become the go-to person for unblocking any tech boundaries."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://jobs.smartrecruiters.com/PHONEPELIMITED/1000000000004599-business-intelligence-engineer-2-4-years-",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4480008091/",
+  "evidence": {
+    "velocity_vs_rigour": "execute quickly",
+    "velocity_vs_rigour_explanation": "speed language ('execute quickly', 'with purpose and speed') with no quality, testing or governance language anywhere.",
+    "domain_risk": "digital platforms for Payments, Digital Distribution Services and Financial Services",
+    "domain_risk_explanation": "the company is a payments firm, but the role's bullets carry no financial or regulatory language, so the generic-language tie-breaker gives moderate.",
+    "collaboration_width": "engineering; product",
+    "data_team_maturity": "the tech stack being used across the different analytics functionalities",
+    "data_team_maturity_explanation": "several analytics functions already share a stack and the organisation is 'growing at scale'.",
+    "jd_authorship": "Become an SME in the tech stack being used across the different analytics functionalities",
+    "jd_authorship_explanation": "bullets are generic and name no tools or volumes; Hive appears only in the requirements.",
+    "stakeholder_orientation": "defining the data consumption strategy across the org",
+    "stakeholder_orientation_explanation": "the audience is the organisation's data consumers, served through data models and reporting standards.",
+    "autonomy_level": "Define processes and best practices",
+    "autonomy_level_explanation": "the role defines consumption strategy and standards ('defining the data consumption strategy', 'Define processes and best practices').",
+    "ai_role": "Drive integration of AI capabilities to build forward-looking, BI-focused applications and automated insights.",
+    "ai_role_explanation": "the candidate builds AI-powered BI applications on top of the data, an enabler role.",
+    "testing_framing": "No testing or data quality signal.",
+    "testing_framing_explanation": "no testing or data quality practice is mentioned.",
+    "loss_aversion_framing": "No loss aversion framing.",
+    "loss_aversion_framing_explanation": "the posting is framed only in delivery and capability terms.",
+    "greenfield_vs_fix": "build scalable data models",
+    "greenfield_vs_fix_explanation": "the role builds new models and AI applications while setting standards for an existing stack.",
+    "language_gate": "Not stated in JD",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Not stated in JD.",
+    "loss_aversion": "No loss aversion framing detected.",
+    "ats_keywords": [
+      "data consumption strategy",
+      "scalable data models",
+      "Advanced SQL",
+      "Hive",
+      "query optimization",
+      "BI design principles",
+      "AI/LLMs",
+      "BI-focused applications",
+      "data modeling",
+      "Airflow pipelines",
+      "Python"
+    ]
+  }
+}

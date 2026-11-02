@@ -1,0 +1,151 @@
+{
+  "jd_id": "2026-11-02_rebo-vastgoed-groep_bi-developer-power-bi-microsoft-fabric-medior-senior",
+  "company": "REBO Vastgoed Groep",
+  "role": "BI Developer (Power BI & Microsoft Fabric) -medior/senior",
+  "job_location": "Amersfoort, Utrecht, Netherlands",
+  "seniority": "mid",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": 4500,
+  "salary_max": 6000,
+  "salary_currency": "EUR",
+  "salary_period": "monthly",
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "mixed",
+  "autonomy_level": "mixed",
+  "ai_role": "none",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "none",
+  "greenfield_vs_fix": "fix_scale",
+  "velocity_vs_rigour": "mixed",
+  "domain_risk": "moderate",
+  "collaboration_width": 2,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "none",
+  "language_gate_languages": [],
+  "jd_language": "nl",
+  "ai_written": {
+    "score": 41.7,
+    "spread": 39.0,
+    "measures": {
+      "marker_vocab": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 0.816,
+        "score": 16.3
+      },
+      "structure": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.511,
+        "score": 53.1
+      },
+      "burstiness": {
+        "raw": 0.461,
+        "score": 82.6
+      },
+      "specificity": {
+        "raw": 5.143,
+        "score": 98.4
+      }
+    }
+  },
+  "interview_stages": 2,
+  "ats_platform": "linkedin",
+  "ats_job_id": "4484943532",
+  "has_dbt": false,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": false,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": true,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": true,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "Power BI",
+    "SQL"
+  ],
+  "preferred_tools": [
+    "Microsoft Fabric"
+  ],
+  "responsibilities": [
+    "Ontwikkelen en optimaliseren van datamodellen, dashboards en rapportages in Power BI, zowel technisch als visueel.",
+    "Inrichten en beheren van row-level security (RLS) voor verschillende doelgroepen, inclusief workspaces en publicatie en afstemming van de autorisaties met onze externe IT-partner.",
+    "Ophalen van informatiebehoeften bij management en teams en deze vertalen naar concrete voorstellen, inclusief planning en een realistische inschatting van capaciteit en doorlooptijd.",
+    "Adviseren over prioriteiten en inzichtelijk maken wat de gevolgen zijn voor de planning wanneer nieuwe verzoeken worden toegevoegd.",
+    "Analyseren en aanpassen van bestaande pipelines en SQL-logica en het oplossen van technische fouten.",
+    "Signaleren van onjuistheden in brondata en samen met de business werken aan oplossingen.",
+    "Documenteren van je werkzaamheden, zodat kennis en beheer goed overdraagbaar zijn aan collega’s of externe partners."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://www.linkedin.com/jobs/view/4484943532/",
+  "evidence": {
+    "velocity_vs_rigour": "Liever na twee weken een eerste versie waar collega’s mee aan de slag kunnen",
+    "velocity_vs_rigour_explanation": "Fast first versions (\"na twee weken een eerste versie\") sit beside reliability and source-data accuracy (\"betrouwbare en actuele informatie\", \"onjuistheden in brondata\") with neither dominant, so mixed.",
+    "domain_risk": "vastgoedmanagement, VvE Management, taxaties",
+    "domain_risk_explanation": "Management reporting for a property management and brokerage firm, with no regulatory or financial-reporting language, so moderate.",
+    "collaboration_width": "directie; externe IT-partner",
+    "data_team_maturity": "REBO werkt met een eigen dataplatform op basis van Microsoft Fabric",
+    "data_team_maturity_explanation": "A Fabric platform already exists and the role will become its main owner, supported by an external BI specialist, so mid.",
+    "jd_authorship": "Inrichten en beheren van row-level security (RLS) voor verschillende doelgroepen",
+    "jd_authorship_explanation": "Bullets name concrete work (RLS per audience, workspaces, pipelines and SQL logic) and the capacity-planning duty, so hiring manager.",
+    "stakeholder_orientation": "Je bouwt rapportages en dashboards voor onze directie, teams en vestigingen",
+    "stakeholder_orientation_explanation": "Audience spans the board, branch offices and teams with no dominant function, so mixed.",
+    "autonomy_level": "Je maakt zelfstandig de technische keuzes",
+    "autonomy_level_explanation": "Owns technical choices for the platform while \"De business bepaalt de prioriteiten\", so mixed.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "No AI skill is mentioned.",
+    "testing_framing": "Signaleren van onjuistheden in brondata en samen met de business werken aan oplossingen",
+    "testing_framing_explanation": "Spotting and resolving source-data errors is an owned duty, though no testing practice is named, so responsibility.",
+    "loss_aversion_framing": "No loss aversion framing.",
+    "loss_aversion_framing_explanation": "Framed in building and delivery terms with no risk register.",
+    "greenfield_vs_fix": "verder ontwikkelen, beheren en optimaliseren van dit platform",
+    "greenfield_vs_fix_explanation": "Develops, manages and optimises an existing platform, so fix and scale.",
+    "language_gate": "Not stated in JD",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "De mogelijkheid om hybride te werken, in overleg",
+    "loss_aversion": "No loss aversion framing detected.",
+    "ats_keywords": [
+      "Microsoft Fabric",
+      "Power BI",
+      "row-level security (RLS)",
+      "DAX",
+      "sterschema",
+      "deployment pipelines",
+      "Data Factory",
+      "PL-300",
+      "DP-600",
+      "SQL-logica"
+    ],
+    "ats_lookup": "resolve_ats miss; rebogroep.nl vacancy pages return HTTP 429 to curl; web search found no REBO employer posting for this role"
+  }
+}

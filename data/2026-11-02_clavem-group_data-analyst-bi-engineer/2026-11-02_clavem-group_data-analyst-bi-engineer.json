@@ -1,0 +1,149 @@
+{
+  "jd_id": "2026-11-02_clavem-group_data-analyst-bi-engineer",
+  "company": "Clavem Group",
+  "role": "Data Analyst – BI Engineer",
+  "job_location": "Luxembourg, Luxembourg",
+  "seniority": "mid",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "mixed",
+  "stakeholder_orientation": "finance",
+  "autonomy_level": "execution",
+  "ai_role": "none",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "high",
+  "greenfield_vs_fix": "mixed",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "high",
+  "collaboration_width": 3,
+  "data_team_maturity": "mid",
+  "urgency": "urgent",
+  "work_arrangement": "not_stated",
+  "language_gate_type": "hard",
+  "language_gate_languages": [
+    "French"
+  ],
+  "jd_language": "fr",
+  "ai_written": {
+    "score": 66.3,
+    "spread": 39.1,
+    "measures": {
+      "marker_vocab": {
+        "raw": 5.495,
+        "score": 29.1
+      },
+      "stock_phrases": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "structure": {
+        "raw": 0.65,
+        "score": 100.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.442,
+        "score": 68.5
+      },
+      "burstiness": {
+        "raw": 0.385,
+        "score": 100.0
+      },
+      "specificity": {
+        "raw": 3.022,
+        "score": 100.0
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "linkedin",
+  "ats_job_id": "4484521573",
+  "has_dbt": false,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": false,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": true,
+  "has_power_bi": true,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL"
+  ],
+  "preferred_tools": [],
+  "responsibilities": [
+    "Conception & Modélisation BI : Développer, maintenir et optimiser des tableaux de bord interactifs et des rapports de suivi de la performance.",
+    "Analyse de données & Restitution métier : Analyser les flux de données complexes pour en extraire des synthèses claires, directement exploitables par les directions opérationnelles et financières.",
+    "Traduction des enjeux métiers/comptables : Faire le lien entre les besoins fonctionnels (suivi d'activité, analyses comptables et financières) et les solutions techniques Data/BI.",
+    "Qualité & Contrôle des données : Veiller à l'exactitude, la fiabilité et la cohérence des indicateurs financiers et opérationnels produits.",
+    "Accompagnement & Restitution : Présenter les résultats, vulgariser les données pour aider les équipes de direction dans leurs prises de décision."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://www.linkedin.com/jobs/view/4484521573/",
+  "evidence": {
+    "velocity_vs_rigour": "Veiller à l'exactitude, la fiabilité et la cohérence des indicateurs financiers et opérationnels produits.",
+    "velocity_vs_rigour_explanation": "Accuracy, reliability, consistency and 'Rigueur & Sens du détail' dominate over a single 's'adapter rapidement', so rigour.",
+    "domain_risk": "analyses comptables et financières",
+    "domain_risk_explanation": "Insurance-sector work producing accounting and financial indicators for finance directors is explicit financial-reporting language, so high.",
+    "collaboration_width": "directions opérationnelles et financières...équipes techniques...finance",
+    "data_team_maturity": "Dans le cadre du développement du pôle Data basé au Luxembourg",
+    "data_team_maturity_explanation": "A Luxembourg data unit that exists and is being grown, so mid.",
+    "jd_authorship": "Faire le lien entre les besoins fonctionnels (suivi d'activité, analyses comptables et financières) et les solutions techniques Data/BI.",
+    "jd_authorship_explanation": "Bullets are specific about the accounting and financial indicators but name no tools, volumes or methods, so mixed.",
+    "stakeholder_orientation": "directement exploitables par les directions opérationnelles et financières",
+    "stakeholder_orientation_explanation": "The output is financial and accounting indicators for finance and leadership, with insurance and accounting knowledge required, so finance.",
+    "autonomy_level": "aider les équipes de direction dans leurs prises de décision",
+    "autonomy_level_explanation": "The role builds and presents reporting in service of leadership decisions rather than setting direction, so execution.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "No AI tooling or AI data work is mentioned.",
+    "testing_framing": "Qualité & Contrôle des données",
+    "testing_framing_explanation": "Data quality and control is a named responsibility with an ownership verb ('Veiller à'), so responsibility.",
+    "loss_aversion_framing": "Exigence élevée sur la fiabilité des données chiffrées et comptables",
+    "loss_aversion_framing_explanation": "Accuracy and reliability of accounting figures recur across responsibilities and soft skills, so trust in the numbers dominates; high.",
+    "greenfield_vs_fix": "Développer, maintenir et optimiser des tableaux de bord interactifs",
+    "greenfield_vs_fix_explanation": "Building new dashboards is paired with maintaining and optimising existing ones, so mixed.",
+    "language_gate": "Maîtrise parfaite du Français (obligatoire). La pratique de l'Anglais constitue un atout supplémentaire.",
+    "urgency": "Dès que possible (ASAP)",
+    "work_arrangement": "Not stated in JD.",
+    "loss_aversion": "Qualité & Contrôle des données : Veiller à l'exactitude, la fiabilité et la cohérence des indicateurs financiers et opérationnels produits.",
+    "ats_keywords": [
+      "Data Analyst",
+      "BI Engineer",
+      "tableaux de bord",
+      "indicateurs financiers",
+      "analyses comptables",
+      "secteur de l'assurance",
+      "SQL",
+      "Power BI",
+      "Tableau",
+      "Excel avancé",
+      "contrôle de gestion"
+    ],
+    "ats_lookup": "resolve_ats miss; clavem.lu returned a page with no job links, clavemgroup.com and clavem-group.com did not respond, and web search found no Clavem copy of this role"
+  }
+}
