@@ -133,3 +133,44 @@ function buildNext(stage) {
     async () => { show(stat, 1); show(card, 1); show(teach, 1); show(line, 1); await wait(Anim.fast ? 0 : 600); }
   ];
 }
+
+/* what the job is: the duties ads list, with working with people as common as modelling, then the tools, where only SQL, Python and dbt are near universal */
+function buildJob(stage) {
+  const W = 1000, J = D.job, N = J.n_themes, A = D.corpus_n, pct = (k, n) => Math.round(100 * k / n);
+  const label = { 'BI & Reporting/Dashboards': 'reporting and dashboards', 'Stakeholder Collaboration & Requirements': 'working with stakeholders',
+    'Data Modeling & Transformation': 'data modelling', 'Data Quality & Testing': 'data quality and testing', 'Governance & Documentation': 'governance and docs',
+    'Pipeline Engineering & Orchestration': 'pipelines', 'Business Analysis & Insight Generation': 'business analysis', 'Data Infrastructure & Warehouse Ops': 'running the warehouse' };
+  const svg = s('svg', { viewBox: `0 0 ${W} 520`, class: 'chart' }, stage);
+  const txt = (p, x, y, text, st = {}, a = {}) => s('text', Object.assign({ x, y, text, style: Object.assign({ fontSize: '18px', fill: C.ink }, st) }, a), p);
+  const layer = () => s('g', { style: { opacity: 0, transition: 'opacity .5s' } }, svg);
+  const bar = (g, x, y, h, v, col) => { s('rect', { x, y, width: 200, height: h, rx: 4, fill: C.grey, opacity: .45 }, g); return { el: s('rect', { x, y, width: 0, height: h, rx: 4, fill: col }, g), to: 2 * v }; };
+  // left: the eight most common duty themes, out of 16
+  const gT = layer(), tBars = [], TX = 250, TY = 62, TR = 44;
+  txt(gT, 0, 26, `duties in the ad · % of ${N.toLocaleString('en-US')} ads`, { fontSize: '16px', fontWeight: 700, fill: C.ink2 });
+  const rows = J.themes.slice(0, 8).map(([t, k], i) => { const y = TY + i * TR, hi = t.startsWith('Stakeholder'), top = i < 4, v = pct(k, N);
+    const g = s('g', { style: { transition: 'opacity .5s' } }, gT);
+    txt(g, TX - 12, y + 19, label[t], { fontSize: '18px', fontWeight: hi ? 700 : 500, fill: hi ? C.coral : top ? C.ink : C.ink2 }, { 'text-anchor': 'end' });
+    tBars.push(bar(g, TX, y + 4, 22, v, hi ? C.coral : top ? C.plum : C.mute));
+    txt(g, TX + 2 * v + 10, y + 21, `${v}%`, { fontSize: '17px', fontWeight: 700, fill: hi ? C.coral : C.ink2 }); return { g, hi }; });
+  // right: the core tools, then the top three warehouses and BI tools
+  const gK = layer(), kBars = [], KX = 740, head = { core: 'core', warehouse: 'warehouse, top 3', BI: 'BI tool, top 3' };
+  txt(gK, KX - 132, 26, `tools named · % of ${A.toLocaleString('en-US')} ads`, { fontSize: '16px', fontWeight: 700, fill: C.ink2 });
+  let y = 52;
+  for (const grp in J.tools) { txt(gK, KX - 132, y + 12, head[grp], { fontSize: '14px', fontWeight: 700, fill: C.mute, letterSpacing: '.06em' }); y += 20;
+    J.tools[grp].forEach(([lab, k]) => { const v = pct(k, A), core = grp === 'core';
+      txt(gK, KX - 12, y + 17, lab, { fontSize: '18px', fontWeight: core ? 700 : 500, fill: core ? C.ink : C.ink2 }, { 'text-anchor': 'end' });
+      kBars.push(bar(gK, KX, y + 3, 20, v, core ? C.plum : C.mute));
+      txt(gK, KX + 2 * v + 10, y + 19, `${v}%`, { fontSize: '16px', fontWeight: 700, fill: C.ink2 }); y += 30; }); y += 10; }
+  const caption = (words, verdict) => { const g = layer(); tag(g, 0, 466, verdict, { size: 15 });
+    const t = s('text', { x: 150, y: 470, style: { fontSize: '21px', fontWeight: 500, fill: C.ink } }, g);
+    words.forEach(([w, hi]) => s('tspan', { text: w, style: hi ? { fill: C.coral, fontWeight: 700 } : {} }, t)); return g; };
+  const cap1 = caption([['working with stakeholders: '], ['in as many ads as data modelling', 1]], 'descriptive');
+  const cap2 = caption([['after SQL, Python and dbt, '], [`no tool is in more than ${Math.ceil(pct(J.max_other, A) / 10)} ads in 10`, 1]], 'descriptive');
+  const grow = (bars, e) => bars.forEach(b => b.el.setAttribute('width', b.to * (1 - (1 - e) ** 3)));
+  return [
+    async () => { gT.style.opacity = 1; gK.style.opacity = 0; cap2.style.opacity = 0; rows.forEach(r => r.g.style.opacity = 1); grow(kBars, 0);
+      cap1.style.opacity = 1; await tween(1100, e => grow(tBars, e)); },
+    async () => { grow(tBars, 1); gT.style.opacity = 1; rows.forEach(r => r.g.style.opacity = r.hi ? 1 : .35); cap1.style.opacity = 0; cap2.style.opacity = 1;
+      gK.style.opacity = 1; await tween(1100, e => grow(kBars, e), { delay: 200 }); }
+  ];
+}

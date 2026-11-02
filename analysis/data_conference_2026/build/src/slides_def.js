@@ -11,5 +11,6 @@ const SLIDES = [
   { id: 'pitch', name: 'What now', title: 'No shared template. <em>Your mix is the pitch.</em>', kick: 'Question 8 · What do I do with this?', foot: '937 ads that name at least one of 19 tools. A mix is the set of tools an ad names; mentions, not requirements. Template CV = the five most-named tools. No test: the numbers describe these ads.', build: buildPitch },
   { id: 'close', name: 'Close', title: 'It said junior. <em>It asked for two to five years.</em>', kick: 'The ad again', foot: 'Junior. 2-5 years. Strong internships or graduate projects count.', build: st => buildAdSlide(st, true) }
 ];
+const SLIDE_BY_ID = Object.fromEntries(SLIDES.map(S => [S.id, S]));   // the full set, kept for decks that replace SLIDES and still borrow a slide
 
 const EXTRA = [{ id: 'gap', name: 'Duty gaps', title: 'Where the duties differ: <em>mostly BI and reporting.</em>', kick: 'Power BI / Fabric ads against dbt + warehouse ads', foot: 'Gap in the average share of an ad’s duties by theme, with 95% bootstrap intervals. Filled = significant after Holm correction across 22 tests.', build: buildGap }];

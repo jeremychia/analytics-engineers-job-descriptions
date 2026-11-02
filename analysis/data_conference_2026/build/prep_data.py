@@ -275,6 +275,18 @@ def main():
     # Stanford Digital Economy Lab, "Canaries in the Coal Mine", revised 12 Aug 2026: US employment of 22-25-year-olds in AI-exposed jobs, against trend
     out["stanford"] = {"gap_pct": 19, "ages": "22–25", "revised": "12 Aug 2026"}
 
+    # --- what the job is: duty themes read from each ad's responsibility bullets, and the tools it names
+    themes = json.loads((ROOT / "analysis" / "responsibility_classification.json").read_text())["jd_theme_sets"]
+    themes = {j: set(ts) for j, ts in themes.items() if j in recs}
+    names = sorted({t for ts in themes.values() for t in ts}, key=lambda t: -sum(t in ts for ts in themes.values()))
+    tool_share = lambda f: sum(1 for r, _ in recs.values() if r.get(f) is True)
+    out["job"] = {"n_themes": len(themes), "themes": [[t, sum(t in ts for ts in themes.values())] for t in names],
+                  "tools": {g: [[label, tool_share(f)] for f, label in fs] for g, fs in (
+                      ("core", [("has_sql", "SQL"), ("has_python", "Python"), ("has_dbt", "dbt")]),
+                      ("warehouse", [("has_snowflake", "Snowflake"), ("has_bigquery", "BigQuery"), ("has_databricks", "Databricks")]),
+                      ("BI", [("has_power_bi", "Power BI"), ("has_tableau", "Tableau"), ("has_looker", "Looker")]))},
+                  "max_other": max(tool_share(f) for f in {k for r, _ in recs.values() for k in r if k.startswith("has_")} - {"has_sql", "has_python", "has_dbt"})}
+
     # --- pitch-yourself map: fused positions + tools
     pos = {n[0]: n for n in json.loads((IN / "fused_positions.json").read_text())["nodes"]}
     rgn = ["US", "UK & Ireland", "France", "DACH", "Benelux", "Southern Europe", "CEE/Baltics", "Nordics", "APAC", "Other"]

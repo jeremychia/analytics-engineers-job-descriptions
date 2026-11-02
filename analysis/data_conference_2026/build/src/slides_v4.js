@@ -4,6 +4,8 @@
   const ratio = Math.round((N.senior + N.lead + N.staff + N.manager) / N.junior);
   SLIDES.splice(0, SLIDES.length,
     by.open,
+    { id: 'job', name: 'The job', kick: 'First · What is the job?', title: 'SQL and people are the floor. <em>The rest is local.</em>', build: buildJob,
+      foot: `Duties = themes read from each ad’s list of responsibilities, ${D.job.n_themes.toLocaleString('en-US')} ads with one; the 8 most common of 16 shown. Working with stakeholders includes colleagues as well as the business. Tools = named anywhere in the ad, all ${D.corpus_n.toLocaleString('en-US')} ads; the three most named warehouses and BI tools shown.` },
     { id: 'pipeline', name: 'Doors', kick: 'Let them in · How many doors are there?', title: `1 junior ad. <em>${ratio} senior or above.</em>`, build: buildPipeline,
       foot: `All ${D.corpus_n.toLocaleString('en-US')} ads, by the level an AI model read from each one. The ads were collected during one person’s job search, so they lean senior.` },
     { ...by.juniors, kick: 'Let them in · What stands in the way?', title: 'Junior in the label. <em>Years and a degree in the ask.</em>', build: st => pick(buildJuniors(st, 'years'), [1, 2, 7]),
@@ -16,5 +18,6 @@
     { id: 'next', name: 'What next', kick: 'What comes next · What does AI change?', title: 'The tool writes the first draft. <em>Someone still teaches the review.</em>', build: buildNext,
       foot: `Stanford Digital Economy Lab, “Canaries in the Coal Mine”, revised ${D.stanford.revised}: US employment of ${D.stanford.ages}-year-olds in jobs exposed to AI, against its trend; experienced workers show no gap; the authors call it descriptive, not causal. Zego: verbatim from an analytics engineer ad asking for 1–3 years, labelled junior by the AI model. Junior ads asking for AI: ${MG.junior_asks_ai[1]}, read by hand for who will teach.` },
     { id: 'rewrite', name: 'Your ad', kick: 'The ad again', title: 'One line right. <em>One line missing.</em>', build: buildRewrite,
-      foot: 'Verbatim from the ad (Enhance, Dubai). The added line is the one most junior ads leave out; counted on all junior ads, read by hand.' });
+      foot: 'Verbatim from the ad (Enhance, Dubai). The added line is the one most junior ads leave out; counted on all junior ads, read by hand.'  },
+    { ...SLIDE_BY_ID.benefits, name: 'Q&A: benefits', kick: 'For questions · What can I ask for?' });
 }
