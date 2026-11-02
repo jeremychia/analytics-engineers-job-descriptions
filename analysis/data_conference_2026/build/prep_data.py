@@ -22,9 +22,11 @@ from geo_classify import classify_geo_region  # noqa: E402
 from roletext import role_lines  # noqa: E402
 from regions import grid_region, GRID  # noqa: E402
 from missing_stats import min_years_asked  # noqa: E402
+from benefits_tags import tag_ad  # noqa: E402
 
 DATA = ROOT / "data"
 IN = HERE / "inputs"
+SNAPSHOT = "2026-10-28"   # the talk quotes the ads classified up to this date; later records stay out of the deck
 TOOLS = [("has_sql", "SQL"), ("has_python", "Python"), ("has_dbt", "dbt"), ("has_airflow", "Airflow"),
          ("has_dagster", "Dagster"), ("has_snowflake", "Snowflake"), ("has_bigquery", "BigQuery"),
          ("has_databricks", "Databricks"), ("has_redshift", "Redshift"), ("has_looker", "Looker"),
@@ -90,6 +92,8 @@ def short(c):
 def main():
     recs = {}
     for f in sorted(DATA.iterdir()):
+        if f.name[:10] > SNAPSHOT:
+            continue
         j, a = f / f"{f.name}.json", f / "jd_archive.md"
         if j.exists() and a.exists():
             recs[f.name] = (json.loads(j.read_text(encoding="utf-8")), a.read_text(encoding="utf-8").split("## Layer B")[0])
@@ -229,6 +233,10 @@ def main():
                         "quotes": {a["id"]: a["quote"] for a in jr_guides}}
     asks_ai = {r["jd_id"] for r in ai if r["roleAI"] == "1"}; jr_ai = [a for a in hr["junior"] if a["id"] in asks_ai]
     out["mentoring"]["junior_asks_ai"] = [sum(a["names_guide"] for a in jr_ai), len(jr_ai)]   # junior ads asking for AI: how many say who will teach
+    out["mentoring"]["junior_learning"] = [sum(a["learning"] for a in hr["junior"]), len(hr["junior"])]   # hand-read: a budget, programme, courses or set time to learn
+    out["mentoring"]["junior_neither"] = [sum(not a["names_guide"] and not a["learning"] for a in hr["junior"]), len(hr["junior"])]   # no one named to teach, nothing to learn with
+    lb = lambda lv: [tag_ad(re.sub(r"^\*\*URL:\*\*.*$", "", txt, flags=re.M))["learning"] for r, txt in recs.values() if r.get("seniority") == lv]
+    out["mentoring"]["learning_benefit_pct"] = {lv: round(100 * sum(v) / len(v)) for lv in ("junior", "senior") for v in [lb(lv)]}   # the benefits pattern, before any hand read
     out["stats2"] = json.loads((IN / "more_stats.json").read_text())   # from more_stats.py (run it after prep once, then prep again)
     out["stats"] = json.loads((IN / "stack_stats.json").read_text())   # from stack_stats.py
     m = json.loads((IN / "missing_stats.json").read_text())   # from missing_stats.py; totals only, the per-ad flags stay in the file

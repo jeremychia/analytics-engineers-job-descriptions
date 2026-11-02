@@ -1,29 +1,42 @@
 /* Slides only the senior-room deck uses: the junior pipeline, who teaches the juniors, what AI changes, and the opening ad with the one line it is missing. */
+/* the levels stacked like a population pyramid, junior at the base: a narrow base under a wide middle */
 function buildPipeline(stage) {
-  const W = 1000, N = D.seniority_n, jr = N.junior, up = N.senior + N.lead + N.staff + N.manager, ratio = Math.round(up / jr);
-  const svg = s('svg', { viewBox: `0 0 ${W} 520`, class: 'chart' }, stage), X0 = 70, Y = 170, R = 36, GAP = (W - 2 * X0 - 2 * R) / ratio;
+  const W = 1000, N = D.seniority_n, jr = N.junior, up = N.senior + N.lead + N.staff + N.manager;
+  const levels = [['manager', C.plum], ['staff', C.plum], ['lead', C.plum], ['senior', C.plum], ['mid', C.mute], ['junior', C.coral]];
+  const svg = s('svg', { viewBox: `0 0 ${W} 520`, class: 'chart' }, stage), CX = 560, HALF = 330, Y0 = 20, ROW = 60, BH = 48, peak = Math.max(...levels.map(([lv]) => N[lv]));
   const txt = (p, x, y, text, st = {}, a = {}) => s('text', Object.assign({ x, y, text, style: Object.assign({ fontSize: '20px', fill: C.ink }, st) }, a), p);
-  const dots = Array.from({ length: ratio + 1 }, (_, i) => s('circle', { cx: X0 + R + i * GAP, cy: Y, r: 0, fill: i ? C.plum : C.coral }, svg));
-  txt(svg, X0 + R, Y + R + 34, 'junior', { fontSize: '18px', fontWeight: 700, fill: C.coral }, { 'text-anchor': 'middle' });
-  txt(svg, X0 + R + GAP * (ratio + 1) / 2, Y + R + 34, 'senior, lead, staff or manager', { fontSize: '18px', fontWeight: 700, fill: C.plum }, { 'text-anchor': 'middle' });
-  txt(svg, X0, Y + R + 80, `${jr} junior ads against ${up} at senior level or above, of ${D.corpus_n.toLocaleString('en-US')}`, { fontSize: '18px', fill: C.ink2 });
-  tag(svg, W - 8, Y + R + 80, 'descriptive', { anchor: 'end' });
-  const grow = e => dots.forEach((d, i) => d.setAttribute('r', R * Math.min(1, Math.max(0, e * (ratio + 1) - i * .6) / 1.2)));
-  return [async () => { grow(0); await tween(1400, grow); }];
+  const bars = levels.map(([lv, col], k) => {
+    const y = Y0 + k * ROW, half = HALF * N[lv] / peak, strong = lv === 'junior';
+    txt(svg, 150, y + BH / 2 + 7, lv, { fontSize: '19px', fontWeight: strong ? 700 : 500, fill: strong ? C.coral : C.ink2 }, { 'text-anchor': 'end' });
+    const bar = s('rect', { x: CX, y, width: 0, height: BH, rx: 6, fill: col }, svg);
+    const n = txt(svg, CX + half + 12, y + BH / 2 + 7, `${N[lv]}`, { fontSize: '19px', fontWeight: strong ? 700 : 500, fill: strong ? C.coral : C.ink2, opacity: 0 });
+    return { bar, n, half };
+  });
+  txt(svg, 40, Y0 + 6 * ROW + 46, `${jr} junior ads against ${up} at senior level or above, of ${D.corpus_n.toLocaleString('en-US')}`, { fontSize: '18px', fill: C.ink2 });
+  tag(svg, W - 8, Y0 + 6 * ROW + 46, 'descriptive', { anchor: 'end' });
+  // grow from the base up, each bar outward from the centre line
+  const grow = e => bars.forEach(({ bar, n, half }, k) => { const t = Math.min(1, Math.max(0, e * 1.8 - (bars.length - 1 - k) * .16)), w = half * (1 - (1 - t) ** 3);
+    bar.setAttribute('x', CX - w); bar.setAttribute('width', 2 * w); n.style.opacity = t >= 1 ? 1 : 0; });
+  return [async () => { grow(0); await tween(1600, grow); }];
 }
 
-/* three in four junior ads don't say who will teach the new hire (all 64 read by hand); a third of senior ads ask you to mentor (hand-read sample) as context */
+/* three in four junior ads don't say who will teach the new hire, and half name neither a teacher nor anything to learn with (all 64 read by hand); a third of senior ads ask you to mentor (hand-read sample) as context */
 function buildMentorGap(stage) {
-  const W = 1000, MG = D.mentoring, [sk, sn] = MG.senior_asks_mentor, [jk, jn] = MG.junior_names_guide;
+  const W = 1000, MG = D.mentoring, [sk, sn] = MG.senior_asks_mentor, [jk, jn] = MG.junior_names_guide, lk = MG.junior_learning[0], nk = MG.junior_neither[0], both = jk + lk - (jn - nk);
   const svg = s('svg', { viewBox: `0 0 ${W} 520`, class: 'chart' }, stage), COLS = 16, P = 34, r = 13, X0 = 40, Y0 = 150;
   const txt = (p, x, y, text, st = {}, a = {}) => s('text', Object.assign({ x, y, text, style: Object.assign({ fontSize: '20px', fill: C.ink }, st) }, a), p);
   const layer = () => s('g', { style: { opacity: 0, transition: 'opacity .5s' } }, svg);
-  const gS = layer(), gJ = layer(), gQ = layer();
+  const gS = layer(), gJ = layer(), gQ = layer(), gL = layer();
   txt(gS, X0, 52, `${Math.round(sk / sn * 3)} in 3 senior ads`, { fontSize: '30px', fontWeight: 700, fill: C.plum });
   txt(gS, X0 + 250, 52, 'ask you to mentor, coach or review code', { fontSize: '20px', fill: C.ink2 });
   txt(gJ, X0, 118, `${jn} junior ads, read by hand`, { fontSize: '18px', fontWeight: 700, fill: C.ink2 });
-  const dots = Array.from({ length: jn }, (_, i) => s('circle', { cx: X0 + (i % COLS) * P + r, cy: Y0 + Math.floor(i / COLS) * P + r, r: 0, fill: i < jk ? C.coral : C.grey }, gJ));
-  const RX = X0 + COLS * P + 30;
+  // dot order: names a teacher and something to learn with, a teacher only, something to learn with only, neither (the last rows)
+  const RX = X0 + COLS * P + 30, at = i => [X0 + (i % COLS) * P + r, Y0 + Math.floor(i / COLS) * P + r];
+  const dots = Array.from({ length: jn }, (_, i) => s('circle', { cx: at(i)[0], cy: at(i)[1], r: 0, fill: i < jk ? C.coral : C.grey }, gJ));
+  Array.from({ length: jn }, (_, i) => i).filter(i => i < both || (i >= jk && i < jk + lk - both)).forEach(i => s('circle', { cx: at(i)[0], cy: at(i)[1], r: r + 3, fill: 'none', stroke: C.plum, 'stroke-width': 2.5 }, gL));
+  txt(gL, X0, Y0 + Math.ceil(jn / COLS) * P + 18, '○ ringed: a learning budget, a training programme or set time to learn', { fontSize: '15px', fill: C.plum, fontWeight: 600 });
+  txt(gL, RX, Y0 + 166, `${nk} have neither`, { fontSize: '26px', fontWeight: 700, fill: C.ink });
+  txt(gL, RX, Y0 + 190, 'no one named to teach, nothing to learn with', { fontSize: '16px', fill: C.ink2 });
   txt(gJ, RX, Y0 + 30, `${jn - jk}`, { fontSize: '56px', fontWeight: 700, fill: C.ink, letterSpacing: '-.03em' });
   txt(gJ, RX, Y0 + 58, 'don’t say who will teach', { fontSize: '18px', fill: C.ink2 });
   txt(gJ, RX, Y0 + 80, 'the new hire', { fontSize: '18px', fill: C.ink2 });
@@ -35,12 +48,12 @@ function buildMentorGap(stage) {
   s('text', { x: X0, y: 340, class: 'cardlab', text: `How the ${jk} say it` }, gQ);
   picks.forEach(([co, part], k) => { const t = s('text', { x: X0, y: 376 + k * 32, style: { fontSize: '21px', fill: C.ink } }, gQ);
     s('tspan', { text: `“${part}”`, style: { fontWeight: 500 } }, t); s('tspan', { text: `  · ${co}`, style: { fill: C.ink2, fontSize: '17px' } }, t); });
-  txt(gQ, X0, 494, 'Mentor someone? Say so in the junior ad.', { fontSize: '30px', fontWeight: 700, fill: C.coral });
+  txt(gL, X0, 494, 'Mentor someone? Say so in the junior ad.', { fontSize: '30px', fontWeight: 700, fill: C.coral });
   const pop = e => dots.forEach((d, i) => d.setAttribute('r', r * Math.min(1, Math.max(0, e * 1.6 - i / dots.length * .6))));
   return [
-    async () => { gJ.style.opacity = 0; gQ.style.opacity = 0; gS.style.opacity = 1; pop(0); await wait(Anim.fast ? 0 : 400); },
-    async () => { gQ.style.opacity = 0; gS.style.opacity = 1; gJ.style.opacity = 1; await tween(1100, pop); },
-    async () => { pop(1); gS.style.opacity = 1; gJ.style.opacity = 1; gQ.style.opacity = 1; await wait(Anim.fast ? 0 : 500); }
+    async () => { gQ.style.opacity = 0; gL.style.opacity = 0; gS.style.opacity = 1; gJ.style.opacity = 1; pop(0); await tween(1100, pop); },
+    async () => { pop(1); gL.style.opacity = 0; gS.style.opacity = 1; gJ.style.opacity = 1; gQ.style.opacity = 1; await wait(Anim.fast ? 0 : 500); },
+    async () => { pop(1); gS.style.opacity = 1; gJ.style.opacity = 1; gQ.style.opacity = 1; gL.style.opacity = 1; await wait(Anim.fast ? 0 : 500); }
   ];
 }
 
@@ -57,7 +70,7 @@ function buildRewrite(stage) {
     h('div', { style: { fontSize: 'clamp(15px,1.5vw,24px)', fontWeight: 700 } }, label), h('div', { style: { fontSize: 'clamp(12px,1.05vw,17px)', color: C.ink2 } }, note));
   const blanks = h('div', { style: { display: 'flex', gap: '1vw', marginTop: '2.4vh', opacity: 0, transition: 'opacity .5s' } },
     blank('+ who will teach them', `said in ${jk} of ${jn} junior ads`));
-  const line = h('div', { class: 'finalline', style: { fontSize: 'clamp(24px,3.4vw,52px)', marginTop: '3vh', opacity: 0, transition: 'opacity .6s' } }, 'Someone held the door for each of us. ', h('em', {}, 'Hold it for the next one.'));
+  const line = h('div', { class: 'finalline', style: { fontSize: 'clamp(24px,3.4vw,52px)', marginTop: '3vh', opacity: 0, transition: 'opacity .6s' } }, 'Someone held the door for each of us, then taught us. ', h('em', {}, 'Do both for the next one.'));
   stage.append(h('div', { class: 'col' }, card, blanks, line));
   return [
     async () => { blanks.style.opacity = 0; line.style.opacity = 0; await wait(Anim.fast ? 0 : 400); },
