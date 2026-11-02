@@ -1,389 +1,517 @@
 {
- "method": "Read in full by hand, ad text only. Junior: all 64 junior ads; names_guide = the ad names a person or role who will mentor, coach, guide or supervise the new hire (perk-list mentions with no person or role do not count); any_support = names_guide, or a structured learning programme. Senior: a random sample of 50 senior ads; asks_mentor = asks the candidate to mentor, coach or develop others, or review their code; asks_enable = asks the candidate to make others able to use data themselves.",
+ "method": "Read in full by hand, ad text only. Junior: all 64 junior ads; names_guide = the ad names a person or role who will mentor, coach, guide or supervise the new hire (perk-list mentions with no person or role do not count); any_support = names_guide, or a structured learning programme. Senior: a random sample of 50 senior ads; asks_mentor = asks the candidate to mentor, coach or develop others, or review their code; asks_enable = asks the candidate to make others able to use data themselves. learning = the ad offers the new hire something concrete to learn with: a learning or training budget, a training programme, courses or a learning platform, or set time to learn. Vague promises (\"opportunities for learning and growth\", \"career development\") do not count. Read on the 17 ads the benefits pattern tagged, and searched by hand in the rest.",
  "junior": [
   {
    "id": "2026-06-30_louis-dreyfus-company_data-analytics-engineer-finance-systems",
    "names_guide": true,
    "any_support": true,
-   "quote": "Receive mentorship from experienced OneStream consultants and platform experts."
+   "quote": "Receive mentorship from experienced OneStream consultants and platform experts.",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-07-01_hse24_junior-expert-bi-analytics",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-07-02_bose_data-analytics-engineer",
    "names_guide": true,
    "any_support": true,
-   "quote": "best practices under the guidance of senior team members"
+   "quote": "best practices under the guidance of senior team members",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-07-04_emeria_analytics-engineer",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-07-06_intelligent-lending_analytics-engineer-ocean-squad",
    "names_guide": false,
    "any_support": true,
-   "quote": "training and mentoring"
+   "quote": "training and mentoring",
+   "learning": true,
+   "learning_quote": "training and mentoring"
   },
   {
    "id": "2026-07-06_payabl_analytics-engineer",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": true,
+   "learning_quote": "learning budget"
   },
   {
    "id": "2026-07-13_bose_data-analytics-engineer",
    "names_guide": true,
    "any_support": true,
-   "quote": "Follow and contribute to analytical engineering standards and best practices under the guidance of senior team members."
+   "quote": "Follow and contribute to analytical engineering standards and best practices under the guidance of senior team members.",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-07-14_carlyle-wissing-cushman-wakefield_eic-junior-analytics-engineer",
    "names_guide": true,
    "any_support": true,
-   "quote": "working under the guidance of senior Analytics Engineers."
+   "quote": "working under the guidance of senior Analytics Engineers.",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-07-17_jobster_analytics-engineer",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-07-17_lendable_graduate-analytics-engineer",
    "names_guide": true,
    "any_support": true,
-   "quote": "Build and improve dbt models and transformations with senior engineer guidance"
+   "quote": "Build and improve dbt models and transformations with senior engineer guidance",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-07-21_moerie-beauty_analytics-engineer",
    "names_guide": false,
    "any_support": true,
-   "quote": "Coaching, mentorship, training, conferences, online courses, subscriptions, books."
+   "quote": "Coaching, mentorship, training, conferences, online courses, subscriptions, books.",
+   "learning": true,
+   "learning_quote": "Coaching, mentorship, training, conferences, online courses, subscriptions, books."
   },
   {
    "id": "2026-07-22_holistics_analytics-engineer-data-presales",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": true,
+   "learning_quote": "Annual budget for personal and professional growth"
   },
   {
    "id": "2026-07-22_pggm_junior-bi-engineering",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": true,
+   "learning_quote": "Een ruim opleidingsbudget voor interne en externe trainingen of opleidingen."
   },
   {
    "id": "2026-07-29_zego_analytics-engineer",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-07-31_itt-inc_junior-analytics-engineer",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-08-01_accenture_analytics-engineer-lisbon",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-08-07_asb-bank_analytics-engineer",
    "names_guide": true,
    "any_support": true,
-   "quote": "with guidance and mentorship from Senior/Staff Engineers and Chapter Leads."
+   "quote": "with guidance and mentorship from Senior/Staff Engineers and Chapter Leads.",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-08-12_morgan-stanley_business-analytics-engineer",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-08-18_checkoutcom_data-analytics-engineer-i",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-08-18_ql-resources-berhad_data-analytics-engineer",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-08-19_glovo_analytics-engineer-i-ai-and-data-enablement",
    "names_guide": true,
    "any_support": true,
-   "quote": "Work side-by-side with senior engineers in a supportive environment designed to help you rapidly evolve"
+   "quote": "Work side-by-side with senior engineers in a supportive environment designed to help you rapidly evolve",
+   "learning": true,
+   "learning_quote": "An external learning budget to fuel your thirst for knowledge and personal growth."
   },
   {
    "id": "2026-08-20_cz_analytics-engineer",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": true,
+   "learning_quote": "wekelijks ruimte om je te verdiepen in je vak"
   },
   {
    "id": "2026-08-25_lyka_data-analytics-engineer",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-08-25_netapp_data-analytics-engineer",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-08-26_endowus_analytics-engineer",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-09-01_lot-of-happiness_analytics-engineer",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": true,
+   "learning_quote": "Een persoonlijk opleidingsbudget"
   },
   {
    "id": "2026-09-05_dataroots_analytics-engineer",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": true,
+   "learning_quote": "A training budget for individual and team learning opportunities."
   },
   {
    "id": "2026-09-05_foxai_data-analytics-engineer",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-09-05_glovo_data-analytics-engineer",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-09-14_richemont_regional-analytics-engineering-intern",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-10-05_isa_associate-data-analytics-engineer",
    "names_guide": true,
    "any_support": true,
-   "quote": "Support the development and maintenance of Power BI reports and dashboards under the guidance of senior engineers"
+   "quote": "Support the development and maintenance of Power BI reports and dashboards under the guidance of senior engineers",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-10-05_shi-international_associate-analytics-engineer-data-visualization",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-10-05_the-phoenix-group_data-analytics-engineer",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-10-06_landbay_junior-analytics-engineer",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-10-08_westchester-medical-center_data-analytics-engineer",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-10-09_enhance_analytics-engineer",
    "names_guide": true,
    "any_support": true,
-   "quote": "You'll join the Data team and learn from senior analytics engineers while building real models"
+   "quote": "You'll join the Data team and learn from senior analytics engineers while building real models",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-10-09_gameloft-saigon_business-intelligence-engineer-junior",
    "names_guide": false,
    "any_support": true,
-   "quote": "Opportunities to collaborate and train with Gameloft worldwide experts and develop yourself."
+   "quote": "Opportunities to collaborate and train with Gameloft worldwide experts and develop yourself.",
+   "learning": true,
+   "learning_quote": "Various training packages, including internal training, training sponsorship, and e-learning platforms"
   },
   {
    "id": "2026-10-10_the-phoenix-group_business-intelligence-engineer",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-10-11_agile-actors_bi-engineer",
    "names_guide": true,
    "any_support": true,
-   "quote": "Onboarding Buddy to support and guide you from day one"
+   "quote": "Onboarding Buddy to support and guide you from day one",
+   "learning": true,
+   "learning_quote": "Unlimited Training & Learning resources"
   },
   {
    "id": "2026-10-11_charleston-holding-gmbh_bi-engineer-data-solutions-architect",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-10-11_ipt-innovation-process-technology_data-analytics-engineer-im-it-consulting-german-speaking",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-10-11_korber_analytics-engineer",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-10-11_leonar_consultant-analytics-engineer",
    "names_guide": true,
    "any_support": true,
-   "quote": "Dès votre arrivée, un parrain/marraine vous accompagnera dans votre progression."
+   "quote": "Dès votre arrivée, un parrain/marraine vous accompagnera dans votre progression.",
+   "learning": true,
+   "learning_quote": "Vous aurez accès à un programme de formations internes"
   },
   {
    "id": "2026-10-11_procter-gamble_analytics-engineer-trainee",
    "names_guide": true,
    "any_support": true,
-   "quote": "Support the delivery of BI reporting solutions by working with experienced analysts, data engineers, and business stakeholders."
+   "quote": "Support the delivery of BI reporting solutions by working with experienced analysts, data engineers, and business stakeholders.",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-10-11_vattenfall_international-trainee-hydro-power-optimisation-and-data-analytics-engineer",
    "names_guide": false,
    "any_support": true,
-   "quote": "We are looking for talented graduates to join the Vattenfall International Trainee Programme."
+   "quote": "We are looking for talented graduates to join the Vattenfall International Trainee Programme.",
+   "learning": true,
+   "learning_quote": "Accelerate your development through structured learning"
   },
   {
    "id": "2026-10-12_ramboll_data-analytics-engineer",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-10-19_another-star_junior-analytics-engineer",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": true,
+   "learning_quote": "Personal and professional development opportunities and programs"
   },
   {
    "id": "2026-10-19_devoteam-data-driven_analytics-engineer",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-10-20_margera_digital-analytics-engineer",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-10-20_qiagen_associate-specialist-data-analyst-analytics-engineering",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": true,
+   "learning_quote": "Training and development programs"
   },
   {
    "id": "2026-10-22_cabinet-ekinox_data-analyst-analytics-engineer-junior-paie-rh",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-10-22_wd_engineer-data-analytics-engineering",
    "names_guide": false,
    "any_support": true,
-   "quote": "providing foundational training through a structured onboarding, mentorship, and development curriculum"
+   "quote": "providing foundational training through a structured onboarding, mentorship, and development curriculum",
+   "learning": true,
+   "learning_quote": "foundational training through a structured onboarding, mentorship, and development curriculum"
   },
   {
    "id": "2026-10-23_deutsche-bahn_data-analytics-engineer",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-10-23_sikwel_trainee-analytics-engineer",
    "names_guide": true,
    "any_support": true,
-   "quote": "Du lernst an der Seite erfahrener Kollegen, wie du Rohdaten in echte Erkenntnisse verwandelst"
+   "quote": "Du lernst an der Seite erfahrener Kollegen, wie du Rohdaten in echte Erkenntnisse verwandelst",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-10-26_abn-amro-bank-nv_analytics-engineer-global-finance",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": true,
+   "learning_quote": "A personal development budget of € 1,000 per year"
   },
   {
    "id": "2026-10-26_axa_stage-data-engineering-analytics",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-10-26_back-market_customer-journey-app-analytics-apprentice",
    "names_guide": false,
    "any_support": true,
-   "quote": "Employee Resource Groups, including mentorship programs, comprehensive accessibility policies, and cultural competency training."
+   "quote": "Employee Resource Groups, including mentorship programs, comprehensive accessibility policies, and cultural competency training.",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-10-26_fleury-michon_stage-data-engineer-reporting-bi-mars-2027",
    "names_guide": true,
    "any_support": true,
-   "quote": "Encadré(e) par un tuteur expérimenté, vous serez amené(e) à intervenir sur l’ensemble de la chaîne"
+   "quote": "Encadré(e) par un tuteur expérimenté, vous serez amené(e) à intervenir sur l’ensemble de la chaîne",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-10-26_grdf_analytics-engineer-data-engineer-microsoft-fabric-snowflake-power-bi",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-10-26_hager_stage-ingenieur-data-analytics-dashboards",
    "names_guide": true,
    "any_support": true,
-   "quote": "Envie de booster ton expérience professionnelle aux côtés d’un tuteur ou d’une tutrice investi(e) et passionné(e) ?"
+   "quote": "Envie de booster ton expérience professionnelle aux côtés d’un tuteur ou d’une tutrice investi(e) et passionné(e) ?",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-10-26_numberly_stage-analytics-engineer-data-collab",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": true,
+   "learning_quote": "notre plateforme de e-learning interactive"
   },
   {
    "id": "2026-10-26_renault-group_ap26-bac5-alternance-data-analytics-et-ia-audit-interne",
    "names_guide": true,
    "any_support": true,
-   "quote": "Accompagné par un maître d’apprentissage et d’équipes expertes, vous progressez vers votre diplôme"
+   "quote": "Accompagné par un maître d’apprentissage et d’équipes expertes, vous progressez vers votre diplôme",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-10-26_stellantis_stage-ingenieur-data-analytics-performance-economique-base-couts-composants-mecatroniques",
    "names_guide": false,
    "any_support": false,
-   "quote": ""
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
   },
   {
    "id": "2026-10-26_wavestone_data-platform-analytics-engineering-data-for-ia",
    "names_guide": true,
    "any_support": true,
-   "quote": "Encadré(e) par un(e) chef(fe) de projet expérimenté(e), vous aurez l’opportunité de contribuer"
+   "quote": "Encadré(e) par un(e) chef(fe) de projet expérimenté(e), vous aurez l’opportunité de contribuer",
+   "learning": false,
+   "learning_quote": ""
   }
  ],
  "senior_sample": [

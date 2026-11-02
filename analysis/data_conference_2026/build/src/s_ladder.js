@@ -85,7 +85,14 @@ function buildLadder(stage) {
   svg.insertBefore(gStretch, svg.firstChild);                                  // the column bands sit behind the lines
   const stretchText = [...gStretch.children].slice(-2); stretchText.forEach(e => svg.appendChild(e)); stretchText.forEach(e => { e.style.opacity = 0; e.style.transition = 'opacity .6s'; });
 
-  return [
+  // 7. the mentor line picked out: a deck that goes from the ladder to who teaches the juniors
+  const gMentor = layer(), mv = core['Mentoring / coaching / code review'], mentorLab = six.find(o => o.label === 'mentor');
+  s('path', { d: pathOf(mv, XV, 1, 3), fill: 'none', stroke: C.plum, 'stroke-width': 5, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, gMentor);
+  mv.slice(1).forEach((v, i) => s('circle', { cx: XV(i + 1), cy: Y(v), r: 5.5, fill: C.plum, stroke: C.bg, 'stroke-width': 2 }, gMentor));
+  s('rect', { x: XV(3) + 13, y: mentorLab.ly - 15, width: 70, height: 20, fill: C.bg }, gMentor);
+  txt(gMentor, XV(3) + 15, mentorLab.ly, 'mentor', { fill: C.plum, fontWeight: 700 });
+
+  const steps = [
     async () => { gCore.style.opacity = 1;
       await Promise.all(coreLines.map((p, i) => drawIn(p, 1300, i * 200)));
       coreLabs.forEach(l => l.style.opacity = 1); if (!(await wait(400))) return; gYears.style.opacity = 1; },
@@ -96,4 +103,6 @@ function buildLadder(stage) {
     optional(async () => { gCaut.style.opacity = 1; }),
     optional(async () => { gStretch.style.opacity = 1; stretchText.forEach(e => e.style.opacity = 1); })
   ];
+  steps.mentor = async () => { gStrat.style.opacity = .35; gSix.style.opacity = .5; gMentor.style.opacity = 1; };
+  return steps;
 }

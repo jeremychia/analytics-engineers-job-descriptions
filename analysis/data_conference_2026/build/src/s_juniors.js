@@ -1,4 +1,4 @@
-/* Juniors: four ways to count, the hard gate, three contradictions, France, then what a junior can do. */
+/* Juniors: four ways to count, the hard gate, three contradictions, France, then what a junior can do; last, the degree against senior ads. */
 function buildJuniors(stage, by = 'gate') {   // by 'years': group the ads by whether they ask 2+ years of experience, the one ask that contradicts the junior label
   const W = 1000, H = 500, JC = D.junior_counts, J = D.junior, ads = J.ads, n = ads.length, S2 = D.stats2.juniors;
   const svg = s('svg', { viewBox: `0 0 ${W} ${H}`, class: 'chart' }, stage);
@@ -50,6 +50,9 @@ function buildJuniors(stage, by = 'gate') {   // by 'years': group the ads by wh
   const byBac = arr => arr.filter(i => ads[i].bac_checked).concat(arr.filter(i => !ads[i].bac_checked));
   byBac(ads.map((a, i) => i).filter(i => !ads[i].fr)).forEach((i, k) => L.fr[i] = [gx0 + (k % 13) * P, GY + Math.floor(k / 13) * P]);
   byBac(ads.map((a, i) => i).filter(i => ads[i].fr)).forEach((i, k) => L.fr[i] = [720 + (k % 5) * P, GY + Math.floor(k / 5) * P]);
+  const hasDeg = i => ads[i].flags[0], dx0 = gx0 + 10 * P + 60; L.deg = [];
+  ads.map((a, i) => i).filter(hasDeg).forEach((i, k) => L.deg[i] = [gx0 + (k % 10) * P, GY + Math.floor(k / 10) * P]);
+  ads.map((a, i) => i).filter(i => !hasDeg(i)).forEach((i, k) => L.deg[i] = [dx0 + (k % 7) * P, GY + Math.floor(k / 7) * P]);
   const gD = s('g', {}, svg), start = [zx(JC.classifier), 270];
   const dots = ads.map((a, i) => { const ring = s('circle', { r: R + 5, fill: 'none', stroke: C.coral, 'stroke-width': 3, style: { opacity: 0 } }, gD);
     const c = s('circle', { r: 0, fill: C.grey }, gD);
@@ -83,6 +86,7 @@ function buildJuniors(stage, by = 'gate') {   // by 'years': group the ads by wh
   }
   const pContra = panel(), years = q => (q.match(/\d+\s*[-–]\s*\d+ years|\d+\+ years/) || [''])[0].replace('-', '–');
   [[contraIds[0], `Enhance: says junior, asks ${years(D.quotes.enhance_asks)}`], [contraIds[1], `Dataroots: junior web address, asks ${years(D.quotes.dataroots)}`], [contraIds[2], `ITT: junior title, asks ${years(D.quotes.itt)}`]]
+    .sort(([i], [j]) => L.gate[j][0] - L.gate[i][0])   // the rightmost dot takes the top label, so no leader line crosses a label
     .forEach(([i, lab], k) => { const [x, y] = L.gate[i], ly = 354 + k * 42;
       s('polyline', { points: `${x},${y + R + 9} ${x},${ly - 6} ${x + 10},${ly - 6}`, fill: 'none', stroke: C.coral, 'stroke-width': 2 }, pContra);
       const t = s('text', { x: x + 16, y: ly }, pContra); const [co, rest] = lab.split(': '); span(t, co + ': ', { size: 19, weight: 700 }); span(t, rest, { size: 19 }); });
@@ -105,7 +109,16 @@ function buildJuniors(stage, by = 'gate') {   // by 'years': group the ads by wh
   txt(pProj, gx0 - 4, PY + 10, projN, 64, { weight: 700, fill: C.coral });
   txt(pProj, 160, PY - 14, 'say internships or projects count', 22, { fill: C.ink2 });
   txt(pProj, 160, PY + 22, 'have the basics? apply, lead with the project', 28, { weight: 700 });
-  const panels = [pGate, pContra, pFr, pHope, pRoute, pProj];
+  const pDeg = panel(), DL = D.junior.degree_by_level, [dk, dn] = DL.junior, BX = 770;
+  txt(pDeg, gx0 - R, 97, `mentions a degree · ${dk}`, 18, { weight: 700, fill: C.coral }); txt(pDeg, dx0 - R, 97, `names none · ${dn - dk}`, 18, { weight: 700, fill: C.mute });
+  txt(pDeg, gx0 - 4, PY + 10, `${tenths(dk, dn)} in 10`, 64, { weight: 700, fill: C.coral, ls: '-.03em' });
+  txt(pDeg, PX, PY - 14, 'mention a degree', 26, { weight: 700 }); tag(pDeg, PX + 230, PY - 14, 'conclusive');
+  txt(pDeg, PX, PY + 22, `${D.junior.other_routes.length} of ${D.corpus_n.toLocaleString('en-US')} ads name another route in`, 18, { fill: C.ink2 });
+  Object.entries(DL).forEach(([lv, [k, m]], r) => { const y = PY - 40 + r * 30, pct = Math.round(100 * k / m), col = r ? C.ink2 : C.coral;
+    txt(pDeg, BX - 10, y + 5, lv, 15, { anchor: 'end', fill: col, weight: r ? 400 : 700 });
+    s('rect', { x: BX, y: y - 9, width: 1.4 * pct, height: 18, rx: 4, fill: r ? C.grey : C.coral }, pDeg);
+    txt(pDeg, BX + 1.4 * pct + 8, y + 5, pct + '%', 15, { fill: col, weight: r ? 400 : 700 }); });
+  const panels = [pGate, pContra, pFr, pHope, pRoute, pProj, pDeg];
 
   // absolute state for every build after the ruler
   const gateFill = i => inGate(i) ? C.coral : C.grey, hopeFill = i => inGate(i) ? C.soft : C.ink2;
@@ -138,6 +151,7 @@ function buildJuniors(stage, by = 'gate') {   // by 'years': group the ads by wh
     optional(async () => go({ layout: 'fr', fill: i => ads[i].bac_checked ? C.coral : C.grey, panel: pFr })),
     async () => go({ layout: 'gate', fill: hopeFill, panel: pHope, caps: 'hope' }),
     optional(async () => go({ layout: 'gate', fill: i => route[i] ? C.coral : hopeFill(i), q: i => route[i], panel: pRoute, caps: 'hope' })),
-    async () => go({ layout: 'gate', fill: i => proj[i] ? C.coral : hopeFill(i), ring: i => proj[i], panel: pProj, caps: 'hope' })
+    async () => go({ layout: 'gate', fill: i => proj[i] ? C.coral : hopeFill(i), ring: i => proj[i], panel: pProj, caps: 'hope' }),
+    ...(by === 'years' ? [async () => go({ layout: 'deg', fill: i => hasDeg(i) ? C.coral : C.grey, panel: pDeg })] : [])   // the degree: junior ads mention one far more often than senior ads
   ];
 }
