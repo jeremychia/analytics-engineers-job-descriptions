@@ -1,0 +1,156 @@
+{
+  "jd_id": "2026-11-03_skiils_dataviz-bi-engineer-hf",
+  "company": "SKIILS",
+  "role": "DataViz & BI Engineer H/F",
+  "job_location": "Suresnes, Île-de-France, France",
+  "seniority": "mid",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "mixed",
+  "stakeholder_orientation": "mixed",
+  "autonomy_level": "mixed",
+  "ai_role": "none",
+  "testing_framing": "absent",
+  "loss_aversion_framing": "moderate",
+  "greenfield_vs_fix": "mixed",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 4,
+  "data_team_maturity": "mature",
+  "urgency": "standard",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "hard",
+  "language_gate_languages": [
+    "French"
+  ],
+  "jd_language": "fr",
+  "ai_written": {
+    "score": 66.1,
+    "spread": 23.5,
+    "measures": {
+      "marker_vocab": {
+        "raw": 6.849,
+        "score": 40.4
+      },
+      "stock_phrases": {
+        "raw": 1.712,
+        "score": 34.2
+      },
+      "structure": {
+        "raw": 0.29,
+        "score": 58.1
+      },
+      "bullet_symmetry": {
+        "raw": 0.341,
+        "score": 90.8
+      },
+      "burstiness": {
+        "raw": 0.475,
+        "score": 78.5
+      },
+      "specificity": {
+        "raw": 5.479,
+        "score": 94.7
+      }
+    }
+  },
+  "interview_stages": 3,
+  "ats_platform": "linkedin",
+  "ats_job_id": "4485756231",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": false,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": true,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": true,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": false,
+  "has_aws": true,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "Tableau",
+    "SQL"
+  ],
+  "preferred_tools": [
+    "dbt",
+    "Databricks"
+  ],
+  "responsibilities": [
+    "Répondre aux besoins métier en KPIs : mettre à disposition, de manière automatique et régulière, des outils de data visualisation performants pour les équipes métier.",
+    "Piloter le cycle de vie des solutions BI : intervenir dès la finalisation du cadrage projet jusqu'à la livraison en production, et assurer le run des solutions déployées.",
+    "Apporter une expertise en visualisation de données : proposer des solutions de dataviz adaptées aux usages métiers exprimés lors du cadrage.",
+    "Collaborer avec les Product Managers, Data Analysts et Analytics Engineers : identifier des opportunités d'amélioration des produits de visualisation.",
+    "Conduire des analyses à impact : mesurer l'effet des solutions déployées et transformer des problématiques business en insights actionnables.",
+    "Identifier de nouvelles opportunités : quantifier des pistes de développement de nouveaux produits ou usages data.",
+    "Documenter et fiabiliser : rédiger la documentation technique nécessaire pour assurer un run efficace des solutions.",
+    "Contribuer au collectif Data : partager ton avancement lors des rituels Agile, échanger avec les autres BI Engineers, Product Managers et experts des data domains."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://www.linkedin.com/jobs/view/4485756231/",
+  "evidence": {
+    "velocity_vs_rigour": "Documenter et fiabiliser : rédiger la documentation technique nécessaire pour assurer un run efficace des solutions.",
+    "velocity_vs_rigour_explanation": "Documentation, reliability (\"fiabiliser\") and \"rigueur\" outweigh one \"environnement agile\", so rigour, though the signal is thin.",
+    "domain_risk": "Une connaissance du secteur retail.",
+    "domain_risk_explanation": "Retail business KPIs and dashboards with no financial-reporting or regulatory language, so moderate.",
+    "collaboration_width": "Product Managers; Data Analysts; Analytics Engineers; experts des data domains",
+    "data_team_maturity": "au sein d'une équipe data pluridisciplinaire et expérimentée",
+    "data_team_maturity_explanation": "Separate BI engineers, analytics engineers, analysts, product managers and data domain experts with Agile rituals imply an established data organisation, so mature.",
+    "jd_authorship": "intervenir dès la finalisation du cadrage projet jusqu'à la livraison en production, et assurer le run des solutions déployées",
+    "jd_authorship_explanation": "The bullets describe the BI delivery lifecycle but name no tools or volumes, while Tableau and dbt appear only in the intro and requirements, so mixed.",
+    "stakeholder_orientation": "des outils de data visualisation performants pour les équipes métier",
+    "stakeholder_orientation_explanation": "Work splits between business teams' KPIs and product managers improving visualisation products, so mixed.",
+    "autonomy_level": "Piloter le cycle de vie des solutions BI",
+    "autonomy_level_explanation": "The role steers the BI lifecycle and proposes new opportunities while answering business needs scoped elsewhere, so mixed.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "The posting does not mention AI.",
+    "testing_framing": "No testing or data quality signal.",
+    "testing_framing_explanation": "No testing or data quality practice is named, only documentation and code review.",
+    "loss_aversion_framing": "assurer le run des solutions déployées",
+    "loss_aversion_framing_explanation": "Running deployed solutions reliably matters but stays secondary to delivery, so moderate.",
+    "greenfield_vs_fix": "quantifier des pistes de développement de nouveaux produits ou usages data",
+    "greenfield_vs_fix_explanation": "New dataviz products sit alongside running and improving deployed solutions, so mixed.",
+    "language_gate": "Une aisance avec le français courant et un bon niveau d'anglais (oral et écrit).",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Du télétravail partiel",
+    "loss_aversion": "Piloter le cycle de vie des solutions BI : intervenir dès la finalisation du cadrage projet jusqu'à la livraison en production, et assurer le run des solutions déployées.",
+    "ats_keywords": [
+      "data visualisation",
+      "Tableau",
+      "optimisation SQL",
+      "modèle de données",
+      "cycle de vie des solutions BI",
+      "KPIs",
+      "dbt pour la transformation de données",
+      "Databricks",
+      "AWS S3",
+      "code review, pair programming",
+      "rituels Agile"
+    ],
+    "ats_lookup": "resolve_ats miss; web search shows the same title on welcometothejungle.com/fr/companies/skiils, but that site returned an aws waf challenge to curl so the text could not be checked; skiils.com/grandir-avec-nous lists no openings"
+  }
+}

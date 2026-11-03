@@ -1,0 +1,159 @@
+{
+  "jd_id": "2026-11-03_neue-pressegesellschaft_analytics-engineer-in",
+  "company": "Neue Pressegesellschaft mbH & Co. KG",
+  "role": "Analytics Engineer*in (m/w/d)",
+  "job_location": "Ulm, Baden-Württemberg, Germany",
+  "seniority": "mid",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "internal_data",
+  "autonomy_level": "mixed",
+  "ai_role": "ai_user",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "moderate",
+  "greenfield_vs_fix": "fix_scale",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 5,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "not_stated",
+  "language_gate_type": "hard",
+  "language_gate_languages": [
+    "German"
+  ],
+  "jd_language": "de",
+  "ai_written": {
+    "score": 35.9,
+    "spread": 36.6,
+    "measures": {
+      "marker_vocab": {
+        "raw": 4.559,
+        "score": 21.3
+      },
+      "stock_phrases": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "structure": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.444,
+        "score": 67.9
+      },
+      "burstiness": {
+        "raw": 0.659,
+        "score": 26.0
+      },
+      "specificity": {
+        "raw": 2.584,
+        "score": 100.0
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "linkedin",
+  "ats_job_id": "4486019837",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": true,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": true,
+  "has_tableau": false,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": true,
+  "required_tools": [
+    "SQL",
+    "dbt"
+  ],
+  "preferred_tools": [
+    "BigQuery",
+    "Looker",
+    "Python"
+  ],
+  "responsibilities": [
+    "Du machst Daten für Analyst:innen und Fachbereiche einfach und verlässlich nutzbar.",
+    "Du sorgst gemeinsam mit den fachlich Verantwortlichen dafür, dass Kennzahlen einheitlich definiert und berechnet werden.",
+    "Du machst unsere Analytics-Arbeit durch wiederverwendbare Modelle, Tests und Dokumentation wartbarer.",
+    "Klärung fachlicher Anforderungen und Geschäftslogik gemeinsam mit Data Analysts und Fachbereichen und Übersetzung in präzise Spezifikationen und Datenmodelle, die du mit Coding Agents umsetzt und prüfst.",
+    "Entwicklung und Weiterentwicklung von Data Marts in dbt auf Basis unserer bestehenden Warehouse-Architektur.",
+    "Erarbeitung einheitlicher Kennzahlendefinitionen gemeinsam mit den fachlich Verantwortlichen und technische Umsetzung im Semantic Layer mit Lightdash.",
+    "Absicherung deiner Modelle durch Tests, verständliche Dokumentation und nachvollziehbare Datenherkunft.",
+    "Pflege und Refactoring bestehender Modelle sowie Abbau technischer Schulden.",
+    "Enge Abstimmung mit dem Data Engineering über Datengrundlagen und gemeinsam genutzte Modelle sowie gemeinsame Behebung von Datenqualitätsproblemen.",
+    "Code Reviews und Unterstützung der Analyst:innen im Umgang mit Git und dbt."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://www.linkedin.com/jobs/view/4486019837/",
+  "evidence": {
+    "velocity_vs_rigour": "Absicherung deiner Modelle durch Tests, verständliche Dokumentation und nachvollziehbare Datenherkunft",
+    "velocity_vs_rigour_explanation": "Tests, documentation, lineage, consistent metric definitions and reliable data dominate with no velocity phrasing, so rigour.",
+    "domain_risk": "Deine Arbeit wird in Produkt, Redaktion und Vermarktung genutzt",
+    "domain_risk_explanation": "Media analytics for product, newsroom and advertising teams with no regulatory or financial-reporting language, so moderate.",
+    "collaboration_width": "Data Analysts; Data Engineering; Produkt; Redaktion; Vermarktung",
+    "data_team_maturity": "auf Basis unserer bestehenden Warehouse-Architektur",
+    "data_team_maturity_explanation": "A data team with data engineering, analysts, an existing warehouse and a semantic layer is being extended, so mid.",
+    "jd_authorship": "technische Umsetzung im Semantic Layer mit Lightdash",
+    "jd_authorship_explanation": "Bullets name dbt data marts, Lightdash, coding agents, Git reviews and technical debt, so hiring_manager.",
+    "stakeholder_orientation": "Du machst Daten für Analyst:innen und Fachbereiche einfach und verlässlich nutzbar",
+    "stakeholder_orientation_explanation": "The primary users are analysts and business teams consuming models and the semantic layer, so internal_data.",
+    "autonomy_level": "Du hinterfragst Anforderungen",
+    "autonomy_level_explanation": "The role challenges requirements and defines metrics with owners while building and maintaining data marts, so mixed.",
+    "ai_role": "die du mit Coding Agents umsetzt und prüfst",
+    "ai_role_explanation": "The candidate writes specifications that coding agents implement and then reviews the output, so ai_user.",
+    "testing_framing": "Absicherung deiner Modelle durch Tests",
+    "testing_framing_explanation": "Testing the candidate's own models is a listed task, so responsibility.",
+    "loss_aversion_framing": "gemeinsame Behebung von Datenqualitätsproblemen",
+    "loss_aversion_framing_explanation": "Reliability and data quality matter but stay secondary to building usable models, so moderate.",
+    "greenfield_vs_fix": "Pflege und Refactoring bestehender Modelle sowie Abbau technischer Schulden",
+    "greenfield_vs_fix_explanation": "The work extends an existing warehouse, refactors models and reduces technical debt, so fix_scale.",
+    "language_gate": "Sehr gute Deutschkenntnisse, mindestens auf C1-Niveau, für den Austausch über fachliche Anforderungen und Kennzahlen.",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Not stated in JD.",
+    "loss_aversion": "Du machst Daten für Analyst:innen und Fachbereiche einfach und verlässlich nutzbar.",
+    "ats_keywords": [
+      "Data Marts in dbt",
+      "Semantic Layer",
+      "Lightdash",
+      "Coding Agents",
+      "Kennzahlendefinitionen",
+      "dimensionalen Datenmodellen",
+      "Star Schemas",
+      "Code Reviews",
+      "Snowplow",
+      "BigQuery",
+      "technischer Schulden"
+    ],
+    "ats_lookup": "resolve_ats miss under Neue Pressegesellschaft and NPG Digital; n-pg.de and npg-digital.de did not respond to curl; no personio or softgarden board; web search found only aggregator listings (indeed, stepstone, talent.com), no employer posting"
+  }
+}
