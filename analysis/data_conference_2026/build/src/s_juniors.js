@@ -33,14 +33,15 @@ function buildJuniors(stage, by = 'gate') {   // by 'years': group the ads by wh
   txt(rAns, X0, 454, 'each wider count includes the narrower ones', 16, { fill: C.ink2 });
   tag(rAns, 612, 424, 'descriptive');
 
-  // 2. the 64 classifier juniors, one dot each
-  const P = 50, R = 18, GY = 135, gx0 = 60;
+  // 2. the classifier juniors, one dot each
   const contraIds = ['enhance', 'dataroots', 'itt-inc'].map(k => ads.findIndex(a => a.id.includes('_' + k + '_')));
   const projSet = new Set(J.counts_projects.map(p => p.id)), proj = ads.map(a => projSet.has(a.id));
   const route = ads.map(a => a.fr && ['internship', 'alternance'].includes(a.route)), routeN = route.filter(Boolean).length;
   const inGate = i => by === 'years' ? ads[i].yrs2 : ads[i].gate, gateN = ads.filter((a, i) => inGate(i)).length, noN = n - gateN;
   // gate layout: hard-gate block of 7 columns, no-gate block of 10 (by years: 4 and 13, the no block being larger); the three contradictions sit last in the gate block
-  const gCols = by === 'years' ? 4 : 7, nCols = by === 'years' ? 13 : 10, nx0 = gx0 + gCols * P + 60;
+  const gCols = by === 'years' ? 4 : 7, nCols = by === 'years' ? 13 : 10, degN = ads.filter(a => a.flags[0]).length, dCols = Math.max(7, Math.ceil((n - degN) / 5));
+  const rows = Math.max(...[[gateN, gCols], [noN, nCols], [degN, 10], [n - degN, dCols]].map(([k, c]) => Math.ceil(k / c)));
+  const P = rows > 4 ? 42 : 50, R = rows > 4 ? 15 : 18, GY = 135, gx0 = 60, nx0 = gx0 + gCols * P + 60;   // a fifth row of dots at full size would run into the panel text
   const gateOrder = ads.map((a, i) => i).filter(i => inGate(i) && !contraIds.includes(i)).concat([contraIds[2], contraIds[1], contraIds[0]]);
   const noOrder = ads.map((a, i) => i).filter(i => !inGate(i));
   const L = { gate: [], fr: [], pre: [] };
@@ -52,7 +53,7 @@ function buildJuniors(stage, by = 'gate') {   // by 'years': group the ads by wh
   byBac(ads.map((a, i) => i).filter(i => ads[i].fr)).forEach((i, k) => L.fr[i] = [720 + (k % 5) * P, GY + Math.floor(k / 5) * P]);
   const hasDeg = i => ads[i].flags[0], dx0 = gx0 + 10 * P + 60; L.deg = [];
   ads.map((a, i) => i).filter(hasDeg).forEach((i, k) => L.deg[i] = [gx0 + (k % 10) * P, GY + Math.floor(k / 10) * P]);
-  ads.map((a, i) => i).filter(i => !hasDeg(i)).forEach((i, k) => L.deg[i] = [dx0 + (k % 7) * P, GY + Math.floor(k / 7) * P]);
+  ads.map((a, i) => i).filter(i => !hasDeg(i)).forEach((i, k) => L.deg[i] = [dx0 + (k % dCols) * P, GY + Math.floor(k / dCols) * P]);
   const gD = s('g', {}, svg), start = [zx(JC.classifier), 270];
   const dots = ads.map((a, i) => { const ring = s('circle', { r: R + 5, fill: 'none', stroke: C.coral, 'stroke-width': 3, style: { opacity: 0 } }, gD);
     const c = s('circle', { r: 0, fill: C.grey }, gD);

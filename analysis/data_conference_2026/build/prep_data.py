@@ -164,7 +164,12 @@ def main():
             core[r[0]] = [float(x) for x in r[1:5]]
     s2 = json.loads((IN / "more_stats.json").read_text()) if (IN / "more_stats.json").exists() else {}
     if "ladder_core" in s2: core = s2["ladder_core"]   # English ads, same set as the tests (more_stats.py)
-    out["ladder"] = {"core": core, "years": [1, 3, 5, 6], "n": s2.get("ladder", {}).get("n"), "france": s2.get("ladder_france"),
+    tests = s2.get("ladder", {}).get("tests", [])
+    support = next((t for t in tests if t["item"] == "SCOPE: support / assist" and t["step"] == "junior to mid"), None)
+    holm = {"core_min": min((t["holm"] for t in tests if t["panel"] == "core"), default=None),
+            "strategic_max": max((t["holm"] for t in tests if t["item"] == "strategic verbs"), default=None),
+            "support_junior_to_mid": [round(100 * support["diff"]), support["holm"]] if support else None}
+    out["ladder"] = {"core": core, "years": [1, 3, 5, 6], "n": s2.get("ladder", {}).get("n"), "holm": holm, "france": s2.get("ladder_france"),
                      "steps": {"junior_to_mid": [["'support / assist' wording", -26], ["degree mentioned", -27]],
                                "mid_to_senior": [["mentoring, coaching, code review", 20], ["defining standards and best practices", 19],
                                                  ["'lead / drive' wording", 18], ["'own' wording", 13], ["roadmap and prioritisation", 12]],
