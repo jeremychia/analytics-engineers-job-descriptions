@@ -1,5 +1,5 @@
 {
- "method": "Read in full by hand, ad text only. Junior: all 64 junior ads; names_guide = the ad names a person or role who will mentor, coach, guide or supervise the new hire (perk-list mentions with no person or role do not count); any_support = names_guide, or a structured learning programme. Senior: a random sample of 50 senior ads; asks_mentor = asks the candidate to mentor, coach or develop others, or review their code; asks_enable = asks the candidate to make others able to use data themselves. learning = the ad offers the new hire something concrete to learn with: a learning or training budget, a training programme, courses or a learning platform, or set time to learn. Vague promises (\"opportunities for learning and growth\", \"career development\") do not count. Read on the 17 ads the benefits pattern tagged, and searched by hand in the rest.",
+ "method": "Read in full by hand, ad text only. Junior: all 79 junior ads; names_guide = the ad names a person or role who will mentor, coach, guide or supervise the new hire (perk-list mentions with no person or role do not count); any_support = names_guide, or a structured learning programme. Senior: a random sample of 50 senior ads; asks_mentor = asks the candidate to mentor, coach or develop others, or review their code; asks_enable = asks the candidate to make others able to use data themselves. learning = the ad offers the new hire something concrete to learn with: a learning or training budget, a training programme, courses or a learning platform, or set time to learn. Vague promises (\"opportunities for learning and growth\", \"career development\") do not count. Read on the ads the benefits pattern tagged, and searched by hand in the rest.",
  "junior": [
   {
    "id": "2026-06-30_louis-dreyfus-company_data-analytics-engineer-finance-systems",
@@ -510,6 +510,126 @@
    "names_guide": true,
    "any_support": true,
    "quote": "Encadré(e) par un(e) chef(fe) de projet expérimenté(e), vous aurez l’opportunité de contribuer",
+   "learning": false,
+   "learning_quote": ""
+  },
+  {
+   "id": "2026-10-29_zenova_analytics-engineer-junior",
+   "names_guide": false,
+   "any_support": false,
+   "quote": "",
+   "learning": true,
+   "learning_quote": "Formación y aprendizaje continuo."
+  },
+  {
+   "id": "2026-10-30_mercedes-benz-io_analytics-engineer-fmx",
+   "names_guide": false,
+   "any_support": false,
+   "quote": "",
+   "learning": true,
+   "learning_quote": "Proactive self‑development through international trainings and conferences"
+  },
+  {
+   "id": "2026-10-30_mollie_analytics-engineer-i-customer-insights",
+   "names_guide": false,
+   "any_support": false,
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
+  },
+  {
+   "id": "2026-10-30_plansee-group_analytics-engineer",
+   "names_guide": false,
+   "any_support": false,
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
+  },
+  {
+   "id": "2026-10-30_rabot-energy_analytics-engineer",
+   "names_guide": true,
+   "any_support": true,
+   "quote": "You learn directly from our senior Analytics Engineer and work closely with the rest of the data team.",
+   "learning": false,
+   "learning_quote": ""
+  },
+  {
+   "id": "2026-10-30_sia_consultant-analytics-engineer",
+   "names_guide": false,
+   "any_support": false,
+   "quote": "",
+   "learning": true,
+   "learning_quote": "Profiter d’un large choix de formations et de certifications en data"
+  },
+  {
+   "id": "2026-10-31_monee_data-analyst-credit-business-intelligence-engineering",
+   "names_guide": false,
+   "any_support": false,
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
+  },
+  {
+   "id": "2026-11-01_booking-com_data-analytics-engineer-i-treasury-data-science-analytics",
+   "names_guide": false,
+   "any_support": false,
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
+  },
+  {
+   "id": "2026-11-01_booking-holdings-romania_data-analytics-engineer-i",
+   "names_guide": true,
+   "any_support": true,
+   "quote": "growing technical judgement under close guidance from Senior Engineers and the Solutions Architect",
+   "learning": false,
+   "learning_quote": ""
+  },
+  {
+   "id": "2026-11-01_bristol-myers-squibb_analytics-engineer-i-commercialization",
+   "names_guide": false,
+   "any_support": false,
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
+  },
+  {
+   "id": "2026-11-01_dialogic_junior-analytics-engineer-data-driven-marketing",
+   "names_guide": false,
+   "any_support": false,
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
+  },
+  {
+   "id": "2026-11-01_the-phoenix-group_analytics-engineer",
+   "names_guide": false,
+   "any_support": false,
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
+  },
+  {
+   "id": "2026-11-02_egovaleo_bi-developer-rif-1176",
+   "names_guide": false,
+   "any_support": true,
+   "quote": "È previsto un percorso di affiancamento per acquisire competenze sulla piattaforma informatica utilizzata",
+   "learning": true,
+   "learning_quote": "È previsto un percorso di affiancamento per acquisire competenze sulla piattaforma informatica utilizzata"
+  },
+  {
+   "id": "2026-11-02_mol-group_junior-bi-developer",
+   "names_guide": false,
+   "any_support": false,
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
+  },
+  {
+   "id": "2026-11-02_tenth-revolution-group_business-intelligence-developer",
+   "names_guide": false,
+   "any_support": false,
+   "quote": "",
    "learning": false,
    "learning_quote": ""
   }

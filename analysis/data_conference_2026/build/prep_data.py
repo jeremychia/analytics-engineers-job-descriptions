@@ -26,7 +26,7 @@ from benefits_tags import tag_ad  # noqa: E402
 
 DATA = ROOT / "data"
 IN = HERE / "inputs"
-SNAPSHOT = "2026-10-28"   # the talk quotes the ads classified up to this date; later records stay out of the deck
+SNAPSHOT = "2026-11-03"   # the talk quotes the ads classified up to this date; later records stay out of the deck
 TOOLS = [("has_sql", "SQL"), ("has_python", "Python"), ("has_dbt", "dbt"), ("has_airflow", "Airflow"),
          ("has_dagster", "Dagster"), ("has_snowflake", "Snowflake"), ("has_bigquery", "BigQuery"),
          ("has_databricks", "Databricks"), ("has_redshift", "Redshift"), ("has_looker", "Looker"),
@@ -51,11 +51,14 @@ BAC5_CHECKED = {"2026-10-11_leonar_consultant-analytics-engineer", "2026-10-19_d
                 "2026-10-26_grdf_analytics-engineer-data-engineer-microsoft-fabric-snowflake-power-bi", "2026-10-26_hager_stage-ingenieur-data-analytics-dashboards",
                 "2026-10-26_numberly_stage-analytics-engineer-data-collab", "2026-10-26_renault-group_ap26-bac5-alternance-data-analytics-et-ia-audit-interne",
                 "2026-10-26_stellantis_stage-ingenieur-data-analytics-performance-economique-base-couts-composants-mecatroniques",
-                "2026-10-26_wavestone_data-platform-analytics-engineering-data-for-ia", "2026-10-11_vattenfall_international-trainee-hydro-power-optimisation-and-data-analytics-engineer"}
-# ads that name a way in other than a degree (a bootcamp, self-taught practice, a non-traditional background), read by hand from a wide pattern search
+                "2026-10-26_wavestone_data-platform-analytics-engineering-data-for-ia", "2026-10-11_vattenfall_international-trainee-hydro-power-optimisation-and-data-analytics-engineer",
+                "2026-10-30_sia_consultant-analytics-engineer"}
+# ads that name a way in other than a degree (a bootcamp, an apprenticeship, self-taught practice, a non-traditional background), read by hand from a wide pattern search
 OTHER_ROUTES = [("2026-07-21_moerie-beauty_analytics-engineer", "through a degree or a relevant bootcamp/training program"),
                 ("2026-07-29_fremantle-dockers_analytics-engineer", "This may come from study, work, or self-taught practice"),
-                ("2026-10-09_zillow_analytics-engineer", "Zillow values the experience and perspective of candidates with non-traditional backgrounds")]
+                ("2026-10-09_zillow_analytics-engineer", "Zillow values the experience and perspective of candidates with non-traditional backgrounds"),
+                ("2026-10-30_glovo_data-analytics-engineer-mx-global", "Relevant internship, bootcamp, academic or personal project, or previous experience in a fast-paced product/tech/marketplace environment."),
+                ("2026-11-02_inverto_senior-business-intelligence-developer-fmd", "You've successfully completed your apprenticeship as a Fachinformatiker für Anwendungsentwicklung and/or a degree in IT or a related field")]
 # junior ads that say internships or projects count toward the experience ask, read by hand (exact substrings, checked below)
 COUNTS_PROJECTS = [("2026-06-30_louis-dreyfus-company_data-analytics-engineer-finance-systems", "Internship experience is welcomed"),
                    ("2026-07-06_intelligent-lending_analytics-engineer-ocean-squad", "0–2 years' experience in an analytics, data or engineering role, including internships, placements or strong personal/academic projects"),
@@ -67,7 +70,9 @@ COUNTS_PROJECTS = [("2026-06-30_louis-dreyfus-company_data-analytics-engineer-fi
                    ("2026-10-09_enhance_analytics-engineer", "Strong internships or graduate projects count."),
                    ("2026-10-11_leonar_consultant-analytics-engineer", "Minimum 1 an d’expérience, stages inclus"),
                    ("2026-10-22_wd_engineer-data-analytics-engineering", "Coursework or project work in machine learning, statistical modeling, or process analytics"),
-                   ("2026-10-26_abn-amro-bank-nv_analytics-engineer-global-finance", "Demonstrated initiative beyond your academic studies, for example through extra-curricular activities or internships")]
+                   ("2026-10-26_abn-amro-bank-nv_analytics-engineer-global-finance", "Demonstrated initiative beyond your academic studies, for example through extra-curricular activities or internships"),
+                   ("2026-10-30_rabot-energy_analytics-engineer", "First practical experience with data (roughly 0 to 3 years, including working-student roles, internships or a serious own project)."),
+                   ("2026-11-01_dialogic_junior-analytics-engineer-data-driven-marketing", "Du hast erste praktische Erfahrung mit SQL und/oder Python, zum Beispiel aus Uni, Projekten oder einem Job")]
 # Indeed Hiring Lab, 7 May 2026: share of postings stating pay, Mar 2026 (research/ext_market.md)
 INDEED_PAY = {"source": "Indeed Hiring Lab, 7 May 2026 (Mar 2026 postings)", "url": "https://hiringlab.indeed.com/uk/blog/2026/05/07/full-salary-transparency-in-europe-is-still-a-distant-prospect/",
               "pct": {"UK": 56, "FR": 43, "NL": 48, "DE": 12}, "grid_region": {"UK": "UK & Ireland", "FR": "France", "NL": "Benelux", "DE": "DACH"}}

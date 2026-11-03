@@ -20,10 +20,11 @@ function buildPipeline(stage) {
   return [async () => { grow(0); await tween(1600, grow); }];
 }
 
-/* three in four junior ads don't say who will teach the new hire, and half name neither a teacher nor anything to learn with (all 64 read by hand); a third of senior ads ask you to mentor (hand-read sample) as context */
+/* three in four junior ads don't say who will teach the new hire, and half name neither a teacher nor anything to learn with (all junior ads read by hand); a third of senior ads ask you to mentor (hand-read sample) as context */
 function buildMentorGap(stage) {
   const W = 1000, MG = D.mentoring, [sk, sn] = MG.senior_asks_mentor, [jk, jn] = MG.junior_names_guide, lk = MG.junior_learning[0], nk = MG.junior_neither[0], both = jk + lk - (jn - nk);
-  const svg = s('svg', { viewBox: `0 0 ${W} 520`, class: 'chart' }, stage), COLS = 16, P = 34, r = 13, X0 = 40, Y0 = 150;
+  const COLS = 16, tight = Math.ceil(jn / COLS) > 4, P = tight ? 30 : 34, r = tight ? 11 : 13, X0 = 40, Y0 = 150;   // a fifth row of dots would push the legend into the quotes
+  const svg = s('svg', { viewBox: `0 0 ${W} 520`, class: 'chart' }, stage);
   const txt = (p, x, y, text, st = {}, a = {}) => s('text', Object.assign({ x, y, text, style: Object.assign({ fontSize: '20px', fill: C.ink }, st) }, a), p);
   const layer = () => s('g', { style: { opacity: 0, transition: 'opacity .5s' } }, svg);
   const gS = layer(), gJ = layer(), gQ = layer(), gL = layer();
@@ -34,7 +35,7 @@ function buildMentorGap(stage) {
   const RX = X0 + COLS * P + 30, at = i => [X0 + (i % COLS) * P + r, Y0 + Math.floor(i / COLS) * P + r];
   const dots = Array.from({ length: jn }, (_, i) => s('circle', { cx: at(i)[0], cy: at(i)[1], r: 0, fill: i < jk ? C.coral : C.grey }, gJ));
   Array.from({ length: jn }, (_, i) => i).filter(i => i < both || (i >= jk && i < jk + lk - both)).forEach(i => s('circle', { cx: at(i)[0], cy: at(i)[1], r: r + 3, fill: 'none', stroke: C.plum, 'stroke-width': 2.5 }, gL));
-  txt(gL, X0, Y0 + Math.ceil(jn / COLS) * P + 18, '○ ringed: a learning budget, a training programme or set time to learn', { fontSize: '15px', fill: C.plum, fontWeight: 600 });
+  txt(gL, X0, Y0 + Math.ceil(jn / COLS) * P + 18, '○ ringed: a learning budget, training or set time to learn', { fontSize: '15px', fill: C.plum, fontWeight: 600 });
   txt(gL, RX, Y0 + 166, `${nk} have neither`, { fontSize: '26px', fontWeight: 700, fill: C.ink });
   txt(gL, RX, Y0 + 190, 'no one named to teach, nothing to learn with', { fontSize: '16px', fill: C.ink2 });
   txt(gJ, RX, Y0 + 30, `${jn - jk}`, { fontSize: '56px', fontWeight: 700, fill: C.ink, letterSpacing: '-.03em' });
@@ -45,8 +46,8 @@ function buildMentorGap(stage) {
   const picks = [['enhance', 'Enhance', 'learn from senior analytics engineers'], ['agile-actors', 'Agile Actors', 'Onboarding Buddy to support and guide you from day one'],
     ['fleury-michon', 'Fleury Michon', 'Encadré(e) par un tuteur expérimenté']]
     .map(([key, co, part]) => { const q = Object.entries(MG.quotes).find(([id]) => id.includes('_' + key + '_')); return q && q[1].includes(part) ? [co, part] : null; }).filter(Boolean);
-  s('text', { x: X0, y: 340, class: 'cardlab', text: `How the ${jk} say it` }, gQ);
-  picks.forEach(([co, part], k) => { const t = s('text', { x: X0, y: 376 + k * 32, style: { fontSize: '21px', fill: C.ink } }, gQ);
+  s('text', { x: X0, y: tight ? 352 : 340, class: 'cardlab', text: `How the ${jk} say it` }, gQ);
+  picks.forEach(([co, part], k) => { const t = s('text', { x: X0, y: (tight ? 386 : 376) + k * 32, style: { fontSize: '21px', fill: C.ink } }, gQ);
     s('tspan', { text: `“${part}”`, style: { fontWeight: 500 } }, t); s('tspan', { text: `  · ${co}`, style: { fill: C.ink2, fontSize: '17px' } }, t); });
   txt(gL, X0, 494, 'Mentor someone? Say so in the junior ad.', { fontSize: '30px', fontWeight: 700, fill: C.coral });
   const pop = e => dots.forEach((d, i) => d.setAttribute('r', r * Math.min(1, Math.max(0, e * 1.6 - i / dots.length * .6))));
@@ -89,7 +90,7 @@ function buildRung(stage) {
     [0, 50, 100].forEach(v => { s('line', { x1: x0 + 10, x2: x0 + 440, y1: Y(v), y2: Y(v), stroke: C.line, 'stroke-width': v ? .8 : 1.6 }, g); if (v && v < 100) txt(g, x0 + 4, Y(v) + 4, v + '%', { fontSize: '13px', fill: C.mute }, { 'text-anchor': 'end' }); });
     lv.forEach((l, i) => { txt(g, X(i), base + 24, l, { fontWeight: 600 }, { 'text-anchor': 'middle' }); txt(g, X(i), base + 42, `n=${P.n[i]}`, { fontSize: '12px', fill: C.mute }, { 'text-anchor': 'middle' }); });
     const d = (a, b) => vals.slice(a, b + 1).map((v, i) => (i ? 'L' : 'M') + X(a + i) + ',' + Y(v)).join(' ');
-    const first = s('path', { d: d(0, 1), fill: 'none', stroke: col, 'stroke-width': 5, 'stroke-dasharray': '2 9', 'stroke-linecap': 'round' }, g);   // dotted: only 43 junior ads
+    const first = s('path', { d: d(0, 1), fill: 'none', stroke: col, 'stroke-width': 5, 'stroke-dasharray': '2 9', 'stroke-linecap': 'round' }, g);   // dotted: the junior count is small
     const rest = s('path', { d: d(1, 3), fill: 'none', stroke: col, 'stroke-width': 5, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, g);
     vals.forEach((v, i) => { s('circle', { cx: X(i), cy: Y(v), r: 6, fill: col, stroke: C.bg, 'stroke-width': 2 }, g); txt(g, X(i), Y(v) - 14, v + '%', { fontSize: '19px', fontWeight: 700, fill: col }, { 'text-anchor': 'middle' }); });
     return [first, rest];
@@ -165,7 +166,7 @@ function buildJob(stage) {
     const t = s('text', { x: 150, y: 470, style: { fontSize: '21px', fontWeight: 500, fill: C.ink } }, g);
     words.forEach(([w, hi]) => s('tspan', { text: w, style: hi ? { fill: C.coral, fontWeight: 700 } : {} }, t)); return g; };
   const cap1 = caption([['working with stakeholders: '], ['in as many ads as data modelling', 1]], 'descriptive');
-  const cap2 = caption([['after SQL, Python and dbt, '], [`no tool is in more than ${Math.ceil(pct(J.max_other, A) / 10)} ads in 10`, 1]], 'descriptive');
+  const cap2 = caption([['after SQL, Python and dbt, '], [`the next is in ${Math.round(pct(J.max_other, A) / 10)} ads in 10`, 1]], 'descriptive');
   const grow = (bars, e) => bars.forEach(b => b.el.setAttribute('width', b.to * (1 - (1 - e) ** 3)));
   return [
     async () => { gT.style.opacity = 1; gK.style.opacity = 0; cap2.style.opacity = 0; rows.forEach(r => r.g.style.opacity = 1); grow(kBars, 0);
