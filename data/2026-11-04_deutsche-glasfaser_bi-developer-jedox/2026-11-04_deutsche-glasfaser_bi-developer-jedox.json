@@ -1,0 +1,152 @@
+{
+  "jd_id": "2026-11-04_deutsche-glasfaser_bi-developer-jedox",
+  "company": "Deutsche Glasfaser",
+  "role": "BI Developer Jedox (w/m/d)",
+  "job_location": "Borken, Germany",
+  "seniority": "mid",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "finance",
+  "autonomy_level": "mixed",
+  "ai_role": "ai_user",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "moderate",
+  "greenfield_vs_fix": "mixed",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 2,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "hard",
+  "language_gate_languages": [
+    "German"
+  ],
+  "jd_language": "de",
+  "ai_written": {
+    "score": 35.8,
+    "spread": 24.7,
+    "measures": {
+      "marker_vocab": {
+        "raw": 2.545,
+        "score": 4.5
+      },
+      "stock_phrases": {
+        "raw": 2.545,
+        "score": 50.9
+      },
+      "structure": {
+        "raw": 0.3,
+        "score": 60.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.569,
+        "score": 40.2
+      },
+      "burstiness": {
+        "raw": 0.84,
+        "score": 0.0
+      },
+      "specificity": {
+        "raw": 8.651,
+        "score": 59.4
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "smartrecruiters",
+  "ats_job_id": "744000157129979",
+  "has_dbt": false,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": true,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL"
+  ],
+  "preferred_tools": [
+    "Python"
+  ],
+  "responsibilities": [
+    "Entwicklung von Planungslösungen: Du entwickelst und betreibst Anwendungen und Reports in Jedox Cloud und stellst zuverlässige Lösungen für Budgetplanung, Forecasts und Abweichungsanalysen bereit.",
+    "Datenintegration und -modellierung: Durch die Entwicklung von ETL-Prozessen sowie Cube-Strukturen, Dimensionen und Rules schaffst du eine konsistente Datenbasis aus Snowflake, SAP und weiteren Quellsystemen.",
+    "Administration der Jedox Cloud: Du verantwortest die Benutzer- und Berechtigungsverwaltung, Job-Steuerung sowie Monitoring und Troubleshooting und gewährleistest einen stabilen Plattformbetrieb.",
+    "Sicherstellung der Datenqualität: Mit gezielten Datenanalysen und Quality Checks stellst du die Datenintegrität zwischen Jedox und den angebundenen Quellsystemen sicher.",
+    "Entwicklung von Self-Service-Lösungen: Mithilfe von KI-Tools (Snowflake CoCo und CoWork) erstellst du Streamlit-Apps und interaktive Dashboards für die eigenständige Datenanalyse in den Fachbereichen.",
+    "Beratung und Unterstützung interner Schnittstellen: Du übersetzt Anforderungen aus Controlling und Planning in technische Lösungen, schulst Anwender und förderst durch Code Reviews und gegenseitige Vertretung den Wissenstransfer im Team."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://jobs.smartrecruiters.com/deutscheglasfaser/744000157129979",
+  "evidence": {
+    "velocity_vs_rigour": "stellst du die Datenintegrität zwischen Jedox und den angebundenen Quellsystemen sicher",
+    "velocity_vs_rigour_explanation": "the bullets stress reliable planning solutions, quality checks, data integrity and a stable platform, with no speed language, so rigour.",
+    "domain_risk": "zuverlässige Lösungen für Budgetplanung, Forecasts und Abweichungsanalysen",
+    "domain_risk_explanation": "the output is internal budget planning, forecasts and variance analysis for Controlling, which shapes management decisions but carries no external reporting or regulatory language, so moderate.",
+    "collaboration_width": "Controlling; Planning",
+    "data_team_maturity": "eine konsistente Datenbasis aus Snowflake, SAP und weiteren Quellsystemen",
+    "data_team_maturity_explanation": "Jedox Cloud, Snowflake and SAP are already in place and the team runs code reviews and covers for each other, so the function exists and is growing: mid. The Düsseldorf listing https://jobs.smartrecruiters.com/deutscheglasfaser/744000157125516 is this same opening listed twice.",
+    "jd_authorship": "Durch die Entwicklung von ETL-Prozessen sowie Cube-Strukturen, Dimensionen und Rules schaffst du eine konsistente Datenbasis",
+    "jd_authorship_explanation": "the bullets name Jedox cubes, dimensions and rules, Snowflake, SAP, Streamlit and platform administration tasks, so hiring_manager.",
+    "stakeholder_orientation": "Du übersetzt Anforderungen aus Controlling und Planning in technische Lösungen",
+    "stakeholder_orientation_explanation": "the primary audience is Controlling and Planning, through budget, forecast and variance tooling, so finance.",
+    "autonomy_level": "Du verantwortest die Benutzer- und Berechtigungsverwaltung, Job-Steuerung sowie Monitoring und Troubleshooting",
+    "autonomy_level_explanation": "the role owns the Jedox platform end to end while turning Controlling requirements into solutions, so mixed.",
+    "ai_role": "Mithilfe von KI-Tools (Snowflake CoCo und CoWork) erstellst du Streamlit-Apps",
+    "ai_role_explanation": "the candidate uses AI tools (Snowflake CoCo and CoWork) to build their own Streamlit apps and dashboards, so the AI is their tool: ai_user.",
+    "testing_framing": "Mit gezielten Datenanalysen und Quality Checks stellst du die Datenintegrität",
+    "testing_framing_explanation": "data quality checks are a named responsibility the candidate owns ('Sicherstellung der Datenqualität'), so responsibility.",
+    "loss_aversion_framing": "gewährleistest einen stabilen Plattformbetrieb",
+    "loss_aversion_framing_explanation": "the fear is platform instability and integrity gaps between Jedox and source systems, an operational concern, so moderate.",
+    "greenfield_vs_fix": "Du entwickelst und betreibst Anwendungen und Reports in Jedox Cloud",
+    "greenfield_vs_fix_explanation": "the role both builds new planning apps and Streamlit tools and runs the existing Jedox platform, so mixed.",
+    "language_gate": "Sehr gute Deutsch- und Englischkenntnisse",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Hybrid",
+    "loss_aversion": "Administration der Jedox Cloud: Du verantwortest die Benutzer- und Berechtigungsverwaltung, Job-Steuerung sowie Monitoring und Troubleshooting und gewährleistest einen stabilen Plattformbetrieb.",
+    "ats_keywords": [
+      "Jedox",
+      "Jedox Cloud",
+      "Budgetplanung",
+      "Forecasts",
+      "ETL-Prozessen",
+      "Cube-Strukturen",
+      "Snowflake",
+      "SAP",
+      "Streamlit",
+      "Snowflake CoCo",
+      "Dimensional Modeling",
+      "SQL-Kenntnisse"
+    ]
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "jd_id": "2026-11-04_agoda_business-intelligence-developer-rta",
+  "company": "Agoda",
+  "role": "Business Intelligence Developer, RTA (Bangkok-based, 6-month Contract)",
+  "job_location": "Bangkok",
+  "seniority": "junior",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "recruiter",
+  "stakeholder_orientation": "mixed",
+  "autonomy_level": "execution",
+  "ai_role": "none",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "moderate",
+  "greenfield_vs_fix": "fix_scale",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 2,
+  "data_team_maturity": "mature",
+  "urgency": "standard",
+  "work_arrangement": "not_stated",
+  "language_gate_type": "none",
+  "language_gate_languages": [],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 57.5,
+    "spread": 27.2,
+    "measures": {
+      "marker_vocab": {
+        "raw": 5.935,
+        "score": 32.8
+      },
+      "stock_phrases": {
+        "raw": 3.956,
+        "score": 79.1
+      },
+      "structure": {
+        "raw": 0.099,
+        "score": 19.8
+      },
+      "bullet_symmetry": {
+        "raw": 0.53,
+        "score": 48.8
+      },
+      "burstiness": {
+        "raw": 0.382,
+        "score": 100.0
+      },
+      "specificity": {
+        "raw": 8.21,
+        "score": 64.3
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "greenhouse",
+  "ats_job_id": "7100648",
+  "has_dbt": false,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": true,
+  "has_power_bi": false,
+  "has_metabase": true,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL"
+  ],
+  "preferred_tools": [
+    "Tableau",
+    "Metabase",
+    "Python"
+  ],
+  "responsibilities": [
+    "Collaborate with business stakeholders to gather and understand their data and reporting requirements, ensuring solutions align with business objectives.",
+    "Partner with engineering teams to ensure that all critical data from Agoda’s products and applications is accurately captured and maintained.",
+    "Design, develop, and enhance dashboards and reports that provide valuable insights and support data-driven decision-making across the organization.",
+    "Implement and uphold data quality processes to ensure information is accurate, complete, and available when needed.",
+    "Contribute to the continuous improvement of team processes, helping to streamline workflows and increase efficiency.",
+    "Participate in key projects, such as migrating data from legacy systems to new platforms, to support the creation of a unified and reliable data source for Agoda and Rocket Travel by Agoda."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://job-boards.greenhouse.io/agoda/jobs/7100648",
+  "evidence": {
+    "velocity_vs_rigour": "ensuring that all critical data is accurately tracked and logged with the highest quality standards",
+    "velocity_vs_rigour_explanation": "Rigour: accuracy, data quality processes and 'a unified and reliable data source' dominate, with no speed phrases.",
+    "domain_risk": "design, develop, and enhance dashboards and reports that provide valuable insights",
+    "domain_risk_explanation": "Moderate: internal reporting for an online travel business, with no financial, regulatory or compliance language.",
+    "collaboration_width": "engineering teams; product managers",
+    "data_team_maturity": "The Data department oversees all of Agoda’s data-related requirements",
+    "data_team_maturity_explanation": "Mature: a large established Data department in a 7,000-person company, hiring a contractor to staff its projects.",
+    "jd_authorship": "Contribute to the continuous improvement of team processes, helping to streamline workflows and increase efficiency.",
+    "jd_authorship_explanation": "Recruiter: the bullets are generic BI duties; only the legacy migration for Rocket Travel hints at the actual work.",
+    "stakeholder_orientation": "Collaborate with business stakeholders to gather and understand their data and reporting requirements",
+    "stakeholder_orientation_explanation": "Mixed: business reporting for stakeholders and accurate product-event capture with engineering teams carry similar weight.",
+    "autonomy_level": "Participate in key projects",
+    "autonomy_level_explanation": "Execution: a 6-month contractor who will 'be assigned to the projects' and 'contribute' or 'participate'.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "None: the posting does not mention AI.",
+    "testing_framing": "Implement and uphold data quality processes to ensure information is accurate, complete, and available when needed.",
+    "testing_framing_explanation": "Responsibility: the role implements and upholds data quality processes, though no test tool is named.",
+    "loss_aversion_framing": "accurately captured and maintained",
+    "loss_aversion_framing_explanation": "Moderate: accuracy of tracked data matters but the posting is framed around delivering reports.",
+    "greenfield_vs_fix": "migrating data from legacy systems to new platforms",
+    "greenfield_vs_fix_explanation": "Fix and scale: the work enhances existing dashboards and migrates legacy systems into a unified source.",
+    "language_gate": "Able to communicate clearly and effectively in English within a professional setting",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Not stated in JD.",
+    "loss_aversion": "Partner with engineering teams to ensure that all critical data from Agoda’s products and applications is accurately captured and maintained.",
+    "ats_keywords": [
+      "Business Intelligence Developer",
+      "6-month contract",
+      "Bangkok",
+      "Rocket Travel by Agoda",
+      "dashboards and reports",
+      "data quality processes",
+      "migrating data from legacy systems",
+      "basic SQL",
+      "Tableau",
+      "Metabase",
+      "Vertica",
+      "Fresh graduates"
+    ]
+  }
+}
