@@ -1,4 +1,4 @@
-/* Slides only the senior-room deck uses: the junior pipeline, who teaches the juniors, what AI changes, and the opening ad with the one line it is missing. */
+/* Slides only the senior-room deck uses: the junior pipeline, what moves you up, who teaches the juniors, what AI changes, and the opening ad with the one line it is missing. */
 /* the levels stacked like a population pyramid, junior at the base: a narrow base under a wide middle */
 function buildPipeline(stage) {
   const W = 1000, N = D.seniority_n, jr = N.junior, up = N.senior + N.lead + N.staff + N.manager;
@@ -75,6 +75,40 @@ function buildRewrite(stage) {
   return [
     async () => { blanks.style.opacity = 0; line.style.opacity = 0; await wait(Anim.fast ? 0 : 400); },
     async () => { blanks.style.opacity = 1; if (!(await wait(Anim.fast ? 0 : 900))) return; line.style.opacity = 1; }
+  ];
+}
+
+/* what moves you up: SQL is asked at every level (flat), the business is named in about four in ten ads at every level (flat); the podcast says the business is the path. The ads may lag. */
+function buildRung(stage) {
+  const W = 1000, H = 330, P = D.progression, svg = s('svg', { viewBox: `0 0 ${W} ${H}`, class: 'chart' }, stage), y0 = 54, ph = 214, Y = v => y0 + ph - v / 100 * ph, base = Y(0);
+  const lv = ['Junior', 'Mid', 'Senior', 'Lead+'], layer = () => s('g', { style: { opacity: 0, transition: 'opacity .6s' } }, svg);
+  const txt = (p, x, y, text, st = {}, a = {}) => s('text', Object.assign({ x, y, text, style: Object.assign({ fontSize: '16px', fill: C.ink2 }, st) }, a), p);
+  const panel = (g, x0, title, vals, col, note) => {
+    const X = i => x0 + 40 + i * 100;
+    txt(g, x0, 22, title, { fontSize: '19px', fontWeight: 700, fill: col });
+    [0, 50, 100].forEach(v => { s('line', { x1: x0 + 10, x2: x0 + 440, y1: Y(v), y2: Y(v), stroke: C.line, 'stroke-width': v ? .8 : 1.6 }, g); if (v && v < 100) txt(g, x0 + 4, Y(v) + 4, v + '%', { fontSize: '13px', fill: C.mute }, { 'text-anchor': 'end' }); });
+    lv.forEach((l, i) => { txt(g, X(i), base + 24, l, { fontWeight: 600 }, { 'text-anchor': 'middle' }); txt(g, X(i), base + 42, `n=${P.n[i]}`, { fontSize: '12px', fill: C.mute }, { 'text-anchor': 'middle' }); });
+    const d = (a, b) => vals.slice(a, b + 1).map((v, i) => (i ? 'L' : 'M') + X(a + i) + ',' + Y(v)).join(' ');
+    const first = s('path', { d: d(0, 1), fill: 'none', stroke: col, 'stroke-width': 5, 'stroke-dasharray': '2 9', 'stroke-linecap': 'round' }, g);   // dotted: only 43 junior ads
+    const rest = s('path', { d: d(1, 3), fill: 'none', stroke: col, 'stroke-width': 5, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, g);
+    vals.forEach((v, i) => { s('circle', { cx: X(i), cy: Y(v), r: 6, fill: col, stroke: C.bg, 'stroke-width': 2 }, g); txt(g, X(i), Y(v) - 14, v + '%', { fontSize: '19px', fontWeight: 700, fill: col }, { 'text-anchor': 'middle' }); });
+    return [first, rest];
+  };
+  const gSql = layer(), gBiz = layer(), gTag = layer();
+  const [sa, sb] = panel(gSql, 60, 'asks for SQL', P.sql, C.plum), [ba, bb] = panel(gBiz, 540, 'names the business', P.business, C.coral);
+  tag(gSql, 500, 22, 'descriptive', { anchor: 'end' }); tag(gBiz, 980, 22, 'untested', { anchor: 'end' });
+  const drawIn = (p, dur) => { const len = p.getTotalLength(); p.style.strokeDasharray = len; p.style.strokeDashoffset = len; return tween(dur, e => { p.style.strokeDashoffset = len * (1 - e); }, { ease: E.inOut }); };
+  const note = h('div', { style: { fontSize: 'clamp(14px,1.5vw,23px)', lineHeight: 1.35, opacity: 0, transition: 'opacity .5s' } },
+    h('b', {}, 'Tristan Handy: '), 'there is a career path for people curious how the business works and how to create more value. ', h('span', { style: { color: C.ink2 } }, 'Joe Reis: some people are attached to the identity of “I can write really complex SQL”.'));
+  const line = h('div', { class: 'finalline', style: { fontSize: 'clamp(22px,3vw,46px)', opacity: 0, transition: 'opacity .6s' } }, 'How do you move up? ', h('em', {}, 'The ads don’t say. They may lag.'));
+  stage.append(h('div', { class: 'col', style: { gap: '2vh' } }, svg, note, line));
+  [sa, sb, ba, bb].forEach(p => p.style.opacity = 0);
+  const show = (el, on) => el.style.opacity = on ? 1 : 0;
+  return [
+    async () => { show(note, 0); show(line, 0); show(gBiz, 0); show(gSql, 1); [sa, sb].forEach(p => p.style.opacity = 1); await drawIn(sb, 1100); },
+    async () => { show(gSql, 1); show(gBiz, 1); [ba, bb].forEach(p => p.style.opacity = 1); show(note, 0); show(line, 0); await drawIn(bb, 1100); },
+    async () => { show(note, 1); show(line, 0); await wait(Anim.fast ? 0 : 500); },
+    async () => { show(note, 1); show(line, 1); await wait(Anim.fast ? 0 : 600); }
   ];
 }
 

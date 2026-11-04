@@ -1,6 +1,6 @@
 # Let them in, help them up, teach them — v4, for a senior room
 
-Draft 6, 30 October 2026. The deck is `jd_deck_v4.html` (seven slides, built from `build/src/slides_v4.js`). Use this version when most of the room hires, leads or mentors. Use v3 (`talk_v3_for_the_people.md`, `jd_deck_v2.html`) when most of the room is looking for work. The thinking behind this version is in `rethink_growing_people.md`; evidence tables and tests stay in `talk_v2_for_the_people.md`.
+Draft 7, 4 November 2026. The deck is `jd_deck_v4.html` (eight slides, built from `build/src/slides_v4.js`). Use this version when most of the room hires, leads or mentors. Use v3 (`talk_v3_for_the_people.md`, `jd_deck_v2.html`) when most of the room is looking for work. The thinking behind this version is in `rethink_growing_people.md`; evidence tables and tests stay in `talk_v2_for_the_people.md`.
 
 ## The shape
 
@@ -10,11 +10,12 @@ Draft 6, 30 October 2026. The deck is `jd_deck_v4.html` (seven slides, built fro
 - **The one action:** if you mentor, say so in the junior ad. It is in a senior person's control; headcount and recruiter templates are not.
 - **The one sentence:** "Someone held the door for each of us, then taught us. Do both for the next one."
 - **The junior gates:** two asks fall on juniors in particular. One junior ad in five asks for two years or more. Six in ten mention a degree, against one in three senior ads.
+- **The progression gap:** SQL is in about 95% of ads from mid level up, flat. The business is named in about a third, also flat. On the Reis and Handy podcast, what opens a career path is being curious how the business works. The ads may lag what the next step needs. It is a question for the room, not a charge against the people who write them.
 - **What comes next:** the ads can't show a trend. A few already show the first job moving from writing SQL to reviewing what a tool wrote, so the judgement has to be taught.
-- **About ten numbers spoken:** 1,200 ads, 2–5 years, 1 in 9, 1 in 5, 6 in 10, 3 ads, a third, 17 of 64, half, 19%, 22 and 5. Everything else lives in the notes and the Q&A.
+- **About ten numbers spoken:** 1,200 ads, 2–5 years, 1 in 9, 1 in 5, 6 in 10, 3 ads, a third, 94% and 95%, a third again, 17 of 64, half, 19%, 22 and 5. Everything else lives in the notes and the Q&A.
 - **Tone:** the ads are the subject, never the people who write them.
 
-## The script (about 5:35 at 130 words a minute, about 730 words; about 5:52 with the pauses)
+## The script (about 5:52 at 130 words a minute, about 765 words; about 6:10 with the pauses)
 
 **[The ad · on screen, typed in]**
 "Raise your hand if someone gave you your first job in data. Now keep it up if you've since given someone theirs.
@@ -23,12 +24,12 @@ Look at the difference between those two. That difference is what this talk is a
 
 This is a real ad. It says junior. Then it asks for two to five years. If this were your first ad, would you have got in?
 
-I read about 1,200 job ads for analytics engineers. Ads are the most public thing our field writes about how it grows people. So I asked three questions. How do we let people in? How do we help them up? And who teaches them?"
+I read about 1,200 job ads for analytics engineers. So I asked three questions. How do we let people in? How do we help them up? And who teaches them?"
 
 **[Let them in · How many doors are there?]**
 "Start with the door. In the ads I read, for every junior ad there are nine at senior level or above.
 
-Every senior in this room started somewhere. Someone took a chance on a person with no years to show. Nine to one. That's one snapshot, so it can't tell me whether the door is narrowing. I'll come back to that."
+Every senior in this room was once that person. Someone took a chance on a person with no years to show. Nine to one. That's one snapshot, so it can't tell me whether the door is narrowing. I'll come back to that."
 
 **[Let them in · What stands in the way?]**
 "And the junior ads that do exist? One in five asks for two years or more. One says junior in its title and asks for two years. One has junior in its web address and asks for three. That's the ask that breaks the label.
@@ -38,12 +39,19 @@ Then the degree. Six in ten junior ads mention one. Senior ads, one in three. Wh
 **[Help them up · What changes at each step?]**
 "Once someone is in, how do they move up? The core stays the same at every level: SQL, a warehouse, testing your data, working with people.
 
-What changes is the verb. A junior ad: 'Assist development of reporting tools.' A mid-level ad: 'Own data quality.' A senior ad: 'Set the standards for data quality.' A lead ad: 'Own and execute a rolling one-year roadmap.' As the level goes up, 'support' falls and 'own' rises.
+What changes is the verb. A junior ad: 'Assist development of reporting tools.' A senior ad: 'Set the standards for data quality.' As the level goes up, 'support' falls and 'own' rises.
 
 From mid to senior, one verb arrives: mentor. A third of senior ads ask you to mentor, coach or review code. A third of senior jobs expect you to teach."
 
+**[Help them up · What moves you up?]**
+"One thing doesn't change: SQL. It's in ninety-four percent of mid-level ads and ninety-five percent of senior ones.
+
+Tristan Handy says there is a career path for people curious how the business works. But only a third of ads name the business, at any level. It isn't a rung.
+
+So how do you move up? The ads don't say. Maybe they lag: they list what the last hire knew, not what the next promotion needs. You tell me if that's honest."
+
 **[Pass it on · Who teaches the juniors?]**
-"So who teaches the juniors? I read all sixty-four junior ads by hand. Seventeen tell the new hire who will teach them. You can see how they say it.
+"So who teaches the juniors? I read all sixty-four junior ads by hand. Seventeen tell the new hire who will teach them.
 
 The other forty-seven don't say.
 
@@ -51,18 +59,18 @@ And a learning budget doesn't fill the gap. Half of all junior ads name neither:
 
 The best one I found was a bank in New Zealand: 'dedicated time for training and certification, with guidance and mentorship from Senior/Staff Engineers and Chapter Leads.' One sentence. It tells a junior who, and when.
 
-A junior reading those ads can't tell whether anyone will teach them. The senior who would is already there. They're just not in the ad. If you mentor, say so in the junior ad.
+The senior who would teach them is already there. They're just not in the ad. If you mentor, say so in the junior ad.
 
 The ads can't tell me whether the juniors who got in were taught. You can. Come and tell me after."
 
 **[What comes next · What does AI change?]**
-"So what comes next? Most of you are thinking about AI. So am I.
+"Most of you are thinking about AI. So am I.
 
 These ads can't tell me whether AI is narrowing the junior door. Outside data says to watch it. In the US, Stanford finds employment of 22-to-25-year-olds in AI-exposed jobs is 19% below trend. The authors call that a pattern, not proof.
 
-A few ads already say how the first job is changing. Zego's says it plainly: 'AI tools now handle a lot of the heavy lifting of writing SQL.' The new hire reviews it instead. Twenty-two junior ads ask for AI. Five say who will teach.
+A few ads already say how the first job is changing. Zego's says it plainly: 'AI tools now handle a lot of the heavy lifting of writing SQL.' The new hire reviews it instead. Twenty-two junior ads ask for AI. Five say who teaches.
 
-Most of us learned to review by writing bad SQL and having someone read it. If the tool writes the first draft, someone still has to teach the judgement.
+Most of us learned to review by writing bad SQL and having someone read it. If the tool writes the first draft, someone still has to teach the judgement. SQL is the first thing the tool does.
 
 In ten years, someone has to review what the AI writes. That person is a junior today."
 
@@ -75,20 +83,22 @@ Someone held the door for each of us, then taught us. Do both for the next one."
 
 | # | Slide | Clicks | Words | Time | The one number | The one ad line |
 |---|---|---|---|---|---|---|
-| 1 | The ad | 3 | 108 | 0:00–0:49 | 1,200 ads | Enhance: junior, 2–5 years |
-| 2 | Doors | 1 | 61 | 0:49–1:18 | 1 junior ad for every 9 at senior or above | none |
-| 3 | Juniors | 3 | 91 | 1:18–2:00 | 1 in 5 asks for two years; 6 in 10 mention a degree; 3 ads name another route | ITT and Dataroots: junior, then years |
-| 4 | Next verb | 3 | 104 | 2:00–2:47 | a third of senior ads ask you to mentor | four verbs, companies on screen only |
-| 5 | Who teaches | 3 | 158 | 2:47–4:00 | 17 of 64 junior ads; half name neither | quotes on screen; ASB Bank as the model |
-| 6 | What comes next | 3 | 146 | 4:00–5:08 | 19% below trend (Stanford, US); 22 junior ads ask for AI, 5 say who will teach | Zego: the tool writes the SQL, the new hire reviews it |
-| 7 | The ad, again | 2 | 59 | 5:08–5:35 | a handful | Enhance: projects count |
+| 1 | The ad | 3 | 94 | 0:00–0:43 | 1,200 ads | Enhance: junior, 2–5 years |
+| 2 | Doors | 1 | 63 | 0:43–1:12 | 1 junior ad for every 9 at senior or above | none |
+| 3 | Juniors | 3 | 91 | 1:12–1:54 | 1 in 5 asks for two years; 6 in 10 mention a degree; 3 ads name another route | ITT and Dataroots: junior, then years |
+| 4 | Next verb | 3 | 88 | 1:54–2:35 | a third of senior ads ask you to mentor | two verbs spoken, companies on screen only |
+| 5 | Next rung | 4 | 81 | 2:35–3:12 | SQL in 94–95% of ads; the business in about a third, at every level | none; Handy and Reis on screen as paraphrase |
+| 6 | Who teaches | 3 | 140 | 3:12–4:17 | 17 of 64 junior ads; half name neither | quotes on screen; ASB Bank as the model |
+| 7 | What comes next | 3 | 149 | 4:17–5:25 | 19% below trend (Stanford, US); 22 junior ads ask for AI, 5 say who teaches | Zego: the tool writes the SQL, the new hire reviews it |
+| 8 | The ad, again | 2 | 59 | 5:25–5:52 | a handful | Enhance: projects count |
 
-**Pauses that the timing does not include:** about 10 seconds for the hand-raise, 3 seconds after "two to five years", 3 seconds after "The other forty-seven don't say."
+**Pauses that the timing does not include:** about 10 seconds for the hand-raise, 3 seconds after "two to five years", 3 seconds after "The other forty-seven don't say.", 3 seconds after "You tell me if that's honest." (about 6:10 in all)
 
 **Cut points, decided in advance:**
-1. **Behind at 2:00, not yet on "Next verb":** skip the four example verbs and go straight to "As the level goes up, 'support' falls and 'own' rises."
-2. **Behind at 4:05, not yet on "What comes next":** drop the Stanford paragraph. Keep Zego and the last line.
-3. **Never cut "Who teaches" or the junior gates.**
+1. **Behind at 1:55, not yet on "Next verb":** skip the two example verbs and go straight to "As the level goes up, 'support' falls and 'own' rises."
+2. **Behind at 2:40, not yet on "Next rung":** say only the SQL line, "It isn't a rung." and "The ads don't say." Skip the Handy sentence.
+3. **Behind at 4:25, not yet on "What comes next":** drop the Stanford paragraph. Keep Zego and the last line.
+4. **Never cut "Who teaches" or the junior gates.**
 
 ## Your own line (optional, strongest if true)
 
@@ -97,6 +107,11 @@ A senior room will ask whether you have done this yourself. One true sentence, p
 ## Slides
 
 - **"Next verb" ends on the mentor line:** the last click picks out "mentor" rising from mid to senior, and fades the other lines.
+- **"Next rung" is two flat lines:**
+  - Four clicks. SQL draws first (86%, 94%, 95%, 92%), then "names the business" beside it (47%, 33%, 38%, 35%), then the Handy and Reis paraphrase, then "How do you move up? The ads don't say. They may lag."
+  - The junior end of each line is dotted: only 43 English junior ads.
+  - Tags on screen: SQL is "a count", the business line is "untested" (a phrase match).
+  - Handy and Reis are paraphrased, not quoted, because the wording is from notes.
 - **"Who teaches" is the picture to remember:**
   - 64 dots, 17 coral, with "47 don't say who will teach the new hire".
   - The last click rings the 18 ads with something to learn with. The bottom two rows stay bare: "32 have neither".
@@ -131,6 +146,10 @@ A senior room will ask whether you have done this yourself. One true sentence, p
 | "Support" falls and "own" rises with level | Support 91% → 66% → 60% → 55%; own 26% → 45% → 57% → 62%; English ads | Tested, Holm-corrected for the junior-to-mid fall in "support" and the mid-to-senior rise in "own" |
 | Mid to senior adds mentoring (+18 points) and standards (+17); senior to lead adds a roadmap (+31) | Ladder tests, 992 English ads | Tested, Holm-corrected |
 | A third of senior ads ask you to mentor, coach or review code | 18 of a random 50 senior ads, read by hand | Hand-read sample; range about 24% to 50% |
+| SQL appears at every level, about 95% from mid up | The word `SQL` in the ad text (before the classifier section), English ads: junior 86% (of 43), mid 94% (of 441), senior 95% (of 410), lead and above 92% (of 98). The classifier's `has_sql` flag, all languages: 89%, 95%, 95%, 92%. | Counted (`prep_data.py`, `progression`). Flat, so it marks no step up. |
+| The business is named in about a third of ads at every level | Phrase pattern (understanding the business or domain, business context, acumen or impact, commercial awareness, domain knowledge, curious about) on English ads: junior 47% (20 of 43), mid 33% (145 of 441), senior 38% (157 of 410), lead and above 35% (34 of 98) | First pass, pattern only, untested; the junior count is small. Say "about a third, at every level", not a trend. A phrase match can't tell a real ask from boilerplate. |
+| Autonomy rises with level, but stakeholders stay internal | Classifier fields. "Strategic" autonomy: junior 2%, mid 17%, senior 45%, lead 73%, staff 91%. Main stakeholder "internal data": 45%, 47%, 42%, 48%, 62%. | Model-labelled, first pass. Seniority raises independence in the ads, not closeness to the business. Use only if asked. |
+| Handy: "there is a career path for people who are curious about how the business they work in works"; Reis: people "attached to the identity that 'I can write really complex SQL'" | Podcast, "Why Analytics Engineering Is Changing Forever" (Joe Reis and Tristan Handy), notes in `analysis/analytics_enginnering_is_changing_forever.md` | Paraphrased from my notes, not verbatim. Check against the video before quoting. The slide credits both and paraphrases. |
 | Half of junior ads (32 of 64) name neither who will teach nor anything to learn with | All 64 junior ads read by hand for a concrete learning offer: a learning or training budget, a training programme, courses or a platform, or set time to learn (18 of 64). Vague promises of growth don't count. Set against the "who will teach" read. | Hand-read. 3 ads name both. |
 | Junior ads mention a learning benefit no more often than senior ads | The benefits pattern in `benefits_tags.py`: 27% of junior ads, 26% of senior ads | First pass, pattern only. Say it only if asked. |
 | 17 of 64 junior ads say who will teach the new hire | All 64 junior ads read by hand (`build/inputs/hand_read_mentoring.json`) | Hand-read. Most name a role ("senior engineers"), not a person. 23 of 64 if a structured programme counts. |
@@ -154,6 +173,8 @@ A senior room will ask whether you have done this yourself. One true sentence, p
 - **"Do ads that name a mentor get better hires?"** The ads can't show outcomes. Ask the room.
 - **"Isn't AI why there are fewer junior roles?"** The ads can't show a trend: a few months of ads, collected during one search. Stanford's US data is the best outside signal, and its authors say it is descriptive. What the ads show is the job moving from writing to reviewing.
 - **"Isn't a degree a fair proxy when there's no experience?"** Maybe. But only 10 of the 37 say "or equivalent experience", or words like it, anywhere in the ad. Saying that projects count shows the other way in.
+- **"So are ads dishonest about what gets you promoted?"** I can't say. Ads are written from templates and from the last hire, and they describe the job, not the promotion. The ads can't show what actually gets people promoted. Ask the room.
+- **"Isn't business knowledge hard to put in an ad?"** Yes, and that may be the point. SQL is easy to list, so it gets listed. The things that move people up are harder to write down.
 - **"Isn't this about headcount, not wording?"** Headcount is often not ours to decide. The mentor line in the ad is.
 - **Pay transparency:**
   - **Outside the US:** about one ad in six states pay.
@@ -163,8 +184,9 @@ A senior room will ask whether you have done this yourself. One true sentence, p
 
 ## Before the slides are final
 
-1. Decide on your own line (above), or leave it out.
-2. Check France's transposition of the pay transparency directive, in case pay comes up in Q&A.
-3. Re-read the 4 borderline junior ads in `build/inputs/hand_read_mentoring.json` (perk-list mentoring with no person named) and decide whether they count.
-4. Rehearse with the checklist in `talk_v3_for_the_people.md` ("Rehearsal" and "On the day"), including the three pauses.
-5. Rebuild with `build/build.py` and click through `jd_deck_v4.html` once.
+1. **Check the podcast wording first.** The Handy and Reis lines on the "Next rung" slide and in the script come from typed notes, not a transcript. Watch the video (https://www.youtube.com/watch?v=G0gM3-XVGJo) and confirm: (a) Handy: there is a career path for people curious how the business they work in works and how to create more value; (b) Handy: there was no promotion path when he got into data; (c) Reis: people attached to the identity of "I can write really complex SQL". Fix the script and `buildRung` in `build/src/s_v4.js` if the meaning differs, and quote verbatim only if you want quote marks.
+2. Decide on your own line (above), or leave it out.
+3. Check France's transposition of the pay transparency directive, in case pay comes up in Q&A.
+4. Re-read the 4 borderline junior ads in `build/inputs/hand_read_mentoring.json` (perk-list mentoring with no person named) and decide whether they count.
+5. Rehearse with the checklist in `talk_v3_for_the_people.md` ("Rehearsal" and "On the day"), including the three pauses.
+6. Click through `jd_deck_v4.html` once. It is rebuilt with `build/build.py`; the new slide is `buildRung` in `build/src/s_v4.js`.

@@ -237,6 +237,12 @@ def main():
     out["mentoring"]["junior_neither"] = [sum(not a["names_guide"] and not a["learning"] for a in hr["junior"]), len(hr["junior"])]   # no one named to teach, nothing to learn with
     lb = lambda lv: [tag_ad(re.sub(r"^\*\*URL:\*\*.*$", "", txt, flags=re.M))["learning"] for r, txt in recs.values() if r.get("seniority") == lv]
     out["mentoring"]["learning_benefit_pct"] = {lv: round(100 * sum(v) / len(v)) for lv in ("junior", "senior") for v in [lb(lv)]}   # the benefits pattern, before any hand read
+    # --- progression: is SQL, or understanding the business, a rung? English ads, the share naming each at every level (pattern only; a phrase match cannot tell a real ask from boilerplate)
+    BIZ = re.compile(r"understand(?:ing)? (?:of )?(?:the |our |your )?(?:business|domain|commercial)|business (?:context|acumen|understanding|knowledge|impact|outcomes|value|strategy|domain)|domain (?:knowledge|expertise|understanding)|commercial (?:awareness|acumen|understanding|mindset)|curious about|how the business|business-minded|business mindset", re.I)
+    grp = lambda lv: "lead+" if lv in ("lead", "staff", "manager") else lv
+    prog = {lv: [(bool(re.search(r"\bSQL\b", txt)), bool(BIZ.search(txt))) for r, txt in recs.values() if r.get("jd_language") == "en" and grp(r.get("seniority")) == lv] for lv in ("junior", "mid", "senior", "lead+")}
+    out["progression"] = {"levels": list(prog), "n": [len(v) for v in prog.values()], "sql": [round(100 * sum(a for a, _ in v) / len(v)) for v in prog.values()],
+                          "business": [round(100 * sum(b for _, b in v) / len(v)) for v in prog.values()], "business_k": [sum(b for _, b in v) for v in prog.values()]}
     out["stats2"] = json.loads((IN / "more_stats.json").read_text())   # from more_stats.py (run it after prep once, then prep again)
     out["stats"] = json.loads((IN / "stack_stats.json").read_text())   # from stack_stats.py
     m = json.loads((IN / "missing_stats.json").read_text())   # from missing_stats.py; totals only, the per-ad flags stay in the file
