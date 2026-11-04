@@ -1,0 +1,153 @@
+{
+  "jd_id": "2026-11-04_berkshire-hathaway-specialty-insurance_senior-business-intelligence-engineer",
+  "company": "Berkshire Hathaway Specialty Insurance",
+  "role": "Senior Business Intelligence Engineer",
+  "job_location": "Boston, MA",
+  "seniority": "senior",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": 110000,
+  "salary_max": 130000,
+  "salary_currency": "USD",
+  "salary_period": null,
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "commercial",
+  "autonomy_level": "mixed",
+  "ai_role": "none",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "high",
+  "greenfield_vs_fix": "fix_scale",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 4,
+  "data_team_maturity": "mature",
+  "urgency": "standard",
+  "work_arrangement": "not_stated",
+  "language_gate_type": "none",
+  "language_gate_languages": [],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 28.7,
+    "spread": 19.6,
+    "measures": {
+      "marker_vocab": {
+        "raw": 3.839,
+        "score": 15.3
+      },
+      "stock_phrases": {
+        "raw": 1.919,
+        "score": 38.4
+      },
+      "structure": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.482,
+        "score": 59.5
+      },
+      "burstiness": {
+        "raw": 0.607,
+        "score": 40.8
+      },
+      "specificity": {
+        "raw": 12.38,
+        "score": 18.0
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "unknown",
+  "ats_job_id": "589653",
+  "has_dbt": false,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": false,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": true,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": true,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": true,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL",
+    "Power BI"
+  ],
+  "preferred_tools": [
+    "Microsoft Fabric"
+  ],
+  "responsibilities": [
+    "Develop a deep understanding of SME business processes, products, distribution models, performance drivers, and information needs and apply that knowledge to BI solution design.",
+    "Partner with business stakeholders and BI leaders to translate business questions and analytical needs into scalable solutions and prioritized deliverables.",
+    "Design, develop, test, deploy, and support Power BI reports, dashboards, semantic models, and reusable analytical data products that provide a trusted view of SME business performance.",
+    "Build and maintain reporting across the SME insurance lifecycle, including submissions, indications, quotes, binds, policies, premium, portfolio performance, distribution, and operational activity.",
+    "Use advanced SQL to investigate, transform, validate, reconcile, and optimize complex datasets across multiple source systems and analytical platforms.",
+    "Develop dimensional and semantic models that support consistent business definitions, reusable measures, governed datasets, and self-service analytics.",
+    "Partner with Data Engineering and Technology teams to define data requirements, improve data quality, resolve defects, and deliver scalable and reliable data pipelines and analytical solutions.",
+    "Monitor and improve the usability, reliability, performance, and adoption of BI solutions while reducing fragmented or manually assembled reporting.",
+    "Contribute to the Global BI Center of Excellence through reusable patterns, standards, templates, documentation, and technical best practices."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://www.bhspecialty.com/career/senior-business-intelligence-engineer/",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4484499797/",
+  "evidence": {
+    "velocity_vs_rigour": "Use advanced SQL to investigate, transform, validate, reconcile, and optimize complex datasets",
+    "velocity_vs_rigour_explanation": "Rigour: validation, reconciliation, governed datasets and data quality far outnumber the 'fast-paced environment' and 'speed and agility' phrases.",
+    "domain_risk": "Build and maintain reporting across the SME insurance lifecycle, including submissions, indications, quotes, binds, policies, premium, portfolio performance",
+    "domain_risk_explanation": "Moderate: insurance is a default-high sector, but the duties are business performance reporting with no financial reporting, regulatory or audit language.",
+    "collaboration_width": "underwriting; operations; technology; Data Engineering",
+    "data_team_maturity": "Contribute to the Global BI Center of Excellence through reusable patterns, standards, templates, documentation, and technical best practices.",
+    "data_team_maturity_explanation": "Mature: a 'Global Business Intelligence organization' with a Center of Excellence, consistent BI engineering standards and a separate Data Engineering team.",
+    "jd_authorship": "including submissions, indications, quotes, binds, policies, premium, portfolio performance, distribution, and operational activity",
+    "jd_authorship_explanation": "Hiring manager: bullets name the insurance lifecycle stages and the Power BI semantic model work concretely.",
+    "stakeholder_orientation": "This role will support BHSI’s Small and Medium Enterprise (SME) business, including our digital and direct-to-broker distribution capabilities",
+    "stakeholder_orientation_explanation": "Commercial: the audience is the SME business unit and its distribution and broker performance.",
+    "autonomy_level": "Develop and execute a BI roadmap driven by business value and strategic priorities",
+    "autonomy_level_explanation": "Mixed: the role owns a BI roadmap and models while delivering reporting in support of the SME business.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "No AI skill is expected of the candidate.",
+    "testing_framing": "improve data quality, resolve defects",
+    "testing_framing_explanation": "Responsibility: the role tests its own Power BI deliverables and improves data quality with Data Engineering, though no testing tool is named.",
+    "loss_aversion_framing": "Establish a consistent, trusted view of performance across the SME business",
+    "loss_aversion_framing_explanation": "High: trust appears in the role summary ('trusted data models') and recurs with governed datasets and reconciliation throughout.",
+    "greenfield_vs_fix": "reducing fragmented or manually assembled reporting",
+    "greenfield_vs_fix_explanation": "Fix and scale: the role evolves reporting and replaces fragmented manual reports within an existing BI function.",
+    "language_gate": "Not stated in JD",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Not stated in JD.",
+    "loss_aversion": "Establish a consistent, trusted view of performance across the SME business — trust and governance are the success measures.",
+    "ats_keywords": [
+      "Power BI",
+      "semantic models",
+      "dimensional and semantic models",
+      "advanced SQL",
+      "governed datasets",
+      "self-service analytics",
+      "insurance lifecycle",
+      "Global BI Center of Excellence",
+      "Microsoft Fabric",
+      "data dictionaries"
+    ]
+  }
+}
