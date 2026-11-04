@@ -1,9 +1,16 @@
 /* Deck runtime: sections, steps (Space/Right/Enter build, Left unbuild), pills, progress, replay on entry. */
 const DECK = { cur: 0, step: 0, steps: [], busy: false };
+/* shrink an HTML column that is taller than its stage, so it never runs into the title or the footer */
+function fitStage(stage) {
+  if (stage.fit) stage.fit.disconnect();
+  const col = stage.firstElementChild; if (!col || col instanceof SVGElement) return;
+  const fit = () => { const k = Math.min(1, stage.clientHeight / col.offsetHeight); col.style.transform = k < 1 ? `scale(${k})` : ''; };
+  stage.fit = new ResizeObserver(fit); stage.fit.observe(col); stage.fit.observe(stage); fit();
+}
 function mountSlide(i) {
   const sec = $$('section.slide')[i], stage = $('.stage', sec);
   Anim.cancel(); Anim.fast = false; stage.innerHTML = ''; tip.hide();
-  DECK.steps = SLIDES[i].build(stage).filter(f => !(DECK.short && f.optional)); DECK.step = 0; DECK.cur = i; updateDots();
+  DECK.steps = SLIDES[i].build(stage).filter(f => !(DECK.short && f.optional)); fitStage(stage); DECK.step = 0; DECK.cur = i; updateDots();
 }
 async function playTo(i, k) {            // rebuild slide i and run steps up to (and including) k-1 instantly, then animate step k-1 if animate
   mountSlide(i); Anim.fast = true;

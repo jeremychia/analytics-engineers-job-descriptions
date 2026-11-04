@@ -1,6 +1,6 @@
 /* Slide: one real ad that says junior and asks for years. Says versus asks, then the ruler. Reused for the closing slide. */
 function adRuler(parent, o) {
-  const svg = s('svg', { viewBox: '0 0 1000 150', class: 'ruler' }, parent);
+  const svg = s('svg', { viewBox: '0 0 1000 162', class: 'ruler' }, parent);
   const X = v => 70 + v * 143, z = o.zone;
   s('rect', { x: X(z[0]), y: 52, width: X(z[1]) - X(z[0]), height: 34, rx: 8, fill: C.soft }, svg);
   s('text', { x: X(z[0]), y: 40, class: 'lbl', text: o.zoneLabel }, svg);
@@ -14,7 +14,7 @@ function adRuler(parent, o) {
   const pin = s('g', { class: 'pin', style: { opacity: 0 } }, svg);
   s('path', { d: 'M0,0 L-13,-34 A18,18 0 1 1 13,-34 Z', fill: C.plum, transform: 'translate(0,66)' }, pin);
   s('circle', { cx: 0, cy: 32, r: 6.5, fill: C.bg }, pin);
-  s('text', { x: X(o.from) + (X(o.to) - X(o.from)) / 2, y: 135, 'text-anchor': 'middle', class: 'ladnum2', text: o.label, style: { opacity: 0 } }, svg);
+  s('text', { x: X(o.from) + (X(o.to) - X(o.from)) / 2, y: 150, 'text-anchor': 'middle', class: 'ladnum2', text: o.label, style: { opacity: 0 } }, svg);
   const lab = svg.lastChild;
   return {
     async drop() {
