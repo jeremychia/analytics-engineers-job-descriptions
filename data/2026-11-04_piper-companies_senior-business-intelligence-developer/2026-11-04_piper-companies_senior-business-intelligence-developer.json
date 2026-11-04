@@ -1,0 +1,152 @@
+{
+  "jd_id": "2026-11-04_piper-companies_senior-business-intelligence-developer",
+  "company": "Piper Companies",
+  "role": "Senior Business Intelligence Developer",
+  "job_location": "Ft Washington, PA or Allentown, PA",
+  "seniority": "senior",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": 125000,
+  "salary_max": 130000,
+  "salary_currency": "USD",
+  "salary_period": null,
+  "jd_authorship": "recruiter",
+  "stakeholder_orientation": "finance",
+  "autonomy_level": "mixed",
+  "ai_role": "none",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "moderate",
+  "greenfield_vs_fix": "fix_scale",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "high",
+  "collaboration_width": 1,
+  "data_team_maturity": "mature",
+  "urgency": "standard",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "none",
+  "language_gate_languages": [],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 16.7,
+    "spread": 37.3,
+    "measures": {
+      "marker_vocab": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "structure": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.259,
+        "score": 100.0
+      },
+      "burstiness": {
+        "raw": 1.223,
+        "score": 0.0
+      },
+      "specificity": {
+        "raw": 26.066,
+        "score": 0.0
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "linkedin",
+  "ats_job_id": "4467119970",
+  "has_dbt": false,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": false,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": true,
+  "has_power_bi": true,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL"
+  ],
+  "preferred_tools": [
+    "Power BI",
+    "Tableau"
+  ],
+  "responsibilities": [
+    "Leading high‑complexity and enterprise‑level BI solution design and development",
+    "Serving as a domain subject matter expert across BI, healthcare data, and analytics processes",
+    "Demonstrating advanced technical expertise across SQL, data modeling, and BI architecture",
+    "Ability to support enterprise reporting teams, including standardized reports and one‑off data requests",
+    "Experience collaborating within large, matrixed BI organizations",
+    "Providing formal mentorship and guiding BI team members on best practices and standards",
+    "Identifying gaps, proposing solutions, and improving processes related to governance, workflow, and data quality",
+    "Demonstrated experience supporting Revenue Cycle analytics projects, including enterprise reporting and ad‑hoc data requests"
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://www.linkedin.com/jobs/view/4467119970/",
+  "evidence": {
+    "velocity_vs_rigour": "This role plays a critical part in advancing data quality, governance, and strategic analytics maturity",
+    "velocity_vs_rigour_explanation": "Rigour signals (data quality, governance, standardized reporting practices) recur with no velocity language.",
+    "domain_risk": "healthcare revenue cycle domains (HB/PB, billing, claims, payments, denials, AR, etc.)",
+    "domain_risk_explanation": "Healthcare revenue-cycle reporting on billing, claims and AR carries financial and regulated-healthcare stakes, so high.",
+    "collaboration_width": "enterprise reporting teams",
+    "data_team_maturity": "Experience collaborating within large, matrixed BI organizations",
+    "data_team_maturity_explanation": "A \"large, matrixed BI organization\" with enterprise reporting teams and formal mentorship of BI team members is mature.",
+    "jd_authorship": "Ability to support enterprise reporting teams, including standardized reports and one‑off data requests",
+    "jd_authorship_explanation": "A staffing-agency posting whose responsibility bullets read as candidate traits (\"Ability to\", \"Experience collaborating\") rather than tasks, so recruiter.",
+    "stakeholder_orientation": "Demonstrated experience supporting Revenue Cycle analytics projects",
+    "stakeholder_orientation_explanation": "The work centres on healthcare revenue-cycle reporting (billing, claims, payments, denials, AR), so finance.",
+    "autonomy_level": "Leading high‑complexity and enterprise‑level BI solution design and development",
+    "autonomy_level_explanation": "The role leads enterprise BI design and mentors the team while also supporting reporting teams with one-off requests, so mixed.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "No AI skill is expected of the candidate.",
+    "testing_framing": "Identifying gaps, proposing solutions, and improving processes related to governance, workflow, and data quality",
+    "testing_framing_explanation": "Improving data-quality processes is framed as the candidate's own responsibility, so responsibility.",
+    "loss_aversion_framing": "advancing data quality, governance, and strategic analytics maturity",
+    "loss_aversion_framing_explanation": "Quality and governance are framed as improvement goals rather than a compliance or trust risk register, so moderate.",
+    "greenfield_vs_fix": "Experience migrating BI content from Tableau and/or Qlik to Power BI preferred",
+    "greenfield_vs_fix_explanation": "Work optimises, standardises and migrates an existing enterprise BI estate, so fix_scale.",
+    "language_gate": "Not stated in JD",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "This position is hybrid in Ft Washington, PA or Allentown, PA",
+    "loss_aversion": "This role plays a critical part in advancing data quality, governance, and strategic analytics maturity — improvement framing in the role summary.",
+    "ats_keywords": [
+      "Epic Revenue Cycle Clarity Data Model Certification",
+      "HB / PB Clarity certification",
+      "Revenue Cycle analytics",
+      "SQL querying, performance tuning, and complex joins",
+      "Power BI dashboard development",
+      "Epic SlicerDicer",
+      "BI architecture",
+      "data governance",
+      "healthcare analytics and reporting",
+      "enterprise reporting"
+    ],
+    "ats_lookup": "piper companies is a staffing agency and the posting names no client; resolve_ats miss; web search found only aggregator reposts (monster, careerbuilder, tallo, career.com) describing an unnamed pennsylvania health system; jefferson health workday (thomasjeffersonexternal) lists a different bi developer req whose text matches none of these bullets, so the agency posting is kept"
+  }
+}

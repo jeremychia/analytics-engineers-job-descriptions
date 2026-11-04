@@ -1,0 +1,151 @@
+{
+  "jd_id": "2026-11-04_koro_analytics-engineer",
+  "company": "KoRo",
+  "role": "Analytics Engineer (f/m/d)",
+  "job_location": "KoRo HQ Berlin",
+  "seniority": "mid",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "internal_data",
+  "autonomy_level": "mixed",
+  "ai_role": "ai_enabler",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "moderate",
+  "greenfield_vs_fix": "mixed",
+  "velocity_vs_rigour": "mixed",
+  "domain_risk": "moderate",
+  "collaboration_width": 2,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "none",
+  "language_gate_languages": [],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 67.3,
+    "spread": 29.8,
+    "measures": {
+      "marker_vocab": {
+        "raw": 2.326,
+        "score": 2.7
+      },
+      "stock_phrases": {
+        "raw": 3.488,
+        "score": 69.8
+      },
+      "structure": {
+        "raw": 0.474,
+        "score": 94.7
+      },
+      "bullet_symmetry": {
+        "raw": 0.394,
+        "score": 79.1
+      },
+      "burstiness": {
+        "raw": 0.481,
+        "score": 76.9
+      },
+      "specificity": {
+        "raw": 6.744,
+        "score": 80.6
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "ashby",
+  "ats_job_id": "9ec906b0-b44c-48b0-af04-38ea42954864",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": true,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": true,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": true,
+  "has_semantic_layer": true,
+  "required_tools": [
+    "SQL",
+    "dbt",
+    "Python"
+  ],
+  "preferred_tools": [
+    "BigQuery"
+  ],
+  "responsibilities": [
+    "Data Modeling & Transformation: You design and maintain scalable dbt models and pipelines in BigQuery, ensuring high data quality through automated testing, performance optimization, and GDPR-compliant data processing.",
+    "Semantic Layer & Metrics: You build and maintain KoRo's semantic layer with consistent business metrics and AI-ready metadata, modeling key business entities and their relationships through ontologies and knowledge graphs.",
+    "AI Quality & Optimization: You evaluate and improve AI-generated answers using real business questions, identifying data inconsistencies, resolving modeling gaps, and preventing recurring errors.",
+    "Data Dictionary & Governance: You maintain a centralized, versioned data dictionary, working with Data and business teams to ensure consistent definitions of metrics, entities, and business rules across reporting and analytics.",
+    "Self-Service Analytics & Collaboration: You work closely with business stakeholders to make reliable data accessible through BI and AI tools, support user adoption, and enable teams to independently answer business questions."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://jobs.ashbyhq.com/koro/9ec906b0-b44c-48b0-af04-38ea42954864",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4487063440/",
+  "evidence": {
+    "velocity_vs_rigour": "ensuring high data quality through automated testing...You prefer a working MVP over a perfect plan and iterate from there",
+    "velocity_vs_rigour_explanation": "Responsibilities carry rigour signals (automated testing, GDPR-compliant processing, governance, versioned data dictionary), while the mindset section adds several velocity phrases (\"fast-paced digital business\", \"Move fast\", \"working MVP\"), so mixed.",
+    "domain_risk": "ideally within e-commerce, consumer apps, or a fast-paced digital business",
+    "domain_risk_explanation": "A food e-commerce brand where data errors affect business decisions; \"GDPR-compliant data processing\" is routine privacy hygiene rather than regulatory reporting stakes, so moderate.",
+    "collaboration_width": "Data; Tech",
+    "data_team_maturity": "You design and maintain scalable dbt models and pipelines in BigQuery",
+    "data_team_maturity_explanation": "dbt and BigQuery are already in use in the responsibilities while the semantic layer and governance foundation are still being built, so mid.",
+    "jd_authorship": "You build and maintain KoRo's semantic layer with consistent business metrics and AI-ready metadata",
+    "jd_authorship_explanation": "Bullets name dbt, BigQuery, a semantic layer, ontologies, knowledge graphs and a versioned data dictionary, so a reader can picture the working day.",
+    "stakeholder_orientation": "enable teams to independently answer business questions",
+    "stakeholder_orientation_explanation": "The audience is internal data consumers using the semantic layer, data dictionary and self-service BI and AI tools, so internal_data.",
+    "autonomy_level": "establish consistent metrics and create the foundation for accurate reporting",
+    "autonomy_level_explanation": "The role owns the semantic layer and metric definitions while also supporting business stakeholders' adoption, so mixed.",
+    "ai_role": "AI-ready metadata",
+    "ai_role_explanation": "The candidate builds the semantic layer and data context that LLM-based applications consume and evaluates AI-generated answers, so ai_enabler.",
+    "testing_framing": "ensuring high data quality through automated testing",
+    "testing_framing_explanation": "Automated testing is framed as part of the candidate's own modelling responsibility, so responsibility.",
+    "loss_aversion_framing": "identifying data inconsistencies, resolving modeling gaps, and preventing recurring errors",
+    "loss_aversion_framing_explanation": "The fear is wrong AI answers and inconsistent definitions, framed as quality improvement rather than compliance or trust risk, so moderate.",
+    "greenfield_vs_fix": "create the foundation for accurate reporting and AI-driven insights",
+    "greenfield_vs_fix_explanation": "The role builds a new semantic layer and AI foundation while maintaining existing dbt models and pipelines, so mixed.",
+    "language_gate": "Strong analytical and communication skills in English",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Flexible working hours, hybrid work, and 20 days of workation",
+    "loss_aversion": "You evaluate and improve AI-generated answers using real business questions, identifying data inconsistencies, resolving modeling gaps, and preventing recurring errors — quality framing around AI answers.",
+    "ats_keywords": [
+      "dbt models",
+      "BigQuery",
+      "semantic layer",
+      "AI-ready metadata",
+      "ontologies and knowledge graphs",
+      "versioned data dictionary",
+      "automated testing",
+      "GDPR-compliant data processing",
+      "LLM-based applications",
+      "Self-Service Analytics",
+      "Tableau"
+    ]
+  }
+}
