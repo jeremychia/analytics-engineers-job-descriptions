@@ -67,10 +67,10 @@ Print: postings found, queued, classified, duplicates, failures, and how many re
 
 - Add or change a region in `discovery/search_config.json`. Take the `geoId` from the region's LinkedIn search URL, and add `distance_miles` for a city.
 - Check a new `geoId` before relying on it. Fetch one results page and confirm the cards' locations are in that country.
-- The default sweep covers seven regions: `eu` (all 27 members), uk, norway, switzerland, apac, nyc_metro and seattle. LinkedIn throttles after roughly 10–15 search requests in a short window, so a broad region takes several sweeps to page through.
+- The default sweep covers eight regions: `eu` (all 27 members), uk, norway, switzerland, apac, nyc_metro, seattle and boston. LinkedIn throttles after roughly 10–15 search requests in a short window, so a broad region takes several sweeps to page through.
 - `country_regions` keeps one search per EU country, plus singapore and the `emea` catch-all. Use them only with `--regions`, for a catch-up sweep of one country.
 - A region's name only scopes the search. A record's `geo_region` comes from its `job_location`, through `scripts/geo_classify.py`.
-- The `seattle` region has no `geo_region` bucket in `scripts/geo_classify.py`, so its records compile into `other`.
+- The `seattle` and `boston` regions have no `geo_region` bucket in `scripts/geo_classify.py`, so their records compile into `other`.
 - The search uses LinkedIn's logged-out job search. Keep to the configured regions, keywords and page limits.
 
 - The sweep and `check_duplicate_jd.py` both read `linkedin_url` as well as `source_url`, so a record moved to its ATS URL is still recognised when LinkedIn shows it again.
