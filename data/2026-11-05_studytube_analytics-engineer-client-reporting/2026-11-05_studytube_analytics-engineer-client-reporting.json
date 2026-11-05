@@ -1,0 +1,158 @@
+{
+  "jd_id": "2026-11-05_studytube_analytics-engineer-client-reporting",
+  "company": "Studytube",
+  "role": "Analytics Engineer – Client Reporting",
+  "job_location": "Amsterdam, North Holland, Netherlands",
+  "seniority": "mid",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "commercial",
+  "autonomy_level": "execution",
+  "ai_role": "none",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "high",
+  "greenfield_vs_fix": "fix_scale",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "high",
+  "collaboration_width": 5,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "soft",
+  "language_gate_languages": [
+    "Dutch"
+  ],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 28.9,
+    "spread": 29.5,
+    "measures": {
+      "marker_vocab": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "structure": {
+        "raw": 0.259,
+        "score": 51.9
+      },
+      "bullet_symmetry": {
+        "raw": 0.512,
+        "score": 52.9
+      },
+      "burstiness": {
+        "raw": 0.509,
+        "score": 68.9
+      },
+      "specificity": {
+        "raw": 14.138,
+        "score": 0.0
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "recruitee",
+  "ats_job_id": "2814917",
+  "has_dbt": true,
+  "has_dbt_cloud": true,
+  "has_spark": false,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": true,
+  "has_databricks": true,
+  "has_bigquery": true,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": true,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": true,
+  "has_tableau": false,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": false,
+  "has_aws": true,
+  "has_azure": true,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL",
+    "dbt",
+    "Looker"
+  ],
+  "preferred_tools": [
+    "Databricks",
+    "Fivetran",
+    "Python"
+  ],
+  "responsibilities": [
+    "Build and maintain the dbt models behind client reporting, following our layered structure from source to report.",
+    "Develop Looker reporting end to end: LookML views and explores, dashboards embedded in our platform, and the client-specific logic behind them.",
+    "Turn client and Customer Success requests into reports, and push back when a definition or requirement is unclear.",
+    "Keep client reporting reliable: tests, monitoring, documentation, code review and CI as the standard.",
+    "Protect client data: access per client, privacy and GDPR built into every model and report.",
+    "Work with our data engineer on the ingestion syncs (today Fivetran) that feed client reporting.",
+    "Help migrate client reporting models from Snowflake to Databricks, including clients with specific data residency needs.",
+    "Align client metrics with the shared definitions in our central data foundation, so customers and internal teams see the same numbers."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://jobs.studytube.nl/o/analytics-engineer-client-reporting",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4487266861/",
+  "evidence": {
+    "velocity_vs_rigour": "Keep client reporting reliable: tests, monitoring, documentation, code review and CI as the standard.",
+    "velocity_vs_rigour_explanation": "Rigour signals (reliable, tests, monitoring, CI, privacy and GDPR, 'Those numbers have to be right, every time') run throughout with no velocity phrases, so rigour.",
+    "domain_risk": "Protect client data: access per client, privacy and GDPR built into every model and report.",
+    "domain_risk_explanation": "An edtech sector would default lower, but the reports are customer-facing inside the product for 600+ organisations and the JD names 'privacy and GDPR' as a responsibility, so the explicit regulatory language makes it high.",
+    "collaboration_width": "client; Customer Success; data engineer; Product department; central data team",
+    "data_team_maturity": "Build and maintain the dbt models behind client reporting, following our layered structure from source to report.",
+    "data_team_maturity_explanation": "An existing layered dbt project, a dedicated Client Reporting team next to a 'central data team', and a platform migration point to a growing data function rather than an established specialised one, so mid.",
+    "jd_authorship": "Develop Looker reporting end to end: LookML views and explores, dashboards embedded in our platform, and the client-specific logic behind them.",
+    "jd_authorship_explanation": "Bullets name exact tools and objects ('LookML views and explores', 'ingestion syncs (today Fivetran)', 'Snowflake to Databricks'), so a reader knows what the work is day to day.",
+    "stakeholder_orientation": "Turn client and Customer Success requests into reports, and push back when a definition or requirement is unclear.",
+    "stakeholder_orientation_explanation": "The primary audience is external clients and the Customer Success team ('Turn client and Customer Success requests into reports'), with Product as a secondary partner, so commercial.",
+    "autonomy_level": "Build and maintain the dbt models behind client reporting",
+    "autonomy_level_explanation": "The verbs are build, maintain, develop, keep, help migrate and align, delivering scoped reporting work inside a team with its own Product Manager, so execution.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "The only AI mention is the product name 'AI/BI dashboards' in a Databricks nice-to-have, which asks no AI skill of the candidate.",
+    "testing_framing": "Keep client reporting reliable: tests, monitoring, documentation, code review and CI as the standard.",
+    "testing_framing_explanation": "Testing and monitoring sit in a responsibility bullet with an ownership verb ('Keep client reporting reliable'), so responsibility.",
+    "loss_aversion_framing": "Those numbers have to be right, every time.",
+    "loss_aversion_framing_explanation": "Customer trust in the numbers leads the role summary and returns in 'If a client or a CS colleague cannot understand or trust a report, the work is not done', so the fear is wrong data reaching customers.",
+    "greenfield_vs_fix": "Help migrate client reporting models from Snowflake to Databricks",
+    "greenfield_vs_fix_explanation": "The work maintains, extends and migrates an existing client reporting stack rather than building one from nothing, so fix_scale.",
+    "language_gate": "Professional English. ... Nice to have ... Dutch.",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Hybrid: 3 days at our Houthavens office in Amsterdam, 2 from home.",
+    "loss_aversion": "Those numbers have to be right, every time. ... If a client or a CS colleague cannot understand or trust a report, the work is not done.",
+    "ats_keywords": [
+      "client reporting",
+      "dbt in production: macros, tests, documentation and environments",
+      "LookML views and explores",
+      "dashboards embedded in our platform",
+      "slowly changing dimensions",
+      "Snowflake to Databricks",
+      "Unity Catalog",
+      "Embedded or customer-facing analytics in B2B SaaS",
+      "privacy and GDPR",
+      "Git workflows: pull requests, code review and CI",
+      "data residency"
+    ]
+  }
+}
