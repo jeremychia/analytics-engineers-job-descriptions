@@ -26,7 +26,7 @@ from benefits_tags import tag_ad  # noqa: E402
 
 DATA = ROOT / "data"
 IN = HERE / "inputs"
-SNAPSHOT = "2026-11-03"   # the talk quotes the ads classified up to this date; later records stay out of the deck
+SNAPSHOT = "2026-11-05"   # the talk quotes the ads classified up to this date; later records stay out of the deck
 TOOLS = [("has_sql", "SQL"), ("has_python", "Python"), ("has_dbt", "dbt"), ("has_airflow", "Airflow"),
          ("has_dagster", "Dagster"), ("has_snowflake", "Snowflake"), ("has_bigquery", "BigQuery"),
          ("has_databricks", "Databricks"), ("has_redshift", "Redshift"), ("has_looker", "Looker"),

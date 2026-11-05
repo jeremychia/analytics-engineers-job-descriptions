@@ -1,5 +1,5 @@
 {
- "method": "Read in full by hand, ad text only. Junior: all 79 junior ads; names_guide = the ad names a person or role who will mentor, coach, guide or supervise the new hire (perk-list mentions with no person or role do not count); any_support = names_guide, or a structured learning programme. Senior: a random sample of 50 senior ads; asks_mentor = asks the candidate to mentor, coach or develop others, or review their code; asks_enable = asks the candidate to make others able to use data themselves. learning = the ad offers the new hire something concrete to learn with: a learning or training budget, a training programme, courses or a learning platform, or set time to learn. Vague promises (\"opportunities for learning and growth\", \"career development\") do not count. Read on the ads the benefits pattern tagged, and searched by hand in the rest.",
+ "method": "Read in full by hand, ad text only. Junior: all 85 junior ads; names_guide = the ad names a person or role who will mentor, coach, guide or supervise the new hire (perk-list mentions with no person or role do not count); any_support = names_guide, or a structured learning programme. Senior: a random sample of 50 senior ads; asks_mentor = asks the candidate to mentor, coach or develop others, or review their code; asks_enable = asks the candidate to make others able to use data themselves. learning = the ad offers the new hire something concrete to learn with: a learning or training budget, a training programme, courses or a learning platform, or set time to learn. Vague promises (\"opportunities for learning and growth\", \"career development\") do not count. Read on the ads the benefits pattern tagged, and searched by hand in the rest.",
  "junior": [
   {
    "id": "2026-06-30_louis-dreyfus-company_data-analytics-engineer-finance-systems",
@@ -627,6 +627,54 @@
   },
   {
    "id": "2026-11-02_tenth-revolution-group_business-intelligence-developer",
+   "names_guide": false,
+   "any_support": false,
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
+  },
+  {
+   "id": "2026-11-04_agoda_business-intelligence-developer-rta",
+   "names_guide": false,
+   "any_support": false,
+   "quote": "",
+   "learning": false,
+   "learning_quote": ""
+  },
+  {
+   "id": "2026-11-04_amazon_business-intelligence-engineer-internship-2027-us",
+   "names_guide": true,
+   "any_support": true,
+   "quote": "Amazon interns have the opportunity to work alongside the industry’s brightest engineers",
+   "learning": false,
+   "learning_quote": ""
+  },
+  {
+   "id": "2026-11-04_cancer-council-victoria_analytics-engineer",
+   "names_guide": false,
+   "any_support": false,
+   "quote": "",
+   "learning": true,
+   "learning_quote": "Study support, plus in-house, external, and online learning programs."
+  },
+  {
+   "id": "2026-11-04_ledger_products-analytics-engineer-internship",
+   "names_guide": false,
+   "any_support": false,
+   "quote": "",
+   "learning": true,
+   "learning_quote": "A comprehensive suite of training solutions providing a personalised learning experience for every employee."
+  },
+  {
+   "id": "2026-11-04_matrix_junior-business-intelligence-developer",
+   "names_guide": false,
+   "any_support": true,
+   "quote": "",
+   "learning": true,
+   "learning_quote": "Build knowledge of Sisense and SQL through structured learning and training"
+  },
+  {
+   "id": "2026-11-04_phonepe_business-intelligence-engineer-1-3-years",
    "names_guide": false,
    "any_support": false,
    "quote": "",

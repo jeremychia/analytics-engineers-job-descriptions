@@ -23,7 +23,7 @@ function buildPipeline(stage) {
 /* three in four junior ads don't say who will teach the new hire, and half name neither a teacher nor anything to learn with (all junior ads read by hand); a third of senior ads ask you to mentor (hand-read sample) as context */
 function buildMentorGap(stage) {
   const W = 1000, MG = D.mentoring, [sk, sn] = MG.senior_asks_mentor, [jk, jn] = MG.junior_names_guide, lk = MG.junior_learning[0], nk = MG.junior_neither[0], both = jk + lk - (jn - nk);
-  const COLS = 16, tight = Math.ceil(jn / COLS) > 4, P = tight ? 30 : 34, r = tight ? 11 : 13, X0 = 40, Y0 = 150;   // a fifth row of dots would push the legend into the quotes
+  const COLS = Math.max(16, Math.ceil(jn / 5)), tight = Math.ceil(jn / COLS) > 4, P = tight ? 30 : 34, r = tight ? 11 : 13, X0 = 40, Y0 = 150;   // at most five rows: a sixth would push the legend into the quotes
   const svg = s('svg', { viewBox: `0 0 ${W} 520`, class: 'chart' }, stage);
   const txt = (p, x, y, text, st = {}, a = {}) => s('text', Object.assign({ x, y, text, style: Object.assign({ fontSize: '20px', fill: C.ink }, st) }, a), p);
   const layer = () => s('g', { style: { opacity: 0, transition: 'opacity .5s' } }, svg);
@@ -100,7 +100,7 @@ function buildRung(stage) {
   tag(gSql, 500, 22, 'descriptive', { anchor: 'end' }); tag(gBiz, 980, 22, 'untested', { anchor: 'end' });
   const drawIn = (p, dur) => { const len = p.getTotalLength(); p.style.strokeDasharray = len; p.style.strokeDashoffset = len; return tween(dur, e => { p.style.strokeDashoffset = len * (1 - e); }, { ease: E.inOut }); };
   const note = h('div', { style: { fontSize: 'clamp(14px,1.5vw,23px)', lineHeight: 1.35, opacity: 0, transition: 'opacity .5s' } },
-    h('b', {}, 'Tristan Handy: '), 'there is a career path for people curious how the business works and how to create more value. ', h('span', { style: { color: C.ink2 } }, 'Joe Reis: some people are attached to the identity of “I can write really complex SQL”.'));
+    h('b', {}, 'Tristan Handy: '), 'when he got into data, there was no promotion path. There is one for people curious how the business works and how to create more value. ', h('span', { style: { color: C.ink2 } }, 'Joe Reis: some people are attached to the identity of “I can write really complex SQL”.'));
   const line = h('div', { class: 'finalline', style: { fontSize: 'clamp(22px,3vw,46px)', opacity: 0, transition: 'opacity .6s' } }, 'How do you move up? ', h('em', {}, 'The ads don’t say. They may lag.'));
   stage.append(h('div', { class: 'col', style: { gap: '2vh' } }, svg, note, line));
   [sa, sb, ba, bb].forEach(p => p.style.opacity = 0);
@@ -113,7 +113,7 @@ function buildRung(stage) {
   ];
 }
 
-/* what comes next: an outside signal on young workers, then an ad that says the tool now writes the first draft and the new hire reviews it */
+/* what comes next: an outside signal on young workers, then an ad that says the tool now writes the first draft and the new hire reviews it, and Handy on where the work goes */
 function buildNext(stage) {
   const ST = D.stanford, Q = D.quotes, show = (el, on) => el.style.opacity = on ? 1 : 0;
   const stat = h('div', { style: { display: 'flex', alignItems: 'center', gap: '2vw', transition: 'opacity .5s' } },
@@ -126,12 +126,14 @@ function buildNext(stage) {
     h('div', { class: 'adline' }, h('span', { class: 'tag ask' }, 'ASKS'), h('span', { class: 'txt' }, Q.zego_asks.slice(0, at), h('mark', { class: 'm-ask' }, Q.zego_asks.slice(at)))));
   const [gk, gn] = D.mentoring.junior_asks_ai;
   const teach = h('div', { style: { fontSize: 'clamp(15px,1.6vw,24px)', fontWeight: 700, opacity: 0, transition: 'opacity .5s' } }, `${gn} junior ads ask for AI. `, h('span', { style: { color: C.coral } }, `${gk} say who will teach.`));
+  const voice = h('div', { style: { fontSize: 'clamp(14px,1.5vw,23px)', lineHeight: 1.35, opacity: 0, transition: 'opacity .5s' } },
+    h('b', {}, 'Tristan Handy: '), 'the technical parts of data work will change the way software engineering did, and fast. ', h('span', { style: { color: C.ink2 } }, 'What stays is knowing the business, and curating its context.'));
   const line = h('div', { class: 'finalline', style: { fontSize: 'clamp(22px,3vw,46px)', opacity: 0, transition: 'opacity .6s' } }, 'In ten years, someone reviews what the AI writes. ', h('em', {}, 'That person is a junior today.'));
-  stage.append(h('div', { class: 'col', style: { gap: '2.2vh' } }, stat, card, teach, line));
+  stage.append(h('div', { class: 'col', style: { gap: '2.2vh' } }, stat, card, teach, voice, line));
   return [
-    async () => { show(stat, 1); show(card, 0); show(teach, 0); show(line, 0); await wait(Anim.fast ? 0 : 400); },
-    async () => { show(stat, 1); show(card, 1); show(teach, 1); show(line, 0); await wait(Anim.fast ? 0 : 500); },
-    async () => { show(stat, 1); show(card, 1); show(teach, 1); show(line, 1); await wait(Anim.fast ? 0 : 600); }
+    async () => { show(stat, 1); show(card, 0); show(teach, 0); show(voice, 0); show(line, 0); await wait(Anim.fast ? 0 : 400); },
+    async () => { show(stat, 1); show(card, 1); show(teach, 1); show(voice, 1); show(line, 0); await wait(Anim.fast ? 0 : 500); },
+    async () => { show(stat, 1); show(card, 1); show(teach, 1); show(voice, 1); show(line, 1); await wait(Anim.fast ? 0 : 600); }
   ];
 }
 
