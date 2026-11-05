@@ -1,8 +1,8 @@
 # Responsibility taxonomy
 
-Bullets come from 1460 of 1478 JDs with an archived JD text file. They are captured when each JD is classified — a model reads the posting and copies its responsibilities section out verbatim — and stored per-JD in `data/<jd_id>/<jd_id>.json` under `responsibilities`. 1430 JDs are verbatim copies, enforced by `scripts/write_jd.py`, which refuses to write a record unless every bullet is a literal substring of the archived text; the other 30 describe the role only in flowing prose with no list to copy, and are marked `responsibilities_source: inferred_from_prose`. 18 JDs have no responsibilities content at all — the source scrape is a listing stub or a mis-scraped careers page (verified by direct read, not assumed) — and carry an explicit empty list rather than a silent absence. Regenerate with `./.venv/bin/python analysis/responsibility_taxonomy.py`.
+Bullets come from 1476 of 1494 JDs with an archived JD text file. They are captured when each JD is classified — a model reads the posting and copies its responsibilities section out verbatim — and stored per-JD in `data/<jd_id>/<jd_id>.json` under `responsibilities`. 1446 JDs are verbatim copies, enforced by `scripts/write_jd.py`, which refuses to write a record unless every bullet is a literal substring of the archived text; the other 30 describe the role only in flowing prose with no list to copy, and are marked `responsibilities_source: inferred_from_prose`. 18 JDs have no responsibilities content at all — the source scrape is a listing stub or a mis-scraped careers page (verified by direct read, not assumed) — and carry an explicit empty list rather than a silent absence. Regenerate with `./.venv/bin/python analysis/responsibility_taxonomy.py`.
 
-Classification is rule-based keyword matching (see `responsibility_taxonomy.py::TAXONOMY`), not per-line LLM judgment — treat this as a directional map, not a precise census. Of 11972 extracted bullets, 9751 (81.4%) matched at least one theme; 2221 (18.6%) matched none (miscellaneous duties too specific/rare to warrant their own theme — not a sign of missing bullets). A bullet can match more than one theme, so theme percentages sum to well over 100%. Note the split of responsibility: the *bullets* are read out of the posting by a model, the *themes* applied to them are keyword rules — so a missing theme means the vocabulary didn't match, not that the bullet was missed.
+Classification is rule-based keyword matching (see `responsibility_taxonomy.py::TAXONOMY`), not per-line LLM judgment — treat this as a directional map, not a precise census. Of 12133 extracted bullets, 9859 (81.3%) matched at least one theme; 2274 (18.7%) matched none (miscellaneous duties too specific/rare to warrant their own theme — not a sign of missing bullets). A bullet can match more than one theme, so theme percentages sum to well over 100%. Note the split of responsibility: the *bullets* are read out of the posting by a model, the *themes* applied to them are keyword rules — so a missing theme means the vocabulary didn't match, not that the bullet was missed.
 
 The corpus was deduplicated at the source (data/ directories, keyed on normalized job-posting URL — same company+role text alone was not treated as sufficient evidence, since several pairs turned out to be genuinely distinct openings at different locations). A residual same-company+role-text signature check against the current corpus (a cruder heuristic than the URL-based dedup actually applied) still shows a spread of at most 0.4 percentage points per theme, confirming no further collapsing would change the ranking.
 
@@ -10,26 +10,26 @@ The corpus was deduplicated at the source (data/ directories, keyed on normalize
 
 | Theme | % of JDs | # JDs | # bullets |
 |---|---|---|---|
-| BI & Reporting/Dashboards | 74.5% | 1087 | 2505 |
-| Stakeholder Collaboration & Requirements | 73.4% | 1071 | 2105 |
-| Data Modeling & Transformation | 72.9% | 1065 | 2446 |
-| Data Quality & Testing | 72.2% | 1054 | 1902 |
-| Governance & Documentation | 62.3% | 910 | 1626 |
-| Pipeline Engineering & Orchestration | 58.8% | 859 | 1301 |
-| Business Analysis & Insight Generation | 56.0% | 817 | 1445 |
-| Data Infrastructure & Warehouse Ops | 52.7% | 770 | 1213 |
-| Performance & Cost Optimization | 48.4% | 706 | 1128 |
-| Architecture & Platform Strategy | 42.1% | 614 | 924 |
-| Data Ownership (end-to-end) | 35.0% | 511 | 709 |
-| Self-Service Enablement & Data Literacy | 34.0% | 497 | 644 |
-| AI & Agentic Workflows | 32.1% | 468 | 795 |
-| Mentorship & Leadership | 14.7% | 214 | 226 |
-| Security, Privacy & Risk | 13.8% | 202 | 259 |
-| Vendor & Tooling Evaluation | 3.4% | 49 | 54 |
+| BI & Reporting/Dashboards | 74.7% | 1102 | 2536 |
+| Stakeholder Collaboration & Requirements | 73.4% | 1084 | 2127 |
+| Data Modeling & Transformation | 72.6% | 1071 | 2461 |
+| Data Quality & Testing | 72.2% | 1065 | 1923 |
+| Governance & Documentation | 62.1% | 916 | 1637 |
+| Pipeline Engineering & Orchestration | 58.9% | 869 | 1315 |
+| Business Analysis & Insight Generation | 56.0% | 827 | 1470 |
+| Data Infrastructure & Warehouse Ops | 52.6% | 776 | 1225 |
+| Performance & Cost Optimization | 48.4% | 715 | 1144 |
+| Architecture & Platform Strategy | 42.1% | 621 | 933 |
+| Data Ownership (end-to-end) | 35.1% | 518 | 716 |
+| Self-Service Enablement & Data Literacy | 33.8% | 499 | 647 |
+| AI & Agentic Workflows | 31.8% | 470 | 798 |
+| Mentorship & Leadership | 14.7% | 217 | 229 |
+| Security, Privacy & Risk | 13.9% | 205 | 263 |
+| Vendor & Tooling Evaluation | 3.3% | 49 | 54 |
 
 ## What each theme looks like
 
-### BI & Reporting/Dashboards — 74.5% of JDs
+### BI & Reporting/Dashboards — 74.7% of JDs
 
 Dashboards, reporting, visualization tools (Looker, Tableau, Power BI, Grafana), self-service BI.
 
@@ -67,7 +67,7 @@ Example bullets, verbatim from postings:
 - Collaborate closely with Data Product Owners to prioritize and deliver data engineering work in alignment with business priorities.
 - Partner with Platform Engineering teams to ensure smooth operation of data pipelines within the shared core data platform.
 
-### Data Modeling & Transformation — 72.9% of JDs
+### Data Modeling & Transformation — 72.6% of JDs
 
 Building/maintaining dbt models, semantic layers, metrics definitions, dimensional models — turning raw data into trusted, reusable structures.
 
@@ -105,7 +105,7 @@ Example bullets, verbatim from postings:
 - Balance speed, accuracy, and maintainability in data modeling decisions.
 - Establish data quality standards using tests, CI/CD, and documentation.
 
-### Governance & Documentation — 62.3% of JDs
+### Governance & Documentation — 62.1% of JDs
 
 Cataloging, metadata, access control, lineage, documentation, standards, compliance frameworks.
 
@@ -124,7 +124,7 @@ Example bullets, verbatim from postings:
 - Establish data quality standards using tests, CI/CD, and documentation.
 - Document business logic for financial metrics including revenue recognition and deferred income
 
-### Pipeline Engineering & Orchestration — 58.8% of JDs
+### Pipeline Engineering & Orchestration — 58.9% of JDs
 
 ETL/ELT pipelines, ingestion, orchestration tooling (Airflow/Dagster/Prefect), moving data end to end.
 
@@ -162,7 +162,7 @@ Example bullets, verbatim from postings:
 - Deliver high-quality semantic assets that fuel self-service analytics, reporting and AI-powered insights
 - Designing demand and revenue forecasting models for company-wide planning
 
-### Data Infrastructure & Warehouse Ops — 52.7% of JDs
+### Data Infrastructure & Warehouse Ops — 52.6% of JDs
 
 Warehouse platform work (Snowflake/BigQuery/Redshift/Databricks), CI/CD, cloud infra, Terraform.
 
@@ -219,7 +219,7 @@ Example bullets, verbatim from postings:
 - Champion the adoption of modern data engineering and agile delivery practices, fostering close collaboration with product owners, BI, data analysis, data science, data platform, and tech teams.
 - Partner with Platform Engineering teams to ensure smooth operation of data pipelines within the shared core data platform.
 
-### Data Ownership (end-to-end) — 35.0% of JDs
+### Data Ownership (end-to-end) — 35.1% of JDs
 
 Explicit end-to-end/full-stack ownership language, independent of which stage.
 
@@ -238,7 +238,7 @@ Example bullets, verbatim from postings:
 - You'll be the go-to Lightdash pro, both internally and in the community. You'll stay current with our latest features, including our evolving AI capabilities (using Lightdash for our own analytics and demos), understand how they fit into broader BI and analytics engineering workflows, and share this knowledge widely. You'll represent Lightdash at community events, conferences, and meetups with curiosity and enthusiasm, showcasing how AI is transforming analytics workflows.
 - Build end-to-end data solutions independently: Deliver reliable, high-quality datasets/pipelines
 
-### Self-Service Enablement & Data Literacy — 34.0% of JDs
+### Self-Service Enablement & Data Literacy — 33.8% of JDs
 
 Enabling others to self-serve, training, data literacy programs, knowledge-sharing.
 
@@ -257,7 +257,7 @@ Example bullets, verbatim from postings:
 - Develop and execute strategies to grow and engage the analytics engineering community around Lightdash. This includes cultivating relationships with community members, identifying product champions, and creating spaces for knowledge sharing and collaboration around modern analytics practices.
 - Contribute to team planning, code reviews, and knowledge sharing
 
-### AI & Agentic Workflows — 32.1% of JDs
+### AI & Agentic Workflows — 31.8% of JDs
 
 Using AI/agentic tools to accelerate the candidate's own work (Claude Code, Cursor, Copilot), or building data infrastructure that AI/ML systems consume or run on — the bullet-level counterpart to the `ai_role` Layer B dimension.
 
@@ -295,7 +295,7 @@ Example bullets, verbatim from postings:
 - Mentor engineers through code reviews and pair programming
 - Lead, mentor, and guide more junior team members
 
-### Security, Privacy & Risk — 13.8% of JDs
+### Security, Privacy & Risk — 13.9% of JDs
 
 Data privacy, security, PII/GDPR handling, risk management.
 
@@ -314,7 +314,7 @@ Example bullets, verbatim from postings:
 - Design and implement data models using industry best practices that capture a complete ecosystem view of in- and out-of-game experiences (major game analytics KPI's, user profile/history) - while ensuring accuracy, compliance, scalability, and long-term usability.
 - Support multi-tenant architecture and security governance
 
-### Vendor & Tooling Evaluation — 3.4% of JDs
+### Vendor & Tooling Evaluation — 3.3% of JDs
 
 Evaluating/selecting third-party tools and vendors.
 
@@ -343,16 +343,16 @@ Each of the 15 responsibility themes is a binary per-JD indicator (matched at le
 
 | Theme | Dimension | V | p | n |
 |---|---|---|---|---|
-| AI & Agentic Workflows | ai_role | 0.69 | p<0.0001 | 1340 |
-| Data Quality & Testing | testing_framing | 0.52 | p<0.0001 | 1340 |
-| Data Ownership (end-to-end) | autonomy_level | 0.37 | p<0.0001 | 1340 |
-| BI & Reporting/Dashboards | has_power_bi | 0.26 | p<0.0001 | 1340 |
-| Security, Privacy & Risk | loss_aversion_framing | 0.24 | p<0.0001 | 1340 |
-| Data Modeling & Transformation | has_dbt | 0.17 | p<0.0001 | 1340 |
-| Pipeline Engineering & Orchestration | has_airflow | 0.16 | p<0.0001 | 1340 |
-| Security, Privacy & Risk | domain_risk | 0.15 | p<0.0001 | 1340 |
-| BI & Reporting/Dashboards | has_tableau | 0.11 | p<0.0001 | 1340 |
-| BI & Reporting/Dashboards | has_looker | 0.04 | p=0.19 | 1340 |
+| AI & Agentic Workflows | ai_role | 0.69 | p<0.0001 | 1356 |
+| Data Quality & Testing | testing_framing | 0.52 | p<0.0001 | 1356 |
+| Data Ownership (end-to-end) | autonomy_level | 0.37 | p<0.0001 | 1356 |
+| BI & Reporting/Dashboards | has_power_bi | 0.26 | p<0.0001 | 1356 |
+| Security, Privacy & Risk | loss_aversion_framing | 0.25 | p<0.0001 | 1356 |
+| Data Modeling & Transformation | has_dbt | 0.17 | p<0.0001 | 1356 |
+| Pipeline Engineering & Orchestration | has_airflow | 0.16 | p<0.0001 | 1356 |
+| Security, Privacy & Risk | domain_risk | 0.16 | p<0.0001 | 1356 |
+| BI & Reporting/Dashboards | has_tableau | 0.12 | p<0.0001 | 1356 |
+| BI & Reporting/Dashboards | has_looker | 0.04 | p=0.20 | 1356 |
 
 ### Clean relationships (p<0.01, min expected cell ≥5, no keyword overlap)
 
@@ -360,52 +360,52 @@ Ranked by effect size. These are exploratory — no multiple-comparison correcti
 
 | Theme | Dimension | V | p | n |
 |---|---|---|---|---|
-| Data Quality & Testing | loss_aversion_framing | 0.39 | p<0.0001 | 1340 |
-| Governance & Documentation | loss_aversion_framing | 0.35 | p<0.0001 | 1340 |
-| Governance & Documentation | testing_framing | 0.35 | p<0.0001 | 1340 |
-| AI & Agentic Workflows | autonomy_level | 0.28 | p<0.0001 | 1340 |
-| Mentorship & Leadership | autonomy_level | 0.28 | p<0.0001 | 1340 |
-| Mentorship & Leadership | role_type | 0.25 | p<0.0001 | 1340 |
-| Governance & Documentation | jd_authorship | 0.24 | p<0.0001 | 1340 |
-| Data Ownership (end-to-end) | seniority | 0.23 | p<0.0001 | 1340 |
-| Data Modeling & Transformation | testing_framing | 0.22 | p<0.0001 | 1340 |
-| Business Analysis & Insight Generation | stakeholder_orientation | 0.21 | p<0.0001 | 1340 |
-| Data Ownership (end-to-end) | jd_authorship | 0.21 | p<0.0001 | 1340 |
-| Data Modeling & Transformation | jd_authorship | 0.21 | p<0.0001 | 1340 |
-| Governance & Documentation | velocity_vs_rigour | 0.21 | p<0.0001 | 1340 |
-| Data Quality & Testing | jd_authorship | 0.21 | p<0.0001 | 1340 |
-| Data Modeling & Transformation | loss_aversion_framing | 0.20 | p<0.0001 | 1340 |
-| Self-Service Enablement & Data Literacy | ai_role | 0.20 | p<0.0001 | 1340 |
-| Data Ownership (end-to-end) | ai_role | 0.19 | p<0.0001 | 1340 |
-| Architecture & Platform Strategy | seniority | 0.19 | p<0.0001 | 1340 |
-| BI & Reporting/Dashboards | stakeholder_orientation | 0.19 | p<0.0001 | 1340 |
-| Data Infrastructure & Warehouse Ops | jd_authorship | 0.19 | p<0.0001 | 1340 |
+| Data Quality & Testing | loss_aversion_framing | 0.39 | p<0.0001 | 1356 |
+| Governance & Documentation | loss_aversion_framing | 0.36 | p<0.0001 | 1356 |
+| Governance & Documentation | testing_framing | 0.35 | p<0.0001 | 1356 |
+| AI & Agentic Workflows | autonomy_level | 0.28 | p<0.0001 | 1356 |
+| Mentorship & Leadership | autonomy_level | 0.28 | p<0.0001 | 1356 |
+| Mentorship & Leadership | role_type | 0.25 | p<0.0001 | 1356 |
+| Governance & Documentation | jd_authorship | 0.25 | p<0.0001 | 1356 |
+| Data Modeling & Transformation | testing_framing | 0.22 | p<0.0001 | 1356 |
+| Data Modeling & Transformation | jd_authorship | 0.22 | p<0.0001 | 1356 |
+| Governance & Documentation | velocity_vs_rigour | 0.22 | p<0.0001 | 1356 |
+| Data Ownership (end-to-end) | seniority | 0.22 | p<0.0001 | 1356 |
+| Business Analysis & Insight Generation | stakeholder_orientation | 0.22 | p<0.0001 | 1356 |
+| Data Quality & Testing | jd_authorship | 0.21 | p<0.0001 | 1356 |
+| Data Ownership (end-to-end) | jd_authorship | 0.21 | p<0.0001 | 1356 |
+| Data Modeling & Transformation | loss_aversion_framing | 0.20 | p<0.0001 | 1356 |
+| Data Infrastructure & Warehouse Ops | jd_authorship | 0.20 | p<0.0001 | 1356 |
+| Self-Service Enablement & Data Literacy | ai_role | 0.20 | p<0.0001 | 1356 |
+| BI & Reporting/Dashboards | stakeholder_orientation | 0.19 | p<0.0001 | 1356 |
+| Architecture & Platform Strategy | seniority | 0.19 | p<0.0001 | 1356 |
+| Data Infrastructure & Warehouse Ops | has_dbt | 0.19 | p<0.0001 | 1356 |
 
 ### Featured relationships, stratification-checked
 
 Hand-picked from the clean list above and, for the first one, re-tested within subgroups of a plausible confounder before being written up as a finding — a check the rest of the clean list has *not* individually received, so treat anything not covered by name below as directional only, same as the rest of this document.
 
-**Mentorship & Leadership × autonomy_level** — χ²=101.42, p<0.0001, V=0.275, n=1340
+**Mentorship & Leadership × autonomy_level** — χ²=103.5, p<0.0001, V=0.276, n=1356
 
-- Overall: execution: 4% (n=403); mixed: 13% (n=518); strategic: 29% (n=419)
-- Within seniority=mid: execution: 2% (n=241); mixed: 7% (n=287); strategic: 6% (n=101)
-- Within seniority=senior: execution: 9% (n=98); mixed: 21% (n=199); strategic: 30% (n=222)
+- Overall: execution: 4% (n=408); mixed: 13% (n=528); strategic: 29% (n=420)
+- Within seniority=mid: execution: 2% (n=244); mixed: 7% (n=292); strategic: 6% (n=101)
+- Within seniority=senior: execution: 9% (n=100); mixed: 21% (n=203); strategic: 30% (n=223)
 - **Verdict:** survives the stratification check — the gradient holds within each stratum, not just across the whole corpus.
 
-**Data Infrastructure & Warehouse Ops × jd_authorship** — χ²=47.33, p<0.0001, V=0.188, n=1340
+**Data Infrastructure & Warehouse Ops × jd_authorship** — χ²=52.52, p<0.0001, V=0.197, n=1356
 
-- Overall: hiring_manager: 58% (n=925); mixed: 44% (n=306); recruiter: 27% (n=109)
+- Overall: hiring_manager: 58% (n=933); mixed: 44% (n=310); recruiter: 26% (n=113)
 - Not independently stratification-checked beyond the overlap-keyword screen — read as directional.
 
 ### A relationship that looked real and didn't survive scrutiny
 
-**Architecture & Platform Strategy × work_arrangement** — unstratified: χ²=4.93, p=0.18, V=0.061, n=1340. Overall: hybrid: 43% (n=597); remote: 44% (n=123); onsite: 49% (n=69); not_stated: 38% (n=551)
+**Architecture & Platform Strategy × work_arrangement** — unstratified: χ²=4.72, p=0.19, V=0.059, n=1356. Overall: hybrid: 43% (n=602); remote: 45% (n=125); onsite: 49% (n=71); not_stated: 39% (n=558)
 
 This pairing clears the same p<0.01 / no-overlap screen as the clean findings above, and on its own looks like a headline ("remote roles get less architectural scope"). It doesn't survive a stratification check against `data_team_maturity` — a plausible confounder, since maturity is independently correlated with work arrangement (mature teams skew hybrid) and with this theme:
 
 - Within data_team_maturity=early: hybrid: 41% (n=71); remote: 24% (n=17); onsite: 57% (n=21); not_stated: 46% (n=57)
-- Within data_team_maturity=mid: hybrid: 40% (n=377); remote: 46% (n=85); onsite: 43% (n=37); not_stated: 34% (n=341)
-- Within data_team_maturity=mature: hybrid: 53% (n=149); remote: 52% (n=21); onsite: 55% (n=11); not_stated: 45% (n=153)
+- Within data_team_maturity=mid: hybrid: 39% (n=381); remote: 47% (n=86); onsite: 44% (n=39); not_stated: 34% (n=341)
+- Within data_team_maturity=mature: hybrid: 53% (n=150); remote: 55% (n=22); onsite: 55% (n=11); not_stated: 46% (n=160)
 
 Once split by maturity tier, `remote` stops being consistently the lowest group — `not_stated` is the consistently-lowest group in every tier instead, and several strata have single-digit cell counts for `remote`/`onsite`, which makes the unstratified comparison mostly noise rather than signal. Kept here as a documented negative result and a worked example of why a stratification check matters, not silently dropped.
 
