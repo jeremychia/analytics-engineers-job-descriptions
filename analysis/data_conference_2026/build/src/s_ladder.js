@@ -1,5 +1,5 @@
 /* The ladder: the core stays flat, the strategic verb climbs; six single verbs drawn faint behind it. One ad set (English ads with a level). */
-function buildLadder(stage) {
+function buildLadder(stage, o = {}) {   // o.years: false leaves out the median years; o.mentorAlone: the mentor step fades the rest and shows its shares
   const W = 1000, H = 520, L = D.ladder, core = L.core, svg = s('svg', { viewBox: `0 0 ${W} ${H}`, class: 'chart' }, stage);
   const lv = ['Junior', 'Mid', 'Senior', 'Lead+'], y0 = 66, ph = 300, Y = v => y0 + ph - v / 100 * ph, base = Y(0);
   const layer = (o = {}) => s('g', { style: Object.assign({ opacity: 0, transition: 'opacity .6s' }, o) }, svg);
@@ -91,11 +91,13 @@ function buildLadder(stage) {
   mv.slice(1).forEach((v, i) => s('circle', { cx: XV(i + 1), cy: Y(v), r: 5.5, fill: C.plum, stroke: C.bg, 'stroke-width': 2 }, gMentor));
   s('rect', { x: XV(3) + 13, y: mentorLab.ly - 15, width: 70, height: 20, fill: C.bg }, gMentor);
   txt(gMentor, XV(3) + 15, mentorLab.ly, 'mentor', { fill: C.plum, fontWeight: 700 });
+  if (o.mentorAlone) s('rect', { x: 440, y: base + 30, width: 470, height: 110, fill: C.bg }, gMentor);   // the mentor shares replace the strategic ones under the axis
+  if (o.mentorAlone) mv.slice(1).forEach((v, i) => s('text', { x: XV(i + 1), y: base + 52, 'text-anchor': 'middle', text: Math.round(v) + '%', style: { fontSize: '22px', fontWeight: 700, fill: C.plum } }, gMentor));   // from mid, where the line starts
 
   const steps = [
     async () => { gCore.style.opacity = 1;
       await Promise.all(coreLines.map((p, i) => drawIn(p, 1300, i * 200)));
-      coreLabs.forEach(l => l.style.opacity = 1); if (!(await wait(400))) return; gYears.style.opacity = 1; },
+      coreLabs.forEach(l => l.style.opacity = 1); if (o.years === false || !(await wait(400))) return; gYears.style.opacity = 1; },
     async () => { gVerb.style.opacity = 1; gStrat.style.opacity = 1;
       await drawIn(stratLine, 1600); stratDots.forEach(d => d.style.opacity = 1); },
     async () => { gSix.style.opacity = 1; if (!(await wait(700))) return; gSeg.style.opacity = 1; },
@@ -103,6 +105,7 @@ function buildLadder(stage) {
     optional(async () => { gCaut.style.opacity = 1; }),
     optional(async () => { gStretch.style.opacity = 1; stretchText.forEach(e => e.style.opacity = 1); })
   ];
-  steps.mentor = async () => { gStrat.style.opacity = .35; gSix.style.opacity = .5; gMentor.style.opacity = 1; };
+  steps.mentor = o.mentorAlone ? async () => { gStrat.style.opacity = .12; gSix.style.opacity = .35; gSeg.style.opacity = 0; gMentor.style.opacity = 1; }
+    : async () => { gStrat.style.opacity = .35; gSix.style.opacity = .5; gMentor.style.opacity = 1; };
   return steps;
 }

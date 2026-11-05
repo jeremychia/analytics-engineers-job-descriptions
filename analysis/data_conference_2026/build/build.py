@@ -169,5 +169,6 @@ if __name__ == "__main__":
     assemble("deck.template.html", ["deck.js"], OUT / "jd_deck.html", F)
     assemble("deck.template.html", ["s_missing.js", "slides_v2.js", "deck.js"], OUT / "jd_deck_v2.html", F)
     assemble("deck.template.html", ["s_missing.js", "s_v4.js", "slides_v2.js", "slides_v4.js", "deck.js"], OUT / "jd_deck_v4.html", F)
+    assemble("deck.template.html", ["s_missing.js", "s_v5.js", "slides_v2.js", "slides_v5.js", "deck.js"], OUT / "jd_deck_v5.html", F)
     assemble("views.template.html", ["views.js"], OUT / "jd_views.html", F)
     bundle(SITE / "question-charts.js", F)

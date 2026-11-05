@@ -10,7 +10,7 @@ Order: ai_flags.py, titles_stats.py, make_similarity_matrix.py, benefits_tags.py
 then stack_stats.py and more_stats.py (they read deck_data.json), then prep_data.py again.
 Usage:  python3 analysis/data_conference_2026/build/prep_data.py
 """
-import csv, json, math, re, sys
+import csv, json, math, re, subprocess, sys
 from collections import Counter
 from pathlib import Path
 
@@ -26,7 +26,7 @@ from benefits_tags import tag_ad  # noqa: E402
 
 DATA = ROOT / "data"
 IN = HERE / "inputs"
-SNAPSHOT = "2026-11-05"   # the talk quotes the ads classified up to this date; later records stay out of the deck
+SNAPSHOT = "037ff713"   # the talk quotes the ads in the corpus at this commit; later records stay out of the deck
 TOOLS = [("has_sql", "SQL"), ("has_python", "Python"), ("has_dbt", "dbt"), ("has_airflow", "Airflow"),
          ("has_dagster", "Dagster"), ("has_snowflake", "Snowflake"), ("has_bigquery", "BigQuery"),
          ("has_databricks", "Databricks"), ("has_redshift", "Redshift"), ("has_looker", "Looker"),
@@ -96,8 +96,9 @@ def short(c):
 
 def main():
     recs = {}
+    in_snapshot = set(subprocess.check_output(["git", "ls-tree", "--name-only", f"{SNAPSHOT}:data"], cwd=ROOT, text=True).split())
     for f in sorted(DATA.iterdir()):
-        if f.name[:10] > SNAPSHOT:
+        if f.name not in in_snapshot:
             continue
         j, a = f / f"{f.name}.json", f / "jd_archive.md"
         if j.exists() and a.exists():
@@ -273,7 +274,8 @@ def main():
               ("2026-07-31_itt-inc_junior-analytics-engineer", "2+ years of experience in data analytics, or a similar role"),
               ("2026-09-25_dex_founding-analytics-engineer", "Set the standards for data quality, definitions and instrumentation across Dex."),
               ("2026-07-29_zego_analytics-engineer", "AI tools now handle a lot of the heavy lifting of writing SQL and boilerplate"),
-              ("2026-07-29_zego_analytics-engineer", "Read, debug, and critically review SQL (including AI-generated code)")]
+              ("2026-07-29_zego_analytics-engineer", "Read, debug, and critically review SQL (including AI-generated code)"),
+              ("2026-08-07_asb-bank_analytics-engineer", "Enjoy dedicated time for training and certification, with guidance and mentorship from Senior/Staff Engineers and Chapter Leads.")]
     for jid, q in quotes:
         txt = recs[jid][1] if jid in recs else ""
         if q not in txt:
@@ -281,7 +283,7 @@ def main():
     out["quotes"] = {"accenture_says": quotes[0][1], "accenture_asks": quotes[1][1], "vague": quotes[2][1], "concrete": quotes[3][1],
                      "lenovo": quotes[4][1], "january": quotes[5][1],
                      "dataroots": quotes[6][1], "enhance_asks": quotes[7][1], "enhance_says": quotes[8][1], "itt": quotes[9][1], "dex": quotes[10][1],
-                     "zego_says": quotes[11][1], "zego_asks": quotes[12][1]}
+                     "zego_says": quotes[11][1], "zego_asks": quotes[12][1], "asb": quotes[13][1]}
     # Stanford Digital Economy Lab, "Canaries in the Coal Mine", revised 12 Aug 2026: US employment of 22-25-year-olds in AI-exposed jobs, against trend
     out["stanford"] = {"gap_pct": 19, "ages": "22–25", "revised": "12 Aug 2026"}
 
@@ -295,6 +297,7 @@ def main():
                       ("core", [("has_sql", "SQL"), ("has_python", "Python"), ("has_dbt", "dbt")]),
                       ("warehouse", [("has_snowflake", "Snowflake"), ("has_bigquery", "BigQuery"), ("has_databricks", "Databricks")]),
                       ("BI", [("has_power_bi", "Power BI"), ("has_tableau", "Tableau"), ("has_looker", "Looker")]))},
+                  "tools_next": sorted([[label, tool_share(f)] for f, label in TOOLS[3:]], key=lambda t: -t[1])[:4],   # the four most named after SQL, Python and dbt, of any kind
                   "max_other": max(tool_share(f) for f in {k for r, _ in recs.values() for k in r if k.startswith("has_")} - {"has_sql", "has_python", "has_dbt"})}
 
     # --- pitch-yourself map: fused positions + tools

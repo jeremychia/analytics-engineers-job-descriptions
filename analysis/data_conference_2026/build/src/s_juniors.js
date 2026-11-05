@@ -1,5 +1,5 @@
 /* Juniors: four ways to count, the hard gate, three contradictions, France, then what a junior can do; last, the degree against senior ads. */
-function buildJuniors(stage, by = 'gate') {   // by 'years': group the ads by whether they ask 2+ years of experience, the one ask that contradicts the junior label
+function buildJuniors(stage, by = 'gate', o = {}) {   // by 'years': group the ads by whether they ask 2+ years of experience, the one ask that contradicts the junior label
   const W = 1000, H = 500, JC = D.junior_counts, J = D.junior, ads = J.ads, n = ads.length, S2 = D.stats2.juniors;
   const svg = s('svg', { viewBox: `0 0 ${W} ${H}`, class: 'chart' }, stage);
   const txt = (p, x, y, str, size, o = {}) => s('text', { x, y, 'text-anchor': o.anchor || 'start', text: str,
@@ -112,9 +112,10 @@ function buildJuniors(stage, by = 'gate') {   // by 'years': group the ads by wh
   txt(pProj, 160, PY + 22, 'have the basics? apply, lead with the project', 28, { weight: 700 });
   const pDeg = panel(), DL = D.junior.degree_by_level, [dk, dn] = DL.junior, BX = 770;
   txt(pDeg, gx0 - R, 97, `mentions a degree · ${dk}`, 18, { weight: 700, fill: C.coral }); txt(pDeg, dx0 - R, 97, `names none · ${dn - dk}`, 18, { weight: 700, fill: C.mute });
-  txt(pDeg, gx0 - 4, PY + 10, `${tenths(dk, dn)} in 10`, 64, { weight: 700, fill: C.coral, ls: '-.03em' });
-  txt(pDeg, PX, PY - 14, 'mention a degree', 26, { weight: 700 }); tag(pDeg, PX + 230, PY - 14, 'conclusive');
-  txt(pDeg, PX, PY + 22, `${D.junior.other_routes.length} of ${D.corpus_n.toLocaleString('en-US')} ads name another route in`, 18, { fill: C.ink2 });
+  if (o.degreeWords) txt(pDeg, gx0 - R, PY - 14, `${dk * 2 > dn ? 'more than half' : `${dk} of ${dn}`} mention a degree`, 26, { weight: 700 });   // the bars carry the share; the words match what is said
+  else { txt(pDeg, gx0 - 4, PY + 10, `${tenths(dk, dn)} in 10`, 64, { weight: 700, fill: C.coral, ls: '-.03em' });
+    txt(pDeg, PX, PY - 14, 'mention a degree', 26, { weight: 700 }); tag(pDeg, PX + 230, PY - 14, 'conclusive'); }
+  txt(pDeg, o.degreeWords ? gx0 - R : PX, PY + 22, `${D.junior.other_routes.length} of ${D.corpus_n.toLocaleString('en-US')} ads name another route in`, 18, { fill: C.ink2 });
   Object.entries(DL).forEach(([lv, [k, m]], r) => { const y = PY - 40 + r * 30, pct = Math.round(100 * k / m), col = r ? C.ink2 : C.coral;
     txt(pDeg, BX - 10, y + 5, lv, 15, { anchor: 'end', fill: col, weight: r ? 400 : 700 });
     s('rect', { x: BX, y: y - 9, width: 1.4 * pct, height: 18, rx: 4, fill: r ? C.grey : C.coral }, pDeg);
