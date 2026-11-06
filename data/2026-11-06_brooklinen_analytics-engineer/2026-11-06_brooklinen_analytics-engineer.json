@@ -1,0 +1,149 @@
+{
+  "jd_id": "2026-11-06_brooklinen_analytics-engineer",
+  "company": "Brooklinen",
+  "role": "Analytics Engineer",
+  "job_location": "New York, NY",
+  "seniority": "mid",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": 92000,
+  "salary_max": 120000,
+  "salary_currency": "USD",
+  "salary_period": null,
+  "jd_authorship": "mixed",
+  "stakeholder_orientation": "commercial",
+  "autonomy_level": "execution",
+  "ai_role": "none",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "moderate",
+  "greenfield_vs_fix": "mixed",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 3,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "none",
+  "language_gate_languages": [],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 58.9,
+    "spread": 36.3,
+    "measures": {
+      "marker_vocab": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 4.076,
+        "score": 81.5
+      },
+      "structure": {
+        "raw": 0.5,
+        "score": 100.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.378,
+        "score": 82.7
+      },
+      "burstiness": {
+        "raw": 0.506,
+        "score": 69.6
+      },
+      "specificity": {
+        "raw": 12.228,
+        "score": 19.7
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "ashby",
+  "ats_job_id": "e188e30a-6a5d-4cc2-a59b-e7182fee3d0e",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": false,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": true,
+  "has_tableau": false,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL"
+  ],
+  "preferred_tools": [
+    "dbt"
+  ],
+  "responsibilities": [
+    "Build reliable data models. Develop and maintain efficient, accurate SQL models that make reporting and analysis easier across the business.",
+    "Turn business needs into data solutions. Partner with analysts, engineers, and teams across Brooklinen to build data models, dashboards, and measurement tools that answer important business questions.",
+    "Get to know the business. Build a strong understanding of our Marketing team's data needs, then expand your work across other functions to identify opportunities where better data can make a difference.",
+    "Make data easier to use. Ingest, organize, catalog, and document datasets so teams can confidently find, understand, and use the information they need.",
+    "Solve problems from start to finish. Investigate data issues, identify what's causing them, and communicate findings and solutions clearly to technical and non-technical partners."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://jobs.ashbyhq.com/brooklinen/e188e30a-6a5d-4cc2-a59b-e7182fee3d0e",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4488403059/",
+  "evidence": {
+    "velocity_vs_rigour": "Develop and maintain efficient, accurate SQL models",
+    "velocity_vs_rigour_explanation": "Rigour words (\"reliable\", \"accurate\", \"cares about getting the details right\") appear with no velocity phrases, so rigour.",
+    "domain_risk": "Build a strong understanding of our Marketing team's data needs",
+    "domain_risk_explanation": "A consumer-goods retailer whose models serve marketing and business reporting with no financial or regulatory language, so moderate.",
+    "collaboration_width": "analysts; engineers; Marketing team",
+    "data_team_maturity": "Reporting to our Senior Manager, Analytics Engineering",
+    "data_team_maturity_explanation": "An existing Analytics & Insights team with an analytics engineering manager, still building its foundation, so mid.",
+    "jd_authorship": "Partner with analysts, engineers, and teams across Brooklinen to build data models, dashboards, and measurement tools",
+    "jd_authorship_explanation": "The bullets say what the work is (SQL models, dashboards, marketing data first) but name no tools or scale and read as polished copy, so mixed.",
+    "stakeholder_orientation": "Build a strong understanding of our Marketing team's data needs",
+    "stakeholder_orientation_explanation": "Marketing is the named first audience before the work expands to other functions, so commercial.",
+    "autonomy_level": "help build the foundation",
+    "autonomy_level_explanation": "A mid-level role reporting to a manager that develops, maintains and partners on scoped work (\"help build the foundation\"), so execution.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "The posting does not mention AI.",
+    "testing_framing": "Investigate data issues, identify what's causing them",
+    "testing_framing_explanation": "Finding and fixing data issues is an owned responsibility, though no testing tool or framework is named.",
+    "loss_aversion_framing": "so teams can confidently find, understand, and use the information they need",
+    "loss_aversion_framing_explanation": "Reliability and trust in datasets is a concern but secondary to delivery, with no compliance language, so moderate.",
+    "greenfield_vs_fix": "you’ll help build the foundation that makes that possible",
+    "greenfield_vs_fix_explanation": "Building the foundation sits alongside developing and maintaining existing models, so mixed.",
+    "language_gate": "Not stated in JD",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "A hybrid schedule",
+    "loss_aversion": "We're looking for someone who enjoys solving problems, cares about getting the details right, and likes making complex information easier for others to understand.",
+    "ats_keywords": [
+      "Analytics Engineer",
+      "Analytics & Insights team",
+      "reliable data models",
+      "accurate SQL models",
+      "dashboards, and measurement tools",
+      "Marketing team's data needs",
+      "catalog, and document datasets",
+      "Strong SQL skills",
+      "dbt or similar data modeling tools",
+      "Omni, Looker",
+      "marketing data in retail, e-commerce, or consumer goods"
+    ]
+  }
+}
