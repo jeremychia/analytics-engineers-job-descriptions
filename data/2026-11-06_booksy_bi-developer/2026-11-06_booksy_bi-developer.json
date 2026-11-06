@@ -1,0 +1,151 @@
+{
+  "jd_id": "2026-11-06_booksy_bi-developer",
+  "company": "Booksy",
+  "role": "BI Developer",
+  "job_location": "Poland or Spain",
+  "seniority": "mid",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "internal_data",
+  "autonomy_level": "execution",
+  "ai_role": "ai_user",
+  "testing_framing": "absent",
+  "loss_aversion_framing": "none",
+  "greenfield_vs_fix": "greenfield",
+  "velocity_vs_rigour": "mixed",
+  "domain_risk": "moderate",
+  "collaboration_width": 0,
+  "data_team_maturity": "early",
+  "urgency": "standard",
+  "work_arrangement": "remote",
+  "language_gate_type": "none",
+  "language_gate_languages": [],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 28.1,
+    "spread": 33.0,
+    "measures": {
+      "marker_vocab": {
+        "raw": 7.067,
+        "score": 42.2
+      },
+      "stock_phrases": {
+        "raw": 1.767,
+        "score": 35.3
+      },
+      "structure": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.749,
+        "score": 0.1
+      },
+      "burstiness": {
+        "raw": 0.957,
+        "score": 0.0
+      },
+      "specificity": {
+        "raw": 5.83,
+        "score": 90.8
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "workable",
+  "ats_job_id": "5CF7636A3C",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": true,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": true,
+  "has_tableau": false,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": true,
+  "required_tools": [
+    "Looker",
+    "SQL"
+  ],
+  "preferred_tools": [
+    "BigQuery",
+    "Python",
+    "dbt"
+  ],
+  "responsibilities": [
+    "Build semantic layers in Looker that colleagues can navigate without guidance",
+    "Create dashboards on Booksy data that are clear and easy to use",
+    "Learn Booksy's KPIs and data well enough to work independently",
+    "Review smaller pieces of work from fellow analytics engineers"
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://apply.workable.com/j/5CF7636A3C",
+  "evidence": {
+    "velocity_vs_rigour": "Working in a rapidly growing, ever-changing scale-up ... the habit of checking their output",
+    "velocity_vs_rigour_explanation": "Mixed - two pace phrases ('scaling rapidly', 'rapidly growing, ever-changing scale-up') sit alongside light rigour signals ('a sound grasp of joins and query cost', 'the habit of checking their output'), with neither dominating.",
+    "domain_risk": "Create dashboards on Booksy data that are clear and easy to use",
+    "domain_risk_explanation": "Moderate - a booking marketplace whose dashboards inform business decisions, with no financial reporting, audit or regulatory consequence named.",
+    "collaboration_width": "No named partner teams.",
+    "data_team_maturity": "your purpose will be to help us build our data foundations from scratch",
+    "data_team_maturity_explanation": "Early, borderline mid - the JD frames the role as 'build our data foundations from scratch', although an Analytics Engineering Lead and 'fellow analytics engineers' already exist; related record 2026-08-30_booksy_analytics-engineering-lead is the lead this role reports to.",
+    "jd_authorship": "Build semantic layers in Looker that colleagues can navigate without guidance",
+    "jd_authorship_explanation": "Hiring manager - the four bullets name the tool and the concrete output ('semantic layers in Looker', 'dashboards on Booksy data', 'Review smaller pieces of work'), so the day-to-day is legible despite the short list.",
+    "stakeholder_orientation": "Build semantic layers in Looker that colleagues can navigate without guidance",
+    "stakeholder_orientation_explanation": "Internal data - the audience is colleagues self-serving from the Looker semantic layer and dashboards, with no business function named.",
+    "autonomy_level": "help us build our data foundations from scratch ... Review smaller pieces of work from fellow analytics engineers",
+    "autonomy_level_explanation": "Execution - the role 'help[s] us build' under an Analytics Engineering Lead and must first 'Learn Booksy's KPIs and data well enough to work independently'.",
+    "ai_role": "Curiosity about AI tools, plus the habit of checking their output",
+    "ai_role_explanation": "AI user, borderline none - a nice-to-have that expects the candidate to use AI tools in their own work and verify what they produce, not to build data for AI systems.",
+    "testing_framing": "No testing or data quality signal.",
+    "testing_framing_explanation": "Absent - no testing, data quality or observability practice or tool is named; code review of colleagues' work is the closest signal.",
+    "loss_aversion_framing": "No loss aversion framing.",
+    "loss_aversion_framing_explanation": "None - the JD is framed around building and learning, with no reliability, compliance or trust register.",
+    "greenfield_vs_fix": "help us build our data foundations from scratch",
+    "greenfield_vs_fix_explanation": "Greenfield - the stated purpose is to build data foundations 'from scratch'.",
+    "language_gate": "At a minimum we require conversational level English language skills.",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "We're proudly distributed across the globe, with each market being remote-first. ... you might have office access or be fully remote - either works.",
+    "loss_aversion": "No loss aversion framing detected.",
+    "ats_keywords": [
+      "BI Developer",
+      "Looker",
+      "LookML",
+      "semantic layers",
+      "dashboards",
+      "Strong SQL",
+      "BigQuery",
+      "query cost",
+      "KPIs",
+      "dbt",
+      "Python",
+      "AI tools"
+    ]
+  }
+}
