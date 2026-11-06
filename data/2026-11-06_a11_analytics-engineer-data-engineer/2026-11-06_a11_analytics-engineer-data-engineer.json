@@ -1,0 +1,152 @@
+{
+  "jd_id": "2026-11-06_a11_analytics-engineer-data-engineer",
+  "company": "A11",
+  "role": "Analytics Engineer / Data Engineer (m/f/d)",
+  "job_location": "Berlin, Germany",
+  "seniority": "mid",
+  "role_type": "data_engineering",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "recruiter",
+  "stakeholder_orientation": "internal_data",
+  "autonomy_level": "execution",
+  "ai_role": "ai_enabler",
+  "testing_framing": "absent",
+  "loss_aversion_framing": "none",
+  "greenfield_vs_fix": "greenfield",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 3,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "not_stated",
+  "language_gate_type": "hard",
+  "language_gate_languages": [
+    "German"
+  ],
+  "jd_language": "de",
+  "ai_written": {
+    "score": 47.6,
+    "spread": 41.2,
+    "measures": {
+      "marker_vocab": {
+        "raw": 6.279,
+        "score": 35.7
+      },
+      "stock_phrases": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "structure": {
+        "raw": 0.577,
+        "score": 100.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.526,
+        "score": 49.8
+      },
+      "burstiness": {
+        "raw": 1.222,
+        "score": 0.0
+      },
+      "specificity": {
+        "raw": 3.454,
+        "score": 100.0
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "greenhouse",
+  "ats_job_id": "8932169002",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL",
+    "Python",
+    "dbt"
+  ],
+  "preferred_tools": [],
+  "responsibilities": [
+    "Hochwertige Data Warehouses, Cloud-Infrastrukturen, KI-Workflows usw. aufbauen",
+    "Daten aus verschiedenen Systemen in flexible und konsistente Darstellungen integrieren",
+    "Die langfristigen Auswirkungen von KI-Anwendungsfällen und deren Umsetzung untersuchen und bewerten",
+    "Sicherstellen, dass alle Mitarbeiter und IT-Systeme im Unternehmen über verschiedene Frontends und Schnittstellen einfachen Zugriff auf Daten haben",
+    "In einem agilen Softwareentwicklungsprozess arbeiten in enger Kooperation mit den Teams aus den Bereichen Analytics, Produktentwicklung und Softwareentwicklung",
+    "In einem großartigen funktionsübergreifenden Teamumfeld arbeiten und so Einfluss auf das Geschäft nehmen"
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://job-boards.greenhouse.io/projectaservicesgmbhcokg/jobs/8932169002",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4487798376/",
+  "evidence": {
+    "velocity_vs_rigour": "Daten aus verschiedenen Systemen in flexible und konsistente Darstellungen integrieren",
+    "velocity_vs_rigour_explanation": "Quality and consistency language ('Hochwertige', 'konsistente', 'zuverlässige Datenerfassung') outweighs the single process cue 'agilen Softwareentwicklungsprozess', so rigour, though both signals are light.",
+    "domain_risk": "Wir sind ein SWAT-Team für Business Performance",
+    "domain_risk_explanation": "A growth consultancy building data for client companies, with no financial-reporting or regulatory language in the responsibilities, so moderate.",
+    "collaboration_width": "Analytics; Produktentwicklung; Softwareentwicklung",
+    "data_team_maturity": "für unser Data & Analytics-Team",
+    "data_team_maturity_explanation": "An existing 'Data & Analytics-Team' already delivers data infrastructure for clients, but no sub-teams or scale are described, so mid.",
+    "jd_authorship": "In einem großartigen funktionsübergreifenden Teamumfeld arbeiten und so Einfluss auf das Geschäft nehmen",
+    "jd_authorship_explanation": "The bullets name no tools, volumes or methods, and two describe the team setting rather than the work, so recruiter.",
+    "stakeholder_orientation": "Sicherstellen, dass alle Mitarbeiter und IT-Systeme im Unternehmen über verschiedene Frontends und Schnittstellen einfachen Zugriff auf Daten haben",
+    "stakeholder_orientation_explanation": "The bullets centre on warehouses, integration and data access for employees and IT systems, so the audience is data consumers rather than one business function.",
+    "autonomy_level": "der/die unsere Datenstrategien unterstützt",
+    "autonomy_level_explanation": "The role summary frames the hire as supporting the data strategies and contributing ('mitzuwirken') to projects, so execution.",
+    "ai_role": "Hochwertige Data Warehouses, Cloud-Infrastrukturen, KI-Workflows usw. aufbauen",
+    "ai_role_explanation": "The candidate builds AI workflows and evaluates AI use cases as responsibilities, so the AI runs on their output.",
+    "testing_framing": "No testing or data quality signal.",
+    "testing_framing_explanation": "No testing, data contracts or data quality practice is named anywhere in the posting.",
+    "loss_aversion_framing": "No loss aversion framing.",
+    "loss_aversion_framing_explanation": "The posting is framed around building and impact, with no risk, reliability or compliance register.",
+    "greenfield_vs_fix": "Hochwertige Data Warehouses, Cloud-Infrastrukturen, KI-Workflows usw. aufbauen",
+    "greenfield_vs_fix_explanation": "The main verb is 'aufbauen' (build) for warehouses, infrastructure and AI workflows, with no maintain or improve tasks.",
+    "language_gate": "Gute Kommunikationsfähigkeiten in Deutsch und Englisch (Muttersprache oder muttersprach-ähnliches Niveau)",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Not stated in JD.",
+    "loss_aversion": "No loss aversion framing detected.",
+    "ats_keywords": [
+      "Data Warehouses",
+      "Cloud-Infrastrukturen",
+      "KI-Workflows",
+      "KI-Anwendungsfällen",
+      "SQL, Python und dbt",
+      "Versionskontrollsysteme",
+      "Analytics Engineering und Data Engineering",
+      "Datenbanksystemen",
+      "skalierbare Datenprodukte",
+      "maschinellem Lernen",
+      "agilen Softwareentwicklungsprozess"
+    ]
+  }
+}
