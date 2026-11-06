@@ -1,0 +1,163 @@
+{
+  "jd_id": "2026-11-06_exsolvae_analytics-engineer",
+  "company": "Exsolvæ",
+  "role": "Analytics Engineer",
+  "job_location": "Brussels Metropolitan Area",
+  "seniority": "mid",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "mixed",
+  "stakeholder_orientation": "internal_data",
+  "autonomy_level": "mixed",
+  "ai_role": "none",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "high",
+  "greenfield_vs_fix": "greenfield",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 3,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "hard",
+  "language_gate_languages": [
+    "French",
+    "Dutch"
+  ],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 47.1,
+    "spread": 40.4,
+    "measures": {
+      "marker_vocab": {
+        "raw": 5.722,
+        "score": 31.0
+      },
+      "stock_phrases": {
+        "raw": 7.153,
+        "score": 100.0
+      },
+      "structure": {
+        "raw": 0.469,
+        "score": 93.8
+      },
+      "bullet_symmetry": {
+        "raw": 0.489,
+        "score": 57.9
+      },
+      "burstiness": {
+        "raw": 1.93,
+        "score": 0.0
+      },
+      "specificity": {
+        "raw": 17.024,
+        "score": 0.0
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "linkedin",
+  "ats_job_id": "4487289720",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": true,
+  "has_python": false,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": true,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": true,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": true,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": true,
+  "has_aws": false,
+  "has_azure": true,
+  "has_gcp": false,
+  "has_semantic_layer": true,
+  "required_tools": [
+    "Microsoft Fabric",
+    "Power BI",
+    "SQL"
+  ],
+  "preferred_tools": [
+    "Spark",
+    "Databricks",
+    "dbt"
+  ],
+  "responsibilities": [
+    "Translate business requirements into scalable analytical data models and semantic layers",
+    "Build, test, and maintain transformation logic in Microsoft Fabric",
+    "Develop performant, user-friendly Power BI semantic models and reports",
+    "Design curated data layers following medallion architecture principles",
+    "Define and centralize business logic, KPIs, and metrics to create a single source of truth",
+    "Apply best practices for data governance, security (row-level and object-level security), and capacity and cost management",
+    "Continuously evaluate new Microsoft Fabric and Power BI features to improve platform efficiency",
+    "Contribute to internal best practices, reusable templates, and technical standards within Exsolvæ",
+    "Work alongside data engineers, data scientists, and business stakeholders to deliver end-to-end solutions",
+    "Enable business users through self-service analytics, documentation, and knowledge transfer",
+    "Support project delivery from initial design through production rollout"
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://www.linkedin.com/jobs/view/4487289720/",
+  "evidence": {
+    "velocity_vs_rigour": "applying software engineering best practices such as version control, testing, and documentation to analytics",
+    "velocity_vs_rigour_explanation": "Rigour signals (trusted, well-documented datasets; testing; data governance) appear throughout and no velocity phrase appears, so 'applying software engineering best practices such as version control, testing, and documentation' decides it.",
+    "domain_risk": "contribute to data and analytics programs in Belgium",
+    "domain_risk_explanation": "A consultancy role for unnamed Belgian clients with no financial, regulatory or compliance language, so 'contribute to data and analytics programs in Belgium' points to moderate.",
+    "collaboration_width": "data engineers; business analysts; data scientists",
+    "data_team_maturity": "Build, test, and maintain transformation logic in Microsoft Fabric",
+    "data_team_maturity_explanation": "Named tools sit in the responsibilities ('Build, test, and maintain transformation logic in Microsoft Fabric') and the role joins client programs already on Fabric, so the data function exists and is growing.",
+    "jd_authorship": "Apply best practices for data governance, security (row-level and object-level security), and capacity and cost management",
+    "jd_authorship_explanation": "About half the bullets are Fabric-specific ('row-level and object-level security', medallion layers, Power BI semantic models) and half are generic consultancy lines ('Support project delivery from initial design through production rollout').",
+    "stakeholder_orientation": "Enable business users through self-service analytics, documentation, and knowledge transfer",
+    "stakeholder_orientation_explanation": "The emphasis is on the semantic layer and a single source of truth for data consumers, as in 'Enable business users through self-service analytics'.",
+    "autonomy_level": "You will take ownership of data transformation, modeling, and reporting workflows...Support project delivery from initial design through production rollout",
+    "autonomy_level_explanation": "The role owns the modelling domain ('take ownership of data transformation, modeling, and reporting workflows') while delivering client projects in a support role ('Support project delivery').",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "AI appears only as a perk (a GenAI workspace through a partnership) and in the company description, not as a skill the candidate must show.",
+    "testing_framing": "Build, test, and maintain transformation logic in Microsoft Fabric",
+    "testing_framing_explanation": "Testing is an action the candidate owns in the responsibilities ('Build, test, and maintain transformation logic') and in the role summary, not just a listed tool.",
+    "loss_aversion_framing": "turn raw data into trusted, well-documented datasets and reports used across the organization",
+    "loss_aversion_framing_explanation": "Trust framing sits in the role summary ('trusted, well-documented datasets', 'a form they can rely on'), reflecting a fear of unreliable data reaching business users.",
+    "greenfield_vs_fix": "You will design and build the semantic layer and analytical data models on Microsoft Fabric",
+    "greenfield_vs_fix_explanation": "Design and build verbs dominate ('design and build the semantic layer', 'Design curated data layers'), with maintenance and improvement secondary.",
+    "language_gate": "Languages: Fluent in (French or Dutch) and English (spoken and written)",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Hybrid & Flexible: Enjoy a balanced work model combining remote flexibility with on-site collaboration.",
+    "loss_aversion": "You will design and build the semantic layer and analytical data models on Microsoft Fabric that turn raw data into trusted, well-documented datasets and reports used across the organization ... you will make sure the right data reaches the right people in a form they can rely on.",
+    "ats_keywords": [
+      "Microsoft Fabric",
+      "semantic layer",
+      "Power BI",
+      "DAX",
+      "Power Query (M)",
+      "medallion architecture",
+      "star schema, Kimball",
+      "Dataflows Gen2",
+      "Direct Lake mode",
+      "row-level and object-level security",
+      "DP-600",
+      "self-service analytics"
+    ],
+    "ats_lookup": "resolve_ats miss (exsolvae, exsolvæ); exsolvae.com is a client-rendered bubble app whose /careers page has no job text in raw html and whose sitemap lists no job pages; web search returned only aggregator mirrors (jobijoba, wearedevelopers)"
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "jd_id": "2026-11-06_infinity-quest_analytics-engineer-data-engineering-power-bi",
+  "company": "Infinity Quest",
+  "role": "Analytics Engineer – Data Engineering & Power BI",
+  "job_location": "Poland",
+  "seniority": "senior",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "mixed",
+  "stakeholder_orientation": "internal_data",
+  "autonomy_level": "execution",
+  "ai_role": "ai_user",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "moderate",
+  "greenfield_vs_fix": "fix_scale",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 0,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "not_stated",
+  "language_gate_type": "none",
+  "language_gate_languages": [],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 46.4,
+    "spread": 41.9,
+    "measures": {
+      "marker_vocab": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 4.484,
+        "score": 89.7
+      },
+      "structure": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.413,
+        "score": 74.9
+      },
+      "burstiness": {
+        "raw": 0.408,
+        "score": 97.7
+      },
+      "specificity": {
+        "raw": 12.556,
+        "score": 16.0
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "linkedin",
+  "ats_job_id": "4487746645",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": true,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": true,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": true,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL",
+    "Python",
+    "dbt",
+    "Power BI"
+  ],
+  "preferred_tools": [
+    "Snowflake"
+  ],
+  "responsibilities": [
+    "Build, maintain, and enhance data pipelines and transformation workflows using dbt and python DAG in Airflow. Develop clean, reliable, and reusable data models for analytics and reporting.",
+    "Work with SQL and data warehouse platforms to investigate data, troubleshoot issues, and implement transformations. Develop and maintain Power BI dashboards, reports, semantic models, and DAX measures.",
+    "Translate business requirements into appropriate data models and reporting solutions.",
+    "Perform data analysis, validation, reconciliation, and data quality checks.",
+    "AI Forward - Understand how to marry AI tools to enhance productivity on tasks"
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://www.linkedin.com/jobs/view/4487746645/",
+  "evidence": {
+    "velocity_vs_rigour": "Perform data analysis, validation, reconciliation, and data quality checks.",
+    "velocity_vs_rigour_explanation": "Rigour signals ('reliable', 'validation, reconciliation, and data quality checks', 'Attention to detail') outweigh the single velocity phrase 'fast-paced environment', so rigour.",
+    "domain_risk": "Develop and maintain Power BI dashboards, reports, semantic models, and DAX measures.",
+    "domain_risk_explanation": "The agency listing names no client sector and no financial-reporting or regulatory stakes, so errors affect business reporting and the risk is moderate.",
+    "collaboration_width": "No named partner teams.",
+    "data_team_maturity": "Build, maintain, and enhance data pipelines and transformation workflows using dbt and python DAG in Airflow",
+    "data_team_maturity_explanation": "Tools sit in the responsibilities ('using dbt and python DAG in Airflow') and the work includes 'supporting existing data pipelines', so an existing, growing data function: mid.",
+    "jd_authorship": "using dbt and python DAG in Airflow",
+    "jd_authorship_explanation": "Bullets name tools with application context ('dbt and python DAG in Airflow', 'semantic models, and DAX measures') but carry generic lines ('Translate business requirements') and requirements run into the list, typical of an agency posting for an unnamed client, so mixed.",
+    "stakeholder_orientation": "Develop clean, reliable, and reusable data models for analytics and reporting.",
+    "stakeholder_orientation_explanation": "The audience is the consumers of the modelling and reporting layer ('data models for analytics and reporting'), with no named business function, so internal_data.",
+    "autonomy_level": "Translate business requirements into appropriate data models and reporting solutions.",
+    "autonomy_level_explanation": "The role receives requirements and delivers models, pipelines and dashboards ('delivering tasks with limited supervision', 'Individual Contributor'), so execution.",
+    "ai_role": "Understand how to marry AI tools to enhance productivity on tasks",
+    "ai_role_explanation": "The candidate is expected to use AI tools to speed up their own work, so ai_user.",
+    "testing_framing": "Perform data analysis, validation, reconciliation, and data quality checks.",
+    "testing_framing_explanation": "Data quality checks are a responsibility bullet with an action verb ('Perform'), so responsibility.",
+    "loss_aversion_framing": "troubleshoot issues",
+    "loss_aversion_framing_explanation": "Reliability concerns ('reliable', 'troubleshoot issues', 'debugging and supporting existing data pipelines') are present but secondary to delivery, with no compliance or trust framing, so moderate.",
+    "greenfield_vs_fix": "Experience debugging and supporting existing data pipelines and analytics solutions.",
+    "greenfield_vs_fix_explanation": "Verbs centre on maintaining and enhancing existing pipelines ('Build, maintain, and enhance', 'debugging and supporting existing data pipelines'), so fix_scale.",
+    "language_gate": "Not stated in JD",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Not stated in JD.",
+    "loss_aversion": "Work with SQL and data warehouse platforms to investigate data, troubleshoot issues, and implement transformations. (operational troubleshooting, not compliance framing)",
+    "ats_keywords": [
+      "dbt",
+      "python DAG in Airflow",
+      "Power BI dashboards",
+      "semantic models",
+      "DAX measures",
+      "data quality checks",
+      "dimensional modeling",
+      "fact/dimension structures",
+      "Snowflake",
+      "modern ELT/data transformation practices",
+      "10+ Years Experience",
+      "Client Facing"
+    ],
+    "ats_lookup": "Infinity Quest is an IT consultancy and staffing firm posting a contract role for an unnamed client; resolve_ats miss; its SmartRecruiters board (InfinityQuest) lists only 2017-2018 roles; i-q.co / iqnxt.com has no careers page in its nav or sitemap; web search found no other employer copy"
+  }
+}

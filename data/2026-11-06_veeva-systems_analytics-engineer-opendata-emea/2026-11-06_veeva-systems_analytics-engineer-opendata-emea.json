@@ -1,0 +1,152 @@
+{
+  "jd_id": "2026-11-06_veeva-systems_analytics-engineer-opendata-emea",
+  "company": "Veeva Systems",
+  "role": "Analytics Engineer - OpenData EMEA (Remote)",
+  "job_location": "Spain",
+  "seniority": "mid",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": 45000,
+  "salary_max": 95000,
+  "salary_currency": "EUR",
+  "salary_period": null,
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "commercial",
+  "autonomy_level": "execution",
+  "ai_role": "none",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "moderate",
+  "greenfield_vs_fix": "fix_scale",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "high",
+  "collaboration_width": 0,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "remote",
+  "language_gate_type": "none",
+  "language_gate_languages": [],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 32.8,
+    "spread": 36.8,
+    "measures": {
+      "marker_vocab": {
+        "raw": 5.51,
+        "score": 29.2
+      },
+      "stock_phrases": {
+        "raw": 6.887,
+        "score": 100.0
+      },
+      "structure": {
+        "raw": 0.036,
+        "score": 7.1
+      },
+      "bullet_symmetry": {
+        "raw": 1.287,
+        "score": 0.0
+      },
+      "burstiness": {
+        "raw": 0.844,
+        "score": 0.0
+      },
+      "specificity": {
+        "raw": 8.54,
+        "score": 60.7
+      }
+    }
+  },
+  "interview_stages": 3,
+  "ats_platform": "lever",
+  "ats_job_id": "71fcade2-d6c8-446b-beb7-ffd6875598b6",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": true,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL",
+    "Python"
+  ],
+  "preferred_tools": [
+    "Redshift",
+    "dbt"
+  ],
+  "responsibilities": [
+    "Configure and maintain robust, scalable crawlers",
+    "Build reports, ad-hoc and regularly",
+    "Integrate extracted data into our OpenData platform",
+    "Implement data quality and observability",
+    "Collaborate with cross-functional teams to deliver solutions"
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://jobs.lever.co/veeva/71fcade2-d6c8-446b-beb7-ffd6875598b6",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4486706026/",
+  "evidence": {
+    "velocity_vs_rigour": "Implement data quality and observability",
+    "velocity_vs_rigour_explanation": "Responsibilities stress correctness ('transform, clean and validate data', 'Implement data quality and observability', 'robust, scalable crawlers') with no velocity phrases in the role itself, so rigour.",
+    "domain_risk": "to support commercial sales execution, compliance, and business analytics",
+    "domain_risk_explanation": "The role feeds a customer-facing reference-data product that life sciences companies use 'to support commercial sales execution, compliance, and business analytics', so errors reach customers' compliance work at scale: high.",
+    "collaboration_width": "No named partner teams.",
+    "data_team_maturity": "The data is handed over to our data platform for processing using Python.",
+    "data_team_maturity_explanation": "An existing data platform and an established OpenData product receive the role's output ('Integrate extracted data into our OpenData platform'), so the data function exists and is growing: mid.",
+    "jd_authorship": "Configure and maintain robust, scalable crawlers",
+    "jd_authorship_explanation": "The responsibilities describe concrete daily work (crawlers, reports, integrating extracted data into the OpenData platform), with only one generic collaboration line, so hiring_manager.",
+    "stakeholder_orientation": "The role has a significant impact on customer success",
+    "stakeholder_orientation_explanation": "The primary audience is Veeva's external life sciences customers, framed as 'customer success' and data 'for our customers', so commercial.",
+    "autonomy_level": "Configure and maintain robust, scalable crawlers",
+    "autonomy_level_explanation": "The verbs are delivery verbs ('Configure and maintain', 'Build reports', 'Integrate', 'Implement') with no direction-setting, so execution.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "The posting expects no AI skill from the candidate.",
+    "testing_framing": "Implement data quality and observability",
+    "testing_framing_explanation": "Data quality and observability are a responsibility the candidate implements, so responsibility.",
+    "loss_aversion_framing": "ensuring the freshness, availability and quality of data for our customers",
+    "loss_aversion_framing_explanation": "The concern is data freshness, availability and quality for customers, an operational reliability fear secondary to delivery, so moderate.",
+    "greenfield_vs_fix": "The analyst engineer role will create maintenance jobs to transform, clean and validate data from a variety of sources.",
+    "greenfield_vs_fix_explanation": "The work maintains and extends an existing pipeline ('maintenance jobs', 'Configure and maintain', 'Integrate extracted data into our OpenData platform'), so fix_scale.",
+    "language_gate": "Not stated in JD",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Work from anywhere",
+    "loss_aversion": "The role has a significant impact on customer success, as it is ensuring the freshness, availability and quality of data for our customers.",
+    "ats_keywords": [
+      "crawlers",
+      "OpenData platform",
+      "data quality and observability",
+      "ad-hoc reports",
+      "visual reporting",
+      "version control and code reviews",
+      "data frames",
+      "Mozenda or Zyte",
+      "Redshift",
+      "Dbt, Polars",
+      "analytic engineer using Python",
+      "data analyst using SQL"
+    ]
+  }
+}
