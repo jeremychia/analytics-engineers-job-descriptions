@@ -1,0 +1,153 @@
+{
+  "jd_id": "2026-11-06_michael-page_business-intelligence-developer-tableau-t-sql",
+  "company": "Michael Page",
+  "role": "Business Intelligence Developer (Tableau / T-SQL)",
+  "job_location": "West Midlands, England, United Kingdom",
+  "seniority": "mid",
+  "role_type": "other",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "finance",
+  "autonomy_level": "execution",
+  "ai_role": "none",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "moderate",
+  "greenfield_vs_fix": "fix_scale",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 2,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "not_stated",
+  "language_gate_type": "none",
+  "language_gate_languages": [],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 26.9,
+    "spread": 33.0,
+    "measures": {
+      "marker_vocab": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "structure": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.35,
+        "score": 89.0
+      },
+      "burstiness": {
+        "raw": 0.577,
+        "score": 49.5
+      },
+      "specificity": {
+        "raw": 11.919,
+        "score": 23.1
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "linkedin",
+  "ats_job_id": "4485340660",
+  "has_dbt": false,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": false,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": false,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": true,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL"
+  ],
+  "preferred_tools": [
+    "Tableau"
+  ],
+  "responsibilities": [
+    "Managing a support ticketing system for report requests from stakeholders within the business.",
+    "Extraction of key management information and data internal systems using SQL and Power Query",
+    "Critical assessment of information produced for reasonableness and data quality/ accuracy",
+    "Designing, amending and keeping up to date a variety of SQL queries that drive systematic reporting on a number of platforms alongside ad hoc reporting and data extraction.",
+    "Defining and maintaining a catalogue of standard reports to use as a reference for future requests and to identify gaps in current information",
+    "Support the Finance Business Manager in maintaining suite of management reports on the firm's reporting platform Tableau",
+    "Support the Head of Finance and Finance Business Manager with ad hoc analytical tasks",
+    "Communicate the results of data analysis in written and verbal form to stakeholders."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://www.linkedin.com/jobs/view/4485340660/",
+  "evidence": {
+    "velocity_vs_rigour": "Critical assessment of information produced for reasonableness and data quality/ accuracy",
+    "velocity_vs_rigour_explanation": "the duties stress checking accuracy and cross-checking results, with no speed language, so rigour (\"data quality/ accuracy\").",
+    "domain_risk": "maintaining suite of management reports",
+    "domain_risk_explanation": "the reports are internal management information for a finance function, with no regulatory or audit duty, so moderate (\"management reports\").",
+    "collaboration_width": "Finance; Operational teams",
+    "data_team_maturity": "maintaining suite of management reports on the firm's reporting platform Tableau",
+    "data_team_maturity_explanation": "a reporting platform and report suite already exist and the role maintains and improves them, so mid (\"the firm's reporting platform Tableau\").",
+    "jd_authorship": "Managing a support ticketing system for report requests from stakeholders within the business.",
+    "jd_authorship_explanation": "the bullets name the ticket queue, SQL and Power Query extraction, a report catalogue and the Tableau suite, so a reader can picture the working day, so hiring_manager.",
+    "stakeholder_orientation": "Support the Head of Finance and Finance Business Manager with ad hoc analytical tasks",
+    "stakeholder_orientation_explanation": "the role reports to the Finance Business Manager and serves the Head of Finance, so finance.",
+    "autonomy_level": "Support the Finance Business Manager",
+    "autonomy_level_explanation": "the role takes report requests from a ticket queue and supports finance managers, so execution (\"Support the Finance Business Manager\").",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "the posting asks for no AI skill.",
+    "testing_framing": "Critical assessment of information produced for reasonableness and data quality/ accuracy",
+    "testing_framing_explanation": "checking the accuracy of produced reports is listed as a duty the role owns, so responsibility.",
+    "loss_aversion_framing": "ensure data quality and resolve errors",
+    "loss_aversion_framing_explanation": "accuracy checks matter but sit behind delivering reports, with no compliance or trust framing, so moderate.",
+    "greenfield_vs_fix": "assess current reporting and analytics capabilities across the firm to seek improvements or efficiencies",
+    "greenfield_vs_fix_explanation": "the role improves an existing reporting estate rather than building a new one, so fix_scale.",
+    "language_gate": "Not stated in JD",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "Not stated in JD.",
+    "loss_aversion": "Critical assessment of information produced for reasonableness and data quality/ accuracy — accuracy checks on finance reporting output.",
+    "ats_keywords": [
+      "Finance System Reporting Analyst",
+      "BI Developer",
+      "Tableau",
+      "SQL and Power Query",
+      "support ticketing system",
+      "data warehousing (SSMS)",
+      "SQL Server",
+      "SSRS (Visual Studio)",
+      "management reports",
+      "ad hoc reporting"
+    ],
+    "ats_lookup": "resolve_ats miss; recruiter posting by Michael Page for an unnamed professional services firm, so no employer posting can be identified. michaelpage.co.uk carries the same text (ref JN-092026-7100008, all 8 bullets match), but the agency is not the hiring company.",
+    "role_type_explanation": "The title says BI Developer but the body calls it a Finance System Reporting Analyst / BI Developer. The duties are a report-request queue, SQL extraction and maintaining Tableau management reports, with no modelling or warehouse build, so other (reporting analyst work).",
+    "company_note": "Michael Page is a recruitment agency hiring for an unnamed 'Leading Professional Services organisation'; the posting names no client, so the record keeps Michael Page. 12 month fixed term maternity cover."
+  }
+}
