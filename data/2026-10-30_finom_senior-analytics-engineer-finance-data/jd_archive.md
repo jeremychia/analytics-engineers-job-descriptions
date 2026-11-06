@@ -70,6 +70,6 @@ The Team
 
 We're a small central team that works with every function, and Finance is our primary partner. We use a modern stack, you're free to try new tools, and there are incentives for driving change. AI assistants take on routine work so people can focus on harder problems. We work in English, think long term, and build data that functions keep developing after we deliver it
 
-€63,500 - €846,000 a year
+€56,500 - €94,000 a year
 
 We may use artificial intelligence (AI) tools to support parts of the hiring process, such as reviewing applications, analyzing resumes, or assessing responses and identifying potential inconsistencies or verification signals in application materials based on available information. These tools assist our recruitment team but do not replace human judgment. Final hiring decisions are ultimately made by humans. If you would like more information about how your data is processed, please contact us.
