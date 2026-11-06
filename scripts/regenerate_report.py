@@ -21,6 +21,7 @@ from pathlib import Path
 from collections import Counter, defaultdict
 from typing import Dict, List, Any
 
+from employer_cap import MAX_ADS_PER_EMPLOYER, cap_per_employer, employer_group
 from geo_classify import classify_geo_region
 from language_detect import detect_language
 from tool_mentions import detect_tool_mentions
@@ -66,6 +67,10 @@ def compile_data_json() -> int:
                 print(f"  ✗ {jd_id} — JSON decode error: {e}")
             except Exception as e:
                 print(f"  ✗ {jd_id} — {e}")
+
+    records, capped = cap_per_employer(records)
+    print(f"\n  capped {len(capped)} ads from employers with more than {MAX_ADS_PER_EMPLOYER}: "
+          + ", ".join(f"{employer} {count}" for employer, count in Counter(employer_group(record.get("company")) for record in capped).most_common()))
 
     # Write output
     OUT_DATA_JSON.parent.mkdir(parents=True, exist_ok=True)

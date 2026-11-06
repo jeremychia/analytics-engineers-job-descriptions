@@ -660,9 +660,10 @@ def compute_dimension_relationships(jd_theme_sets, jd_meta):
 
 
 def main():
-    jd_dirs = sorted(DATA_DIR.glob("*/jd_archive.md"))
     jd_list = json.load(open(ROOT / "analysis" / "data.json"))
     jd_meta = {d["jd_id"]: d for d in jd_list}
+    # data.json is the analysed corpus: it leaves out ads over the per-employer cap.
+    jd_dirs = [f for f in sorted(DATA_DIR.glob("*/jd_archive.md")) if f.parent.name in jd_meta]
 
     bullets_by_jd = []
     n_captured = n_regex = 0

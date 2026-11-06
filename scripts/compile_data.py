@@ -15,6 +15,7 @@ Output:
 import json
 from pathlib import Path
 
+from employer_cap import MAX_ADS_PER_EMPLOYER, cap_per_employer
 from geo_classify import classify_geo_region
 from language_detect import detect_language
 from tool_mentions import detect_tool_mentions
@@ -49,6 +50,9 @@ def main():
                 print(f"✗ {jd_id} — JSON decode error: {e}")
             except Exception as e:
                 print(f"✗ {jd_id} — {e}")
+
+    records, capped = cap_per_employer(records)
+    print(f"Capped {len(capped)} ads from employers with more than {MAX_ADS_PER_EMPLOYER}")
 
     # Write output
     OUT_FILE.parent.mkdir(parents=True, exist_ok=True)

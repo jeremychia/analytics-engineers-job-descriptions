@@ -16,7 +16,7 @@ Regenerate the analysis pipeline after new JDs are added to the corpus.
 
 **What this does:**
 
-1. **Compiles all individual JD JSON files** from `data/{jd_id}/{jd_id}.json` into a single `analysis/data.json`
+1. **Compiles all individual JD JSON files** from `data/{jd_id}/{jd_id}.json` into a single `analysis/data.json`, keeping at most 6 ads per employer (`scripts/employer_cap.py`; Amazon, AWS and Prime Video count as one). Report the corpus as ads analysed (the `data.json` count) and ads collected (the `data/` count); the compile prints how many the cap left out
 2. **Analyzes all Layer B dimensions** across the analytical cohort (rigour, domain risk, team maturity, autonomy, AI role, testing framing, loss aversion)
 3. **Regenerates the responsibility-theme classification** (`./.venv/bin/python analysis/responsibility_taxonomy.py`) — reads each JD's `responsibilities` bullets (captured at classification time and stored per-JD, reaching the script via `data.json`), classifies them against the 16-theme taxonomy, and recomputes every theme × Layer B dimension relationship (construct-overlap screen, clean-findings list, featured/stratification-checked relationships) fresh against the current corpus
 
