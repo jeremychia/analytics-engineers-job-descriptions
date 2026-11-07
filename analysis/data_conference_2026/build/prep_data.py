@@ -10,7 +10,7 @@ Order: ai_flags.py, titles_stats.py, make_similarity_matrix.py, benefits_tags.py
 then stack_stats.py and more_stats.py (they read deck_data.json), then prep_data.py again.
 Usage:  python3 analysis/data_conference_2026/build/prep_data.py
 """
-import csv, json, math, re, subprocess, sys
+import csv, io, json, math, re, subprocess, sys, tarfile
 from collections import Counter
 from pathlib import Path
 
@@ -24,7 +24,6 @@ from regions import grid_region, GRID  # noqa: E402
 from missing_stats import min_years_asked  # noqa: E402
 from benefits_tags import tag_ad  # noqa: E402
 
-DATA = ROOT / "data"
 IN = HERE / "inputs"
 SNAPSHOT = "037ff713"   # the talk quotes the ads in the corpus at this commit; later records stay out of the deck
 TOOLS = [("has_sql", "SQL"), ("has_python", "Python"), ("has_dbt", "dbt"), ("has_airflow", "Airflow"),
@@ -96,13 +95,15 @@ def short(c):
 
 def main():
     recs = {}
-    in_snapshot = set(subprocess.check_output(["git", "ls-tree", "--name-only", f"{SNAPSHOT}:data"], cwd=ROOT, text=True).split())
-    for f in sorted(DATA.iterdir()):
-        if f.name not in in_snapshot:
-            continue
-        j, a = f / f"{f.name}.json", f / "jd_archive.md"
-        if j.exists() and a.exists():
-            recs[f.name] = (json.loads(j.read_text(encoding="utf-8")), a.read_text(encoding="utf-8").split("## Layer B")[0])
+    files = {}   # read from the pinned commit, so ads added, fixed or moved out of data/ since then leave the deck unchanged
+    with tarfile.open(fileobj=io.BytesIO(subprocess.check_output(["git", "archive", SNAPSHOT, "data"], cwd=ROOT))) as tar:
+        for m in tar.getmembers():
+            if m.isfile():
+                files[m.name] = tar.extractfile(m).read().decode("utf-8")
+    for name in sorted({k.split("/")[1] for k in files}):
+        j, a = f"data/{name}/{name}.json", f"data/{name}/jd_archive.md"
+        if j in files and a in files:
+            recs[name] = (json.loads(files[j]), files[a].split("## Layer B")[0])
     out = {"corpus_n": len(recs), "tools": [t[1] for t in TOOLS]}
 
     # --- AI waffle: one row per ad (regenerated 26 Oct from the full corpus; see research/ai_pipeline)
@@ -254,6 +255,28 @@ def main():
     prog = {lv: [(bool(re.search(r"\bSQL\b", txt)), bool(BIZ.search(txt))) for r, txt in recs.values() if r.get("jd_language") == "en" and grp(r.get("seniority")) == lv] for lv in ("junior", "mid", "senior", "lead+")}
     out["progression"] = {"levels": list(prog), "n": [len(v) for v in prog.values()], "sql": [round(100 * sum(a for a, _ in v) / len(v)) for v in prog.values()],
                           "business": [round(100 * sum(b for _, b in v) / len(v)) for v in prog.values()], "business_k": [sum(b for _, b in v) for v in prog.values()]}
+    # --- the record: how many ads were collected in each month, by the date each was saved
+    months = Counter(r["scrape"][:7] for r in ai)
+    out["collection"] = [[m, months[m]] for m in sorted(months)]
+    # --- semantics: ads that ask for AI against ads that don't, naming a semantic layer or model; checked within level and ad-length bands (Cochran-Mantel-Haenszel)
+    SEM = re.compile(r"semantic[- ](?:layer|model|modell?ing|views?|definitions?)|metrics? layer|metricflow|dbt semantic", re.I)
+    lengths = sorted(len(txt.split()) for _, txt in recs.values()); cut = [lengths[len(lengths) // 3], lengths[2 * len(lengths) // 3]]
+    sem = [(r["jd_id"] in asks_ai if "jd_id" in r else j in asks_ai, bool(SEM.search(txt)), (grp(r.get("seniority")), sum(len(txt.split()) >= c for c in cut))) for j, (r, txt) in recs.items()]
+    def gap(rows):
+        """Ads asking for AI against the rest, naming a semantic layer, with the Cochran-Mantel-Haenszel p-value across level and length bands."""
+        strata, num, var = {}, 0.0, 0.0
+        for a, s, k in rows:
+            strata.setdefault(k, []).append((a, s))
+        for xs in strata.values():
+            n = len(xs); r1 = sum(a for a, _ in xs); c1 = sum(s for _, s in xs)
+            if n < 2 or r1 in (0, n) or c1 in (0, n):
+                continue
+            num += sum(a and s for a, s in xs) - r1 * c1 / n; var += r1 * (n - r1) * c1 * (n - c1) / (n * n * (n - 1))
+        p = math.erfc(math.sqrt(num * num / var / 2))   # chi-square with one degree of freedom
+        assert p < 0.001, f"the talk says ads asking for AI name a semantic layer more often at the same level and length, but p = {p:.4f}"
+        return {"ai": [sum(a and s for a, s, _ in rows), sum(a for a, _, _ in rows)], "other": [sum(s and not a for a, s, _ in rows), sum(not a for a, _, _ in rows)], "p": float(f"{p:.1g}")}
+    ctx = [j for j, (_, txt) in recs.items() if re.search(r"context[- ]engineer", txt, re.I)]
+    out["semantics"] = {**gap(sem), "senior": gap([x for x in sem if x[2][0] in ("senior", "lead+")]), "context_engineering": len(ctx)}
     out["stats2"] = json.loads((IN / "more_stats.json").read_text())   # from more_stats.py (run it after prep once, then prep again)
     out["stats"] = json.loads((IN / "stack_stats.json").read_text())   # from stack_stats.py
     m = json.loads((IN / "missing_stats.json").read_text())   # from missing_stats.py; totals only, the per-ad flags stay in the file
@@ -275,7 +298,9 @@ def main():
               ("2026-09-25_dex_founding-analytics-engineer", "Set the standards for data quality, definitions and instrumentation across Dex."),
               ("2026-07-29_zego_analytics-engineer", "AI tools now handle a lot of the heavy lifting of writing SQL and boilerplate"),
               ("2026-07-29_zego_analytics-engineer", "Read, debug, and critically review SQL (including AI-generated code)"),
-              ("2026-08-07_asb-bank_analytics-engineer", "Enjoy dedicated time for training and certification, with guidance and mentorship from Senior/Staff Engineers and Chapter Leads.")]
+              ("2026-08-07_asb-bank_analytics-engineer", "Enjoy dedicated time for training and certification, with guidance and mentorship from Senior/Staff Engineers and Chapter Leads."),
+              ("2026-10-05_multiverse_analytics-engineer", "we're rethinking our semantic and BI layer for AI/MCP-driven self-service, so analysts, stakeholders, and AI agents can query trusted metrics directly."),
+              ("2026-08-10_ironclad_senior-analytics-engineer", "Architect \"AI-ready\" data by designing enriched metadata and context guides")]
     for jid, q in quotes:
         txt = recs[jid][1] if jid in recs else ""
         if q not in txt:
@@ -283,7 +308,7 @@ def main():
     out["quotes"] = {"accenture_says": quotes[0][1], "accenture_asks": quotes[1][1], "vague": quotes[2][1], "concrete": quotes[3][1],
                      "lenovo": quotes[4][1], "january": quotes[5][1],
                      "dataroots": quotes[6][1], "enhance_asks": quotes[7][1], "enhance_says": quotes[8][1], "itt": quotes[9][1], "dex": quotes[10][1],
-                     "zego_says": quotes[11][1], "zego_asks": quotes[12][1], "asb": quotes[13][1]}
+                     "zego_says": quotes[11][1], "zego_asks": quotes[12][1], "asb": quotes[13][1], "multiverse": quotes[14][1], "ironclad": quotes[15][1]}
     # Stanford Digital Economy Lab, "Canaries in the Coal Mine", revised 12 Aug 2026: US employment of 22-25-year-olds in AI-exposed jobs, against trend
     out["stanford"] = {"gap_pct": 19, "ages": "22–25", "revised": "12 Aug 2026"}
 

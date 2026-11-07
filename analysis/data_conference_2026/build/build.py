@@ -4,6 +4,7 @@
 Usage:  python3 analysis/data_conference_2026/build/build.py
 Run prep_data.py first when the corpus or the snapshots change.
 """
+import base64
 import json
 import re
 from pathlib import Path
@@ -109,13 +110,15 @@ def scope_css(css, scope=".qv"):
     return "\n".join(out)
 
 
-def assemble(template, runtime, out, F):
+def assemble(template, runtime, out, F, images=False):
     data = (HERE / "inputs" / "deck_data.json").read_text(encoding="utf-8")
+    img = {f.stem: f"data:image/{f.suffix[1:].replace('jpg', 'jpeg')};base64," + base64.b64encode(f.read_bytes()).decode()
+           for f in sorted((HERE / "inputs" / "img").glob("*")) if images and f.suffix.lower() in (".png", ".jpg", ".jpeg", ".webp")}   # pictures for slides that use them; a missing file leaves the text version
     questions = json.dumps(json.loads(fill((SRC / "questions.json").read_text(encoding="utf-8"), F)), ensure_ascii=False)
     js = "\n".join((SRC / f).read_text(encoding="utf-8") for f in SHARED + runtime)
     html = fill((SRC / template).read_text(encoding="utf-8"), F)
     html = html.replace("/*__CSS__*/", (SRC / "style.css").read_text(encoding="utf-8"))
-    html = html.replace("/*__DATA__*/", "const D=" + data + ";").replace("/*__Q__*/", "const Q=" + questions + ";")
+    html = html.replace("/*__DATA__*/", "const D=" + data + ";const IMG=" + json.dumps(img) + ";").replace("/*__Q__*/", "const Q=" + questions + ";")
     html = html.replace("/*__JS__*/", js)
     out.write_text(html, encoding="utf-8")
     print("wrote", out.relative_to(SITE.parent), len(html) // 1024, "KB")
@@ -170,5 +173,7 @@ if __name__ == "__main__":
     assemble("deck.template.html", ["s_missing.js", "slides_v2.js", "deck.js"], OUT / "jd_deck_v2.html", F)
     assemble("deck.template.html", ["s_missing.js", "s_v4.js", "slides_v2.js", "slides_v4.js", "deck.js"], OUT / "jd_deck_v4.html", F)
     assemble("deck.template.html", ["s_missing.js", "s_v5.js", "slides_v2.js", "slides_v5.js", "deck.js"], OUT / "jd_deck_v5.html", F)
+    assemble("deck.template.html", ["s_missing.js", "s_v5.js", "s_v6.js", "slides_v2.js", "slides_v6.js", "deck.js"], OUT / "jd_deck_v6.html", F)
+    assemble("deck.template.html", ["s_missing.js", "s_v5.js", "s_v6.js", "s_v7.js", "slides_v2.js", "slides_v7.js", "deck.js"], OUT / "jd_deck_v7.html", F, images=True)
     assemble("views.template.html", ["views.js"], OUT / "jd_views.html", F)
     bundle(SITE / "question-charts.js", F)

@@ -19,7 +19,7 @@ function buildPipeline(stage) {
 }
 
 /* three in four junior ads don't say who will teach the new hire, and half name neither a teacher nor anything to learn with (all junior ads read by hand); the model line last */
-function buildMentorGap(stage) {
+function buildMentorGap(stage, o = {}) {   // o.call: false leaves the call to act for the last slide
   const W = 1000, MG = D.mentoring, [jk, jn] = MG.junior_names_guide, lk = MG.junior_learning[0], nk = MG.junior_neither[0], both = jk + lk - (jn - nk);
   const COLS = Math.max(16, Math.ceil(jn / 5)), tight = Math.ceil(jn / COLS) > 4, P = tight ? 30 : 34, r = tight ? 11 : 13, X0 = 40, Y0 = 70;   // at most five rows: a sixth would push the legend into the quote
   const svg = s('svg', { viewBox: `0 0 ${W} 520`, class: 'chart' }, stage);
@@ -42,7 +42,7 @@ function buildMentorGap(stage) {
   words.forEach(w => { const cur = lines[lines.length - 1]; if ((cur + ' ' + w).length > 72 && cur) lines.push(w); else lines[lines.length - 1] = cur ? cur + ' ' + w : w; });
   s('text', { x: X0, y: 338, class: 'cardlab', text: 'One sentence that does both · ASB Bank' }, gQ);
   lines.forEach((l, k) => txt(gQ, X0, 374 + k * 32, (k ? '' : '“') + l + (k === lines.length - 1 ? '”' : ''), { fontSize: '22px', fontWeight: 500 }));
-  txt(gQ, X0, 494, 'Mentor someone? Say so in the junior ad.', { fontSize: '30px', fontWeight: 700, fill: C.coral });
+  if (o.call !== false) txt(gQ, X0, 494, 'Mentor someone? Say so in the junior ad.', { fontSize: '30px', fontWeight: 700, fill: C.coral });
   const pop = e => dots.forEach((d, i) => d.setAttribute('r', r * Math.min(1, Math.max(0, e * 1.6 - i / dots.length * .6))));
   const show = (...on) => [gJ, gL, gQ].forEach((g, k) => g.style.opacity = on[k] ? 1 : 0);
   return [
@@ -52,7 +52,7 @@ function buildMentorGap(stage) {
   ];
 }
 
-function buildRewrite(stage) {
+function buildRewrite(stage, o = {}) {   // o.line: [plain, emphasised] for the last line
   const [jk, jn] = D.mentoring.junior_names_guide;
   const says = D.quotes.enhance_says + '…', asks = D.quotes.enhance_asks;
   const keep = 'Strong internships or graduate projects count.', yrs = '2-5 years', at = asks.indexOf(yrs);
@@ -65,7 +65,7 @@ function buildRewrite(stage) {
     h('div', { style: { fontSize: 'clamp(15px,1.5vw,24px)', fontWeight: 700 } }, label), h('div', { style: { fontSize: 'clamp(12px,1.05vw,17px)', color: C.ink2 } }, note));
   const blanks = h('div', { style: { display: 'flex', gap: '1vw', marginTop: '2.4vh', opacity: 0, transition: 'opacity .5s' } },
     blank('+ who will teach them', `said in ${jk} of ${jn} junior ads`));
-  const line = h('div', { class: 'finalline', style: { fontSize: 'clamp(24px,3vw,46px)', marginTop: '3vh', opacity: 0, transition: 'opacity .6s' } }, 'Someone held the door for each of us, then taught us. ', h('em', {}, 'Do both for the next one.'));
+  const line = h('div', { class: 'finalline', style: { fontSize: 'clamp(24px,3vw,46px)', marginTop: '3vh', opacity: 0, transition: 'opacity .6s' } }, ...(o.line ? [o.line[0], h('em', {}, o.line[1])] : ['Someone held the door for each of us, then taught us. ', h('em', {}, 'Do both for the next one.')]));
   stage.append(h('div', { class: 'col' }, card, blanks, line));
   return [
     async () => { blanks.style.opacity = 0; line.style.opacity = 0; await wait(Anim.fast ? 0 : 400); },
@@ -74,7 +74,7 @@ function buildRewrite(stage) {
 }
 
 /* what moves you up: SQL is asked at every level (flat), the business is named in about a third of ads at every level (flat); two outside voices say the business is the path, so it is an ask the ads leave unwritten */
-function buildRung(stage) {
+function buildRung(stage, o = {}) {   // o.voices: false leaves out the two outside lines; o.line: [plain, emphasised] for the last line
   const W = 1000, H = 330, P = D.progression, svg = s('svg', { viewBox: `0 0 ${W} ${H}`, class: 'chart' }, stage), y0 = 54, ph = 214, Y = v => y0 + ph - v / 100 * ph, base = Y(0);
   const lv = ['Junior', 'Mid', 'Senior', 'Lead+'], layer = () => s('g', { style: { opacity: 0, transition: 'opacity .6s' } }, svg);
   const txt = (p, x, y, text, st = {}, a = {}) => s('text', Object.assign({ x, y, text, style: Object.assign({ fontSize: '16px', fill: C.ink2 }, st) }, a), p);
@@ -95,14 +95,14 @@ function buildRung(stage) {
   const note = h('div', { style: { fontSize: 'clamp(15px,1.6vw,25px)', lineHeight: 1.35, opacity: 0, transition: 'opacity .5s' } },
     h('div', {}, h('b', {}, 'Tristan Handy: '), 'the path up is for people curious how the business works.'),
     h('div', {}, h('b', {}, 'Seattle Data Guy: '), 'modelling the business is the hard part ahead.'));
-  const line = h('div', { class: 'finalline', style: { fontSize: 'clamp(22px,3vw,46px)', opacity: 0, transition: 'opacity .6s' } }, 'The business is expected. ', h('em', {}, 'Two in three ads don’t write it down.'));
-  stage.append(h('div', { class: 'col', style: { gap: '2vh' } }, svg, note, line));
+  const line = h('div', { class: 'finalline', style: { fontSize: 'clamp(22px,3vw,46px)', opacity: 0, transition: 'opacity .6s' } }, ...(o.line ? [o.line[0], h('em', {}, o.line[1])] : ['The business is expected. ', h('em', {}, 'Two in three ads don’t write it down.')]));
+  stage.append(h('div', { class: 'col', style: { gap: '2vh' } }, svg, ...(o.voices === false ? [] : [note]), line));
   [sa, sb, ba, bb].forEach(p => p.style.opacity = 0);
   const show = (el, on) => el.style.opacity = on ? 1 : 0;
   return [
     async () => { show(note, 0); show(line, 0); show(gBiz, 0); show(gSql, 1); [sa, sb].forEach(p => p.style.opacity = 1); await drawIn(sb, 1100); },
     async () => { show(gSql, 1); show(gBiz, 1); [ba, bb].forEach(p => p.style.opacity = 1); show(note, 0); show(line, 0); await drawIn(bb, 1100); },
-    async () => { show(note, 1); show(line, 0); await wait(Anim.fast ? 0 : 500); },
+    ...(o.voices === false ? [] : [async () => { show(note, 1); show(line, 0); await wait(Anim.fast ? 0 : 500); }]),
     async () => { show(note, 1); show(line, 1); await wait(Anim.fast ? 0 : 600); }
   ];
 }
