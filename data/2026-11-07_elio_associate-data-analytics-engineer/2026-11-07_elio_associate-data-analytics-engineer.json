@@ -1,0 +1,151 @@
+{
+  "jd_id": "2026-11-07_elio_associate-data-analytics-engineer",
+  "company": "Elio.",
+  "role": "Associate Data & Analytics Engineer",
+  "job_location": "Central London, United Kingdom (hybrid)",
+  "seniority": "junior",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": null,
+  "salary_max": null,
+  "salary_currency": null,
+  "salary_period": null,
+  "jd_authorship": "mixed",
+  "stakeholder_orientation": "commercial",
+  "autonomy_level": "execution",
+  "ai_role": "ai_enabler",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "none",
+  "greenfield_vs_fix": "greenfield",
+  "velocity_vs_rigour": "mixed",
+  "domain_risk": "moderate",
+  "collaboration_width": 2,
+  "data_team_maturity": "early",
+  "urgency": "urgent",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "none",
+  "language_gate_languages": [],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 61.8,
+    "spread": 31.6,
+    "measures": {
+      "marker_vocab": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 4.087,
+        "score": 81.7
+      },
+      "structure": {
+        "raw": 0.28,
+        "score": 56.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.403,
+        "score": 77.1
+      },
+      "burstiness": {
+        "raw": 0.554,
+        "score": 56.0
+      },
+      "specificity": {
+        "raw": 4.223,
+        "score": 100.0
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "linkedin",
+  "ats_job_id": "4486446054",
+  "has_dbt": false,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": true,
+  "has_databricks": true,
+  "has_bigquery": true,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": true,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL"
+  ],
+  "preferred_tools": [
+    "Snowflake",
+    "Databricks",
+    "BigQuery"
+  ],
+  "responsibilities": [
+    "Design and build the data foundations client work depends on: pipelines, models and warehousing.",
+    "Write clean, well-tested SQL and Python, and follow good engineering practice (version control, documentation, code review, CI).",
+    "Contribute to delivering data projects by helping to scope, prioritise and keep them on track, and grow into speaking with clients and stakeholders about the work.",
+    "Turn data into insight through analytics and reporting, and lay the groundwork for strategy and automation.",
+    "Build and integrate AI-driven solutions where they genuinely add value.",
+    "Help shape how a growing consultancy delivers, including our processes, standards and stack, and contribute to new products and ventures as they take shape."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://www.linkedin.com/jobs/view/4486446054/",
+  "evidence": {
+    "velocity_vs_rigour": "This is a build-first role...Write clean, well-tested SQL and Python",
+    "velocity_vs_rigour_explanation": "Speed phrases (\"build-first role\", \"learn fast\", \"shipping solutions\") sit alongside quality phrases (\"well-tested SQL\", \"reliable analytics\", \"code review, CI\") at rough parity, so mixed.",
+    "domain_risk": "solving hard commercial problems",
+    "domain_risk_explanation": "A growth consultancy whose work is \"solving hard commercial problems\" for clients, with no financial reporting or regulatory language, so moderate.",
+    "collaboration_width": "commercial team; clients",
+    "data_team_maturity": "This is an early, junior-to-mid-level hire",
+    "data_team_maturity_explanation": "A small founder-led consultancy hiring \"a key early hire\" to \"Design and build the data foundations\", so early.",
+    "jd_authorship": "Design and build the data foundations client work depends on: pipelines, models and warehousing.",
+    "jd_authorship_explanation": "Some bullets name concrete practice (\"version control, documentation, code review, CI\") while others are generic (\"lay the groundwork for strategy and automation\"), so mixed.",
+    "stakeholder_orientation": "turn messy client data into reliable analytics and insight",
+    "stakeholder_orientation_explanation": "The audience is consultancy clients with growth and commercial goals, \"shipping solutions that move the needle for clients\", so commercial.",
+    "autonomy_level": "Contribute to delivering data projects by helping to scope, prioritise and keep them on track",
+    "autonomy_level_explanation": "A junior build role that works \"alongside our engineers and learning from them\" and contributes to delivery, so execution.",
+    "ai_role": "Build and integrate AI-driven solutions where they genuinely add value.",
+    "ai_role_explanation": "The candidate is expected to build AI-driven solutions for clients as a responsibility, so ai_enabler.",
+    "testing_framing": "Write clean, well-tested SQL and Python",
+    "testing_framing_explanation": "Testing is framed as something the candidate does in the responsibilities, not just a listed tool, so responsibility.",
+    "loss_aversion_framing": "No loss aversion framing.",
+    "loss_aversion_framing_explanation": "The posting is framed around building and impact, with no risk, outage or compliance register.",
+    "greenfield_vs_fix": "Design and build the data foundations client work depends on",
+    "greenfield_vs_fix_explanation": "The infrastructure verbs are build and create (\"help create the data foundations our work rests on\"), so greenfield.",
+    "language_gate": "Not stated in JD",
+    "urgency": "We're looking for someone who can start immediately or at short notice",
+    "work_arrangement": "hybrid: three days a week in the office or at client offices, the rest flexible",
+    "loss_aversion": "No loss aversion framing detected.",
+    "ats_keywords": [
+      "Associate Data & Analytics Engineer",
+      "data foundations",
+      "pipelines, models and warehousing",
+      "well-tested SQL and Python",
+      "version control, documentation, code review, CI",
+      "AI-driven solutions",
+      "data lakes and a modern data platform",
+      "Snowflake, Databricks or BigQuery",
+      "Git/GitHub, branching, code review and clean commits",
+      "marketing and growth data"
+    ],
+    "ats_lookup": "resolve_ats miss for Elio; web search for the title found no employer posting; LinkedIn company page is elioandco, and elioandco.com is a single-page cloud strategy site with only mailto links and no careers page or ATS"
+  }
+}

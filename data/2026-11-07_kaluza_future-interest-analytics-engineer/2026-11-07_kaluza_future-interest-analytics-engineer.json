@@ -1,0 +1,151 @@
+{
+  "jd_id": "2026-11-07_kaluza_future-interest-analytics-engineer",
+  "company": "Kaluza",
+  "role": "Future Interest: Analytics Engineer",
+  "job_location": "London, Bristol or Edinburgh, United Kingdom (hybrid)",
+  "seniority": "mid",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": 46400,
+  "salary_max": 63800,
+  "salary_currency": "GBP",
+  "salary_period": null,
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "internal_data",
+  "autonomy_level": "mixed",
+  "ai_role": "none",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "moderate",
+  "greenfield_vs_fix": "fix_scale",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 0,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "none",
+  "language_gate_languages": [],
+  "jd_language": "en",
+  "ai_written": {
+    "score": 33.4,
+    "spread": 33.6,
+    "measures": {
+      "marker_vocab": {
+        "raw": 5.848,
+        "score": 32.1
+      },
+      "stock_phrases": {
+        "raw": 2.339,
+        "score": 46.8
+      },
+      "structure": {
+        "raw": 0.575,
+        "score": 100.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.7,
+        "score": 11.2
+      },
+      "burstiness": {
+        "raw": 0.961,
+        "score": 0.0
+      },
+      "specificity": {
+        "raw": 13.099,
+        "score": 10.0
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "linkedin",
+  "ats_job_id": "4396147277",
+  "has_dbt": true,
+  "has_dbt_cloud": false,
+  "has_spark": false,
+  "has_python": false,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": true,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": false,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL"
+  ],
+  "preferred_tools": [
+    "Databricks",
+    "dbt"
+  ],
+  "responsibilities": [
+    "Dimensional Model Architecture: Lead the transition to a robust, multi-tenant dimensional model. You will be responsible for ensuring the architecture is scalable enough to onboard several major global clients without compromising performance.",
+    "Expert SQL Development: Translate complex schema designs into high-quality, performant SQL scripts. You will own the logic that transforms raw, disparate data into structured clean tables.",
+    "Global Scalability: Design and optimise data structures that handle high volume and variety, ensuring that our data infrastructure evolves ahead of our expanding international client base.",
+    "Stakeholder Translation: Act as a key technical partner for business stakeholders. You must be able to navigate complex requirements from various departments and translate them into technical specifications and elegant data models.",
+    "Data Integrity & Performance: Rigorously test and optimise SQL queries and data transformations to ensure \"single source of truth\" reliability and lightning-fast query response times for end-users."
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://www.linkedin.com/jobs/view/4396147277/",
+  "evidence": {
+    "velocity_vs_rigour": "Rigorously test and optimise SQL queries and data transformations",
+    "velocity_vs_rigour_explanation": "Quality phrases (\"robust\", \"high-quality, performant SQL\", \"Rigorously test\", \"single source of truth\" reliability) dominate, and \"growing fast\" describes the company rather than the work, so rigour.",
+    "domain_risk": "serve multiple global clients",
+    "domain_risk_explanation": "Client reporting for an energy platform with no financial reporting or regulatory language in the duties, so moderate.",
+    "collaboration_width": "No named partner teams.",
+    "data_team_maturity": "Team: Analytics Engineering team",
+    "data_team_maturity_explanation": "An existing \"Analytics Engineering team\" with an \"Analytics Engineering Manager\" is leading \"the transition to a robust, multi-tenant dimensional model\", so mid.",
+    "jd_authorship": "Lead the transition to a robust, multi-tenant dimensional model",
+    "jd_authorship_explanation": "The duties name the specific work (a \"multi-tenant dimensional model\" for onboarding \"several major global clients\") and the requirements name \"window functions, CTEs, and query execution plans\", so hiring_manager.",
+    "stakeholder_orientation": "architecting the foundation of our global reporting capabilities",
+    "stakeholder_orientation_explanation": "The emphasis is the modelling layer behind reporting and \"business intelligence\", so internal_data.",
+    "autonomy_level": "Lead the transition...Translate complex schema designs into high-quality, performant SQL scripts",
+    "autonomy_level_explanation": "The role owns the dimensional model (\"Lead the transition\", \"own the logic\") and also translates given schema designs and stakeholder requirements, so mixed.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "The posting names no AI skill for the candidate.",
+    "testing_framing": "Rigorously test and optimise SQL queries and data transformations",
+    "testing_framing_explanation": "Testing is a named responsibility with an action verb, so responsibility.",
+    "loss_aversion_framing": "\"single source of truth\" reliability",
+    "loss_aversion_framing_explanation": "The concern is reliability and performance (\"without compromising performance\"), not compliance or regulatory exposure, so moderate.",
+    "greenfield_vs_fix": "Lead the transition to a robust, multi-tenant dimensional model",
+    "greenfield_vs_fix_explanation": "The model is a transition from an existing one, and the scaling duty asks the infrastructure to evolve, so fix_scale.",
+    "language_gate": "Not stated in JD",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "London, Bristol or Edinburgh (Hybrid working model)",
+    "loss_aversion": "Rigorously test and optimise SQL queries and data transformations to ensure \"single source of truth\" reliability and lightning-fast query response times for end-users.",
+    "ats_keywords": [
+      "multi-tenant dimensional model",
+      "Dimensional Model Architecture",
+      "production-ready SQL",
+      "Expert SQL Development",
+      "window functions, CTEs, and query execution plans",
+      "Star Schema and Kimball methodologies",
+      "Databricks for processing and dbt for transformation workflows",
+      "single source of truth",
+      "global reporting capabilities",
+      "Stakeholder Translation"
+    ],
+    "posting_anomaly": "Future-interest talent-pool listing, not an open headcount: the posting says \"we don't have an immediate opening for this specific position today\" and applicants join a Priority Talent Pool. It still describes a real role with duties, team and pay. The salary line gives no period, so salary_period is null.",
+    "related_record": "Not a repost of 2026-07-29_kaluza_analytics-engineering-lead: that is the lead role; this is a mid-level analytics engineer talent-pool listing.",
+    "ats_lookup": "resolve_ats miss for Kaluza; kaluza.com careers embeds Ashby (ashbyhq.com/kaluza), and the Ashby job board lists 41 jobs with no analytics engineer; the old Greenhouse board (kaluza) returns no jobs; web search found only aggregator copies"
+  }
+}
