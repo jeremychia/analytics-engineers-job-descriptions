@@ -1,108 +1,108 @@
 {
- "corpus_size": 1483,
- "n_jds_with_parsed_responsibilities": 1465,
- "total_bullets_extracted": 12052,
- "n_bullets_considered": 12049,
- "n_bullets_with_theme": 9816,
- "total_theme_tags_assigned": 19472,
- "uncategorized_bullet_count": 2233,
+ "corpus_size": 1489,
+ "n_jds_with_parsed_responsibilities": 1471,
+ "total_bullets_extracted": 12107,
+ "n_bullets_considered": 12104,
+ "n_bullets_with_theme": 9861,
+ "total_theme_tags_assigned": 19552,
+ "uncategorized_bullet_count": 2243,
  "max_dedup_delta_pct_points": 0.4,
  "theme_stats": [
   {
    "theme": "BI & Reporting/Dashboards",
-   "n_jds": 1091,
-   "pct_of_jds": 74.5,
-   "n_bullets": 2543
+   "n_jds": 1097,
+   "pct_of_jds": 74.6,
+   "n_bullets": 2552
   },
   {
    "theme": "Data Modeling & Transformation",
-   "n_jds": 1076,
+   "n_jds": 1079,
    "pct_of_jds": 73.4,
-   "n_bullets": 2506
+   "n_bullets": 2518
   },
   {
    "theme": "Stakeholder Collaboration & Requirements",
-   "n_jds": 1072,
+   "n_jds": 1077,
    "pct_of_jds": 73.2,
-   "n_bullets": 2118
+   "n_bullets": 2129
   },
   {
    "theme": "Data Quality & Testing",
-   "n_jds": 1066,
-   "pct_of_jds": 72.8,
-   "n_bullets": 1941
+   "n_jds": 1070,
+   "pct_of_jds": 72.7,
+   "n_bullets": 1952
   },
   {
    "theme": "Governance & Documentation",
-   "n_jds": 923,
-   "pct_of_jds": 63.0,
-   "n_bullets": 1658
+   "n_jds": 928,
+   "pct_of_jds": 63.1,
+   "n_bullets": 1665
   },
   {
    "theme": "Pipeline Engineering & Orchestration",
-   "n_jds": 860,
+   "n_jds": 863,
    "pct_of_jds": 58.7,
-   "n_bullets": 1303
+   "n_bullets": 1306
   },
   {
    "theme": "Business Analysis & Insight Generation",
-   "n_jds": 807,
-   "pct_of_jds": 55.1,
-   "n_bullets": 1414
+   "n_jds": 812,
+   "pct_of_jds": 55.2,
+   "n_bullets": 1429
   },
   {
    "theme": "Data Infrastructure & Warehouse Ops",
-   "n_jds": 781,
-   "pct_of_jds": 53.3,
-   "n_bullets": 1239
+   "n_jds": 783,
+   "pct_of_jds": 53.2,
+   "n_bullets": 1242
   },
   {
    "theme": "Performance & Cost Optimization",
-   "n_jds": 713,
+   "n_jds": 717,
    "pct_of_jds": 48.7,
-   "n_bullets": 1158
+   "n_bullets": 1162
   },
   {
    "theme": "Architecture & Platform Strategy",
-   "n_jds": 605,
+   "n_jds": 607,
    "pct_of_jds": 41.3,
-   "n_bullets": 913
+   "n_bullets": 914
   },
   {
    "theme": "Data Ownership (end-to-end)",
-   "n_jds": 498,
-   "pct_of_jds": 34.0,
-   "n_bullets": 690
+   "n_jds": 499,
+   "pct_of_jds": 33.9,
+   "n_bullets": 692
   },
   {
    "theme": "Self-Service Enablement & Data Literacy",
-   "n_jds": 494,
+   "n_jds": 496,
    "pct_of_jds": 33.7,
-   "n_bullets": 641
+   "n_bullets": 643
   },
   {
    "theme": "AI & Agentic Workflows",
-   "n_jds": 466,
-   "pct_of_jds": 31.8,
-   "n_bullets": 793
+   "n_jds": 467,
+   "pct_of_jds": 31.7,
+   "n_bullets": 789
   },
   {
    "theme": "Security, Privacy & Risk",
-   "n_jds": 214,
+   "n_jds": 215,
    "pct_of_jds": 14.6,
-   "n_bullets": 278
+   "n_bullets": 279
   },
   {
    "theme": "Mentorship & Leadership",
-   "n_jds": 210,
+   "n_jds": 211,
    "pct_of_jds": 14.3,
-   "n_bullets": 224
+   "n_bullets": 226
   },
   {
    "theme": "Vendor & Tooling Evaluation",
-   "n_jds": 48,
+   "n_jds": 49,
    "pct_of_jds": 3.3,
-   "n_bullets": 53
+   "n_bullets": 54
   }
  ],
  "jd_theme_sets": {
@@ -7815,20 +7815,10 @@
    "Self-Service Enablement & Data Literacy",
    "Stakeholder Collaboration & Requirements"
   ],
-  "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights": [
-   "AI & Agentic Workflows",
-   "Architecture & Platform Strategy",
+  "2026-10-05_aws_business-intelligence-engineer-jwo": [
    "BI & Reporting/Dashboards",
    "Business Analysis & Insight Generation",
-   "Data Infrastructure & Warehouse Ops",
-   "Data Modeling & Transformation",
-   "Data Ownership (end-to-end)",
-   "Data Quality & Testing",
-   "Governance & Documentation",
-   "Mentorship & Leadership",
    "Performance & Cost Optimization",
-   "Pipeline Engineering & Orchestration",
-   "Self-Service Enablement & Data Literacy",
    "Stakeholder Collaboration & Requirements"
   ],
   "2026-10-05_bauhinia-search-partners_senior-analytics-engineer": [
@@ -9146,14 +9136,10 @@
    "Performance & Cost Optimization",
    "Stakeholder Collaboration & Requirements"
   ],
-  "2026-10-11_amazon_business-intelligence-engineer-cxp": [
-   "AI & Agentic Workflows",
+  "2026-10-11_amazon_business-intelligence-engineer-innovation-and-design-engineering": [
    "BI & Reporting/Dashboards",
    "Business Analysis & Insight Generation",
    "Data Ownership (end-to-end)",
-   "Data Quality & Testing",
-   "Pipeline Engineering & Orchestration",
-   "Self-Service Enablement & Data Literacy",
    "Stakeholder Collaboration & Requirements"
   ],
   "2026-10-11_argosia-consulting_analytics-engineer-microsoft-fabric": [
@@ -12726,10 +12712,13 @@
    "Self-Service Enablement & Data Literacy",
    "Stakeholder Collaboration & Requirements"
   ],
-  "2026-11-03_amazon-web-services-aws_business-intelligence-engineer-capacity-delivery-reliability": [
+  "2026-11-03_amazon_business-intelligence-engineer-iii-amazon-now": [
    "BI & Reporting/Dashboards",
    "Business Analysis & Insight Generation",
-   "Data Infrastructure & Warehouse Ops",
+   "Data Ownership (end-to-end)",
+   "Data Quality & Testing",
+   "Pipeline Engineering & Orchestration",
+   "Self-Service Enablement & Data Literacy",
    "Stakeholder Collaboration & Requirements"
   ],
   "2026-11-03_bacardi_senior-analyst-tech-operations-azure-bi-developer": [
@@ -12995,17 +12984,6 @@
    "Business Analysis & Insight Generation",
    "Data Quality & Testing",
    "Performance & Cost Optimization",
-   "Stakeholder Collaboration & Requirements"
-  ],
-  "2026-11-04_amazon_senior-business-intelligence-engineer-iii-rapid-and-rural-logistics": [
-   "Architecture & Platform Strategy",
-   "BI & Reporting/Dashboards",
-   "Business Analysis & Insight Generation",
-   "Data Modeling & Transformation",
-   "Data Ownership (end-to-end)",
-   "Data Quality & Testing",
-   "Performance & Cost Optimization",
-   "Pipeline Engineering & Orchestration",
    "Stakeholder Collaboration & Requirements"
   ],
   "2026-11-04_bae-systems_data-analytics-engineer-ii": [
@@ -13425,6 +13403,14 @@
    "Architecture & Platform Strategy",
    "BI & Reporting/Dashboards",
    "Data Modeling & Transformation",
+   "Stakeholder Collaboration & Requirements"
+  ],
+  "2026-11-05_amazon_business-intelligence-engineer-aop": [
+   "BI & Reporting/Dashboards",
+   "Business Analysis & Insight Generation",
+   "Data Ownership (end-to-end)",
+   "Data Quality & Testing",
+   "Performance & Cost Optimization",
    "Stakeholder Collaboration & Requirements"
   ],
   "2026-11-05_fever_senior-analytics-engineer-data-modeling-bi": [
@@ -13870,12 +13856,6 @@
    "Data Modeling & Transformation",
    "Stakeholder Collaboration & Requirements"
   ],
-  "2026-11-06_prime-video_business-intelligence-engineer-ii-apac-anz": [
-   "BI & Reporting/Dashboards",
-   "Business Analysis & Insight Generation",
-   "Data Ownership (end-to-end)",
-   "Performance & Cost Optimization"
-  ],
   "2026-11-06_skinseoul_senior-business-intelligence-engineer": [
    "Architecture & Platform Strategy",
    "BI & Reporting/Dashboards",
@@ -13943,6 +13923,84 @@
    "Performance & Cost Optimization",
    "Pipeline Engineering & Orchestration",
    "Self-Service Enablement & Data Literacy",
+   "Stakeholder Collaboration & Requirements"
+  ],
+  "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy": [
+   "AI & Agentic Workflows",
+   "Architecture & Platform Strategy",
+   "BI & Reporting/Dashboards",
+   "Data Infrastructure & Warehouse Ops",
+   "Data Modeling & Transformation",
+   "Data Ownership (end-to-end)",
+   "Data Quality & Testing",
+   "Governance & Documentation",
+   "Mentorship & Leadership",
+   "Pipeline Engineering & Orchestration",
+   "Self-Service Enablement & Data Literacy",
+   "Stakeholder Collaboration & Requirements"
+  ],
+  "2026-11-07_babel-profiles_analytics-engineer-customer-behavioral-product-analytics": [
+   "Architecture & Platform Strategy",
+   "BI & Reporting/Dashboards",
+   "Business Analysis & Insight Generation",
+   "Data Infrastructure & Warehouse Ops",
+   "Data Ownership (end-to-end)",
+   "Data Quality & Testing",
+   "Governance & Documentation",
+   "Mentorship & Leadership",
+   "Performance & Cost Optimization",
+   "Pipeline Engineering & Orchestration",
+   "Self-Service Enablement & Data Literacy",
+   "Stakeholder Collaboration & Requirements",
+   "Vendor & Tooling Evaluation"
+  ],
+  "2026-11-07_ecs_data-analytics-engineer": [
+   "AI & Agentic Workflows",
+   "Architecture & Platform Strategy",
+   "BI & Reporting/Dashboards",
+   "Business Analysis & Insight Generation",
+   "Data Modeling & Transformation",
+   "Data Quality & Testing",
+   "Governance & Documentation",
+   "Performance & Cost Optimization",
+   "Pipeline Engineering & Orchestration",
+   "Security, Privacy & Risk",
+   "Stakeholder Collaboration & Requirements"
+  ],
+  "2026-11-07_michael-page_data-analyst-analytics-engineer": [
+   "BI & Reporting/Dashboards",
+   "Business Analysis & Insight Generation",
+   "Data Quality & Testing",
+   "Governance & Documentation",
+   "Performance & Cost Optimization"
+  ],
+  "2026-11-07_prime-video_business-intelligence-engineer-partner-experience-supply-chain-analytics": [
+   "AI & Agentic Workflows",
+   "BI & Reporting/Dashboards",
+   "Business Analysis & Insight Generation",
+   "Data Modeling & Transformation",
+   "Performance & Cost Optimization",
+   "Pipeline Engineering & Orchestration",
+   "Stakeholder Collaboration & Requirements"
+  ],
+  "2026-11-07_uhlmann-pac-systeme_data-business-intelligence-engineer": [
+   "BI & Reporting/Dashboards",
+   "Business Analysis & Insight Generation",
+   "Data Infrastructure & Warehouse Ops",
+   "Data Modeling & Transformation",
+   "Governance & Documentation",
+   "Self-Service Enablement & Data Literacy"
+  ],
+  "2026-11-07_weill-cornell-medicine_business-intelligence-developer-ii": [
+   "Architecture & Platform Strategy",
+   "BI & Reporting/Dashboards",
+   "Business Analysis & Insight Generation",
+   "Data Infrastructure & Warehouse Ops",
+   "Data Modeling & Transformation",
+   "Data Quality & Testing",
+   "Governance & Documentation",
+   "Performance & Cost Optimization",
+   "Pipeline Engineering & Orchestration",
    "Stakeholder Collaboration & Requirements"
   ]
  },
@@ -21085,16 +21143,6 @@
     "matched_text": "data models"
    },
    {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Drives cross-functional alignment on data product architecture; influences partner teams on integration patterns, API contracts, and standards for how data products interoperate across the ecosystem.",
-    "matched_text": "data product"
-   },
-   {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Makes technical decisions with broad impact: data modeling trade-offs, build-vs-buy on capabilities, migration strategies from legacy systems, and cost/performance optimization across the stack.",
-    "matched_text": "data modeling"
-   },
-   {
     "jd_id": "2026-10-05_bauhinia-search-partners_senior-analytics-engineer",
     "bullet": "Design and maintain the company\u2019s semantic layer / metrics layer.",
     "matched_text": "semantic layer"
@@ -25750,11 +25798,6 @@
     "matched_text": "DAX"
    },
    {
-    "jd_id": "2026-11-04_amazon_senior-business-intelligence-engineer-iii-rapid-and-rural-logistics",
-    "bullet": "Algorithm & Data Product Development \u2014 Develop and maintain data products such as ranking algorithms and root cause assessment",
-    "matched_text": "Data Product"
-   },
-   {
     "jd_id": "2026-11-04_bae-systems_data-analytics-engineer-ii",
     "bullet": "Build, maintain, and troubleshoot data pipelines and transformations that produce reliable, analytics-ready data.",
     "matched_text": "transformations"
@@ -26703,6 +26746,81 @@
     "jd_id": "2026-11-06_velir_senior-analytics-engineer",
     "bullet": "Partner with analysts, engineers, and stakeholders to translate complex and often ambiguous business requirements into well-structured data models and semantic layers.",
     "matched_text": "data models"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Lead the design and development of trusted, analytics-ready data foundations that transform complex enterprise and workforce data into reusable, business-ready datasets",
+    "matched_text": "transform"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Design scalable data models, transformation layers, and architectures that support workforce metrics, reporting, advanced analytics, and AI",
+    "matched_text": "data models"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Partner with business and technical stakeholders to translate analytical needs into scalable, reusable data products rather than one-off solutions",
+    "matched_text": "data product"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Define data-product architecture, transformations, business logic, quality standards, documentation, and ownership",
+    "matched_text": "transformations"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Lead hands-on development of complex data transformations using SQL, BigQuery, and Python, leveraging tools such as dbt, Git, and Apache Airflow or comparable technologies",
+    "matched_text": "transformations"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Mentor and upskill analysts and other team members in SQL, data modeling, data-product thinking, reusable transformation patterns, data quality, and modern analytical development practices",
+    "matched_text": "data modeling"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Promote a data product mindset centered on business value, reliability, reusability, maintainability, automation, quality, and ownership",
+    "matched_text": "data product"
+   },
+   {
+    "jd_id": "2026-11-07_ecs_data-analytics-engineer",
+    "bullet": "Build and maintain ETL/ELT pipelines and data products within Microsoft Fabric.",
+    "matched_text": "data product"
+   },
+   {
+    "jd_id": "2026-11-07_ecs_data-analytics-engineer",
+    "bullet": "Develop data models and semantic models with consistent business logic.",
+    "matched_text": "data models"
+   },
+   {
+    "jd_id": "2026-11-07_ecs_data-analytics-engineer",
+    "bullet": "Monitor, optimize, and continuously improve existing data pipelines and data products.",
+    "matched_text": "data product"
+   },
+   {
+    "jd_id": "2026-11-07_ecs_data-analytics-engineer",
+    "bullet": "Deliver trusted data products that support reporting, analytics, and AI applications.",
+    "matched_text": "data product"
+   },
+   {
+    "jd_id": "2026-11-07_prime-video_business-intelligence-engineer-partner-experience-supply-chain-analytics",
+    "bullet": "Build fast prototypes using Amazon AI tools (Kiro, Claude CLI, QuickSuite) and translate them into production-grade data products",
+    "matched_text": "data product"
+   },
+   {
+    "jd_id": "2026-11-07_uhlmann-pac-systeme_data-business-intelligence-engineer",
+    "bullet": "Modernisierung der BI-Landschaft im Zuge der Transformation von SAP BW zu SAP Datasphere / SAP Business Data Cloud",
+    "matched_text": "Transformation"
+   },
+   {
+    "jd_id": "2026-11-07_weill-cornell-medicine_business-intelligence-developer-ii",
+    "bullet": "Create a variety of backend objects. Develop complete ETL data flow models, from source system extraction to transformations, loading and report creation. Document solution directions, data flows, design and technical specifications.",
+    "matched_text": "transformations"
+   },
+   {
+    "jd_id": "2026-11-07_weill-cornell-medicine_business-intelligence-developer-ii",
+    "bullet": "Develop extractions, transformation routines, and user exits using ABAP development programming language.",
+    "matched_text": "transformation"
    }
   ],
   "Data Quality & Testing": [
@@ -32022,21 +32140,6 @@
     "matched_text": "data quality"
    },
    {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Designs and drives implementation of scalable data platforms: pipeline orchestration, automated quality monitoring, schema management, and infrastructure that supports both traditional BI and AI-native consumption patterns.",
-    "matched_text": "monitoring"
-   },
-   {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Architects governance frameworks that maintain data trust at scale: lineage, freshness enforcement, validation pipelines, ownership models, and content lifecycle practices \u2014 especially as AI systems become consumers of the team's data.",
-    "matched_text": "data trust"
-   },
-   {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Builds and owns automated analytics systems \u2014 report generation, KPI monitoring, anomaly detection, insight delivery \u2014 designing for progressive automation where AI handles the routine and humans handle the exceptions.",
-    "matched_text": "monitoring"
-   },
-   {
     "jd_id": "2026-10-05_blinkrx_senior-data-analytics-engineer",
     "bullet": "Design for data integrity, reliability, and performance while keeping data accessible, documented, and trustworthy for downstream consumers",
     "matched_text": "reliability"
@@ -32975,11 +33078,6 @@
     "jd_id": "2026-10-11_akuo_analytics-engineer",
     "bullet": "Mettre en \u0153uvre les contr\u00f4les permettant de garantir la qualit\u00e9 des donn\u00e9es, des mod\u00e8les et des indicateurs.",
     "matched_text": "qualit\u00e9 des donn\u00e9es"
-   },
-   {
-    "jd_id": "2026-10-11_amazon_business-intelligence-engineer-cxp",
-    "bullet": "Support A/B experiment feature testing and analysis",
-    "matched_text": "testing"
    },
    {
     "jd_id": "2026-10-11_argosia-consulting_analytics-engineer-microsoft-fabric",
@@ -35322,6 +35420,11 @@
     "matched_text": "data quality"
    },
    {
+    "jd_id": "2026-11-03_amazon_business-intelligence-engineer-iii-amazon-now",
+    "bullet": "Build anomaly detection to proactively flag CX degradation.",
+    "matched_text": "anomaly"
+   },
+   {
     "jd_id": "2026-11-03_bacardi_senior-analyst-tech-operations-azure-bi-developer",
     "bullet": "Ensure data accuracy, reliability, and availability through robust validation, monitoring, and quality control mechanisms.",
     "matched_text": "accuracy"
@@ -35575,16 +35678,6 @@
     "jd_id": "2026-11-04_agoda_business-intelligence-developer-rta",
     "bullet": "Implement and uphold data quality processes to ensure information is accurate, complete, and available when needed.",
     "matched_text": "data quality"
-   },
-   {
-    "jd_id": "2026-11-04_amazon_senior-business-intelligence-engineer-iii-rapid-and-rural-logistics",
-    "bullet": "Data Pipeline Engineering \u2014 Build and optimize ETLs, ensuring data freshness and reliability for operational decision-making",
-    "matched_text": "reliability"
-   },
-   {
-    "jd_id": "2026-11-04_amazon_senior-business-intelligence-engineer-iii-rapid-and-rural-logistics",
-    "bullet": "Data Quality & Monitoring \u2014 Own pipeline health monitoring, alerting, and incident response for Sev 3 production dashboards",
-    "matched_text": "Data Quality"
    },
    {
     "jd_id": "2026-11-04_bae-systems_data-analytics-engineer-ii",
@@ -35940,6 +36033,21 @@
     "jd_id": "2026-11-04_via_senior-data-analytics-engineer",
     "bullet": "Contribute to the continual improvement of internal tools for data cleaning, modeling and analytics, and data quality assessment by identifying key data-related challenges that are ideal candidates for automation and AI enhancement",
     "matched_text": "data quality"
+   },
+   {
+    "jd_id": "2026-11-05_amazon_business-intelligence-engineer-aop",
+    "bullet": "Ensure data accuracy by validating data for new and existing tools.",
+    "matched_text": "accuracy"
+   },
+   {
+    "jd_id": "2026-11-05_amazon_business-intelligence-engineer-aop",
+    "bullet": "Collaborate with Business Analysts, Data Engineers, Software Development Engineers, and business stakeholders to understand requirements, validate data quality, and ensure deliverables align with expectations.",
+    "matched_text": "validat"
+   },
+   {
+    "jd_id": "2026-11-05_amazon_business-intelligence-engineer-aop",
+    "bullet": "Understand the basics of test and control comparison; may provide insights through basic statistical measures such as hypothesis testing",
+    "matched_text": "test"
    },
    {
     "jd_id": "2026-11-05_fever_senior-analytics-engineer-data-modeling-bi",
@@ -36410,6 +36518,71 @@
     "jd_id": "2026-11-06_velir_senior-analytics-engineer",
     "bullet": "Anticipate and address systemic data quality or modeling issues, implementing durable solutions that improve trust and efficiency across the stack.",
     "matched_text": "data quality"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Establish consistent approaches to business rules, historical data, reusable dimensions, data quality, and lineage",
+    "matched_text": "data quality"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Establish engineering standards for modular development, version control, testing, deployment, orchestration, and monitoring",
+    "matched_text": "testing"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Implement automated data-quality, validation, reconciliation, and lineage capabilities to improve trust and reliability",
+    "matched_text": "validat"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Mentor and upskill analysts and other team members in SQL, data modeling, data-product thinking, reusable transformation patterns, data quality, and modern analytical development practices",
+    "matched_text": "data quality"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Promote a data product mindset centered on business value, reliability, reusability, maintainability, automation, quality, and ownership",
+    "matched_text": "reliability"
+   },
+   {
+    "jd_id": "2026-11-07_babel-profiles_analytics-engineer-customer-behavioral-product-analytics",
+    "bullet": "Architect scalable tracking frameworks from design to documentation, guaranteeing high data integrity, reliability, and seamless usability across BI reporting, A/B testing, and third-party tools.",
+    "matched_text": "reliability"
+   },
+   {
+    "jd_id": "2026-11-07_babel-profiles_analytics-engineer-customer-behavioral-product-analytics",
+    "bullet": "Scale the testing ecosystem across multiple platforms and European markets by optimizing workflows, building automated tooling, and establishing shared testing frameworks.",
+    "matched_text": "testing"
+   },
+   {
+    "jd_id": "2026-11-07_ecs_data-analytics-engineer",
+    "bullet": "Ensure the quality, reliability, and performance of data solutions.",
+    "matched_text": "reliability"
+   },
+   {
+    "jd_id": "2026-11-07_ecs_data-analytics-engineer",
+    "bullet": "Monitor, optimize, and continuously improve existing data pipelines and data products.",
+    "matched_text": "Monitor"
+   },
+   {
+    "jd_id": "2026-11-07_michael-page_data-analyst-analytics-engineer",
+    "bullet": "Garantir la fiabilit\u00e9 et la coh\u00e9rence des donn\u00e9es et des KPI utilis\u00e9s par les m\u00e9tiers.",
+    "matched_text": "fiabilit\u00e9"
+   },
+   {
+    "jd_id": "2026-11-07_michael-page_data-analyst-analytics-engineer",
+    "bullet": "Participer activement \u00e0 l'am\u00e9lioration de la qualit\u00e9 des donn\u00e9es, \u00e0 la formalisation des r\u00e8gles m\u00e9tier et \u00e0 leur documentation.",
+    "matched_text": "qualit\u00e9 des donn\u00e9es"
+   },
+   {
+    "jd_id": "2026-11-07_weill-cornell-medicine_business-intelligence-developer-ii",
+    "bullet": "Troubleshoot and resolve technical issues, debug, tune and optimize data load and report performance. Work closely with Basis and Portal teams to optimize system performance and monitor usage.",
+    "matched_text": "monitor"
+   },
+   {
+    "jd_id": "2026-11-07_weill-cornell-medicine_business-intelligence-developer-ii",
+    "bullet": "Create and execute test scripts to ensure that reports provide accurate results and meet the requirements of the customer.",
+    "matched_text": "test"
    }
   ],
   "Pipeline Engineering & Orchestration": [
@@ -40129,16 +40302,6 @@
     "matched_text": "pipeline"
    },
    {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Designs and drives implementation of scalable data platforms: pipeline orchestration, automated quality monitoring, schema management, and infrastructure that supports both traditional BI and AI-native consumption patterns.",
-    "matched_text": "pipeline"
-   },
-   {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Architects governance frameworks that maintain data trust at scale: lineage, freshness enforcement, validation pipelines, ownership models, and content lifecycle practices \u2014 especially as AI systems become consumers of the team's data.",
-    "matched_text": "pipeline"
-   },
-   {
     "jd_id": "2026-10-05_blinkrx_senior-data-analytics-engineer",
     "bullet": "Develop and maintain data pipelines and transformation layers that enable self-service analytics across the organization",
     "matched_text": "pipeline"
@@ -40672,11 +40835,6 @@
     "jd_id": "2026-10-11_agile-actors_bi-engineer",
     "bullet": "Develop ETL Pipelines: Write and maintain SQL scripts to build robust data pipelines;",
     "matched_text": "ETL"
-   },
-   {
-    "jd_id": "2026-10-11_amazon_business-intelligence-engineer-cxp",
-    "bullet": "Own the design, development, and maintenance of ongoing data pipelines, metrics, reports, visualizations, analyses, and dashboards to drive business decisions",
-    "matched_text": "pipeline"
    },
    {
     "jd_id": "2026-10-11_argosia-consulting_analytics-engineer-microsoft-fabric",
@@ -42284,6 +42442,11 @@
     "matched_text": "pipeline"
    },
    {
+    "jd_id": "2026-11-03_amazon_business-intelligence-engineer-iii-amazon-now",
+    "bullet": "Build scalable ETL pipelines, automated dashboards, and self-service reporting frameworks tracking conversion funnels, delivery experience, retention, and NPS.",
+    "matched_text": "ETL"
+   },
+   {
     "jd_id": "2026-11-03_bacardi_senior-analyst-tech-operations-azure-bi-developer",
     "bullet": "Design, develop, and maintain Azure-based BI solutions, including data models, data pipelines, and reporting components that support operational and analytical needs.",
     "matched_text": "pipeline"
@@ -42467,16 +42630,6 @@
     "jd_id": "2026-11-03_zorba-ai_senior-analytics-engineer",
     "bullet": "Build and manage Lakehouse and Data Warehouse solutions integrating ERP and enterprise data sources.",
     "matched_text": "integrating ERP and enterprise data sources"
-   },
-   {
-    "jd_id": "2026-11-04_amazon_senior-business-intelligence-engineer-iii-rapid-and-rural-logistics",
-    "bullet": "Data Pipeline Engineering \u2014 Build and optimize ETLs, ensuring data freshness and reliability for operational decision-making",
-    "matched_text": "Pipeline"
-   },
-   {
-    "jd_id": "2026-11-04_amazon_senior-business-intelligence-engineer-iii-rapid-and-rural-logistics",
-    "bullet": "Data Quality & Monitoring \u2014 Own pipeline health monitoring, alerting, and incident response for Sev 3 production dashboards",
-    "matched_text": "pipeline"
    },
    {
     "jd_id": "2026-11-04_bae-systems_data-analytics-engineer-ii",
@@ -42927,6 +43080,41 @@
     "jd_id": "2026-11-06_velir_senior-analytics-engineer",
     "bullet": "Lead complex technical implementations, shaping data architecture and transformation pipelines that prioritize performance, maintainability, and reusability.",
     "matched_text": "pipeline"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Lead hands-on development of complex data transformations using SQL, BigQuery, and Python, leveraging tools such as dbt, Git, and Apache Airflow or comparable technologies",
+    "matched_text": "Airflow"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Establish engineering standards for modular development, version control, testing, deployment, orchestration, and monitoring",
+    "matched_text": "orchestrat"
+   },
+   {
+    "jd_id": "2026-11-07_babel-profiles_analytics-engineer-customer-behavioral-product-analytics",
+    "bullet": "Get hands-on with enterprise cloud data, querying complex datasets, navigating pipelines, and partnering side-by-side with data engineers and software developers to ensure seamless data flows.",
+    "matched_text": "pipeline"
+   },
+   {
+    "jd_id": "2026-11-07_ecs_data-analytics-engineer",
+    "bullet": "Build and maintain ETL/ELT pipelines and data products within Microsoft Fabric.",
+    "matched_text": "ETL"
+   },
+   {
+    "jd_id": "2026-11-07_ecs_data-analytics-engineer",
+    "bullet": "Monitor, optimize, and continuously improve existing data pipelines and data products.",
+    "matched_text": "pipeline"
+   },
+   {
+    "jd_id": "2026-11-07_prime-video_business-intelligence-engineer-partner-experience-supply-chain-analytics",
+    "bullet": "Build data pipelines and dashboards from multi-dimensional datasets to report product metrics and KPIs",
+    "matched_text": "pipeline"
+   },
+   {
+    "jd_id": "2026-11-07_weill-cornell-medicine_business-intelligence-developer-ii",
+    "bullet": "Create a variety of backend objects. Develop complete ETL data flow models, from source system extraction to transformations, loading and report creation. Document solution directions, data flows, design and technical specifications.",
+    "matched_text": "ETL"
    }
   ],
   "Data Infrastructure & Warehouse Ops": [
@@ -46371,16 +46559,6 @@
     "matched_text": "cloud"
    },
    {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Designs and drives implementation of scalable data platforms: pipeline orchestration, automated quality monitoring, schema management, and infrastructure that supports both traditional BI and AI-native consumption patterns.",
-    "matched_text": "infrastructure"
-   },
-   {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Defines the team's AI tooling strategy: evaluates frameworks, builds shared infrastructure (prompt libraries, evaluation patterns, integration templates), and establishes practices that help the whole team work effectively with AI.",
-    "matched_text": "infrastructure"
-   },
-   {
     "jd_id": "2026-10-05_bauhinia-search-partners_senior-analytics-engineer",
     "bullet": "Help manage and optimize analytics infrastructure costs, including Snowflake and dbt usage.",
     "matched_text": "infrastructure"
@@ -48566,11 +48744,6 @@
     "matched_text": "warehouse"
    },
    {
-    "jd_id": "2026-11-03_amazon-web-services-aws_business-intelligence-engineer-capacity-delivery-reliability",
-    "bullet": "Write high quality SQL to retrieve and analyze data from relational databases (e.g., AWS Redshift).",
-    "matched_text": "Redshift"
-   },
-   {
     "jd_id": "2026-11-03_bacardi_senior-analyst-tech-operations-azure-bi-developer",
     "bullet": "Build, enhance, and optimize data ingestion, transformation, and orchestration processes using Azure Data Factory, Synapse, Databricks, Azure SQL etc.",
     "matched_text": "Databricks"
@@ -49124,6 +49297,36 @@
     "jd_id": "2026-11-06_velir_senior-analytics-engineer",
     "bullet": "Drive adoption of best practices for dbt development, testing, and CI/CD while mentoring peers through code reviews, pairing, and technical guidance.",
     "matched_text": "CI/CD"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Lead hands-on development of complex data transformations using SQL, BigQuery, and Python, leveraging tools such as dbt, Git, and Apache Airflow or comparable technologies",
+    "matched_text": "BigQuery"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Establish engineering standards for modular development, version control, testing, deployment, orchestration, and monitoring",
+    "matched_text": "version control"
+   },
+   {
+    "jd_id": "2026-11-07_babel-profiles_analytics-engineer-customer-behavioral-product-analytics",
+    "bullet": "Get hands-on with enterprise cloud data, querying complex datasets, navigating pipelines, and partnering side-by-side with data engineers and software developers to ensure seamless data flows.",
+    "matched_text": "cloud"
+   },
+   {
+    "jd_id": "2026-11-07_uhlmann-pac-systeme_data-business-intelligence-engineer",
+    "bullet": "Modernisierung der BI-Landschaft im Zuge der Transformation von SAP BW zu SAP Datasphere / SAP Business Data Cloud",
+    "matched_text": "Cloud"
+   },
+   {
+    "jd_id": "2026-11-07_uhlmann-pac-systeme_data-business-intelligence-engineer",
+    "bullet": "Entwicklung moderner Analyse-, Reporting- und Planungsl\u00f6sungen mit SAP Analytics Cloud (SAC)",
+    "matched_text": "Cloud"
+   },
+   {
+    "jd_id": "2026-11-07_weill-cornell-medicine_business-intelligence-developer-ii",
+    "bullet": "Create reporting backend infrastructure and reports. Create complex reports and develop reporting solutions that enhance the end user experience and meet business requirements.",
+    "matched_text": "infrastructure"
    }
   ],
   "Governance & Documentation": [
@@ -53778,26 +53981,6 @@
     "matched_text": "standards"
    },
    {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Owns the architecture and technical roadmap for the team's analytics systems \u2014 data platforms, governance layers, self-service products, and the integration patterns that connect them to AI-powered downstream applications.",
-    "matched_text": "governance"
-   },
-   {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Architects governance frameworks that maintain data trust at scale: lineage, freshness enforcement, validation pipelines, ownership models, and content lifecycle practices \u2014 especially as AI systems become consumers of the team's data.",
-    "matched_text": "governance"
-   },
-   {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Drives cross-functional alignment on data product architecture; influences partner teams on integration patterns, API contracts, and standards for how data products interoperate across the ecosystem.",
-    "matched_text": "standards"
-   },
-   {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Mentors and levels up the team on data engineering craft, system design, governance thinking, and practical AI/ML application \u2014 raising the bar for what the team can build and maintain.",
-    "matched_text": "governance"
-   },
-   {
     "jd_id": "2026-10-05_bauhinia-search-partners_senior-analytics-engineer",
     "bullet": "Improve documentation and create a more scalable, writing-first analytics culture.",
     "matched_text": "documentation"
@@ -57416,6 +57599,61 @@
     "jd_id": "2026-11-06_velir_senior-analytics-engineer",
     "bullet": "Enable sustainable project delivery by optimizing performance, reducing technical debt, and contributing to shared standards that scale across teams.",
     "matched_text": "standards"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Establish consistent approaches to business rules, historical data, reusable dimensions, data quality, and lineage",
+    "matched_text": "lineage"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Define data-product architecture, transformations, business logic, quality standards, documentation, and ownership",
+    "matched_text": "standards"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Establish engineering standards for modular development, version control, testing, deployment, orchestration, and monitoring",
+    "matched_text": "standards"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Implement automated data-quality, validation, reconciliation, and lineage capabilities to improve trust and reliability",
+    "matched_text": "lineage"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Serve as a technical bridge across Business, Analytics, Data Engineering, Architecture, Governance, and enterprise technology teams",
+    "matched_text": "Governance"
+   },
+   {
+    "jd_id": "2026-11-07_babel-profiles_analytics-engineer-customer-behavioral-product-analytics",
+    "bullet": "Architect scalable tracking frameworks from design to documentation, guaranteeing high data integrity, reliability, and seamless usability across BI reporting, A/B testing, and third-party tools.",
+    "matched_text": "documentation"
+   },
+   {
+    "jd_id": "2026-11-07_ecs_data-analytics-engineer",
+    "bullet": "Work according to established architecture, security, privacy, and governance standards.",
+    "matched_text": "governance"
+   },
+   {
+    "jd_id": "2026-11-07_michael-page_data-analyst-analytics-engineer",
+    "bullet": "Participer activement \u00e0 l'am\u00e9lioration de la qualit\u00e9 des donn\u00e9es, \u00e0 la formalisation des r\u00e8gles m\u00e9tier et \u00e0 leur documentation.",
+    "matched_text": "documentation"
+   },
+   {
+    "jd_id": "2026-11-07_uhlmann-pac-systeme_data-business-intelligence-engineer",
+    "bullet": "Mitgestaltung der BI-Architektur sowie Sicherstellung von Datenqualit\u00e4t, Governance und einheitlichen Datenstrukturen",
+    "matched_text": "Governance"
+   },
+   {
+    "jd_id": "2026-11-07_weill-cornell-medicine_business-intelligence-developer-ii",
+    "bullet": "Create a variety of backend objects. Develop complete ETL data flow models, from source system extraction to transformations, loading and report creation. Document solution directions, data flows, design and technical specifications.",
+    "matched_text": "Document"
+   },
+   {
+    "jd_id": "2026-11-07_weill-cornell-medicine_business-intelligence-developer-ii",
+    "bullet": "Develop business intelligence reports in support of the college's mission. Engage users to understand needs, gather and document requirements. Follows functional specification documents to ensure report work products meet the needs of the requester.",
+    "matched_text": "document"
    }
   ],
   "Performance & Cost Optimization": [
@@ -60350,8 +60588,8 @@
     "matched_text": "cost reduction"
    },
    {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Makes technical decisions with broad impact: data modeling trade-offs, build-vs-buy on capabilities, migration strategies from legacy systems, and cost/performance optimization across the stack.",
+    "jd_id": "2026-10-05_aws_business-intelligence-engineer-jwo",
+    "bullet": "Serve as liaison between the Business and technical teams to achieve the goal of providing actionable insights into current business performance and ad hoc investigations into future improvements or innovations. This will require data gathering and manipulation, synthesis and modeling, problem solving, and communication of insights and recommendations.",
     "matched_text": "performance"
    },
    {
@@ -62665,11 +62903,6 @@
     "matched_text": "efficiency"
    },
    {
-    "jd_id": "2026-11-04_amazon_senior-business-intelligence-engineer-iii-rapid-and-rural-logistics",
-    "bullet": "Data Pipeline Engineering \u2014 Build and optimize ETLs, ensuring data freshness and reliability for operational decision-making",
-    "matched_text": "optimize"
-   },
-   {
     "jd_id": "2026-11-04_bae-systems_data-analytics-engineer-ii",
     "bullet": "Monitor pipeline performance and reliability, participate in code reviews, and contribute to continuous process improvement.",
     "matched_text": "performance"
@@ -62868,6 +63101,11 @@
     "jd_id": "2026-11-04_transmedics_business-intelligence-engineer-transplant-logistics",
     "bullet": "Develop deep-dive tools, UIs, metrics, and automated dashboards in Power BI/Tableau to give visibility into key measures of logistics performance.",
     "matched_text": "performance"
+   },
+   {
+    "jd_id": "2026-11-05_amazon_business-intelligence-engineer-aop",
+    "bullet": "Build scalable, efficient, and automated data processes to inform business decision making.",
+    "matched_text": "efficient"
    },
    {
     "jd_id": "2026-11-05_fever_senior-analytics-engineer-data-modeling-bi",
@@ -63130,16 +63368,6 @@
     "matched_text": "performance"
    },
    {
-    "jd_id": "2026-11-06_prime-video_business-intelligence-engineer-ii-apac-anz",
-    "bullet": "Own the design, development, and maintenance of ongoing performance dashboards, metrics, reports, analyses, etc. to drive key business decisions.",
-    "matched_text": "performance"
-   },
-   {
-    "jd_id": "2026-11-06_prime-video_business-intelligence-engineer-ii-apac-anz",
-    "bullet": "Build scalable, efficient, and automated data processes to inform business decision making.",
-    "matched_text": "efficient"
-   },
-   {
     "jd_id": "2026-11-06_skinseoul_senior-business-intelligence-engineer",
     "bullet": "Manage ETL processes to ensure efficient data ingestion, transformation, and availability for analytics.",
     "matched_text": "efficient"
@@ -63208,6 +63436,36 @@
     "jd_id": "2026-11-06_velir_senior-analytics-engineer",
     "bullet": "Enable sustainable project delivery by optimizing performance, reducing technical debt, and contributing to shared standards that scale across teams.",
     "matched_text": "performance"
+   },
+   {
+    "jd_id": "2026-11-07_babel-profiles_analytics-engineer-customer-behavioral-product-analytics",
+    "bullet": "Turn data into product strategy by defining key performance metrics, building intuitive dashboards, and translating complex user behavior into concrete, revenue-driving recommendations.",
+    "matched_text": "performance"
+   },
+   {
+    "jd_id": "2026-11-07_ecs_data-analytics-engineer",
+    "bullet": "Ensure the quality, reliability, and performance of data solutions.",
+    "matched_text": "performance"
+   },
+   {
+    "jd_id": "2026-11-07_ecs_data-analytics-engineer",
+    "bullet": "Monitor, optimize, and continuously improve existing data pipelines and data products.",
+    "matched_text": "optimize"
+   },
+   {
+    "jd_id": "2026-11-07_michael-page_data-analyst-analytics-engineer",
+    "bullet": "Concevoir, maintenir et optimiser les tableaux de bord et reportings sous Tableau Software.",
+    "matched_text": "optimise"
+   },
+   {
+    "jd_id": "2026-11-07_prime-video_business-intelligence-engineer-partner-experience-supply-chain-analytics",
+    "bullet": "Evaluate requirements and select optimal tools, balancing speed, efficiency, and scalability",
+    "matched_text": "efficiency"
+   },
+   {
+    "jd_id": "2026-11-07_weill-cornell-medicine_business-intelligence-developer-ii",
+    "bullet": "Troubleshoot and resolve technical issues, debug, tune and optimize data load and report performance. Work closely with Basis and Portal teams to optimize system performance and monitor usage.",
+    "matched_text": "optimize"
    }
   ],
   "Architecture & Platform Strategy": [
@@ -65977,36 +66235,6 @@
     "matched_text": "data platform"
    },
    {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Owns the architecture and technical roadmap for the team's analytics systems \u2014 data platforms, governance layers, self-service products, and the integration patterns that connect them to AI-powered downstream applications.",
-    "matched_text": "architecture"
-   },
-   {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Designs and drives implementation of scalable data platforms: pipeline orchestration, automated quality monitoring, schema management, and infrastructure that supports both traditional BI and AI-native consumption patterns.",
-    "matched_text": "scalable data"
-   },
-   {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Defines the team's AI tooling strategy: evaluates frameworks, builds shared infrastructure (prompt libraries, evaluation patterns, integration templates), and establishes practices that help the whole team work effectively with AI.",
-    "matched_text": "infrastructure"
-   },
-   {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Drives cross-functional alignment on data product architecture; influences partner teams on integration patterns, API contracts, and standards for how data products interoperate across the ecosystem.",
-    "matched_text": "architecture"
-   },
-   {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Mentors and levels up the team on data engineering craft, system design, governance thinking, and practical AI/ML application \u2014 raising the bar for what the team can build and maintain.",
-    "matched_text": "system design"
-   },
-   {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Communicates complex technical architecture and strategy to senior leadership; writes design documents that drive alignment, presents trade-offs clearly, and translates technical capability into business outcomes.",
-    "matched_text": "architecture"
-   },
-   {
     "jd_id": "2026-10-05_bauhinia-search-partners_senior-analytics-engineer",
     "bullet": "Help manage and optimize analytics infrastructure costs, including Snowflake and dbt usage.",
     "matched_text": "infrastructure"
@@ -67502,11 +67730,6 @@
     "matched_text": "data platform"
    },
    {
-    "jd_id": "2026-11-04_amazon_senior-business-intelligence-engineer-iii-rapid-and-rural-logistics",
-    "bullet": "Data architecture design \u2014 determine the right data foundations necessary to solve team-wide business problems",
-    "matched_text": "architecture"
-   },
-   {
     "jd_id": "2026-11-04_costco-it_bi-engineer-level-3-power-bi-tableau",
     "bullet": "Assists in solution design efforts (i.e. analysis, data warehouse design, architecture) and understands the data warehouse or data marts implementation related to BI.",
     "matched_text": "architecture"
@@ -67775,6 +67998,46 @@
     "jd_id": "2026-11-06_velir_senior-analytics-engineer",
     "bullet": "Model strong communication and mentorship, helping other AEs and cross-functional teammates develop clarity and confidence in data architecture decisions.",
     "matched_text": "architecture"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Design scalable data models, transformation layers, and architectures that support workforce metrics, reporting, advanced analytics, and AI",
+    "matched_text": "scalable data"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Define data-product architecture, transformations, business logic, quality standards, documentation, and ownership",
+    "matched_text": "architecture"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Serve as a technical bridge across Business, Analytics, Data Engineering, Architecture, Governance, and enterprise technology teams",
+    "matched_text": "Architecture"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Shape the analytics engineering and workforce data strategy, identifying opportunities to simplify fragmented data ecosystems and build scalable capabilities",
+    "matched_text": "data strategy"
+   },
+   {
+    "jd_id": "2026-11-07_babel-profiles_analytics-engineer-customer-behavioral-product-analytics",
+    "bullet": "Collaborate cross-functionally with product, engineering, and business teams to shape, deploy, and continuously elevate tracking, digital analytics, and experimentation roadmaps across the digital journey.",
+    "matched_text": "roadmap"
+   },
+   {
+    "jd_id": "2026-11-07_ecs_data-analytics-engineer",
+    "bullet": "Translate business needs, KPIs, and processes into scalable data solutions.",
+    "matched_text": "scalable data"
+   },
+   {
+    "jd_id": "2026-11-07_ecs_data-analytics-engineer",
+    "bullet": "Work according to established architecture, security, privacy, and governance standards.",
+    "matched_text": "architecture"
+   },
+   {
+    "jd_id": "2026-11-07_weill-cornell-medicine_business-intelligence-developer-ii",
+    "bullet": "Create reporting backend infrastructure and reports. Create complex reports and develop reporting solutions that enhance the end user experience and meet business requirements.",
+    "matched_text": "infrastructure"
    }
   ],
   "Security, Privacy & Risk": [
@@ -69166,6 +69429,11 @@
    {
     "jd_id": "2026-11-06_thermo-fisher-scientific_senior-data-analyst-analytics-engineering-ai",
     "bullet": "Collaborate with data architecture, engineering, security, product, and governance teams to ensure analytical solutions follow enterprise standards for architecture, security, privacy, quality, and governance.",
+    "matched_text": "security"
+   },
+   {
+    "jd_id": "2026-11-07_ecs_data-analytics-engineer",
+    "bullet": "Work according to established architecture, security, privacy, and governance standards.",
     "matched_text": "security"
    }
   ],
@@ -71201,41 +71469,6 @@
     "matched_text": "AI"
    },
    {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Owns the architecture and technical roadmap for the team's analytics systems \u2014 data platforms, governance layers, self-service products, and the integration patterns that connect them to AI-powered downstream applications.",
-    "matched_text": "AI"
-   },
-   {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Designs and drives implementation of scalable data platforms: pipeline orchestration, automated quality monitoring, schema management, and infrastructure that supports both traditional BI and AI-native consumption patterns.",
-    "matched_text": "AI"
-   },
-   {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Architects governance frameworks that maintain data trust at scale: lineage, freshness enforcement, validation pipelines, ownership models, and content lifecycle practices \u2014 especially as AI systems become consumers of the team's data.",
-    "matched_text": "AI"
-   },
-   {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Builds and owns automated analytics systems \u2014 report generation, KPI monitoring, anomaly detection, insight delivery \u2014 designing for progressive automation where AI handles the routine and humans handle the exceptions.",
-    "matched_text": "AI"
-   },
-   {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Defines the team's AI tooling strategy: evaluates frameworks, builds shared infrastructure (prompt libraries, evaluation patterns, integration templates), and establishes practices that help the whole team work effectively with AI.",
-    "matched_text": "AI"
-   },
-   {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Applies advanced statistical and ML methods within production systems; ensures analytical rigor in automated outputs and designs experimentation frameworks that quantify business impact.",
-    "matched_text": "ML"
-   },
-   {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Mentors and levels up the team on data engineering craft, system design, governance thinking, and practical AI/ML application \u2014 raising the bar for what the team can build and maintain.",
-    "matched_text": "AI"
-   },
-   {
     "jd_id": "2026-10-05_bauhinia-search-partners_senior-analytics-engineer",
     "bullet": "Establish trusted, reusable data products that can support dashboards, reporting, self-service analytics, and AI/LLM-based consumers.",
     "matched_text": "AI"
@@ -71689,11 +71922,6 @@
     "jd_id": "2026-10-10_monks_ai-analytics-engineer",
     "bullet": "Use AI coding assistants in your own workflow to ship faster with fewer errors.",
     "matched_text": "AI"
-   },
-   {
-    "jd_id": "2026-10-11_amazon_business-intelligence-engineer-cxp",
-    "bullet": "Apply generative AI tools and techniques (such as LLM-based summarization, natural language querying, and automated insight generation) to improve analytics productivity and stakeholder self-service capabilities",
-    "matched_text": "generative AI"
    },
    {
     "jd_id": "2026-10-11_ayming_analytics-engineer-data-analyst",
@@ -73133,6 +73361,26 @@
    {
     "jd_id": "2026-11-06_tribe-group_senior-analytics-engineer",
     "bullet": "Contribute to emerging AI-enabled capabilities, including AI-ready data assets and research/agent workflows",
+    "matched_text": "AI"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Design scalable data models, transformation layers, and architectures that support workforce metrics, reporting, advanced analytics, and AI",
+    "matched_text": "AI"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Enable reliable data consumption across Power BI, Excel, SQL, Python, and emerging AI solutions",
+    "matched_text": "AI"
+   },
+   {
+    "jd_id": "2026-11-07_ecs_data-analytics-engineer",
+    "bullet": "Deliver trusted data products that support reporting, analytics, and AI applications.",
+    "matched_text": "AI"
+   },
+   {
+    "jd_id": "2026-11-07_prime-video_business-intelligence-engineer-partner-experience-supply-chain-analytics",
+    "bullet": "Build fast prototypes using Amazon AI tools (Kiro, Claude CLI, QuickSuite) and translate them into production-grade data products",
     "matched_text": "AI"
    }
   ],
@@ -79233,14 +79481,9 @@
     "matched_text": "Collaborat"
    },
    {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Drives cross-functional alignment on data product architecture; influences partner teams on integration patterns, API contracts, and standards for how data products interoperate across the ecosystem.",
-    "matched_text": "cross-functional"
-   },
-   {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Communicates complex technical architecture and strategy to senior leadership; writes design documents that drive alignment, presents trade-offs clearly, and translates technical capability into business outcomes.",
-    "matched_text": "alignment"
+    "jd_id": "2026-10-05_aws_business-intelligence-engineer-jwo",
+    "bullet": "Serve as liaison between the Business and technical teams to achieve the goal of providing actionable insights into current business performance and ad hoc investigations into future improvements or innovations. This will require data gathering and manipulation, synthesis and modeling, problem solving, and communication of insights and recommendations.",
+    "matched_text": "liais"
    },
    {
     "jd_id": "2026-10-05_bauhinia-search-partners_senior-analytics-engineer",
@@ -80183,14 +80426,9 @@
     "matched_text": "collaborat"
    },
    {
-    "jd_id": "2026-10-11_amazon_business-intelligence-engineer-cxp",
-    "bullet": "Apply generative AI tools and techniques (such as LLM-based summarization, natural language querying, and automated insight generation) to improve analytics productivity and stakeholder self-service capabilities",
-    "matched_text": "stakeholder"
-   },
-   {
-    "jd_id": "2026-10-11_amazon_business-intelligence-engineer-cxp",
-    "bullet": "Partner with cross-functional teams to instrument new data collection, close measurement gaps, and build unified views of customer journeys across products and channels",
-    "matched_text": "Partner with"
+    "jd_id": "2026-10-11_amazon_business-intelligence-engineer-innovation-and-design-engineering",
+    "bullet": "You will utilize your deep expertise in business analysis, metrics, reporting, and analytic tooling/languages like SQL, Excel, and others, to translate the data into meaningful insights.",
+    "matched_text": "translate"
    },
    {
     "jd_id": "2026-10-11_ayming_analytics-engineer-data-analyst",
@@ -82698,13 +82936,8 @@
     "matched_text": "Work closely with"
    },
    {
-    "jd_id": "2026-11-03_amazon-web-services-aws_business-intelligence-engineer-capacity-delivery-reliability",
-    "bullet": "Lead the design, development, and maintenance of scalable solutions for ongoing metrics, reports, analyses, dashboards, etc. to support analytical and business needs.",
-    "matched_text": "business needs"
-   },
-   {
-    "jd_id": "2026-11-03_amazon-web-services-aws_business-intelligence-engineer-capacity-delivery-reliability",
-    "bullet": "Partner with data engineers to develop automated solutions.",
+    "jd_id": "2026-11-03_amazon_business-intelligence-engineer-iii-amazon-now",
+    "bullet": "Partner with Product, UX, Engineering, and Operations teams to define success metrics for feature launches.",
     "matched_text": "Partner with"
    },
    {
@@ -82916,11 +83149,6 @@
     "jd_id": "2026-11-04_agoda_business-intelligence-developer-rta",
     "bullet": "Partner with engineering teams to ensure that all critical data from Agoda\u2019s products and applications is accurately captured and maintained.",
     "matched_text": "Partner with"
-   },
-   {
-    "jd_id": "2026-11-04_amazon_senior-business-intelligence-engineer-iii-rapid-and-rural-logistics",
-    "bullet": "Stakeholder Partnership \u2014 Work directly with program teams to translate business requirements into scalable analytical solutions",
-    "matched_text": "Stakeholder"
    },
    {
     "jd_id": "2026-11-04_bae-systems_data-analytics-engineer-ii",
@@ -83291,6 +83519,21 @@
     "jd_id": "2026-11-04_xebia_bi-developer",
     "bullet": "Ensuring reporting solutions align with new data products and business requirements.",
     "matched_text": "align"
+   },
+   {
+    "jd_id": "2026-11-05_amazon_business-intelligence-engineer-aop",
+    "bullet": "Collaborate with Product and Program management teams to design analytics frameworks that will support large-scale data-analysis and on-ground corrective actions.",
+    "matched_text": "Collaborat"
+   },
+   {
+    "jd_id": "2026-11-05_amazon_business-intelligence-engineer-aop",
+    "bullet": "Collaborate with Business Analysts, Data Engineers, Software Development Engineers, and business stakeholders to understand requirements, validate data quality, and ensure deliverables align with expectations.",
+    "matched_text": "Collaborat"
+   },
+   {
+    "jd_id": "2026-11-05_amazon_business-intelligence-engineer-aop",
+    "bullet": "Identify and implement optimal communication mechanisms based on the data and the stakeholders involved",
+    "matched_text": "stakeholder"
    },
    {
     "jd_id": "2026-11-05_fever_senior-analytics-engineer-data-modeling-bi",
@@ -83726,6 +83969,66 @@
     "jd_id": "2026-11-06_velir_senior-analytics-engineer",
     "bullet": "Lead end-to-end delivery of analytics engineering workstreams, ensuring solutions are reliable, well-documented, and aligned with client objectives.",
     "matched_text": "align"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Partner with business and technical stakeholders to translate analytical needs into scalable, reusable data products rather than one-off solutions",
+    "matched_text": "Partner with"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Serve as a technical bridge across Business, Analytics, Data Engineering, Architecture, Governance, and enterprise technology teams",
+    "matched_text": "bridge"
+   },
+   {
+    "jd_id": "2026-11-07_babel-profiles_analytics-engineer-customer-behavioral-product-analytics",
+    "bullet": "Collaborate cross-functionally with product, engineering, and business teams to shape, deploy, and continuously elevate tracking, digital analytics, and experimentation roadmaps across the digital journey.",
+    "matched_text": "Collaborat"
+   },
+   {
+    "jd_id": "2026-11-07_babel-profiles_analytics-engineer-customer-behavioral-product-analytics",
+    "bullet": "Serve as a trusted analytical advisor to cross-functional stakeholders, driving data literacy, mentoring teammates, and fostering a culture of continuous learning.",
+    "matched_text": "cross-functional"
+   },
+   {
+    "jd_id": "2026-11-07_ecs_data-analytics-engineer",
+    "bullet": "Translate business needs, KPIs, and processes into scalable data solutions.",
+    "matched_text": "Translate"
+   },
+   {
+    "jd_id": "2026-11-07_ecs_data-analytics-engineer",
+    "bullet": "Collaborate closely with business and IT teams to drive data-driven solutions.",
+    "matched_text": "Collaborat"
+   },
+   {
+    "jd_id": "2026-11-07_prime-video_business-intelligence-engineer-partner-experience-supply-chain-analytics",
+    "bullet": "Build fast prototypes using Amazon AI tools (Kiro, Claude CLI, QuickSuite) and translate them into production-grade data products",
+    "matched_text": "translate"
+   },
+   {
+    "jd_id": "2026-11-07_prime-video_business-intelligence-engineer-partner-experience-supply-chain-analytics",
+    "bullet": "Present insights and recommendations to stakeholders verbally and in writing",
+    "matched_text": "stakeholder"
+   },
+   {
+    "jd_id": "2026-11-07_weill-cornell-medicine_business-intelligence-developer-ii",
+    "bullet": "Create reporting backend infrastructure and reports. Create complex reports and develop reporting solutions that enhance the end user experience and meet business requirements.",
+    "matched_text": "business requirements"
+   },
+   {
+    "jd_id": "2026-11-07_weill-cornell-medicine_business-intelligence-developer-ii",
+    "bullet": "Analyze complex problems. Recommend and implement innovative solutions. Communicate requirements and partner with other developers to analyze complex data and process issues.",
+    "matched_text": "partner with"
+   },
+   {
+    "jd_id": "2026-11-07_weill-cornell-medicine_business-intelligence-developer-ii",
+    "bullet": "Troubleshoot and resolve technical issues, debug, tune and optimize data load and report performance. Work closely with Basis and Portal teams to optimize system performance and monitor usage.",
+    "matched_text": "Work closely with"
+   },
+   {
+    "jd_id": "2026-11-07_weill-cornell-medicine_business-intelligence-developer-ii",
+    "bullet": "Collaborate and coordinate with developers and Business Analysts to analyze complex problems and recommend innovative solutions.",
+    "matched_text": "Collaborat"
    }
   ],
   "Self-Service Enablement & Data Literacy": [
@@ -85640,11 +85943,6 @@
     "matched_text": "self-service"
    },
    {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Owns the architecture and technical roadmap for the team's analytics systems \u2014 data platforms, governance layers, self-service products, and the integration patterns that connect them to AI-powered downstream applications.",
-    "matched_text": "self-service"
-   },
-   {
     "jd_id": "2026-10-05_bauhinia-search-partners_senior-analytics-engineer",
     "bullet": "Establish trusted, reusable data products that can support dashboards, reporting, self-service analytics, and AI/LLM-based consumers.",
     "matched_text": "self-service"
@@ -85948,11 +86246,6 @@
     "jd_id": "2026-10-10_independence-pet-group_senior-analytics-engineer",
     "bullet": "Create clear technical documentation, modeling conventions, and enablement materials that drive adoption of trusted data assets.",
     "matched_text": "enablement"
-   },
-   {
-    "jd_id": "2026-10-11_amazon_business-intelligence-engineer-cxp",
-    "bullet": "Apply generative AI tools and techniques (such as LLM-based summarization, natural language querying, and automated insight generation) to improve analytics productivity and stakeholder self-service capabilities",
-    "matched_text": "self-service"
    },
    {
     "jd_id": "2026-10-11_ayming_analytics-engineer-data-analyst",
@@ -86665,6 +86958,11 @@
     "matched_text": "Enable"
    },
    {
+    "jd_id": "2026-11-03_amazon_business-intelligence-engineer-iii-amazon-now",
+    "bullet": "Build scalable ETL pipelines, automated dashboards, and self-service reporting frameworks tracking conversion funnels, delivery experience, retention, and NPS.",
+    "matched_text": "self-service"
+   },
+   {
     "jd_id": "2026-11-03_dtcc_business-intelligence-engineer",
     "bullet": "Participate in code reviews, knowledge sharing, and continuous improvement initiatives.",
     "matched_text": "knowledge shar"
@@ -86933,6 +87231,21 @@
     "jd_id": "2026-11-06_velir_senior-analytics-engineer",
     "bullet": "Enable sustainable project delivery by optimizing performance, reducing technical debt, and contributing to shared standards that scale across teams.",
     "matched_text": "Enable"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Enable reliable data consumption across Power BI, Excel, SQL, Python, and emerging AI solutions",
+    "matched_text": "Enable"
+   },
+   {
+    "jd_id": "2026-11-07_babel-profiles_analytics-engineer-customer-behavioral-product-analytics",
+    "bullet": "Serve as a trusted analytical advisor to cross-functional stakeholders, driving data literacy, mentoring teammates, and fostering a culture of continuous learning.",
+    "matched_text": "data literacy"
+   },
+   {
+    "jd_id": "2026-11-07_uhlmann-pac-systeme_data-business-intelligence-engineer",
+    "bullet": "Unterst\u00fctzung der Fachbereiche bei Self-Service Analytics sowie Durchf\u00fchrung von Workshops und Schulungen",
+    "matched_text": "Self-Service"
    }
   ],
   "Data Ownership (end-to-end)": [
@@ -88947,11 +89260,6 @@
     "matched_text": "Own"
    },
    {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Architects governance frameworks that maintain data trust at scale: lineage, freshness enforcement, validation pipelines, ownership models, and content lifecycle practices \u2014 especially as AI systems become consumers of the team's data.",
-    "matched_text": "ownership"
-   },
-   {
     "jd_id": "2026-10-05_bauhinia-search-partners_senior-analytics-engineer",
     "bullet": "Own the gold layer and ensure core business metrics are modeled consistently and reliably.",
     "matched_text": "Own"
@@ -89347,9 +89655,9 @@
     "matched_text": "own"
    },
    {
-    "jd_id": "2026-10-11_amazon_business-intelligence-engineer-cxp",
-    "bullet": "Own the design, development, and maintenance of ongoing data pipelines, metrics, reports, visualizations, analyses, and dashboards to drive business decisions",
-    "matched_text": "Own"
+    "jd_id": "2026-10-11_amazon_business-intelligence-engineer-innovation-and-design-engineering",
+    "bullet": "You will have ownership of the insights you are building for the business, and will play an integral role in tactical decision-making for machine and process design.",
+    "matched_text": "ownership"
    },
    {
     "jd_id": "2026-10-11_bookingcom_sap-data-analytics-engineer-ii",
@@ -90087,6 +90395,11 @@
     "matched_text": "ownership"
    },
    {
+    "jd_id": "2026-11-03_amazon_business-intelligence-engineer-iii-amazon-now",
+    "bullet": "Own the end-to-end data ecosystem for the Amazon Now CX team.",
+    "matched_text": "Own"
+   },
+   {
     "jd_id": "2026-11-03_c-and-a_analytics-engineer-supply-chain",
     "bullet": "Work with business stakeholders to fine tune end-to-end data flows.",
     "matched_text": "end-to-end"
@@ -90170,11 +90483,6 @@
     "jd_id": "2026-11-03_till-financial_analytics-engineer",
     "bullet": "Ask the next question first. Investigate anomalies and open questions on your own before anyone else asks",
     "matched_text": "own"
-   },
-   {
-    "jd_id": "2026-11-04_amazon_senior-business-intelligence-engineer-iii-rapid-and-rural-logistics",
-    "bullet": "Data Quality & Monitoring \u2014 Own pipeline health monitoring, alerting, and incident response for Sev 3 production dashboards",
-    "matched_text": "Own"
    },
    {
     "jd_id": "2026-11-04_blackrock_associate-business-intelligence-developer-business-analyst-pfs",
@@ -90297,6 +90605,11 @@
     "matched_text": "end-to-end"
    },
    {
+    "jd_id": "2026-11-05_amazon_business-intelligence-engineer-aop",
+    "bullet": "Own the design, development, and maintenance of ongoing BI solutions, metrics, reports, etc. to drive key business decisions.",
+    "matched_text": "Own"
+   },
+   {
     "jd_id": "2026-11-05_odfjell-technology_analytics-engineer",
     "bullet": "Take end-to-end responsibility for assigned data products, from discovery and design through development, deployment, support, and continuous improvement.",
     "matched_text": "end-to-end"
@@ -90372,11 +90685,6 @@
     "matched_text": "own"
    },
    {
-    "jd_id": "2026-11-06_prime-video_business-intelligence-engineer-ii-apac-anz",
-    "bullet": "Own the design, development, and maintenance of ongoing performance dashboards, metrics, reports, analyses, etc. to drive key business decisions.",
-    "matched_text": "Own"
-   },
-   {
     "jd_id": "2026-11-06_tribe-group_senior-analytics-engineer",
     "bullet": "Take ownership of curated datasets, semantic models and reporting layers that the business relies on",
     "matched_text": "ownership"
@@ -90385,6 +90693,21 @@
     "jd_id": "2026-11-06_velir_senior-analytics-engineer",
     "bullet": "Lead end-to-end delivery of analytics engineering workstreams, ensuring solutions are reliable, well-documented, and aligned with client objectives.",
     "matched_text": "end-to-end"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Define data-product architecture, transformations, business logic, quality standards, documentation, and ownership",
+    "matched_text": "ownership"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Promote a data product mindset centered on business value, reliability, reusability, maintainability, automation, quality, and ownership",
+    "matched_text": "ownership"
+   },
+   {
+    "jd_id": "2026-11-07_babel-profiles_analytics-engineer-customer-behavioral-product-analytics",
+    "bullet": "Own the experimentation lifecycle end-to-end, overseeing hypothesis formulation, sample size calculations, statistical analysis, and clear go/no-go rollout guidance.",
+    "matched_text": "Own"
    }
   ],
   "BI & Reporting/Dashboards": [
@@ -96679,13 +97002,8 @@
     "matched_text": "self-service reporting"
    },
    {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Owns the architecture and technical roadmap for the team's analytics systems \u2014 data platforms, governance layers, self-service products, and the integration patterns that connect them to AI-powered downstream applications.",
-    "matched_text": "self-service "
-   },
-   {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Builds and owns automated analytics systems \u2014 report generation, KPI monitoring, anomaly detection, insight delivery \u2014 designing for progressive automation where AI handles the routine and humans handle the exceptions.",
+    "jd_id": "2026-10-05_aws_business-intelligence-engineer-jwo",
+    "bullet": "Analyze and visualize transaction data to determine customer behaviors and output solid analysis report with recommendation",
     "matched_text": "report"
    },
    {
@@ -97894,14 +98212,9 @@
     "matched_text": "visualisation"
    },
    {
-    "jd_id": "2026-10-11_amazon_business-intelligence-engineer-cxp",
-    "bullet": "Own the design, development, and maintenance of ongoing data pipelines, metrics, reports, visualizations, analyses, and dashboards to drive business decisions",
-    "matched_text": "reports"
-   },
-   {
-    "jd_id": "2026-10-11_amazon_business-intelligence-engineer-cxp",
-    "bullet": "Apply generative AI tools and techniques (such as LLM-based summarization, natural language querying, and automated insight generation) to improve analytics productivity and stakeholder self-service capabilities",
-    "matched_text": "self-service "
+    "jd_id": "2026-10-11_amazon_business-intelligence-engineer-innovation-and-design-engineering",
+    "bullet": "You will utilize your deep expertise in business analysis, metrics, reporting, and analytic tooling/languages like SQL, Excel, and others, to translate the data into meaningful insights.",
+    "matched_text": "reporting"
    },
    {
     "jd_id": "2026-10-11_argosia-consulting_analytics-engineer-microsoft-fabric",
@@ -101554,19 +101867,9 @@
     "matched_text": "reporting"
    },
    {
-    "jd_id": "2026-11-03_amazon-web-services-aws_business-intelligence-engineer-capacity-delivery-reliability",
-    "bullet": "Lead the design, development, and maintenance of scalable solutions for ongoing metrics, reports, analyses, dashboards, etc. to support analytical and business needs.",
-    "matched_text": "reports"
-   },
-   {
-    "jd_id": "2026-11-03_amazon-web-services-aws_business-intelligence-engineer-capacity-delivery-reliability",
-    "bullet": "Lead the creation of user-friendly repeatable reporting solutions to minimize ad hoc customer requests.",
-    "matched_text": "reporting"
-   },
-   {
-    "jd_id": "2026-11-03_amazon-web-services-aws_business-intelligence-engineer-capacity-delivery-reliability",
-    "bullet": "Serve as a senior SME and lead for SQL and visualization tools (e.g., Tableau).",
-    "matched_text": "visualization"
+    "jd_id": "2026-11-03_amazon_business-intelligence-engineer-iii-amazon-now",
+    "bullet": "Build scalable ETL pipelines, automated dashboards, and self-service reporting frameworks tracking conversion funnels, delivery experience, retention, and NPS.",
+    "matched_text": "dashboard"
    },
    {
     "jd_id": "2026-11-03_bacardi_senior-analyst-tech-operations-azure-bi-developer",
@@ -101911,16 +102214,6 @@
    {
     "jd_id": "2026-11-04_agoda_business-intelligence-developer-rta",
     "bullet": "Design, develop, and enhance dashboards and reports that provide valuable insights and support data-driven decision-making across the organization.",
-    "matched_text": "dashboard"
-   },
-   {
-    "jd_id": "2026-11-04_amazon_senior-business-intelligence-engineer-iii-rapid-and-rural-logistics",
-    "bullet": "Dashboard Development & Maintenance \u2014 Design, build, and maintain QuickSight dashboards across domains",
-    "matched_text": "Dashboard"
-   },
-   {
-    "jd_id": "2026-11-04_amazon_senior-business-intelligence-engineer-iii-rapid-and-rural-logistics",
-    "bullet": "Data Quality & Monitoring \u2014 Own pipeline health monitoring, alerting, and incident response for Sev 3 production dashboards",
     "matched_text": "dashboard"
    },
    {
@@ -102489,6 +102782,11 @@
     "matched_text": "reporting"
    },
    {
+    "jd_id": "2026-11-05_amazon_business-intelligence-engineer-aop",
+    "bullet": "Own the design, development, and maintenance of ongoing BI solutions, metrics, reports, etc. to drive key business decisions.",
+    "matched_text": "reports"
+   },
+   {
     "jd_id": "2026-11-05_fever_senior-analytics-engineer-data-modeling-bi",
     "bullet": "Design, build, and maintain data models (DBT, SQL) that transform raw data into clean, trusted datasets for self-service and reporting.",
     "matched_text": "self-service "
@@ -102999,16 +103297,6 @@
     "matched_text": "dashboard"
    },
    {
-    "jd_id": "2026-11-06_prime-video_business-intelligence-engineer-ii-apac-anz",
-    "bullet": "Strong interest and ability to take complex datasets and boil them down to actionable data visualizations.",
-    "matched_text": "visualization"
-   },
-   {
-    "jd_id": "2026-11-06_prime-video_business-intelligence-engineer-ii-apac-anz",
-    "bullet": "Own the design, development, and maintenance of ongoing performance dashboards, metrics, reports, analyses, etc. to drive key business decisions.",
-    "matched_text": "dashboard"
-   },
-   {
     "jd_id": "2026-11-06_skinseoul_senior-business-intelligence-engineer",
     "bullet": "Develop and maintain business intelligence dashboards and reports (e.g., Looker Studio).",
     "matched_text": "dashboard"
@@ -103102,6 +103390,86 @@
     "jd_id": "2026-11-06_veeva-systems_analytics-engineer-opendata-emea",
     "bullet": "Build reports, ad-hoc and regularly",
     "matched_text": "reports"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Design scalable data models, transformation layers, and architectures that support workforce metrics, reporting, advanced analytics, and AI",
+    "matched_text": "reporting"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Enable reliable data consumption across Power BI, Excel, SQL, Python, and emerging AI solutions",
+    "matched_text": "Power BI"
+   },
+   {
+    "jd_id": "2026-11-07_babel-profiles_analytics-engineer-customer-behavioral-product-analytics",
+    "bullet": "Architect scalable tracking frameworks from design to documentation, guaranteeing high data integrity, reliability, and seamless usability across BI reporting, A/B testing, and third-party tools.",
+    "matched_text": "reporting"
+   },
+   {
+    "jd_id": "2026-11-07_babel-profiles_analytics-engineer-customer-behavioral-product-analytics",
+    "bullet": "Turn data into product strategy by defining key performance metrics, building intuitive dashboards, and translating complex user behavior into concrete, revenue-driving recommendations.",
+    "matched_text": "dashboard"
+   },
+   {
+    "jd_id": "2026-11-07_ecs_data-analytics-engineer",
+    "bullet": "Create Power BI reports and dashboards that deliver actionable business insights.",
+    "matched_text": "Power BI"
+   },
+   {
+    "jd_id": "2026-11-07_ecs_data-analytics-engineer",
+    "bullet": "Deliver trusted data products that support reporting, analytics, and AI applications.",
+    "matched_text": "reporting"
+   },
+   {
+    "jd_id": "2026-11-07_michael-page_data-analyst-analytics-engineer",
+    "bullet": "Concevoir, maintenir et optimiser les tableaux de bord et reportings sous Tableau Software.",
+    "matched_text": "Tableau"
+   },
+   {
+    "jd_id": "2026-11-07_prime-video_business-intelligence-engineer-partner-experience-supply-chain-analytics",
+    "bullet": "Build data pipelines and dashboards from multi-dimensional datasets to report product metrics and KPIs",
+    "matched_text": "dashboard"
+   },
+   {
+    "jd_id": "2026-11-07_uhlmann-pac-systeme_data-business-intelligence-engineer",
+    "bullet": "Entwicklung moderner Analyse-, Reporting- und Planungsl\u00f6sungen mit SAP Analytics Cloud (SAC)",
+    "matched_text": "Reporting"
+   },
+   {
+    "jd_id": "2026-11-07_uhlmann-pac-systeme_data-business-intelligence-engineer",
+    "bullet": "Unterst\u00fctzung der Fachbereiche bei Self-Service Analytics sowie Durchf\u00fchrung von Workshops und Schulungen",
+    "matched_text": "Self-Service Analytics"
+   },
+   {
+    "jd_id": "2026-11-07_weill-cornell-medicine_business-intelligence-developer-ii",
+    "bullet": "Create a variety of backend objects. Develop complete ETL data flow models, from source system extraction to transformations, loading and report creation. Document solution directions, data flows, design and technical specifications.",
+    "matched_text": "report"
+   },
+   {
+    "jd_id": "2026-11-07_weill-cornell-medicine_business-intelligence-developer-ii",
+    "bullet": "Create reporting backend infrastructure and reports. Create complex reports and develop reporting solutions that enhance the end user experience and meet business requirements.",
+    "matched_text": "reporting"
+   },
+   {
+    "jd_id": "2026-11-07_weill-cornell-medicine_business-intelligence-developer-ii",
+    "bullet": "Develop business intelligence reports in support of the college's mission. Engage users to understand needs, gather and document requirements. Follows functional specification documents to ensure report work products meet the needs of the requester.",
+    "matched_text": "reports"
+   },
+   {
+    "jd_id": "2026-11-07_weill-cornell-medicine_business-intelligence-developer-ii",
+    "bullet": "Troubleshoot and resolve technical issues, debug, tune and optimize data load and report performance. Work closely with Basis and Portal teams to optimize system performance and monitor usage.",
+    "matched_text": "report"
+   },
+   {
+    "jd_id": "2026-11-07_weill-cornell-medicine_business-intelligence-developer-ii",
+    "bullet": "Create and execute test scripts to ensure that reports provide accurate results and meet the requirements of the customer.",
+    "matched_text": "reports"
+   },
+   {
+    "jd_id": "2026-11-07_weill-cornell-medicine_business-intelligence-developer-ii",
+    "bullet": "Provide end user and support desk support and provide resolutions. Assist users with reporting navigation or data questions.",
+    "matched_text": "reporting"
    }
   ],
   "Business Analysis & Insight Generation": [
@@ -106886,14 +107254,19 @@
     "matched_text": "KPI"
    },
    {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Builds and owns automated analytics systems \u2014 report generation, KPI monitoring, anomaly detection, insight delivery \u2014 designing for progressive automation where AI handles the routine and humans handle the exceptions.",
-    "matched_text": "KPI"
+    "jd_id": "2026-10-05_aws_business-intelligence-engineer-jwo",
+    "bullet": "Analyze and visualize transaction data to determine customer behaviors and output solid analysis report with recommendation",
+    "matched_text": "Analyze"
    },
    {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Applies advanced statistical and ML methods within production systems; ensures analytical rigor in automated outputs and designs experimentation frameworks that quantify business impact.",
-    "matched_text": "experimentation"
+    "jd_id": "2026-10-05_aws_business-intelligence-engineer-jwo",
+    "bullet": "Design and drive experiments to form actionable recommendations. Present recommendations to business leaders and drive decisions. Also manage implementation of those recommendations.",
+    "matched_text": "experiment"
+   },
+   {
+    "jd_id": "2026-10-05_aws_business-intelligence-engineer-jwo",
+    "bullet": "Serve as liaison between the Business and technical teams to achieve the goal of providing actionable insights into current business performance and ad hoc investigations into future improvements or innovations. This will require data gathering and manipulation, synthesis and modeling, problem solving, and communication of insights and recommendations.",
+    "matched_text": "insight"
    },
    {
     "jd_id": "2026-10-05_bauhinia-search-partners_senior-analytics-engineer",
@@ -107476,28 +107849,13 @@
     "matched_text": "KPI"
    },
    {
-    "jd_id": "2026-10-11_amazon_business-intelligence-engineer-cxp",
-    "bullet": "Support A/B experiment feature testing and analysis",
-    "matched_text": "experiment"
-   },
-   {
-    "jd_id": "2026-10-11_amazon_business-intelligence-engineer-cxp",
-    "bullet": "Build and analyze key metrics to uncover trends and root causes of issues",
-    "matched_text": "analyze"
-   },
-   {
-    "jd_id": "2026-10-11_amazon_business-intelligence-engineer-cxp",
-    "bullet": "Own the design, development, and maintenance of ongoing data pipelines, metrics, reports, visualizations, analyses, and dashboards to drive business decisions",
-    "matched_text": "analyse"
-   },
-   {
-    "jd_id": "2026-10-11_amazon_business-intelligence-engineer-cxp",
-    "bullet": "Help define requirements around customer service interactions and establish actionable insights",
+    "jd_id": "2026-10-11_amazon_business-intelligence-engineer-innovation-and-design-engineering",
+    "bullet": "You will utilize your deep expertise in business analysis, metrics, reporting, and analytic tooling/languages like SQL, Excel, and others, to translate the data into meaningful insights.",
     "matched_text": "insight"
    },
    {
-    "jd_id": "2026-10-11_amazon_business-intelligence-engineer-cxp",
-    "bullet": "Apply generative AI tools and techniques (such as LLM-based summarization, natural language querying, and automated insight generation) to improve analytics productivity and stakeholder self-service capabilities",
+    "jd_id": "2026-10-11_amazon_business-intelligence-engineer-innovation-and-design-engineering",
+    "bullet": "You will have ownership of the insights you are building for the business, and will play an integral role in tactical decision-making for machine and process design.",
     "matched_text": "insight"
    },
    {
@@ -109471,24 +109829,14 @@
     "matched_text": "business impact"
    },
    {
-    "jd_id": "2026-11-03_amazon-web-services-aws_business-intelligence-engineer-capacity-delivery-reliability",
-    "bullet": "Lead the design, development, and maintenance of scalable solutions for ongoing metrics, reports, analyses, dashboards, etc. to support analytical and business needs.",
+    "jd_id": "2026-11-03_amazon_business-intelligence-engineer-iii-amazon-now",
+    "bullet": "Conduct deep-dive analyses on customer behavior and journey pain points.",
     "matched_text": "analyse"
    },
    {
-    "jd_id": "2026-11-03_amazon-web-services-aws_business-intelligence-engineer-capacity-delivery-reliability",
-    "bullet": "Work directly with customers to understand the business problems at hand and propose impactful analyses and solutions.",
-    "matched_text": "business problems"
-   },
-   {
-    "jd_id": "2026-11-03_amazon-web-services-aws_business-intelligence-engineer-capacity-delivery-reliability",
-    "bullet": "Develop a deep understanding of our vast data sources and identify which to use to solve specific business problems.",
-    "matched_text": "business problems"
-   },
-   {
-    "jd_id": "2026-11-03_amazon-web-services-aws_business-intelligence-engineer-capacity-delivery-reliability",
-    "bullet": "Write high quality SQL to retrieve and analyze data from relational databases (e.g., AWS Redshift).",
-    "matched_text": "analyze"
+    "jd_id": "2026-11-03_amazon_business-intelligence-engineer-iii-amazon-now",
+    "bullet": "Support A/B experimentation.",
+    "matched_text": "experimentation"
    },
    {
     "jd_id": "2026-11-03_c-and-a_analytics-engineer-supply-chain",
@@ -109654,16 +110002,6 @@
     "jd_id": "2026-11-04_agoda_business-intelligence-developer-rta",
     "bullet": "Design, develop, and enhance dashboards and reports that provide valuable insights and support data-driven decision-making across the organization.",
     "matched_text": "insight"
-   },
-   {
-    "jd_id": "2026-11-04_amazon_senior-business-intelligence-engineer-iii-rapid-and-rural-logistics",
-    "bullet": "Data architecture design \u2014 determine the right data foundations necessary to solve team-wide business problems",
-    "matched_text": "business problems"
-   },
-   {
-    "jd_id": "2026-11-04_amazon_senior-business-intelligence-engineer-iii-rapid-and-rural-logistics",
-    "bullet": "Data Pipeline Engineering \u2014 Build and optimize ETLs, ensuring data freshness and reliability for operational decision-making",
-    "matched_text": "decision-making"
    },
    {
     "jd_id": "2026-11-04_bae-systems_data-analytics-engineer-ii",
@@ -109848,6 +110186,41 @@
    {
     "jd_id": "2026-11-04_via_senior-data-analytics-engineer",
     "bullet": "Build AI into VIA's data products, for example through automated insights, anomaly detection, AI-assisted data quality checks, and natural-language interfaces over operational data",
+    "matched_text": "insight"
+   },
+   {
+    "jd_id": "2026-11-05_amazon_business-intelligence-engineer-aop",
+    "bullet": "Build scalable, efficient, and automated data processes to inform business decision making.",
+    "matched_text": "decision making"
+   },
+   {
+    "jd_id": "2026-11-05_amazon_business-intelligence-engineer-aop",
+    "bullet": "Own the design, development, and maintenance of ongoing BI solutions, metrics, reports, etc. to drive key business decisions.",
+    "matched_text": "business decisions"
+   },
+   {
+    "jd_id": "2026-11-05_amazon_business-intelligence-engineer-aop",
+    "bullet": "Work with teams in the organization to identify opportunities and build analytical solutions that provide them with decision making capabilities and insights.",
+    "matched_text": "decision making"
+   },
+   {
+    "jd_id": "2026-11-05_amazon_business-intelligence-engineer-aop",
+    "bullet": "Manage and execute entire projects from start to finish including project management, data gathering and manipulation, synthesis and modeling, problem solving, and communication of insights and recommendations.",
+    "matched_text": "insight"
+   },
+   {
+    "jd_id": "2026-11-05_amazon_business-intelligence-engineer-aop",
+    "bullet": "Solve ambiguous analyses with less well-defined inputs and outputs; drive to the heart of the problem and identify root causes",
+    "matched_text": "analyse"
+   },
+   {
+    "jd_id": "2026-11-05_amazon_business-intelligence-engineer-aop",
+    "bullet": "Understand the basics of test and control comparison; may provide insights through basic statistical measures such as hypothesis testing",
+    "matched_text": "insight"
+   },
+   {
+    "jd_id": "2026-11-05_amazon_business-intelligence-engineer-aop",
+    "bullet": "Communicate complex analytical insights and business callouts effectively",
     "matched_text": "insight"
    },
    {
@@ -110081,16 +110454,6 @@
     "matched_text": "KPI"
    },
    {
-    "jd_id": "2026-11-06_prime-video_business-intelligence-engineer-ii-apac-anz",
-    "bullet": "Own the design, development, and maintenance of ongoing performance dashboards, metrics, reports, analyses, etc. to drive key business decisions.",
-    "matched_text": "analyse"
-   },
-   {
-    "jd_id": "2026-11-06_prime-video_business-intelligence-engineer-ii-apac-anz",
-    "bullet": "Build scalable, efficient, and automated data processes to inform business decision making.",
-    "matched_text": "decision making"
-   },
-   {
     "jd_id": "2026-11-06_skinseoul_senior-business-intelligence-engineer",
     "bullet": "Analyze key e-commerce metrics such as sales performance, customer behavior, conversion rates, and marketing ROI.",
     "matched_text": "Analyze"
@@ -110174,6 +110537,86 @@
     "jd_id": "2026-11-06_thermo-fisher-scientific_senior-data-analyst-analytics-engineering-ai",
     "bullet": "Research and evaluate emerging capabilities in analytics engineering, semantic technologies, generative AI, machine learning, and modern data platforms that could improve enterprise decision-making.",
     "matched_text": "decision-making"
+   },
+   {
+    "jd_id": "2026-11-07_babel-profiles_analytics-engineer-customer-behavioral-product-analytics",
+    "bullet": "Collaborate cross-functionally with product, engineering, and business teams to shape, deploy, and continuously elevate tracking, digital analytics, and experimentation roadmaps across the digital journey.",
+    "matched_text": "experimentation"
+   },
+   {
+    "jd_id": "2026-11-07_babel-profiles_analytics-engineer-customer-behavioral-product-analytics",
+    "bullet": "Architect scalable tracking frameworks from design to documentation, guaranteeing high data integrity, reliability, and seamless usability across BI reporting, A/B testing, and third-party tools.",
+    "matched_text": "A/B test"
+   },
+   {
+    "jd_id": "2026-11-07_babel-profiles_analytics-engineer-customer-behavioral-product-analytics",
+    "bullet": "Own the experimentation lifecycle end-to-end, overseeing hypothesis formulation, sample size calculations, statistical analysis, and clear go/no-go rollout guidance.",
+    "matched_text": "experimentation"
+   },
+   {
+    "jd_id": "2026-11-07_ecs_data-analytics-engineer",
+    "bullet": "Translate business needs, KPIs, and processes into scalable data solutions.",
+    "matched_text": "KPI"
+   },
+   {
+    "jd_id": "2026-11-07_ecs_data-analytics-engineer",
+    "bullet": "Create Power BI reports and dashboards that deliver actionable business insights.",
+    "matched_text": "insight"
+   },
+   {
+    "jd_id": "2026-11-07_michael-page_data-analyst-analytics-engineer",
+    "bullet": "Recueillir et comprendre les probl\u00e9matiques des m\u00e9tiers et les traduire en donn\u00e9es, indicateurs, analyses ou solutions de pilotage.",
+    "matched_text": "analyse"
+   },
+   {
+    "jd_id": "2026-11-07_michael-page_data-analyst-analytics-engineer",
+    "bullet": "Produire des analyses exploratoires et d\u00e9cisionnelles permettant d'identifier des leviers d'am\u00e9lioration et d'accompagner la prise de d\u00e9cision.",
+    "matched_text": "analyse"
+   },
+   {
+    "jd_id": "2026-11-07_michael-page_data-analyst-analytics-engineer",
+    "bullet": "Garantir la fiabilit\u00e9 et la coh\u00e9rence des donn\u00e9es et des KPI utilis\u00e9s par les m\u00e9tiers.",
+    "matched_text": "KPI"
+   },
+   {
+    "jd_id": "2026-11-07_michael-page_data-analyst-analytics-engineer",
+    "bullet": "Analyser les anomalies et probl\u00e9matiques li\u00e9es aux donn\u00e9es en production, en rechercher les causes et contribuer \u00e0 leur r\u00e9solution.",
+    "matched_text": "Analyse"
+   },
+   {
+    "jd_id": "2026-11-07_prime-video_business-intelligence-engineer-partner-experience-supply-chain-analytics",
+    "bullet": "Analyze data to identify and execute on business opportunities",
+    "matched_text": "Analyze"
+   },
+   {
+    "jd_id": "2026-11-07_prime-video_business-intelligence-engineer-partner-experience-supply-chain-analytics",
+    "bullet": "Build data pipelines and dashboards from multi-dimensional datasets to report product metrics and KPIs",
+    "matched_text": "KPI"
+   },
+   {
+    "jd_id": "2026-11-07_prime-video_business-intelligence-engineer-partner-experience-supply-chain-analytics",
+    "bullet": "Present insights and recommendations to stakeholders verbally and in writing",
+    "matched_text": "insight"
+   },
+   {
+    "jd_id": "2026-11-07_uhlmann-pac-systeme_data-business-intelligence-engineer",
+    "bullet": "Entwicklung moderner Analyse-, Reporting- und Planungsl\u00f6sungen mit SAP Analytics Cloud (SAC)",
+    "matched_text": "Analyse"
+   },
+   {
+    "jd_id": "2026-11-07_uhlmann-pac-systeme_data-business-intelligence-engineer",
+    "bullet": "Harmonisierung von KPIs und Datenprodukten gemeinsam mit BI Key Usern und Fachbereichen",
+    "matched_text": "KPI"
+   },
+   {
+    "jd_id": "2026-11-07_weill-cornell-medicine_business-intelligence-developer-ii",
+    "bullet": "Analyze complex problems. Recommend and implement innovative solutions. Communicate requirements and partner with other developers to analyze complex data and process issues.",
+    "matched_text": "Analyze"
+   },
+   {
+    "jd_id": "2026-11-07_weill-cornell-medicine_business-intelligence-developer-ii",
+    "bullet": "Collaborate and coordinate with developers and Business Analysts to analyze complex problems and recommend innovative solutions.",
+    "matched_text": "analyze"
    }
   ],
   "Mentorship & Leadership": [
@@ -110878,11 +111321,6 @@
     "matched_text": "Mentor"
    },
    {
-    "jd_id": "2026-10-05_aws_business-intelligence-engineer-ii-asp-insights",
-    "bullet": "Mentors and levels up the team on data engineering craft, system design, governance thinking, and practical AI/ML application \u2014 raising the bar for what the team can build and maintain.",
-    "matched_text": "Mentor"
-   },
-   {
     "jd_id": "2026-10-05_datatech-analytics_senior-bi-engineer-berkshire",
     "bullet": "Mentoring colleagues and helping set engineering standards",
     "matched_text": "Mentor"
@@ -111296,6 +111734,21 @@
     "jd_id": "2026-11-06_velir_senior-analytics-engineer",
     "bullet": "Model strong communication and mentorship, helping other AEs and cross-functional teammates develop clarity and confidence in data architecture decisions.",
     "matched_text": "mentor"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Mentor team members and promote engineering practices focused on reusability, automation, quality, and business value",
+    "matched_text": "Mentor"
+   },
+   {
+    "jd_id": "2026-11-07_american-express_senior-manager-analytics-engineering-and-data-strategy",
+    "bullet": "Mentor and upskill analysts and other team members in SQL, data modeling, data-product thinking, reusable transformation patterns, data quality, and modern analytical development practices",
+    "matched_text": "Mentor"
+   },
+   {
+    "jd_id": "2026-11-07_babel-profiles_analytics-engineer-customer-behavioral-product-analytics",
+    "bullet": "Serve as a trusted analytical advisor to cross-functional stakeholders, driving data literacy, mentoring teammates, and fostering a culture of continuous learning.",
+    "matched_text": "mentor"
    }
   ],
   "Vendor & Tooling Evaluation": [
@@ -111563,30 +112016,35 @@
     "jd_id": "2026-11-06_cameron-kennedy_business-intelligence-developer-regulatory-reporting-mandarin-speaking",
     "bullet": "Working with vendors and Head Office on regulatory upgrades and new reporting requirements",
     "matched_text": "vendor"
+   },
+   {
+    "jd_id": "2026-11-07_babel-profiles_analytics-engineer-customer-behavioral-product-analytics",
+    "bullet": "Architect scalable tracking frameworks from design to documentation, guaranteeing high data integrity, reliability, and seamless usability across BI reporting, A/B testing, and third-party tools.",
+    "matched_text": "third-party"
    }
   ]
  },
  "role_counts": {
-  "analytics_engineering_bi": 1308,
+  "analytics_engineering_bi": 1313,
   "team_lead": 36,
-  "other": 27,
+  "other": 28,
   "data_engineering": 94
  },
  "by_role": {
   "analytics_engineering_bi": {
-   "AI & Agentic Workflows": 419,
-   "Architecture & Platform Strategy": 524,
-   "Data Infrastructure & Warehouse Ops": 691,
-   "Data Modeling & Transformation": 991,
-   "Data Quality & Testing": 956,
-   "Governance & Documentation": 826,
-   "Performance & Cost Optimization": 633,
-   "Pipeline Engineering & Orchestration": 758,
-   "Security, Privacy & Risk": 170,
-   "Self-Service Enablement & Data Literacy": 452,
-   "Stakeholder Collaboration & Requirements": 960,
-   "BI & Reporting/Dashboards": 1003,
-   "Business Analysis & Insight Generation": 741,
+   "AI & Agentic Workflows": 420,
+   "Architecture & Platform Strategy": 525,
+   "Data Infrastructure & Warehouse Ops": 692,
+   "Data Modeling & Transformation": 994,
+   "Data Quality & Testing": 959,
+   "Governance & Documentation": 830,
+   "Performance & Cost Optimization": 636,
+   "Pipeline Engineering & Orchestration": 760,
+   "Security, Privacy & Risk": 171,
+   "Self-Service Enablement & Data Literacy": 453,
+   "Stakeholder Collaboration & Requirements": 964,
+   "BI & Reporting/Dashboards": 1008,
+   "Business Analysis & Insight Generation": 745,
    "Data Ownership (end-to-end)": 449,
    "Mentorship & Leadership": 176,
    "Vendor & Tooling Evaluation": 40
@@ -111610,22 +112068,22 @@
    "Vendor & Tooling Evaluation": 4
   },
   "other": {
-   "Architecture & Platform Strategy": 8,
-   "BI & Reporting/Dashboards": 20,
-   "Business Analysis & Insight Generation": 19,
-   "Data Quality & Testing": 18,
-   "Pipeline Engineering & Orchestration": 9,
-   "Stakeholder Collaboration & Requirements": 22,
+   "Architecture & Platform Strategy": 9,
+   "BI & Reporting/Dashboards": 21,
+   "Business Analysis & Insight Generation": 20,
+   "Data Quality & Testing": 19,
+   "Pipeline Engineering & Orchestration": 10,
+   "Stakeholder Collaboration & Requirements": 23,
    "AI & Agentic Workflows": 8,
    "Data Modeling & Transformation": 7,
-   "Data Ownership (end-to-end)": 7,
-   "Governance & Documentation": 12,
-   "Performance & Cost Optimization": 15,
+   "Data Ownership (end-to-end)": 8,
+   "Governance & Documentation": 13,
+   "Performance & Cost Optimization": 16,
    "Security, Privacy & Risk": 4,
-   "Data Infrastructure & Warehouse Ops": 5,
-   "Mentorship & Leadership": 1,
-   "Self-Service Enablement & Data Literacy": 5,
-   "Vendor & Tooling Evaluation": 1
+   "Data Infrastructure & Warehouse Ops": 6,
+   "Mentorship & Leadership": 2,
+   "Self-Service Enablement & Data Literacy": 6,
+   "Vendor & Tooling Evaluation": 2
   },
   "data_engineering": {
    "BI & Reporting/Dashboards": 45,
@@ -111647,49 +112105,49 @@
   }
  },
  "seniority_counts": {
-  "senior": 573,
-  "mid": 683,
+  "senior": 571,
+  "mid": 689,
   "lead": 62,
   "staff": 39,
-  "manager": 23,
-  "junior": 85
+  "manager": 24,
+  "junior": 86
  },
  "by_seniority": {
   "senior": {
-   "AI & Agentic Workflows": 202,
-   "Architecture & Platform Strategy": 265,
-   "Data Infrastructure & Warehouse Ops": 327,
-   "Data Modeling & Transformation": 450,
-   "Data Quality & Testing": 423,
-   "Governance & Documentation": 398,
-   "Performance & Cost Optimization": 283,
-   "Pipeline Engineering & Orchestration": 360,
+   "AI & Agentic Workflows": 201,
+   "Architecture & Platform Strategy": 263,
+   "Data Infrastructure & Warehouse Ops": 325,
+   "Data Modeling & Transformation": 448,
+   "Data Quality & Testing": 422,
+   "Governance & Documentation": 397,
+   "Performance & Cost Optimization": 281,
+   "Pipeline Engineering & Orchestration": 359,
    "Security, Privacy & Risk": 94,
    "Self-Service Enablement & Data Literacy": 210,
-   "Stakeholder Collaboration & Requirements": 431,
-   "BI & Reporting/Dashboards": 422,
-   "Business Analysis & Insight Generation": 322,
-   "Data Ownership (end-to-end)": 228,
-   "Mentorship & Leadership": 122,
+   "Stakeholder Collaboration & Requirements": 429,
+   "BI & Reporting/Dashboards": 420,
+   "Business Analysis & Insight Generation": 320,
+   "Data Ownership (end-to-end)": 227,
+   "Mentorship & Leadership": 121,
    "Vendor & Tooling Evaluation": 20
   },
   "mid": {
-   "Architecture & Platform Strategy": 237,
-   "BI & Reporting/Dashboards": 521,
-   "Business Analysis & Insight Generation": 367,
-   "Data Infrastructure & Warehouse Ops": 350,
-   "Data Modeling & Transformation": 477,
-   "Data Ownership (end-to-end)": 190,
-   "Data Quality & Testing": 484,
-   "Governance & Documentation": 389,
-   "Mentorship & Leadership": 29,
-   "Performance & Cost Optimization": 319,
-   "Pipeline Engineering & Orchestration": 399,
-   "Stakeholder Collaboration & Requirements": 486,
-   "AI & Agentic Workflows": 195,
-   "Security, Privacy & Risk": 82,
-   "Self-Service Enablement & Data Literacy": 209,
-   "Vendor & Tooling Evaluation": 19
+   "Architecture & Platform Strategy": 240,
+   "BI & Reporting/Dashboards": 527,
+   "Business Analysis & Insight Generation": 373,
+   "Data Infrastructure & Warehouse Ops": 353,
+   "Data Modeling & Transformation": 481,
+   "Data Ownership (end-to-end)": 191,
+   "Data Quality & Testing": 487,
+   "Governance & Documentation": 393,
+   "Mentorship & Leadership": 30,
+   "Performance & Cost Optimization": 324,
+   "Pipeline Engineering & Orchestration": 402,
+   "Stakeholder Collaboration & Requirements": 492,
+   "AI & Agentic Workflows": 196,
+   "Security, Privacy & Risk": 83,
+   "Self-Service Enablement & Data Literacy": 210,
+   "Vendor & Tooling Evaluation": 20
   },
   "lead": {
    "AI & Agentic Workflows": 22,
@@ -111728,30 +112186,30 @@
    "Vendor & Tooling Evaluation": 1
   },
   "manager": {
-   "AI & Agentic Workflows": 11,
-   "Architecture & Platform Strategy": 13,
-   "BI & Reporting/Dashboards": 18,
+   "AI & Agentic Workflows": 12,
+   "Architecture & Platform Strategy": 14,
+   "BI & Reporting/Dashboards": 19,
    "Business Analysis & Insight Generation": 18,
-   "Data Infrastructure & Warehouse Ops": 12,
-   "Data Ownership (end-to-end)": 13,
-   "Data Quality & Testing": 19,
-   "Governance & Documentation": 18,
-   "Mentorship & Leadership": 13,
+   "Data Infrastructure & Warehouse Ops": 13,
+   "Data Ownership (end-to-end)": 14,
+   "Data Quality & Testing": 20,
+   "Governance & Documentation": 19,
+   "Mentorship & Leadership": 14,
    "Performance & Cost Optimization": 17,
    "Security, Privacy & Risk": 7,
-   "Stakeholder Collaboration & Requirements": 20,
-   "Data Modeling & Transformation": 19,
-   "Pipeline Engineering & Orchestration": 15,
-   "Self-Service Enablement & Data Literacy": 13,
+   "Stakeholder Collaboration & Requirements": 21,
+   "Data Modeling & Transformation": 20,
+   "Pipeline Engineering & Orchestration": 16,
+   "Self-Service Enablement & Data Literacy": 14,
    "Vendor & Tooling Evaluation": 4
   },
   "junior": {
-   "BI & Reporting/Dashboards": 67,
-   "Business Analysis & Insight Generation": 51,
+   "BI & Reporting/Dashboards": 68,
+   "Business Analysis & Insight Generation": 52,
    "Data Modeling & Transformation": 51,
-   "Data Quality & Testing": 64,
-   "Governance & Documentation": 38,
-   "Performance & Cost Optimization": 45,
+   "Data Quality & Testing": 65,
+   "Governance & Documentation": 39,
+   "Performance & Cost Optimization": 46,
    "Stakeholder Collaboration & Requirements": 54,
    "Architecture & Platform Strategy": 25,
    "Data Infrastructure & Warehouse Ops": 37,
@@ -111771,101 +112229,101 @@
     "theme": "AI & Agentic Workflows",
     "dimension": "ai_role",
     "overlap": true,
-    "n": 1344,
-    "chi2": 639.19,
-    "p": 1.5897857892147174e-139,
-    "V": 0.69,
-    "min_exp": 65.85
+    "n": 1349,
+    "chi2": 639.73,
+    "p": 1.2157083847909345e-139,
+    "V": 0.689,
+    "min_exp": 66.08
    },
    {
     "theme": "Data Quality & Testing",
     "dimension": "testing_framing",
     "overlap": true,
-    "n": 1344,
-    "chi2": 356.45,
-    "p": 3.9690889235253695e-78,
-    "V": 0.515,
-    "min_exp": 33.04
+    "n": 1349,
+    "chi2": 357.08,
+    "p": 2.895610627115407e-78,
+    "V": 0.514,
+    "min_exp": 33.37
    },
    {
     "theme": "Data Ownership (end-to-end)",
     "dimension": "autonomy_level",
     "overlap": true,
-    "n": 1344,
-    "chi2": 185.22,
-    "p": 6.017903623057169e-41,
+    "n": 1349,
+    "chi2": 185.58,
+    "p": 5.02900260586959e-41,
     "V": 0.371,
-    "min_exp": 143.07
+    "min_exp": 142.89
    },
    {
     "theme": "BI & Reporting/Dashboards",
     "dimension": "has_power_bi",
     "overlap": true,
-    "n": 1344,
-    "chi2": 96.67,
-    "p": 8.174309811594135e-23,
+    "n": 1349,
+    "chi2": 97.06,
+    "p": 6.730285666240796e-23,
     "V": 0.268,
-    "min_exp": 134.16
+    "min_exp": 134.37
    },
    {
     "theme": "Security, Privacy & Risk",
     "dimension": "loss_aversion_framing",
     "overlap": true,
-    "n": 1344,
-    "chi2": 88.37,
-    "p": 6.48181420595205e-20,
-    "V": 0.256,
-    "min_exp": 30.57
-   },
-   {
-    "theme": "Security, Privacy & Risk",
-    "dimension": "domain_risk",
-    "overlap": true,
-    "n": 1344,
-    "chi2": 35.55,
-    "p": 1.9093013444783243e-08,
-    "V": 0.163,
-    "min_exp": 5.12
+    "n": 1349,
+    "chi2": 88.02,
+    "p": 7.714431769907438e-20,
+    "V": 0.255,
+    "min_exp": 30.63
    },
    {
     "theme": "Pipeline Engineering & Orchestration",
     "dimension": "has_airflow",
     "overlap": true,
-    "n": 1344,
-    "chi2": 35.19,
-    "p": 2.9873723599845586e-09,
+    "n": 1349,
+    "chi2": 36.44,
+    "p": 1.5730172222781144e-09,
+    "V": 0.164,
+    "min_exp": 131.64
+   },
+   {
+    "theme": "Security, Privacy & Risk",
+    "dimension": "domain_risk",
+    "overlap": true,
+    "n": 1349,
+    "chi2": 35.31,
+    "p": 2.147736362587347e-08,
     "V": 0.162,
-    "min_exp": 131.86
+    "min_exp": 5.13
    },
    {
     "theme": "Data Modeling & Transformation",
     "dimension": "has_dbt",
     "overlap": true,
-    "n": 1344,
-    "chi2": 34.06,
-    "p": 5.341997400984324e-09,
-    "V": 0.159,
-    "min_exp": 133.41
+    "n": 1349,
+    "chi2": 34.91,
+    "p": 3.4506657857928458e-09,
+    "V": 0.161,
+    "min_exp": 134.7
    },
    {
     "theme": "BI & Reporting/Dashboards",
     "dimension": "has_tableau",
     "overlap": true,
-    "n": 1344,
-    "chi2": 14.08,
-    "p": 0.0001749904685697327,
-    "V": 0.102,
-    "min_exp": 85.42
+    "n": 1349,
+    "chi2": 14.45,
+    "p": 0.00014381030018828677,
+    "V": 0.104,
+    "min_exp": 85.81
    },
    {
     "theme": "BI & Reporting/Dashboards",
     "dimension": "has_looker",
     "overlap": true,
-    "n": 1344,
-    "chi2": 2.31,
-    "p": 0.12854601837819005,
-    "V": 0.041,
-    "min_exp": 74.53
+    "n": 1349,
+    "chi2": 2.19,
+    "p": 0.13912324906527523,
+    "V": 0.04,
+    "min_exp": 74.26
    }
   ],
   "clean_findings": [
@@ -111873,1101 +112331,1121 @@
     "theme": "Data Quality & Testing",
     "dimension": "loss_aversion_framing",
     "overlap": false,
-    "n": 1344,
-    "chi2": 199.81,
-    "p": 4.095808768463903e-44,
-    "V": 0.386,
-    "min_exp": 61.48
+    "n": 1349,
+    "chi2": 203.54,
+    "p": 6.330491824016863e-45,
+    "V": 0.388,
+    "min_exp": 61.59
    },
    {
     "theme": "Governance & Documentation",
     "dimension": "loss_aversion_framing",
     "overlap": false,
-    "n": 1344,
-    "chi2": 167.38,
-    "p": 4.499354505614264e-37,
-    "V": 0.353,
-    "min_exp": 83.1
+    "n": 1349,
+    "chi2": 167.6,
+    "p": 4.035538979748021e-37,
+    "V": 0.352,
+    "min_exp": 82.96
    },
    {
     "theme": "Governance & Documentation",
     "dimension": "testing_framing",
     "overlap": false,
-    "n": 1344,
-    "chi2": 150.5,
-    "p": 2.0815885223177398e-33,
-    "V": 0.335,
-    "min_exp": 44.66
+    "n": 1349,
+    "chi2": 152.13,
+    "p": 9.218570300266323e-34,
+    "V": 0.336,
+    "min_exp": 44.95
    },
    {
     "theme": "Mentorship & Leadership",
     "dimension": "autonomy_level",
     "overlap": false,
-    "n": 1344,
-    "chi2": 100.24,
-    "p": 1.7083847715301254e-22,
+    "n": 1349,
+    "chi2": 100.5,
+    "p": 1.504698013622212e-22,
     "V": 0.273,
-    "min_exp": 61.62
+    "min_exp": 61.54
    },
    {
     "theme": "AI & Agentic Workflows",
     "dimension": "autonomy_level",
     "overlap": false,
-    "n": 1344,
-    "chi2": 90.87,
-    "p": 1.8501412278349437e-20,
+    "n": 1349,
+    "chi2": 90.93,
+    "p": 1.795735757691173e-20,
     "V": 0.26,
-    "min_exp": 133.01
+    "min_exp": 133.14
    },
    {
     "theme": "Mentorship & Leadership",
     "dimension": "role_type",
     "overlap": false,
-    "n": 1344,
-    "chi2": 90.2,
-    "p": 2.1543068927857e-21,
+    "n": 1349,
+    "chi2": 90.65,
+    "p": 1.7180390250490334e-21,
     "V": 0.259,
-    "min_exp": 5.41
+    "min_exp": 5.39
    },
    {
     "theme": "Governance & Documentation",
     "dimension": "jd_authorship",
     "overlap": false,
-    "n": 1344,
-    "chi2": 73.54,
-    "p": 1.0732243920672185e-16,
-    "V": 0.234,
-    "min_exp": 39.9
+    "n": 1349,
+    "chi2": 73.16,
+    "p": 1.300509189321482e-16,
+    "V": 0.233,
+    "min_exp": 39.83
    },
    {
     "theme": "Data Ownership (end-to-end)",
     "dimension": "seniority",
     "overlap": false,
-    "n": 1344,
-    "chi2": 67.17,
-    "p": 3.9794464981739173e-13,
-    "V": 0.224,
-    "min_exp": 7.33
-   },
-   {
-    "theme": "Data Ownership (end-to-end)",
-    "dimension": "jd_authorship",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 60.02,
-    "p": 9.256522420653103e-14,
-    "V": 0.211,
-    "min_exp": 38.04
+    "n": 1349,
+    "chi2": 69.83,
+    "p": 1.1132427692295387e-13,
+    "V": 0.228,
+    "min_exp": 7.65
    },
    {
     "theme": "Business Analysis & Insight Generation",
     "dimension": "stakeholder_orientation",
     "overlap": false,
-    "n": 1344,
-    "chi2": 58.94,
-    "p": 4.839809026038348e-12,
-    "V": 0.209,
-    "min_exp": 42.87
+    "n": 1349,
+    "chi2": 59.87,
+    "p": 3.0877356854086223e-12,
+    "V": 0.211,
+    "min_exp": 43.65
+   },
+   {
+    "theme": "Data Ownership (end-to-end)",
+    "dimension": "jd_authorship",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 59.48,
+    "p": 1.2114951049301766e-13,
+    "V": 0.21,
+    "min_exp": 37.9
    },
    {
     "theme": "Data Modeling & Transformation",
     "dimension": "jd_authorship",
     "overlap": false,
-    "n": 1344,
-    "chi2": 57.02,
-    "p": 4.157558229965549e-13,
-    "V": 0.206,
-    "min_exp": 26.44
-   },
-   {
-    "theme": "Data Modeling & Transformation",
-    "dimension": "testing_framing",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 55.05,
-    "p": 1.1129117799648244e-12,
-    "V": 0.202,
-    "min_exp": 29.59
+    "n": 1349,
+    "chi2": 56.4,
+    "p": 5.65731253192638e-13,
+    "V": 0.204,
+    "min_exp": 26.5
    },
    {
     "theme": "Data Infrastructure & Warehouse Ops",
     "dimension": "jd_authorship",
     "overlap": false,
-    "n": 1344,
-    "chi2": 54.16,
-    "p": 1.7375559734640256e-12,
-    "V": 0.201,
-    "min_exp": 51.5
+    "n": 1349,
+    "chi2": 55.46,
+    "p": 9.052455258410029e-13,
+    "V": 0.203,
+    "min_exp": 51.63
+   },
+   {
+    "theme": "Data Modeling & Transformation",
+    "dimension": "testing_framing",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 52.67,
+    "p": 3.661533247151384e-12,
+    "V": 0.198,
+    "min_exp": 29.91
    },
    {
     "theme": "Data Quality & Testing",
     "dimension": "jd_authorship",
     "overlap": false,
-    "n": 1344,
-    "chi2": 54.17,
-    "p": 1.7247477767898601e-12,
-    "V": 0.201,
-    "min_exp": 29.52
+    "n": 1349,
+    "chi2": 52.18,
+    "p": 4.678073674753267e-12,
+    "V": 0.197,
+    "min_exp": 29.57
    },
    {
     "theme": "Self-Service Enablement & Data Literacy",
     "dimension": "ai_role",
     "overlap": false,
-    "n": 1344,
-    "chi2": 52.68,
-    "p": 3.643306066567203e-12,
-    "V": 0.198,
-    "min_exp": 70.08
+    "n": 1349,
+    "chi2": 51.99,
+    "p": 5.13038623346786e-12,
+    "V": 0.196,
+    "min_exp": 70.32
    },
    {
     "theme": "Governance & Documentation",
     "dimension": "velocity_vs_rigour",
     "overlap": false,
-    "n": 1344,
-    "chi2": 51.73,
-    "p": 5.836101421685361e-12,
-    "V": 0.196,
-    "min_exp": 11.35
-   },
-   {
-    "theme": "Architecture & Platform Strategy",
-    "dimension": "autonomy_level",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 47.94,
-    "p": 3.8983299654271115e-11,
-    "V": 0.189,
-    "min_exp": 166.87
+    "n": 1349,
+    "chi2": 51.37,
+    "p": 6.983758848251751e-12,
+    "V": 0.195,
+    "min_exp": 10.96
    },
    {
     "theme": "Architecture & Platform Strategy",
     "dimension": "seniority",
     "overlap": false,
-    "n": 1344,
-    "chi2": 46.35,
-    "p": 7.706972708745409e-09,
-    "V": 0.186,
-    "min_exp": 8.55
+    "n": 1349,
+    "chi2": 47.15,
+    "p": 5.292807876178934e-09,
+    "V": 0.187,
+    "min_exp": 8.94
    },
    {
-    "theme": "Data Modeling & Transformation",
-    "dimension": "loss_aversion_framing",
+    "theme": "Architecture & Platform Strategy",
+    "dimension": "autonomy_level",
     "overlap": false,
-    "n": 1344,
-    "chi2": 44.69,
-    "p": 1.978940041226999e-10,
-    "V": 0.182,
-    "min_exp": 55.06
+    "n": 1349,
+    "chi2": 47.22,
+    "p": 5.574056333051502e-11,
+    "V": 0.187,
+    "min_exp": 166.96
    },
    {
     "theme": "BI & Reporting/Dashboards",
     "dimension": "stakeholder_orientation",
     "overlap": false,
-    "n": 1344,
-    "chi2": 43.28,
-    "p": 9.055459531223856e-09,
-    "V": 0.179,
-    "min_exp": 23.42
-   },
-   {
-    "theme": "Data Ownership (end-to-end)",
-    "dimension": "ai_role",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 43.07,
-    "p": 4.4478753736948094e-10,
-    "V": 0.179,
-    "min_exp": 70.84
-   },
-   {
-    "theme": "Governance & Documentation",
-    "dimension": "seniority",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 41.99,
-    "p": 5.931290113939292e-08,
-    "V": 0.177,
-    "min_exp": 7.69
-   },
-   {
-    "theme": "Governance & Documentation",
-    "dimension": "autonomy_level",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 41.77,
-    "p": 8.525644972596123e-10,
-    "V": 0.176,
-    "min_exp": 150.09
+    "n": 1349,
+    "chi2": 42.58,
+    "p": 1.2617162811824734e-08,
+    "V": 0.178,
+    "min_exp": 23.81
    },
    {
     "theme": "Data Infrastructure & Warehouse Ops",
     "dimension": "has_dbt",
     "overlap": false,
-    "n": 1344,
-    "chi2": 41.03,
-    "p": 1.50188085114135e-10,
+    "n": 1349,
+    "chi2": 42.88,
+    "p": 5.817190737929517e-11,
+    "V": 0.178,
+    "min_exp": 262.42
+   },
+   {
+    "theme": "Data Modeling & Transformation",
+    "dimension": "loss_aversion_framing",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 42.47,
+    "p": 5.995820661421948e-10,
+    "V": 0.177,
+    "min_exp": 55.19
+   },
+   {
+    "theme": "Data Ownership (end-to-end)",
+    "dimension": "ai_role",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 41.6,
+    "p": 9.280376178677032e-10,
+    "V": 0.176,
+    "min_exp": 70.92
+   },
+   {
+    "theme": "Governance & Documentation",
+    "dimension": "seniority",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 41.79,
+    "p": 6.507870706409783e-08,
+    "V": 0.176,
+    "min_exp": 8.04
+   },
+   {
+    "theme": "Governance & Documentation",
+    "dimension": "ai_role",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 41.45,
+    "p": 1.0006501368203968e-09,
     "V": 0.175,
-    "min_exp": 259.86
+    "min_exp": 74.55
+   },
+   {
+    "theme": "Data Ownership (end-to-end)",
+    "dimension": "loss_aversion_framing",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 40.86,
+    "p": 1.3384730236508241e-09,
+    "V": 0.174,
+    "min_exp": 78.92
+   },
+   {
+    "theme": "Governance & Documentation",
+    "dimension": "autonomy_level",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 40.52,
+    "p": 1.5862314689150326e-09,
+    "V": 0.173,
+    "min_exp": 150.2
+   },
+   {
+    "theme": "AI & Agentic Workflows",
+    "dimension": "greenfield_vs_fix",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 39.09,
+    "p": 3.2407332628132494e-09,
+    "V": 0.17,
+    "min_exp": 63.17
    },
    {
     "theme": "Mentorship & Leadership",
     "dimension": "data_team_maturity",
     "overlap": false,
-    "n": 1344,
-    "chi2": 40.76,
-    "p": 1.4093240326947466e-09,
-    "V": 0.174,
-    "min_exp": 25.1
-   },
-   {
-    "theme": "Governance & Documentation",
-    "dimension": "ai_role",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 40.1,
-    "p": 1.963807998447614e-09,
-    "V": 0.173,
-    "min_exp": 74.31
-   },
-   {
-    "theme": "Data Ownership (end-to-end)",
-    "dimension": "loss_aversion_framing",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 39.68,
-    "p": 2.41614084461488e-09,
-    "V": 0.172,
-    "min_exp": 79.21
-   },
-   {
-    "theme": "AI & Agentic Workflows",
-    "dimension": "greenfield_vs_fix",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 38.14,
-    "p": 5.2168494068985064e-09,
-    "V": 0.168,
-    "min_exp": 62.93
+    "n": 1349,
+    "chi2": 39.07,
+    "p": 3.2736755079409215e-09,
+    "V": 0.17,
+    "min_exp": 25.01
    },
    {
     "theme": "Data Ownership (end-to-end)",
     "dimension": "testing_framing",
     "overlap": false,
-    "n": 1344,
-    "chi2": 36.44,
-    "p": 1.2242441656589072e-08,
+    "n": 1349,
+    "chi2": 36.73,
+    "p": 1.0550954501231775e-08,
     "V": 0.165,
-    "min_exp": 42.57
+    "min_exp": 42.76
    },
    {
     "theme": "Self-Service Enablement & Data Literacy",
     "dimension": "autonomy_level",
     "overlap": false,
-    "n": 1344,
-    "chi2": 36.54,
-    "p": 1.1652181302580587e-08,
+    "n": 1349,
+    "chi2": 36.7,
+    "p": 1.0752417414475689e-08,
     "V": 0.165,
-    "min_exp": 141.55
+    "min_exp": 141.67
+   },
+   {
+    "theme": "Data Modeling & Transformation",
+    "dimension": "ai_role",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 33.43,
+    "p": 5.505183871306772e-08,
+    "V": 0.157,
+    "min_exp": 49.6
    },
    {
     "theme": "Pipeline Engineering & Orchestration",
     "dimension": "has_python",
     "overlap": false,
-    "n": 1344,
-    "chi2": 34.05,
-    "p": 5.367210483528491e-09,
-    "V": 0.159,
-    "min_exp": 210.46
+    "n": 1349,
+    "chi2": 33.09,
+    "p": 8.794302054181198e-09,
+    "V": 0.157,
+    "min_exp": 212.06
    },
    {
     "theme": "Data Ownership (end-to-end)",
     "dimension": "stakeholder_orientation",
     "overlap": false,
-    "n": 1344,
-    "chi2": 32.6,
-    "p": 1.4451990304327153e-06,
-    "V": 0.156,
-    "min_exp": 34.55
-   },
-   {
-    "theme": "Data Modeling & Transformation",
-    "dimension": "ai_role",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 30.86,
-    "p": 1.9922858290202236e-07,
-    "V": 0.152,
-    "min_exp": 49.24
+    "n": 1349,
+    "chi2": 32.35,
+    "p": 1.6243594641851735e-06,
+    "V": 0.155,
+    "min_exp": 35.11
    },
    {
     "theme": "Data Quality & Testing",
     "dimension": "has_dbt",
     "overlap": false,
-    "n": 1344,
-    "chi2": 30.92,
-    "p": 2.6907794086667934e-08,
-    "V": 0.152,
-    "min_exp": 148.96
-   },
-   {
-    "theme": "Performance & Cost Optimization",
-    "dimension": "greenfield_vs_fix",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 30.29,
-    "p": 2.643478925099e-07,
-    "V": 0.15,
-    "min_exp": 94.26
+    "n": 1349,
+    "chi2": 31.64,
+    "p": 1.8534324824655756e-08,
+    "V": 0.153,
+    "min_exp": 150.31
    },
    {
     "theme": "Data Infrastructure & Warehouse Ops",
     "dimension": "testing_framing",
     "overlap": false,
-    "n": 1344,
-    "chi2": 29.95,
-    "p": 3.134662570305884e-07,
-    "V": 0.149,
-    "min_exp": 57.64
+    "n": 1349,
+    "chi2": 31.21,
+    "p": 1.670413548747049e-07,
+    "V": 0.152,
+    "min_exp": 58.26
    },
    {
-    "theme": "Governance & Documentation",
-    "dimension": "has_dbt",
+    "theme": "Performance & Cost Optimization",
+    "dimension": "greenfield_vs_fix",
     "overlap": false,
-    "n": 1344,
-    "chi2": 28.26,
-    "p": 1.0612660272477729e-07,
-    "V": 0.145,
-    "min_exp": 201.34
-   },
-   {
-    "theme": "Data Modeling & Transformation",
-    "dimension": "seniority",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 27.33,
-    "p": 4.9214834942108494e-05,
-    "V": 0.143,
-    "min_exp": 5.09
-   },
-   {
-    "theme": "Data Quality & Testing",
-    "dimension": "ai_role",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 26.99,
-    "p": 1.3802486718588033e-06,
-    "V": 0.142,
-    "min_exp": 54.98
-   },
-   {
-    "theme": "AI & Agentic Workflows",
-    "dimension": "loss_aversion_framing",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 26.67,
-    "p": 1.6183965495100635e-06,
-    "V": 0.141,
-    "min_exp": 73.64
+    "n": 1349,
+    "chi2": 29.44,
+    "p": 4.0555839810318423e-07,
+    "V": 0.148,
+    "min_exp": 94.83
    },
    {
     "theme": "Data Ownership (end-to-end)",
     "dimension": "has_dbt",
     "overlap": false,
-    "n": 1344,
-    "chi2": 26.74,
-    "p": 2.3299115234458906e-07,
-    "V": 0.141,
-    "min_exp": 191.93
+    "n": 1349,
+    "chi2": 28.71,
+    "p": 8.40908689419801e-08,
+    "V": 0.146,
+    "min_exp": 192.61
+   },
+   {
+    "theme": "Data Modeling & Transformation",
+    "dimension": "seniority",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 28.28,
+    "p": 3.209644307910158e-05,
+    "V": 0.145,
+    "min_exp": 5.35
    },
    {
     "theme": "Governance & Documentation",
-    "dimension": "domain_risk",
+    "dimension": "has_dbt",
     "overlap": false,
-    "n": 1344,
-    "chi2": 26.66,
-    "p": 1.6280876461727865e-06,
-    "V": 0.141,
-    "min_exp": 13.91
+    "n": 1349,
+    "chi2": 27.99,
+    "p": 1.217102105153974e-07,
+    "V": 0.144,
+    "min_exp": 202.46
    },
    {
     "theme": "AI & Agentic Workflows",
     "dimension": "seniority",
     "overlap": false,
-    "n": 1344,
-    "chi2": 25.61,
-    "p": 0.00010626873241590644,
-    "V": 0.138,
-    "min_exp": 6.81
+    "n": 1349,
+    "chi2": 26.92,
+    "p": 5.901750863288177e-05,
+    "V": 0.141,
+    "min_exp": 7.13
    },
    {
-    "theme": "BI & Reporting/Dashboards",
-    "dimension": "has_dbt",
+    "theme": "AI & Agentic Workflows",
+    "dimension": "loss_aversion_framing",
     "overlap": false,
-    "n": 1344,
-    "chi2": 25.43,
-    "p": 4.582900553129981e-07,
-    "V": 0.138,
-    "min_exp": 130.13
+    "n": 1349,
+    "chi2": 26.82,
+    "p": 1.4969972102517774e-06,
+    "V": 0.141,
+    "min_exp": 73.54
    },
    {
     "theme": "Business Analysis & Insight Generation",
     "dimension": "has_tableau",
     "overlap": false,
-    "n": 1344,
-    "chi2": 25.71,
-    "p": 3.964198399731876e-07,
-    "V": 0.138,
-    "min_exp": 156.33
+    "n": 1349,
+    "chi2": 26.8,
+    "p": 2.2535703332470374e-07,
+    "V": 0.141,
+    "min_exp": 157.31
+   },
+   {
+    "theme": "Governance & Documentation",
+    "dimension": "domain_risk",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 26.45,
+    "p": 1.802943445338183e-06,
+    "V": 0.14,
+    "min_exp": 13.89
+   },
+   {
+    "theme": "BI & Reporting/Dashboards",
+    "dimension": "has_dbt",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 25.98,
+    "p": 3.442713741620045e-07,
+    "V": 0.139,
+    "min_exp": 130.59
+   },
+   {
+    "theme": "Data Quality & Testing",
+    "dimension": "ai_role",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 25.47,
+    "p": 2.9438986987782734e-06,
+    "V": 0.137,
+    "min_exp": 55.35
    },
    {
     "theme": "Self-Service Enablement & Data Literacy",
     "dimension": "jd_authorship",
     "overlap": false,
-    "n": 1344,
+    "n": 1349,
     "chi2": 25.19,
-    "p": 3.383188457064353e-06,
+    "p": 3.382899928448622e-06,
     "V": 0.137,
-    "min_exp": 37.63
-   },
-   {
-    "theme": "Performance & Cost Optimization",
-    "dimension": "loss_aversion_framing",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 25.01,
-    "p": 3.7056093991883704e-06,
-    "V": 0.136,
-    "min_exp": 110.29
+    "min_exp": 37.57
    },
    {
     "theme": "Data Modeling & Transformation",
     "dimension": "has_looker",
     "overlap": false,
-    "n": 1344,
-    "chi2": 24.44,
-    "p": 7.674533140287728e-07,
+    "n": 1349,
+    "chi2": 24.64,
+    "p": 6.89809362268733e-07,
     "V": 0.135,
-    "min_exp": 76.41
+    "min_exp": 76.59
+   },
+   {
+    "theme": "Performance & Cost Optimization",
+    "dimension": "loss_aversion_framing",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 24.53,
+    "p": 4.70387046686988e-06,
+    "V": 0.135,
+    "min_exp": 110.39
    },
    {
     "theme": "Performance & Cost Optimization",
     "dimension": "data_team_maturity",
     "overlap": false,
-    "n": 1344,
-    "chi2": 23.25,
-    "p": 8.935272924919921e-06,
+    "n": 1349,
+    "chi2": 23.35,
+    "p": 8.513533905035488e-06,
     "V": 0.132,
-    "min_exp": 81.14
+    "min_exp": 81.21
    },
    {
     "theme": "Data Ownership (end-to-end)",
     "dimension": "has_power_bi",
     "overlap": false,
-    "n": 1344,
-    "chi2": 22.97,
-    "p": 1.645503403075751e-06,
-    "V": 0.131,
-    "min_exp": 197.86
-   },
-   {
-    "theme": "Governance & Documentation",
-    "dimension": "data_team_maturity",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 21.94,
-    "p": 1.7172349006259688e-05,
-    "V": 0.128,
-    "min_exp": 61.13
-   },
-   {
-    "theme": "Data Modeling & Transformation",
-    "dimension": "autonomy_level",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 20.89,
-    "p": 2.911933617618189e-05,
+    "n": 1349,
+    "chi2": 21.08,
+    "p": 4.404992901676191e-06,
     "V": 0.125,
-    "min_exp": 99.45
+    "min_exp": 198.17
+   },
+   {
+    "theme": "Data Quality & Testing",
+    "dimension": "velocity_vs_rigour",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 21.08,
+    "p": 2.6403120415635563e-05,
+    "V": 0.125,
+    "min_exp": 8.14
+   },
+   {
+    "theme": "Self-Service Enablement & Data Literacy",
+    "dimension": "seniority",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 21.02,
+    "p": 0.000804338398696247,
+    "V": 0.125,
+    "min_exp": 7.58
    },
    {
     "theme": "Self-Service Enablement & Data Literacy",
     "dimension": "has_looker",
     "overlap": false,
-    "n": 1344,
-    "chi2": 20.89,
-    "p": 4.854469454704713e-06,
+    "n": 1349,
+    "chi2": 21.1,
+    "p": 4.368379403827597e-06,
     "V": 0.125,
-    "min_exp": 108.75
+    "min_exp": 108.58
    },
    {
-    "theme": "Pipeline Engineering & Orchestration",
-    "dimension": "testing_framing",
+    "theme": "Governance & Documentation",
+    "dimension": "data_team_maturity",
     "overlap": false,
-    "n": 1344,
-    "chi2": 20.41,
-    "p": 3.697478365779268e-05,
-    "V": 0.123,
-    "min_exp": 51.56
-   },
-   {
-    "theme": "Data Quality & Testing",
-    "dimension": "velocity_vs_rigour",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 19.84,
-    "p": 4.919158498898186e-05,
-    "V": 0.121,
-    "min_exp": 8.4
+    "n": 1349,
+    "chi2": 20.63,
+    "p": 3.3058299051726885e-05,
+    "V": 0.124,
+    "min_exp": 61.03
    },
    {
     "theme": "Data Infrastructure & Warehouse Ops",
     "dimension": "stakeholder_orientation",
     "overlap": false,
-    "n": 1344,
-    "chi2": 19.42,
-    "p": 0.0006487220272354703,
-    "V": 0.12,
-    "min_exp": 46.77
+    "n": 1349,
+    "chi2": 20.58,
+    "p": 0.00038437858828841353,
+    "V": 0.123,
+    "min_exp": 47.84
    },
    {
-    "theme": "AI & Agentic Workflows",
-    "dimension": "jd_authorship",
+    "theme": "Data Modeling & Transformation",
+    "dimension": "autonomy_level",
     "overlap": false,
-    "n": 1344,
-    "chi2": 19.08,
-    "p": 7.194618943032908e-05,
-    "V": 0.119,
-    "min_exp": 35.36
-   },
-   {
-    "theme": "AI & Agentic Workflows",
-    "dimension": "has_python",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 18.92,
-    "p": 1.363122681839578e-05,
-    "V": 0.119,
-    "min_exp": 161.55
+    "n": 1349,
+    "chi2": 20.53,
+    "p": 3.4813820126329364e-05,
+    "V": 0.123,
+    "min_exp": 99.93
    },
    {
     "theme": "Data Quality & Testing",
     "dimension": "has_airflow",
     "overlap": false,
-    "n": 1344,
-    "chi2": 19.02,
-    "p": 1.29153601588694e-05,
-    "V": 0.119,
-    "min_exp": 84.5
-   },
-   {
-    "theme": "Self-Service Enablement & Data Literacy",
-    "dimension": "seniority",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 18.94,
-    "p": 0.0019705201577847374,
-    "V": 0.119,
-    "min_exp": 7.25
-   },
-   {
-    "theme": "Data Infrastructure & Warehouse Ops",
-    "dimension": "loss_aversion_framing",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 18.33,
-    "p": 0.00010472078840269614,
-    "V": 0.117,
-    "min_exp": 107.25
-   },
-   {
-    "theme": "Data Modeling & Transformation",
-    "dimension": "has_airflow",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 18.04,
-    "p": 2.1631398974428134e-05,
-    "V": 0.116,
-    "min_exp": 75.68
-   },
-   {
-    "theme": "Stakeholder Collaboration & Requirements",
-    "dimension": "loss_aversion_framing",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 17.96,
-    "p": 0.0001257325302600256,
-    "V": 0.116,
-    "min_exp": 59.62
-   },
-   {
-    "theme": "AI & Agentic Workflows",
-    "dimension": "testing_framing",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 17.85,
-    "p": 0.00013305494821414554,
-    "V": 0.115,
-    "min_exp": 39.58
+    "n": 1349,
+    "chi2": 20.15,
+    "p": 7.1481532223693245e-06,
+    "V": 0.122,
+    "min_exp": 84.38
    },
    {
     "theme": "Governance & Documentation",
     "dimension": "stakeholder_orientation",
     "overlap": false,
-    "n": 1344,
-    "chi2": 17.92,
-    "p": 0.0012787557355454,
+    "n": 1349,
+    "chi2": 19.57,
+    "p": 0.0006059146098777227,
+    "V": 0.12,
+    "min_exp": 36.91
+   },
+   {
+    "theme": "Pipeline Engineering & Orchestration",
+    "dimension": "testing_framing",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 19.39,
+    "p": 6.171394840984763e-05,
+    "V": 0.12,
+    "min_exp": 52.06
+   },
+   {
+    "theme": "Data Infrastructure & Warehouse Ops",
+    "dimension": "loss_aversion_framing",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 19.26,
+    "p": 6.577076840413786e-05,
+    "V": 0.119,
+    "min_exp": 107.53
+   },
+   {
+    "theme": "Data Modeling & Transformation",
+    "dimension": "has_airflow",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 19.25,
+    "p": 1.1452193759451187e-05,
+    "V": 0.119,
+    "min_exp": 75.62
+   },
+   {
+    "theme": "AI & Agentic Workflows",
+    "dimension": "jd_authorship",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 18.36,
+    "p": 0.00010317744061565608,
+    "V": 0.117,
+    "min_exp": 35.31
+   },
+   {
+    "theme": "AI & Agentic Workflows",
+    "dimension": "has_python",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 18.58,
+    "p": 1.6312643293120865e-05,
+    "V": 0.117,
+    "min_exp": 162.3
+   },
+   {
+    "theme": "AI & Agentic Workflows",
+    "dimension": "testing_framing",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 17.96,
+    "p": 0.00012573873813724972,
     "V": 0.115,
-    "min_exp": 36.24
+    "min_exp": 39.85
    },
    {
     "theme": "Stakeholder Collaboration & Requirements",
     "dimension": "domain_risk",
     "overlap": false,
-    "n": 1344,
-    "chi2": 17.7,
-    "p": 0.00014357863564964216,
-    "V": 0.115,
-    "min_exp": 9.98
+    "n": 1349,
+    "chi2": 17.59,
+    "p": 0.00015125926716066048,
+    "V": 0.114,
+    "min_exp": 9.97
    },
    {
     "theme": "Data Quality & Testing",
     "dimension": "domain_risk",
     "overlap": false,
-    "n": 1344,
-    "chi2": 17.27,
-    "p": 0.00017796636023012364,
+    "n": 1349,
+    "chi2": 17.35,
+    "p": 0.0001708168300713851,
     "V": 0.113,
-    "min_exp": 10.29
-   },
-   {
-    "theme": "Mentorship & Leadership",
-    "dimension": "ai_role",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 16.35,
-    "p": 0.00028171574031193354,
-    "V": 0.11,
-    "min_exp": 30.51
+    "min_exp": 10.31
    },
    {
     "theme": "Data Infrastructure & Warehouse Ops",
     "dimension": "has_airflow",
     "overlap": false,
-    "n": 1344,
-    "chi2": 16.0,
-    "p": 6.329115917122687e-05,
-    "V": 0.109,
-    "min_exp": 147.41
+    "n": 1349,
+    "chi2": 16.97,
+    "p": 3.803579074455166e-05,
+    "V": 0.112,
+    "min_exp": 147.32
    },
    {
-    "theme": "Self-Service Enablement & Data Literacy",
-    "dimension": "testing_framing",
+    "theme": "Stakeholder Collaboration & Requirements",
+    "dimension": "loss_aversion_framing",
     "overlap": false,
-    "n": 1344,
-    "chi2": 15.85,
-    "p": 0.0003609112539825194,
-    "V": 0.109,
-    "min_exp": 42.12
+    "n": 1349,
+    "chi2": 16.81,
+    "p": 0.00022343815032904106,
+    "V": 0.112,
+    "min_exp": 59.57
    },
    {
-    "theme": "AI & Agentic Workflows",
-    "dimension": "has_power_bi",
+    "theme": "Mentorship & Leadership",
+    "dimension": "ai_role",
     "overlap": false,
-    "n": 1344,
-    "chi2": 15.56,
-    "p": 7.980758045162756e-05,
-    "V": 0.108,
-    "min_exp": 183.94
+    "n": 1349,
+    "chi2": 16.4,
+    "p": 0.00027526047704274996,
+    "V": 0.11,
+    "min_exp": 30.55
    },
    {
     "theme": "Pipeline Engineering & Orchestration",
     "dimension": "seniority",
     "overlap": false,
-    "n": 1344,
-    "chi2": 15.36,
-    "p": 0.008932249082185212,
-    "V": 0.107,
-    "min_exp": 8.88
+    "n": 1349,
+    "chi2": 16.31,
+    "p": 0.006011528601414197,
+    "V": 0.11,
+    "min_exp": 9.31
+   },
+   {
+    "theme": "Self-Service Enablement & Data Literacy",
+    "dimension": "testing_framing",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 15.75,
+    "p": 0.0003802139942564342,
+    "V": 0.108,
+    "min_exp": 42.4
    },
    {
     "theme": "Data Modeling & Transformation",
     "dimension": "domain_risk",
     "overlap": false,
-    "n": 1344,
-    "chi2": 15.16,
-    "p": 0.0005106592035523755,
+    "n": 1349,
+    "chi2": 15.26,
+    "p": 0.000485267591301202,
     "V": 0.106,
-    "min_exp": 9.22
-   },
-   {
-    "theme": "Pipeline Engineering & Orchestration",
-    "dimension": "loss_aversion_framing",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 14.41,
-    "p": 0.0007422391670770633,
-    "V": 0.104,
-    "min_exp": 95.93
-   },
-   {
-    "theme": "Mentorship & Leadership",
-    "dimension": "jd_authorship",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 13.99,
-    "p": 0.0009151323502923997,
-    "V": 0.102,
-    "min_exp": 16.38
+    "min_exp": 9.24
    },
    {
     "theme": "Architecture & Platform Strategy",
     "dimension": "ai_role",
     "overlap": false,
-    "n": 1344,
-    "chi2": 13.68,
-    "p": 0.001067862283561443,
-    "V": 0.101,
-    "min_exp": 82.62
+    "n": 1349,
+    "chi2": 14.46,
+    "p": 0.0007243647885436144,
+    "V": 0.104,
+    "min_exp": 82.87
+   },
+   {
+    "theme": "AI & Agentic Workflows",
+    "dimension": "has_power_bi",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 14.34,
+    "p": 0.0001528478366240915,
+    "V": 0.103,
+    "min_exp": 184.65
    },
    {
     "theme": "Data Infrastructure & Warehouse Ops",
     "dimension": "ai_role",
     "overlap": false,
-    "n": 1344,
-    "chi2": 13.54,
-    "p": 0.0011473147081000558,
-    "V": 0.1,
-    "min_exp": 95.91
+    "n": 1349,
+    "chi2": 14.31,
+    "p": 0.0007818365866444553,
+    "V": 0.103,
+    "min_exp": 96.63
+   },
+   {
+    "theme": "Pipeline Engineering & Orchestration",
+    "dimension": "loss_aversion_framing",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 14.3,
+    "p": 0.0007833856568208908,
+    "V": 0.103,
+    "min_exp": 96.08
+   },
+   {
+    "theme": "Self-Service Enablement & Data Literacy",
+    "dimension": "loss_aversion_framing",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 13.69,
+    "p": 0.0010639871819404876,
+    "V": 0.101,
+    "min_exp": 78.25
    },
    {
     "theme": "Security, Privacy & Risk",
     "dimension": "testing_framing",
     "overlap": false,
-    "n": 1344,
-    "chi2": 13.2,
-    "p": 0.0013618822715518724,
-    "V": 0.099,
-    "min_exp": 16.43
+    "n": 1349,
+    "chi2": 13.36,
+    "p": 0.0012565419426539776,
+    "V": 0.1,
+    "min_exp": 16.59
    },
    {
     "theme": "BI & Reporting/Dashboards",
     "dimension": "autonomy_level",
     "overlap": false,
-    "n": 1344,
-    "chi2": 13.04,
-    "p": 0.0014753098380069919,
-    "V": 0.098,
-    "min_exp": 97.01
+    "n": 1349,
+    "chi2": 13.16,
+    "p": 0.001388576255732529,
+    "V": 0.099,
+    "min_exp": 96.89
    },
    {
-    "theme": "Self-Service Enablement & Data Literacy",
-    "dimension": "loss_aversion_framing",
+    "theme": "Mentorship & Leadership",
+    "dimension": "jd_authorship",
     "overlap": false,
-    "n": 1344,
-    "chi2": 12.82,
-    "p": 0.0016466337341206822,
-    "V": 0.098,
-    "min_exp": 78.37
-   },
-   {
-    "theme": "Data Modeling & Transformation",
-    "dimension": "velocity_vs_rigour",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 12.68,
-    "p": 0.0017632994477987927,
-    "V": 0.097,
-    "min_exp": 7.52
-   },
-   {
-    "theme": "Self-Service Enablement & Data Literacy",
-    "dimension": "data_team_maturity",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 12.75,
-    "p": 0.0017071585925325437,
-    "V": 0.097,
-    "min_exp": 57.65
-   },
-   {
-    "theme": "Architecture & Platform Strategy",
-    "dimension": "data_team_maturity",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 12.05,
-    "p": 0.0024152512105660912,
-    "V": 0.095,
-    "min_exp": 67.97
-   },
-   {
-    "theme": "Architecture & Platform Strategy",
-    "dimension": "loss_aversion_framing",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 12.19,
-    "p": 0.0022518132713376057,
-    "V": 0.095,
-    "min_exp": 92.39
-   },
-   {
-    "theme": "Performance & Cost Optimization",
-    "dimension": "testing_framing",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 12.04,
-    "p": 0.0024304313244872832,
-    "V": 0.095,
-    "min_exp": 59.28
-   },
-   {
-    "theme": "Architecture & Platform Strategy",
-    "dimension": "domain_risk",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 11.99,
-    "p": 0.002486016497647321,
-    "V": 0.094,
-    "min_exp": 15.47
+    "n": 1349,
+    "chi2": 13.33,
+    "p": 0.0012736735168337183,
+    "V": 0.099,
+    "min_exp": 16.32
    },
    {
     "theme": "Mentorship & Leadership",
     "dimension": "has_airflow",
     "overlap": false,
-    "n": 1344,
-    "chi2": 11.32,
-    "p": 0.0007682860344051317,
+    "n": 1349,
+    "chi2": 13.04,
+    "p": 0.00030524863814251457,
+    "V": 0.098,
+    "min_exp": 46.57
+   },
+   {
+    "theme": "Architecture & Platform Strategy",
+    "dimension": "domain_risk",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 12.14,
+    "p": 0.0023070142711885512,
+    "V": 0.095,
+    "min_exp": 15.44
+   },
+   {
+    "theme": "Architecture & Platform Strategy",
+    "dimension": "loss_aversion_framing",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 11.97,
+    "p": 0.002510161743259098,
+    "V": 0.094,
+    "min_exp": 92.21
+   },
+   {
+    "theme": "Self-Service Enablement & Data Literacy",
+    "dimension": "data_team_maturity",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 12.01,
+    "p": 0.002460722872617156,
+    "V": 0.094,
+    "min_exp": 57.56
+   },
+   {
+    "theme": "Architecture & Platform Strategy",
+    "dimension": "data_team_maturity",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 11.39,
+    "p": 0.003355978448525476,
     "V": 0.092,
-    "min_exp": 46.89
+    "min_exp": 67.84
+   },
+   {
+    "theme": "Data Ownership (end-to-end)",
+    "dimension": "work_arrangement",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 11.49,
+    "p": 0.009331700465302751,
+    "V": 0.092,
+    "min_exp": 25.03
+   },
+   {
+    "theme": "Data Modeling & Transformation",
+    "dimension": "velocity_vs_rigour",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 11.05,
+    "p": 0.003982834892980689,
+    "V": 0.091,
+    "min_exp": 7.29
+   },
+   {
+    "theme": "Performance & Cost Optimization",
+    "dimension": "testing_framing",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 11.25,
+    "p": 0.0035984940932230463,
+    "V": 0.091,
+    "min_exp": 59.81
    },
    {
     "theme": "Business Analysis & Insight Generation",
     "dimension": "ai_role",
     "overlap": false,
-    "n": 1344,
-    "chi2": 11.0,
-    "p": 0.004081313503229017,
-    "V": 0.09,
-    "min_exp": 87.91
-   },
-   {
-    "theme": "Security, Privacy & Risk",
-    "dimension": "data_team_maturity",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 10.75,
-    "p": 0.004625518590434002,
+    "n": 1349,
+    "chi2": 10.66,
+    "p": 0.004833751694070772,
     "V": 0.089,
-    "min_exp": 22.49
+    "min_exp": 88.16
    },
    {
     "theme": "Mentorship & Leadership",
     "dimension": "loss_aversion_framing",
     "overlap": false,
-    "n": 1344,
-    "chi2": 10.49,
-    "p": 0.005262338578052506,
+    "n": 1349,
+    "chi2": 10.58,
+    "p": 0.005050578932313967,
+    "V": 0.089,
+    "min_exp": 33.99
+   },
+   {
+    "theme": "Security, Privacy & Risk",
+    "dimension": "data_team_maturity",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 10.7,
+    "p": 0.004741591525024328,
+    "V": 0.089,
+    "min_exp": 22.53
+   },
+   {
+    "theme": "Performance & Cost Optimization",
+    "dimension": "has_power_bi",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 10.45,
+    "p": 0.0012247971124781589,
     "V": 0.088,
-    "min_exp": 34.12
+    "min_exp": 277.18
    },
    {
     "theme": "Vendor & Tooling Evaluation",
     "dimension": "ai_role",
     "overlap": false,
-    "n": 1344,
-    "chi2": 10.5,
-    "p": 0.0052478049492694565,
+    "n": 1349,
+    "chi2": 10.47,
+    "p": 0.005321127512239051,
     "V": 0.088,
     "min_exp": 6.65
-   },
-   {
-    "theme": "Data Infrastructure & Warehouse Ops",
-    "dimension": "has_python",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 10.19,
-    "p": 0.0014155570519378304,
-    "V": 0.087,
-    "min_exp": 235.29
-   },
-   {
-    "theme": "Performance & Cost Optimization",
-    "dimension": "has_power_bi",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 10.28,
-    "p": 0.0013435363196975549,
-    "V": 0.087,
-    "min_exp": 275.48
-   },
-   {
-    "theme": "Data Infrastructure & Warehouse Ops",
-    "dimension": "autonomy_level",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 9.77,
-    "p": 0.0075607495471556995,
-    "V": 0.085,
-    "min_exp": 193.71
-   },
-   {
-    "theme": "Pipeline Engineering & Orchestration",
-    "dimension": "jd_authorship",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 9.79,
-    "p": 0.0074955319085646815,
-    "V": 0.085,
-    "min_exp": 46.07
-   },
-   {
-    "theme": "Stakeholder Collaboration & Requirements",
-    "dimension": "has_looker",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 9.65,
-    "p": 0.0018895071848671519,
-    "V": 0.085,
-    "min_exp": 82.73
-   },
-   {
-    "theme": "BI & Reporting/Dashboards",
-    "dimension": "data_team_maturity",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 9.23,
-    "p": 0.009895360434275614,
-    "V": 0.083,
-    "min_exp": 39.51
-   },
-   {
-    "theme": "Business Analysis & Insight Generation",
-    "dimension": "has_python",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 9.37,
-    "p": 0.0022105568740419996,
-    "V": 0.083,
-    "min_exp": 215.65
-   },
-   {
-    "theme": "Data Ownership (end-to-end)",
-    "dimension": "has_looker",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 9.3,
-    "p": 0.0022866202956332194,
-    "V": 0.083,
-    "min_exp": 109.92
    },
    {
     "theme": "Security, Privacy & Risk",
     "dimension": "ai_role",
     "overlap": false,
-    "n": 1344,
-    "chi2": 9.23,
-    "p": 0.009897141393693009,
-    "V": 0.083,
-    "min_exp": 27.34
+    "n": 1349,
+    "chi2": 10.03,
+    "p": 0.006643745578696542,
+    "V": 0.086,
+    "min_exp": 27.52
+   },
+   {
+    "theme": "Data Ownership (end-to-end)",
+    "dimension": "has_looker",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 9.65,
+    "p": 0.0018950845581370936,
+    "V": 0.085,
+    "min_exp": 109.51
+   },
+   {
+    "theme": "BI & Reporting/Dashboards",
+    "dimension": "data_team_maturity",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 9.58,
+    "p": 0.00831533762624554,
+    "V": 0.084,
+    "min_exp": 39.37
    },
    {
     "theme": "BI & Reporting/Dashboards",
     "dimension": "has_airflow",
     "overlap": false,
-    "n": 1344,
-    "chi2": 8.95,
-    "p": 0.002776163166164026,
-    "V": 0.082,
-    "min_exp": 73.82
+    "n": 1349,
+    "chi2": 9.45,
+    "p": 0.002107898084325262,
+    "V": 0.084,
+    "min_exp": 73.31
    },
    {
-    "theme": "Data Quality & Testing",
-    "dimension": "has_looker",
+    "theme": "Data Infrastructure & Warehouse Ops",
+    "dimension": "has_python",
     "overlap": false,
-    "n": 1344,
-    "chi2": 9.09,
-    "p": 0.002563379247658313,
-    "V": 0.082,
-    "min_exp": 85.31
+    "n": 1349,
+    "chi2": 9.41,
+    "p": 0.002155837369128799,
+    "V": 0.084,
+    "min_exp": 237.32
    },
    {
     "theme": "Self-Service Enablement & Data Literacy",
     "dimension": "has_dbt",
     "overlap": false,
-    "n": 1344,
-    "chi2": 8.77,
-    "p": 0.0030612308470382103,
-    "V": 0.081,
-    "min_exp": 189.88
+    "n": 1349,
+    "chi2": 9.5,
+    "p": 0.0020588744288072727,
+    "V": 0.084,
+    "min_exp": 190.96
    },
    {
-    "theme": "AI & Agentic Workflows",
+    "theme": "Stakeholder Collaboration & Requirements",
+    "dimension": "data_team_maturity",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 9.61,
+    "p": 0.008175744369728592,
+    "V": 0.084,
+    "min_exp": 43.82
+   },
+   {
+    "theme": "Stakeholder Collaboration & Requirements",
     "dimension": "has_looker",
     "overlap": false,
-    "n": 1344,
-    "chi2": 8.59,
-    "p": 0.0033737139031834525,
-    "V": 0.08,
-    "min_exp": 102.19
+    "n": 1349,
+    "chi2": 9.58,
+    "p": 0.0019648459761909456,
+    "V": 0.084,
+    "min_exp": 82.66
+   },
+   {
+    "theme": "Data Infrastructure & Warehouse Ops",
+    "dimension": "autonomy_level",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 9.37,
+    "p": 0.0092319661092553,
+    "V": 0.083,
+    "min_exp": 194.68
+   },
+   {
+    "theme": "Data Quality & Testing",
+    "dimension": "has_looker",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 9.21,
+    "p": 0.002411708595693569,
+    "V": 0.083,
+    "min_exp": 85.46
    },
    {
     "theme": "AI & Agentic Workflows",
     "dimension": "has_dbt",
     "overlap": false,
-    "n": 1344,
-    "chi2": 8.04,
-    "p": 0.00458474140536639,
-    "V": 0.077,
-    "min_exp": 178.42
+    "n": 1349,
+    "chi2": 8.72,
+    "p": 0.0031535557230545005,
+    "V": 0.08,
+    "min_exp": 179.46
+   },
+   {
+    "theme": "AI & Agentic Workflows",
+    "dimension": "has_looker",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 8.71,
+    "p": 0.0031689229386738494,
+    "V": 0.08,
+    "min_exp": 102.04
+   },
+   {
+    "theme": "Business Analysis & Insight Generation",
+    "dimension": "has_python",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 8.73,
+    "p": 0.003122220180080855,
+    "V": 0.08,
+    "min_exp": 216.52
    },
    {
     "theme": "Security, Privacy & Risk",
     "dimension": "has_power_bi",
     "overlap": false,
-    "n": 1344,
-    "chi2": 7.69,
-    "p": 0.0055493637633544455,
-    "V": 0.076,
-    "min_exp": 76.36
-   },
-   {
-    "theme": "Architecture & Platform Strategy",
-    "dimension": "role_type",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 7.28,
-    "p": 0.006956256163228762,
-    "V": 0.074,
-    "min_exp": 14.65
-   },
-   {
-    "theme": "Data Quality & Testing",
-    "dimension": "has_power_bi",
-    "overlap": false,
-    "n": 1344,
-    "chi2": 7.43,
-    "p": 0.006399197395976745,
-    "V": 0.074,
-    "min_exp": 153.56
+    "n": 1349,
+    "chi2": 8.06,
+    "p": 0.004520588834124639,
+    "V": 0.077,
+    "min_exp": 76.9
    },
    {
     "theme": "Data Ownership (end-to-end)",
     "dimension": "has_airflow",
     "overlap": false,
-    "n": 1344,
-    "chi2": 7.08,
-    "p": 0.0078113175668328115,
-    "V": 0.073,
-    "min_exp": 108.88
+    "n": 1349,
+    "chi2": 7.65,
+    "p": 0.005676802985268911,
+    "V": 0.075,
+    "min_exp": 108.12
+   },
+   {
+    "theme": "Architecture & Platform Strategy",
+    "dimension": "role_type",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 7.34,
+    "p": 0.006746690410727322,
+    "V": 0.074,
+    "min_exp": 14.62
    },
    {
     "theme": "Data Infrastructure & Warehouse Ops",
     "dimension": "has_looker",
     "overlap": false,
-    "n": 1344,
-    "chi2": 6.87,
-    "p": 0.00874299979540281,
-    "V": 0.072,
-    "min_exp": 148.83
+    "n": 1349,
+    "chi2": 7.13,
+    "p": 0.0075986542655471535,
+    "V": 0.073,
+    "min_exp": 149.21
+   },
+   {
+    "theme": "Data Quality & Testing",
+    "dimension": "has_python",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 6.8,
+    "p": 0.009128658688455483,
+    "V": 0.071,
+    "min_exp": 135.93
+   },
+   {
+    "theme": "Data Quality & Testing",
+    "dimension": "has_power_bi",
+    "overlap": false,
+    "n": 1349,
+    "chi2": 6.68,
+    "p": 0.009740592818114594,
+    "V": 0.07,
+    "min_exp": 154.65
    }
   ],
   "featured": [
@@ -112981,39 +113459,39 @@
     ],
     "survives": true,
     "overall": {
-     "n": 1344,
-     "chi2": 100.24,
-     "p": 1.7083847715301254e-22,
+     "n": 1349,
+     "chi2": 100.5,
+     "p": 1.504698013622212e-22,
      "V": 0.273,
-     "min_exp": 61.62
+     "min_exp": 61.54
     },
     "crosstab": {
      "execution": [
       4,
-      414
+      416
      ],
      "mixed": [
       13,
-      520
+      522
      ],
      "strategic": [
-      29,
-      410
+      28,
+      411
      ]
     },
     "strata": {
      "mid": {
       "execution": [
        2,
-       245
+       246
       ],
       "mixed": [
        6,
-       279
+       282
       ],
       "strategic": [
        5,
-       97
+       98
       ]
      },
      "senior": {
@@ -113023,11 +113501,11 @@
       ],
       "mixed": [
        22,
-       208
+       207
       ],
       "strategic": [
        29,
-       217
+       216
       ]
      }
     }
@@ -113038,20 +113516,20 @@
     "stratify_by": null,
     "survives": null,
     "overall": {
-     "n": 1344,
-     "chi2": 54.16,
-     "p": 1.7375559734640256e-12,
-     "V": 0.201,
-     "min_exp": 51.5
+     "n": 1349,
+     "chi2": 55.46,
+     "p": 9.052455258410029e-13,
+     "V": 0.203,
+     "min_exp": 51.63
     },
     "crosstab": {
      "hiring_manager": [
       58,
-      928
+      929
      ],
      "mixed": [
-      46,
-      307
+      45,
+      311
      ],
      "recruiter": [
       24,
@@ -113064,16 +113542,16 @@
    "theme": "Architecture & Platform Strategy",
    "dimension": "work_arrangement",
    "overall": {
-    "n": 1344,
-    "chi2": 6.66,
-    "p": 0.08361976917443498,
+    "n": 1349,
+    "chi2": 6.59,
+    "p": 0.08609367399185108,
     "V": 0.07,
-    "min_exp": 29.3
+    "min_exp": 29.25
    },
    "crosstab": {
     "hybrid": [
-     43,
-     614
+     42,
+     616
     ],
     "remote": [
      44,
@@ -113085,7 +113563,7 @@
     ],
     "not_stated": [
      37,
-     528
+     531
     ]
    },
    "strata": {
@@ -113110,7 +113588,7 @@
     "mid": {
      "hybrid": [
       39,
-      393
+      395
      ],
      "remote": [
       46,
@@ -113121,8 +113599,8 @@
       41
      ],
      "not_stated": [
-      33,
-      345
+      34,
+      348
      ]
     },
     "mature": {
@@ -113139,7 +113617,7 @@
       10
      ],
      "not_stated": [
-      42,
+      41,
       126
      ]
     }
