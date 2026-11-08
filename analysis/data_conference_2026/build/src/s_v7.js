@@ -64,9 +64,9 @@ function buildRecord(stage) {
   ];
 }
 
-/* the lag: the years-of-FastAPI story, the new word against the old one, the vague AI ask, then the claim; o.link counts the semantic layer without Power BI's "semantic model" and adds how often ads asking for AI name one, with an ad that joins the two */
+/* the lag: the years-of-FastAPI story, the new word against the old one, the vague AI ask, then the claim; o.link counts the semantic layer without Power BI's "semantic model", then shows an ad that joins it to AI and the claim that the work has an older name; o.story === false drops the FastAPI posts and o.vague === false drops the vague AI ask and the closing line */
 function buildLag(stage, o = {}) {
-  const S = D.semantics, Y = S.layer, pct = ([k, n]) => Math.round(100 * k / n), rows = D.ai.rows.filter(r => r[0]), vague = rows.filter(r => r[1] === 1).length;
+  const S = D.semantics, Y = S.layer, rows = D.ai.rows.filter(r => r[0]), vague = rows.filter(r => r[1] === 1).length;
   // how it started and how it's going: his two posts about FastAPI job ads, verbatim, side by side
   const red = text => h('span', { style: { color: C.coral, fontWeight: 700 } }, text);
   const postCard = (head, date, ...lines) => v7.fade(h('div', { style: { display: 'flex', flexDirection: 'column', gap: '1.2vh', flex: '1 1 0', maxWidth: '40vw' } },
@@ -87,23 +87,21 @@ function buildLag(stage, o = {}) {
   const ctx = v7.big(`${S.context_engineering}`, `of ${D.corpus_n.toLocaleString('en-US')} ads say “context engineering”`);
   const sem = o.link ? v7.big(`${Y.ai[0] + Y.other[0]}`, 'name a semantic layer', C.plum) : v7.big(`${S.ai[0] + S.other[0]}`, 'say “semantic layer” or “semantic model”', C.plum);
   const link = v7.fade(h('div', { style: { display: 'flex', flexDirection: 'column', gap: '1.5vh', alignItems: 'flex-start' } },
-    h('div', { style: { fontSize: 'clamp(16px,1.8vw,28px)', fontWeight: 700 } }, `Ads that ask for AI name one ${Y.ai[0] / Y.ai[1] >= 2 * Y.other[0] / Y.other[1] ? 'more than twice as often' : 'more often'}: `,
-      h('span', { style: { color: C.coral } }, `${pct(Y.ai)}%`), ` vs ${pct(Y.other)}%.`),
     h('div', { class: 'adcard', style: { maxWidth: '62vw' } }, h('div', { style: { fontSize: 'clamp(15px,1.6vw,26px)', lineHeight: 1.35, fontStyle: 'italic' } }, `“${D.quotes.multiverse}”`)),
     h('div', { class: 'adlab' }, 'Multiverse · analytics engineer ad')));
   const ai = v7.fade(h('div', { style: { fontSize: 'clamp(16px,1.8vw,28px)', lineHeight: 1.35 } },
     h('b', {}, `${rows.length} ads ask for AI. ${vague} only in words like: `), h('span', { style: { fontStyle: 'italic' } }, `“${D.quotes.vague}”`)));
-  const line = v7.line('Ads describe the team we have. ', 'Not the one we are building.');
+  const line = v7.line('Ads describe the team we have. ', 'Not the one we are building.'), older = v7.line('Same work. ', 'An older name.');
   // one screen at a time, each filled click by click: the story, then the counts, then (with o.link) the vague ask and the claim on their own
-  const screens = [[card], ...(o.link ? [[ctx, sem, link], [ai, line]] : [[ctx, sem, ai, line]])], all = screens.flat();
+  const story = o.story !== false, counts = o.link ? [[ctx, sem, link, older], ...(o.vague === false ? [] : [[ai, line]])] : [[ctx, sem, ai, line]];
+  const screens = [...(story ? [[card]] : []), ...counts], all = screens.flat();
   stage.append(h('div', { class: 'col', style: { gap: '3vh' } }, ...all));
   const at = (screen, n, pause = 500) => async () => {
-    all.forEach(el => { const on = screen.includes(el); el.style.display = on ? (el === ai || el === line ? '' : 'flex') : 'none'; v7.show(el, on && screen.indexOf(el) < n); });
+    all.forEach(el => { const on = screen.includes(el); el.style.display = on ? (el === ai || el === line || el === older ? '' : 'flex') : 'none'; v7.show(el, on && screen.indexOf(el) < n); });
     await wait(Anim.fast ? 0 : pause); };
   return [
-    async () => { v7.show(started, 1); v7.show(going, 0); await at([card], 1)(); },
-    async () => { v7.show(going, 1); await at([card], 1)(); },
-    ...screens.slice(1).flatMap((screen, i) => screen.map((_, k) => k + 1).filter(n => i > 0 || n >= 2).map(n => at(screen, n)))
+    ...(story ? [async () => { v7.show(started, 1); v7.show(going, 0); await at([card], 1)(); }, async () => { v7.show(going, 1); await at([card], 1)(); }] : []),
+    ...counts.flatMap((screen, i) => screen.map((_, k) => k + 1).filter(n => i > 0 || n >= 2).map(n => at(screen, n)))
   ];
 }
 
@@ -130,11 +128,12 @@ function buildDoors(stage, o = {}) {
   return [async () => { v7.show(ask, 0); v7.show(line, 0); await f[0](); }, ...v7.steps([ask, line], [[1, 0], [1, 1]])];
 }
 
-/* the close: the record goes on, then what to write, then who to make room for */
-function buildClose(stage) {
-  const p = (text, col = C.ink) => v7.fade(h('div', { style: { fontSize: 'clamp(20px,2.6vw,40px)', fontWeight: 700, color: col } }, text));
-  const a = p('This is snapshot one. I will keep reading.', C.ink2), b = p('Write down what you expect. Write down who will teach.');
-  const line = v7.line('Make room for juniors. ', 'Be intentional about the ad.');
+/* the close: the record goes on, then what to write, then who to make room for; o.noun names the document in the last line */
+function buildClose(stage, o = {}) {
+  // one size and face for all three lines; colour alone marks the lead-in (grey) and the punchline (coral)
+  const p = (col, ...text) => v7.fade(h('div', { style: { fontSize: 'clamp(20px,2.6vw,40px)', fontWeight: 700, color: col } }, ...text));
+  const a = p(C.ink2, 'This is snapshot one. I will keep reading.'), b = p(C.ink, 'Write down what you expect. Write down who will teach.');
+  const line = p(C.ink, 'Make room for juniors. ', h('span', { style: { color: C.coral } }, `Be intentional about the ${o.noun || 'ad'}.`));
   stage.append(h('div', { class: 'col', style: { gap: '5vh', justifyContent: 'center' } }, a, b, line));
   return v7.steps([a, b, line], [[1, 0, 0], [1, 1, 0], [1, 1, 1]], 600);
 }

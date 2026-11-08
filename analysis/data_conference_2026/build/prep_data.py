@@ -258,6 +258,9 @@ def main():
     # --- the record: how many ads were collected in each month, by the date each was saved
     months = Counter(r["scrape"][:7] for r in ai)
     out["collection"] = [[m, months[m]] for m in sorted(months)]
+    # --- an ageing population to set beside the level pyramid: South Korea, 2025, from the UN World Population Prospects 2024 (via populationpyramid.net)
+    out["population"] = {"country": "South Korea", "year": 2025, "source": "UN World Population Prospects 2024",
+                         "bands": [[r["Age"], int(r["M"]) + int(r["F"])] for r in csv.DictReader(open(IN / "population_south_korea_2025.csv"))]}
     # --- semantics: ads that ask for AI against ads that don't, naming a semantic layer or model; checked within level and ad-length bands (Cochran-Mantel-Haenszel)
     SEM = re.compile(r"semantic[- ](?:layer|model|modell?ing|views?|definitions?)|metrics? layer|metricflow|dbt semantic", re.I)
     lengths = sorted(len(txt.split()) for _, txt in recs.values()); cut = [lengths[len(lengths) // 3], lengths[2 * len(lengths) // 3]]

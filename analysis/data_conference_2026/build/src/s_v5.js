@@ -131,7 +131,8 @@ function buildNext(stage) {
 }
 
 /* what the job is: the duties ads list, with working with people as common as modelling, then the tools, where only SQL, Python and dbt are near universal */
-function buildJob(stage) {
+/* o.core keeps the four most common duties lit in both clicks and o.captions = [first, second] replaces the captions, each a list of [words, highlight] */
+function buildJob(stage, o = {}) {
   const W = 1000, J = D.job, N = J.n_themes, A = D.corpus_n, pct = (k, n) => Math.round(100 * k / n);
   const label = { 'BI & Reporting/Dashboards': 'reporting and dashboards', 'Stakeholder Collaboration & Requirements': 'working with stakeholders',
     'Data Modeling & Transformation': 'data modelling', 'Data Quality & Testing': 'data quality and testing', 'Governance & Documentation': 'governance and docs',
@@ -143,11 +144,12 @@ function buildJob(stage) {
   // left: the eight most common duty themes, out of 16
   const gT = layer(), tBars = [], TX = 250, TY = 62, TR = 44;
   txt(gT, 0, 26, `duties in the ad · % of ${N.toLocaleString('en-US')} ads`, { fontSize: '16px', fontWeight: 700, fill: C.ink2 });
-  const rows = J.themes.slice(0, 8).map(([t, k], i) => { const y = TY + i * TR, hi = t.startsWith('Stakeholder'), top = i < 4, v = pct(k, N);
+  const rows = J.themes.slice(0, 8).map(([t, k], i) => { const y = TY + i * TR, top = i < 4, hi = o.core ? top : t.startsWith('Stakeholder'), v = pct(k, N);
     const g = s('g', { style: { transition: 'opacity .5s' } }, gT);
-    txt(g, TX - 12, y + 19, label[t], { fontSize: '18px', fontWeight: hi ? 700 : 500, fill: hi ? C.coral : top ? C.ink : C.ink2 }, { 'text-anchor': 'end' });
-    tBars.push(bar(g, TX, y + 4, 22, v, hi ? C.coral : top ? C.plum : C.mute));
-    txt(g, TX + 2 * v + 10, y + 21, `${v}%`, { fontSize: '17px', fontWeight: 700, fill: hi ? C.coral : C.ink2 }); return { g, hi }; });
+    const accent = hi && !o.core;
+    txt(g, TX - 12, y + 19, label[t], { fontSize: '18px', fontWeight: hi ? 700 : 500, fill: accent ? C.coral : top ? C.ink : C.ink2 }, { 'text-anchor': 'end' });
+    tBars.push(bar(g, TX, y + 4, 22, v, accent ? C.coral : top ? C.plum : C.mute));
+    txt(g, TX + 2 * v + 10, y + 21, `${v}%`, { fontSize: '17px', fontWeight: 700, fill: accent ? C.coral : C.ink2 }); return { g, hi }; });
   // right: the core tools, then the next four of any kind
   const gK = layer(), kBars = [], KX = 740, head = { core: 'core', next: 'the next four' };
   txt(gK, KX - 132, 26, `tools named · % of ${A.toLocaleString('en-US')} ads`, { fontSize: '16px', fontWeight: 700, fill: C.ink2 });
@@ -160,8 +162,8 @@ function buildJob(stage) {
   const caption = words => { const g = layer();
     const t = s('text', { x: 0, y: 470, style: { fontSize: '21px', fontWeight: 500, fill: C.ink } }, g);
     words.forEach(([w, hi]) => s('tspan', { text: w, style: hi ? { fill: C.coral, fontWeight: 700 } : {} }, t)); return g; };
-  const cap1 = caption([['working with stakeholders: '], ['in as many ads as data modelling', 1]]);
-  const cap2 = caption([['after SQL, Python and dbt, '], [`the next is in ${Math.round(pct(J.max_other, A) / 10)} ads in 10`, 1]]);
+  const [cap1, cap2] = (o.captions || [[['working with stakeholders: '], ['in as many ads as data modelling', 1]],
+    [['after SQL, Python and dbt, '], [`the next is in ${Math.round(pct(J.max_other, A) / 10)} ads in 10`, 1]]]).map(caption);
   const grow = (bars, e) => bars.forEach(b => b.el.setAttribute('width', b.to * (1 - (1 - e) ** 3)));
   return [
     async () => { gT.style.opacity = 1; gK.style.opacity = 0; cap2.style.opacity = 0; rows.forEach(r => r.g.style.opacity = 1); grow(kBars, 0);

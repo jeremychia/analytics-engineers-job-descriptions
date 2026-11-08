@@ -23,3 +23,42 @@ function buildAlike(stage) {
   const step = (on, pause = 900) => async () => { rows.forEach((el, k) => { v7.show(el, on[k]); on[k] && el.fill && el.fill(); }); await wait(Anim.fast ? 0 : pause); };
   return [step([1, 1, 0, 0, 0]), step([1, 1, 1, 0, 0]), step([1, 1, 1, 1, 0]), step([1, 1, 1, 1, 1], 600)];
 }
+
+/* the level pyramid beside the shape of an ageing population, then today's juniors as tomorrow's seniors, then the question it leaves */
+function buildFuture(stage) {
+  const W = 1000, N = D.seniority_n, svg = s('svg', { viewBox: `0 0 ${W} 440`, class: 'chart' });
+  const txt = (p, x, y, text, st = {}, a = {}) => s('text', Object.assign({ x, y, text, style: Object.assign({ fontSize: '19px', fill: C.ink }, st) }, a), p);
+  const layer = () => s('g', { style: { opacity: 0, transition: 'opacity .6s' } }, svg);
+  const levels = [['manager', C.plum], ['staff', C.plum], ['lead', C.plum], ['senior', C.plum], ['mid', C.mute], ['junior', C.coral]];
+  const CX = 330, HALF = 210, Y0 = 30, ROW = 62, BH = 48, BASE = Y0 + 5 * ROW + BH, peak = Math.max(...levels.map(([lv]) => N[lv]));
+  const mid = k => Y0 + k * ROW + BH / 2;
+  const bars = levels.map(([lv, col], k) => {
+    const half = HALF * N[lv] / peak, strong = lv === 'junior';
+    txt(svg, CX - HALF - 24, mid(k) + 7, lv, { fontWeight: strong ? 700 : 500, fill: strong ? C.coral : C.ink2 }, { 'text-anchor': 'end' });
+    const bar = s('rect', { x: CX, y: Y0 + k * ROW, width: 0, height: BH, rx: 6, fill: col }, svg);
+    const n = txt(svg, CX + half + 12, mid(k) + 7, `${N[lv]}`, { fontWeight: strong ? 700 : 500, fill: strong ? C.coral : C.ink2, opacity: 0 });
+    return { bar, n, half };
+  });
+  const grow = e => bars.forEach(({ bar, n, half }, k) => { const t = Math.min(1, Math.max(0, e * 1.8 - (bars.length - 1 - k) * .16)), w = half * (1 - (1 - t) ** 3);
+    bar.setAttribute('x', CX - w); bar.setAttribute('width', 2 * w); n.style.opacity = t >= 1 ? 1 : 0; });
+  // South Korea's population by five-year age band, youngest at the bottom, under-20s in coral: the narrowest base of any large country
+  const P = D.population, gHive = layer(), HX = 885, HH = 100, top = Math.max(...P.bands.map(([, n]) => n)), BAND = (BASE - Y0) / P.bands.length;
+  P.bands.forEach(([age, n], i) => { const f = n / top, young = i < 4;
+    s('rect', { x: HX - HH * f, y: BASE - (i + 1) * BAND + .5, width: 2 * HH * f, height: BAND - 1, fill: young ? C.coral : C.mute, opacity: young ? .9 : .6 }, gHive); });
+  txt(gHive, HX, BASE + 30, `${P.country}, ${P.year}`, { fontWeight: 700 }, { 'text-anchor': 'middle' });
+  txt(gHive, HX, BASE + 50, 'people by age · UN figures', { fontSize: '14px', fill: C.mute }, { 'text-anchor': 'middle' });
+  txt(gHive, HX - HH - 12, BASE - 4, 'age 0', { fontSize: '14px', fill: C.ink2 }, { 'text-anchor': 'end' });
+  txt(gHive, HX - HH - 12, Y0 + 12, '100+', { fontSize: '14px', fill: C.ink2 }, { 'text-anchor': 'end' });
+  // today's juniors climb to tomorrow's seniors
+  const gArrow = layer(), x0 = CX + bars[5].half + 52, x1 = CX + bars[3].half + 64;
+  s('path', { d: `M ${x0} ${mid(5)} C ${x0 + 230} ${mid(5)}, ${x1 + 150} ${mid(3) + 70}, ${x1 + 6} ${mid(3) + 8}`, fill: 'none', stroke: C.coral, 'stroke-width': 3, 'stroke-linecap': 'round' }, gArrow);
+  s('path', { d: `M ${x1 + 20} ${mid(3) + 4} L ${x1 + 4} ${mid(3) + 8} L ${x1 + 14} ${mid(3) + 21}`, fill: 'none', stroke: C.coral, 'stroke-width': 3, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, gArrow);
+  txt(gArrow, x0 - 40, BASE + 32, 'today’s juniors are tomorrow’s seniors', { fontSize: '17px', fill: C.coral, fontWeight: 700 });
+  const ratio = Math.round((N.senior + N.lead + N.staff + N.manager) / N.junior);
+  const line = v7.line(`1 junior ad for every ${ratio} senior. `, 'Who will the seniors be in five years?');
+  stage.append(h('div', { class: 'col', style: { gap: '2vh' } }, svg, line));
+  return [
+    async () => { [gHive, gArrow, line].forEach(el => v7.show(el, 0)); grow(0); await tween(1600, grow); },
+    ...v7.steps([gHive, gArrow, line], [[1, 0, 0], [1, 1, 0], [1, 1, 1]], 600)
+  ];
+}
