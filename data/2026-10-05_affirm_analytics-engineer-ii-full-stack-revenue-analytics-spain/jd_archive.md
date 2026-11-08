@@ -1,4 +1,4 @@
-**URL:** https://job-boards.greenhouse.io/affirm/jobs/7813362003
+**URL:** https://job-boards.greenhouse.io/affirm/jobs/7916080003
 
 Analytics Engineer II, Full Stack (Revenue Analytics)
 Affirm
