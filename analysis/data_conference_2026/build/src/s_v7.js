@@ -64,9 +64,9 @@ function buildRecord(stage) {
   ];
 }
 
-/* the lag: the years-of-FastAPI story, the new word against the old one, the vague AI ask, then the claim */
-function buildLag(stage) {
-  const S = D.semantics, rows = D.ai.rows.filter(r => r[0]), vague = rows.filter(r => r[1] === 1).length;
+/* the lag: the years-of-FastAPI story, the new word against the old one, the vague AI ask, then the claim; o.link counts the semantic layer without Power BI's "semantic model" and adds how often ads asking for AI name one, with an ad that joins the two */
+function buildLag(stage, o = {}) {
+  const S = D.semantics, Y = S.layer, pct = ([k, n]) => Math.round(100 * k / n), rows = D.ai.rows.filter(r => r[0]), vague = rows.filter(r => r[1] === 1).length;
   // how it started and how it's going: his two posts about FastAPI job ads, verbatim, side by side
   const red = text => h('span', { style: { color: C.coral, fontWeight: 700 } }, text);
   const postCard = (head, date, ...lines) => v7.fade(h('div', { style: { display: 'flex', flexDirection: 'column', gap: '1.2vh', flex: '1 1 0', maxWidth: '40vw' } },
@@ -85,18 +85,25 @@ function buildLag(stage) {
     [red('I might not have enough experience to apply'), ' to some @fastapi.tiangolo.com jobs, but at least it now has 100k GitHub stars. ✨'], ['Thank you for letting me build this. 🙌']);
   const card = v7.fade(h('div', { style: { display: 'flex', gap: '3vw', alignItems: 'stretch', justifyContent: 'center' } }, started, going));
   const ctx = v7.big(`${S.context_engineering}`, `of ${D.corpus_n.toLocaleString('en-US')} ads say “context engineering”`);
-  const sem = v7.big(`${S.ai[0] + S.other[0]}`, 'say “semantic layer” or “semantic model”', C.plum);
+  const sem = o.link ? v7.big(`${Y.ai[0] + Y.other[0]}`, 'name a semantic layer', C.plum) : v7.big(`${S.ai[0] + S.other[0]}`, 'say “semantic layer” or “semantic model”', C.plum);
+  const link = v7.fade(h('div', { style: { display: 'flex', flexDirection: 'column', gap: '1.5vh', alignItems: 'flex-start' } },
+    h('div', { style: { fontSize: 'clamp(16px,1.8vw,28px)', fontWeight: 700 } }, `Ads that ask for AI name one ${Y.ai[0] / Y.ai[1] >= 2 * Y.other[0] / Y.other[1] ? 'more than twice as often' : 'more often'}: `,
+      h('span', { style: { color: C.coral } }, `${pct(Y.ai)}%`), ` vs ${pct(Y.other)}%.`),
+    h('div', { class: 'adcard', style: { maxWidth: '62vw' } }, h('div', { style: { fontSize: 'clamp(15px,1.6vw,26px)', lineHeight: 1.35, fontStyle: 'italic' } }, `“${D.quotes.multiverse}”`)),
+    h('div', { class: 'adlab' }, 'Multiverse · analytics engineer ad')));
   const ai = v7.fade(h('div', { style: { fontSize: 'clamp(16px,1.8vw,28px)', lineHeight: 1.35 } },
     h('b', {}, `${rows.length} ads ask for AI. ${vague} only in words like: `), h('span', { style: { fontStyle: 'italic' } }, `“${D.quotes.vague}”`)));
   const line = v7.line('Ads describe the team we have. ', 'Not the one we are building.');
-  stage.append(h('div', { class: 'col', style: { gap: '3vh' } }, card, ctx, sem, ai, line));
-  const only = on => { card.style.display = on ? 'flex' : 'none'; [ctx, sem, ai, line].forEach(el => el.style.display = on ? 'none' : el === ctx || el === sem ? 'flex' : ''); };   // the story leaves once the counts are up: one thing to look at per click
+  // one screen at a time, each filled click by click: the story, then the counts, then (with o.link) the vague ask and the claim on their own
+  const screens = [[card], ...(o.link ? [[ctx, sem, link], [ai, line]] : [[ctx, sem, ai, line]])], all = screens.flat();
+  stage.append(h('div', { class: 'col', style: { gap: '3vh' } }, ...all));
+  const at = (screen, n, pause = 500) => async () => {
+    all.forEach(el => { const on = screen.includes(el); el.style.display = on ? (el === ai || el === line ? '' : 'flex') : 'none'; v7.show(el, on && screen.indexOf(el) < n); });
+    await wait(Anim.fast ? 0 : pause); };
   return [
-    async () => { only(1); [card, ctx, sem, ai, line].forEach((el, k) => v7.show(el, k === 0)); v7.show(started, 1); v7.show(going, 0); await wait(Anim.fast ? 0 : 500); },
-    async () => { only(1); v7.show(card, 1); v7.show(started, 1); v7.show(going, 1); await wait(Anim.fast ? 0 : 500); },
-    async () => { only(0); [ctx, sem, ai, line].forEach((el, k) => v7.show(el, k < 2)); await wait(Anim.fast ? 0 : 500); },
-    async () => { only(0); [ctx, sem, ai, line].forEach((el, k) => v7.show(el, k < 3)); await wait(Anim.fast ? 0 : 500); },
-    async () => { only(0); [ctx, sem, ai, line].forEach(el => v7.show(el, 1)); await wait(Anim.fast ? 0 : 600); }
+    async () => { v7.show(started, 1); v7.show(going, 0); await at([card], 1)(); },
+    async () => { v7.show(going, 1); await at([card], 1)(); },
+    ...screens.slice(1).flatMap((screen, i) => screen.map((_, k) => k + 1).filter(n => i > 0 || n >= 2).map(n => at(screen, n)))
   ];
 }
 
@@ -112,11 +119,13 @@ function buildDisclose(stage) {
   return [f[0], async () => { v7.show(pay, 0); await f[1](); }, async () => { v7.show(pay, 1); await wait(Anim.fast ? 0 : 500); }];
 }
 
-/* the junior door: the level pyramid, then the senior ask to mentor, then the question it leaves */
-function buildDoors(stage) {
-  const box = h('div', {}), f = buildPipeline(box), [mk, mn] = D.mentoring.senior_asks_mentor;
-  const ask = v7.fade(h('div', { style: { fontSize: 'clamp(17px,2vw,30px)', fontWeight: 700, textAlign: 'center' } }, `${Math.round(3 * mk / mn) === 1 ? 'A third' : `${Math.round(3 * mk / mn)} in 3`} of senior ads ask you to mentor.`));
-  const line = v7.line('', 'Mentor whom?');
+/* the junior door: the level pyramid, then the senior ask to mentor, then the question it leaves; o.teach adds that junior ads rarely say who will teach, o.line = [plain, em] replaces the question */
+function buildDoors(stage, o = {}) {
+  const box = h('div', {}), f = buildPipeline(box), [mk, mn] = D.mentoring.senior_asks_mentor, [gk, gn] = D.mentoring.junior_names_guide;
+  const third = Math.round(3 * mk / mn) === 1 ? 'A third' : `${Math.round(3 * mk / mn)} in 3`, gap = Math.round(4 * (gn - gk) / gn);
+  const ask = v7.fade(h('div', { style: { fontSize: 'clamp(17px,2vw,30px)', fontWeight: 700, textAlign: 'center' } },
+    o.teach ? [h('div', {}, `${third} of senior ads ask you to mentor.`), h('div', { style: { color: C.ink2 } }, `${gap} in 4 junior ads don’t say who will teach.`)] : `${third} of senior ads ask you to mentor.`));
+  const line = v7.line(...(o.line || ['', 'Mentor whom?']));
   stage.append(h('div', { class: 'col', style: { gap: '1.5vh' } }, box, ask, line));
   return [async () => { v7.show(ask, 0); v7.show(line, 0); await f[0](); }, ...v7.steps([ask, line], [[1, 0], [1, 1]])];
 }
@@ -131,8 +140,8 @@ function buildClose(stage) {
 }
 
 /* for questions: the findings that held up when tested, one card each */
-function buildAskMe(stage) {
-  const S = D.semantics.senior, L = D.stats.levels.mid, DL = D.junior.degree_by_level, FR = D.stats2.juniors.france_bac_checked, B = D.stats2.benefits_summary, P = D.benefits.pay;
+function buildAskMe(stage, o = {}) {
+  const S = o.layer ? D.semantics.layer.senior : D.semantics.senior, L = D.stats.levels.mid, DL = D.junior.degree_by_level, FR = D.stats2.juniors.france_bac_checked, B = D.stats2.benefits_summary, P = D.benefits.pay;
   const pct = ([k, n]) => Math.round(100 * k / n), men = D.ladder.core['Mentoring / coaching / code review'];
   const others = ['mid', 'senior', 'lead+'].reduce((a, lv) => [a[0] + DL[lv][0], a[1] + DL[lv][1]], [0, 0]);
   const cards = [

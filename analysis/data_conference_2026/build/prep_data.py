@@ -277,6 +277,10 @@ def main():
         return {"ai": [sum(a and s for a, s, _ in rows), sum(a for a, _, _ in rows)], "other": [sum(s and not a for a, s, _ in rows), sum(not a for a, _, _ in rows)], "p": float(f"{p:.1g}")}
     ctx = [j for j, (_, txt) in recs.items() if re.search(r"context[- ]engineer", txt, re.I)]
     out["semantics"] = {**gap(sem), "senior": gap([x for x in sem if x[2][0] in ("senior", "lead+")]), "context_engineering": len(ctx)}
+    # the same test without "semantic model", Power BI's name for a dataset, so the link to AI is not a Power BI effect
+    LAYER = re.compile(r"semantic[- ](?:layer|views?|definitions?)|metrics? layer|metricflow|dbt semantic", re.I)
+    layer = [(a, bool(LAYER.search(txt)), k) for (a, _, k), (_, txt) in zip(sem, recs.values())]
+    out["semantics"]["layer"] = {**gap(layer), "senior": gap([x for x in layer if x[2][0] in ("senior", "lead+")])}
     out["stats2"] = json.loads((IN / "more_stats.json").read_text())   # from more_stats.py (run it after prep once, then prep again)
     out["stats"] = json.loads((IN / "stack_stats.json").read_text())   # from stack_stats.py
     m = json.loads((IN / "missing_stats.json").read_text())   # from missing_stats.py; totals only, the per-ad flags stay in the file
