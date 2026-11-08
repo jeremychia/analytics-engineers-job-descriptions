@@ -5,9 +5,9 @@
   "job_location": "NYC Office",
   "seniority": "senior",
   "role_type": "data_engineering",
-  "salary_min": null,
-  "salary_max": null,
-  "salary_currency": null,
+  "salary_min": 220000,
+  "salary_max": 280000,
+  "salary_currency": "USD",
   "salary_period": null,
   "jd_authorship": "hiring_manager",
   "stakeholder_orientation": "internal_data",
@@ -127,7 +127,8 @@
       "semantic layers",
       "self-service analytics",
       "CPG"
-    ]
+    ],
+    "salary": "\"Compensation Range: $220K - $280K\", from the same Ashby posting captured on 2026-10-05 as 2026-10-05_confido_senior-analytics-engineer"
   },
   "responsibilities": [
     "Design, build, and maintain our centralized data warehouse and analytics infrastructure.",
@@ -139,5 +140,6 @@
     "Improve data quality, reliability, and accessibility across the organization.",
     "Enable self-service analytics by creating scalable datasets and semantic layers for downstream consumers."
   ],
-  "responsibilities_source": "jd_section"
+  "responsibilities_source": "jd_section",
+  "linkedin_url": "https://www.linkedin.com/jobs/view/4438295795/"
 }
