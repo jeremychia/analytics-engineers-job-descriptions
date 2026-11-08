@@ -5,20 +5,31 @@ Role text = duties and requirements only (benefits, culture and legal text
 removed by roletext.py). Also writes the corpus-wide means, the nearest other-company ad
 and the verbatim copy rate. Output: inputs/similarity_matrix.json
 """
-import json, random, re, collections
+import json, random, re, sys, collections
 from pathlib import Path
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from roletext import role_lines
 
 ROOT = Path(__file__).resolve().parents[3]
-DATA = ROOT / "data"
+DATA = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "data"   # pass a folder to rebuild from a snapshot
 random.seed(11)
 
 def key(c):
     c = re.sub(r"\(.*?\)", "", c.lower())
     c = re.sub(r"\b(the|group|gmbh|ltd|inc|llc|plc|limited|holdings?)\b", "", c)
     return re.sub(r"[^a-z0-9]", "", c)
+
+def family(title):
+    """The job an ad's title names: analytics engineer, data engineer, BI, analyst, or other."""
+    t = title.lower()
+    if re.search(r"(analytics?|\bb[iι]\b|business intelligence)\s*(&|/|\band\b)\s*data engineer|data engineer\s*/\s*\S*\s*b[iι]\b", t):
+        return "other"   # a combined title such as "Analytics & Data Engineer" or "Data Engineer / BI Developer" names two jobs
+    for name, pattern in [("analytics engineer", r"analytic(s|al)? engineer"), ("data engineer", r"\bdata engineers?\b"),
+                          ("BI", r"\bbi\b|business intelligence|power bi|tableau"), ("analyst", r"analyst")]:
+        if re.search(pattern, t):
+            return name
+    return "other"
 
 ids, texts, meta = [], [], {}
 for f in sorted(DATA.iterdir()):
@@ -35,6 +46,19 @@ idx = {i: k for k, i in enumerate(ids)}
 by_co = collections.defaultdict(list)
 for i in ids:
     by_co[key(meta[i]["company"])].append(i)
+
+# one employer per corporate family or country branch, read from the whole name, brackets included; recruiters posting for different clients stay apart
+PARENTS = [(r"amazon|\baws\b|prime video", "amazon"), (r"booking", "booking"), (r"\btoss\b|토스|비바리퍼블리카", "toss"),
+           (r"woolworths|cartology", "woolworths"), (r"act digital|irium", "actdigital"), (r"delivery hero|foodpanda", "deliveryhero"),
+           (r"\btalan\b|dataroots", "talan"), (r"\bnba\b|national basketball", "nba"), (r"nord security", "nordsecurity"), (r"^orange\b", "orange"),
+           (r"^maya\b", "maya")] + [(re.escape(brand), re.sub(r"[^a-z0-9]", "", brand)) for brand in
+           ["octopus energy", "capgemini", "devoteam", "kpmg", "astek", "aubay", "luxoft", "asos", "doordash", "decathlon",
+            "deutsche glasfaser", "fanatics", "finavia", "fortnox", "körber", "pro plus", "synsam", "crystalloids", "lego"]]
+
+def employer(c):
+    """The company key, with related names (Amazon and AWS, Toss and Toss Securities, Octopus Energy France and Germany) merged."""
+    name = c.lower()
+    return next((parent for pattern, parent in PARENTS if re.search(pattern, name)), key(c))
 
 RING = "2026-10-09_qonto_analytics-engineer"  # the Paris ad ringed on the slide, closest match near the median
 FAMILIES = ["Amazon · Prime Video · AWS", "DoorDash", "Woolworths · Cartology", "act digital · Irium", "NBA"]
@@ -65,9 +89,32 @@ M = [[int(round(S[idx[a], idx[b]] * 100)) for b in order] for a in order]
 gl = []
 for gi, (label, g) in enumerate(groups):
     gl += [gi] * len(g)
-keys = [key(meta[i]["company"]) for i in ids]; K = np.array(keys)
+keys = [employer(meta[i]["company"]) for i in ids]; K = np.array(keys)
 same = K[:, None] == K[None, :]; upper = np.triu(np.ones_like(same, dtype=bool), 1)
 stranger = np.where(same, -1, S)
+# the baseline: how much wording two ads from different companies share, by the job each title names
+F = np.array([family(meta[i].get("role") or "") for i in ids])
+def between(a, b):
+    pair = (F[:, None] == a) & (F[None, :] == b); pair = (pair | pair.T) & upper & ~same
+    return {"pairs": int(pair.sum()), "mean": round(float(S[pair].mean()), 3)}
+by_family = {"ads": dict(collections.Counter(F.tolist())), "ae_ae": between("analytics engineer", "analytics engineer"),
+             "ae_de": between("analytics engineer", "data engineer"), "ae_bi": between("analytics engineer", "BI"),
+             "de_de": between("data engineer", "data engineer"), "bi_bi": between("BI", "BI")}
+# the same comparison on the captured responsibility bullets alone, no requirements or stack lists; ads with under 40 words of bullets are left out
+duty_ids = [i for i in sorted(DATA.iterdir()) if (i / f"{i.name}.json").exists()]
+duty_ids, duty_texts, duty_meta = zip(*[(f.name, "\n".join(r.get("responsibilities") or []), r) for f in duty_ids
+                                        for r in [json.loads((f / f"{f.name}.json").read_text())]
+                                        if r["jd_language"] == "en" and sum(len(x.split()) for x in r.get("responsibilities") or []) >= 40])
+DX = TfidfVectorizer(ngram_range=(1, 2), sublinear_tf=True, stop_words="english", min_df=3, max_df=0.4).fit_transform(duty_texts)
+DS = (DX @ DX.T).toarray(); DK = np.array([employer(r["company"]) for r in duty_meta]); DF = np.array([family(r.get("role") or "") for r in duty_meta])
+d_same = DK[:, None] == DK[None, :]; d_upper = np.triu(np.ones_like(d_same, dtype=bool), 1)
+def d_between(a, b):
+    pair = (DF[:, None] == a) & (DF[None, :] == b); pair = (pair | pair.T) & d_upper & ~d_same
+    return {"pairs": int(pair.sum()), "mean": round(float(DS[pair].mean()), 3)}
+duties_only = {"pop": len(duty_ids), "min_words": 40, "mean_within": round(float(DS[d_upper & d_same].mean()), 3), "mean_between": round(float(DS[d_upper & ~d_same].mean()), 3),
+               "ads": dict(collections.Counter(DF.tolist())), "ae_ae": d_between("analytics engineer", "analytics engineer"),
+               "ae_de": d_between("analytics engineer", "data engineer"), "ae_bi": d_between("analytics engineer", "BI"),
+               "de_de": d_between("data engineer", "data engineer"), "bi_bi": d_between("BI", "BI")}
 nearest = {i: [round(float(stranger[idx[i]].max()), 3), ids[int(stranger[idx[i]].argmax())]] for i in ids}
 
 # verbatim copying: role lines of 6+ words (case and spacing ignored) found in another company's ad, all ads
@@ -102,9 +149,11 @@ json.dump({"n": len(order), "ids": order, "company": [meta[i]["company"] for i i
            "pop": len(ids), "mean_between": round(float(S[upper & ~same].mean()), 3), "mean_within": round(float(S[upper & same].mean()), 3),
            "nearest_median": round(float(np.median([v[0] for v in nearest.values()])), 3),
            "nearest_ge_030": round(float(np.mean([v[0] >= 0.30 for v in nearest.values()])), 3),
-           "nearest": [nearest[i] for i in order], "ring": order.index(RING), "copy_rate": copy_rate},
+           "nearest": [nearest[i] for i in order], "ring": order.index(RING), "copy_rate": copy_rate, "by_family": by_family, "duties_only": duties_only},
           open(Path(__file__).parent / "inputs" / "similarity_matrix.json", "w"), separators=(",", ":"))
 off = [M[a][b] for a in range(len(order)) for b in range(a + 1, len(order)) if gl[a] != gl[b]]
 print("ads", len(order), "groups", len(groups), "between-group mean", round(float(np.mean(off)) / 100, 3), "max", max(off))
 print("English ads", len(ids), "between", round(float(S[upper & ~same].mean()), 3), "within", round(float(S[upper & same].mean()), 3),
       "nearest median", round(float(np.median([v[0] for v in nearest.values()])), 3), "copy", copy_rate)
+print("by family", by_family)
+print("responsibilities only", duties_only)
