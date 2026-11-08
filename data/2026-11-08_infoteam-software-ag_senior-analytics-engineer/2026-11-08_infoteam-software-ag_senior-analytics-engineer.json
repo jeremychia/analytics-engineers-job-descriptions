@@ -1,0 +1,155 @@
+{
+  "jd_id": "2026-11-08_infoteam-software-ag_senior-analytics-engineer",
+  "company": "infoteam Software AG",
+  "role": "Senior Analytics Engineer (m/w/x)",
+  "job_location": "Bubenreuth, Bavaria, Germany",
+  "seniority": "senior",
+  "role_type": "analytics_engineering_bi",
+  "salary_min": 53890,
+  "salary_max": 80830,
+  "salary_currency": "EUR",
+  "salary_period": "annual",
+  "jd_authorship": "hiring_manager",
+  "stakeholder_orientation": "internal_data",
+  "autonomy_level": "strategic",
+  "ai_role": "none",
+  "testing_framing": "responsibility",
+  "loss_aversion_framing": "moderate",
+  "greenfield_vs_fix": "greenfield",
+  "velocity_vs_rigour": "rigour",
+  "domain_risk": "moderate",
+  "collaboration_width": 1,
+  "data_team_maturity": "mid",
+  "urgency": "standard",
+  "work_arrangement": "hybrid",
+  "language_gate_type": "hard",
+  "language_gate_languages": [
+    "German"
+  ],
+  "jd_language": "de",
+  "ai_written": {
+    "score": 28.4,
+    "spread": 41.1,
+    "measures": {
+      "marker_vocab": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "stock_phrases": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "structure": {
+        "raw": 0.0,
+        "score": 0.0
+      },
+      "bullet_symmetry": {
+        "raw": 0.432,
+        "score": 70.7
+      },
+      "burstiness": {
+        "raw": 1.042,
+        "score": 0.0
+      },
+      "specificity": {
+        "raw": 4.688,
+        "score": 100.0
+      }
+    }
+  },
+  "interview_stages": null,
+  "ats_platform": "linkedin",
+  "ats_job_id": "4487752084",
+  "has_dbt": false,
+  "has_dbt_cloud": false,
+  "has_spark": true,
+  "has_python": true,
+  "has_sql": true,
+  "has_airflow": false,
+  "has_dagster": false,
+  "has_prefect": false,
+  "has_snowflake": false,
+  "has_databricks": true,
+  "has_bigquery": false,
+  "has_redshift": false,
+  "has_duckdb": false,
+  "has_fabric_synapse": false,
+  "has_postgres": false,
+  "has_fivetran": false,
+  "has_airbyte": false,
+  "has_glue": false,
+  "has_kafka": false,
+  "has_terraform": false,
+  "has_looker": false,
+  "has_tableau": false,
+  "has_power_bi": false,
+  "has_metabase": false,
+  "has_great_expectations": false,
+  "has_soda": false,
+  "has_version_control": false,
+  "has_ci_cd": false,
+  "has_aws": false,
+  "has_azure": true,
+  "has_gcp": false,
+  "has_semantic_layer": false,
+  "required_tools": [
+    "SQL",
+    "Python",
+    "Spark"
+  ],
+  "preferred_tools": [
+    "Databricks"
+  ],
+  "responsibilities": [
+    "Du entwirfst eine durchgängige Lakehouse-Architektur, die sich an den Data-Mesh-Prinzipien orientiert, und integrierst Datenprodukte in die übergreifende Plattform und in weitere Domänen",
+    "Du analysierst gemeinsam mit den Fachbereichen komplexe Anforderungen und gestaltest daraus performante, wartbare Datenprodukte. Dabei legst du Verantwortlichkeiten, Qualitätsanforderungen, Zugriffsregeln und Dokumentation fest",
+    "Du definierst wiederverwendbare Patterns für Ingestion, Transformation, Validierung und Bereitstellung und bringst Sicherheit, Performance, Zuverlässigkeit und Kosten in Einklang",
+    "Du konzipierst Prüf- und Validierungsmechanismen für hohe Datenqualität und stimmst dich dazu mit den Verantwortlichen der Datenquellen ab",
+    "Du prüfst Annahmen und Architekturentwürfe mit Datenexploration, Analysen und Prototypen",
+    "Du unterstützt Kollegen bei der Einarbeitung und Einhaltung von Architektur- und Prozessstandards, prüfst Designs und Implementierungen und förderst den Wissensaustausch im Team"
+  ],
+  "responsibilities_source": "jd_section",
+  "source_url": "https://www.linkedin.com/jobs/view/4487752084/",
+  "evidence": {
+    "velocity_vs_rigour": "Du konzipierst Prüf- und Validierungsmechanismen für hohe Datenqualität",
+    "velocity_vs_rigour_explanation": "The role centres on quality, validation and maintainability (\"Prüf- und Validierungsmechanismen für hohe Datenqualität\", quality requirements and access rules), with no speed phrases.",
+    "domain_risk": "gestaltest daraus performante, wartbare Datenprodukte",
+    "domain_risk_explanation": "A software services firm building data products for its business departments, with no financial-reporting or regulatory language, so errors affect business decisions only.",
+    "collaboration_width": "Verantwortlichen der Datenquellen",
+    "data_team_maturity": "integrierst Datenprodukte in die übergreifende Plattform und in weitere Domänen",
+    "data_team_maturity_explanation": "A shared platform and several data domains already exist, and the role extends them (\"integrierst Datenprodukte in die übergreifende Plattform und in weitere Domänen\"), so the function is growing rather than new.",
+    "jd_authorship": "Du definierst wiederverwendbare Patterns für Ingestion, Transformation, Validierung und Bereitstellung",
+    "jd_authorship_explanation": "Bullets name concrete architecture work (Lakehouse, Data-Mesh, reusable ingestion and validation patterns, prototypes), so a reader learns what the job involves.",
+    "stakeholder_orientation": "integrierst Datenprodukte in die übergreifende Plattform und in weitere Domänen",
+    "stakeholder_orientation_explanation": "The primary audience is the data platform and its domains, which consume the data products the role designs (\"Datenprodukte in die übergreifende Plattform\").",
+    "autonomy_level": "Du definierst wiederverwendbare Patterns",
+    "autonomy_level_explanation": "The role designs the architecture and sets the standards (\"Du entwirfst\", \"Du definierst wiederverwendbare Patterns\", \"legst du ... fest\") and reviews others' designs.",
+    "ai_role": "No AI skill signal.",
+    "ai_role_explanation": "The posting does not mention AI tools or AI-facing data work.",
+    "testing_framing": "Du konzipierst Prüf- und Validierungsmechanismen für hohe Datenqualität",
+    "testing_framing_explanation": "The candidate designs the validation mechanisms for data quality, which is ownership rather than a tool in a skills list.",
+    "loss_aversion_framing": "bringst Sicherheit, Performance, Zuverlässigkeit und Kosten in Einklang",
+    "loss_aversion_framing_explanation": "Reliability and quality are recurring concerns, but they sit beside performance and cost in a design brief, with no compliance or audit framing.",
+    "greenfield_vs_fix": "Du entwirfst eine durchgängige Lakehouse-Architektur",
+    "greenfield_vs_fix_explanation": "The dominant verbs are design and conceive (\"entwirfst\", \"konzipierst\", \"definierst\") for a new Lakehouse architecture and data products.",
+    "language_gate": "Du dokumentierst und kommunizierst sicher in Deutsch und Englisch",
+    "urgency": "No urgency signals present.",
+    "work_arrangement": "die Möglichkeit auf hybrides Arbeiten",
+    "loss_aversion": "Du konzipierst Prüf- und Validierungsmechanismen für hohe Datenqualität und stimmst dich dazu mit den Verantwortlichen der Datenquellen ab — quality is designed in with source owners, framed as reliability rather than regulatory risk.",
+    "ats_keywords": [
+      "Azure Databricks",
+      "Lakehouse-Architektur",
+      "Data-Mesh-Prinzipien",
+      "Datenprodukte",
+      "Analytics-Architekturen",
+      "Ingestion, Transformation, Validierung und Bereitstellung",
+      "Validierungsmechanismen",
+      "Datenmodellierung",
+      "Datenproduktdesign",
+      "Azure Data Lake Storage",
+      "Python/PySpark",
+      "Datenqualitäts- und Validierungsprozessen"
+    ],
+    "ats_lookup": "resolve_ats miss; infoteam.de/karriere-bei-infoteam loads its job list through a b-ite widget with no static job pages and no job entries in the sitemap; web search found only aggregators (stepstone, mynejo, weekday) and no employer page for this role"
+  }
+}
