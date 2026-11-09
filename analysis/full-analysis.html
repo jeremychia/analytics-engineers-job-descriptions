@@ -6,61 +6,10 @@
 <title>AE/BI Job Market — Relationship Analysis</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231d4ed8'/%3E%3Ccircle cx='24' cy='20' r='9' fill='%23ffffff'/%3E%3Cpath d='M8 50c0-11 7.5-18 16-18s16 7 16 18' fill='%23ffffff'/%3E%3Crect x='42' y='32' width='6' height='18' rx='1' fill='%2316a34a'/%3E%3Crect x='51' y='22' width='6' height='28' rx='1' fill='%23fbbf24'/%3E%3C/svg%3E">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="site.css">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --bg: #ffffff;
-  --surface: #f8f8f6;
-  --surface2: #f0f0ed;
-  --border: #e5e5e1;
-  --text: #1a1d24;
-  --muted: #586070;
-  --bar: rgba(26,29,36,0.72);
-  --highlight: #fde68a;
-  --font-text: Charter, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-  --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --t-xs: 0.75rem;
-  --t-sm: 0.8125rem;
-  --t-base: 0.9375rem;
-  --t-md: 1.0625rem;
-  --t-lg: 1.375rem;
-  --t-xl: 1.75rem;
-  --measure: 70ch;
-  --r-sm: 4px;
-  --r-md: 8px;
-  --r-pill: 999px;
-  --shadow: 0 8px 24px rgba(0,0,0,0.14);
-  --control-border: #80868f;
-  --accent: #1d4ed8;
-  --high: #c0392b;
-  --moderate: #d97706;
-  --low: #16a34a;
-  --w: 1120px;
-}
-
-@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; scroll-behavior: auto !important; }
-}
-body { font-family: var(--font-text); background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.7; }
-
-/* sans for controls, labels and figures; the serif carries the reading text */
-button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .region-filter, .region-dd-list,
-.stat-num, .stat-label, .hygiene-stat, .hygiene-label, .geo-cell-n, .snapshot-row-label, .rel-tab, .motivator-chip,
-.assess-opt, .check-item-badge, .skip-link { font-family: var(--font-ui); font-variant-numeric: tabular-nums; }
-
-.skip-link {
-  position: absolute; top: -48px; left: 1rem;
-  background: var(--accent); color: #fff; padding: 0.5rem 1rem;
-  border-radius: 0 0 var(--r-md) var(--r-md); font-size: var(--t-sm); font-weight: 600;
-  text-decoration: none; z-index: 9999; transition: top 0.1s;
-}
-.skip-link:focus { top: 0; }
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: var(--r-sm); }
-
-/* text for screen readers only */
-.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+:root { --w: 1120px; }
+.count-pill, .persona-toggle, .stat-num, .stat-label, .geo-cell-n, .rel-tab { font-family: var(--font-ui); font-variant-numeric: tabular-nums; }
 
 /* ── HERO ── */
 .hero {
@@ -117,9 +66,6 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 1.75rem; }
 .card-title { font-size: var(--t-base); font-weight: 700; margin-bottom: 0.35rem; }
 .card-sub { font-size: var(--t-xs); color: var(--muted); margin-bottom: 1.5rem; }
-/* lead-in to a chart from the corpus, filled by question-charts.js into each [data-q] */
-.chart-lead { font-size: var(--t-base); color: var(--muted); max-width: var(--measure); line-height: 1.8; margin-top: 2.5rem; }
-.chart-lead strong { color: var(--text); }
 .more-views { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1.25rem; }
 .more-views .card { display: block; padding: 1.1rem 1.25rem; color: var(--text); text-decoration: none; transition: border-color 0.15s; }
 .more-views .card:hover { border-color: var(--accent); }
@@ -143,47 +89,6 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
 
 /* ── RELATIONSHIP GRID (primary content unit) ── */
 .rel-grid { display: flex; flex-direction: column; gap: 2.5rem; }
-.rel-panel { border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; background: #fff; }
-.rel-head { padding: 1.5rem 1.75rem 1.25rem; border-bottom: 1px solid var(--border); }
-.rel-tag { font-size: var(--t-xs); color: var(--muted); font-weight: 600; margin-bottom: 0.5rem; }
-.rel-question { font-size: var(--t-md); font-weight: 700; letter-spacing: -0.015em; margin-bottom: 0.5rem; line-height: 1.35; }
-.rel-stat { font-size: var(--t-sm); color: var(--text); line-height: 1.6; }
-.rel-stat .n { color: var(--muted); font-weight: 500; }
-.rel-body { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 0; }
-@media (max-width: 900px) { .rel-body { grid-template-columns: 1fr; } }
-.rel-viz { padding: 1.5rem 1.75rem; border-left: 1px solid var(--border); }
-@media (max-width: 900px) { .rel-viz { border-left: none; border-top: 1px solid var(--border); } }
-.rel-read { padding: 1.5rem 1.75rem; font-size: var(--t-sm); color: var(--muted); line-height: 1.8; }
-.rel-read strong { color: var(--text); }
-.rel-takeaway { font-size: var(--t-base); color: var(--text); font-weight: 600; line-height: 1.55; margin-bottom: 0.9rem; }
-.rel-takeaway strong, .null-takeaway strong { color: var(--text); }
-details.rel-details, details.null-details { margin-bottom: 0; }
-details.rel-details summary, details.null-details summary {
-  cursor: pointer; font-size: var(--t-xs); font-weight: 600; color: var(--accent);
-  list-style: none; display: inline-flex; align-items: center; gap: 0.3rem;
-  padding: 0.1rem 0; user-select: none;
-}
-details.rel-details summary::-webkit-details-marker, details.null-details summary::-webkit-details-marker { display: none; }
-details.rel-details summary::before, details.null-details summary::before {
-  content: '▸'; font-size: var(--t-xs); transition: transform 0.15s;
-}
-details.rel-details[open] summary::before, details.null-details[open] summary::before { transform: rotate(90deg); }
-details.rel-details summary:hover, details.null-details summary:hover { color: var(--text); }
-.rel-details-body, .null-details-body { margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px dashed var(--border); }
-.rel-read .resume-tip {
-  margin-top: 1rem; padding: 0.85rem 1rem; background: var(--surface); border-radius: var(--r-md);
-  border-left: 3px solid var(--text); font-size: var(--t-sm); color: var(--text);
-}
-.rel-read .resume-tip b { color: var(--text); }
-.rel-read a, .resume-tip a, .null-apply a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
-.rel-test { margin-top: 0.65rem; font-size: var(--t-xs); color: var(--muted); line-height: 1.6; }
-.rel-test .sig {
-  display: inline-block; font-weight: 700; font-size: var(--t-xs); padding: 0.12rem 0.55rem; border-radius: var(--r-pill); margin-right: 0.45rem; vertical-align: 1px;
-}
-.sig-strong, .sig-ok { background: #dcfce7; color: #166534; }
-.sig-marginal { background: #fef3c7; color: #92400e; }
-.sig-none { background: #fee2e2; color: #991b1b; }
-.sig-na { background: var(--surface2); color: var(--muted); }
 
 /* ── NULL-RESULT CARDS ── */
 .null-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.25rem; }
@@ -196,39 +101,17 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
 .null-test { margin-top: 0.6rem; font-size: var(--t-xs); color: var(--muted); }
 .null-apply { margin-top: 0.85rem; padding: 0.7rem 0.85rem; background: #fff; border-radius: var(--r-md); border-left: 3px solid var(--text); font-size: var(--t-xs); color: var(--text); line-height: 1.65; }
 .null-apply b { color: var(--text); }
-
-/* stacked-bar cross-tab (two categorical variables) */
-.xtab-row { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.85rem; }
-.xtab-label { width: 110px; flex-shrink: 0; font-size: var(--t-xs); color: var(--text); font-weight: 600; text-align: right; }
-.xtab-n { width: 34px; flex-shrink: 0; font-size: var(--t-xs); color: var(--muted); }
-.xtab-bar { flex: 1; height: 22px; border-radius: var(--r-sm); overflow: hidden; display: flex; background: var(--surface2); }
-.xtab-seg { height: 100%; display: flex; align-items: center; justify-content: center; font-size: var(--t-xs); font-weight: 700; color: #fff; min-width: 0; overflow: hidden; white-space: nowrap; }
-.xtab-legend { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: 1rem; padding-left: 144px; }
-@media (max-width: 500px) { .xtab-legend { padding-left: 0; } }
-.xtab-legend-item { display: flex; align-items: center; gap: 0.35rem; font-size: var(--t-xs); color: var(--muted); }
-.xtab-legend-dot { width: 9px; height: 9px; border-radius: var(--r-sm); flex-shrink: 0; }
+.null-takeaway strong { color: var(--text); }
+.null-apply a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
 
 /* numeric-by-category bar (e.g. median collaboration width per group) */
 .numbar-row { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.85rem; }
-.numbar-label { width: 110px; flex-shrink: 0; font-size: var(--t-xs); color: var(--text); font-weight: 600; text-align: right; }
+.numbar-label { width: 150px; flex-shrink: 0; font-size: var(--t-xs); color: var(--text); font-weight: 600; text-align: right; }
 .numbar-track { flex: 1; background: var(--surface2); border-radius: var(--r-sm); height: 22px; position: relative; }
 .numbar-fill { height: 100%; border-radius: var(--r-sm); background: var(--bar); display: flex; align-items: center; justify-content: flex-end; padding-right: 0.5rem; }
 .numbar-fill-val { font-size: var(--t-xs); font-weight: 700; color: #fff; }
-.numbar-n { width: 34px; flex-shrink: 0; font-size: var(--t-xs); color: var(--muted); }
-
-/* ── TOOLTIP ── */
-#tooltip {
-  position: fixed; background: #1c2030; border: 1px solid #2e364f; color: #e8eaf0;
-  border-radius: var(--r-md); padding: 1rem 1.1rem; max-width: 300px;
-  font-size: var(--t-xs); line-height: 1.55; pointer-events: none;
-  opacity: 0; transition: opacity 0.12s; z-index: 1000; box-shadow: var(--shadow);
-}
-#tooltip.visible { opacity: 1; }
-.tt-company { font-weight: 700; font-size: var(--t-base); margin-bottom: 0.1rem; color: #fff; }
-.tt-role { color: #8892aa; margin-bottom: 0.75rem; font-size: var(--t-xs); }
-.tt-field { margin-bottom: 0.45rem; }
-.tt-label { font-size: var(--t-xs); color: #6b9ef7; margin-bottom: 0.1rem; }
-.tt-quote { font-style: italic; color: #b8c4d8; font-size: var(--t-xs); }
+.numbar-n { width: 52px; flex-shrink: 0; font-size: var(--t-xs); color: var(--muted); }
+@media (max-width: 560px) { .numbar-row { flex-wrap: wrap; row-gap: 0.3rem; } .numbar-label { width: 100%; text-align: left; } }
 
 /* ── scatter card ── */
 .scatter-controls { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.25rem; align-items: center; }
@@ -236,9 +119,6 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
 .ctrl-group label { font-size: var(--t-xs); color: var(--muted); }
 .ctrl-group select { font-size: var(--t-xs); background: var(--surface2); color: var(--text); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 0.25rem 0.5rem; }
 .scatter-wrap { position: relative; height: 380px; }
-.legend { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
-.legend-item { display: flex; align-items: center; gap: 0.35rem; font-size: var(--t-xs); color: var(--muted); }
-.legend-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
 
 /* company drill panel, shared */
 .drill-toggle { font-size: var(--t-xs); color: var(--accent); background: none; border: none; cursor: pointer; font-weight: 600; padding: 0; margin-top: 0.5rem; text-decoration: underline; }
@@ -278,7 +158,6 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
 .tool-row-fill { height: 100%; border-radius: var(--r-sm); min-width: 2px; transition: opacity 0.1s; }
 .tool-row:hover .tool-row-fill { opacity: 0.8; }
 .tool-row-n { width: 34px; flex-shrink: 0; font-size: var(--t-xs); font-weight: 700; color: var(--text); }
-.rt-chart-wrap { position: relative; height: 460px; }
 
 .salary-caveat { font-size: var(--t-xs); color: var(--muted); line-height: 1.65; background: var(--surface2); border: 1px solid var(--border); border-radius: var(--r-md); padding: 0.85rem 1.1rem; margin-bottom: 1.5rem; }
 .salary-legend { display: flex; gap: 1.4rem; margin-bottom: 1.5rem; font-size: var(--t-xs); color: var(--muted); flex-wrap: wrap; }
@@ -352,9 +231,6 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
 #sectionsWrap > .section { border-top: 1px solid var(--border); }
 #sectionsWrap > .section:first-child { border-top: none; }
 
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: var(--r-sm); }
 </style>
 <link rel="stylesheet" href="hero-quote.css">
 </head>
@@ -429,50 +305,39 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
   <div class="stats-row" id="statsRow"></div>
 </section>
 
+<!-- SECTION: THE FOUR ANSWERS (the talk's four questions, answered live, before the detail) -->
+<section class="section" id="tested">
+  <div class="section-kicker">Snapshot one · four answers</div>
+  <h2 class="section-headline">Four questions, answered live from these ads</h2>
+  <p class="section-body">This page follows the four questions the talk asks of these ads: what the job is, whether ads keep up with the work, what they leave unsaid, and who will be senior next. Each answer below is worked out from the ads under the role filter above; the sections after it hold the detail, card by card, each with its test.</p>
+  <div data-answers data-links="#responsibility-taxonomy #lag #unsaid #juniors"></div>
+</section>
+
 <!-- SECTION: RELATIONSHIPS (primary content) -->
 <section class="section" id="relationships">
+  <div class="section-kicker">Every pattern, tested</div>
   <h2 class="section-headline" id="relHead">Where dimensions move together</h2>
   <p class="section-body" id="relBody">Each panel below crosses two classifications to answer a question a single-dimension stat can't answer: not "how many roles are strategic" but "<strong>which</strong> roles are strategic." Pick a theme below. Each panel's headline is one line — click "Full analysis" on any card for the underlying test, caveats, and methodology.</p>
   <details class="rel-details" style="margin-bottom:1.5rem"><summary>Methodology note: why some responsibility-language pairings are excluded</summary><div class="rel-details-body" id="relOverlapNote" style="font-size:var(--t-sm)"></div></details>
   <div class="rel-tabs" id="relTabs" role="tablist" aria-label="Relationship theme"></div>
   <div class="rel-grid" id="relGrid"></div>
-  <p class="chart-lead">Seniority also shows in the wording of the duties. <strong>Across levels the core skills hold steady and the verbs change.</strong></p>
-  <div data-q="ladder" data-note="the role filter does not apply" data-body></div>
-  <p class="chart-lead">At the bottom of that ladder, <strong>a junior title does not always mean a junior ask.</strong></p>
-  <div data-q="juniors" data-note="the role filter does not apply" data-body></div>
 </section>
 
 
 <!-- SECTION: RESPONSIBILITY TAXONOMY (separate regex-classified pass over responsibility bullets) -->
 <section class="section" id="responsibility-taxonomy">
+  <div class="section-kicker">1 · What is an analytics engineer?</div>
   <h2 class="section-headline" id="rtHead">What the responsibilities actually say, bullet by bullet</h2>
-  <p class="section-body" id="rtBody">The dimensions above classify each JD as a whole. This section instead parses just the responsibilities section of each posting into individual bullets, and classifies <em>those</em> against a fixed 16-theme taxonomy. The bullets are copied verbatim out of each posting's responsibilities section when it is classified, and checked against the archived text before the record is saved; the theme tagging applied to them is keyword-based, not LLM — see <code>analysis/responsibility_taxonomy.py</code>. A JD can carry several themes at once, so the bars sum to well over 100%. n=<span id="rtN">—</span> of the active filter's JDs have a theme reading (a few have no archived JD text or no extractable responsibilities section).</p>
-  <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:1.5rem;align-items:start" class="rt-grid-wrap">
-    <div class="card">
-      <div class="card-title-row">
-        <div class="card-title">Theme prevalence</div>
-        <span class="rt-click-badge">Click a bar, or use the list, for JD examples</span>
-      </div>
-      <p class="card-sub">% of JDs (with a theme reading) whose responsibilities include each theme, recomputed against the active role filter</p>
-      <div class="rt-chart-wrap"><canvas id="rtChart" role="img" aria-label="Bar chart of how many job descriptions carry each responsibility theme. The same figures are listed below the chart."></canvas></div>
-      <details class="rel-details" style="margin-top:1rem">
-        <summary>List the themes, with example sentences</summary>
-        <ul class="rt-theme-list" id="rtThemeList"></ul>
-      </details>
-    </div>
-    <div class="card">
+  <p class="section-body" id="rtBody">Most of this page classifies each ad as a whole. This section instead parses just the responsibilities section of each posting into individual bullets, and classifies <em>those</em> against a fixed 16-theme taxonomy. The bullets are copied verbatim out of each posting's responsibilities section when it is classified, and checked against the archived text before the record is saved; the theme tagging applied to them is keyword-based, not LLM — see <code>analysis/responsibility_taxonomy.py</code>. A JD can carry several themes at once, so the bars sum to well over 100%. n=<span id="rtN">—</span> of the active filter's JDs have a theme reading (a few have no archived JD text or no extractable responsibilities section).</p>
+  <div data-cards="titles duties"></div>
+  <p class="chart-lead">Some duties come in pairs. These pairs appear together more often than chance would put them.</p>
+  <div class="card" style="margin-top:1.25rem">
       <div class="card-title">Which responsibilities travel together</div>
       <p class="card-sub" id="rtCoocSub">Co-occurrence beyond what each theme's own prevalence would predict (lift = joint rate ÷ expected-if-independent rate). Lift &gt; 1 means the pair shows up together more than chance; sorted by lift, ties broken by support (n).</p>
       <div class="company-list" id="rtCoocList" style="max-height:420px"></div>
-    </div>
   </div>
-  <p class="chart-lead">Read the same bullets ad by ad rather than theme by theme, and <strong>the ads fall on one spectrum</strong>: reporting and analysis at one end, data quality and pipelines at the other.</p>
-  <div data-q="titles" data-note="the role filter does not apply" data-body></div>
-  <p class="chart-lead">Split the ads by stack and <strong>the largest gap in their duties is BI and reporting</strong>. Most other themes barely move.</p>
-  <div data-q="gap" data-note="the role filter does not apply" data-body></div>
 </section>
 <style>
-  @media (max-width: 900px) { .rt-grid-wrap { grid-template-columns: 1fr !important; } }
   .rt-cooc-row { display: flex; justify-content: space-between; align-items: baseline; gap: 0.75rem; padding: 0.55rem 0; border-bottom: 1px solid var(--border); font-size: var(--t-sm); }
   .rt-cooc-row:last-child { border-bottom: none; }
   .rt-cooc-pair { flex: 1; line-height: 1.4; }
@@ -480,41 +345,11 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
   .rt-cooc-lift { font-weight: 700; color: var(--text); }
   .card-title-row { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap; }
   .card-title-row .card-title { margin-bottom: 0; }
-  .rt-theme-list { list-style: none; margin-top: 0.6rem; }
-  .rt-theme-list li { display: flex; align-items: baseline; gap: 0.75rem; padding: 0.35rem 0; border-bottom: 1px solid var(--border); font-size: var(--t-sm); }
-  .rt-theme-name { flex: 1; }
-  .rt-theme-n { color: var(--muted); font-family: var(--font-ui); font-size: var(--t-xs); white-space: nowrap; }
-  .rt-theme-list .drill-toggle { margin-top: 0; white-space: nowrap; }
   .rt-click-badge {
     font-size: var(--t-xs); font-weight: 600; color: var(--accent); background: rgba(29,78,216,0.09);
     border: 1px solid rgba(29,78,216,0.25); border-radius: var(--r-pill); padding: 0.2rem 0.65rem;
     white-space: nowrap;
   }
-  #rtChart { cursor: pointer; }
-  .rt-evidence-overlay {
-    position: fixed; inset: 0; background: rgba(17,17,17,0.5); backdrop-filter: blur(3px);
-    z-index: 1100; display: flex; align-items: flex-start; justify-content: center;
-    padding: 4vh 1.5rem; overflow-y: auto;
-  }
-  .rt-evidence-overlay.hidden { display: none; }
-  .rt-evidence-modal {
-    background: #fff; border-radius: var(--r-md); max-width: 720px; width: 100%;
-    padding: 1.75rem 2rem 2rem; box-shadow: var(--shadow); margin-bottom: 4vh;
-  }
-  .rt-evidence-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.25rem; }
-  .rt-evidence-modal h3 { font-size: var(--t-md); font-weight: 700; letter-spacing: -0.01em; }
-  .rt-evidence-close {
-    border: none; background: var(--bg, #f4f4f2); color: var(--muted); width: 28px; height: 28px;
-    border-radius: 50%; font-size: var(--t-base); cursor: pointer; flex-shrink: 0; line-height: 1;
-  }
-  .rt-evidence-close:hover { background: var(--border); }
-  .rt-evidence-modal .card-sub { margin-bottom: 1rem; }
-  .rt-evidence-list { max-height: 60vh; overflow-y: auto; }
-  .rt-evidence-item { padding: 0.7rem 0; border-bottom: 1px solid var(--border); font-size: var(--t-sm); line-height: 1.55; }
-  .rt-evidence-item:last-child { border-bottom: none; }
-  .rt-evidence-item mark { background: var(--highlight); color: inherit; padding: 0 2px; border-radius: var(--r-sm); }
-  .rt-evidence-meta { font-size: var(--t-xs); color: var(--muted); margin-top: 0.25rem; }
-  .rt-evidence-empty { font-size: var(--t-sm); color: var(--muted); padding: 1rem 0; }
 </style>
 
 
@@ -523,8 +358,6 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
   <h2 class="section-headline" id="nullHead">What we expected but the data didn't support</h2>
   <p class="section-body" id="nullBody">A page that only shows the cross-tabs that worked is survivorship bias with charts. These are relationships we specifically went looking for — because the industry narrative predicts them, or because they seemed like a reasonable hypothesis — that failed to replicate, flattened as the corpus grew, or never showed up. Reported with the same statistics as the findings above, because a solid null is often just as actionable.</p>
   <div class="null-grid" id="nullGrid"></div>
-  <p class="chart-lead">One more expectation that failed: <strong>that ads borrow their wording from each other.</strong></p>
-  <div data-q="barcode" data-note="the role filter does not apply" data-body></div>
 </section>
 
 
@@ -562,7 +395,7 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
     </div>
     <div class="scatter-wrap"><canvas id="scatterChart" role="img" aria-label="Scatter chart: one dot per role, domain risk against the chosen axis." aria-describedby="scatterSummary"></canvas>
       <p class="sr-only" id="scatterSummary"></p></div>
-    <div class="legend" id="scatterLegend"></div>
+    <div id="scatterLegend"></div>
   </div>
   <p class="chart-lead">An earlier explorer looked at the same ads in other ways. <strong>It uses an earlier snapshot</strong>, so its counts differ slightly from the rest of this page.</p>
   <div class="more-views">
@@ -622,11 +455,14 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
     <p><strong>That said, once regions are grouped into three broad, comparably-sized buckets (Europe / APAC / NYC metro) rather than read as fifteen fine-grained cells, a few effects survive confound-checking and are large enough to treat as real</strong> — language gates, rigour-vs-velocity framing, and salary disclosure norms differ by region in ways that hold up even after checking that domain-risk mix and company concentration aren't driving them. See the <strong>Region</strong> tab in the relationships section above for those three, presented with the same statistical rigour as every other cross-tab on this page. The caveat on this section stands for everything else — seniority mix, tool prevalence, and most other per-region breakdowns here are still corpus-coverage information, not a market claim.</p>
   </div>
   <div class="geo-grid" id="geoBreakdown"></div>
+  <p class="chart-lead">When the ads were saved, and how the snapshot is made up.</p>
+  <div data-cards="record"></div>
 </section>
 
 
 <!-- SECTION: STACK -->
 <section class="section" id="stack">
+  <div class="section-kicker">1 · What is an analytics engineer? · the tools</div>
   <h2 class="section-headline">SQL and dbt are the floor. Everything else is negotiable.</h2>
   <p class="section-body" id="stackBody">Loading…</p>
   <div class="card">
@@ -641,16 +477,28 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
       <div class="company-list" id="toolCompanyList" style="max-height:260px"></div>
     </div>
   </div>
-  <p class="chart-lead">Which tools an ad names says more than how often each one is named. <strong>At the same level, the stack changes the job.</strong></p>
-  <div data-q="stack" data-note="the role filter does not apply" data-body></div>
-  <p class="chart-lead">The same split runs through how ads ask for AI, and <strong>most AI asks stay vague.</strong></p>
-  <div data-q="ai" data-note="the role filter does not apply" data-body></div>
-  <p class="chart-lead">Put the tools together and <strong>almost no two ads ask for the same set.</strong> Pick your own tools to see which ads come closest.</p>
-  <div data-q="pitch" data-note="the role filter does not apply" data-body></div>
+  <div data-cards="stack tools mix"></div>
+</section>
+
+<!-- SECTION: ADS LOOK BACK -->
+<section class="section" id="lag">
+  <div class="section-kicker">2 · Do ads keep up with the work?</div>
+  <h2 class="section-headline">Ads describe the team we have, not the one we are building</h2>
+  <p class="section-body">New work turns up in ads late, and often under an older name. The AI asks show the same lag: many ask for AI, but vaguely.</p>
+  <div data-cards="ai semantic trend"></div>
+</section>
+
+<!-- SECTION: LEFT UNSAID -->
+<section class="section" id="unsaid">
+  <div class="section-kicker">3 · What do ads leave unsaid?</div>
+  <h2 class="section-headline">The ad asks a lot and tells little</h2>
+  <p class="section-body">The employer knows the pay, the team and the interview. The candidate knows what the ad says. Where a law asks for pay, ads give it. The salary detail follows in the next section.</p>
+  <div data-cards="disclose arrangement language"></div>
 </section>
 
 <!-- SECTION: SALARY (summary leads; both per-posting detail views are opt-in) -->
 <section class="section" id="salary">
+  <div class="section-kicker">3 · What do ads leave unsaid? · the pay</div>
   <h2 class="section-headline">What the postings that disclosed a salary actually said</h2>
   <p class="section-body" id="salaryBody">Loading…</p>
 
@@ -683,26 +531,30 @@ details.rel-details summary:hover, details.null-details summary:hover { color: v
       <div id="salaryEstChart"></div>
     </div>
   </details>
-  <p class="chart-lead">Pay is one line of the offer. <strong>What else an ad lists depends on the region</strong>, and so does how often pay is stated at all.</p>
-  <div data-q="benefits" data-note="the role filter does not apply" data-body></div>
+</section>
+
+<!-- SECTION: JUNIORS -->
+<section class="section" id="juniors">
+  <div class="section-kicker">4 · Who will be senior next?</div>
+  <h2 class="section-headline">Few ways in today means few seniors tomorrow</h2>
+  <p class="section-body">This is the finding that matters most for the field. The path up showed that mentoring climbs with seniority. Today's juniors are the seniors teams will need in five years. If few of them get in, who will today's seniors mentor? The ads come from one job search that leans senior, so read the ratio as this snapshot's.</p>
+  <div data-cards="levels juniorask juniorlist"></div>
+</section>
+
+<!-- SECTION: MOVING UP -->
+<section class="section" id="moving-up">
+  <div class="section-kicker">3 · What do ads leave unsaid? · the path up</div>
+  <h2 class="section-headline">The path up is unwritten too</h2>
+  <p class="section-body">Each ad describes one level, never the path between them. Read across the levels, and the path appears: the core skills stay flat, while the verbs, the mentoring and the work on direction climb.</p>
+  <div data-cards="ladder levelduties"></div>
 </section>
 </main>
 
-<div class="rt-evidence-overlay hidden" id="rtEvidenceOverlay" onclick="if(event.target===this) closeRtEvidence()">
-  <div class="rt-evidence-modal" role="dialog" aria-modal="true" aria-labelledby="rtEvidenceTitle">
-    <div class="rt-evidence-head">
-      <h3 id="rtEvidenceTitle"></h3>
-      <button class="rt-evidence-close" type="button" onclick="closeRtEvidence()" aria-label="Close">&times;</button>
-    </div>
-    <p class="card-sub" id="rtEvidenceSub"></p>
-    <div class="rt-evidence-list" id="rtEvidenceList"></div>
-  </div>
-</div>
 
-<div id="tooltip"></div>
 
 <script src="hero-quote.js"></script>
-<script src="question-charts-embed.js"></script>
+<script src="site.js"></script>
+<script src="viz.js"></script>
 <script>
 renderHeroQuote(document.getElementById('heroQuote'));
 if (window.Chart) { Chart.defaults.font.family = getComputedStyle(document.documentElement).getPropertyValue('--font-ui'); }
@@ -734,14 +586,10 @@ function closeDialog(overlay, fallbackFocusEl) {
   dialogOpener = null;
   if (back) back.focus();
 }
-const TIP_LABEL = { seeker: 'Apply this', manager: 'For your JD' };
 
-// Section order: seekers get targeting findings first, then the stack (what to learn).
-// Managers get the baseline, then the saturated signals (what NOT to rely on), then inference channels.
-const SECTION_ORDER = {
-  seeker:  ['summary','relationships','responsibility-taxonomy','nulls','stack','salary','explorer','orientation','geo-section'],
-  manager: ['summary','nulls','relationships','responsibility-taxonomy','explorer','orientation','stack','salary','geo-section'],
-};
+// Section order: the talk's four questions for every reader; the reader's side changes the wording, not the order.
+const STORY_ORDER = ['summary','tested','responsibility-taxonomy','stack','lag','unsaid','salary','moving-up','juniors','relationships','nulls','explorer','orientation','geo-section'];
+const SECTION_ORDER = { seeker: STORY_ORDER, manager: STORY_ORDER };
 // Panel order: seeker = effect size (discriminating power is what targeting needs);
 // manager = consequence for writing a posting (title language first — it's the cheapest fix).
 const PANEL_ORDER = {
@@ -779,6 +627,11 @@ const REL_GROUPS = {
 let activeRelGroup = null;
 
 const NAV_LABELS = {
+  tested:        { seeker: 'Four answers',  manager: 'Four answers' },
+  lag:           { seeker: 'Ads look back', manager: 'Ads look back' },
+  unsaid:        { seeker: 'Left unsaid',   manager: 'Left unsaid' },
+  juniors:       { seeker: 'Juniors',       manager: 'Juniors' },
+  'moving-up':   { seeker: 'Path up',       manager: 'Path up' },
   relationships: { seeker: 'Relationships', manager: 'What candidates infer' },
   'responsibility-taxonomy': { seeker: 'Responsibility mix', manager: 'Responsibility mix' },
   nulls:         { seeker: "Didn't hold",   manager: 'Saturated signals' },
@@ -837,8 +690,7 @@ function setPersona(p) {
 // copy marks a figure computed from the data as {{name}}
 function copyFacts() {
   if (!activeData.length) return {};
-  const s = chiSqStats(activeData, 'testing_framing', 'rt_quality');
-  return { vQualityTesting: s ? s.V.toFixed(2) : '–', themeCount: RT_THEME_ORDER.length };
+  return { vQualityTesting: vOf(activeData, 'testing_framing', 'rt_quality'), themeCount: RT_THEME_ORDER.length };
 }
 function applyCopy() {
   const p = P(), facts = copyFacts();
@@ -859,53 +711,9 @@ function applyPersona() {
   document.querySelector('.nav-links').innerHTML = SECTION_ORDER[p].filter(id => id !== 'summary')
     .map(id => `<a href="#${id}" data-section="${id}">${NAV_LABELS[id][p]}</a>`).join('');
   if (ALL_DATA.length) { buildRelationships(activeData); buildNulls(activeData); }
+  if (window.JDViz) JDViz.refresh();
 }
 
-// ink or white label, whichever clears 4.5:1 on the fill
-function labelOn(hex) {
-  const c = [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16) / 255)
-    .map(v => v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4);
-  const lum = 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2];
-  return 1.05 / (lum + 0.05) >= 4.5 ? '#fff' : 'var(--text)';
-}
-
-const COLOURS = {
-  domain_risk:            { high: '#c0392b', moderate: '#d97706', low: '#16a34a' },
-  velocity_vs_rigour:     { rigour: '#3d4452', mixed: '#9ca3af', velocity: '#c0392b' },
-  jd_authorship:          { hiring_manager: '#3d4452', mixed: '#9ca3af', recruiter: '#c0392b' },
-  greenfield_vs_fix:      { greenfield: '#16a34a', mixed: '#9ca3af', fix_scale: '#3d4452' },
-  data_team_maturity:     { early: '#c0392b', mid: '#d97706', mature: '#16a34a' },
-  stakeholder_orientation:{ commercial: '#7c3aed', product: '#0891b2', internal_data: '#3d4452', finance: '#c0392b', mixed: '#9ca3af' },
-  autonomy_level:         { strategic: '#16a34a', mixed: '#9ca3af', execution: '#d97706' },
-  ai_role:                { none: '#9ca3af', ai_user: '#0891b2', ai_enabler: '#7c3aed' },
-  testing_framing:        { responsibility: '#3d4452', tool_listed: '#d97706', absent: '#9ca3af' },
-  loss_aversion_framing:  { none: '#16a34a', moderate: '#d97706', high: '#c0392b' },
-  seniority:              { junior: '#16a34a', mid: '#0891b2', senior: '#3d4452', lead: '#7c3aed', staff: '#c0392b', manager: '#d97706' },
-  dbt_named:              { named: '#3d4452', not_named: '#9ca3af' },
-  work_arrangement:       { hybrid: '#3d4452', remote: '#16a34a', onsite: '#c0392b', not_stated: '#9ca3af' },
-  rt_mentorship:          { yes: '#3d4452', no: '#9ca3af' },
-  rt_infra:               { yes: '#3d4452', no: '#9ca3af' },
-  rt_selfservice:         { yes: '#3d4452', no: '#9ca3af' },
-  rt_perfcost:            { yes: '#3d4452', no: '#9ca3af' },
-  rt_governance:          { yes: '#3d4452', no: '#9ca3af' },
-  rt_ownership:           { yes: '#3d4452', no: '#9ca3af' },
-  rt_architecture:        { yes: '#3d4452', no: '#9ca3af' },
-};
-const LABELS = {
-  domain_risk:            { high: 'High risk', moderate: 'Moderate', low: 'Low risk' },
-  velocity_vs_rigour:     { rigour: 'Rigour', mixed: 'Mixed', velocity: 'Velocity' },
-  jd_authorship:          { hiring_manager: 'Hiring manager', mixed: 'Mixed', recruiter: 'Recruiter' },
-  greenfield_vs_fix:      { greenfield: 'Greenfield', mixed: 'Mixed', fix_scale: 'Fix / Scale' },
-  data_team_maturity:     { early: 'Early stage', mid: 'Mid stage', mature: 'Mature' },
-  stakeholder_orientation:{ commercial: 'Commercial', product: 'Product', internal_data: 'Internal data', finance: 'Finance', mixed: 'Mixed' },
-  autonomy_level:         { strategic: 'Strategic', mixed: 'Mixed', execution: 'Execution' },
-  ai_role:                { none: 'No AI skill expected', ai_user: 'Uses AI tools', ai_enabler: 'Builds AI infra' },
-  testing_framing:        { responsibility: 'Owns quality', tool_listed: 'Tool listed', absent: 'Absent' },
-  loss_aversion_framing:  { none: 'No fear signal', moderate: 'Operational fear', high: 'Compliance / trust fear' },
-  seniority:              { junior: 'Junior', mid: 'Mid', senior: 'Senior', lead: 'Lead', staff: 'Staff', manager: 'Manager' },
-  dbt_named:              { named: 'dbt named', not_named: 'dbt not named' },
-  work_arrangement:       { hybrid: 'Hybrid', remote: 'Remote', onsite: 'Onsite', not_stated: 'Not stated' },
-};
 const KEYWORDS = {
   velocity_vs_rigour: { rigour: ['TDD','CI/CD','production-grade','mocking','performance profiling','compliance','audit','meticulous','controlled','test coverage','regression','quality gate'], velocity: ['move fast','bias for action','agile','iterate','pragmatic','ship','fast-paced','rapid'] },
   jd_authorship: { hiring_manager: ['StarRocks','SparkSQL','PySpark','incremental models','Data Mesh','medallion','1B rows','multi-terabyte','dbt','Airflow','Spark','Kafka'], recruiter: ['collaborate','communication skills','team player','stakeholder','passionate','motivated','dynamic'] },
@@ -927,61 +735,17 @@ Chart.defaults.color = '#586070';
 Chart.defaults.borderColor = '#e5e5e1';
 function destroyChart(id) { if (charts[id]) { charts[id].destroy(); delete charts[id]; } }
 
-function wilsonMoe(successes, n) {
-  if (!n) return 0;
-  const z = 1.96, p = successes / n;
-  const denom = 1 + z * z / n;
-  const half = z * Math.sqrt((p * (1 - p) + z * z / (4 * n)) / n);
-  return Math.round((half / denom) * 100);
+// every value pair the records hold; a record missing either field is left out
+function chiSquareFor(data, keyA, keyB) {
+  const pairs = data.filter(d => d[keyA] && d[keyB]);
+  const valuesA = [...new Set(pairs.map(d => d[keyA]))], valuesB = [...new Set(pairs.map(d => d[keyB]))];
+  return Site.chiSquare(valuesA.map(a => valuesB.map(b => pairs.filter(d => d[keyA] === a && d[keyB] === b).length)));
 }
-
-// ── Inference helpers: χ² survival via regularized incomplete gamma ──
-function lgamma(x) {
-  const g = [76.18009172947146, -86.50532032941677, 24.01409824083091, -1.231739572450155, 0.1208650973866179e-2, -0.5395239384953e-5];
-  let y = x, tmp = x + 5.5;
-  tmp -= (x + 0.5) * Math.log(tmp);
-  let ser = 1.000000000190015;
-  for (let j = 0; j < 6; j++) ser += g[j] / ++y;
-  return -tmp + Math.log(2.5066282746310005 * ser / x);
-}
-function gammaQ(a, x) { // regularized upper incomplete gamma Q(a,x)
-  if (x <= 0) return 1;
-  if (x < a + 1) { // series for P, return 1-P
-    let ap = a, sum = 1 / a, del = sum;
-    for (let i = 1; i < 300; i++) { ap++; del *= x / ap; sum += del; if (Math.abs(del) < Math.abs(sum) * 1e-12) break; }
-    return 1 - sum * Math.exp(-x + a * Math.log(x) - lgamma(a));
-  }
-  let b = x + 1 - a, c = 1 / 1e-300, d = 1 / b, h = d; // continued fraction for Q
-  for (let i = 1; i < 300; i++) {
-    const an = -i * (i - a); b += 2;
-    d = an * d + b; if (Math.abs(d) < 1e-300) d = 1e-300;
-    c = b + an / c; if (Math.abs(c) < 1e-300) c = 1e-300;
-    d = 1 / d; const de = d * c; h *= de;
-    if (Math.abs(de - 1) < 1e-12) break;
-  }
-  return Math.exp(-x + a * Math.log(x) - lgamma(a)) * h;
-}
-function chi2sf(x, k) { return gammaQ(k / 2, x / 2); }
-
-function chiSqStats(data, aKey, bKey) {
-  const pairs = data.filter(d => d[aKey] && d[bKey]);
-  const ra = [...new Set(pairs.map(d => d[aKey]))], rb = [...new Set(pairs.map(d => d[bKey]))];
-  const n = pairs.length;
-  if (n < 30 || ra.length < 2 || rb.length < 2) return null;
-  const obs = ra.map(r => rb.map(c => pairs.filter(d => d[aKey] === r && d[bKey] === c).length));
-  const rs = obs.map(r => r.reduce((a, b) => a + b, 0));
-  const cs = rb.map((_, j) => obs.reduce((a, r) => a + r[j], 0));
-  let chi2 = 0, minexp = Infinity;
-  for (let i = 0; i < ra.length; i++) for (let j = 0; j < rb.length; j++) {
-    const e = rs[i] * cs[j] / n;
-    minexp = Math.min(minexp, e);
-    if (e > 0) chi2 += (obs[i][j] - e) ** 2 / e;
-  }
-  const dof = (ra.length - 1) * (rb.length - 1);
-  return { n, chi2, dof, p: chi2sf(chi2, dof), V: Math.sqrt(chi2 / (n * Math.min(ra.length - 1, rb.length - 1))), minexp };
-}
-
-function kruskalWallis(groups) { // groups: array of numeric arrays
+const chiBadge = (data, keyA, keyB) => Site.significanceLine(chiSquareFor(data, keyA, keyB));
+// the numbers in one field, one list per value of a grouping field
+const numberGroups = (data, groupKey, numberKey) => Site.FIELDS[groupKey].order
+  .map(value => data.filter(d => d[groupKey] === value).map(d => parseFloat(d[numberKey])).filter(number => !isNaN(number)));
+function kruskalWallis(groups) { // do the groups' numbers differ more than chance allows, ranks only
   const filled = groups.filter(g => g.length);
   const all = [];
   filled.forEach((g, i) => g.forEach(v => all.push([v, i])));
@@ -1002,39 +766,20 @@ function kruskalWallis(groups) { // groups: array of numeric arrays
   let H = 0;
   filled.forEach((_, gi) => { H += sums[gi] * sums[gi] / cnt[gi]; });
   H = 12 / (N * (N + 1)) * H - 3 * (N + 1);
-  const df = filled.length - 1;
-  return { H, df, p: chi2sf(H, df), n: N };
-}
-
-function fmtP(p) {
-  if (p < 0.0001) return 'p&lt;0.0001';
-  if (p < 0.001) return 'p&lt;0.001';
-  return 'p=' + p.toFixed(p < 0.01 ? 3 : 2);
-}
-function sigBadge(s, statTxt) {
-  if (!s) return `<span class="sig sig-na">not testable</span> too few records under this filter for a meaningful test`;
-  let cls, word;
-  if (s.p < 0.05) { cls = s.p < 0.001 ? 'sig-strong' : 'sig-ok'; word = 'significant'; }
-  else if (s.p < 0.10) { cls = 'sig-marginal'; word = 'marginal'; }
-  else { cls = 'sig-none'; word = 'not significant'; }
-  const sparse = (s.minexp !== undefined && s.minexp < 5) ? ', sparse cells, so χ² is approximate and read as directional' : '';
-  return `<span class="sig ${cls}">${word}</span> ${statTxt}, n=${s.n}${sparse}`;
-}
-function chiBadge(data, aKey, bKey) {
-  const s = chiSqStats(data, aKey, bKey);
-  return sigBadge(s, s ? `χ²=${s.chi2.toFixed(1)}, df=${s.dof}, ${fmtP(s.p)}, V=${s.V.toFixed(2)}` : '');
+  const df = filled.length - 1, p = Site.chiSquareTail(H, df);
+  return { n: N, statistic: H, freedom: df, p, summary: `Kruskal–Wallis H=${H.toFixed(1)}, df=${df}, ${Site.formatP(p)}` };
 }
 
 // ── Stats strip ──
 function buildStats(data) {
-  const n = data.length || 1;
-  const rigourPct = Math.round(data.filter(d => d.velocity_vs_rigour === 'rigour').length / n * 100);
-  const hmPct     = Math.round(data.filter(d => d.jd_authorship === 'hiring_manager').length / n * 100);
-  const highPct   = Math.round(data.filter(d => d.domain_risk === 'high').length / n * 100);
-  const dbtPct    = Math.round(data.filter(d => String(d.has_dbt).toLowerCase() === 'true').length / n * 100);
-  const midPct    = Math.round(data.filter(d => d.data_team_maturity === 'mid').length / n * 100);
-  const internalPct = Math.round(data.filter(d => d.stakeholder_orientation === 'internal_data').length / n * 100);
-  const langGatePct = Math.round(data.filter(d => d.language_gate_type === 'hard').length / n * 100);
+  const share = test => Site.percentWhere(data, test);
+  const rigourPct = share(d => d.velocity_vs_rigour === 'rigour');
+  const hmPct     = share(d => d.jd_authorship === 'hiring_manager');
+  const highPct   = share(d => d.domain_risk === 'high');
+  const dbtPct    = share(d => Site.isTrue(d.has_dbt));
+  const midPct    = share(d => d.data_team_maturity === 'mid');
+  const internalPct = share(d => d.stakeholder_orientation === 'internal_data');
+  const langGatePct = share(d => d.language_gate_type === 'hard');
   document.getElementById('statsRow').innerHTML = [
     { num: rigourPct+'%',   label: 'Rigour-first JDs' },
     { num: hmPct+'%',       label: 'Engineer-authored' },
@@ -1047,105 +792,22 @@ function buildStats(data) {
 }
 
 // ── Relationship panels (stacked-bar cross-tabs) ──
-function crosstab(data, rowKey, colKey, rowOrder) {
-  const rows = {};
-  data.forEach(d => {
-    const r = d[rowKey]; const c = d[colKey];
-    if (!r || !c) return;
-    if (!rows[r]) rows[r] = {};
-    rows[r][c] = (rows[r][c] || 0) + 1;
-  });
-  const order = rowOrder || Object.keys(rows).sort((a,b) => {
-    const na = Object.values(rows[a]).reduce((x,y)=>x+y,0);
-    const nb = Object.values(rows[b]).reduce((x,y)=>x+y,0);
-    return nb - na;
-  });
-  return order.filter(r => rows[r]).map(r => {
-    const counts = rows[r];
-    const total = Object.values(counts).reduce((a,b)=>a+b,0);
-    return { row: r, total, counts };
-  });
+function crossBars(data, rowKey, colKey) {   // one bar per value of the row field, split by the column field
+  const rows = Site.FIELDS[rowKey];
+  const groups = rows.order.map(value => ({ label: rows.name[value], items: data.filter(d => d[rowKey] === value && d[colKey]) }));
+  return Site.stackedBars(groups, Site.FIELDS[colKey], d => d[colKey]).html;
+}
+function numberBars(data, groupKey, numberKey) {   // the median per value of the group field
+  const field = Site.FIELDS[groupKey], groups = numberGroups(data, groupKey, numberKey);
+  const shown = field.order.map((value, i) => ({ label: field.name[value], numbers: groups[i], median: Site.median(groups[i]) })).filter(group => group.numbers.length);
+  const longest = Math.max(...shown.map(group => group.median), 1);
+  return shown.map(group => `<div class="numbar-row">
+      <div class="numbar-label">${group.label}</div>
+      <div class="numbar-track"><div class="numbar-fill" style="width:${Math.min(100, Math.round(group.median / longest * 100))}%"><span class="numbar-fill-val">${group.median.toFixed(1)}</span></div></div>
+      <div class="numbar-n">n=${group.numbers.length}</div>
+    </div>`).join('');
 }
 
-function renderXtab(containerId, data, rowKey, colKey, rowOrder, colOrder) {
-  const tab = crosstab(data, rowKey, colKey, rowOrder);
-  const rowLab = LABELS[rowKey] || {};
-  const colLab = LABELS[colKey] || {};
-  const colCol = COLOURS[colKey] || {};
-  const cols = colOrder || Object.keys(colCol);
-  const rowsHtml = tab.map(({row, total, counts}) => {
-    const segs = cols.filter(c => counts[c]).map(c => {
-      const pct = Math.round(counts[c]/total*100);
-      return `<div class="xtab-seg" style="width:${pct}%;background:${colCol[c]||'#9ca3af'};color:${labelOn(colCol[c]||'#9ca3af')}" title="${colLab[c]||c}: ${pct}%">${pct>=12?pct+'%':''}</div>`;
-    }).join('');
-    const barText = cols.filter(c => counts[c]).map(c => `${colLab[c]||c} ${Math.round(counts[c]/total*100)}%`).join(', ');
-    return `<div class="xtab-row">
-      <div class="xtab-label">${rowLab[row]||row}</div>
-      <div class="xtab-bar" role="img" aria-label="${rowLab[row]||row}: ${barText}">${segs}</div>
-      <div class="xtab-n">n=${total}</div>
-    </div>`;
-  }).join('');
-  const legendHtml = cols.filter(c => tab.some(t => t.counts[c])).map(c =>
-    `<div class="xtab-legend-item"><div class="xtab-legend-dot" style="background:${colCol[c]||'#9ca3af'}"></div>${colLab[c]||c}</div>`
-  ).join('');
-  document.getElementById(containerId).innerHTML = rowsHtml + `<div class="xtab-legend">${legendHtml}</div>`;
-}
-
-function renderNumBar(containerId, data, groupKey, numKey, groupOrder, maxHint) {
-  const groups = {};
-  data.forEach(d => {
-    const g = d[groupKey];
-    const v = d[numKey];
-    if (!g || v == null || v === '') return;
-    const num = parseFloat(v);
-    if (isNaN(num)) return;
-    (groups[g] = groups[g] || []).push(num);
-  });
-  const order = (groupOrder || Object.keys(groups)).filter(g => groups[g] && groups[g].length);
-  const maxVal = maxHint || Math.max(...order.map(g => median(groups[g])), 1);
-  const groupLab = LABELS[groupKey] || {};
-  document.getElementById(containerId).innerHTML = order.map(g => {
-    const m = median(groups[g]);
-    const pct = Math.min(100, Math.round(m / maxVal * 100));
-    return `<div class="numbar-row">
-      <div class="numbar-label">${groupLab[g]||g}</div>
-      <div class="numbar-track"><div class="numbar-fill" style="width:${pct}%"><span class="numbar-fill-val">${m.toFixed(1)}</span></div></div>
-      <div class="numbar-n">n=${groups[g].length}</div>
-    </div>`;
-  }).join('');
-}
-
-const REL_ORDER = {
-  data_team_maturity: ['early','mid','mature'],
-  autonomy_level: ['strategic','mixed','execution'],
-  seniority: ['junior','mid','senior','lead','staff','manager'],
-  stakeholder_orientation: ['finance','internal_data','commercial','mixed','product'],
-  domain_risk: ['low','moderate','high'],
-  testing_framing: ['responsibility','tool_listed','absent'],
-  velocity_vs_rigour: ['rigour','mixed','velocity'],
-  loss_aversion_framing: ['high','moderate','none'],
-  greenfield_vs_fix: ['greenfield','mixed','fix_scale'],
-  jd_authorship: ['hiring_manager','mixed','recruiter'],
-  ai_role: ['ai_enabler','ai_user','none'],
-  dbt_named: ['named','not_named'],
-  work_arrangement: ['remote','hybrid','onsite','not_stated'],
-  geo_macro: ['europe','apac','nyc_metro'],
-  language_gate_type: ['hard','soft','none'],
-  salary_stated: ['stated','not_stated'],
-  rt_mentorship: ['yes','no'],
-  rt_infra: ['yes','no'],
-  rt_selfservice: ['yes','no'],
-  rt_perfcost: ['yes','no'],
-  rt_governance: ['yes','no'],
-  rt_ownership: ['yes','no'],
-  rt_architecture: ['yes','no'],
-};
-
-function pct(data, key, filterFn) {
-  const sub = data.filter(filterFn);
-  const n = sub.length || 1;
-  return Math.round(sub.filter(d => filterFn(d)).length);
-}
 function grpPct(data, rowKey, rowVal, colKey, colVal) {
   const sub = data.filter(d => d[rowKey] === rowVal && d[colKey]);
   if (!sub.length) return 0;
@@ -1163,12 +825,12 @@ function grpPctExcl(data, rowKey, rowVal, colKey, colVal, exclVal) {
   return Math.round(sub.filter(d => d[colKey] === colVal).length / sub.length * 100);
 }
 // Figures quoted in the panel copy, computed from the live data so the text cannot drift from it
-function vOf(data, a, b) { const s = chiSqStats(data, a, b); return s ? s.V.toFixed(2) : '–'; }
+function vOf(data, a, b) { const s = chiSquareFor(data, a, b); return s ? s.effect.toFixed(2) : '–'; }
 function testLine(data, a, b) {
-  const s = chiSqStats(data, a, b);
-  return s ? `χ²=${s.chi2.toFixed(2)}, ${fmtP(s.p)}, Cramér's V≈${s.V.toFixed(2)}, n=${s.n.toLocaleString('en-GB')}` : 'too few records to test';
+  const s = chiSquareFor(data, a, b);
+  return s ? `χ²=${s.statistic.toFixed(2)}, ${Site.formatP(s.p)}, Cramér's V≈${s.effect.toFixed(2)}, n=${Site.formatCount(s.n)}` : 'too few records to test';
 }
-function pText(data, a, b) { const s = chiSqStats(data, a, b); return s ? fmtP(s.p) : 'p n/a'; }
+function pText(data, a, b) { const s = chiSquareFor(data, a, b); return s ? Site.formatP(s.p) : 'p n/a'; }
 function meanBy(data, groupKey, groupVal, numKey) {
   const vals = data.filter(d => d[groupKey] === groupVal).map(d => parseFloat(d[numKey])).filter(v => !isNaN(v));
   return vals.length ? +(vals.reduce((a, b) => a + b, 0) / vals.length).toFixed(1) : 0;
@@ -1183,15 +845,8 @@ function notStatedShares(data) {
     remote: stated.length ? Math.round(100 * stated.filter(d => d.work_arrangement === 'remote').length / stated.length) : 0,
   };
 }
-function median(xs) {
-  const s = [...xs].sort((a,b)=>a-b), m = s.length;
-  if (!m) return 0;
-  return m % 2 ? s[(m-1)/2] : (s[m/2-1]+s[m/2])/2;
-}
 function medianBy(data, groupKey, groupVal, numKey) {
-  const vals = data.filter(d => d[groupKey] === groupVal && d[numKey] != null && d[numKey] !== '')
-    .map(d => parseFloat(d[numKey])).filter(v => !isNaN(v));
-  return median(vals);
+  return Site.median(data.filter(d => d[groupKey] === groupVal).map(d => parseFloat(d[numKey])));
 }
 
 function buildRelationships(data) {
@@ -1495,45 +1150,12 @@ function buildRelationships(data) {
   gridEl.setAttribute('aria-labelledby', 'reltab-' + activeRelGroup);
 
   const visiblePanels = panels.filter(p => p.group === activeRelGroup);
-  const grid = document.getElementById('relGrid');
-  grid.innerHTML = visiblePanels.map((p, i) => `
-    <div class="rel-panel" id="${p.id}">
-      <div class="rel-head">
-        <div class="rel-tag">${p.tag}</div>
-        <div class="rel-question">${typeof p.q === 'object' ? p.q[view] : p.q}</div>
-        <div class="rel-stat" id="${p.id}-stat"></div>
-        <div class="rel-test" id="${p.id}-test"></div>
-      </div>
-      <div class="rel-body">
-        <div class="rel-read">
-          <p class="rel-takeaway">${p.takeaway}</p>
-          <details class="rel-details"><summary>Full analysis &amp; methodology</summary><div class="rel-details-body">${p.read}</div></details>
-          <div class="resume-tip"><b>${TIP_LABEL[view]}:</b> ${p.tip[view]}</div>
-        </div>
-        <div class="rel-viz" id="${p.id}-viz"></div>
-      </div>
-    </div>
-  `).join('');
-
-  visiblePanels.forEach(p => {
-    const statEl = document.getElementById(`${p.id}-stat`);
-    if (statEl) statEl.innerHTML = p.statFn();
-    const testEl = document.getElementById(`${p.id}-test`);
+  gridEl.innerHTML = visiblePanels.map(p => {
     const pdata = p.excl ? data.filter(d => d[p.colKey] !== p.excl) : data;
-    if (p.numeric) {
-      renderNumBar(`${p.id}-viz`, pdata, p.rowKey, p.colKey, REL_ORDER[p.rowKey]);
-      if (testEl) {
-        const groups = (REL_ORDER[p.rowKey] || []).map(g =>
-          pdata.filter(d => d[p.rowKey] === g && d[p.colKey] != null && d[p.colKey] !== '')
-              .map(d => parseFloat(d[p.colKey])).filter(v => !isNaN(v)));
-        const kw = kruskalWallis(groups);
-        testEl.innerHTML = sigBadge(kw, kw ? `Kruskal–Wallis H=${kw.H.toFixed(1)}, df=${kw.df}, ${fmtP(kw.p)}` : '');
-      }
-    } else {
-      renderXtab(`${p.id}-viz`, pdata, p.rowKey, p.colKey, REL_ORDER[p.rowKey], REL_ORDER[p.colKey]);
-      if (testEl) testEl.innerHTML = chiBadge(pdata, p.rowKey, p.colKey);
-    }
-  });
+    const test = p.numeric ? kruskalWallis(numberGroups(pdata, p.rowKey, p.colKey)) : chiSquareFor(pdata, p.rowKey, p.colKey);
+    return `<div class="rel-panel" id="${p.id}">${Site.panelContent({ tag: p.tag, question: typeof p.q === 'object' ? p.q[view] : p.q, stat: p.statFn(), test: Site.significanceLine(test),
+      takeaway: p.takeaway, method: p.read, reader: view, tip: p.tip[view], viz: p.numeric ? numberBars(pdata, p.rowKey, p.colKey) : crossBars(pdata, p.rowKey, p.colKey) })}</div>`;
+  }).join('');
 }
 
 // ── Null results (expectations the data didn't support) ──
@@ -1580,21 +1202,14 @@ function buildNulls(data) {
         const m = medianBy(data,'data_team_maturity','mid','collaboration_width');
         const ma = medianBy(data,'data_team_maturity','mature','collaboration_width');
         const means = ['early','mid','mature'].map(g => meanBy(data,'data_team_maturity',g,'collaboration_width'));
-        const groups = ['early','mid','mature'].map(g =>
-          data.filter(d => d.data_team_maturity === g).map(d => parseFloat(d.collaboration_width)).filter(v => !isNaN(v)));
+        const groups = numberGroups(data, 'data_team_maturity', 'collaboration_width');
         const kw = kruskalWallis(groups);
         const total = groups.reduce((a, g) => a + g.length, 0);
-        const eps = kw && total > 1 ? (kw.H / (total - 1)).toFixed(2) : '–';
+        const eps = kw && total > 1 ? (kw.statistic / (total - 1)).toFixed(2) : '–';
         const rises = e <= m && m <= ma;
         return `A federated-platform story would predict mature organisations naming the widest set of stakeholder teams. The medians are <strong>${e.toFixed(1)} / ${m.toFixed(1)} / ${ma.toFixed(1)}</strong> and the means ${means.join(' / ')} for early / mid / mature, ${rises ? 'rising with maturity, but' : 'not rising with maturity, and'} the difference is small (ε²=${eps}).`;
       },
-      testFn: () => {
-        const groups = ['early','mid','mature'].map(g =>
-          data.filter(d => d.data_team_maturity === g && d.collaboration_width != null && d.collaboration_width !== '')
-              .map(d => parseFloat(d.collaboration_width)).filter(v => !isNaN(v)));
-        const kw = kruskalWallis(groups);
-        return sigBadge(kw, kw ? `Kruskal–Wallis H=${kw.H.toFixed(1)}, df=${kw.df}, ${fmtP(kw.p)}` : '');
-      },
+      testFn: () => Site.significanceLine(kruskalWallis(numberGroups(data, 'data_team_maturity', 'collaboration_width'))),
       apply: {
         seeker: 'Don\'t infer stakeholder load from team maturity. If meeting surface area matters to you, count the named teams in the JD itself. That number is in the data, the shortcut isn\'t.',
         manager: 'Whatever your stage, "cross-functional collaboration" is unread boilerplate. Name the actual partner teams. Candidates count them, and the count is one of the few honest workload signals a posting can carry.',
@@ -1623,10 +1238,10 @@ function buildNulls(data) {
       <div class="null-title">${c.title}</div>
       <div class="null-result">
         <p class="null-takeaway">${c.takeaway}</p>
-        <details class="null-details"><summary>Full breakdown</summary><div class="null-details-body">${c.resultFn()}</div></details>
+        <details class="rel-details"><summary>Full breakdown</summary><div class="rel-details-body">${c.resultFn()}</div></details>
       </div>
       <div class="null-test">${c.testFn()}</div>
-      <div class="null-apply"><b>${TIP_LABEL[view]}:</b> ${c.apply[view]}</div>
+      <div class="null-apply"><b>${Site.TIP_LABEL[view]}:</b> ${c.apply[view]}</div>
     </div>`).join('');
 }
 
@@ -1634,8 +1249,7 @@ function buildNulls(data) {
 function buildScatter(data) {
   const xKey   = document.getElementById('xAxis').value;
   const colKey = document.getElementById('colourBy').value;
-  const colMap = COLOURS[colKey] || {};
-  const labMap = LABELS[colKey]  || {};
+  const { colour: colMap, name: labMap } = Site.FIELDS[colKey];
   const riskY  = { high: 3, moderate: 2, low: 1 };
   const groups = {};
   data.forEach(d => {
@@ -1676,39 +1290,30 @@ function buildScatter(data) {
     },
   });
   const canvas = document.getElementById('scatterChart');
-  const tt = document.getElementById('tooltip');
   canvas.onmousemove = e => {
     const pts = charts.scatter.getElementsAtEventForMode(e,'nearest',{intersect:true},false);
-    if (!pts.length) { tt.classList.remove('visible'); return; }
+    if (!pts.length) { Site.hideTip(); return; }
     const rec = charts.scatter.data.datasets[pts[0].datasetIndex].data[pts[0].index].record;
     const ev  = rec.evidence || {};
-    tt.innerHTML = `
+    Site.showTip(`
       <div class="tt-company">${rec.company}</div>
       <div class="tt-role">${rec.role}</div>
-      <div class="tt-field"><div class="tt-label">Seniority</div><div class="tt-quote">${LABELS.seniority[rec.seniority]||rec.seniority||'—'}</div></div>
-      <div class="tt-field"><div class="tt-label">Autonomy</div><div class="tt-quote">${LABELS.autonomy_level[rec.autonomy_level]||rec.autonomy_level||'—'}</div></div>
+      <div class="tt-field"><div class="tt-label">Seniority</div><div class="tt-quote">${Site.FIELDS.seniority.name[rec.seniority]||rec.seniority||'—'}</div></div>
+      <div class="tt-field"><div class="tt-label">Autonomy</div><div class="tt-quote">${Site.FIELDS.autonomy_level.name[rec.autonomy_level]||rec.autonomy_level||'—'}</div></div>
       <div class="tt-field"><div class="tt-label">Domain risk</div><div class="tt-quote">${ev.domain_risk||'—'}</div></div>
-      <div class="tt-field"><div class="tt-label">Rigour signal</div><div class="tt-quote">${ev.velocity_vs_rigour||'—'}</div></div>`;
-    const pad=14;
-    tt.style.left=(e.clientX+pad+310>window.innerWidth?e.clientX-310-pad:e.clientX+pad)+'px';
-    tt.style.top=(e.clientY+pad+250>window.innerHeight?e.clientY-250-pad:e.clientY+pad)+'px';
-    tt.classList.add('visible');
+      <div class="tt-field"><div class="tt-label">Rigour signal</div><div class="tt-quote">${ev.velocity_vs_rigour||'—'}</div></div>`, e.clientX, e.clientY);
   };
-  canvas.onmouseleave = () => tt.classList.remove('visible');
-  document.getElementById('scatterLegend').innerHTML = datasets.map(ds =>
-    `<div class="legend-item"><div class="legend-dot" style="background:${ds.backgroundColor}"></div>${ds.label}</div>`
-  ).join('');
+  canvas.onmouseleave = Site.hideTip;
+  document.getElementById('scatterLegend').innerHTML = Site.legend(datasets.map(ds => [ds.label, ds.backgroundColor]));
 }
 
 // ── Orientation (compact single-dim reference) ──
 function buildOrientation() {
   const dataKey = document.getElementById('orientationDim').value;
   const data = activeData;
-  const labMap = LABELS[dataKey] || {};
-  const colMap = COLOURS[dataKey] || {};
+  const { name: labMap, colour: colMap, order } = Site.FIELDS[dataKey];
   const counts = {};
   data.forEach(d => { const k = d[dataKey]; if (k) counts[k] = (counts[k]||0)+1; });
-  const order = REL_ORDER[dataKey] || Object.keys(counts);
   const keys = order.filter(k => counts[k]);
   const n = keys.reduce((a,k)=>a+counts[k],0);
 
@@ -1723,7 +1328,7 @@ function buildOrientation() {
     },
   });
 
-  const moe = keys.length ? wilsonMoe(counts[keys[0]], n) : 0;
+  const [low, high] = keys.length ? Site.wilsonRange(counts[keys[0]], n) : [0, 0], moe = Math.round((high - low) / 2);
   document.getElementById('orientationHeadline').textContent =
     `n=${n}. Modal category: ${labMap[keys[0]]||keys[0]} at ${Math.round(counts[keys[0]]/n*100)}% (±${moe}pp, 95% CI). Click a wedge or a tab to see the JDs.`;
 
@@ -1751,14 +1356,13 @@ function selectOrientation(dataKey, key) {
 
 // ── Geography (demoted, honest) ──
 function buildGeo(data) {
-  const GEO_LABELS = { berlin:'Berlin', hamburg:'Hamburg', nordics:'Nordics', uk_remote:'UK / Remote', france:'France', benelux:'Benelux', iberia:'Iberia', ireland:'Ireland', dach_other:'DACH (other)', baltics:'Baltics', other_europe:'Other Europe', global_remote:'Global Remote', nyc_metro:'NYC Metro', apac:'APAC', other:'Unclassified / other' };
   const GEO_ORDER = ['berlin','benelux','iberia','nordics','uk_remote','global_remote','france','other_europe','apac','other','dach_other','baltics','hamburg','ireland'];
   const counts = {};
   data.forEach(d => { const r = d.geo_region || 'other'; counts[r] = (counts[r]||0)+1; });
   const n = data.length || 1;
   document.getElementById('geoBreakdown').innerHTML = GEO_ORDER.filter(r => counts[r]).map(r => `
     <div class="geo-cell">
-      <div class="geo-cell-region">${GEO_LABELS[r]||r}</div>
+      <div class="geo-cell-region">${Site.REGION_NAME[r]||r}</div>
       <div class="geo-cell-n">${counts[r]}</div>
       <div class="geo-cell-note">${Math.round(counts[r]/n*100)}% of corpus</div>
     </div>`).join('');
@@ -1783,7 +1387,7 @@ const TOOLS = [
 const GC = { Core:'#3d4452', Warehouse:'#16a34a', BI:'#d97706', Orchestration:'#7c3aed', Compute:'#ea580c', Ingestion:'#0d9488', Streaming:'#c0392b', Infra:'#6b7280', Quality:'#0891b2', Practice:'#be185d', Cloud:'#4338ca' };
 
 function buildToolCompanyList(tool) {
-  const yes = activeData.filter(d => String(d[tool.key]).toLowerCase() === 'true');
+  const yes = activeData.filter(d => Site.isTrue(d[tool.key]));
   document.getElementById('toolPanelTitle').textContent = tool.label;
   document.getElementById('toolPanelCount').textContent = `${yes.length} of ${activeData.length} roles (${tool.pct}%)`;
   document.getElementById('toolCompanyList').innerHTML = yes.length
@@ -1871,7 +1475,7 @@ function buildSalary(data) {
       const x1 = pct(parseFloat(d.salary_min)), x2 = pct(parseFloat(d.salary_max));
       return `
       <div class="salary-row" data-jd="${d.jd_id}">
-        <div class="salary-row-label"><b>${d.company}</b>${LABELS.seniority[d.seniority]||d.seniority||''}</div>
+        <div class="salary-row-label"><b>${d.company}</b>${Site.FIELDS.seniority.name[d.seniority]||d.seniority||''}</div>
         <div class="salary-row-track">
           <div class="salary-range-line" style="left:${x1}%;width:${Math.max(x2-x1,0.5)}%;background:${color}"></div>
           <div class="salary-range-dot" style="left:${x1}%;background:${color}"></div>
@@ -1898,23 +1502,18 @@ function buildSalary(data) {
 
   wrap.innerHTML = `<div class="salary-legend">${legendHtml}</div>${groupsHtml}`;
 
-  const tt = document.getElementById('tooltip');
   wrap.querySelectorAll('.salary-row').forEach(row => {
     const rec = annual.find(d => d.jd_id === row.dataset.jd);
     if (!rec) return;
     row.addEventListener('mousemove', e => {
       const sym = SALARY_CUR_SYM[rec.salary_currency] || '';
-      tt.innerHTML = `
+      Site.showTip(`
         <div class="tt-company">${rec.company}</div>
         <div class="tt-role">${rec.role}</div>
         <div class="tt-field"><div class="tt-label">Range</div><div class="tt-quote">${sym}${Number(rec.salary_min).toLocaleString()}–${sym}${Number(rec.salary_max).toLocaleString()} ${rec.salary_currency} / year</div></div>
-        <div class="tt-field"><div class="tt-label">Seniority</div><div class="tt-quote">${LABELS.seniority[rec.seniority]||rec.seniority||'—'}</div></div>`;
-      const pad=14;
-      tt.style.left=(e.clientX+pad+310>window.innerWidth?e.clientX-310-pad:e.clientX+pad)+'px';
-      tt.style.top=(e.clientY+pad+150>window.innerHeight?e.clientY-150-pad:e.clientY+pad)+'px';
-      tt.classList.add('visible');
+        <div class="tt-field"><div class="tt-label">Seniority</div><div class="tt-quote">${Site.FIELDS.seniority.name[rec.seniority]||rec.seniority||'—'}</div></div>`, e.clientX, e.clientY);
     });
-    row.addEventListener('mouseleave', () => tt.classList.remove('visible'));
+    row.addEventListener('mouseleave', Site.hideTip);
   });
 }
 
@@ -1984,7 +1583,7 @@ function buildSalaryEstimated(data) {
     const color = e.periodInferred ? '#d97706' : '#3d4452';
     return `
       <div class="salary-row${e.periodInferred ? ' inferred' : ''}" data-jd="${d.jd_id}">
-        <div class="salary-row-label"><b>${d.company}</b>${LABELS.seniority[d.seniority]||d.seniority||''}</div>
+        <div class="salary-row-label"><b>${d.company}</b>${Site.FIELDS.seniority.name[d.seniority]||d.seniority||''}</div>
         <div class="salary-row-track">
           <div class="salary-range-line" style="left:${x1}%;width:${Math.max(x2-x1,0.5)}%;background:${color}${e.periodInferred?';opacity:0.75':''}"></div>
           <div class="salary-range-dot" style="left:${x1}%;background:${color}"></div>
@@ -2007,7 +1606,6 @@ function buildSalaryEstimated(data) {
       </div>
     </div>`;
 
-  const tt = document.getElementById('tooltip');
   wrap.querySelectorAll('.salary-row').forEach(row => {
     const rec = rows.find(x => x.d.jd_id === row.dataset.jd);
     if (!rec) return;
@@ -2017,19 +1615,15 @@ function buildSalaryEstimated(data) {
       if (e.currencyConverted) assumptions.push(`Converted ${d.salary_currency} → EUR at a fixed illustrative rate`);
       if (e.periodInferred) assumptions.push(`No period stated — inferred <b>${e.period}</b> from magnitude`);
       else assumptions.push(`Period stated as <b>${e.period}</b> in the JD`);
-      tt.innerHTML = `
+      Site.showTip(`
         <div class="tt-company">${d.company}</div>
         <div class="tt-role">${d.role}</div>
         <div class="tt-field"><div class="tt-label">Original</div><div class="tt-quote">${Number(d.salary_min).toLocaleString()}–${Number(d.salary_max||d.salary_min).toLocaleString()} ${d.salary_currency}${d.salary_period ? ' / '+d.salary_period : ''}</div></div>
         <div class="tt-field"><div class="tt-label">Estimated EUR/annual</div><div class="tt-quote">€${e.lo.toLocaleString()}–€${e.hi.toLocaleString()}</div></div>
         <div class="tt-field"><div class="tt-label">Assumptions</div><div class="tt-quote">${assumptions.join('<br>')}</div></div>
-        <div class="tt-field"><div class="tt-label">Seniority</div><div class="tt-quote">${LABELS.seniority[d.seniority]||d.seniority||'—'}</div></div>`;
-      const padPx = 14;
-      tt.style.left = (ev.clientX+padPx+310>window.innerWidth ? ev.clientX-310-padPx : ev.clientX+padPx)+'px';
-      tt.style.top = (ev.clientY+padPx+180>window.innerHeight ? ev.clientY-180-padPx : ev.clientY+padPx)+'px';
-      tt.classList.add('visible');
+        <div class="tt-field"><div class="tt-label">Seniority</div><div class="tt-quote">${Site.FIELDS.seniority.name[d.seniority]||d.seniority||'—'}</div></div>`, ev.clientX, ev.clientY);
     });
-    row.addEventListener('mouseleave', () => tt.classList.remove('visible'));
+    row.addEventListener('mouseleave', Site.hideTip);
   });
 
   buildSalaryEstSeniority(est);
@@ -2052,7 +1646,7 @@ function buildSalaryEstSeniority(est) {
     const lo = vals[0], hi = vals[m-1];
     return `
       <div class="senior-sal-row">
-        <div class="senior-sal-label">${LABELS.seniority[s]||s} <span style="color:var(--muted);font-weight:500">n=${m}</span></div>
+        <div class="senior-sal-label">${Site.FIELDS.seniority.name[s]||s} <span style="color:var(--muted);font-weight:500">n=${m}</span></div>
         <div class="senior-sal-track">
           <div class="senior-sal-range" style="left:${pct(lo)}%;width:${Math.max(pct(hi)-pct(lo),0.5)}%"></div>
           <div class="senior-sal-median" style="left:${pct(median)}%"></div>
@@ -2072,45 +1666,7 @@ const RT_COOC_MIN_N = 8;
 
 function buildResponsibilityTaxonomy(data) {
   const withTheme = data.filter(d => RT_THEME_ORDER.some(t => d[RT_THEME_FIELDS[t]] !== undefined));
-  const n = withTheme.length || 1;
   document.getElementById('rtN').textContent = withTheme.length;
-
-  const prevalence = RT_THEME_ORDER.map(theme => {
-    const field = RT_THEME_FIELDS[theme];
-    const withField = withTheme.filter(d => d[field] !== undefined);
-    const cnt = withField.filter(d => d[field] === 'yes').length;
-    return { theme, field, pct: withField.length ? Math.round(100 * cnt / withField.length) : 0, cnt };
-  }).sort((a, b) => b.pct - a.pct);
-
-  destroyChart('rt');
-  charts.rt = new Chart(document.getElementById('rtChart').getContext('2d'), {
-    type: 'bar',
-    data: { labels: prevalence.map(p => p.theme), datasets: [{
-      data: prevalence.map(p => p.pct),
-      backgroundColor: 'rgba(61,68,82,0.55)', borderColor: '#3d4452', borderWidth: 1, borderRadius: 4,
-    }] },
-    options: {
-      indexAxis: 'y', responsive: true, maintainAspectRatio: false, animation: CHART_ANIM,
-      layout: { padding: { right: 8 } },
-      plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ` ${ctx.raw}% of JDs (n=${prevalence[ctx.dataIndex].cnt}) — click for JD language` } } },
-      scales: {
-        x: { max: 100, ticks: { callback: v => v + '%', font: { size: 10 } }, grid: { color: '#f0f0ed' } },
-        y: { ticks: { font: { size: 10.5 }, autoSkip: false, crossAlign: 'far' }, grid: { display: false } },
-      },
-      onHover: (e, els) => { e.native.target.style.cursor = els.length ? 'pointer' : 'default'; },
-      onClick: (e, els) => {
-        if (!els.length) return;
-        openRtEvidence(prevalence[els[0].index].theme);
-      },
-    },
-  });
-
-  document.getElementById('rtThemeList').innerHTML = prevalence.map(p => `
-    <li><span class="rt-theme-name">${p.theme}</span><span class="rt-theme-n">${p.pct}% (n=${p.cnt})</span>
-      <button type="button" class="drill-toggle" data-theme="${p.theme}">Show example sentences<span class="sr-only"> for ${p.theme}</span></button></li>`).join('');
-  document.querySelectorAll('#rtThemeList button').forEach(btn => {
-    btn.addEventListener('click', () => openRtEvidence(btn.dataset.theme));
-  });
 
   // Co-occurrence: for every theme pair, P(A), P(B), P(A&B), lift.
   const pairs = [];
@@ -2133,7 +1689,6 @@ function buildResponsibilityTaxonomy(data) {
   pairs.sort((a, b) => b.lift - a.lift || b.nAB - a.nAB);
 
   const list = document.getElementById('rtCoocList');
-  window._rtActiveJdIds = new Set(withTheme.map(d => d.jd_id));
   if (!pairs.length) {
     list.innerHTML = `<p style="font-size:var(--t-sm);color:var(--muted)">Not enough co-coded pairs under this filter to compute co-occurrence.</p>`;
     return;
@@ -2147,65 +1702,10 @@ function buildResponsibilityTaxonomy(data) {
   `).join('');
 }
 
-function rtEscapeHtml(s) {
-  return s.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
-}
-
-// Wraps the regex-matched span in <mark>, working against the escaped string so
-// tags inserted for highlighting can't themselves be escaped. Some taxonomy
-// patterns match only a word stem (e.g. "collaborat" out of "Collaborate" /
-// "Collaboration", or "liais" out of "liaising") since that's all the classifier
-// needs — extend the highlight to the end of that word so it reads naturally,
-// without pulling in trailing words (which would wrongly extend true whole-word/
-// phrase matches like "partner with" or "cross-functional").
-function rtHighlight(bullet, matchedText) {
-  const escaped = rtEscapeHtml(bullet);
-  const escapedMatch = rtEscapeHtml(matchedText);
-  const stemPattern = escapedMatch.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const re = new RegExp(stemPattern + '[\\w-]*', 'i');
-  const m = escaped.match(re);
-  if (!m) return escaped;
-  return escaped.slice(0, m.index) + `<mark>${m[0]}</mark>` + escaped.slice(m.index + m[0].length);
-}
-
-function openRtEvidence(theme) {
-  const overlay = document.getElementById('rtEvidenceOverlay');
-  const byId = Object.fromEntries(ALL_DATA.map(d => [d.jd_id, d]));
-  const activeIds = window._rtActiveJdIds || new Set(ALL_DATA.map(d => d.jd_id));
-  const allHits = (RT_BULLETS_BY_THEME[theme] || []).filter(h => activeIds.has(h.jd_id));
-
-  document.getElementById('rtEvidenceTitle').textContent = theme;
-  const nJds = new Set(allHits.map(h => h.jd_id)).size;
-  document.getElementById('rtEvidenceSub').innerHTML =
-    `${allHits.length} responsibility bullet${allHits.length===1?'':'s'} across ${nJds} JD${nJds===1?'':'s'} matched this theme's keyword pattern (highlighted below), showing up to 40`;
-
-  const listEl = document.getElementById('rtEvidenceList');
-  if (!allHits.length) {
-    listEl.innerHTML = `<p class="rt-evidence-empty">No matching bullets under the active role filter.</p>`;
-  } else {
-    listEl.innerHTML = allHits.slice(0, 40).map(h => {
-      const meta = byId[h.jd_id];
-      const label = meta ? `${meta.company} — ${meta.role}` : h.jd_id;
-      return `
-        <div class="rt-evidence-item">
-          <div>${rtHighlight(h.bullet, h.matched_text)}</div>
-          <div class="rt-evidence-meta">${label}</div>
-        </div>`;
-    }).join('');
-  }
-  openDialog(overlay, overlay.querySelector('.rt-evidence-close'));
-}
-
-function closeRtEvidence() {
-  const overlay = document.getElementById('rtEvidenceOverlay');
-  if (!overlay.classList.contains('hidden')) closeDialog(overlay);
-}
 document.addEventListener('keydown', e => {
   if (e.key !== 'Escape') return;
-  const evidence = document.getElementById('rtEvidenceOverlay');
   const chooser = document.getElementById('personaOverlay');
-  if (!evidence.classList.contains('hidden')) closeRtEvidence();
-  else if (!chooser.classList.contains('hidden')) closeDialog(chooser, document.getElementById('heroH1'));
+  if (!chooser.classList.contains('hidden')) closeDialog(chooser, document.getElementById('heroH1'));
 });
 
 // ── Main render ──
@@ -2225,13 +1725,14 @@ function render() {
   buildToolChart(activeData);
   buildSalary(activeData);
   buildSalaryEstimated(activeData);
+  if (window.JDViz) JDViz.refresh();
 }
 
 // Responsibility-theme tags (from analysis/responsibility_taxonomy.py) are a separate
 // derived artifact, not part of the Layer B codebook — fetched and merged in client-side
 // rather than baked into data.json, so the two pipelines stay independently regenerable.
 // Maps each of the 15 regex-classified themes to a short field name (rt_*) attached to
-// every record as 'yes'/'no' (never boolean — grpPct/chiSqStats treat `false` as falsy
+// every record as 'yes'/'no' (never boolean — grpPct/chiSquareFor treat `false` as falsy
 // and would silently drop every non-matching record from a crosstab).
 const RT_THEME_FIELDS = {
   'Stakeholder Collaboration & Requirements': 'rt_stakeholder',
@@ -2264,29 +1765,23 @@ const RT_THEME_ORDER = [
 // Populated on load from responsibility_classification.json's bullets_by_theme:
 // theme -> [{jd_id, bullet, matched_text}] — every matching bullet, used to show
 // verbatim JD language behind a theme when a user clicks its prevalence bar.
-let RT_BULLETS_BY_THEME = {};
-
 Promise.all([
   fetch('./data.json').then(r=>r.json()),
   fetch('./responsibility_classification.json').then(r=>r.json()).catch(()=>null),
 ])
   .then(([data, rtClassification])=>{
-    data.forEach(d => { d.dbt_named = String(d.has_dbt).toLowerCase() === 'true' ? 'named' : 'not_named'; });
-    const EUROPE_REGIONS = new Set(['uk_remote','benelux','iberia','berlin','other_europe','france','nordics','dach_other','baltics','hamburg','ireland']);
     data.forEach(d => {
-      const r = d.geo_region;
-      d.geo_macro = r === 'apac' ? 'apac' : r === 'nyc_metro' ? 'nyc_metro' : EUROPE_REGIONS.has(r) ? 'europe' : undefined;
+      d.dbt_named = Site.isTrue(d.has_dbt) ? 'named' : 'not_named';
+      const group = Site.regionGroup(d);
+      d.geo_macro = group === 'other' ? undefined : group;   // global-remote and unclear ads stay out of the region panels
       d.salary_stated = (d.salary_min && d.salary_max) ? 'stated' : 'not_stated';
     });
-    if (rtClassification && rtClassification.bullets_by_theme) {
-      RT_BULLETS_BY_THEME = rtClassification.bullets_by_theme;
-    }
     if (rtClassification && rtClassification.jd_theme_sets) {
       const themeSets = rtClassification.jd_theme_sets;
       data.forEach(d => {
         const themes = themeSets[d.jd_id];
         // undefined (jd_id not in the responsibility corpus, e.g. no archived JD text) is
-        // left unset rather than 'no' — chiSqStats/grpPct skip falsy fields, so these records
+        // left unset rather than 'no' — chiSquareFor/grpPct skip falsy fields, so these records
         // are correctly excluded from responsibility-theme crosstabs rather than counted as "no".
         if (themes === undefined) return;
         Object.entries(RT_THEME_FIELDS).forEach(([themeName, field]) => {
@@ -2295,6 +1790,7 @@ Promise.all([
       });
     }
     ALL_DATA=data; render();
+    JDViz.init({ rows: () => activeData, mode: P, themes: rtClassification });
     if (location.hash) {
       const target = document.getElementById(location.hash.slice(1));
       if (target) {
@@ -2326,7 +1822,7 @@ Promise.all([
         });
     });
   }, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
-  ['relationships','responsibility-taxonomy','nulls','explorer','orientation','geo-section','stack'].forEach(id => {
+  STORY_ORDER.filter(id => id !== 'summary').forEach(id => {
     const el = document.getElementById(id);
     if (el) observer.observe(el);
   });

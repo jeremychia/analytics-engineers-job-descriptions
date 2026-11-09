@@ -5,51 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AE/BI Job Market — What to look for, what to signal</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231d4ed8'/%3E%3Ccircle cx='24' cy='20' r='9' fill='%23ffffff'/%3E%3Cpath d='M8 50c0-11 7.5-18 16-18s16 7 16 18' fill='%23ffffff'/%3E%3Crect x='42' y='32' width='6' height='18' rx='1' fill='%2316a34a'/%3E%3Crect x='51' y='22' width='6' height='28' rx='1' fill='%23fbbf24'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="site.css">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --bg: #ffffff;
-  --surface: #f8f8f6;
-  --surface2: #f0f0ed;
-  --border: #e5e5e1;
-  --text: #1a1d24;
-  --muted: #586070;
-  --bar: rgba(26,29,36,0.72);
-  --highlight: #fde68a;
-  --font-text: Charter, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-  --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --t-xs: 0.75rem;
-  --t-sm: 0.8125rem;
-  --t-base: 0.9375rem;
-  --t-md: 1.0625rem;
-  --t-lg: 1.375rem;
-  --t-xl: 1.75rem;
-  --measure: 70ch;
-  --r-sm: 4px;
-  --r-md: 8px;
-  --r-pill: 999px;
-  --shadow: 0 8px 24px rgba(0,0,0,0.14);
-  --control-border: #80868f;
-  --accent: #1d4ed8;
-  --good: #16a34a;
-  --warn: #b45309;
-  --bad: #c0392b;
-  --w: 880px;
-}
-
-@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; scroll-behavior: auto !important; }
-}
-body { font-family: var(--font-text); background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.7; }
-
-/* sans for controls, labels and figures; the serif carries the reading text */
-button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .region-filter, .region-dd-list,
-.stat-num, .stat-label, .hygiene-stat, .hygiene-label, .geo-cell-n, .snapshot-row-label, .rel-tab, .motivator-chip,
-.assess-opt, .check-item-badge, .skip-link { font-family: var(--font-ui); font-variant-numeric: tabular-nums; }
-
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: var(--r-sm); }
+:root { --w: 880px; }
+.mode-toggle, .region-filter, .region-dd-list, .hygiene-stat, .hygiene-label, .actions-title, .close-card b,
+.assess-opt, .check-item-badge { font-family: var(--font-ui); font-variant-numeric: tabular-nums; }
 
 /* ── MODE SWITCH (top-right, once a mode is picked) ── */
 .mode-toggle {
@@ -77,15 +37,6 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
 
 /* Custom dropdown (not native <select> — a native-popup rendering bug was observed
    in some Chrome/macOS setups where the select would focus but never open). */
-/* text for screen readers only */
-.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
-.skip-link {
-  position: absolute; top: -48px; left: 1rem; z-index: 9999;
-  background: var(--accent); color: #fff; padding: 0.5rem 1rem; border-radius: 0 0 var(--r-md) var(--r-md);
-  font-size: var(--t-sm); font-weight: 600; text-decoration: none; transition: top 0.1s;
-}
-.skip-link:focus { top: 0; }
-
 .region-dd { position: relative; }
 .region-dd-trigger {
   font-size: var(--t-xs); font-family: var(--font-ui); border: none; background: transparent; color: var(--text);
@@ -158,26 +109,15 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
 .stat-bar-fill { height: 100%; border-radius: var(--r-sm); background: var(--bar); }
 .stat-bar-fill.warn { background: var(--warn); }
 
-/* ── SNAPSHOT (dataset composition, shown once above mode content) ── */
-.snapshot-section { padding: 3.5rem 1.5rem; max-width: var(--w); margin: 0 auto; border-top: 1px solid var(--border); }
-.snapshot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
-.snapshot-group-title { font-size: var(--t-xs); font-weight: 700; color: var(--text); margin-bottom: 0.75rem; }
-.snapshot-row { margin-bottom: 0.65rem; }
-.snapshot-row:last-child { margin-bottom: 0; }
-.snapshot-row-label { display: flex; justify-content: space-between; font-size: var(--t-xs); color: var(--muted); margin-bottom: 0.3rem; }
-.snapshot-row-label b { color: var(--text); font-weight: 600; }
-.snapshot-row .stat-bar-track { margin-top: 0; }
-
-/* ── MOTIVATOR CHIPS (seeker) ── */
-.motivator-chips { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem; }
-.motivator-chip {
-  padding: 0.65rem 1.1rem; border-radius: var(--r-pill); border: 1.5px solid var(--control-border);
-  background: #fff; cursor: pointer; font-family: var(--font-ui); font-size: var(--t-sm); font-weight: 600;
-  color: var(--text); transition: border-color 0.15s, background-color 0.15s; display: flex; align-items: center; gap: 0.5rem;
-}
-.motivator-chip:hover { border-color: var(--accent); }
-.motivator-chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
-.motivator-empty { font-size: var(--t-sm); color: var(--muted); padding: 2rem 0; text-align: center; border: 1px dashed var(--border); border-radius: var(--r-md); }
+/* ── CHAPTERS: the talk's four questions; the reader's side changes the advice, not the story ── */
+body.mode-seeker .only-manager, body.mode-manager .only-seeker { display: none; }
+.chapter-actions { margin-top: 3.5rem; padding-top: 2rem; border-top: 1px dashed var(--border); }
+.actions-title { font-size: var(--t-lg); font-weight: 700; letter-spacing: -0.015em; margin-bottom: 0.4rem; }
+.actions-intro { font-size: var(--t-base); color: var(--muted); line-height: 1.75; max-width: var(--measure); margin-bottom: 1.5rem; }
+.chapter-actions .check-card, .chapter-actions .assess-card { margin-top: 1.25rem; }
+.close-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.close-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 1.1rem 1.25rem; font-size: var(--t-sm); line-height: 1.7; }
+.close-card b { display: block; font-size: var(--t-sm); margin-bottom: 0.3rem; }
 
 /* ── CHECKLIST CARDS (shared seeker/manager) ── */
 .check-card { border: 1px solid var(--border); border-radius: var(--r-md); margin-bottom: 1.25rem; overflow: hidden; background: #fff; }
@@ -216,12 +156,6 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
 .assess-result .find { display: block; font-size: var(--t-xs); color: var(--muted); margin-top: 0.6rem; }
 .assess-result .find a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
 
-/* ── FOOTER LINK ── */
-/* ── CHARTS FROM THE CORPUS (filled by question-charts.js into each [data-q]) ── */
-.chart-lead { font-size: var(--t-base); color: var(--muted); line-height: 1.75; max-width: var(--measure); margin-top: 2.5rem; }
-.chart-lead strong { color: var(--text); }
-.check-body .chart-lead, .assess-chart .chart-lead { font-size: var(--t-sm); margin-top: 1.25rem; }
-
 .full-analysis-cta {
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md);
   padding: 1.5rem 1.75rem; text-align: center;
@@ -233,9 +167,6 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
 }
 .full-analysis-cta a:hover { opacity: 0.9; }
 
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: var(--r-sm); }
 </style>
 <link rel="stylesheet" href="hero-quote.css">
 </head>
@@ -260,82 +191,111 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
 <!-- HERO / MODE PICKER -->
 <section class="hero" id="hero" tabindex="-1">
   <div id="heroQuote"></div>
-  <h1>Read the verbs, not just the title</h1>
-  <p class="hero-sub">Same postings, two different questions, and they don't share an answer. Pick the one that's yours and the rest of the page is built around it.</p>
+  <h1>A job ad is a record of what we expect from each other</h1>
+  <p class="hero-sub">Analytics-engineering job ads, saved from April to November 2026. Four questions about what they ask, and what they leave out. Pick the side you're reading from.</p>
   <div class="mode-cards">
     <button class="mode-card" type="button" onclick="setMode('seeker')">
       <h3>I'm looking for a role</h3>
-      <p>Tell me what you want more of, such as freedom to decide, building things, growth or owning quality, and get a checklist: wording to look for, wording to distrust.</p>
+      <p>Read each answer as a candidate: what to look for in an ad, what to ask, and what to distrust.</p>
     </button>
     <button class="mode-card" type="button" onclick="setMode('manager')">
       <h3>I'm hiring</h3>
-      <p>Check the basics your posting should state, then walk through what your role actually offers so your ad says it, rather than the stock phrases every other ad already uses.</p>
+      <p>Read each answer as the person writing the ad: what to state, and what candidates will read into what you leave out.</p>
     </button>
   </div>
   <p class="hero-footer-link">Want the statistics, the tests and every pattern in the data? <a href="full-analysis.html">See the full analysis</a></p>
 </section>
 
 <main id="content" tabindex="-1">
-  <h1 class="sr-only">AE/BI job market: what to look for and what to say</h1>
+  <h1 class="sr-only">AE/BI job market: what job ads ask, and what they leave out</h1>
 
-  <!-- ══════════════ SEEKER MODE ══════════════ -->
-  <div id="seekerContent" style="display:none">
-
-    <section class="section" id="seekerHygiene">
-      <h2 class="section-title">The basics: they don't make a role good, but a posting that skips them should give you pause</h2>
-      <p class="section-intro">A posting can state all six of these and still be a poor job. Clearing the bar is normal, not impressive. But a posting that fails several of them at once is telling you something.</p>
-      <p class="section-intro" id="hygieneSmallN" role="status" style="display:none;color:#92400e;font-weight:600;margin-top:-1.25rem"></p>
-      <div class="hygiene-grid" id="hygieneGrid"></div>
-      <p class="chart-lead">Pay is one line of the offer. <strong>What else an ad lists depends on where it was posted</strong>, and that local norm is what you can negotiate against.</p>
-      <div data-q="benefits" data-who="looking" data-note="the region filter does not apply"></div>
-    </section>
-
-    <section class="section" id="seekerMotivators">
-      <h2 class="section-title">Pick what you want more of</h2>
-      <p class="section-intro">These are what make people want a job, not just put up with it. Pick one or more. For each, you get the wording in real ads that goes with it in this data.</p>
-      <div class="motivator-chips" id="motivatorChips"></div>
-      <p class="sr-only" role="status" id="motivatorStatus"></p>
-      <div id="motivatorChecklists"></div>
-    </section>
-
-  </div>
-
-  <!-- ══════════════ MANAGER MODE ══════════════ -->
-  <div id="managerContent" style="display:none">
-
-    <section class="section" id="managerHygiene">
-      <h2 class="section-title">Does your posting state these? Most don't.</h2>
-      <p class="section-intro">These basics won't make your posting exciting. But a posting that skips several of them reads as unfinished, and candidates screen for that before they ask whether the role is good.</p>
-      <div id="managerHygieneList"></div>
-      <p class="chart-lead">Pay is one line of the offer. <strong>Candidates read the rest against what other ads in your region list</strong>, so the local norm sets what counts as generous.</p>
-      <div data-q="benefits" data-who="hiring" data-note="the region filter does not apply"></div>
-      <p class="chart-lead">Naming your real tools does more than list skills. <strong>It tells candidates what the job is</strong>, and the title will not.</p>
-      <div data-q="stack" data-who="hiring" data-note="the region filter does not apply"></div>
-      <p class="chart-lead">Hard requirements matter most on junior roles. <strong>That is where they most often contradict the title.</strong></p>
-      <div data-q="juniors" data-who="hiring" data-note="the region filter does not apply"></div>
-    </section>
-
-    <section class="section" id="managerMotivators">
-      <h2 class="section-title">Most postings cover the basics and leave the good part implicit</h2>
-      <p class="section-intro">A recruiter's template, a generic "cross-functional collaboration" line and a bare "Senior" title cover the basics. They leave what candidates care about most, such as freedom to decide, real ownership and growth, for them to guess. Answer honestly about your role below. Each answer shows what candidates will read into it, and the cheapest fix.</p>
-      <div id="assessCards"></div>
-      <p class="chart-lead">The tools every ad names will not set your posting apart. <strong>Your specific mix will</strong>, because almost no two ads share one.</p>
-      <div data-q="pitch" data-who="hiring" data-note="the region filter does not apply"></div>
-    </section>
-
-  </div>
-
-  <section class="snapshot-section" id="snapshotSection">
-    <h2 class="section-title" style="font-size:var(--t-md)" id="snapshotTitle">The job ads behind this page, read and sorted, not surveyed</h2>
-    <p class="section-intro" style="margin-bottom:0">Every number and checklist item on this page is worked out live from these ads. Use the region filter to narrow it — most numbers move once you do, and some cells get too small to trust.</p>
-    <div class="snapshot-grid" id="snapshotGrid"></div>
-    <p class="chart-lead">These ads were not copied from one another. <strong>Almost every one was written for its own team</strong>, which is why reading them closely pays off.</p>
-    <div data-q="barcode" data-note="the region filter does not apply"></div>
+  <section class="section" id="why">
+    <div class="section-kicker">Why read job ads?</div>
+    <h2 class="section-title">Ads show what a field expects of its people</h2>
+    <p class="section-intro" style="margin-bottom:1rem">One study read millions of newspaper job ads from 1940 to 2000. The job titles stayed the same, and the work inside them changed. These ads are a first snapshot of analytics engineering, to compare with later ones.</p>
+    <p class="section-intro">They come from one person's job search, mostly in English, so they lean senior. Read every number as this snapshot's habit, not the size of the market. Every chart below is worked out live, so it follows the region filter at the top. Four questions, four answers:</p>
+    <div data-answers data-links="#ch-job #ch-lag #ch-unsaid #ch-juniors"></div>
   </section>
 
-  <section class="section">
-    <div class="full-analysis-cta">
-      <p>Everything above comes from <span id="ctaCount"></span> job ads. The full analysis shows the tests behind each finding, how big each difference is, where too few ads make a number shaky, and the patterns that didn't hold up.</p>
+  <section class="section" id="ch-job">
+    <div class="section-kicker">1 · What is an analytics engineer?</div>
+    <h2 class="section-title">The ads don't agree where the job stops. They do share a core.</h2>
+    <p class="section-intro">Two ads with the same title can describe different jobs. Underneath, most ask for the same few things, and the tools an ad names say which job it really is. This chapter goes from the title, to the duties, to the tools, to where your own tools land.</p>
+    <div data-cards="titles duties stack tools mix"></div>
+    <div class="chapter-actions">
+      <h3 class="actions-title"><span class="only-seeker">What to look for</span><span class="only-manager">What to put in your ad</span></h3>
+      <p class="actions-intro"><span class="only-seeker">Wording to look for in an ad, and wording to distrust.</span><span class="only-manager">Answer these about your role. Each answer shows what candidates will read into it, and the cheapest fix.</span></p>
+      <div class="only-seeker"><div class="checklist" data-key="building"></div><div class="checklist" data-key="quality"></div></div>
+      <div class="only-manager"><div class="assess" data-key="building"></div><div class="assess" data-key="quality"></div></div>
+    </div>
+  </section>
+
+  <section class="section" id="ch-lag">
+    <div class="section-kicker">2 · Do ads keep up with the work?</div>
+    <h2 class="section-title">Ads describe the team we have, not the one we are building</h2>
+    <p class="section-intro">An ad is written from the team that exists today, often from the last person hired. New work turns up in ads late, and often under an older name. AI is the clearest case: who asks for it, what they mean, and whether the ask is growing.</p>
+    <div data-cards="ai semantic trend"></div>
+    <div class="chapter-actions">
+      <h3 class="actions-title"><span class="only-seeker">What to look for</span><span class="only-manager">What to put in your ad</span></h3>
+      <p class="actions-intro"><span class="only-seeker">Wording to look for in an ad, and wording to distrust.</span><span class="only-manager">Answer these about your role. Each answer shows what candidates will read into it, and the cheapest fix.</span></p>
+      <div class="only-seeker"><div class="checklist" data-key="tooling"></div></div>
+      <div class="only-manager"><div class="assess" data-key="tooling"></div></div>
+    </div>
+  </section>
+
+  <section class="section" id="ch-unsaid">
+    <div class="section-kicker">3 · What do ads leave unsaid?</div>
+    <h2 class="section-title">The ad asks a lot and tells little</h2>
+    <p class="section-intro">The employer knows the pay, the team, the interview and what it takes to move up. The candidate knows what the ad says. The first half of this chapter is about the job on offer. The second is about the path up, which ads leave unwritten too.</p>
+    <div data-cards="disclose arrangement language ladder levelduties"></div>
+    <div class="chapter-actions">
+      <h3 class="actions-title"><span class="only-seeker">What to check in any ad</span><span class="only-manager">What your ad should state</span></h3>
+      <p class="actions-intro"><span class="only-seeker">These basics are worked out live for the region you pick at the top. A posting can state all six and still be a poor job, but one that skips several at once is telling you something.</span><span class="only-manager">A posting that skips several of these reads as unfinished, and candidates screen for that before they ask whether the role is good.</span></p>
+      <div class="only-seeker">
+        <p class="section-intro" id="hygieneSmallN" role="status" style="display:none;color:#92400e;font-weight:600"></p>
+        <div class="hygiene-grid" id="hygieneGrid"></div>
+        <p class="chart-lead">And on what is at stake, and how you move up:</p>
+        <div class="checklist" data-key="stakes"></div><div class="checklist" data-key="autonomy"></div>
+      </div>
+      <div class="only-manager">
+        <div id="managerHygieneList"></div>
+        <p class="chart-lead">And on what is at stake, and who decides:</p>
+        <div class="assess" data-key="stakes"></div><div class="assess" data-key="autonomy"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="ch-juniors">
+    <div class="section-kicker">4 · Who will be senior next?</div>
+    <h2 class="section-title">Few ways in today means few seniors tomorrow</h2>
+    <p class="section-intro">This is the finding that matters most for the field. Chapter 3 showed that mentoring climbs with seniority: senior ads ask people to teach. But today's juniors are the seniors teams will need in five years. If few of them get in, who will today's seniors mentor?</p>
+    <div data-cards="levels juniorask juniorlist"></div>
+    <div class="chapter-actions">
+      <h3 class="actions-title"><span class="only-seeker">What to look for</span><span class="only-manager">What to put in your ad</span></h3>
+      <p class="actions-intro"><span class="only-seeker">Wording to look for in an ad, and wording to distrust.</span><span class="only-manager">Answer these about your role. Each answer shows what candidates will read into it, and the cheapest fix.</span></p>
+      <div class="only-seeker"><div class="checklist" data-key="growth"></div></div>
+      <div class="only-manager"><div class="assess" data-key="growth"></div></div>
+    </div>
+  </section>
+
+  <section class="section" id="close">
+    <div class="section-kicker">Where that leaves us</div>
+    <h2 class="section-title">No one knows exactly. The job description is still ours to write.</h2>
+    <p class="section-intro">There is no shared template for the job, so each ad is a choice. Write down what you expect, what it pays, what it takes to move up, and who will teach.</p>
+    <div class="close-cards">
+      <div class="close-card"><b>If you're hiring</b>Start from the shared core, then name what is yours. State the pay, the interview and who will teach the new hire.</div>
+      <div class="close-card"><b>If you're moving up</b>Practise the next verb on the work you already do, and move closer to the business. If you mentor, say so in your team's junior ad.</div>
+      <div class="close-card"><b>If you're starting out</b>The core is the same everywhere, and no two ads are alike. Apply to the doors that exist, and pitch your own mix.</div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="section-kicker">About snapshot one</div>
+    <h2 class="section-title">The ads behind this page</h2>
+    <p class="section-intro">Who these ads come from, when they were saved, and how to read them.</p>
+    <div data-cards="record"></div>
+    <div class="full-analysis-cta" style="margin-top:2.5rem">
+      <p>Everything above comes from <span id="ctaCount"></span> job ads. The full analysis shows every other pattern tested in these ads, the ones that didn't hold up, and an explorer to build your own cross-tab.</p>
       <a href="full-analysis.html">See the full statistical analysis</a>
     </div>
   </section>
@@ -343,32 +303,25 @@ button, select, input, label, nav, .count-pill, .persona-toggle, .mode-toggle, .
 </main>
 
 <script src="hero-quote.js"></script>
-<script src="question-charts-embed.js"></script>
+<script src="site.js"></script>
+<script src="viz.js"></script>
 <script>
 renderHeroQuote(document.getElementById('heroQuote'));
 let ALL_DATA = [];
 let DATA = [];
 let mode = null;
 try { mode = localStorage.getItem('aeMode'); } catch (e) {}
-let activeMotivators = new Set();
 let region = 'all';
-
-const REGION_LABELS = {
-  all: 'All regions', apac: 'APAC', uk_remote: 'UK / remote', benelux: 'Benelux', berlin: 'Berlin',
-  iberia: 'Iberia', other_europe: 'Other Europe', nordics: 'Nordics', france: 'France',
-  global_remote: 'Global remote', dach_other: 'DACH (other)', hamburg: 'Hamburg', baltics: 'Baltics',
-  ireland: 'Ireland', nyc_metro: 'NYC Metro', other: 'Other / unclear', europe: 'Europe (all)',
-};
 
 function buildRegionFilter() {
   const counts = {};
   ALL_DATA.forEach(d => { const r = d.geo_region || 'other'; counts[r] = (counts[r]||0)+1; });
-  const europeCount = ALL_DATA.filter(d => EUROPE_REGIONS.has(d.geo_region)).length;
+  const europeCount = ALL_DATA.filter(d => Site.EUROPE_REGIONS.has(d.geo_region)).length;
   const regions = Object.keys(counts).sort((a,b) => counts[b]-counts[a]);
   const opts = [
     { value: 'all', label: `All regions (${ALL_DATA.length})` },
     { value: 'europe', label: `Europe, all (${europeCount})` },
-    ...regions.map(r => ({ value: r, label: `${REGION_LABELS[r]||r} (${counts[r]})` })),
+    ...regions.map(r => ({ value: r, label: `${Site.REGION_NAME[r]||r} (${counts[r]})` })),
   ];
 
   const trigger = document.getElementById('regionDdTrigger');
@@ -428,19 +381,18 @@ function buildRegionFilter() {
   window._regionDdSyncTriggerText = syncTriggerText;
 }
 
-const EUROPE_REGIONS = new Set(['uk_remote','benelux','iberia','berlin','other_europe','france','nordics','dach_other','baltics','hamburg','ireland']);
 function applyRegionFilter() {
   if (region === 'all') {
     DATA = ALL_DATA;
   } else if (region === 'europe') {
-    DATA = ALL_DATA.filter(d => EUROPE_REGIONS.has(d.geo_region));
+    DATA = ALL_DATA.filter(d => Site.EUROPE_REGIONS.has(d.geo_region));
   } else {
     DATA = ALL_DATA.filter(d => (d.geo_region || 'other') === region);
   }
-  buildSnapshot();
   buildHygiene();
   buildManagerHygiene();
   if (window._regionDdSyncTriggerText) window._regionDdSyncTriggerText();
+  if (window.JDViz) JDViz.refresh();
 }
 
 function setMode(m) {
@@ -455,51 +407,49 @@ function setMode(m) {
     b.classList.toggle('active', b.dataset.mode === m);
     b.setAttribute('aria-pressed', String(b.dataset.mode === m));
   });
-  document.getElementById('seekerContent').style.display = m === 'seeker' ? 'block' : 'none';
-  document.getElementById('managerContent').style.display = m === 'manager' ? 'block' : 'none';
+  document.body.classList.toggle('mode-seeker', m === 'seeker');
+  document.body.classList.toggle('mode-manager', m === 'manager');
+  if (window.JDViz) JDViz.refresh();
   window.scrollTo(0, 0);
 }
 
 // ── Figures quoted in the copy, computed from the data so the text cannot drift from it ──
 let FACTS = {};
-function shareOf(rows, fn) { return rows.length ? Math.round(rows.filter(fn).length / rows.length * 100) : 0; }
-function medianOf(values) {
-  const vals = values.filter(v => !isNaN(v)).sort((a, b) => a - b);
-  if (!vals.length) return 0;
-  const m = vals.length;
-  return m % 2 ? vals[(m - 1) / 2] : (vals[m / 2 - 1] + vals[m / 2]) / 2;
-}
 function computeFacts() {
   const inRegion = r => ALL_DATA.filter(d => (d.geo_region || 'other') === r);
   const gated = d => d.language_gate_type === 'hard' || d.language_gate_type === 'soft';
-  const isDbt = d => String(d.has_dbt).toLowerCase() === 'true';
-  const collab = rows => medianOf(rows.map(d => parseFloat(d.collaboration_width)));
+  const isDbt = d => Site.isTrue(d.has_dbt);
+  const collab = rows => Site.median(rows.map(d => parseFloat(d.collaboration_width)));
   const apac = inRegion('apac');
   FACTS = {
     n: ALL_DATA.length.toLocaleString('en-GB'),
-    gateEurope: shareOf(ALL_DATA.filter(d => EUROPE_REGIONS.has(d.geo_region)), gated),
-    gateApac: shareOf(apac, gated),
-    gateNyc: shareOf(inRegion('nyc_metro'), gated),
+    gateEurope: Site.percentWhere(ALL_DATA.filter(d => Site.EUROPE_REGIONS.has(d.geo_region)), gated),
+    gateApac: Site.percentWhere(apac, gated),
+    gateNyc: Site.percentWhere(inRegion('nyc_metro'), gated),
     apacOnsite: apac.filter(d => d.work_arrangement === 'onsite').length,
     apacRemote: apac.filter(d => d.work_arrangement === 'remote').length,
     collabHigh: collab(ALL_DATA.filter(d => d.loss_aversion_framing === 'high')).toFixed(1),
     collabOther: collab(ALL_DATA.filter(d => d.loss_aversion_framing !== 'high')).toFixed(1),
-    dbtPct: shareOf(ALL_DATA, isDbt),
-    dbtRecruiter: shareOf(ALL_DATA.filter(d => d.jd_authorship === 'recruiter'), isDbt),
-    dbtEngineer: shareOf(ALL_DATA.filter(d => d.jd_authorship === 'hiring_manager'), isDbt),
-    noAiPct: shareOf(ALL_DATA, d => d.ai_role === 'none'),
-    rigourHigh: shareOf(ALL_DATA.filter(d => d.domain_risk === 'high'), d => d.velocity_vs_rigour === 'rigour'),
-    rigourModerate: shareOf(ALL_DATA.filter(d => d.domain_risk === 'moderate'), d => d.velocity_vs_rigour === 'rigour'),
-    rigourLow: shareOf(ALL_DATA.filter(d => d.domain_risk === 'low'), d => d.velocity_vs_rigour === 'rigour'),
-    strategicSenior: shareOf(ALL_DATA.filter(d => d.seniority === 'senior'), d => d.autonomy_level === 'strategic'),
-    strategicMid: shareOf(ALL_DATA.filter(d => d.seniority === 'mid'), d => d.autonomy_level === 'strategic'),
+    dbtPct: Site.percentWhere(ALL_DATA, isDbt),
+    dbtRecruiter: Site.percentWhere(ALL_DATA.filter(d => d.jd_authorship === 'recruiter'), isDbt),
+    dbtEngineer: Site.percentWhere(ALL_DATA.filter(d => d.jd_authorship === 'hiring_manager'), isDbt),
+    noAiPct: Site.percentWhere(ALL_DATA, d => d.ai_role === 'none'),
+    rigourHigh: Site.percentWhere(ALL_DATA.filter(d => d.domain_risk === 'high'), d => d.velocity_vs_rigour === 'rigour'),
+    rigourModerate: Site.percentWhere(ALL_DATA.filter(d => d.domain_risk === 'moderate'), d => d.velocity_vs_rigour === 'rigour'),
+    rigourLow: Site.percentWhere(ALL_DATA.filter(d => d.domain_risk === 'low'), d => d.velocity_vs_rigour === 'rigour'),
+    strategicSenior: Site.percentWhere(ALL_DATA.filter(d => d.seniority === 'senior'), d => d.autonomy_level === 'strategic'),
+    strategicMid: Site.percentWhere(ALL_DATA.filter(d => d.seniority === 'mid'), d => d.autonomy_level === 'strategic'),
+    earlyGreen: Site.percentWhere(ALL_DATA.filter(d => d.data_team_maturity === 'early'), d => d.greenfield_vs_fix === 'greenfield'),
+    matureGreen: Site.percentWhere(ALL_DATA.filter(d => d.data_team_maturity === 'mature'), d => d.greenfield_vs_fix === 'greenfield'),
+    matureFix: Site.percentWhere(ALL_DATA.filter(d => d.data_team_maturity === 'mature'), d => d.greenfield_vs_fix === 'fix_scale'),
+    matureMixed: Site.percentWhere(ALL_DATA.filter(d => d.data_team_maturity === 'mature'), d => d.greenfield_vs_fix === 'mixed'),
   };
 }
 // static copy marks a computed figure as {{name}}
 function fill(text) { return text.replace(/\{\{(\w+)\}\}/g, (_, k) => (k in FACTS ? FACTS[k] : '')); }
 
 // ── Hygiene factors: real stats from the dataset ──
-function pct(filterFn) { const n = DATA.length || 1; return Math.round(DATA.filter(filterFn).length / n * 100); }
+const pct = test => Site.percentWhere(DATA, test);
 
 function buildHygiene() {
   const smallN = document.getElementById('hygieneSmallN');
@@ -515,7 +465,7 @@ function buildHygiene() {
   const earlyPct = pct(d => d.data_team_maturity === 'early');
   const highFearPct = pct(d => d.loss_aversion_framing === 'high');
   const n = DATA.length || 1;
-  const medCollab = medianOf(DATA.map(d => parseFloat(d.collaboration_width)));
+  const medCollab = Site.median(DATA.map(d => parseFloat(d.collaboration_width)));
 
   const maxCollab = 6;
   const collabBarPct = Math.min(100, Math.round(medCollab / maxCollab * 100));
@@ -546,39 +496,6 @@ function buildHygiene() {
       <div class="hygiene-label">${c.label}</div>
       <div class="stat-bar-track"><div class="stat-bar-fill${c.warn ? ' warn' : ''}" style="width:${c.bar}%"></div></div>
       <div class="hygiene-note" style="margin-top:0.6rem">${c.note}</div>
-    </div>`).join('');
-}
-
-// ── Snapshot: dataset composition, shown once above mode content ──
-function buildSnapshot() {
-  const n = DATA.length || 1;
-  document.getElementById('snapshotTitle').textContent = region === 'all'
-    ? `${ALL_DATA.length} job ads, read and sorted — not surveyed`
-    : `${DATA.length} of ${ALL_DATA.length} — ${REGION_LABELS[region]||region} only`;
-  const groupPct = (field, order) => order.map(([key, label]) => ({
-    label, pct: Math.round(DATA.filter(d => d[field] === key).length / n * 100),
-  }));
-
-  const groups = [
-    { title: 'Seniority', rows: groupPct('seniority', [
-      ['junior', 'Junior'], ['mid', 'Mid'], ['senior', 'Senior'], ['staff', 'Staff'], ['lead', 'Lead'], ['manager', 'Manager'],
-    ]).filter(r => r.pct > 0) },
-    { title: 'Freedom to decide', rows: groupPct('autonomy_level', [
-      ['strategic', 'Sets direction'], ['mixed', 'Mixed'], ['execution', 'Carries out plans'],
-    ]) },
-    { title: 'Work arrangement', rows: groupPct('work_arrangement', [
-      ['hybrid', 'Hybrid'], ['not_stated', 'Not stated'], ['remote', 'Remote'], ['onsite', 'Onsite'],
-    ]) },
-  ];
-
-  document.getElementById('snapshotGrid').innerHTML = groups.map(g => `
-    <div>
-      <div class="snapshot-group-title">${g.title}</div>
-      ${g.rows.map(r => `
-        <div class="snapshot-row">
-          <div class="snapshot-row-label"><span>${r.label}</span><b>${r.pct}%</b></div>
-          <div class="stat-bar-track"><div class="stat-bar-fill" style="width:${r.pct}%"></div></div>
-        </div>`).join('')}
     </div>`).join('');
 }
 
@@ -623,7 +540,6 @@ function buildManagerHygiene() {
 const MOTIVATORS = [
   {
     key: 'autonomy', name: 'Freedom to decide, not just carrying out plans',
-    charts: [{ q: 'stack', lead: `The tools an ad names say more about scope than its title does.` }],
     desc: 'You want to set direction, not just deliver against someone else\'s plan.',
     items: [
       { badge: 'look', text: `A "Senior" title raises the share of roles where you set direction from {{strategicMid}}% of Mid roles to {{strategicSenior}}%. But among Senior roles alone, it's close to a coin flip. Read the verbs: "define/own/shape" versus "support/assist/deliver."`, link: 'full-analysis.html#rel-seniority-autonomy' },
@@ -634,17 +550,15 @@ const MOTIVATORS = [
   },
   {
     key: 'building', name: 'Building, not maintaining',
-    charts: [{ q: 'titles', lead: `Whether a role leans to reporting or to building shows in its duties, not its title.` }],
     desc: 'You want to build something from scratch, not patch an existing system.',
     items: [
-      { badge: 'look', text: `Signs of building from scratch: "build," "establish," "define," "create from scratch," "design," "from the ground up." Signs of fixing and scaling: "improve," "maintain," "modernise," "inherited," "migrate," "refactor," "technical debt." Building from scratch is far more common at early-stage companies. "Modernise our stack" at a growing company more likely means fixing and scaling than a true fresh start.`, link: 'full-analysis.html#rel-maturity-mission' },
-      { badge: 'caution', text: `Most work at mature teams is now fixing and scaling: repairing and replacing old systems, not extending a stable one. Good if you like fixing broken things. Misleading if you assumed "mature = calm maintenance."`, link: 'full-analysis.html#rel-maturity-mission' },
+      { badge: 'look', text: `Signs of building from scratch: "build," "establish," "define," "create from scratch," "design," "from the ground up." Signs of fixing and scaling: "improve," "maintain," "modernise," "inherited," "migrate," "refactor," "technical debt." {{earlyGreen}}% of early-stage roles build from scratch, against {{matureGreen}}% at mature teams. "Modernise our stack" at a growing company more likely means fixing and scaling than a true fresh start.`, link: 'full-analysis.html#rel-maturity-mission' },
+      { badge: 'caution', text: `At mature teams, {{matureFix}}% of roles are fixing and scaling: repairing and replacing old systems. Another {{matureMixed}}% mix that with new work. Good if you like fixing broken things. Misleading if you assumed "mature = calm maintenance."`, link: 'full-analysis.html#rel-maturity-mission' },
       { badge: 'do', text: `Read the mission language directly, not the company's "About us" page. A mature company with one genuine from-scratch project reads more like an early-stage ad than its stage would suggest.`, link: 'full-analysis.html#rel-mission-autonomy' },
     ],
   },
   {
     key: 'growth', name: 'Growth & mentorship',
-    charts: [{ q: 'ladder', lead: `Moving up changes the verbs, not the core skills.` }, { q: 'juniors', lead: `Starting out? Check junior ads for requirements that rule you out before you apply.` }],
     desc: 'You want to develop other people, or be developed — not just execute solo.',
     items: [
       { badge: 'look', text: `Don't assume a "Mid" or "Senior" title tells you whether you'll mentor anyone. Words about freedom to decide ("own," "define," "shape," "drive") are a better clue, even between ads with the same title.`, link: 'full-analysis.html#rel-mentorship-autonomy' },
@@ -669,7 +583,6 @@ const MOTIVATORS = [
   },
   {
     key: 'tooling', name: 'Modern tools and AI',
-    charts: [{ q: 'ai', lead: `Most AI asks in ads are vague. The ones that name a tool tell you more.` }, { q: 'pitch', lead: `No two ads ask for quite the same tools, so your own mix is worth pitching.` }],
     desc: 'You want current tools and real day-to-day use of AI, not old systems.',
     items: [
       { badge: 'look', text: `Look for named tools, not vague "AI-first mindset" language: "GitHub Copilot," "Cursor," "Claude Code," "AI-assisted coding," "coding agents." In this market they go with roles that have more room to set direction, not less. Treat a named tool as a good sign, not a box for juniors.`, link: 'full-analysis.html#rel-ai-autonomy' },
@@ -681,33 +594,10 @@ const MOTIVATORS = [
 const BADGE_LABEL = { look: 'OK', caution: '!', flag: '✕', do: '→' };
 const BADGE_NAME = { look: 'Look for', caution: 'Be careful', flag: 'Red flag', do: 'Do this' };
 
-function buildMotivatorChips() {
-  document.getElementById('motivatorChips').innerHTML = MOTIVATORS.map(m => `
-    <button type="button" class="motivator-chip${activeMotivators.has(m.key) ? ' active' : ''}" aria-pressed="${activeMotivators.has(m.key)}" data-key="${m.key}">
-      ${m.name}
-    </button>`).join('');
-  document.querySelectorAll('.motivator-chip').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const k = btn.dataset.key;
-      activeMotivators.has(k) ? activeMotivators.delete(k) : activeMotivators.add(k);
-      btn.classList.toggle('active', activeMotivators.has(k));
-      btn.setAttribute('aria-pressed', String(activeMotivators.has(k)));
-      buildMotivatorChecklists();
-    });
-  });
-}
-
-function buildMotivatorChecklists() {
-  const container = document.getElementById('motivatorChecklists');
-  const shown = MOTIVATORS.filter(m => activeMotivators.has(m.key));
-  document.getElementById('motivatorStatus').textContent = shown.length
-    ? `${shown.length} checklist${shown.length === 1 ? '' : 's'} shown: ${shown.map(m => m.name).join('; ')}.`
-    : 'No checklists shown.';
-  if (!activeMotivators.size) {
-    container.innerHTML = `<div class="motivator-empty">Pick one or more of the above — your checklist builds here.</div>`;
-    return;
-  }
-  container.innerHTML = MOTIVATORS.filter(m => activeMotivators.has(m.key)).map(m => `
+function buildChecklists() {
+  document.querySelectorAll('.checklist[data-key]').forEach(slot => {
+    const m = MOTIVATORS.find(x => x.key === slot.dataset.key);
+    slot.innerHTML = `
     <div class="check-card">
       <div class="check-head">
         <div class="check-title">${m.name}</div>
@@ -719,16 +609,15 @@ function buildMotivatorChecklists() {
             <div class="check-item-badge badge-${it.badge}" aria-hidden="true">${BADGE_LABEL[it.badge]}</div>
             <div class="check-item-text"><span class="sr-only">${BADGE_NAME[it.badge]}: </span>${fill(it.text)}${it.link ? ` <a href="${it.link}" target="_blank" rel="noopener">Read the evidence<span class="sr-only"> for ${m.name} (opens in a new tab)</span></a>` : ''}</div>
           </div>`).join('')}
-        ${(m.charts || []).map(chart => `<p class="chart-lead">${chart.lead}</p><div data-q="${chart.q}" data-who="looking,starting,moving" data-note="the region filter does not apply"></div>`).join('')}
       </div>
-    </div>`).join('');
+    </div>`;
+  });
 }
 
 // ── Manager self-assessment: same 6 motivators, question + answer-triggered tip ──
 const ASSESS = [
   {
     key: 'autonomy', name: 'Freedom to decide',
-    chart: { q: 'ladder', lead: `Candidates read your verbs as the level: support, then own, then define and lead.` },
     question: 'Does this hire mostly decide the approach, or mostly execute a pre-set plan?',
     options: [
       { label: 'Decides the approach', result: `Say so explicitly. Name a real decision the role owns in year one ("you choose the modelling architecture," "you set the testing roadmap"). A bare "Senior" title doesn't say this. Among Senior ads alone, whether the role sets direction is close to a coin flip.`, link: 'full-analysis.html#rel-seniority-autonomy',
@@ -744,7 +633,6 @@ const ASSESS = [
   },
   {
     key: 'building', name: 'Building vs. maintaining',
-    chart: { q: 'titles', lead: `Candidates place your role on this spectrum from the duties you list.` },
     question: 'Is this role building something new, or improving/fixing what already exists?',
     options: [
       { label: 'Building from scratch', result: `Name the specific project directly ("build the first X") rather than leaning on "early-stage energy" or generic stage framing. It is a more believable sign of ownership, even at a mature company with one genuine from-scratch project.`, link: 'full-analysis.html#rel-maturity-mission',
@@ -796,7 +684,6 @@ const ASSESS = [
   },
   {
     key: 'tooling', name: 'Tools and AI',
-    chart: { q: 'ai', lead: `Most AI asks in ads are vague. A named tool and task stands out.` },
     question: 'Is using AI-assisted coding tools genuinely part of how this role works day to day?',
     options: [
       { label: 'Yes, expected daily use', result: `Say so explicitly. Expecting people to use AI tools doesn't make your role sound junior. In these ads it goes with roles that set direction more often, not less.`, link: 'full-analysis.html#rel-ai-autonomy',
@@ -810,7 +697,7 @@ const ASSESS = [
 ];
 
 function buildAssessCards() {
-  document.getElementById('assessCards').innerHTML = ASSESS.map(a => `
+  document.querySelectorAll('.assess[data-key]').forEach(slot => { const a = ASSESS.find(x => x.key === slot.dataset.key); slot.innerHTML = `
     <div class="assess-card">
       <div class="assess-title">${a.name}</div>
       <div class="assess-question">${a.question}</div>
@@ -818,8 +705,7 @@ function buildAssessCards() {
         ${a.options.map((o, i) => `<button type="button" class="assess-opt" aria-pressed="false" data-idx="${i}">${o.label}</button>`).join('')}
       </div>
       <div class="assess-result" id="assess-result-${a.key}" aria-live="polite"></div>
-      <div class="assess-chart" id="assess-chart-${a.key}"></div>
-    </div>`).join('');
+    </div>`; });
 
   ASSESS.forEach(a => {
     document.querySelectorAll(`.assess-options[data-key="${a.key}"] .assess-opt`).forEach(btn => {
@@ -827,14 +713,11 @@ function buildAssessCards() {
         const resultEl = document.getElementById(`assess-result-${a.key}`);
         const wasActive = btn.classList.contains('active');
         document.querySelectorAll(`.assess-options[data-key="${a.key}"] .assess-opt`).forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
-        const chartEl = document.getElementById(`assess-chart-${a.key}`);
         if (wasActive) {
           resultEl.classList.remove('visible');
           resultEl.innerHTML = '';
-          chartEl.innerHTML = '';
           return;
         }
-        if (a.chart && !chartEl.firstChild) chartEl.innerHTML = `<p class="chart-lead">${a.chart.lead}</p><div data-q="${a.chart.q}" data-who="hiring" data-note="the region filter does not apply"></div>`;
         btn.classList.add('active');
         btn.setAttribute('aria-pressed', 'true');
         const opt = a.options[parseInt(btn.dataset.idx, 10)];
@@ -854,12 +737,11 @@ fetch('./data.json').then(r => r.json()).then(data => {
   computeFacts();
   document.getElementById('ctaCount').textContent = FACTS.n;
   buildRegionFilter();
-  buildSnapshot();
   buildHygiene();
   buildManagerHygiene();
-  buildMotivatorChips();
-  buildMotivatorChecklists();
+  buildChecklists();
   buildAssessCards();
+  JDViz.init({ rows: () => DATA, mode: () => mode || 'seeker', themesUrl: './responsibility_classification.json' });
   if (mode) setMode(mode);
 }).catch(err => {
   document.getElementById('hero').insertAdjacentHTML('afterend',
