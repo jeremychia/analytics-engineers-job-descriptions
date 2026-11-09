@@ -1804,6 +1804,36 @@ function buildFuture(stage) {
   ];
 }
 
+/* what changes with level, one chart: SQL flat as the reference, support falling, then the verbs of leading rising; labels at the right edge, spread so they never overlap */
+function buildVerbs(stage) {
+  const LC = D.stats2.ladder_core, W = 1000, H = 420, X0 = 90, X1 = 660, Y0 = 30, Y1 = 360, svg = s('svg', { viewBox: `0 0 ${W} ${H}`, class: 'chart' });
+  const X = i => X0 + i * (X1 - X0) / 3, Y = v => Y1 - v / 100 * (Y1 - Y0);
+  const txt = (p, x, y, text, st = {}, a = {}) => s('text', Object.assign({ x, y, text, style: Object.assign({ fontSize: '17px', fill: C.ink2 }, st) }, a), p);
+  const layer = () => s('g', { style: { opacity: 0, transition: 'opacity .6s' } }, svg);
+  [0, 50, 100].forEach(v => { s('line', { x1: X0 - 20, x2: X1 + 20, y1: Y(v), y2: Y(v), stroke: C.line, 'stroke-width': v ? .8 : 1.6 }, svg); txt(svg, X0 - 28, Y(v) + 5, `${v}%`, { fontSize: '14px', fill: C.mute }, { 'text-anchor': 'end' }); });
+  ['Junior', 'Mid', 'Senior', 'Lead+'].forEach((l, i) => txt(svg, X(i), Y1 + 30, l, { fontWeight: 600 }, { 'text-anchor': 'middle' }));
+  const series = [
+    ['SQL', LC['SQL'], C.mute, 0], ['support or assist', LC['SCOPE: support / assist'], C.ink2, 1],
+    ['lead or drive', LC['SCOPE: lead / drive'], C.coral, 2], ['roadmap or strategy', LC['Roadmap / prioritisation / strategy'], C.amber, 2],
+    ['define standards', LC['Define standards / best practices / conventions'], C.blue, 2], ['mentor or coach', LC['Mentoring / coaching / code review'], C.teal, 2]];
+  // label heights at the right edge: start at each line's end, then push apart to at least 26px
+  const ends = series.map(([, v], k) => ({ k, y: Y(v[3]) })).sort((a, b) => a.y - b.y);
+  ends.forEach((e, i) => { if (i && e.y - ends[i - 1].y < 26) e.y = ends[i - 1].y + 26; });
+  const labelY = Object.fromEntries(ends.map(e => [e.k, e.y]));
+  const groups = [layer(), layer(), layer()];
+  series.forEach(([name, vals, col, g], k) => {
+    const p = groups[g], pts = vals.map((v, i) => [X(i), Y(v)]), w = g === 0 ? 4 : 5;
+    s('path', { d: `M ${pts[0]} L ${pts[1]}`, fill: 'none', stroke: col, 'stroke-width': w, 'stroke-dasharray': '2 9', 'stroke-linecap': 'round' }, p);   // dotted: few junior ads
+    s('path', { d: `M ${pts[1]} L ${pts[2]} L ${pts[3]}`, fill: 'none', stroke: col, 'stroke-width': w, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, p);
+    pts.forEach(([x, y]) => s('circle', { cx: x, cy: y, r: 5, fill: col, stroke: C.bg, 'stroke-width': 2 }, p));
+    s('line', { x1: X(3) + 8, x2: X(3) + 30, y1: Y(vals[3]), y2: labelY[k], stroke: col, 'stroke-width': 1.5 }, p);
+    txt(p, X(3) + 36, labelY[k] + 6, `${name} ${Math.round(vals[3])}%`, { fontSize: '18px', fontWeight: 700, fill: col });
+  });
+  const line = v7.line('SQL stays the same. ', 'You stop supporting and start leading.');
+  stage.append(h('div', { class: 'col', style: { gap: '2vh' } }, svg, line));
+  return v7.steps([...groups, line], [[1, 0, 0, 0], [1, 1, 0, 0], [1, 1, 1, 0], [1, 1, 1, 1]], 600);
+}
+
 /* The 5-minute talk (jd_deck_v2.html, script in talk_v3_for_the_people.md): six questions, each cut to the builds that carry its answer, with plain-language footers. Replaces SLIDES in place. */
 {
   Object.assign(VERDICT_LABEL, { conclusive: 'clear', suggestive: 'likely', descriptive: 'a count', inconclusive: 'unclear' });
@@ -1855,10 +1885,8 @@ function buildFuture(stage) {
       foot: 'Counts are phrase matches across all ads; “semantic model”, Power BI’s name for a dataset, is left out. FastAPI story, said only: its creator’s post of 11 July 2020.' },
     { ...by.missing, name: 'Asymmetry', kick: 'Three · What do ads leave unsaid?', title: 'The ad asks. <em>It rarely tells.</em>', build: buildDisclose,
       foot: `All ${A} ads. Read from each ad, checked by hand on 60. Europe = the seven European regions together.` },
-    { id: 'rung', name: 'Moving up', kick: 'Three · What does it take to move up?', title: 'SQL stays the same. <em>The job becomes setting direction.</em>',
-      build: st => buildRung(st, { voices: false, right: { title: 'asks you to set direction', vals: D.stats2.ladder_shares['strategic verbs'].map(Math.round) },
-        line: ['SQL stays the same. ', 'The job becomes setting direction.'] }),
-      foot: 'English job descriptions with a level. Set direction = asks you to own, define, lead or shape strategy, a phrase match; the rise holds at every step (Holm p < 0.001). SQL does not change.' },
+    { id: 'rung', name: 'Moving up', kick: 'Three · What does it take to move up?', title: 'SQL stays the same. <em>You stop supporting and start leading.</em>', build: buildVerbs,
+      foot: 'English job descriptions with a level. Each line is a phrase match in the duties and requirements. The rises in lead, roadmap, define standards and mentor hold from mid to senior (Holm p < 0.001); support falls from junior to mid. SQL does not change.' },
     { id: 'future', name: 'Juniors', kick: 'Four · Who will be senior next?', title: 'Few juniors today. <em>Few seniors tomorrow.</em>', build: buildFuture,
       foot: 'Level read by an AI model. Collected during one job search, so they lean senior. South Korea: people by five-year age band, 2025, UN World Population Prospects 2024; under-20s in coral.' },
     { id: 'close', name: 'Close', kick: 'Where that leaves us', title: 'No one knows exactly. <em>The job description is still ours to write.</em>', build: st => buildClose(st, { noun: 'job description' }), foot: '' },

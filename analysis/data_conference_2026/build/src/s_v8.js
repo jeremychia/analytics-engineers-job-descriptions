@@ -62,3 +62,33 @@ function buildFuture(stage) {
     ...v7.steps([gHive, gArrow, line], [[1, 0, 0], [1, 1, 0], [1, 1, 1]], 600)
   ];
 }
+
+/* what changes with level, one chart: SQL flat as the reference, support falling, then the verbs of leading rising; labels at the right edge, spread so they never overlap */
+function buildVerbs(stage) {
+  const LC = D.stats2.ladder_core, W = 1000, H = 420, X0 = 90, X1 = 660, Y0 = 30, Y1 = 360, svg = s('svg', { viewBox: `0 0 ${W} ${H}`, class: 'chart' });
+  const X = i => X0 + i * (X1 - X0) / 3, Y = v => Y1 - v / 100 * (Y1 - Y0);
+  const txt = (p, x, y, text, st = {}, a = {}) => s('text', Object.assign({ x, y, text, style: Object.assign({ fontSize: '17px', fill: C.ink2 }, st) }, a), p);
+  const layer = () => s('g', { style: { opacity: 0, transition: 'opacity .6s' } }, svg);
+  [0, 50, 100].forEach(v => { s('line', { x1: X0 - 20, x2: X1 + 20, y1: Y(v), y2: Y(v), stroke: C.line, 'stroke-width': v ? .8 : 1.6 }, svg); txt(svg, X0 - 28, Y(v) + 5, `${v}%`, { fontSize: '14px', fill: C.mute }, { 'text-anchor': 'end' }); });
+  ['Junior', 'Mid', 'Senior', 'Lead+'].forEach((l, i) => txt(svg, X(i), Y1 + 30, l, { fontWeight: 600 }, { 'text-anchor': 'middle' }));
+  const series = [
+    ['SQL', LC['SQL'], C.mute, 0], ['support or assist', LC['SCOPE: support / assist'], C.ink2, 1],
+    ['lead or drive', LC['SCOPE: lead / drive'], C.coral, 2], ['roadmap or strategy', LC['Roadmap / prioritisation / strategy'], C.amber, 2],
+    ['define standards', LC['Define standards / best practices / conventions'], C.blue, 2], ['mentor or coach', LC['Mentoring / coaching / code review'], C.teal, 2]];
+  // label heights at the right edge: start at each line's end, then push apart to at least 26px
+  const ends = series.map(([, v], k) => ({ k, y: Y(v[3]) })).sort((a, b) => a.y - b.y);
+  ends.forEach((e, i) => { if (i && e.y - ends[i - 1].y < 26) e.y = ends[i - 1].y + 26; });
+  const labelY = Object.fromEntries(ends.map(e => [e.k, e.y]));
+  const groups = [layer(), layer(), layer()];
+  series.forEach(([name, vals, col, g], k) => {
+    const p = groups[g], pts = vals.map((v, i) => [X(i), Y(v)]), w = g === 0 ? 4 : 5;
+    s('path', { d: `M ${pts[0]} L ${pts[1]}`, fill: 'none', stroke: col, 'stroke-width': w, 'stroke-dasharray': '2 9', 'stroke-linecap': 'round' }, p);   // dotted: few junior ads
+    s('path', { d: `M ${pts[1]} L ${pts[2]} L ${pts[3]}`, fill: 'none', stroke: col, 'stroke-width': w, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, p);
+    pts.forEach(([x, y]) => s('circle', { cx: x, cy: y, r: 5, fill: col, stroke: C.bg, 'stroke-width': 2 }, p));
+    s('line', { x1: X(3) + 8, x2: X(3) + 30, y1: Y(vals[3]), y2: labelY[k], stroke: col, 'stroke-width': 1.5 }, p);
+    txt(p, X(3) + 36, labelY[k] + 6, `${name} ${Math.round(vals[3])}%`, { fontSize: '18px', fontWeight: 700, fill: col });
+  });
+  const line = v7.line('SQL stays the same. ', 'You stop supporting and start leading.');
+  stage.append(h('div', { class: 'col', style: { gap: '2vh' } }, svg, line));
+  return v7.steps([...groups, line], [[1, 0, 0, 0], [1, 1, 0, 0], [1, 1, 1, 0], [1, 1, 1, 1]], 600);
+}

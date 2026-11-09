@@ -9,7 +9,7 @@ Draft 1, 7 November 2026. The deck is `jd_deck_v8.html` (eight slides and one fo
 - **Four things snapshot one shows:**
   1. **A shared core, local edges:** the ads don't agree where the job stops. Two analytics-engineer ads are no more alike than an analytics-engineer ad and a data-engineer ad. But three in four ask you to model the data, test it, report on it and work with stakeholders, and 95% ask for SQL.
   2. **Ads lag:** they describe the team we have, not the one we're building. "Context engineering" is almost absent. "Semantic layer" is common, and ads that ask for AI name it more than twice as often.
-  3. **What's left unsaid:** the ad asks a lot and tells little about pay, the interview and the team. Where the law asks for pay, ads give it. Yet growth is written down clearly: SQL stays flat while "set direction" climbs from almost none at junior to four in five at lead. Say the pay as clearly as the growth.
+  3. **What's left unsaid:** the ad asks a lot and tells little about pay, the interview and the team. Where the law asks for pay, ads give it. Yet growth is written down clearly: SQL stays flat, "support" falls, and "lead", "roadmap", "define standards" and "mentor" climb; four in five lead-level ads ask you to lead. Say the pay as clearly as the growth.
   4. **Juniors, the main point:** few junior ads, so few seniors later, like an ageing population. It leads straight into the close.
 - **The close:** no one knows exactly, but the job description is ours to write. Be intentional, and make room for juniors.
 - **Tone:** the ads are the subject, never the people who write them. Say "I think" when it is your view, not the data's.
@@ -30,7 +30,7 @@ Use one sentence of theory per point, at most. The room needs the idea, not the 
 | Juniors: the shape | A narrow base under a wide middle is an ageing population: fewer young people now, fewer workers later. South Korea has the narrowest base of any large country: ages 0–4 are 29% of its widest band (50–54). Japan is 40%, Italy 42%, France 76%. In these ads, junior is 12% of the widest level (mid). | UN World Population Prospects 2024, 2025 figures, via [populationpyramid.net](https://www.populationpyramid.net/republic-of-korea/2025/); saved as `build/inputs/population_south_korea_2025.csv` | "South Korea has the lowest birth rate in the world." Don't say the ads match Korea; they are narrower still. |
 | Moving up | Much of what makes someone senior is tacit: "we can know more than we can tell." | Polanyi, *The Tacit Dimension*, 1966 | Optional. Use it in Q&A if someone asks why ads don't write the business down. |
 
-## The script (about 4:26 at 130 words a minute, about 577 words; about 4:35 with the pauses)
+## The script (about 4:28 at 130 words a minute, about 581 words; about 4:37 with the pauses)
 
 **[Why read job ads?]**
 "Economists treat job ads as a record. One team read millions of newspaper ads from 1940 to 2000. The titles stayed the same. The work inside them changed.
@@ -54,7 +54,7 @@ You'll hear 'context engineering' all day here. Four ads in 1,500 use the phrase
 Washington and New York require the pay range. Eighty percent of US ads give it. In Europe, under one in five."
 
 **[Three · What does it take to move up?]**
-"Growth is different. Here the job description is clear. SQL is in ninety-five percent at every level. But 'set direction' climbs: almost none at junior, four in five at lead and above. Mentoring rises with it. The job becomes setting direction.
+"Growth is different. Here the job description is clear. SQL stays at about ninety-five percent at every level. 'Support' falls. 'Lead', 'roadmap', 'define standards' and 'mentor' all climb. At lead and above, four in five ask you to lead. You stop supporting and start leading.
 
 So job descriptions already say what it takes to grow. Say what the job pays just as clearly. The right people apply, and you spend less time sifting through the wrong ones."
 
@@ -81,12 +81,12 @@ Write down what you expect. Write down who will teach. Right now, the ads make i
 | 3 | The core | 2 | 1:02–1:33 | model, test, report and work with stakeholders in about three ads in four; SQL 95%, Python 64%, dbt 55%; top warehouse Snowflake 36%, top BI tool Power BI 40% | duties read from each ad's responsibilities; tools named anywhere |
 | 4 | Lagging | 3 | 1:33–2:20 | 4 say "context engineering"; 338 name a semantic layer | phrase matches; the link to AI asks is tested (p < 0.001) and kept for questions |
 | 5 | Asymmetry | 3 | 2:20–2:40 | pay in 24% of ads; US 80%, Europe 18% | read from each ad, checked by hand on 60 |
-| 6 | Moving up | 3 | 2:40–3:13 | SQL 88–95% at every level; set direction 0%, 17%, 43%, 79% from junior to lead and above | tested at every step, Holm p < 0.001 |
-| 7 | Juniors | 3 | 3:13–3:54 | 1 junior ad for every 8 senior or above; a third of senior ads ask you to mentor | a count; the corpus leans senior |
-| 8 | Close | 3 | 3:54–4:26 | none | — |
+| 6 | Moving up | 4 | 2:40–3:15 | SQL 88–95% at every level; support 92% → 57%; lead or drive 37% at mid → 81% at lead and above; roadmap, define standards and mentor all rise | phrase matches; the rises hold from mid to senior (Holm p < 0.001) |
+| 7 | Juniors | 3 | 3:15–3:56 | 1 junior ad for every 8 senior or above; a third of senior ads ask you to mentor | a count; the corpus leans senior |
+| 8 | Close | 3 | 3:56–4:28 | none | — |
 | 9 | Ask me | 1 | questions | six tested findings | each p < 0.001 |
 
-**Pauses that the timing does not include:** 3 seconds after "He'd had it for one and a half.", 3 seconds after "who will be senior next?", 3 seconds after "The job becomes setting direction." (about 4:35 in all). This leaves a little spare time, so decide the cuts below before you go on.
+**Pauses that the timing does not include:** 3 seconds after "He'd had it for one and a half.", 3 seconds after "who will be senior next?", 3 seconds after "You stop supporting and start leading." (about 4:37 in all). This leaves a little spare time, so decide the cuts below before you go on.
 
 **Cut points, decided in advance:**
 1. **Behind at 1:40, not yet on "Lagging":** skip "If you hire or train analytics engineers, start from that core."; go straight to the second point.
@@ -106,7 +106,7 @@ The room sees only the visual: no titles, section labels, footers or navigation.
 | 3 | The core | eight duty bars with the top four lit and "about three ads in four: model the data, test it, report on it, work with people"; then the tools grouped by kind, one colour each: core (SQL 95%, Python 64%, dbt 55%), warehouse (Snowflake 36%, BigQuery 25%, Databricks 23%), BI tool (Power BI 40%, Tableau 28%, Looker 22%); then "SQL in 95%. Then it splits: the top warehouse and the top BI tool are each in under half." | "if you hire or train analytics engineers, start from that core" |
 | 4 | Lagging | "4 of 1,478 ads say 'context engineering'" and "338 name a semantic layer"; then the Multiverse quote; then "Same work. An older name." | the FastAPI story, spoken over the first screen with no picture; what a semantic layer is |
 | 5 | Asymmetry | six bars of what ads tell you; then the box around the four most ads leave out; then US 80% against Europe 18% | "read between the lines"; the Washington and New York laws; "I want to challenge that" |
-| 6 | Moving up | SQL drawn flat at 88–95%; then "asks you to set direction" climbing 0% → 17% → 43% → 79%; then "SQL stays the same. The job becomes setting direction." | mentoring rises with it; the ask to say the pay as clearly as the growth |
+| 6 | Moving up | one chart: SQL flat in grey; then "support or assist" falling; then lead or drive, roadmap or strategy, define standards and mentor or coach climbing, each labelled at the right; then "SQL stays the same. You stop supporting and start leading." | "four in five ask you to lead"; the ask to say the pay as clearly as the growth |
 | 7 | Juniors | the level pyramid; then South Korea's 2025 population pyramid beside it, under-20s in coral; then an arrow from the junior bar to the senior bar, "today's juniors are tomorrow's seniors"; then "1 junior ad for every 8 senior. Who will the seniors be in five years?" | "this is the part that worries me most"; that the corpus leans senior; South Korea's lowest birth rate; the senior ask to mentor |
 | 8 | Close | three lines, one per click | "no one knows exactly"; the pointer to the last slide |
 | 9 | Ask me | six cards of tested findings | nothing; leave it up during questions |
@@ -124,8 +124,9 @@ The room sees only the visual: no titles, section labels, footers or navigation.
 | 1 junior ad for every 8 senior or above (85 against 692) | Level read by an AI model, all ads | A count. The corpus leans senior because of how it was collected. Say so. |
 | A third of senior ads ask you to mentor | 18 of 50 senior ads read by hand; the phrase match gives 36% | Hand-read sample. The phrase match rises from 19% at mid to 36% at senior (Holm p < 0.001). |
 | More than half of junior ads mention a degree, about a third at other levels | 46 of 85 junior, 449 of 1,393 at other levels | Tested, Fisher p < 0.001. |
-| SQL 88–95% at every level; set direction 0%, 17%, 43%, 79% from junior to lead and above | English ads with a level (59, 536, 487, 116), phrase match; set direction = own, define, lead or shape strategy (`stats2.ladder_shares`) | SQL does not change. Set direction rises at every step (Holm p < 0.001). The website's version uses a coded field, so its figures differ slightly. |
+| SQL 88–95% at every level; set direction 0%, 17%, 43%, 79% from junior to lead and above | English ads with a level (59, 536, 487, 116). SQL is a phrase match. Set direction is the autonomy level an AI model gave each ad at classification: "strategic" means it sets direction and priorities (define, establish, own, shape, lead, drive, architect) (`stats2.ladder_shares`) | SQL does not change. Set direction rises at every step (Holm p < 0.001). The same model also read the level, so part of the rise may be built in; the plain verb matches below rise too, which they could not if it were only that. The website uses the same field on newer data, so its figures differ slightly. |
 | Mentoring rises with level: 19% at mid, 36% at senior, 48% at lead and above | Phrase match on mentoring, coaching or code review (`ladder.core`) | Mid to senior tested, Holm p < 0.001. |
+| The verbs rise too, as plain phrase matches: own 31% → 43% → 57% → 66%; lead or drive 44% → 37% → 52% → 81%; roadmap, priorities or strategy 15% → 19% → 30% → 58%; define standards 12% → 14% → 31% → 57%. Support or assist falls: 92% → 67% → 62% → 57% | Phrase matches in each ad's duties and requirements (`more_stats.py`, `VERBS`) | Holm-corrected within the verb panel; check `stats2.ladder.tests` for each step. |
 
 ## Q&A ready
 
