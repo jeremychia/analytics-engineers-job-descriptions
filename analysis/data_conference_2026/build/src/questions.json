@@ -1,15 +1,61 @@
 [
   {
+    "id": "record",
+    "q": "Why read job ads?",
+    "answer": "A job ad is a record of what we expect from each other. This is snapshot one: {{ads}} ads, saved from {{firstMonth}} to {{lastMonth}} 2026.",
+    "body": [
+      "Economists once read millions of newspaper job ads from 1940 to 2000. The job titles stayed the same. The work inside them changed.",
+      "Read enough ads over time, and you can watch a field change. Later snapshots can be compared with this one."
+    ],
+    "verdicts": [
+      { "word": "descriptive", "text": "A count. The ads come from one person's job search, mostly in English, so the mix leans senior." }
+    ],
+    "method": "{{ads}} ads for analytics engineers and close variants, by the month each was saved. The newspaper study is Atalay, Phongthiengtham, Sotelo and Tannenbaum, 2020."
+  },
+  {
+    "id": "alike",
+    "q": "What is an analytics engineer?",
+    "answer": "The ads don't agree. Two analytics-engineer ads from different companies are no more alike than an analytics-engineer ad and a data-engineer ad.",
+    "body": [
+      "Each ad's list of duties was scored against every other, where 100% means identical. Two analytics-engineer ads from different companies score {{aeAe}}%. An analytics-engineer ad and a data-engineer ad score {{aeDe}}%. Two ads from the same company score {{withinCompany}}%, which shows what close looks like.",
+      "Fishtown Analytics, now dbt Labs, gave the role its name in 2019. Seven years on, the ads still don't agree where the job stops."
+    ],
+    "actions": [
+      { "who": "If you're looking", "for": "looking", "text": "Read the duties, not the title. The title won't tell you which job it is." },
+      { "who": "If you're hiring", "for": "hiring", "text": "Say where your role starts and stops. No other ad will define it for you." }
+    ],
+    "verdicts": [
+      { "word": "descriptive", "text": "A score against a yardstick. The two scores are within chance of each other, which is the point. Only {{deAds}} ads are for data engineers." }
+    ],
+    "method": "Only each ad's list of duties is compared, not its requirements or tools: {{dutyAds}} English ads with at least {{dutyMinWords}} words of duties. Related companies count as one company."
+  },
+  {
+    "id": "core",
+    "q": "What do the ads agree on?",
+    "answer": "A shared core. {{coreLow}}% to {{coreHigh}}% of ads ask you to model the data, test it, report on it and work with the people who use it.",
+    "body": [
+      "SQL is in {{sqlPct}}% of ads. After SQL, Python and dbt, the next tool, Power BI, is in {{nextToolPct}}%. Past the core, each team adds its own tools."
+    ],
+    "actions": [
+      { "who": "If you're looking", "for": "looking", "text": "If you have the core, the rest is local. Show that you can learn the local part." },
+      { "who": "If you're hiring", "for": "hiring", "text": "Start from the shared core when you hire or train. Then name the tools that are yours." }
+    ],
+    "verdicts": [
+      { "word": "descriptive", "text": "Duties read from each ad's list of responsibilities. Tools counted wherever the ad names them." }
+    ],
+    "method": "Each ad's duties were sorted into 16 kinds of work: {{dutyThemeAds}} ads had a list to sort. Tools are counted across all {{ads}} ads."
+  },
+  {
     "id": "titles",
-    "q": "What does the title tell me?",
+    "q": "Does the title tell you the job?",
     "answer": "Not much. {{titleAds}} ads use {{titleCount}} different titles, and the same title turns up at both ends of the job.",
     "body": [
       "The duties sit along one line. Dashboards and analysis are at one end. Data quality and data pipelines, close to data engineering, are at the other.",
       "The title “Analytics Engineer” turns up at both ends. SQL is asked for at both ends too, in {{sqlLow}}% to {{sqlHigh}}% of ads."
     ],
     "actions": [
-      { "who": "If you're looking", "for": "looking", "text": "Read the duties, not the title. See what fills the list: dashboards, or models and pipelines." },
-      { "who": "If you're hiring", "for": "hiring", "text": "Say in the first lines which end your role sits at. The title will not say it for you." }
+      { "who": "If you're looking", "for": "looking", "text": "See what fills the list of duties: dashboards, or models and pipelines." },
+      { "who": "If you're hiring", "for": "hiring", "text": "Say in the first lines which end your role sits at." }
     ],
     "verdicts": [
       { "word": "suggestive", "text": "Only two groups stay the same when the ads are sorted again and again, and even those overlap. Read them as two ends of one line, not two jobs." }
@@ -17,24 +63,8 @@
     "method": "{{titleAds}} ads with analytics engineer in the title. Each ad's duties were sorted into six kinds of work, and the ads were grouped by that mix. The dots are placed along one line by the same mix."
   },
   {
-    "id": "barcode",
-    "q": "Do ads copy each other?",
-    "answer": "Mostly not. Two ads from different companies share about {{simBetween}}% of their wording.",
-    "body": [
-      "Two ads from the same company share about {{simWithin}}%. About {{copyPer1000}} listed duties in a thousand are copied word for word. Outside groups of related companies, such as Amazon or DoorDash, it is about {{copyPer1000Outside}} in a thousand."
-    ],
-    "actions": [
-      { "who": "If you're looking", "for": "looking", "text": "Each ad is written for one team. Answer that ad, not a template." },
-      { "who": "If you're hiring", "for": "hiring", "text": "No other ad will describe your role for you. Write down what this team actually needs." }
-    ],
-    "verdicts": [
-      { "word": "descriptive", "text": "These numbers count what the ads say. There is no test behind them." }
-    ],
-    "method": "Only the duties and requirements of each ad are compared, word by word. The square shows {{simShown}} English ads, picked so that every group of related companies is in it. The averages cover {{simAds}} English ads."
-  },
-  {
     "id": "stack",
-    "q": "If the title doesn't tell me the job, what does?",
+    "q": "If the title doesn't tell you the job, what does?",
     "answer": "The tools it names. At the same level, dbt ads ask you to set direction far more often than Power BI ads.",
     "body": [
       "Setting direction means verbs like define, own, shape and lead. Mid-level ads that name dbt and not Power BI ask for it {{midDbt}}% of the time. Ads that name Power BI or Fabric and not dbt ask for it {{midPbi}}% of the time. At senior level it is {{seniorDbt}}% against {{seniorPbi}}%.",
@@ -61,13 +91,47 @@
     "method": "Power BI or Fabric ads with no dbt, against dbt ads that name a data warehouse. Each ad's duties were sorted into 16 kinds of work."
   },
   {
+    "id": "pitch",
+    "q": "Is there a standard set of tools to learn?",
+    "answer": "No. {{uniquePct}}% of ads name a mix of tools that no other ad names, so your own mix is what you pitch.",
+    "body": [
+      "{{oneApartPct}}% of those one-off mixes are a single tool away from another ad: the same core, plus a few tools of their own. The {{templateTools}} most-named tools match only {{templateExact}} ads exactly.",
+      "Pick your own tools on the map to see which ads are closest."
+    ],
+    "actions": [
+      { "who": "If you're starting out", "for": "starting", "text": "The core is the same everywhere, and no two ads are alike. Your background is your story. Pitch it." },
+      { "who": "If you're hiring", "for": "hiring", "text": "Name the tools that make your team different, not only the ones every ad lists." }
+    ],
+    "verdicts": [
+      { "word": "descriptive", "text": "These numbers count what the ads say. There is no test behind them." }
+    ],
+    "method": "{{pitchAds}} ads that name at least one of 19 tools. An ad's mix is the set of tools it names. Naming a tool is not the same as requiring it."
+  },
+  {
+    "id": "lag",
+    "q": "Do ads keep up with the work?",
+    "answer": "They look back. An ad is written from the team that exists today, not the one being built.",
+    "body": [
+      "{{contextEngineering}} of {{ads}} ads say “context engineering”. {{semanticLayer}} name a semantic layer: one place that defines each metric, so people and AI agents get the same answer.",
+      "Ads that ask for AI name a semantic layer {{semanticAi}}% of the time, against {{semanticOther}}% for other ads. It may be the same work under an older name."
+    ],
+    "actions": [
+      { "who": "If you're looking", "for": "looking", "text": "Ask how the team uses AI today. The ad may be behind the work." },
+      { "who": "If you're hiring", "for": "hiring", "text": "Write the ad for the team you're building, not for the last person you hired." }
+    ],
+    "verdicts": [
+      { "word": "conclusive", "text": "Ads that ask for AI name a semantic layer more often, with level and ad length held fixed. A gap this big would turn up by chance {{semanticChance}} times." },
+      { "word": "untested", "text": "Whether ads lag behind the work. The ads can't show what teams do day to day." }
+    ],
+    "method": "Phrase matches across all {{ads}} ads. “Semantic model”, Power BI's name for a dataset, is left out. With it, the count is {{semanticWithModel}}."
+  },
+  {
     "id": "ai",
-    "q": "Do ads keep up with how we use AI?",
+    "q": "How do ads ask for AI?",
     "answer": "{{aiPct}}% of ads ask for AI as part of the job, and {{aiVaguePct}}% of those asks are vague.",
     "body": [
       "A vague ask sounds like “curiosity to leverage AI”. A clear ask names the tool, such as Copilot, Cursor or Claude Code.",
-      "In dbt Labs' 2026 survey, 72% of teams say AI-assisted coding is a priority. The ads ask for less, and more vaguely. Over three months there is no clear trend.",
-      "So do job ads lag behind the work? The data cannot answer that. It stays an open question."
+      "In dbt Labs' 2026 survey, 72% of teams say AI-assisted coding is a priority. The ads ask for less, and more vaguely. Over three months there is no clear trend."
     ],
     "actions": [
       { "who": "If you're looking", "for": "looking", "text": "A vague AI line tells you little. Ask which tool the team uses, and for what." },
@@ -75,55 +139,34 @@
     ],
     "verdicts": [
       { "word": "conclusive", "text": "dbt ads ask for AI more often than Power BI ads: {{aiDbt}}% against {{aiPbi}}%." },
-      { "word": "inconclusive", "text": "Whether senior ads ask more than junior ads, and whether asks grew over three months." },
-      { "word": "untested", "text": "Whether ads lag behind the work. The survey asked different people a different question." }
+      { "word": "inconclusive", "text": "Whether senior ads ask more than junior ads, and whether asks grew over three months." }
     ],
     "method": "{{ads}} ads, one dot each. AI counts when it is part of the job, not company marketing or a note about the hiring process. The month-by-month line uses English ads only. The 72% comes from a survey of 363 people run by dbt Labs, a tool maker."
   },
   {
-    "id": "juniors",
-    "q": "If I'm starting out, is there a way in?",
-    "answer": "Yes, but check what rules you out. {{juniorGatePct}}% of junior ads ask for two or more years, a language other than English, or a visa.",
+    "id": "unsaid",
+    "q": "What do ads leave unsaid?",
+    "answer": "The ad asks a lot and tells little. {{payPct}}% of ads give the pay, and {{processPct}}% describe the interview.",
     "body": [
-      "About one ad in {{juniorOneIn}} is for a junior. By title alone, it is about one in {{juniorTitleOneIn}}.",
-      "Some say junior and ask for three years. In France, {{frBac}} of the {{frJunior}} junior ads ask for a master's degree or an engineering school.",
-      "But {{juniorNoGatePct}}% of junior ads have none of these hurdles, and {{juniorUnderTwoPct}}% do not ask for two or more years. {{juniorProjects}} say internships or projects count."
+      "Most ads say how many years they want and where you'll work. Few say who you report to ({{reportsPct}}%) or how big the team is ({{teamPct}}%).",
+      "Where the law asks for pay, ads give it. Washington and New York states require a pay range, and {{payUs}}% of US ads state one. In Europe it is {{payEurope}}%."
     ],
     "actions": [
-      { "who": "If you're looking", "for": "looking", "text": "If you have the core skills, apply. Lead with a project you built." },
-      { "who": "If you're hiring", "for": "hiring", "text": "State honest years. If internships or projects count, say so." }
+      { "who": "If you're looking", "for": "looking", "text": "Ask early for what the ad leaves out: the pay, the interview steps, who you'd report to." },
+      { "who": "If you're hiring", "for": "hiring", "text": "Say what the job is and what it pays. The right people apply, and you sift through fewer of the wrong ones." }
     ],
     "verdicts": [
-      { "word": "suggestive", "text": "There are only {{juniorN}} junior ads, so the shares are rough. {{juniorGatePct}}% have a hurdle, and the true share is likely between {{juniorGateLo}}% and {{juniorGateHi}}%. The French ads were found through internship and junior searches." }
+      { "word": "descriptive", "text": "Read from each ad and checked by hand on 60 ads. US ads state pay where state laws require it, and the data can't separate law from habit." }
     ],
-    "method": "Junior means the ad was read as a junior role: {{juniorN}} of {{ads}} ads. A hurdle is two or more years, a language other than English, or a visa or security clearance. The French degree requirements were checked by hand."
-  },
-  {
-    "id": "ladder",
-    "q": "How do I move up?",
-    "answer": "The core skills stay the same at every level. The verb changes.",
-    "body": [
-      "SQL, a data warehouse, testing your data and working with the people who use it are asked for at every level.",
-      "Junior ads say support. Mid ads say own. Senior ads add mentoring and setting standards. Lead ads add a roadmap.",
-      "Define, own or lead appears in {{stratJunior}}% of junior ads, {{stratMid}}% of mid, {{stratSenior}}% of senior and {{stratLead}}% of lead ads. The years asked are about {{years}}."
-    ],
-    "actions": [
-      { "who": "If you're starting out", "for": "starting", "text": "The hard skills are the same as everyone else's. Don't be discouraged." },
-      { "who": "If you're moving up", "for": "moving", "text": "Practise the next verb on the work you already do." }
-    ],
-    "verdicts": [
-      { "word": "conclusive", "text": "The verb rises at every step, and each step would turn up by chance {{ladderChance}} times. The core skills show no change beyond chance. These are ads for outside hires, not promotion rules." }
-    ],
-    "method": "English ads with a level: {{ladderJunior}} junior, {{ladderMid}} mid, {{ladderSenior}} senior and {{ladderLead}} lead or above. Each level is compared with the next one up."
+    "method": "All {{ads}} ads. An item counts when the ad states it. Europe means the seven European regions together."
   },
   {
     "id": "benefits",
-    "q": "What can I negotiate?",
+    "q": "What can you negotiate?",
     "answer": "Each region has its own norm. What the ads around you list, and your offer lacks, is what you can ask for.",
     "body": [
       "A US ad offers health insurance ({{usHealth}}% of ads), a pension ({{usPension}}%) and shares in the company ({{usEquity}}%).",
-      "In France it is meal vouchers, in {{frMeal}}% of ads. A pension is listed in {{frPension}}% of ads, because the law already gives one. Ads list what the law leaves out.",
-      "Pay is stated in {{payUs}}% of US ads and {{payFr}}% of French ads. A new EU law on pay transparency is meant to change that."
+      "In France it is meal vouchers, in {{frMeal}}% of ads. A pension is listed in {{frPension}}% of ads, because the law already gives one. Ads list what the law leaves out."
     ],
     "actions": [
       { "who": "If you're looking", "for": "looking", "text": "Read the other ads in your region as the competition. Ask for what they list that your offer does not." },
@@ -136,21 +179,82 @@
     "method": "{{benefitsAds}} ads in nine regions. A cell is the share of a region's ads that mention the benefit. Pay stated means the ad gives a salary or a range. The ticks show the share of all job ads stating pay in the UK, France, the Netherlands and Germany in March 2026, from Indeed."
   },
   {
-    "id": "pitch",
-    "q": "Is there a standard set of tools to learn?",
-    "answer": "No. {{uniquePct}}% of ads name a mix of tools that no other ad names, so your own mix is what you pitch.",
+    "id": "future",
+    "q": "Who will be senior next?",
+    "answer": "For every junior ad, there are {{seniorPerJunior}} at senior level or above. Today's juniors are the seniors we will need in five years.",
     "body": [
-      "{{oneApartPct}}% of those one-off mixes are a single tool away from another ad: the same core, plus a few tools of their own. The {{templateTools}} most-named tools match only {{templateExact}} ads exactly.",
-      "Pick your own tools on the map to see which ads are closest."
+      "Laid out by level, the ads look like an ageing population: a narrow base under a wide middle. In South Korea, which has the lowest birth rate in the world, the youngest children are {{koreaBase}}% of the biggest age group. In these ads, juniors are {{juniorOfWidest}}% of the biggest level.",
+      "Junior ads also mention a degree more often: {{degreeJunior}}% against {{degreeOther}}% at other levels. In France, {{frBac}} of {{frJunior}} junior ads ask for a master's degree or an engineering school."
     ],
     "actions": [
-      { "who": "If you're hiring", "for": "hiring", "text": "Read your ad again. Add what you wanted but did not write down: honest years, one clear AI sentence, the pay, the tools." },
-      { "who": "If you're moving up", "for": "moving", "text": "Practise the next verb on the work you already do." },
-      { "who": "If you're starting out", "for": "starting", "text": "The core is the same everywhere, and no two ads are alike. Your background is your story. Pitch it." }
+      { "who": "If you're starting out", "for": "starting", "text": "The doors are fewer, not shut. Apply to the ones that exist, and lead with a project you built." },
+      { "who": "If you're hiring", "for": "hiring", "text": "Open junior roles, and ask only for the years and degree the work needs." }
     ],
     "verdicts": [
-      { "word": "descriptive", "text": "These numbers count what the ads say. There is no test behind them." }
+      { "word": "descriptive", "text": "A count. The ads come from one person's job search, which leans senior, so read the ratio as this snapshot's, not the whole market's." },
+      { "word": "conclusive", "text": "Junior ads mention a degree more often than ads at other levels. A gap this big would turn up by chance {{degreeChance}} times." }
     ],
-    "method": "{{pitchAds}} ads that name at least one of 19 tools. An ad's mix is the set of tools it names. Naming a tool is not the same as requiring it."
+    "method": "Level read by an AI model from each ad: {{juniorN}} junior, {{seniorPlus}} senior or above. South Korea: people by five-year age band, 2025, from the UN's World Population Prospects 2024. The French degree requirements were checked by hand."
+  },
+  {
+    "id": "mentor",
+    "q": "Does a junior ad say who will teach you?",
+    "answer": "Mostly not. {{guideK}} of {{guideN}} junior ads say who will guide the new hire.",
+    "body": [
+      "All {{guideN}} junior ads were read by hand for a named mentor, a buddy, or a line like “under the guidance of senior engineers”. {{neitherK}} offer neither someone to teach nor anything to learn with, such as a training budget.",
+      "Meanwhile, about a third of senior ads ask you to mentor. The two numbers come from different reads, so they are not a test. They point the same way: teaching is asked for more often than it is promised."
+    ],
+    "actions": [
+      { "who": "If you're hiring", "for": "hiring", "text": "If someone will mentor the new hire, say so in the ad. Name the person or the role." },
+      { "who": "If you're starting out", "for": "starting", "text": "Ask who will teach you. A clear answer is a good sign." },
+      { "who": "If you're moving up", "for": "moving", "text": "If you mentor, say so in your team's junior ad." }
+    ],
+    "verdicts": [
+      { "word": "descriptive", "text": "Every junior ad read by hand. The senior share comes from {{seniorMentorN}} senior ads read by hand." }
+    ],
+    "method": "All {{guideN}} junior ads read in full by hand for a named mentor, buddy, tutor or guidance line. {{seniorMentorN}} senior ads read by hand for a mentoring ask: {{seniorMentorK}} had one."
+  },
+  {
+    "id": "rung",
+    "q": "How do you move up?",
+    "answer": "The skills in the ads stay flat from mid to lead. The rule for moving up stays unwritten.",
+    "body": [
+      "SQL is in {{sqlLevelLow}}% to {{sqlLevelHigh}}% of ads at every level from mid to lead. Understanding the business is in about a third, also at every level ({{bizLow}}% to {{bizHigh}}%).",
+      "Yet most people know the rule: the higher you go, the closer you are to the business, and the more of your time goes to people. {{bizSilentPct}}% of ads don't say so."
+    ],
+    "actions": [
+      { "who": "If you're moving up", "for": "moving", "text": "Move closer to the business. The ad won't say it, so ask what the next level looks like." },
+      { "who": "If you're hiring", "for": "hiring", "text": "If you expect seniors to work closely with the business, write it down." }
+    ],
+    "verdicts": [
+      { "word": "descriptive", "text": "A phrase match, a first pass. It shows what ads write down, not what the job needs." }
+    ],
+    "method": "English ads with a level: {{levelAds}}. SQL and the business are phrase matches."
+  },
+  {
+    "id": "ladder",
+    "q": "What changes as you move up?",
+    "answer": "The core skills stay the same at every level. The verb changes.",
+    "body": [
+      "SQL, a data warehouse, testing your data and working with the people who use it are asked for at every level.",
+      "Define, own or lead appears in {{stratJunior}}% of junior ads, {{stratMid}}% of mid, {{stratSenior}}% of senior and {{stratLead}}% of lead ads. Senior ads add mentoring and setting standards. Lead ads add a roadmap. The years asked are about {{years}}."
+    ],
+    "actions": [
+      { "who": "If you're starting out", "for": "starting", "text": "The hard skills are the same as everyone else's. Don't be discouraged." },
+      { "who": "If you're moving up", "for": "moving", "text": "Practise the next verb on the work you already do." }
+    ],
+    "verdicts": [
+      { "word": "conclusive", "text": "The verb rises at every step, and each step would turn up by chance {{ladderChance}} times. The core skills show no change beyond chance. These are ads for outside hires, not promotion rules." }
+    ],
+    "method": "English ads with a level: {{ladderJunior}} junior, {{ladderMid}} mid, {{ladderSenior}} senior and {{ladderLead}} lead or above. Each level is compared with the next one up."
+  },
+  {
+    "id": "askme",
+    "q": "Which findings held up when tested?",
+    "answer": "Six findings are beyond chance. Everything else on these pages is a count or a first reading.",
+    "verdicts": [
+      { "word": "conclusive", "text": "Each finding would turn up by chance {{askmeChance}} times. The benefits finding allows for testing {{benefitsTags}} kinds of benefit at once." }
+    ],
+    "method": "Each card is its own test on this snapshot. The same findings appear in plain words beside their charts."
   }
 ]

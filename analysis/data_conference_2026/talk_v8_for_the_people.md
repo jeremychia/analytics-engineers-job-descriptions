@@ -6,12 +6,11 @@ Draft 1, 7 November 2026. The deck is `jd_deck_v8.html` (eight slides and one fo
 
 - **The opening claim:** a job ad is a record of what we expect from each other. Read enough of them, over time, and you can see a field change.
 - **Why this corpus exists:** to take a first snapshot, so later snapshots can be compared with it.
-- **Five things snapshot one shows:**
+- **Four things snapshot one shows:**
   1. **A shared core, local edges:** the ads don't agree where the job stops. Two analytics-engineer ads are no more alike than an analytics-engineer ad and a data-engineer ad. But three in four ask you to model the data, test it, report on it and work with stakeholders, and 95% ask for SQL.
   2. **Ads lag:** they describe the team we have, not the one we're building. "Context engineering" is almost absent. "Semantic layer" is common, and ads that ask for AI name it more than twice as often.
-  3. **Information asymmetry:** the ad asks a lot and tells little. Where the law asks for pay, ads give it.
-  4. **Juniors, the main point:** few junior ads, so few seniors later, like an ageing population.
-  5. **Moving up:** the skills stay flat, and the rule that seniors move closer to the business stays unwritten.
+  3. **What's left unsaid:** the ad asks a lot and tells little about pay, the interview and the team. Where the law asks for pay, ads give it. Yet growth is written down clearly: SQL stays flat while "set direction" climbs from almost none at junior to four in five at lead. Say the pay as clearly as the growth.
+  4. **Juniors, the main point:** few junior ads, so few seniors later, like an ageing population. It leads straight into the close.
 - **The close:** no one knows exactly, but the job description is ours to write. Be intentional, and make room for juniors.
 - **Tone:** the ads are the subject, never the people who write them. Say "I think" when it is your view, not the data's.
 
@@ -31,7 +30,7 @@ Use one sentence of theory per point, at most. The room needs the idea, not the 
 | Juniors: the shape | A narrow base under a wide middle is an ageing population: fewer young people now, fewer workers later. South Korea has the narrowest base of any large country: ages 0–4 are 29% of its widest band (50–54). Japan is 40%, Italy 42%, France 76%. In these ads, junior is 12% of the widest level (mid). | UN World Population Prospects 2024, 2025 figures, via [populationpyramid.net](https://www.populationpyramid.net/republic-of-korea/2025/); saved as `build/inputs/population_south_korea_2025.csv` | "South Korea has the lowest birth rate in the world." Don't say the ads match Korea; they are narrower still. |
 | Moving up | Much of what makes someone senior is tacit: "we can know more than we can tell." | Polanyi, *The Tacit Dimension*, 1966 | Optional. Use it in Q&A if someone asks why ads don't write the business down. |
 
-## The script (about 4:34 at 130 words a minute, about 594 words; about 4:43 with the pauses)
+## The script (about 4:26 at 130 words a minute, about 577 words; about 4:35 with the pauses)
 
 **[Why read job ads?]**
 "Economists treat job ads as a record. One team read millions of newspaper ads from 1940 to 2000. The titles stayed the same. The work inside them changed.
@@ -42,7 +41,7 @@ So I started a record of our own. Over seven months, I saved about 1,500 ads for
 "First, what is an analytics engineer? Ask the ads, and no one really agrees. I scored how alike the responsibilities in two ads are, where a hundred means identical. Two analytics-engineer ads from different companies score about four. That's the same as an analytics-engineer ad against a data-engineer ad. Fishtown Analytics gave us the name in 2019. Seven years on, the ads still don't agree where the job stops."
 
 **[One · What do the ads agree on?]**
-"But there is a core we agree on. About three ads in four ask you to model the data, test it, report on it, and work with stakeholders. Ninety-five percent ask for SQL. After that, it's local: the next tool, Power BI, is in four ads in ten. If you hire or train analytics engineers, start from that core."
+"But there is a core we agree on. About three ads in four ask you to model the data, test it, report on it, and work with stakeholders. Ninety-five percent ask for SQL. After that, it splits. The top warehouse, Snowflake, is in about a third. The top BI tool, Power BI, is in four in ten. If you hire or train analytics engineers, start from that core."
 
 **[Two · Do ads see what is coming?]**
 "Second, ads look backwards. We write them from the skills our team has today, not the ones we'll need. The creator of FastAPI once saw an ad asking for four years of FastAPI. He'd had it for one and a half.
@@ -52,9 +51,12 @@ You'll hear 'context engineering' all day here. Four ads in 1,500 use the phrase
 **[Three · What do ads leave unsaid?]**
 "Third, the ad asks a lot and tells little. A quarter of ads give the pay. One in ten describes the interview.
 
-Washington and New York require the pay range. Eighty percent of US ads give it. In Europe, under one in five.
+Washington and New York require the pay range. Eighty percent of US ads give it. In Europe, under one in five."
 
-I want to challenge the habit of saying little. Say what the job is and what it pays. The right people apply, and you spend less time sifting through the wrong ones."
+**[Three · What does it take to move up?]**
+"Growth is different. Here the job description is clear. SQL is in ninety-five percent at every level. But 'set direction' climbs: almost none at junior, four in five at lead and above. Mentoring rises with it. The job becomes setting direction.
+
+So job descriptions already say what it takes to grow. Say what the job pays just as clearly. The right people apply, and you spend less time sifting through the wrong ones."
 
 **[Four · Who will be senior next?]**
 "Fourth, juniors. This is the part that worries me most. For every junior ad here, there are eight at senior level or above.
@@ -62,11 +64,6 @@ I want to challenge the habit of saying little. Say what the job is and what it 
 On the right is South Korea, which has the lowest birth rate in the world. Its youngest children are under a third of its biggest age group. In these ads, juniors are an eighth.
 
 Today's juniors are the seniors we'll need in five years. A third of senior ads ask you to mentor. If this continues, who will they mentor, and who will be senior next?"
-
-**[Five · How do you move up?]**
-"Fifth, moving up. The skills in the ads stay flat from mid to lead. SQL is in ninety-five percent at every level. Understanding the business is in about a third, also at every level.
-
-Yet we all know the rule. The higher you go, the closer you are to the business, and the more of your time goes to people. Two in three ads don't say so."
 
 **[Where that leaves us]**
 "No one knows exactly what they're doing. But the job description is still ours to write.
@@ -81,20 +78,20 @@ Write down what you expect. Write down who will teach. Right now, the ads make i
 |---|---|---|---|---|---|
 | 1 | The record | 3 | 0:00–0:30 | 1,478 ads, April to November | a count |
 | 2 | No consensus | 4 | 0:30–1:02 | responsibilities scored 8.7% alike for two ads from one company; 3.8% for two analytics-engineer ads from different companies; 3.9% for an analytics-engineer ad and a data-engineer ad | a score against a baseline; the gap's 95% range includes zero |
-| 3 | The core | 2 | 1:02–1:29 | model, test, report and work with stakeholders in about three ads in four; SQL 95%, Python 64%, dbt 55%, then Power BI 40% | duties read from each ad's responsibilities; tools named anywhere |
-| 4 | Lagging | 3 | 1:29–2:16 | 4 say "context engineering"; 338 name a semantic layer | phrase matches; the link to AI asks is tested (p < 0.001) and kept for questions |
-| 5 | Asymmetry | 3 | 2:16–2:50 | pay in 24% of ads; US 80%, Europe 18% | read from each ad, checked by hand on 60 |
-| 6 | Juniors | 3 | 2:50–3:31 | 1 junior ad for every 8 senior or above; a third of senior ads ask you to mentor | a count; the corpus leans senior |
-| 7 | Moving up | 3 | 3:31–4:02 | SQL 95% and the business about a third, at every level | a phrase match |
-| 8 | Close | 3 | 4:02–4:34 | none | — |
+| 3 | The core | 2 | 1:02–1:33 | model, test, report and work with stakeholders in about three ads in four; SQL 95%, Python 64%, dbt 55%; top warehouse Snowflake 36%, top BI tool Power BI 40% | duties read from each ad's responsibilities; tools named anywhere |
+| 4 | Lagging | 3 | 1:33–2:20 | 4 say "context engineering"; 338 name a semantic layer | phrase matches; the link to AI asks is tested (p < 0.001) and kept for questions |
+| 5 | Asymmetry | 3 | 2:20–2:40 | pay in 24% of ads; US 80%, Europe 18% | read from each ad, checked by hand on 60 |
+| 6 | Moving up | 3 | 2:40–3:13 | SQL 88–95% at every level; set direction 0%, 17%, 43%, 79% from junior to lead and above | tested at every step, Holm p < 0.001 |
+| 7 | Juniors | 3 | 3:13–3:54 | 1 junior ad for every 8 senior or above; a third of senior ads ask you to mentor | a count; the corpus leans senior |
+| 8 | Close | 3 | 3:54–4:26 | none | — |
 | 9 | Ask me | 1 | questions | six tested findings | each p < 0.001 |
 
-**Pauses that the timing does not include:** 3 seconds after "He'd had it for one and a half.", 3 seconds after "who will be senior next?", 3 seconds after "Two in three ads don't say so." (about 4:43 in all). This leaves a little spare time, so decide the cuts below before you go on.
+**Pauses that the timing does not include:** 3 seconds after "He'd had it for one and a half.", 3 seconds after "who will be senior next?", 3 seconds after "The job becomes setting direction." (about 4:35 in all). This leaves a little spare time, so decide the cuts below before you go on.
 
 **Cut points, decided in advance:**
 1. **Behind at 1:40, not yet on "Lagging":** skip "If you hire or train analytics engineers, start from that core."; go straight to the second point.
-2. **Behind at 3:00, not yet on "Juniors":** skip the Washington and New York sentence and "I want to challenge the habit of saying little… sifting through the wrong ones."
-3. **Behind at 4:15, not yet on "Close":** skip the significance sentence. Say "This is snapshot one. Write down what you expect, and who will teach. Be intentional about the job description."
+2. **Behind at 3:20, not yet on "Juniors":** skip the Washington and New York sentence and "The right people apply… sifting through the wrong ones." Keep the ask.
+3. **Behind at 4:05, not yet on "Close":** skip the significance sentence. Say "This is snapshot one. Write down what you expect, and who will teach. Be intentional about the job description."
 
 **Never cut:** the opening claim, "who will be senior next?", or the close.
 
@@ -106,11 +103,11 @@ The room sees only the visual: no titles, section labels, footers or navigation.
 |---|---|---|---|
 | 1 | The record | 1,478 dots, one per ad, juniors in coral; then the dots fold onto a timeline: the 1940–2000 newspaper ads, 2019 when the role got its name, and 2026 as snapshot one; then an empty dashed "snapshot two" and the line "A job ad is a record of what we expect from each other. This is snapshot one." | the newspaper-ads study |
 | 2 | No consensus | three bars, one per click, on the full 0–100% scale: two ads from the same company score 8.7%, the yardstick; two analytics-engineer ads from different companies score 3.8%; an analytics-engineer ad and a data-engineer ad score 3.9%; then "Same title. No closer than a data-engineer ad." | that most ads share the title; Fishtown and the name |
-| 3 | The core | eight duty bars with the top four lit and "about three ads in four: model the data, test it, report on it, work with people"; then the tool bars and "SQL in 95%. After SQL, Python and dbt, the next tool is in 4 ads in 10." | "if you hire or train analytics engineers, start from that core" |
+| 3 | The core | eight duty bars with the top four lit and "about three ads in four: model the data, test it, report on it, work with people"; then the tools grouped by kind, one colour each: core (SQL 95%, Python 64%, dbt 55%), warehouse (Snowflake 36%, BigQuery 25%, Databricks 23%), BI tool (Power BI 40%, Tableau 28%, Looker 22%); then "SQL in 95%. Then it splits: the top warehouse and the top BI tool are each in under half." | "if you hire or train analytics engineers, start from that core" |
 | 4 | Lagging | "4 of 1,478 ads say 'context engineering'" and "338 name a semantic layer"; then the Multiverse quote; then "Same work. An older name." | the FastAPI story, spoken over the first screen with no picture; what a semantic layer is |
 | 5 | Asymmetry | six bars of what ads tell you; then the box around the four most ads leave out; then US 80% against Europe 18% | "read between the lines"; the Washington and New York laws; "I want to challenge that" |
-| 6 | Juniors | the level pyramid; then South Korea's 2025 population pyramid beside it, under-20s in coral; then an arrow from the junior bar to the senior bar, "today's juniors are tomorrow's seniors"; then "1 junior ad for every 8 senior. Who will the seniors be in five years?" | "this is the part that worries me most"; that the corpus leans senior; South Korea's lowest birth rate; the senior ask to mentor |
-| 7 | Moving up | two flat lines; then "The higher you go, the closer to the business. Two in three ads don't say so." | the staff engineers; "more of your time goes to people" |
+| 6 | Moving up | SQL drawn flat at 88–95%; then "asks you to set direction" climbing 0% → 17% → 43% → 79%; then "SQL stays the same. The job becomes setting direction." | mentoring rises with it; the ask to say the pay as clearly as the growth |
+| 7 | Juniors | the level pyramid; then South Korea's 2025 population pyramid beside it, under-20s in coral; then an arrow from the junior bar to the senior bar, "today's juniors are tomorrow's seniors"; then "1 junior ad for every 8 senior. Who will the seniors be in five years?" | "this is the part that worries me most"; that the corpus leans senior; South Korea's lowest birth rate; the senior ask to mentor |
 | 8 | Close | three lines, one per click | "no one knows exactly"; the pointer to the last slide |
 | 9 | Ask me | six cards of tested findings | nothing; leave it up during questions |
 
@@ -127,8 +124,8 @@ The room sees only the visual: no titles, section labels, footers or navigation.
 | 1 junior ad for every 8 senior or above (85 against 692) | Level read by an AI model, all ads | A count. The corpus leans senior because of how it was collected. Say so. |
 | A third of senior ads ask you to mentor | 18 of 50 senior ads read by hand; the phrase match gives 36% | Hand-read sample. The phrase match rises from 19% at mid to 36% at senior (Holm p < 0.001). |
 | More than half of junior ads mention a degree, about a third at other levels | 46 of 85 junior, 449 of 1,393 at other levels | Tested, Fisher p < 0.001. |
-| SQL 95% and the business about a third, at every level | English ads with a level, phrase match | Counted. The business match is a first pass. |
-| Two in three ads don't name the business | 427 of 1,198 English ads with a level name it | Phrase match. Say "don't say so", not "don't need it". |
+| SQL 88–95% at every level; set direction 0%, 17%, 43%, 79% from junior to lead and above | English ads with a level (59, 536, 487, 116), phrase match; set direction = own, define, lead or shape strategy (`stats2.ladder_shares`) | SQL does not change. Set direction rises at every step (Holm p < 0.001). The website's version uses a coded field, so its figures differ slightly. |
+| Mentoring rises with level: 19% at mid, 36% at senior, 48% at lead and above | Phrase match on mentoring, coaching or code review (`ladder.core`) | Mid to senior tested, Holm p < 0.001. |
 
 ## Q&A ready
 
@@ -140,8 +137,8 @@ The room sees only the visual: no titles, section labels, footers or navigation.
 - **"Are juniors being replaced by AI?"** The ads can't show a trend yet; that's what later snapshots are for. Outside these ads, Stanford finds US employment of 22-to-25-year-olds in AI-exposed jobs 19% below trend; the authors call it a pattern, not proof.
 - **"Do juniors come in as analysts instead?"** Possibly. These are analytics-engineering and BI ads, so analyst roles may be a door this corpus doesn't see.
 - **"What's statistically significant here?"** Leave slide 9 up. Senior ads asking for AI name a semantic layer more (37% against 16%, holding level and ad length fixed, leaving out Power BI's "semantic model"). Mid-level dbt ads ask you to define, own or lead more than Power BI ads (22% against 4%). Senior ads ask you to mentor more than mid ads (36% against 19%). Junior ads mention a degree more (54% against 32%). French junior ads ask for a master's (12 of 15, against 1 of 70). 25 of 28 benefit types differ by region.
-- **"Why don't ads write the business down?"** It's hard to write. Polanyi called it tacit knowledge: we know more than we can tell. SQL is easy to list, so it gets listed.
-- **"What will you compare next time?"** The same counts, on ads saved from now on: the junior share, the AI asks, "context engineering", pay in the ad, and the business line.
+- **"Do ads mention the business?"** About a third at every level, and it doesn't rise. What rises is setting direction. Polanyi's tacit knowledge, "we can know more than we can tell", may explain why the business itself is hard to write down.
+- **"What will you compare next time?"** The same counts, on ads saved from now on: the junior share, the AI asks, "context engineering", pay in the ad, and the set-direction line.
 
 ## Before the slides are final
 

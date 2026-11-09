@@ -74,7 +74,7 @@ function buildRewrite(stage, o = {}) {   // o.line: [plain, emphasised] for the 
 }
 
 /* what moves you up: SQL is asked at every level (flat), the business is named in about a third of ads at every level (flat); two outside voices say the business is the path, so it is an ask the ads leave unwritten */
-function buildRung(stage, o = {}) {   // o.voices: false leaves out the two outside lines; o.line: [plain, emphasised] for the last line
+function buildRung(stage, o = {}) {   // o.voices: false leaves out the two outside lines; o.line: [plain, emphasised] for the last line; o.right: { title, vals } replaces the business panel
   const W = 1000, H = 330, P = D.progression, svg = s('svg', { viewBox: `0 0 ${W} ${H}`, class: 'chart' }, stage), y0 = 54, ph = 214, Y = v => y0 + ph - v / 100 * ph, base = Y(0);
   const lv = ['Junior', 'Mid', 'Senior', 'Lead+'], layer = () => s('g', { style: { opacity: 0, transition: 'opacity .6s' } }, svg);
   const txt = (p, x, y, text, st = {}, a = {}) => s('text', Object.assign({ x, y, text, style: Object.assign({ fontSize: '16px', fill: C.ink2 }, st) }, a), p);
@@ -90,7 +90,7 @@ function buildRung(stage, o = {}) {   // o.voices: false leaves out the two outs
     return [first, rest];
   };
   const gSql = layer(), gBiz = layer(), gTag = layer();
-  const [sa, sb] = panel(gSql, 60, 'asks for SQL', P.sql, C.plum), [ba, bb] = panel(gBiz, 540, 'names the business', P.business, C.coral);
+  const [sa, sb] = panel(gSql, 60, 'asks for SQL', P.sql, C.plum), [ba, bb] = panel(gBiz, 540, o.right ? o.right.title : 'names the business', o.right ? o.right.vals : P.business, C.coral);
   const drawIn = (p, dur) => { const len = p.getTotalLength(); p.style.strokeDasharray = len; p.style.strokeDashoffset = len; return tween(dur, e => { p.style.strokeDashoffset = len * (1 - e); }, { ease: E.inOut }); };
   const note = h('div', { style: { fontSize: 'clamp(15px,1.6vw,25px)', lineHeight: 1.35, opacity: 0, transition: 'opacity .5s' } },
     h('div', {}, h('b', {}, 'Tristan Handy: '), 'the path up is for people curious how the business works.'),
@@ -131,7 +131,7 @@ function buildNext(stage) {
 }
 
 /* what the job is: the duties ads list, with working with people as common as modelling, then the tools, where only SQL, Python and dbt are near universal */
-/* o.core keeps the four most common duties lit in both clicks and o.captions = [first, second] replaces the captions, each a list of [words, highlight] */
+/* o.core keeps the four most common duties lit in both clicks, o.captions = [first, second] replaces the captions, each a list of [words, highlight], o.groups groups the tools by kind and o.noun names what was counted */
 function buildJob(stage, o = {}) {
   const W = 1000, J = D.job, N = J.n_themes, A = D.corpus_n, pct = (k, n) => Math.round(100 * k / n);
   const label = { 'BI & Reporting/Dashboards': 'reporting and dashboards', 'Stakeholder Collaboration & Requirements': 'working with stakeholders',
@@ -143,21 +143,23 @@ function buildJob(stage, o = {}) {
   const bar = (g, x, y, h, v, col) => { s('rect', { x, y, width: 200, height: h, rx: 4, fill: C.grey, opacity: .45 }, g); return { el: s('rect', { x, y, width: 0, height: h, rx: 4, fill: col }, g), to: 2 * v }; };
   // left: the eight most common duty themes, out of 16
   const gT = layer(), tBars = [], TX = 250, TY = 62, TR = 44;
-  txt(gT, 0, 26, `duties in the ad · % of ${N.toLocaleString('en-US')} ads`, { fontSize: '16px', fontWeight: 700, fill: C.ink2 });
+  txt(gT, 0, 26, o.noun ? `duties · % of ${N.toLocaleString('en-US')} ${o.noun}` : `duties in the ad · % of ${N.toLocaleString('en-US')} ads`, { fontSize: '16px', fontWeight: 700, fill: C.ink2 });
   const rows = J.themes.slice(0, 8).map(([t, k], i) => { const y = TY + i * TR, top = i < 4, hi = o.core ? top : t.startsWith('Stakeholder'), v = pct(k, N);
     const g = s('g', { style: { transition: 'opacity .5s' } }, gT);
     const accent = hi && !o.core;
     txt(g, TX - 12, y + 19, label[t], { fontSize: '18px', fontWeight: hi ? 700 : 500, fill: accent ? C.coral : top ? C.ink : C.ink2 }, { 'text-anchor': 'end' });
     tBars.push(bar(g, TX, y + 4, 22, v, accent ? C.coral : top ? C.plum : C.mute));
     txt(g, TX + 2 * v + 10, y + 21, `${v}%`, { fontSize: '17px', fontWeight: 700, fill: accent ? C.coral : C.ink2 }); return { g, hi }; });
-  // right: the core tools, then the next four of any kind
-  const gK = layer(), kBars = [], KX = 740, head = { core: 'core', next: 'the next four' };
-  txt(gK, KX - 132, 26, `tools named · % of ${A.toLocaleString('en-US')} ads`, { fontSize: '16px', fontWeight: 700, fill: C.ink2 });
+  // right: the core tools, then the next four of any kind; o.groups shows the top three warehouses and BI tools instead, one colour per kind
+  const gK = layer(), kBars = [], KX = 740;
+  const head = o.groups ? { core: ['core', C.plum], warehouse: ['warehouse, top 3', C.teal], BI: ['BI tool, top 3', C.blue] } : { core: ['core', C.plum], next: ['the next four', C.mute] };
+  txt(gK, KX - 132, 26, `tools named · % of ${A.toLocaleString('en-US')} ${o.noun || 'ads'}`, { fontSize: '16px', fontWeight: 700, fill: C.ink2 });
   let y = 52;
-  for (const grp in head) { txt(gK, KX - 132, y + 12, head[grp], { fontSize: '14px', fontWeight: 700, fill: C.mute, letterSpacing: '.06em' }); y += 20;
-    (grp === 'core' ? J.tools.core : J.tools_next).forEach(([lab, k]) => { const v = pct(k, A), core = grp === 'core';
-      txt(gK, KX - 12, y + 17, lab, { fontSize: '18px', fontWeight: core ? 700 : 500, fill: core ? C.ink : C.ink2 }, { 'text-anchor': 'end' });
-      kBars.push(bar(gK, KX, y + 3, 20, v, core ? C.plum : C.mute));
+  for (const grp in head) { const [title, col] = head[grp], core = grp === 'core';
+    txt(gK, KX - 132, y + 12, title, { fontSize: '14px', fontWeight: 700, fill: o.groups ? col : C.mute, letterSpacing: '.06em' }); y += 20;
+    (grp === 'next' ? J.tools_next : J.tools[grp]).forEach(([lab, k]) => { const v = pct(k, A);
+      txt(gK, KX - 12, y + 17, lab, { fontSize: '18px', fontWeight: core || o.groups ? 700 : 500, fill: core || o.groups ? C.ink : C.ink2 }, { 'text-anchor': 'end' });
+      kBars.push(bar(gK, KX, y + 3, 20, v, col));
       txt(gK, KX + 2 * v + 10, y + 19, `${v}%`, { fontSize: '16px', fontWeight: 700, fill: C.ink2 }); y += 30; }); y += 16; }
   const caption = words => { const g = layer();
     const t = s('text', { x: 0, y: 470, style: { fontSize: '21px', fontWeight: 500, fill: C.ink } }, g);

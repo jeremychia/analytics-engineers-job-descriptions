@@ -153,7 +153,12 @@ function buildAskMe(stage, o = {}) {
   ].map(([n, t]) => h('div', { style: { background: C.paper, border: `1px solid ${C.line}`, borderRadius: '14px', padding: '1.6vh 1.2vw' } },
     h('div', { style: { fontSize: 'clamp(22px,2.6vw,40px)', fontWeight: 700, color: C.coral, lineHeight: 1.1 } }, n),
     h('div', { style: { fontSize: 'clamp(13px,1.3vw,20px)', color: C.ink2, marginTop: '.8vh' } }, t)));
+  // o.connect adds a QR code to the speaker's LinkedIn profile under the cards
+  const Q = QR_LINKEDIN, connect = o.connect ? h('a', { href: Q.url, target: '_blank', style: { display: 'flex', alignItems: 'center', gap: '1.4vw', textDecoration: 'none', color: C.ink } },
+    h('div', { style: { width: 'clamp(70px,9vw,130px)', flex: 'none' }, html: `<svg viewBox="-2 -2 ${Q.size + 4} ${Q.size + 4}" shape-rendering="crispEdges" style="display:block;width:100%;border-radius:6px"><rect x="-2" y="-2" width="${Q.size + 4}" height="${Q.size + 4}" fill="#fff"/><path d="${Q.path}" fill="#000"/></svg>` }),
+    h('div', {}, h('div', { style: { fontSize: 'clamp(16px,1.8vw,28px)', fontWeight: 700 } }, 'Connect with me on LinkedIn'),
+      h('div', { style: { fontSize: 'clamp(13px,1.3vw,20px)', color: C.ink2, marginTop: '.4vh' } }, `Jeremy Chia · ${Q.url.replace(/^https:\/\/(www\.)?/, '').replace(/\/$/, '')}`))) : [];
   stage.append(h('div', { class: 'col' }, h('div', { style: { fontSize: 'clamp(20px,2.4vw,36px)', fontWeight: 700 } }, 'These findings held up ', h('span', { style: { color: C.coral } }, 'when tested.')),
-    h('div', { style: { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.4vw' } }, ...cards)));
+    h('div', { style: { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.4vw' } }, ...cards), connect));
   return [async () => { await wait(Anim.fast ? 0 : 300); }];
 }
