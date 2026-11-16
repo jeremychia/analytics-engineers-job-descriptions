@@ -134,4 +134,5 @@ if __name__ == "__main__":
     assemble("deck.template.html", ["s_missing.js", "s_v5.js", "s_v6.js", "slides_v2.js", "slides_v6.js", "deck.js"], OUT / "jd_deck_v6.html", F)
     assemble("deck.template.html", ["s_missing.js", "s_v5.js", "s_v6.js", "s_v7.js", "slides_v2.js", "slides_v7.js", "deck.js"], OUT / "jd_deck_v7.html", F, images=True)
     assemble("deck.template.html", ["s_missing.js", "s_v5.js", "s_v6.js", "s_v7.js", "s_v8.js", "slides_v2.js", "slides_v8.js", "deck.js"], OUT / "jd_deck_v8.html", F, images=True)
+    assemble("deck.template.html", ["s_missing.js", "s_v5.js", "s_v6.js", "s_v7.js", "s_v8.js", "s_v9.js", "slides_v2.js", "slides_v9.js", "deck.js"], OUT / "jd_deck_v9.html", F, images=True)
     assemble("views.template.html", STORY_FILES + ["views.js"], OUT / "jd_views.html", F)

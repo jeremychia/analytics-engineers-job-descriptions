@@ -9,7 +9,7 @@ from pathlib import Path
 
 import qrcode
 
-URL = "https://jeremychia.github.io/analytics-engineers-job-descriptions/questions.html"
+URL = "https://jeremychia.github.io/analytics-engineers-job-descriptions/"
 LINKEDIN = "https://www.linkedin.com/in/jjchia/"
 OUT = Path(__file__).resolve().parent / "src" / "qr.js"
 
