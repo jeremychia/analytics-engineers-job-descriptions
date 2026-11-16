@@ -70,7 +70,7 @@ Today's juniors are the seniors we'll need in five years. A third of senior ads 
 **[Where that leaves us]**
 "No one knows exactly what they're doing. But the job description is still ours to write.
 
-This is snapshot one. The data is open: the link is on the last slide.
+This is snapshot one. Connect with me on LinkedIn: the code is on the last slide.
 
 Write down what you expect. Write down who will teach. Right now, the ads make it really scary to start. Let's spend more time shaping junior roles, and be intentional about the job description."
 
@@ -86,7 +86,7 @@ Write down what you expect. Write down who will teach. Right now, the ads make i
 | 6 | Moving up | 4 | 2:53–3:28 | SQL 88–95% at every level; support 92% → 57%; lead or drive 37% at mid → 81% at lead and above; roadmap, define standards and mentor all rise | phrase matches; the rises hold from mid to senior (Holm p < 0.001) |
 | 7 | Juniors | 3 | 3:28–4:09 | 1 junior ad for every 8 senior or above; a third of senior ads ask you to mentor | a count; the corpus leans senior |
 | 8 | Close | 3 | 4:09–4:39 | none | — |
-| 9 | Recap | 1 | questions | the four points, one number each; QR codes to the site and to LinkedIn | leave it up |
+| 9 | Recap | 1 | questions | the four points, one number each; a QR code to connect on LinkedIn | leave it up |
 | 10 | Backup: benefits | 1 | if asked | benefits listed by region | read from each ad |
 | 11 | Backup: tested | 1 | if asked | six tested findings | each p < 0.001 |
 
@@ -113,7 +113,7 @@ The room sees only the visual: no titles, section labels, footers or navigation.
 | 6 | Moving up | one chart: SQL flat in grey; then "support or assist" falling; then lead or drive, roadmap or strategy, define standards and mentor or coach climbing, each labelled at the right; then "SQL stays the same. You stop supporting and start leading." | "four in five ask you to lead"; the ask to say the pay as clearly as the growth |
 | 7 | Juniors | the level pyramid; then South Korea's 2025 population pyramid beside it, under-20s in coral; then an arrow from the junior bar to the senior bar, "today's juniors are tomorrow's seniors"; then "1 junior ad for every 8 senior. Who will the seniors be in five years?" | "this is the part that worries me most"; that the corpus leans senior; South Korea's lowest birth rate; the senior ask to mentor |
 | 8 | Close | three lines, one per click | "no one knows exactly"; the pointer to the last slide |
-| 9 | Recap | "Snapshot one: what job descriptions say", the four points with one number each, then QR codes to the site and to LinkedIn | nothing; leave it up during questions |
+| 9 | Recap | "Snapshot one: what job descriptions say", the four points with one number each, then a QR code to connect on LinkedIn | nothing; leave it up during questions |
 | 10 | Backup: benefits | the benefits grid by region, "the norm: % of ads in each region that list each benefit" | "every region has a norm; that's your lever" |
 | 11 | Backup: tested | six cards of tested findings | only if someone asks what held up |
 

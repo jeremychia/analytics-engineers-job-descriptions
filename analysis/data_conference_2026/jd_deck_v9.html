@@ -1837,7 +1837,7 @@ function buildVerbs(stage) {
 
 /* Slides only the v9 deck uses: the recap left up during questions. Runs after s_v8.js. */
 
-/* the last slide, up during questions: the four points with the number the room heard for each, then where to explore the data and where to connect */
+/* the last slide, up during questions: the four points with the number the room heard for each, then a QR code to connect on LinkedIn */
 function buildRecap(stage) {
   const LC = D.stats2.ladder_core, S = D.semantics, N = D.seniority_n, pay = D.missing.items.find(m => m.key === 'pay').pct;
   const ratio = Math.round((N.senior + N.lead + N.staff + N.manager) / N.junior);
@@ -1859,7 +1859,7 @@ function buildRecap(stage) {
     h('div', { style: { fontSize: 'clamp(22px,2.8vw,44px)', fontWeight: 700 } }, 'Snapshot one: ', h('span', { style: { color: C.coral } }, 'what job descriptions say')),
     ...points,
     h('div', { style: { display: 'flex', gap: '3vw', marginTop: '1.5vh' } },
-      code(QR, 'Explore the data', short(QR.url)), code(QR_LINKEDIN, 'Connect on LinkedIn', `Jeremy Chia · ${short(QR_LINKEDIN.url)}`))));
+      code(QR_LINKEDIN, 'Connect with me on LinkedIn', `Jeremy Chia · ${short(QR_LINKEDIN.url)}`))));
   return [async () => { await wait(Anim.fast ? 0 : 300); }];
 }
 
